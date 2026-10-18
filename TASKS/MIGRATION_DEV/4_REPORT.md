@@ -382,3 +382,59 @@ Supervisor's reading, for the owner's decision:
 - 102 design paths would point to `C:\dev\masaha\design(-b)`, which does not exist now (removed by the owner).
 
 Waiting for the owner. Step 5.3 (rename the old copy) not done.
+
+### Owner's decision on the dry run: "موافق على توصياتك" (all four recommendations)
+
+`TASKS\MIGRATION_DEV` stays skipped; the two contradictory lines are fixed by hand; `WORKER_A\OWNERS\4_REPORT_PR1.md`
+and `4_REPORT_PR2.md` are skipped as records; design paths are rewritten to `C:\dev\masaha\design(-b)`.
+
+### 5.3 Rename the old copy (no delete)
+
+```
+old last: c9ad45c snapshot 2026-10-18 status=0
+Rename-Item -LiteralPath D:\masahaWorkspace -NewName masahaWorkspace.OLD-2026-10-18 -> renamed
+D:\ now: MASAHA, masahaWorkspace.OLD-2026-10-18 ; old copy files: 2485
+```
+
+### 5.4 Apply
+
+```
+second dry run: files changed=71 replacements=434 design-b=1 design=101 app-b=7 app=12 workspace=313   (= 439 − 5, the two reports)
+APPLIED: files changed=71 replacements=434 ... residual: 0
+independent re-run of the dry run after apply: files changed=0 replacements=0
+git diff --numstat: every rewritten file adds = dels (line-level only); unequal: only this task's 4_REPORT.md and
+HANDOFF_MIGRATION.md (appends); CRLF file DESIGN/ROUND2/REMAINING_AR.md 33/33 (line endings kept); no BOM file touched
+second-opinion scan (Select-String 'Users[\/]+basel[\/]+masaha' | 'masahaWorkspace', 85 active files): 1 hit —
+  README.md:1 "# masahaWorkspace" (the repository's title, not a path; left)
+```
+
+Hand fixes (wording only): `HANDOFF.md` L87 "(soon `C:\dev\masaha\workspace\`)" → "(moved 2026-10-18)";
+`DESIGN\ROUND2\HANDOFF_DESIGN_81.md` L6–8 → "moved these folders on 2026-10-18 (every path below reads
+`C:\dev\masaha\…`; the design worktree was removed — re-create it at `C:\dev\masaha\design` from `origin/main` when a
+review needs it)".
+
+```
+git commit -F commit_msg.txt -> commit exit=0 ; git push -> push exit=0
+local: ec6bffc paths moved to C:\dev\masaha (migration) ; remote: ec6bffc57a36b949d13ebd04c0085bb73c3a03ee ; status=0
+files in commit: 74
+```
+
+(A first `git commit -F -` failed — PowerShell passed the message as a pathspec; nothing committed or pushed; redone
+with a message file.)
+
+### 5.5 The nightly task
+
+Old definition saved: `C:\dev-migration-backup\2026-10-18\task-masaha-workspace-snapshot.xml` (was: `-File
+D:\masahaWorkspace\_SHARED\snapshot.ps1`, 23:00, InteractiveToken, Disabled). `snapshot.ps1`'s `Set-Location`
+now reads `C:\dev\masaha\workspace` (rewritten in 5.4).
+
+```
+schtasks /Create /TN masaha-workspace-snapshot /TR "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\dev\masaha\workspace\_SHARED\snapshot.ps1" /SC DAILY /ST 23:00 /F
+  -> SUCCESS ... create exit=0
+new: args=-NoProfile -ExecutionPolicy Bypass -File C:\dev\masaha\workspace\_SHARED\snapshot.ps1 start=2026-10-18T23:00:00 daily=1 logon=InteractiveToken
+schtasks /Run -> run exit=0 ; task: Status: Ready | Last Result: 0
+new log tail: 2026-10-18 18:01 nothing to commit
+old copy untouched: c9ad45c ; its log tail: 2026-10-18 17:55 committed and pushed c9ad45c
+```
+
+**Phase 5 done.** Phase 6 (memories, settings, launch lines) waits for the owner's word.

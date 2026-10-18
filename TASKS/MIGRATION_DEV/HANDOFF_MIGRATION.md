@@ -98,3 +98,6 @@ and the task move to `_DONE`, and your conversation ends.
 - 2026-10-18 18:05 — Phase 5 started (owner's word): snapshot `c9ad45c`; robocopy to `C:\dev\masaha\workspace`
   2485 files, SHA-256 IDENTICAL, git log equal, fsck clean. Dry run: 73 files / 439 replacements (`5_DRYRUN.md`).
   From now this log lives only in the new copy. Waiting for the owner on the dry run.
+- 2026-10-18 18:05 — owner approved the four recommendations. **Phase 5 done**: old copy renamed
+  `D:\masahaWorkspace.OLD-2026-10-18` (not deleted); 71 files / 434 paths rewritten, 0 residual, 2 lines fixed by
+  hand; `ec6bffc` pushed; nightly task recreated on the new path, run once (Last Result 0). Waiting on Phase 6.
