@@ -6,7 +6,7 @@ change nothing in any project.**
 
 ## The job
 
-- 40 review prompts and 7 summary prompts in `D:\masahaWorkspace\DESIGN\ROUND2\PROMPT\`.
+- 40 review prompts and 7 summary prompts in `C:\dev\masaha\workspace\DESIGN\ROUND2\PROMPT\`.
   Each review writes `ROUND2\REPORT\<ID>_REPORT.md`; the summaries write `ROUND2\SUMMARY\…`. The job is
   **done when `ROUND2\SUMMARY\R2-ALL_SUMMARY.md` exists.**
 - They run through **`ROUND2\run-queue.ps1`** (read it first): it starts every missing review with
@@ -22,7 +22,7 @@ change nothing in any project.**
    (then its command line does not name the script): **if any `opencode` process is running, the
    queue is running — leave it.** Only if no `opencode` process runs and no report has appeared for 10
    minutes, start it in a new window:
-   `Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-File','D:\masahaWorkspace\DESIGN\ROUND2\run-queue.ps1'`
+   `Start-Process powershell -ArgumentList '-NoProfile','-ExecutionPolicy','Bypass','-File','C:\dev\masaha\workspace\DESIGN\ROUND2\run-queue.ps1'`
 2. **Every 10 minutes** (`Start-Sleep -Seconds 600`), check: how many reports and summaries exist; when
    the newest was written; how many `opencode` processes run; the last lines of `opencode.log` with
    "Rate limit" (which models, when).
@@ -49,13 +49,13 @@ change nothing in any project.**
 ## Never
 
 - Never edit, move or delete any file under `ROUND2\PROMPT\`, `ROUND2\REPORT\`, `ROUND2\SUMMARY\`, the
-  scripts, or anything in `C:\Users\basel\masaha*` (the project's folders). Never run git, npm, tests,
+  scripts, or anything in `C:\dev\masaha\app*` (the project's folders). Never run git, npm, tests,
   Docker or database commands. Never write a review or a summary yourself, except under step 4.
 - Never start more than one queue at a time. Never run more than three `opencode` reviews at once.
 - Never print or open a `.env` file or anything holding a secret.
 
 ## Your log
 
-Append to `D:\masahaWorkspace\DESIGN\ROUND2\MONITOR_LOG.md` (create it): at every check, one
+Append to `C:\dev\masaha\workspace\DESIGN\ROUND2\MONITOR_LOG.md` (create it): at every check, one
 line — the time, reports and summaries counted, `opencode` processes, the model in use; and every
 action you took, with why. At the end, one line saying whether the job finished.

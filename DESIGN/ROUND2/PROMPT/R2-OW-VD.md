@@ -11,7 +11,7 @@ not edit, commit, check out, install, or move files. You judge visual design and
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,11 +21,11 @@ not edit, commit, check out, install, or move files. You judge visual design and
 
 - Serve it on your own port **5423** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5423 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5423/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5423` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-OW-VD-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\OW-VD\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\OW-VD\` (create it if missing).
 
 ## 4. Scope: OW — the owner's management
 
@@ -70,9 +70,9 @@ screen-reader order (AX); API/model/v1 truth, money privacy, permissions (TR).
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_OWNER.md` (O1–O13 with all notes).
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_OWNER.md` (O1–O13 with all notes).
 - What these settle is **not reported again**. Report only how a page applies a settled pattern
   where that needs a choice.
 - If you believe a settled decision makes the product worse, report it under **Decisions in doubt**
@@ -87,7 +87,7 @@ section 8 below. Known limits of the archive (lens §2) are not reported.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-OW-VD_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-OW-VD_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

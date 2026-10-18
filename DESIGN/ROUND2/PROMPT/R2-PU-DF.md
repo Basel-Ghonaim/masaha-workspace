@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge what is broken on
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -20,12 +20,12 @@ not edit, commit, check out, install, or move files. You judge what is broken on
 
 - Serve it on your own port **5410** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5410 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5410/<Prototype URL>` with the parameters exactly as listed.
 - Keep the browser console open on every page; report console errors with the page and parameters.
 - At the end: stop the server by its PID and check the port is free (`5410` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-PU-DF-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\PU-DF\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\PU-DF\` (create it if missing).
 
 ## 4. Scope: PU — the public site
 
@@ -71,9 +71,9 @@ where content is visually broken too (AX); API/model/v1 truth, counts, privacy (
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (with the 2026-10-12 amendments and the
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (with the 2026-10-12 amendments and the
   2026-10-13 Changed note).
 - What these settle is **not reported again**. A settled pattern applied so it breaks is a defect in
   the application — report it as such.
@@ -89,7 +89,7 @@ limits of the archive (lens §2) are not reported.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-PU-DF_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-PU-DF_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

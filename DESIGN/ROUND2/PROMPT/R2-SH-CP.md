@@ -11,7 +11,7 @@ read Arabic fluently.
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -22,7 +22,7 @@ read Arabic fluently.
 
 - Serve it on your own port **5439** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5439 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5439/<Prototype URL>` with the parameters exactly as listed.
 - Read the copy source `docs/design/prototype/masaha/i18n.js` (and `shared.jsx`'s string table) for
   the exact strings.
@@ -30,7 +30,7 @@ read Arabic fluently.
   issues here; page-level copy belongs to the parts, not to you.
 - At the end: stop the server by its PID and check the port is free (`5439` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-SH-CP-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\SH-CP\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\SH-CP\` (create it if missing).
 
 ## 4. Scope: SH — the shared layer (CP angle)
 
@@ -77,8 +77,8 @@ width where it breaks); removals (parts); focus/names/contrast (AX — R2-SH-AX)
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` in full (especially the P9 verb
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` in full (especially the P9 verb
   discipline, P5's sheet footer, P6's count line, P8's toast lines, SH-018's skip link).
 - Settled wording is **not reported again**. A settled line applied where it does not fit is
   reported as a misapplication, with the decision named.
@@ -93,7 +93,7 @@ the report shape in section 8 below. Known limits of the archive (lens §2) are 
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-SH-CP_REPORT.md`. English, concise
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-SH-CP_REPORT.md`. English, concise
 (quote Arabic strings verbatim). In this order:
 
 1. The commit SHAs from section 2.

@@ -333,3 +333,52 @@ For the next item (not here): `docs/development/setup.md` could warn that moving
 recreated (bind mount).
 
 **Phase 4 done.** Phase 5 (the workspace) waits for the owner's word.
+
+## Phase 5 — the workspace (2026-10-18, from 17:55)
+
+From here the report is written **only** in `C:\dev\masaha\workspace\TASKS\MIGRATION_DEV\` (the old copy stays as
+it was at `c9ad45c`).
+
+Pre-check: `D:\masahaWorkspace` 2479 files, 243.8 MB, no reparse point; pending only this task's two files →
+`snapshot.ps1` by hand: `exit=0`, `c9ad45c snapshot 2026-10-18`, status=0, remote main = `c9ad45cd…`; task still
+`Disabled`.
+
+### 5.1 Copy
+
+```
+robocopy D:\masahaWorkspace C:\dev\masaha\workspace /E /COPY:DAT /DCOPY:DAT /R:1 /W:1 /XJ /NP  -> exit=1 (files copied, no failure)
+    Dirs :       338       338         0         0         0         0
+   Files :      2485      2485         0         0         0         0
+   Bytes :  243.83 m  243.83 m         0         0         0         0
+```
+
+### 5.2 Verify (Python, every file's size and SHA-256; directory sets)
+
+```
+files: src=2485 dst=2485
+dirs:  src=338 dst=338
+only in src: 0 ; only in dst: 0 ; hash/size differ: 0
+total bytes: src=255676394 dst=255676394
+IDENTICAL
+new: log=c9ad45c snapshot 2026-10-18 status=0 ; old: log=c9ad45c ; fsck exit=0
+remote: git@github.com:Basel-Ghonaim/masaha-workspace.git
+```
+
+### 5.4 Dry run of the path rewrite (nothing written) — full listing in `5_DRYRUN.md`
+
+```
+DRY RUN: files changed=73 replacements=439 design-b=1 design=101 app-b=7 app=14 workspace=316
+skipped records hits: DESIGN=212, TASKS=71, WORKER_A=44, WORKER_B=112, _SHARED\ARCHIVE_2026-10-08=75, _SHARED\HANDOFFS=19, _SHARED\MIGRATION=2166
+other spellings: (none)
+undecodable with masaha: 10 (9 Chrome cache files under shots\_aborted, 1 non-UTF-8 file under WORKER_B\_DONE — all skipped areas)
+encodings / line endings of changed files: utf-8/CRLF=1, utf-8/LF=72
+```
+
+Supervisor's reading, for the owner's decision:
+- Added to the skip list: `TASKS\MIGRATION_DEV` (its plan and report are the record of old → new).
+- Two lines become self-contradictory and need a wording fix after the apply: `HANDOFF.md` L87 ("… (soon
+  `C:\dev\masaha\workspace\`)") and `DESIGN\ROUND2\HANDOFF_DESIGN_81.md` L6–8 (the "after the move, … →" sentence).
+- Two finished reports would be rewritten: `WORKER_A\OWNERS\4_REPORT_PR1.md`, `4_REPORT_PR2.md` — records.
+- 102 design paths would point to `C:\dev\masaha\design(-b)`, which does not exist now (removed by the owner).
+
+Waiting for the owner. Step 5.3 (rename the old copy) not done.

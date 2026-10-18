@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -20,11 +20,11 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 - Serve it on your own port **5415** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5415 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5415/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5415` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-AD-UX-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\AD-UX\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\AD-UX\` (create it if missing).
 
 ## 4. Scope: AD — the admin's dashboard
 
@@ -80,9 +80,9 @@ order (AX); whether the API, data model or v1 can hold what is shown, and role p
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes: P1–P10 as
-  they touch the admin) and `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_ADMIN.md` (A1–A8, G1–G4
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes: P1–P10 as
+  they touch the admin) and `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_ADMIN.md` (A1–A8, G1–G4
   and follow-ups, with the 2026-10-11/12 amendments: two-item build, no 24-hour switch, amenities
   no filter with own amenities, role-as-built, «ناقصة» warning, AD-028 red per P9).
 - What these settle (five fact groups and gallery, the creation form, the «ما زال ناقصًا»
@@ -102,7 +102,7 @@ P9 classification apply to every page you open.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-AD-UX_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-AD-UX_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

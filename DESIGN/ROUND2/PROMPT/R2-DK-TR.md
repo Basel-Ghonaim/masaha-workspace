@@ -11,7 +11,7 @@ only (section 5).
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write the `origin/main` SHA at the top
   of the report — **and** the `origin/design/desk` SHA (`git rev-parse origin/design/desk`), because
@@ -23,7 +23,7 @@ only (section 5).
 
 - Serve it on your own port **5435** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5435 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5435/<Prototype URL>` with the parameters exactly as listed.
 - For desk-branch frames: extract read-only with
   `git archive origin/design/desk docs/design/prototype | tar -x -C <empty temp dir>` (under your
@@ -31,7 +31,7 @@ only (section 5).
   say in each issue which source it was seen in. Delete the temp copy at the end.
 - At the end: stop every server by its PID and check the port is free (`5435` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-DK-TR-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\DK-TR\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\DK-TR\` (create it if missing).
 
 ## 4. Scope: DK — the front desk and reception
 
@@ -95,9 +95,9 @@ something untrue — that boundary belongs to CP (CP); keyboard and resilience m
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_DESK.md` (K1–K8, DK-003–DK-023, with the API/docs
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_DESK.md` (K1–K8, DK-003–DK-023, with the API/docs
   routings: K8's whole read, K6's write-off, DK-018's keys, the contract §4 exceptions, ADR 0009's
   Revised line, the data-model write-off).
 - What these settle is **not reported again**. Where the prototype contradicts the contract, the
@@ -114,7 +114,7 @@ archive (lens §2) are not reported.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-DK-TR_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-DK-TR_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2 (main and `design/desk`).

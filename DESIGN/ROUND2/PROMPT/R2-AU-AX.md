@@ -11,7 +11,7 @@ not edit, commit, check out, install, or move files. You judge accessibility and
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,12 +21,12 @@ not edit, commit, check out, install, or move files. You judge accessibility and
 
 - Serve it on your own port **5406** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5406 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5406/<Prototype URL>` with the parameters exactly as listed.
 - Drive every page by keyboard alone at least once; where you can, check with a screen reader.
 - At the end: stop the server by its PID and check the port is free (`5406` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-AU-AX-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\AU-AX\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\AU-AX\` (create it if missing).
 
 ## 4. Scope: AU — signing in and the account
 
@@ -69,10 +69,10 @@ visual hierarchy and spacing (VD); non-accessibility breakage such as overflow o
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes — P7 states,
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes — P7 states,
   P8 feedback/429, P10 save enabled) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_ACCOUNT.md` (C1–C8, especially AC-022's 429
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_ACCOUNT.md` (C1–C8, especially AC-022's 429
   countdown and the 2026-10-13 amendment).
 - What these settle is **not reported again**. A settled state that is unreachable, unnamed, or
   unusable by keyboard is a defect in the application — report it as such.
@@ -88,7 +88,7 @@ section 8 below. Known limits of the archive (lens §2) are not reported.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-AU-AX_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-AU-AX_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

@@ -95,3 +95,6 @@ and the task move to `_DONE`, and your conversation ends.
   container recreated from `C:\dev\masaha\app`, same data ("Skipping initialization", clean shutdown 14:08:35 UTC),
   4 DBs present. **Phase 4 done**: `app` and `app-b` lint/typecheck/unit/API test green, `/health` db up on
   3320 and 3321, ports freed. Waiting for the owner on Phase 5.
+- 2026-10-18 18:05 — Phase 5 started (owner's word): snapshot `c9ad45c`; robocopy to `C:\dev\masaha\workspace`
+  2485 files, SHA-256 IDENTICAL, git log equal, fsck clean. Dry run: 73 files / 439 replacements (`5_DRYRUN.md`).
+  From now this log lives only in the new copy. Waiting for the owner on the dry run.

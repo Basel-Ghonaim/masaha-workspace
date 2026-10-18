@@ -7,19 +7,19 @@ your context. Then you write a run sheet and the summary prompts. Then you stop.
 
 ## 0. Where, and what you may touch
 
-- **Read from** `C:\Users\basel\masaha-design` (a git worktree of the repository, detached at
+- **Read from** `C:\dev\masaha\design` (a git worktree of the repository, detached at
   `origin/main`). `git fetch origin` first; read files, never edit, commit, check out or install.
-- **Write only into** `D:\masahaWorkspace\DESIGN\ROUND2\`:
+- **Write only into** `C:\dev\masaha\workspace\DESIGN\ROUND2\`:
   `PROMPT\` (the review prompts and the summary prompts), and `RUN_SHEET.md` at its root. The reviews
   will write to `ROUND2\REPORT\`, the summaries to `ROUND2\SUMMARY\`; you create neither file.
 - No tool attribution in anything you write.
 
 ## 1. Read first (to write good prompts, not to review)
 
-1. `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` — the lens every reviewer follows: what the
+1. `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` — the lens every reviewer follows: what the
    design owns, what is settled, the three checks every review makes, what to look for, how to
    propose, the report's shape. **Every prompt you write points to it and builds on it.**
-2. `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_*.md` (shared, public, account, admin, owner,
+2. `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_*.md` (shared, public, account, admin, owner,
    desk), with every *Amended* / *Decided* / *Changed* note at their tops: **what they settle is not
    reported again** in round 2; a reviewer who thinks a settled decision makes the product worse
    reports it as a **"decision in doubt"**, with why, in its own section, never as a defect.
@@ -86,13 +86,13 @@ not a sign-in's).
   the next number (`R2-DK-UX-001`).
 - **Who it is for:** an independent reviewer (OpenCode), alone, read-only, with no context but the
   prompt.
-- **Where:** read from `C:\Users\basel\masaha-design` at `origin/main` (check `git rev-parse HEAD`
+- **Where:** read from `C:\dev\masaha\design` at `origin/main` (check `git rev-parse HEAD`
   equals `git rev-parse origin/main` after `git fetch`; write it at the top of the report); never edit,
   commit, check out or install.
 - **Its own port**, so forty can run at once: `python -m http.server <port> --bind 127.0.0.1
   --directory docs/design/prototype`, ports **5401–5440**, one per prompt (list them in the run sheet);
   stop the server by its PID at the end and check the port free. Evidence captures as `<ID>.png` in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\<PART>-<AXIS>\`.
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\<PART>-<AXIS>\`.
 - **The scope:** the part's pages and INDEX sections (by name, with their frame URLs and parameters
   from `INDEX.md`), the roles that use them (guest, user, admin, owner, reception), and the widths and
   modes to open (390, 768, 1440; Arabic and English; light and dark — narrowed only where the axis
@@ -103,7 +103,7 @@ not a sign-in's).
   reported again (only as "decisions in doubt").
 - **The lens:** follow `REVIEW_LENS.md` §3–§5 for what to look for, how to propose (built from the
   design system's own components and tokens, why it is better, its cost S/M/L) and the report's shape.
-- **The report:** `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-<PART>-<AXIS>_REPORT.md`:
+- **The report:** `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-<PART>-<AXIS>_REPORT.md`:
   a one-line verdict; the five most important points; the issues (ID, title, type, level, impact,
   where — frame label, URL with parameters, width and mode —, evidence, what is wrong, proposal, why,
   cost, rule); the decisions in doubt; what was not reviewed and why. English, concise.
@@ -126,7 +126,7 @@ A table of the 40 review prompts (ID, part, axis, file, port, report path) and t
 **the order:** the 40 reviews in **four waves of ten** (mix the parts in each wave, so one part is not
 judged by ten sessions at once), then the six part summaries, then the summary across all; and one
 line to paste into each OpenCode session:
-`Read D:\masahaWorkspace\DESIGN\ROUND2\PROMPT\<file> whole and follow it.`
+`Read C:\dev\masaha\workspace\DESIGN\ROUND2\PROMPT\<file> whole and follow it.`
 
 ## 7. When you are done
 

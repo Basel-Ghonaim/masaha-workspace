@@ -1,5 +1,5 @@
 # Waits for a wave's reports, then starts the next wave, and so on.
-# Usage (PowerShell):  & "D:\masahaWorkspace\DESIGN\ROUND2\run-chain.ps1" -After 2 -Until 4
+# Usage (PowerShell):  & "C:\dev\masaha\workspace\DESIGN\ROUND2\run-chain.ps1" -After 2 -Until 4
 # = wait until wave 2's ten reports exist, start wave 3; wait for wave 3's, start wave 4. Then stop.
 # Each wait gives up after -MaxMinutes (default 120) and stops the chain, saying which reports are missing.
 param(
@@ -8,7 +8,7 @@ param(
   [int]$MaxMinutes = 120
 )
 
-$root  = 'D:\masahaWorkspace\DESIGN\ROUND2'
+$root  = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
 $sheet = Get-Content (Join-Path $root 'RUN_SHEET.md') -Encoding UTF8
 
 function Get-WaveIds([int]$wave) {

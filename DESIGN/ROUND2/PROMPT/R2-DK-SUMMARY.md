@@ -11,13 +11,13 @@ the owner.
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` only to consult the documents named below (lens,
+- Read from `C:\dev\masaha\design` only to consult the documents named below (lens,
   decisions, contract, data model). `git fetch origin` first if you need the SHAs; never edit,
   commit, check out, or install. Note the DK reports cover **two sources** — `origin/main` and
   `origin/design/desk` (PR #80); keep the source with every item.
 - Read the seven DK axis reports (they must all exist before you start; if one is missing, say so
   in the summary's last section and work with the rest):
-  `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-DK-UX_REPORT.md`,
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-DK-UX_REPORT.md`,
   `R2-DK-VD_REPORT.md`, `R2-DK-DF_REPORT.md`, `R2-DK-EX_REPORT.md`, `R2-DK-CP_REPORT.md`,
   `R2-DK-AX_REPORT.md`, `R2-DK-TR_REPORT.md`.
 
@@ -36,7 +36,7 @@ the owner.
 
 ## 4. The summary
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\SUMMARY\R2-DK_SUMMARY.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\SUMMARY\R2-DK_SUMMARY.md`. English, concise.
 A **decision list for the owner**, in this order:
 
 1. The report SHAs the summary was built from (each axis report's main and `design/desk` SHAs, or

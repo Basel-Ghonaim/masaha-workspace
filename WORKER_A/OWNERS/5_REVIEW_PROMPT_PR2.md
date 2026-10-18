@@ -4,11 +4,11 @@ You are the **independent reviewer** of PR **#89** (`feat/admin-add-owner`, head
 Basel-Ghonaim/masaha — the second of three PRs of the OWNERS item. OpenCode built it; a Claude Code fix
 round completed it (the security step, the missing tests, a defect). The owner chose Claude Code for this
 review: you start fresh and trust nothing you have not seen in the code. Write your report to
-`D:\masahaWorkspace\WORKER_A\OWNERS\6_REVIEW_PR2_CLAUDE_CODE.md`, in parts: first the verdict and the five
+`C:\dev\masaha\workspace\WORKER_A\OWNERS\6_REVIEW_PR2_CLAUDE_CODE.md`, in parts: first the verdict and the five
 most important findings.
 
 ## Rules
-- **Run from `C:\Users\basel\masaha-design`, read only commit objects:** `git fetch origin` and
+- **Run from `C:\dev\masaha\design`, read only commit objects:** `git fetch origin` and
   `git fetch origin pull/89/head`; base = `origin/main` (`02b1067a` when written; if `main` has moved, say
   so); `git diff <base>...a074e6d2`, `git show <commit>`, `git show a074e6d2:<file>`. No edits, checkouts,
   installs, npm or test runs, servers, database commands, no GitHub comments. CI ran every lane on this head.
@@ -20,7 +20,7 @@ most important findings.
   skill.
 
 ## What the PR must be
-The plan `D:\masahaWorkspace\WORKER_A\OWNERS\2_PLAN.md` — the owner's approval note at its top (the
+The plan `C:\dev\masaha\workspace\WORKER_A\OWNERS\2_PLAN.md` — the owner's approval note at its top (the
 security addition above all), and **PR 2 only** (§7 *PR 2*, §9 *PR 2 · commits 1–4*, §10 *PR 2*, §11) —
 the fix prompt `3b_FIX_PROMPT_PR2.md`, and the report `4_REPORT_PR2.md` (its *Fix round 1* section): judge
 every departure in both rounds and the three breaks that did not go red. Scope: `apps/web`, `docs`.

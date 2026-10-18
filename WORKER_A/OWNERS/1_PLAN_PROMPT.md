@@ -9,14 +9,14 @@ server, no database command.** You write one file — the plan — then stop.
 are unsure that something works, write it in the plan as **a check the executor makes first, with what to
 do if it fails** — never try it yourself. Read only the files the plan needs, each once.
 
-**The task's folder:** `D:\masahaWorkspace\WORKER_A\OWNERS\`. This prompt is `1_PLAN_PROMPT.md`; **save
+**The task's folder:** `C:\dev\masaha\workspace\WORKER_A\OWNERS\`. This prompt is `1_PLAN_PROMPT.md`; **save
 the plan as `2_PLAN.md` here**; the executor's report will be `4_REPORT.md`, its screenshots in
 `shots\`. Never write to `C:\Users\basel\.prompt` or `Downloads\masaha-next` (frozen). If you are Claude
 Code: use `write-plan` for its discipline (it saves to `2_PLAN.md` above).
 
-**Where you read.** `C:\Users\basel\masaha` (worker A's folder, on `main`, idle): `git fetch origin`, then
+**Where you read.** `C:\dev\masaha\app` (worker A's folder, on `main`, idle): `git fetch origin`, then
 read only `origin/main`'s commit objects (`git show origin/main:<path>`, `git ls-tree`, `git grep`). Never
-check anything out. Worker B is planning PACKAGES in `C:\Users\basel\masaha-b` — never work there.
+check anything out. Worker B is planning PACKAGES in `C:\dev\masaha\app-b` — never work there.
 
 ## 0. The base and the parallel item
 
@@ -41,7 +41,7 @@ before the push folds into its commit (`git commit --fixup` + `git rebase -i --a
 `GIT_SEQUENCE_EDITOR=:`); every new decision and history line ends with its date and **`#PRNUM`**, replaced
 just before the push (issues and PRs share one sequence; check the highest number then — worker B's
 PACKAGES may take the next one); the procedure with its commands (branch `feat/admin-owners` from the
-latest `origin/main` in `C:\Users\basel\masaha`; `docker start masaha-postgres-1`, never `db:up`; never
+latest `origin/main` in `C:\dev\masaha\app`; `docker start masaha-postgres-1`, never `db:up`; never
 `npm ci` there while VS Code is open; **one full test run at a time on this machine** — check worker B's
 folder runs none; per commit `lint` and `typecheck`; on the head **once** `test:unit`, `test:component`,
 `NODE_ENV=production npm run build`, `check:build`, `check:classes`, `format:check`, `check:links` — the
@@ -50,7 +50,7 @@ API on 3320 driven by the **`playwright` MCP tools**, screenshots saved to this 
 resolves a relative name from the session's folder: move the files there at the end and check
 `git status` is clean); push; `gh pr create --assignee @me --label feat --label area:web --label
 area:docs` with the description written out; `gh pr checks` and `CLEAN`; the conflict check with
-`git merge-tree --write-tree` against any open PR; the report to `D:\masahaWorkspace\WORKER_A\OWNERS\4_REPORT.md`,
+`git merge-tree --write-tree` against any open PR; the report to `C:\dev\masaha\workspace\WORKER_A\OWNERS\4_REPORT.md`,
 UTF-8, written in parts); a **"Stop and ask"** list; an appendix mapping steps to Claude's skills, "only a
 map". No step may depend on a Claude skill. Never merge; no tool attribution; stage by path.
 
@@ -93,7 +93,7 @@ design system has `Combobox`, `Dialog`, `AlertDialog`, `DataTable`. **Nothing in
   an owner whose spaces are all deleted reads as an owner of none) shows «كل مساحاته محذوفة — استرجع
   المساحة لفك ربطه», linking to the admin's spaces list at `?status=deleted`. No API change. Add a dated
   line to finding 50 (it is already Resolved in documents; this is its screen).
-- **D4 — commit 0, #85's leftovers** (`D:\masahaWorkspace\WORKER_A\_DONE\GALLERY\GALLERY_REPORT.md`,
+- **D4 — commit 0, #85's leftovers** (`C:\dev\masaha\workspace\WORKER_A\_DONE\GALLERY\GALLERY_REPORT.md`,
   *Review fixes*, "Left alone"): the gallery's removal and order failures titled with an action's
   sentence, not «تعذّر تحميل الصور»; `sendMultipart`'s `onProgress` required (production always passes
   it). One commit, first in the history. No other gallery test gap is taken (the owner's rule).
@@ -112,7 +112,7 @@ From `origin/main`: `CLAUDE.md`; `docs/development/workflow.md`; `docs/developme
 decisions); `docs/api/api-contract.md` (*Owners (the admin)*, *Users (the admin)*, the error codes);
 ADR 0009; findings 50 and 59; the design — `docs/design/INDEX.md`'s owners, users and verified-editor
 sections, `docs/design/prototype/Admin owners.html`, `Admin users.html`, `Admin space edit.html`, and
-`D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_ADMIN.md` (A4, A5, A6, AD-021, and every amendment at its
+`C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_ADMIN.md` (A4, A5, A6, AD-021, and every amendment at its
 top) with `DECISIONS_SHARED.md`. Round 2's design reports (`DESIGN\ROUND2\REPORT\`) are **not decisions**:
 do not build from them. The code to copy as patterns: `features/space-links/` (the admin's spaces list,
 its filters and pages), `features/spaces/` (the editor, its dialogs, its refusals), `shared/forms`.

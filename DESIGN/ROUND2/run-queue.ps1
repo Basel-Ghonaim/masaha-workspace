@@ -2,7 +2,7 @@
 # and the summary across all. When a model answers "Rate limit exceeded", the queue moves to the next
 # model in -Models and starts that run again (a rate limit is not counted as a try).
 # A run that ends or passes -RunMinutes without its report is retried, up to -MaxTries.
-# Usage:  & "D:\masahaWorkspace\DESIGN\ROUND2\run-queue.ps1" -Models opencode/big-pickle,opencode/step-5-preview-free
+# Usage:  & "C:\dev\masaha\workspace\DESIGN\ROUND2\run-queue.ps1" -Models opencode/big-pickle,opencode/step-5-preview-free
 #         (list the models with: opencode models)
 param(
   [string[]]$Models = @('opencode/step-5-preview-free', 'opencode/nemotron-3-ultra-free', 'opencode/longcat-2.5-preview-free', 'opencode/big-pickle'),
@@ -11,8 +11,8 @@ param(
   [int]$MaxTries = 3
 )
 
-$root = 'D:\masahaWorkspace\DESIGN\ROUND2'
-$repo = 'C:\Users\basel\masaha-design'
+$root = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
+$repo = 'C:\dev\masaha\design'
 $logs = Join-Path $root 'LOGS'
 $exe  = Join-Path $env:APPDATA 'npm\node_modules\opencode-ai\bin\opencode.exe'
 New-Item -ItemType Directory -Force $logs | Out-Null

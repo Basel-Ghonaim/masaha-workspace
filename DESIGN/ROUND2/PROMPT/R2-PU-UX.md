@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -20,11 +20,11 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 - Serve it on your own port **5408** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5408 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5408/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5408` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-PU-UX-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\PU-UX\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\PU-UX\` (create it if missing).
 
 ## 4. Scope: PU — the public site
 
@@ -80,9 +80,9 @@ order (AX); whether the API, data model or v1 can hold what is shown, and locati
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes: P1, P4–P9 as
-  they touch the site) and `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U1–U12, H2–H5,
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes: P1, P4–P9 as
+  they touch the site) and `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U1–U12, H2–H5,
   PU-013/014/025 and the 2026-10-12 amendments and the 2026-10-13 Changed note on server-side
   directory/near-me and the privacy line).
 - What these settle (Strip-wide default set, one place filter, one near-me control and state line,
@@ -103,7 +103,7 @@ reported. Every width (390, 768, 1440), the API contract's pagination/failure/42
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-PU-UX_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-PU-UX_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

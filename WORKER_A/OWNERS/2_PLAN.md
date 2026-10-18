@@ -98,7 +98,7 @@ decisions, code map); `docs/api/api-contract.md` (§1–4, *Spaces (the admin)*,
 (the admin)*, §6); ADR 0009 (decision 2); findings 45, 49, 50, 59, 69 and the open findings' titles; the
 documentation map's deferred table (nothing triggered); `docs/design/INDEX.md` (§43, §44, §46, the fix-phase
 parameters); `docs/design/prototype/Admin owners.html`, `Admin users.html`, `Admin space edit.html` and
-`masaha/admin.jsx` (`TempPassDialog`, `LinkOwnerDialog`, `unlinkLine`); `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_ADMIN.md`
+`masaha/admin.jsx` (`TempPassDialog`, `LinkOwnerDialog`, `unlinkLine`); `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_ADMIN.md`
 (A3–A7, AD-012, AD-021, every amendment) and `DECISIONS_SHARED.md` (P1, P5, P8, P9 and amendments);
 `GALLERY_REPORT.md` › *Left alone*. Code: `features/space-links/**`, `features/users/**`, `features/spaces/`
 (`index.ts`, `components/editor/{SpaceEditor,VerifiedNotice}.tsx`, `hooks/editor/{useSpaceEditor,useSpaceQuery,useSpaceName}.ts`,
@@ -514,7 +514,7 @@ Each PR runs this whole procedure on its own, from its own branch; PR 2 and PR 3
 before has merged.
 
 ### First checks (each PR, before any edit)
-1. In `C:\Users\basel\masaha`: `git status` clean, on `main`; `git fetch origin`; `git switch main && git pull --ff-only`.
+1. In `C:\dev\masaha\app`: `git status` clean, on `main`; `git fetch origin`; `git switch main && git pull --ff-only`.
 2. `git diff --name-status <base> origin/main` (PR 1's base `5e8c979d`; PR 2's and PR 3's base = the merge of the PR before). A change to a code file this plan names that the plan does not cover → **stop and ask**. If `packages/shared` changed: `npm run build -w @masaha/shared` before any web check.
 3. Re-read the shared documents (§7) on `origin/main`.
 4. **Checks the executor makes first, with the fallback:**
@@ -540,8 +540,8 @@ Then: `npm run test:unit` · `npm run test:component` · `$env:NODE_ENV='product
   - PR 1: the owners list; the search and the chips (and the address after Back); the finding-50 row and its link; the empty and no-match states; a card at 390; the email under the name at 768.
   - PR 2: the space search in the sheet (its loading line, an option's badges and owners); add a new owner (the password dialog: Escape and an outside click do nothing; «تم» waits for «نسخ»; the handover recorded; its toast); an existing user's email (the upgrade line and «ترقية وربط», then its toast); an admin's email (the refusal on the form); the showcase's new Combobox example at `/__showcase`.
   - PR 3: link from an owner's row (a verified space: "another owner"); unlink (the last owner → the unverified line; the row leaving the list keeps the focus on the list); the verified editor («يعدّلها …», «فك ربط …»); the unverified editor («ربط مالك», a user chosen: the role line; it turns read-only once linked).
-- Screenshots to `D:\masahaWorkspace\WORKER_A\OWNERS\shots\pr1\`, `…\shots\pr2\`, `…\shots\pr3\` (the tool saves a relative name in the session's folder: move them there at the end); `git status` clean afterwards; never commit an image.
-- Stop the servers by PID (`Get-CimInstance Win32_Process -Filter "Name='node.exe'" | Where-Object { $_.CommandLine -match 'C:\\Users\\basel\\masaha' }`, `Stop-Process -Id …`) and check the ports: `Get-NetTCPConnection -LocalPort 3320,5320 -State Listen` empty.
+- Screenshots to `C:\dev\masaha\workspace\WORKER_A\OWNERS\shots\pr1\`, `…\shots\pr2\`, `…\shots\pr3\` (the tool saves a relative name in the session's folder: move them there at the end); `git status` clean afterwards; never commit an image.
+- Stop the servers by PID (`Get-CimInstance Win32_Process -Filter "Name='node.exe'" | Where-Object { $_.CommandLine -match 'C:\\dev\\masaha\\app' }`, `Stop-Process -Id …`) and check the ports: `Get-NetTCPConnection -LocalPort 3320,5320 -State Listen` empty.
 
 ### Push and the PR
 1. `git grep -n "#PRNUM" HEAD` lists the placeholders; the next number: `gh api "repos/{owner}/{repo}/issues?state=all&per_page=1&sort=created&direction=desc" --jq '.[0].number'` + 1 (worker B's PACKAGES may take it first: check at that moment).
@@ -549,7 +549,7 @@ Then: `npm run test:unit` · `npm run test:component` · `$env:NODE_ENV='product
 3. `git push -u origin <branch>`, then at once `gh pr create --assignee @me --label feat --label area:web --label area:docs` (PR 2 adds `--label area:design-system`; a missing label is created with `gh label create`; PR 1's commit 1 also touches `spaces` and `shared/uploads`, both `area:web`), the title = the main commit, the description written out (workflow §3: Summary; Scope / Acceptance criteria / Out of scope; Change type; Evidence — what was run and what was not; Screenshots — RTL and LTR, light and dark, phone and desktop, attached by the owner; the Definition of Done checklist). Confirm the number it got matches the one written.
 4. `gh pr checks <n>` green on the pushed head's SHA, and `gh pr view <n> --json mergeStateStatus` `CLEAN`.
 5. The early conflict check: for each other open PR, `git fetch origin <its head ref>` and `git merge-tree --write-tree origin/<branch> origin/<other>`; record the result.
-6. The report, written in parts, UTF-8: PR 1 → `D:\masahaWorkspace\WORKER_A\OWNERS\4_REPORT.md`; PR 2 → `…\OWNERS\4_REPORT_ADD.md`; PR 3 → `…\OWNERS\4_REPORT_LINKS.md`, unless a later prompt names another. It gives the head and the commits, what was run and not, **every break made with its red output**, the problems and their solutions, anything unexpected, the conflict check, any departure from this plan. Never merge.
+6. The report, written in parts, UTF-8: PR 1 → `C:\dev\masaha\workspace\WORKER_A\OWNERS\4_REPORT.md`; PR 2 → `…\OWNERS\4_REPORT_ADD.md`; PR 3 → `…\OWNERS\4_REPORT_LINKS.md`, unless a later prompt names another. It gives the head and the commits, what was run and not, **every break made with its red output**, the problems and their solutions, anything unexpected, the conflict check, any departure from this plan. Never merge.
 
 ### Stop and ask
 - The base diff touches a code file this plan names and does not cover; worker B's open PR edits one of this plan's code files.

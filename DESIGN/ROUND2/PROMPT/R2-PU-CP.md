@@ -11,7 +11,7 @@ Arabic fluently.
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -22,12 +22,12 @@ Arabic fluently.
 
 - Serve it on your own port **5412** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5412 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5412/<Prototype URL>` with the parameters exactly as listed.
 - Read the prototype's copy source `docs/design/prototype/masaha/i18n.js` for the exact strings.
 - At the end: stop the server by its PID and check the port is free (`5412` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-PU-CP-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\PU-CP\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\PU-CP\` (create it if missing).
 
 ## 4. Scope: PU — the public site
 
@@ -79,9 +79,9 @@ control *as a copy defect* with the width where it breaks); removals (EX); focus
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes, including the
-  P9 verb discipline) and `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U3–U4, U9–U11,
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes, including the
+  P9 verb discipline) and `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U3–U4, U9–U11,
   the 2026-10-12 amendments, and the 2026-10-13 Changed note — the privacy line it rewords is open
   for review, not settled).
 - Settled wording is **not reported again**. A settled line applied where it does not fit is
@@ -97,7 +97,7 @@ report shape in section 8 below. Known limits of the archive (lens §2) are not 
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-PU-CP_REPORT.md`. English, concise
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-PU-CP_REPORT.md`. English, concise
 (quote Arabic strings verbatim). In this order:
 
 1. The commit SHAs from section 2.

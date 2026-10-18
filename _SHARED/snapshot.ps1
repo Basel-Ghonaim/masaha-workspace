@@ -1,8 +1,8 @@
-# Commits and pushes the day's changes of D:\masahaWorkspace to its private GitHub repository.
+# Commits and pushes the day's changes of C:\dev\masaha\workspace to its private GitHub repository.
 # Run nightly by the Windows task "masaha-workspace-snapshot"; safe to run by hand at any time.
 # Writes nothing when nothing changed.
 $ErrorActionPreference = 'Stop'
-Set-Location 'D:\masahaWorkspace'
+Set-Location 'C:\dev\masaha\workspace'
 $log = Join-Path $PSScriptRoot 'snapshot.log'
 $stamp = Get-Date -Format 'yyyy-MM-dd HH:mm'
 

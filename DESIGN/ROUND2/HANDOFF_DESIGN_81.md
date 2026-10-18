@@ -2,10 +2,10 @@
 
 **Temporary.** It lives until round 2 is closed (the 40 reviews, the 6 summaries, the summary across all,
 `DECISIONS_ROUND2.md` with the owner), then it moves to `_DONE`. You are **one of three supervisors**. The main
-supervisor (the project's analyst, reading `D:\masahaWorkspace\HANDOFF.md`) reads this file's *Status log*;
-the organisation-and-migration supervisor may move these folders at a quiet point (after that, every path
-below reads `C:\dev\masaha\…`: `masaha-design` → `C:\dev\masaha\design`, `D:\masahaWorkspace` →
-`C:\dev\masaha\workspace`).
+supervisor (the project's analyst, reading `C:\dev\masaha\workspace\HANDOFF.md`) reads this file's *Status log*;
+the organisation-and-migration supervisor moved these folders on 2026-10-18 (every path below reads
+`C:\dev\masaha\…`; the design worktree was removed — re-create it at `C:\dev\masaha\design` from `origin/main`
+when a review needs it).
 
 ## 1. Your task
 
@@ -16,20 +16,20 @@ of the designs, not of the app's code). Issue **#81** on GitHub is the owner's c
 
 - Reply in **Arabic**, short; no line starts with an English word or a code token; decisions as items with
   options and a recommendation, never tables.
-- You **never edit the repository** (`C:\Users\basel\masaha*`). You write only in
-  `D:\masahaWorkspace\DESIGN\` and to Issue #81 (its body), and only with the owner's word for #81.
+- You **never edit the repository** (`C:\dev\masaha\app*`). You write only in
+  `C:\dev\masaha\workspace\DESIGN\` and to Issue #81 (its body), and only with the owner's word for #81.
 - **Verify every report yourself before it counts.** Never tick #81 for a report you did not check.
 
 ## 3. Where things are
 
-- Prompts: `D:\masahaWorkspace\DESIGN\ROUND2\PROMPT\R2-<PART>-<AXIS>.md` (40) and `R2-<PART>-SUMMARY.md`,
+- Prompts: `C:\dev\masaha\workspace\DESIGN\ROUND2\PROMPT\R2-<PART>-<AXIS>.md` (40) and `R2-<PART>-SUMMARY.md`,
   `R2-ALL-SUMMARY.md`; the browser-pass prompt `R2-BROWSER-PASS.md` (done).
 - Reports: `…\ROUND2\REPORT\R2-<PART>-<AXIS>_REPORT.md`; set aside: `REPORT\_superseded\`.
 - Captures: `…\ROUND2\shots\r2-shots\<PART>-<AXIS>\<ID>.png`; aborted runs: `shots\_aborted\`.
 - The run sheet: `…\ROUND2\REMAINING_KILO_AR.md` — the commands **and the line pasted after each** (its rules).
-- Settled decisions, which reviews must not report again: `D:\masahaWorkspace\DESIGN\DECISIONS\` (`DECISIONS_*.md`,
-  `REVIEW_LENS.md`). Pending desk decisions (not this round's): `D:\masahaWorkspace\_SHARED\OPEN_DECISIONS.md`.
-- The worktree the reviews read: `C:\Users\basel\masaha-design` (detached; keep it on `origin/main`:
+- Settled decisions, which reviews must not report again: `C:\dev\masaha\workspace\DESIGN\DECISIONS\` (`DECISIONS_*.md`,
+  `REVIEW_LENS.md`). Pending desk decisions (not this round's): `C:\dev\masaha\workspace\_SHARED\OPEN_DECISIONS.md`.
+- The worktree the reviews read: `C:\dev\masaha\design` (detached; keep it on `origin/main`:
   `git fetch origin; git switch --detach origin/main`; first check `git diff --stat <old> origin/main --
   docs/design` — if the design changed, the finished reports may be stale: tell the owner).
 - Parts: AD admin · AU sign-in and account · DK desk · OW owner · PU public · SH shared. Axes: AX accessibility ·
@@ -45,7 +45,7 @@ of the designs, not of the app's code). Issue **#81** on GitHub is the owner's c
 - **To do (14):** DK-DF, OW-AX, OW-CP, OW-DF, OW-EX, OW-TR, PU-CP, PU-DF, PU-EX, PU-TR, SH-AX, SH-CP, SH-DF, SH-VD
   (some may already be running in Kilo sessions the owner opened — ask).
 - Then: the six part summaries, then `R2-ALL-SUMMARY`; then the owner and you write
-  `D:\masahaWorkspace\DESIGN\DECISIONS_ROUND2.md`; then the fix batch(es) of `docs/design/` (Claude plans,
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS_ROUND2.md`; then the fix batch(es) of `docs/design/` (Claude plans,
   OpenCode builds, another tool reviews), **the first one fixing the stray `<<<<<<< HEAD` line before § 54 in
   `docs/design/INDEX.md`**; then `docs/design/screens/` regenerated once and the owner reviews every screen.
 
@@ -55,7 +55,7 @@ of the designs, not of the app's code). Issue **#81** on GitHub is the owner's c
   (`kilo mcp list` → connected). **Pick a strong model by name, never "Auto"**: the first PU-AX try on Auto
   was rejected; the second, with a named model and the strict line, passed. OpenCode has the same Playwright
   config (`C:\Users\basel\.config\opencode\opencode.json`); free small models there do not call tools.
-- One review per **new session**, opened in `C:\Users\basel\masaha-design`, three at a time at most; paste the
+- One review per **new session**, opened in `C:\dev\masaha\design`, three at a time at most; paste the
   command and the line from `REMAINING_KILO_AR.md` in the same message.
 - `main` moves with every merge of workers A and B: the line tells the reviewer to continue when
   `git diff --quiet HEAD origin/main -- docs/design` exits 0. Still move the worktree to `origin/main` between

@@ -11,7 +11,7 @@ only (section 5).
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,14 +21,14 @@ only (section 5).
 
 - Serve it on your own port **5440** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5440 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5440/<Prototype URL>` with the parameters exactly as listed.
 - Drive every shell by keyboard alone at least once; where you can, check with a screen reader.
 - You open other parts' pages **read-only for pattern comparison only**: report pattern-level
   issues here; page-level issues belong to the parts, not to you.
 - At the end: stop the server by its PID and check the port is free (`5440` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-SH-AX-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\SH-AX\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\SH-AX\` (create it if missing).
 
 ## 4. Scope: SH — the shared layer (AX angle)
 
@@ -74,8 +74,8 @@ system**).
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` in full (P7 states, P8 feedback/429,
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` in full (P7 states, P8 feedback/429,
   SH-006/SH-018/SH-020).
 - What these settle is **not reported again**. A settled state that is unreachable, unnamed, or
   unusable by keyboard on more than one page is a defect in the application — report it as such,
@@ -92,7 +92,7 @@ every page they change**) and the report shape in section 8 below. Known limits 
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-SH-AX_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-SH-AX_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

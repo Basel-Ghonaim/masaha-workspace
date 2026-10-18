@@ -1,7 +1,7 @@
 # OWNERS PR 2 (#89) — fix round 2 (short)
 
-To the executor of fix round 1 on PR #89 (`feat/admin-add-owner`, head `a074e6d2`, `C:\Users\basel\masaha`).
-The review is `D:\masahaWorkspace\WORKER_A\OWNERS\6_REVIEW_PR2_CLAUDE_CODE.md` — read it whole. The owner
+To the executor of fix round 1 on PR #89 (`feat/admin-add-owner`, head `a074e6d2`, `C:\dev\masaha\app`).
+The review is `C:\dev\masaha\workspace\WORKER_A\OWNERS\6_REVIEW_PR2_CLAUDE_CODE.md` — read it whole. The owner
 decided (2026-10-18) to fix **only what must not reach `main`** now; the rest goes to PR 3's first commit
 (written into the plan's approval note — do **not** do it here). Everything in `3_EXEC_PROMPT_PR2.md` still
 binds: the stop rule, no result claimed unseen, the report written as you go, the final-reply template with

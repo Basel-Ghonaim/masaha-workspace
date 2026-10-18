@@ -1,11 +1,11 @@
 # Waits for all 40 review reports, then runs the six part summaries at once, waits for them, then the
 # summary across all. Run it in its own PowerShell window and leave it open.
-# Usage:  & "D:\masahaWorkspace\DESIGN\ROUND2\run-summaries.ps1"
+# Usage:  & "C:\dev\masaha\workspace\DESIGN\ROUND2\run-summaries.ps1"
 # Each wait gives up after -MaxMinutes (default 360 for the reviews, then 90 per summary step).
 param([int]$MaxMinutes = 360)
 
-$root  = 'D:\masahaWorkspace\DESIGN\ROUND2'
-$repo  = 'C:\Users\basel\masaha-design'
+$root  = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
+$repo  = 'C:\dev\masaha\design'
 $logs  = Join-Path $root 'LOGS'
 $parts = 'AU', 'PU', 'AD', 'OW', 'DK', 'SH'
 New-Item -ItemType Directory -Force $logs | Out-Null

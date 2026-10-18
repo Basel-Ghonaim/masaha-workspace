@@ -11,7 +11,7 @@ only (section 5).
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,11 +21,11 @@ only (section 5).
 
 - Serve it on your own port **5407** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5407 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5407/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5407` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-AU-TR-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\AU-TR\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\AU-TR\` (create it if missing).
 
 ## 4. Scope: AU — signing in and the account
 
@@ -74,9 +74,9 @@ resilience mechanics (AX).
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_ACCOUNT.md` (C1–C8 and the 2026-10-13 amendment;
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_ACCOUNT.md` (C1–C8 and the 2026-10-13 amendment;
   C8's contract exception and AC-009's `repliedBy` are API items).
 - What these settle is **not reported again**. Where the prototype contradicts a settled,
    API-backed rule, report the contradiction precisely (endpoint/field/rule).
@@ -92,7 +92,7 @@ shape in section 8 below. Known limits of the archive (lens §2) are not reporte
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-AU-TR_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-AU-TR_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

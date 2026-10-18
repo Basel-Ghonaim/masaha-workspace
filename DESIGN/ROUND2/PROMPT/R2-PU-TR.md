@@ -11,7 +11,7 @@ only (section 5).
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,11 +21,11 @@ only (section 5).
 
 - Serve it on your own port **5414** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5414 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5414/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5414` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-PU-TR-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\PU-TR\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\PU-TR\` (create it if missing).
 
 ## 4. Scope: PU — the public site
 
@@ -73,9 +73,9 @@ something untrue — that boundary belongs to CP (CP); keyboard and resilience m
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U1–U12, H2–H5, the 2026-10-12
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes) and
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U1–U12, H2–H5, the 2026-10-12
   amendments; the 2026-10-13 Changed note is new truth to judge by, not a settled shield).
 - What these settle is **not reported again**. Where the prototype contradicts the contract, the
   model, or an ADR, report the contradiction precisely (endpoint/field/rule).
@@ -91,7 +91,7 @@ archive (lens §2) are not reported.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-PU-TR_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-PU-TR_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

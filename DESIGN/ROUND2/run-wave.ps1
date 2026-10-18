@@ -1,13 +1,13 @@
 # Starts one wave of round-2 reviews: one OpenCode window per review, each running its prompt alone.
-# Usage (PowerShell):  & "D:\masahaWorkspace\DESIGN\ROUND2\run-wave.ps1" -Wave 2
+# Usage (PowerShell):  & "C:\dev\masaha\workspace\DESIGN\ROUND2\run-wave.ps1" -Wave 2
 # Add -DryRun to see what would start, without starting anything.
 param(
   [Parameter(Mandatory = $true)][ValidateRange(1, 4)][int]$Wave,
   [switch]$DryRun
 )
 
-$root    = 'D:\masahaWorkspace\DESIGN\ROUND2'
-$repo    = 'C:\Users\basel\masaha-design'
+$root    = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
+$repo    = 'C:\dev\masaha\design'
 $logs    = Join-Path $root 'LOGS'
 $sheet   = Get-Content (Join-Path $root 'RUN_SHEET.md') -Encoding UTF8
 New-Item -ItemType Directory -Force $logs | Out-Null

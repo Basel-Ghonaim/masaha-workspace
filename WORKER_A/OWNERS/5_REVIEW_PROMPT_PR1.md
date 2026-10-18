@@ -2,11 +2,11 @@
 
 You are the **independent reviewer** of PR **#88** (`feat/admin-owners`, head `e4e13e9e`) in
 Basel-Ghonaim/masaha — the first of three PRs of the OWNERS item. It was executed by Claude Code; you are
-another tool. Write your report to `D:\masahaWorkspace\WORKER_A\OWNERS\6_REVIEW_PR1_<YOU>.md`
+another tool. Write your report to `C:\dev\masaha\workspace\WORKER_A\OWNERS\6_REVIEW_PR1_<YOU>.md`
 (`<YOU>` = your tool's name in capitals), in parts: first the verdict and the five most important findings.
 
 ## Rules
-- **Run from `C:\Users\basel\masaha-design-b`, read only commit objects:** `git fetch origin` and
+- **Run from `C:\dev\masaha\design-b`, read only commit objects:** `git fetch origin` and
   `git fetch origin pull/88/head`; base = `5e8c979d`; `git diff 5e8c979d...e4e13e9e`, `git show <commit>`,
   `git show e4e13e9e:<file>`. No edits, checkouts, installs, npm or test runs, servers, database commands,
   no GitHub comments. CI ran every lane on this head. At the end, check the head has not moved.
@@ -16,9 +16,9 @@ another tool. Write your report to `D:\masahaWorkspace\WORKER_A\OWNERS\6_REVIEW_
   skill.
 
 ## What the PR must be
-The plan `D:\masahaWorkspace\WORKER_A\OWNERS\2_PLAN.md` — the owner's approval at its top, and **PR 1 only**
+The plan `C:\dev\masaha\workspace\WORKER_A\OWNERS\2_PLAN.md` — the owner's approval at its top, and **PR 1 only**
 (§7 *PR 1*, §9 *PR 1 · commits 1–3*, §10 *PR 1*) — and the report
-`D:\masahaWorkspace\WORKER_A\OWNERS\4_REPORT_PR1.md`: judge its five departures. Scope: `apps/web`, `docs`.
+`C:\dev\masaha\workspace\WORKER_A\OWNERS\4_REPORT_PR1.md`: judge its five departures. Scope: `apps/web`, `docs`.
 
 ## Look at these, in this order — think beyond the plan
 1. **Commit 2, the refactor:** truly no behaviour change in the admin's spaces list (pagination, states,

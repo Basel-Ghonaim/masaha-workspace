@@ -5,9 +5,9 @@ did not plan it and you will not review it. **The plan is approved; do not re-de
 
 ## 1. Read, then begin
 
-1. Work in `C:\Users\basel\masaha` only — never in `C:\Users\basel\masaha-b` (worker B builds PACKAGES
+1. Work in `C:\dev\masaha\app` only — never in `C:\dev\masaha\app-b` (worker B builds PACKAGES
    there) or a design worktree. Read `CLAUDE.md` at the repository's root.
-2. Read the plan **whole**: `D:\masahaWorkspace\WORKER_A\OWNERS\2_PLAN.md` — **the owner's approval at its
+2. Read the plan **whole**: `C:\dev\masaha\workspace\WORKER_A\OWNERS\2_PLAN.md` — **the owner's approval at its
    top binds** (the words «مالك» / «صاحب المساحة» and the glossary line in commit 3; the report names).
 3. **Build PR 2 only** — its four commits (§7 *PR 2*, §9 *PR 2 · commits 1–4*, §10 *PR 2*): the `Combobox`
    search (its own first commit), `lineParts` shared, the one-time password dialog, adding an owner —
@@ -57,7 +57,7 @@ that line. No "all tests pass".
   length, the red line before the code, the green line after), after each break, after the real run, after
   the push. If you stop for any reason, the report already says where the work stands.
 - **One full test run at a time on this machine:** before each full lane, check no `vitest` runs under
-  `C:\Users\basel\masaha-b\`; if one does, wait. Focused runs of one or two files are fine.
+  `C:\dev\masaha\app-b\`; if one does, wait. Focused runs of one or two files are fine.
 - Each full lane **once, on the head**; re-run only if a file it covers changed after it passed.
 
 ## 4. Discipline
@@ -65,7 +65,7 @@ that line. No "all tests pass".
 Stage by path (never `-A` or `.`); each commit message written to a UTF-8 file **without a BOM, LF line endings**, with a body
 saying why, and `git commit -F <file>` (real line breaks, no literal `\n`); subjects counted ≤ 50; **no tool attribution**;
 a fix before the push folds into its commit; never print a secret; never merge, create an Issue, or comment
-on another PR. The real run's screenshots go to `D:\masahaWorkspace\WORKER_A\OWNERS\shots\pr2\` (moved
+on another PR. The real run's screenshots go to `C:\dev\masaha\workspace\WORKER_A\OWNERS\shots\pr2\` (moved
 there if the tool saved them in the repository); `git status --short` clean at the end; stop both servers
 by process id; ports 3320 and 5320 free.
 
@@ -83,5 +83,5 @@ Breaks: <each: red seen / NOT RUN (why)>
 Real run: <each case and its screenshot, or NOT RUN (why)>
 Departures from the plan: <each, with its reason>   (or "none")
 Stopped at (if STOPPED): <the step, and what the owner must decide or fix>
-Report: D:\masahaWorkspace\WORKER_A\OWNERS\4_REPORT_PR2.md
+Report: C:\dev\masaha\workspace\WORKER_A\OWNERS\4_REPORT_PR2.md
 ```

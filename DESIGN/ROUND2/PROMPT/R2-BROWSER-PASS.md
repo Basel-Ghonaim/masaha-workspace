@@ -13,12 +13,12 @@ the rendered page, you check what it said it could not check, and you append one
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a detached worktree). First `git fetch origin`; check
+- Read from `C:\dev\masaha\design` (a detached worktree). First `git fetch origin`; check
   `git rev-parse HEAD` equals `git rev-parse origin/main`. If not, stop and say so. Never edit, commit,
   check out, install or move anything there.
 - Serve the prototype on port **5490** (no other review uses it):
   `python -m http.server 5490 --bind 127.0.0.1 --directory docs/design/prototype`, run from
-  `C:\Users\basel\masaha-design`, in the background. Pages: `http://127.0.0.1:5490/<Prototype URL>`, with
+  `C:\dev\masaha\design`, in the background. Pages: `http://127.0.0.1:5490/<Prototype URL>`, with
   the parameters exactly as `docs/design/INDEX.md` lists them.
 - Screenshots: `browser_take_screenshot` with a **relative** filename `r2-shots/<PART-AXIS>/<ID>.png`
   (the server saves under `C:\Users\basel\Downloads`), e.g. `r2-shots/AD-VD/R2-AD-VD-003.png`.
@@ -26,7 +26,7 @@ the rendered page, you check what it said it could not check, and you append one
 
 ## 3. The reports, in this order (most visual first)
 
-| # | Report (in `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\`) | Its prompt (scope, axis, widths) |
+| # | Report (in `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\`) | Its prompt (scope, axis, widths) |
 |---|---|---|
 | 1 | `R2-AU-AX_REPORT.md` | `PROMPT\R2-AU-AX.md` |
 | 2 | `R2-DK-AX_REPORT.md` | `PROMPT\R2-DK-AX.md` |
@@ -44,7 +44,7 @@ conversation stops, the next one starts at the first report without that section
 ## 4. For each report, in turn
 
 1. Read the report whole, and from its prompt only §3 (how to open), §4 (scope: pages, INDEX sections,
-   widths and modes) and §5 (its axis). Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b
+   widths and modes) and §5 (its axis). Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b
    once, for the whole run.
 2. **Each existing issue:** open its frame (the report's «where», or INDEX.md's URL) at its width and
    mode; look; take its screenshot as `<ID>.png`. Verdict: **confirmed** / **refuted** (the page does

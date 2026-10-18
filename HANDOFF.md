@@ -41,14 +41,14 @@ sub-supervisor closes, its file moves to `_DONE` and you add one line here.
 **#88** OWNERS PR 1 (the admin's owners page). No PR open at this writing.
 
 **Worker A — OWNERS** (`WORKER_A\OWNERS\`): one plan `2_PLAN.md`, **three PRs in sequence**. PR 1 merged (#88).
-**PR 2 executing** (OpenCode; `feat/admin-add-owner` in `C:\Users\basel\masaha`): the `Combobox` search (its own
+**PR 2 executing** (OpenCode; `feat/admin-add-owner` in `C:\dev\masaha\app`): the `Combobox` search (its own
 first commit, a design-system change), `lineParts` shared, the one-time password dialog, adding an owner — with
 the security line (the upgrade shows whose account it is before confirming), finding 87. Prompt
 `3_EXEC_PROMPT_PR2.md`; review prompt to write (`5_REVIEW_PROMPT_PR2.md`, a tool other than OpenCode). Then PR 3
 (linking, unlinking, the editor naming its owners, finding 59 resolved). Then USERS (the users page).
 
 **Worker B — STAFF** (`WORKER_B\STAFF\`): **executing** (Claude Code Opus medium; `feat/space-staff` in
-`C:\Users\basel\masaha-b`), one PR, seven commits, **a migration** (temporary password expiry). Part A protects
+`C:\dev\masaha\app-b`), one PR, seven commits, **a migration** (temporary password expiry). Part A protects
 every account created by someone else (no reset while a temporary password is pending; email confirmed at the
 first sign-in; expiry 7 days; Google refused while pending); Part B the owner's staff (new accounts only, list,
 deactivate/reactivate, re-issue while pending, 10/hour). ADR 0009 rule 4 revised. Its first stop (three test
@@ -84,7 +84,7 @@ re-decided by the owner at the quiet point.
 
 ## 4. The workspace (adopted 2026-10-17)
 
-`D:\masahaWorkspace\` (soon `C:\dev\masaha\workspace\`): `WORKER_A\`, `WORKER_B\`, `DESIGN\`, `TASKS\`, `_SHARED\`;
+`C:\dev\masaha\workspace\` (moved 2026-10-18): `WORKER_A\`, `WORKER_B\`, `DESIGN\`, `TASKS\`, `_SHARED\`;
 one folder per task, active beside `_DONE\`; `BOARD.md` (keep it true), `README.md`. A new task's files:
 `1_PLAN_PROMPT.md`, `2_PLAN.md`, `3_EXEC_PROMPT[_PR<n>].md`, `4_REPORT[_PR<n>].md`, `5_REVIEW_PROMPT…`,
 `6_REVIEW_<TOOL>.md`, `7_FIXES_PROMPT.md`, `shots\`. The old `C:\Users\basel\.prompt\` and

@@ -11,7 +11,7 @@ not edit, commit, check out, install, or move files. You judge accessibility and
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,12 +21,12 @@ not edit, commit, check out, install, or move files. You judge accessibility and
 
 - Serve it on your own port **5413** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5413 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5413/<Prototype URL>` with the parameters exactly as listed.
 - Drive every page by keyboard alone at least once; where you can, check with a screen reader.
 - At the end: stop the server by its PID and check the port is free (`5413` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-PU-AX-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\PU-AX\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\PU-AX\` (create it if missing).
 
 ## 4. Scope: PU — the public site
 
@@ -69,9 +69,9 @@ counts, and location privacy (TR).
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes — P7 states,
-  P8 feedback) and `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U6–U7, U12, PU-013,
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes — P7 states,
+  P8 feedback) and `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_PUBLIC.md` (U6–U7, U12, PU-013,
   PU-026, and the 2026-10-13 Changed note).
 - What these settle is **not reported again**. A settled accessible pattern applied so it fails
   (unnamed control, untrapped focus, silent state) is a defect in the application — report it.
@@ -87,7 +87,7 @@ every page they change) and the report shape in section 8 below. Known limits of
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-PU-AX_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-PU-AX_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

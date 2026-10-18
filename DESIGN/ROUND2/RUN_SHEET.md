@@ -8,7 +8,7 @@ summaries write to `ROUND2\SUMMARY\`.
 
 One line to paste into each OpenCode session (with the file from the table):
 
-`Read D:\masahaWorkspace\DESIGN\ROUND2\PROMPT\<file> whole and follow it.`
+`Read C:\dev\masaha\workspace\DESIGN\ROUND2\PROMPT\<file> whole and follow it.`
 
 ## Wave 1
 

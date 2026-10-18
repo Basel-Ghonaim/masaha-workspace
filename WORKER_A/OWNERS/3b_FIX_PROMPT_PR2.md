@@ -1,8 +1,8 @@
 # OWNERS PR 2 (#89) — complete it before review
 
-You are the executor of PR **#89** (`feat/admin-add-owner`, head `8548308e`) in `C:\Users\basel\masaha`.
+You are the executor of PR **#89** (`feat/admin-add-owner`, head `8548308e`) in `C:\dev\masaha\app`.
 The supervisor checked it against the plan before sending it to review and found it **incomplete**. The
-review waits for this round. Read first: `D:\masahaWorkspace\WORKER_A\OWNERS\2_PLAN.md` (the approval note
+review waits for this round. Read first: `C:\dev\masaha\workspace\WORKER_A\OWNERS\2_PLAN.md` (the approval note
 at its top, §9 *PR 2*, §10 *PR 2*) and your report `4_REPORT_PR2.md`. Everything in
 `3_EXEC_PROMPT_PR2.md` still binds — its stop rule and its final-reply template above all.
 

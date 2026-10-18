@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 ## 2. Where
 
-- Read from `C:\Users\basel\masaha-design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -20,11 +20,11 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 - Serve it on your own port **5422** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5422 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\Users\basel\masaha-design` as the working directory.
+  run with `C:\dev\masaha\design` as the working directory.
 - Open pages as `http://127.0.0.1:5422/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5422` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-OW-UX-001.png`) in
-  `D:\masahaWorkspace\DESIGN\ROUND2\shots\r2-shots\OW-UX\` (create it if missing).
+  `C:\dev\masaha\workspace\DESIGN\ROUND2\shots\r2-shots\OW-UX\` (create it if missing).
 
 ## 4. Scope: OW — the owner's management
 
@@ -87,10 +87,10 @@ permissions (TR).
 
 ## 6. What is settled — do not report again
 
-- Read `D:\masahaWorkspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes: P1 no bottom
+- Read `C:\dev\masaha\workspace\DESIGN\DECISIONS\REVIEW_LENS.md` §2b first, then
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_SHARED.md` (with its Amended notes: P1 no bottom
   bar on the overview, P8 desk exception, P9 two-case customer archive) and
-  `D:\masahaWorkspace\DESIGN\DECISIONS\DECISIONS_OWNER.md` (O1–O13, the 2026-10-11 DI-10 drawer
+  `C:\dev\masaha\workspace\DESIGN\DECISIONS\DECISIONS_OWNER.md` (O1–O13, the 2026-10-11 DI-10 drawer
   note, the 2026-10-12 O3 no-money-on-overview amendment, the 2026-10-13 attendance/prices rules).
 - What these settle (one editor two permissions, capacity in Settings, the work-queue overview, the
   O4 action table, plurals, prices' home, immediate photos, the package sheet, model-shaped
@@ -109,7 +109,7 @@ classification apply to every page you open.
 
 ## 8. The report
 
-Save it to `D:\masahaWorkspace\DESIGN\ROUND2\REPORT\R2-OW-UX_REPORT.md`. English, concise.
+Save it to `C:\dev\masaha\workspace\DESIGN\ROUND2\REPORT\R2-OW-UX_REPORT.md`. English, concise.
 In this order:
 
 1. The commit SHAs from section 2.

@@ -3,14 +3,14 @@
 # -PauseMinutes and starts it again (the queue resumes: it runs only what is missing). If nothing new
 # appears for -StallMinutes while the queue runs, it stops the queue and its OpenCode runs, and starts
 # again. It gives up after -MaxHours.
-# Usage:  & "D:\masahaWorkspace\DESIGN\ROUND2\run-watchdog.ps1"
+# Usage:  & "C:\dev\masaha\workspace\DESIGN\ROUND2\run-watchdog.ps1"
 param(
   [int]$PauseMinutes = 30,
   [int]$StallMinutes = 90,
   [int]$MaxHours = 12
 )
 
-$root  = 'D:\masahaWorkspace\DESIGN\ROUND2'
+$root  = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
 $queue = Join-Path $root 'run-queue.ps1'
 $end   = (Get-Date).AddHours($MaxHours)
 

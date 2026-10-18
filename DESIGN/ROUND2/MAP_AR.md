@@ -1,6 +1,6 @@
 # خريطة الجولة الثانية لمراجعة التصميم — بالترتيب
 
-كل الملفات في: `D:\masahaWorkspace\DESIGN\ROUND2\`
+كل الملفات في: `C:\dev\masaha\workspace\DESIGN\ROUND2\`
 
 ## أولًا: قبل أي تشغيل
 1. أغلق ما لا تحتاجه، فكل مراجعة تفتح متصفحًا.
@@ -10,11 +10,11 @@
 ## ثانيًا: المراجعات الأربعون
 4. اعرف الناقص: كل مراجعة لها ملف في `REPORT\` باسم `<ID>_REPORT.md`. الناقص هو ما ليس له ملف.
 5. اختر طريقة التشغيل:
-   - **باليد (الأضمن الآن):** افتح OpenCode من `C:\Users\basel\masaha-design`، واختر نموذجًا يعمل، والصق:
-     `Read D:\masahaWorkspace\DESIGN\ROUND2\PROMPT\<ID>.md whole and follow it.`
+   - **باليد (الأضمن الآن):** افتح OpenCode من `C:\dev\masaha\design`، واختر نموذجًا يعمل، والصق:
+     `Read C:\dev\masaha\workspace\DESIGN\ROUND2\PROMPT\<ID>.md whole and follow it.`
      ثلاث جلسات معًا على الأكثر.
    - **بالطابور (حين تتجدد حصص النماذج):** في PowerShell:
-     `& "D:\masahaWorkspace\DESIGN\ROUND2\run-queue.ps1"`
+     `& "C:\dev\masaha\workspace\DESIGN\ROUND2\run-queue.ps1"`
      يشغّل الناقص ثلاثًا ثلاثًا، ويبدّل النموذج عند الحد، ثم يشغّل التلخيص وحده.
 6. افحص كل تقرير جديد: إن قال «Not performed» أو «no browser»، احذفه وأعده.
 7. إن علق نموذج وهو «يفكر» ولا يكتب: `Esc`، غيّر النموذج في الجلسة نفسها، واطلب الكتابة على أجزاء.
