@@ -496,3 +496,62 @@ Design reviews (Kilo/OpenCode): the design worktree was removed — re-create at
 next item (no repository edit here): moving the folder needs the Postgres container recreated (bind mount, Phase 4).
 
 **Phase 6 done.** Phase 7 (final proof, then the list of old copies for the owner) waits for the owner's word.
+
+## Phase 7 — memory key confirmed (2026-10-18, 18:07)
+
+The owner opened Claude Code in `C:\dev\masaha\app` (CLI, PID 30848) and ran `/memory` (Auto-memory true; project
+instructions `./CLAUDE.md`). Its transcript landed in the key the memory was copied to:
+
+```
+keys touched in the last 30 min: C--dev-masaha-app last=18:06:29
+45832b6e-75f2-4f71-b80a-f2ef4debf139.jsonl cwd=C:\dev\masaha\app
+memory count: 35
+```
+
+Old conversations stay under the old keys (not copied; `/resume` in the new folder does not list them).
+
+## Phase 7 — the final proof (2026-10-18, 18:10)
+
+### 7.1 Scan for live uses of an old path
+
+```
+C:\Users\basel top level masaha*: masaha (files=0, 3 empty dirs made by Docker — see Phase 4)
+D:\ top level: MASAHA, masahaWorkspace.OLD-2026-10-18, (and the owner's other folders)
+C:\dev\masaha: app, app-b, workspace
+scheduled tasks naming an old path: none
+masaha-workspace-snapshot: Task To Run ... -File C:\dev\masaha\workspace\_SHARED\snapshot.ps1 ; Enabled ; Next Run 23:00
+docker containers with an old-path mount or label: none
+git: C:/dev/masaha/app [main], C:/dev/masaha/app-b (detached) ; app-b .git -> C:/dev/masaha/app/.git/worktrees/masaha-b ; core.worktree unset
+user environment variables naming an old path: none
+OpenCode / VS Code (mcp.json, settings.json) / Copilot MCP configs: hits=0
+workspace active set (rewrite script, dry run): files changed=0 replacements=0
+repository: git grep 'Users[\/]basel|masahaWorkspace' -> no match
+```
+
+Only Windows "Recent" shortcuts (`AppData\Roaming\Microsoft\Windows\Recent\*.lnk`, 12) still name old paths —
+history, not a live use; the owner may clear Recent items.
+
+### 7.2 New folders in use
+
+The owner opened Claude Code in `C:\dev\masaha\app` (memory key confirmed above). Focused tests and `/health` ran
+from the new paths in Phase 4. Design review dropped (owner's amendment: design worktrees removed).
+
+### Candidates for `C:\dev\<project>\` later (listed only, not moved)
+
+- `D:\MASAHA\` (no git): `DOCS\` 24 files 0.1 MB, `DS\` 217 files 4.5 MB, `PROTOTYPE\` 541 files 22.2 MB,
+  `VD\` 15 files 0.8 MB — last change 2026-09-29.
+- `D:\quick-tweets-app\` (git, 1.57 GB), `D:\quick-tweet-worker-2\` (git, 562 MB), `D:\Education\` (52 MB),
+  `D:\YOUTUBE\` (66 MB).
+
+### 7.3 The old copies — handed to the owner, **who deletes them himself**
+
+1. `C:\Users\basel\masaha` — 3 empty folders made by Docker.
+2. `D:\masahaWorkspace.OLD-2026-10-18` — 2485 files, 243.8 MB, frozen at `c9ad45c` (on GitHub).
+3. `C:\dev-migration-backup\` — 53 files, 405.2 MB (`.env` copies, memory, volume tar, settings, task XML).
+   Recommended: keep about a week of normal work, then delete (it holds secrets).
+
+Left as the plan says (not listed for deletion): the old Claude keys `c--Users-basel-masaha` (the original memory
+and old conversations, 508.6 MB), `C--Users-basel-masaha-b`, `-design`, `-design-b`, `D--masahaWorkspace`.
+
+**Phase 7 done. The migration is complete.** Remaining: the owner's deletes; closing the task (one line in
+`HANDOFF.md`, this folder to `TASKS\_DONE`) on the owner's word.

@@ -104,3 +104,6 @@ and the task move to `_DONE`, and your conversation ends.
 - 2026-10-18 18:10 — **Phase 6 done**: memory copied (not moved) to `C--dev-masaha-app\memory` (35 = source =
   backup), wording updated there only (5 files, 0 residual); `settings.json` 3 rules → `/c/dev/masaha/app`;
   setup.md clean. Waiting on Phase 7.
+- 2026-10-18 18:10 — **Phase 7 done**: memory key confirmed by the owner's session (`C--dev-masaha-app`); final scan
+  clean (tasks, Docker, git, env, tool configs, workspace, repo); old copies listed for the owner (3 items).
+  Migration complete. Waiting for the owner's deletes and his word to close the task.
