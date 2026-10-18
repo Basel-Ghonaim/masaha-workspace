@@ -38,6 +38,10 @@ ask the owner** — never improvise.
 - Memories that matter (two): `C:\Users\basel\.claude\projects\c--Users-basel-masaha\memory\` (worker A)
   and `C--Users-basel-masaha-b\memory\` (worker B). The others are left as they are.
 
+## 3b. The one absolute rule
+
+**You never delete an old copy** (the old workspace, the old folders, the backup) — not even with the owner's word in the chat. You hand him the paths and the commands; **he deletes them by hand.**
+
 ## 4. Lessons the project paid for (keep them)
 
 - Never `npm ci` while VS Code is open — a locked native file leaves `node_modules` half-installed. During
@@ -52,8 +56,8 @@ ask the owner** — never improvise.
 ## 5. Done means
 
 All seven phases verified; the owner opened the new folders and ran one worker; the workspace repo pushed with
-the path commit; the nightly task runs from the new path; memories copied and readable; the old copies deleted
-at the end of the same sitting, with the owner's word. **The whole task is one sitting of one to two hours.** Then: `HANDOFF.md` (the main one) gets one line, this file
+the path commit; the nightly task runs from the new path; memories copied and readable; the old copies listed
+for the owner, **who deletes them himself**. **The whole task is one sitting of one to two hours.** Then: `HANDOFF.md` (the main one) gets one line, this file
 and the task move to `_DONE`, and your conversation ends.
 
 ## Status log (append one dated line per step; newest last)

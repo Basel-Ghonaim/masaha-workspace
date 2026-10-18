@@ -12,6 +12,7 @@ inventory of 2026-10-18; every step that depends on the machine's state at that 
 > before Phase 1, and reinstalled afterwards with `npm ci` **only in `app` and `app-b`** (the design worktrees
 > only serve the prototype with Python and need none). (3) **Only two Claude Code memories matter**: worker A's
 > (main worktree, key `c--Users-basel-masaha`) and worker B's (`C--Users-basel-masaha-b`); the others are left.
+> **The old copies are deleted only by the owner, by hand** (2026-10-18): the supervisor and any agent **never delete** `D:\masahaWorkspace.OLD-*`, the old folders in `C:\Users\basel\` or the backup of §3.3 — not even with the owner's word in the chat. At the end the supervisor gives the owner the exact paths and the commands to run himself, and stops.
 
 ## 0. Why, and the target
 
@@ -163,15 +164,15 @@ stop it by PID and check the port is free. In `design`: serve the prototype once
 1. A scan of `C:\Users\basel` (top level), `D:\` and every active file finds no live use of an old path.
 2. The owner opens each new folder in VS Code and the workers' launch lines work; one design review and one
    focused test run from the new paths.
-3. **At the end of the same sitting**, once 1–2 pass and with the owner's word: delete
-   `D:\masahaWorkspace.OLD-<date>` (the workspace is also on GitHub) and the empty old folders in
-   `C:\Users\basel\`. The backup folder of §3.3 is deleted with them, or kept if the owner prefers.
+3. **At the end of the same sitting**, once 1–2 pass: **hand the owner** the list of old copies (`D:\masahaWorkspace.OLD-<date>`,
+   the empty old folders in `C:\Users\basel\`, the backup of §3.3) and the commands to delete them. **The owner deletes them himself;
+   you never run a delete.**
 
 ## 11. Rollback (any phase)
 
 Phases 1–2 are renames: reverse them (`git worktree move` back, `Move-Item` back) and `git worktree repair`.
 Phase 3: `npm ci` again. Phase 5: the old workspace is intact until §10 — rename it back, restore
-the task. Memories and settings: the zip of §3.3. Nothing is deleted before §10.
+the task. Memories and settings: the zip of §3.3. Nothing old is ever deleted by the supervisor.
 
 ## 12. Report
 

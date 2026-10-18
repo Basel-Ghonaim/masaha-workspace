@@ -171,3 +171,15 @@ Branch `feat/space-staff` exists, at `origin/main` (`10d1e854`), no commit, tree
 - B16 (an email with an account looked up and linked) → T19 `expected 201 to be 409`; restored → passed. Made as a lookup before the insert (the drift P5 names): after the unique violation the transaction is aborted, so "link on null" could only 500.
 - B17 (`counted` after `validate`) → T20 `expected 422 to be 429`; restored → passed.
 - B18 (`deactivatedAt: null` in `findReceptionLinksAt`) → T21 `expected { success: true, …(1) } to deeply equal { success: true, …(1) }`; restored → passed.
+
+## C5 — `0f8c9e87 feat(space-links): deactivate and reactivate staff` (50)
+
+- Red before the code: T17 (PATCH added to the routes) `expected 404 to be 403`; T22 `expected 404 to be 200`; T23 `expected 404 to be 200`. T24 ∅ (404 before and after); its break is B20.
+- On the way: T22's first red run showed `expected 500 to be 200` on the receptionist's `GET /manage/spaces/:spaceId` *before* any PATCH — the space's read needs the platform's settings, which the test factory does not seed. The PATCH describe seeds them (`beforeEach(seedSettings)`, the space tests' helper); then red for the right reason (404, no route).
+- The staff service now takes `now: clock` (`app.ts`).
+- Green: staff tests "Tests  9 passed (9)"; typecheck exit 0; lint exit 0.
+
+### Breaks (C5)
+- B19 (`endSessions` removed) → T22 `expected 404 to be 401` (the old token reaches the link check instead of being refused); restored → passed.
+- B20 (`findReceptionLink` without the role) → T24 `expected 200 to be 404` (the co-owner deactivated); restored → passed.
+- T23's break (the same-state return removed) → `expected [ 'space.staffDeactivated', …(2) ] to deeply equal [ 'space.staffDeactivated', …(1) ]`; restored → passed.
