@@ -78,3 +78,20 @@ and the task move to `_DONE`, and your conversation ends.
   only `apps/api/src/generated/` → nothing lost; they are removed **by the owner** (`git worktree remove`), never by
   me. `masaha-b`: head on `origin/main`, clean; unique only `.claude/settings.local.json` + two `.env` (backup in
   Phase 0); 10 active workspace files name `masaha-b`. Recommended: move it (cheap, keeps worker B ready). Waiting.
+- 2026-10-18 17:40 — owner: `masaha-b` is moved; opencode stopped. **Phase 0 done** (see `4_REPORT.md`): snapshot
+  `ae869df` pushed, task disabled; backup `C:\dev-migration-backup\2026-10-18\` hash-verified (35 memory files);
+  `node_modules` gone in `masaha` and `masaha-b`, 2032 tracked files intact. Waiting for the owner on Phase 1.
+- 2026-10-18 17:50 — owner removed both design worktrees (checked). **Phase 1 done**: `masaha-b` →
+  `C:\dev\masaha\app-b`, head `18ab1705`, clean, 2032 files, `.env` = backup. Waiting for the owner on Phase 2.
+- 2026-10-18 18:00 — **Phase 2 done**: main → `C:\dev\masaha\app` (4622 files, same bytes), `worktree repair` linked
+  `app-b` both ways; both clean at `18ab1705`; `.env`/settings/storage = backup; fsck clean; memory 35 untouched.
+  No `masaha*` folder left in `C:\Users\basel`. Waiting for the owner on Phase 3.
+- 2026-10-18 18:10 — **Phase 3 done**: `npm ci` exit 0 in `app` then `app-b`; the three `@masaha` junctions in
+  each point inside their own worktree, 0 outside; shared built, Prisma generated; both clean. Waiting on Phase 4.
+- 2026-10-18 18:20 — Phase 4: `app` lint/typecheck/unit green (1788 tests). **STOP**: `masaha-postgres-1` won't
+  start — its bind mount names the old path `C:\Users\basel\masaha\docker\postgres\...` (plan §1.4 missed it);
+  Docker re-created 3 empty folders there. Volume `masaha_masaha-pgdata` intact. Asked the owner.
+- 2026-10-18 17:55 — owner: back up the volume, recreate via compose. Volume tar hash-verified (3018 files);
+  container recreated from `C:\dev\masaha\app`, same data ("Skipping initialization", clean shutdown 14:08:35 UTC),
+  4 DBs present. **Phase 4 done**: `app` and `app-b` lint/typecheck/unit/API test green, `/health` db up on
+  3320 and 3321, ports freed. Waiting for the owner on Phase 5.
