@@ -26,6 +26,14 @@ DESIGN\              DECISIONS\ (reference), ROUND2\ (active), _DONE\<TASK>\
 TASKS\_DONE\         AMENITIES, MEDIA
 ```
 
+## Backup
+
+A private Git repository, `Basel-Ghonaim/masaha-workspace` on GitHub (since 2026-10-18). The Windows task
+`masaha-workspace-snapshot` runs `_SHARED\snapshot.ps1` every night at 23:00: it commits every change as
+«snapshot YYYY-MM-DD» and pushes, and writes nothing when nothing changed (its log: `_SHARED\snapshot.log`,
+not committed). Run the script by hand after an important day. The review logs (`DESIGN\ROUND2\LOGS\`) are
+not kept. This repository is not the project's: here `git add -A` is the intent.
+
 ## Rules
 
 - One folder per task. A task folder holds its files flat, its prompt kit in `kit\`, and its screenshots in `shots\<folder name>\`.
