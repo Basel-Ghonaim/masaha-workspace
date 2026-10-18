@@ -7,8 +7,8 @@ inventory of 2026-10-18; every step that depends on the machine's state at that 
 
 
 > **Amended by the owner, 2026-10-18 (binding):** (1) **the whole migration fits in one sitting of one to two
-> hours** — the owner does not stop work for days; the old copies are deleted **at the end of the same sitting**,
-> after §10's proof, with the owner's word. (2) **`node_modules` is deleted, not moved**, in all four worktrees
+> hours** — the owner does not stop work for days; the old copies are **listed for the owner at the end of the
+> same sitting**, after §10's proof, and **he deletes them himself**. (2) **`node_modules` is deleted, not moved**, in all four worktrees
 > before Phase 1, and reinstalled afterwards with `npm ci` **only in `app` and `app-b`** (the design worktrees
 > only serve the prototype with Python and need none). (3) **Only two Claude Code memories matter**: worker A's
 > (main worktree, key `c--Users-basel-masaha`) and worker B's (`C--Users-basel-masaha-b`); the others are left.
@@ -70,8 +70,8 @@ lists candidates (and what `D:\MASAHA\` — `DOCS`, `DS`, `PROTOTYPE`, `VD` — 
   commits are fine (they move with the folder); record each branch and head first.
 - **One phase at a time; verify; record in `4_REPORT.md`; only then the next.** A failed check → stop, report,
   do not improvise. Every move is a rename on `C:` (fast, reversible); the cross-volume workspace move is a
-  **copy + hash check, never a move**; the old folder is deleted at the end of the sitting, after §10.
-- **Never** `git worktree prune`, `git clean`, `npm ci`, `db:up`, `db:reset`, a delete of `.git`, a delete of
+  **copy + hash check, never a move**; the old folder stays until the owner deletes it himself (§10).
+- **Never** `git worktree prune`, `git clean`, `db:up`, `db:reset`, `npm ci` outside Phase 3, a delete of `.git`, a delete of
   any old folder before §10.
 
 ## 3. Phase 0 — snapshot and record (no change)
@@ -133,7 +133,7 @@ stop it by PID and check the port is free. In `design`: serve the prototype once
 2. Verify: same file count and SHA-256 of every file (a Python script that walks both trees); `git -C
    C:\dev\masaha\workspace status` clean and `git log -1` equal to D's.
 3. Rename the old one: `Rename-Item D:\masahaWorkspace masahaWorkspace.OLD-<date>` (never written again;
-   deleted at the end of the sitting, §10).
+   the owner deletes it himself, §10).
 4. **Rewrite the active files' paths** (§1.5) with one script, in this order (longest first):
    `C:\Users\basel\masaha-design-b` → `C:\dev\masaha\design-b`; `C:\Users\basel\masaha-design` →
    `C:\dev\masaha\design`; `C:\Users\basel\masaha-b` → `C:\dev\masaha\app-b`; `C:\Users\basel\masaha` →
