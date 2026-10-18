@@ -43,8 +43,7 @@ PRs come from the reports and from `gh pr list --state merged` (branch match). "
 
 ## TASKS (one-off)
 
-- TASKS · MIGRATION_DEV · planned · — · supervisor: «مشرف التنظيم والنقل» (HANDOFF_MIGRATION.md); move to C:\dev\masaha at a quiet point
-
+- TASKS · MIGRATION_DEV · done · — · TASKS\_DONE\MIGRATION_DEV (4_REPORT.md); Masaha now under C:\dev\masaha (2026-10-18)
 - TASKS · AMENITIES · done · #64 · S1 MASAHA_AMENITIES, S5 amenities-shots
 - TASKS · MEDIA · done · #77 · S1 MASAHA_MEDIA, S5 media-shots
 

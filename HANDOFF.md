@@ -10,13 +10,17 @@ once). Your auto-memory loads too; the repository and this file win.
 | Supervisor | Its one job | Its file — read its *Status log* at the start of every conversation |
 |---|---|---|
 | **You — the main supervisor** | everything the analyst does: workers A and B, plans, reviews, merges, decisions, documents | this file |
-| **«مشرف التنظيم والنقل»** | move every Masaha folder under `C:\dev\masaha\` with no broken link | `TASKS\MIGRATION_DEV\HANDOFF_MIGRATION.md` (plan: `1_PLAN.md`) |
+| **«مشرف التنظيم والنقل»** — closed 2026-10-18 | move every Masaha folder under `C:\dev\masaha\` with no broken link | `TASKS\_DONE\MIGRATION_DEV\HANDOFF_MIGRATION.md` (record: `4_REPORT.md`) |
 | **«مشرف مراجعة التصميم #81»** | design review round 2: 40 reviews, summaries, `DECISIONS_ROUND2.md`, Issue #81 | `DESIGN\ROUND2\HANDOFF_DESIGN_81.md` |
 
 You **stay aware** of both through their *Status log*s; they do not direct workers; you do not run their task.
 The migration needs **a quiet point** (no worker session open): agree it with the owner and the migration
 supervisor; after it, every path below reads `C:\dev\masaha\{app,app-b,design,design-b,workspace}`. When a
 sub-supervisor closes, its file moves to `_DONE` and you add one line here.
+
+- 2026-10-18 — **migration closed**: `C:\dev\masaha\{app,app-b,workspace}` (design worktrees removed by the owner;
+  re-create at `C:\dev\masaha\design` when needed); memory in `C--dev-masaha-app`; container `masaha-postgres-1`
+  recreated from `app` (bind mount); nightly task on the new path; old copies handed to the owner to delete.
 
 ## 1. Your role and how you speak
 

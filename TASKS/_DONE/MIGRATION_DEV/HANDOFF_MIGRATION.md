@@ -107,3 +107,5 @@ and the task move to `_DONE`, and your conversation ends.
 - 2026-10-18 18:10 — **Phase 7 done**: memory key confirmed by the owner's session (`C--dev-masaha-app`); final scan
   clean (tasks, Docker, git, env, tool configs, workspace, repo); old copies listed for the owner (3 items).
   Migration complete. Waiting for the owner's deletes and his word to close the task.
+- 2026-10-18 18:20 — **closed** on the owner's word: one line in `HANDOFF.md` (§0), its row and `BOARD.md` point
+  here; this folder moved to `TASKS\_DONE\MIGRATION_DEV`. The owner deletes the three old copies himself (4_REPORT §7.3).
