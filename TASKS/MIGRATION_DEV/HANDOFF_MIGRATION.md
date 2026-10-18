@@ -101,3 +101,6 @@ and the task move to `_DONE`, and your conversation ends.
 - 2026-10-18 18:05 — owner approved the four recommendations. **Phase 5 done**: old copy renamed
   `D:\masahaWorkspace.OLD-2026-10-18` (not deleted); 71 files / 434 paths rewritten, 0 residual, 2 lines fixed by
   hand; `ec6bffc` pushed; nightly task recreated on the new path, run once (Last Result 0). Waiting on Phase 6.
+- 2026-10-18 18:10 — **Phase 6 done**: memory copied (not moved) to `C--dev-masaha-app\memory` (35 = source =
+  backup), wording updated there only (5 files, 0 residual); `settings.json` 3 rules → `/c/dev/masaha/app`;
+  setup.md clean. Waiting on Phase 7.

@@ -438,3 +438,61 @@ old copy untouched: c9ad45c ; its log tail: 2026-10-18 17:55 committed and pushe
 ```
 
 **Phase 5 done.** Phase 6 (memories, settings, launch lines) waits for the owner's word.
+
+## Phase 6 — Claude Code, VS Code and the habits (2026-10-18, 18:10)
+
+### 6.1 Memory (worker A only; worker B's key has no `memory\`)
+
+New key: `C:\dev\masaha\app` → `C--dev-masaha-app` (Claude Code replaces `:` and `\` with `-`; same rule gives this
+session's `C--Users-basel`; NTFS is case-insensitive, so the VS Code spelling `c--dev-masaha-app` is the same
+folder). **Copied, not moved** — the old key stays as it is. To be confirmed by the owner in Phase 7 (`/memory`).
+
+```
+Copy-Item c--Users-basel-masaha\memory\* -> C--dev-masaha-app\memory\
+src=35 new=35 backup=35
+new vs src diff=0 ; new vs backup diff=0
+```
+
+Wording updated in the **new copy only** (same rewrite script; dry run read first):
+
+```
+DRY RUN: files changed=5 replacements=10 app-b=1 app=1 workspace=8 ; other: C:\Users\basel\masaha-readme ×1 (task-workers.md, a past worktree — left)
+APPLIED: files changed=5 replacements=10 ... residual: 0
+hand fix prompt-folders.md: "Workers writing to D: need" -> "Workers writing to the workspace need" (1 occurrence)
+count still 35 ; old key's files hash-equal to the backup: True
+```
+
+Files: `MEMORY.md` (2 index lines), `pr-screenshots.md`, `prompt-folders.md`, `two-workers.md`, `workspace-backup.md`.
+
+### 6.2 `C:\Users\basel\.claude\settings.json`
+
+Fresh copy first: `C:\dev-migration-backup\2026-10-18\claude\settings.before-phase6.json` (same as Phase 0's).
+No BOM, LF. Three rules, each found exactly once, path string only:
+
+```
+L24: "Bash(git -C /c/dev/masaha/app log --oneline -1)",
+L25: "Bash(git -C /c/dev/masaha/app branch --show-current)",
+L26: "Read(//c/dev/masaha/app/apps/api/**)",
+json valid after write ; diff lines vs copy: 6 (3 out, 3 in)
+```
+
+Left: L20–21 name an old session's scratchpad (`c--Users-basel-masaha-api`), not a Masaha folder. The two
+`.claude\settings.local.json` (in `app`, `app-b`) name no absolute path. `C:\Users\basel\.claude.json` has 15
+old-path mentions — Claude Code's own per-folder state; not edited (a new folder gets its own entry when opened).
+
+### 6.3 Launch lines (for the owner)
+
+```
+cd C:\dev\masaha\app   ; claude --add-dir C:\dev\masaha\workspace     (worker A)
+cd C:\dev\masaha\app-b ; claude --add-dir C:\dev\masaha\workspace     (worker B)
+```
+
+Design reviews (Kilo/OpenCode): the design worktree was removed — re-create at `C:\dev\masaha\design` from
+`origin/main` when needed. VS Code: open the new folders; remove the old recent entries (owner).
+
+### 6.4 Repository
+
+`docs/development/setup.md`: no absolute folder (scan for `X:\`, `Users\basel`, `/c/`: 0 hits). Recorded for the
+next item (no repository edit here): moving the folder needs the Postgres container recreated (bind mount, Phase 4).
+
+**Phase 6 done.** Phase 7 (final proof, then the list of old copies for the owner) waits for the owner's word.
