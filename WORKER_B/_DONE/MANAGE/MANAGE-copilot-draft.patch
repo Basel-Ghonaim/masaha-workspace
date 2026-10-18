@@ -1,0 +1,434 @@
+diff --git a/apps/api/src/app.ts b/apps/api/src/app.ts
+index c4e87451..d958f1c1 100644
+--- a/apps/api/src/app.ts
++++ b/apps/api/src/app.ts
+@@ -79,6 +79,8 @@ import {
+   createSpaceController,
+   createSpaceService,
+   createSpacesAdminRouter,
++  createSpacesManageRouter,
++  createPhotosManageRouter,
+   createSpacesService,
+ } from './modules/spaces/index.ts';
+ import {
+@@ -93,6 +95,7 @@ import {
+   createRequireAuth,
+   loadSpaceLinks,
+   readAccessToken,
++  requireSpaceAccess,
+   requireRole,
+ } from './shared/auth/index.ts';
+ import { errorHandler, notFoundHandler } from './shared/errors/index.ts';
+@@ -333,6 +336,21 @@ export function createApi({
+     '/manage/spaces',
+     createSpaceLinksMeRouter(createSpaceLinksController(spaceLinks), requireAuth),
+   );
++  api.use(
++    '/manage/spaces/:spaceId',
++    requireAuth(),
++    requireSpaceAccess((spaceId, tx) => spaceLinks.linksAt(spaceId, tx)),
++    createSpacesManageRouter({
++      space: createSpaceController(space),
++      profile: createProfileController(profile),
++      hours: createHoursController(hours),
++      prices: createPricesController(prices),
++      amenities: createSpaceAmenitiesController(spaceAmenities),
++      contacts: createContactsController(contacts),
++      confirm: createConfirmController(confirm),
++    }),
++    createPhotosManageRouter({ photos: createPhotosController(photos), limiter }),
++  );
+ 
+   // The platform's routes: guarded once here, so no module's admin router can leave it out.
+   const admin = Router();
+diff --git a/apps/api/src/modules/spaces/index.ts b/apps/api/src/modules/spaces/index.ts
+index 9be36e6a..810693b4 100644
+--- a/apps/api/src/modules/spaces/index.ts
++++ b/apps/api/src/modules/spaces/index.ts
+@@ -36,5 +36,7 @@ export { createProfileService, type ProfileService } from './profile/profile.ser
+ export { createSpaceController } from './space/space.controller.ts';
+ export { createSpaceService, type SpaceService } from './space/space.service.ts';
+ export { createSpacesAdminRouter } from './spaces.admin.routes.ts';
++export { createSpacesManageRouter } from './spaces.manage.routes.ts';
++export { createPhotosManageRouter } from './photos.manage.routes.ts';
+ export type { SpaceRow } from './spaces.repository.ts';
+ export { createSpacesService, type SpacesService } from './spaces.service.ts';
+diff --git a/apps/api/src/modules/spaces/manage.api.test.ts b/apps/api/src/modules/spaces/manage.api.test.ts
+new file mode 100644
+index 00000000..7e451d42
+--- /dev/null
++++ b/apps/api/src/modules/spaces/manage.api.test.ts
+@@ -0,0 +1,105 @@
++import request from 'supertest';
++import { beforeEach, describe, expect, it } from 'vitest';
++
++import { accessTokens, createTestApp } from '../../../test/app.ts';
++import { dataOf, errorOf, signIn } from '../../../test/admin.ts';
++import { createSpace } from '../../../test/factories.ts';
++import { resetDatabase } from '../../../test/reset-database.ts';
++import { seedSettings, signInOwnerOf } from '../../../test/spaces.ts';
++import { prisma } from '../../db/index.ts';
++
++const app = createTestApp({ clock: () => new Date('2026-10-15T09:00:00.000Z') });
++
++async function signInReceptionOf(spaceId: number) {
++  const user = await prisma.user.create({
++    data: {
++      email: `reception-${String(spaceId)}@example.com`,
++      name: 'Reception',
++      passwordHash: 'x',
++    },
++  });
++  await prisma.spaceManager.create({
++    data: { spaceId, userId: user.id, role: 'RECEPTION' },
++  });
++  const token = await accessTokens.sign({
++    userId: user.id,
++    mustChangePassword: false,
++    sessionVersion: user.sessionVersion,
++  });
++  return { id: user.id, authorization: 'Bearer ' + token };
++}
++
++function managed(spaceId: number, rest = '') {
++  return `/api/v1/manage/spaces/${String(spaceId)}${rest}`;
++}
++
++describe('managed space access', () => {
++  beforeEach(async () => {
++    await resetDatabase(prisma);
++    await seedSettings();
++  });
++
++  it('lets the owner and reception read the space', async () => {
++    const space = await createSpace();
++    const owner = await signInOwnerOf(space.id);
++    const reception = await signInReceptionOf(space.id);
++
++    const ownerResponse = await request(app)
++      .get(managed(space.id))
++      .set('Authorization', owner.authorization);
++    const receptionResponse = await request(app)
++      .get(managed(space.id))
++      .set('Authorization', reception.authorization);
++
++    expect(ownerResponse.status).toBe(200);
++    expect(receptionResponse.status).toBe(200);
++    expect(dataOf(receptionResponse)).toMatchObject({ id: space.id, isVerified: true });
++  });
++
++  it.each([
++    ['a guest', undefined],
++    ['an unlinked user', 'USER'],
++    ['an admin without a link', 'ADMIN'],
++  ] as const)('hides the space from %s', async (_name, caller) => {
++    const space = await createSpace();
++    const signedIn = caller ? await signIn(caller) : undefined;
++    const response = await request(app)
++      .get(managed(space.id))
++      .set('Authorization', signedIn?.authorization ?? '');
++
++    expect(response.status).toBe(caller ? 404 : 401);
++    if (caller) expect(errorOf(response).type).toBe('not_found');
++  });
++
++  it('keeps reception read-only while the owner can edit the profile', async () => {
++    const space = await createSpace();
++    const owner = await signInOwnerOf(space.id);
++    const reception = await signInReceptionOf(space.id);
++
++    const refused = await request(app)
++      .patch(managed(space.id))
++      .set('Authorization', reception.authorization)
++      .send({ nameEn: 'Changed by reception' });
++    const changed = await request(app)
++      .patch(managed(space.id))
++      .set('Authorization', owner.authorization)
++      .send({ nameEn: 'Changed by owner' });
++
++    expect(refused.status).toBe(403);
++    expect(changed.status).toBe(200);
++    expect((dataOf(changed) as { nameEn: string }).nameEn).toBe('Changed by owner');
++  });
++
++  it('returns not_found for a deleted linked space', async () => {
++    const space = await createSpace();
++    const owner = await signInOwnerOf(space.id);
++    await prisma.space.update({ where: { id: space.id }, data: { deletedAt: new Date() } });
++
++    const response = await request(app)
++      .get(managed(space.id))
++      .set('Authorization', owner.authorization);
++
++    expect(response.status).toBe(404);
++    expect(errorOf(response).type).toBe('not_found');
++  });
++});
+diff --git a/apps/api/src/modules/spaces/photos.manage.routes.ts b/apps/api/src/modules/spaces/photos.manage.routes.ts
+new file mode 100644
+index 00000000..47af0fdb
+--- /dev/null
++++ b/apps/api/src/modules/spaces/photos.manage.routes.ts
+@@ -0,0 +1,31 @@
++import { PHOTO_MAX_BYTES, photoOrderSchema } from '@masaha/shared/spaces';
++import { Router } from 'express';
++
++import { receiveFile } from '../../shared/http/index.ts';
++import { signedIn } from '../../shared/auth/index.ts';
++import { limitRequests, type Limiter } from '../../shared/rate-limit/index.ts';
++import { validate } from '../../shared/validation/index.ts';
++import type { PhotosController } from './photos/photos.controller.ts';
++import { PHOTO_UPLOAD } from './spaces.limits.ts';
++
++export function createPhotosManageRouter({
++  photos,
++  limiter,
++}: {
++  photos: PhotosController;
++  limiter: Limiter;
++}): Router {
++  const router = Router({ mergeParams: true });
++  router.get('/', photos.list);
++  router.post(
++    '/',
++    limitRequests(limiter, (req) =>
++      Promise.resolve({ policy: PHOTO_UPLOAD, by: [String(signedIn(req).userId)] }),
++    ),
++    receiveFile('photo', PHOTO_MAX_BYTES),
++    photos.upload,
++  );
++  router.put('/order', validate(photoOrderSchema), photos.reorder);
++  router.delete('/:photoId', photos.remove);
++  return router;
++}
+diff --git a/apps/api/src/modules/spaces/space/space.controller.ts b/apps/api/src/modules/spaces/space/space.controller.ts
+index eaec6d13..39fa9dfb 100644
+--- a/apps/api/src/modules/spaces/space/space.controller.ts
++++ b/apps/api/src/modules/spaces/space/space.controller.ts
+@@ -17,6 +17,14 @@ export function createSpaceController(spaces: SpaceService) {
+       sendSuccess(res, (await spaces.get(spaceOf(req))) satisfies AdminSpace);
+     },
+ 
++    getManaged: async (req: Request, res: Response) => {
++      const { userId, role } = signedIn(req);
++      sendSuccess(
++        res,
++        (await spaces.getForStaff({ id: userId, role }, spaceOf(req))) satisfies AdminSpace,
++      );
++    },
++
+     setHidden: async (req: Request, res: Response) => {
+       const { userId } = signedIn(req);
+       const { isHidden } = req.body as SetSpaceHiddenRequest;
+diff --git a/apps/api/src/modules/spaces/space/space.service.ts b/apps/api/src/modules/spaces/space/space.service.ts
+index c5a3e0ac..5aef3025 100644
+--- a/apps/api/src/modules/spaces/space/space.service.ts
++++ b/apps/api/src/modules/spaces/space/space.service.ts
+@@ -2,7 +2,7 @@ import type { AdminSpace, CreateSpaceRequest } from '@masaha/shared/spaces';
+ 
+ import type { RunInTransaction } from '../../../db/index.ts';
+ import type { AuditValues, AuditWriter } from '../../../shared/audit/index.ts';
+-import { isVerified, type LoadedSpace } from '../../../shared/auth/index.ts';
++import { can, isVerified, type Actor, type LoadedSpace } from '../../../shared/auth/index.ts';
+ import { AppError } from '../../../shared/errors/index.ts';
+ import type { LookupsService } from '../../lookups/index.ts';
+ import type { PlatformSettingsService } from '../../platform-settings/index.ts';
+@@ -99,6 +99,18 @@ export function createSpaceService({
+       });
+     },
+ 
++    /** Reads a managed space for its owner or reception, with authorization under the share lock. */
++    async getForStaff(actor: Actor, space: LoadedSpace): Promise<AdminSpace> {
++      const thresholds = await platformSettings.stalenessThresholds();
++      return runInTransaction(async (tx) => {
++        const found = await repository.lockShared(space.id, tx);
++        if (!found) throw AppError.notFound(undefined, 'Space not found');
++        const locked = { links: await space.linksUnder(tx) };
++        if (!can(actor, 'space.read', locked)) throw AppError.notFound(undefined, 'Space not found');
++        return view(found, isVerified(locked), thresholds, await readFacts(space.id, tx));
++      });
++    },
++
+     /** Hides the space from the public, or shows it again. */
+     setHidden(actorId: number, spaceId: number, isHidden: boolean): Promise<void> {
+       return change(actorId, spaceId, (space) =>
+diff --git a/apps/api/src/modules/spaces/spaces.manage.routes.ts b/apps/api/src/modules/spaces/spaces.manage.routes.ts
+new file mode 100644
+index 00000000..c47183c5
+--- /dev/null
++++ b/apps/api/src/modules/spaces/spaces.manage.routes.ts
+@@ -0,0 +1,48 @@
++import {
++  FACT_GROUPS,
++  updateSpaceAmenitiesSchema,
++  updateSpaceContactsSchema,
++  updateSpaceHoursSchema,
++  updateSpacePricesSchema,
++  updateSpaceProfileSchema,
++} from '@masaha/shared/spaces';
++import { Router } from 'express';
++
++import { validate } from '../../shared/validation/index.ts';
++import type { SpaceAmenitiesController } from './amenities/amenities.controller.ts';
++import type { ConfirmController } from './confirm/confirm.controller.ts';
++import type { ContactsController } from './contacts/contacts.controller.ts';
++import type { HoursController } from './hours/hours.controller.ts';
++import type { PricesController } from './prices/prices.controller.ts';
++import type { ProfileController } from './profile/profile.controller.ts';
++import type { SpaceController } from './space/space.controller.ts';
++
++export function createSpacesManageRouter({
++  space,
++  profile,
++  hours,
++  prices,
++  amenities,
++  contacts,
++  confirm,
++}: {
++  space: SpaceController;
++  profile: ProfileController;
++  hours: HoursController;
++  prices: PricesController;
++  amenities: SpaceAmenitiesController;
++  contacts: ContactsController;
++  confirm: ConfirmController;
++}): Router {
++  const router = Router({ mergeParams: true });
++  router.get('/', space.getManaged);
++  router.patch('/', validate(updateSpaceProfileSchema), profile.update);
++  router.put('/hours', validate(updateSpaceHoursSchema), hours.update);
++  router.put('/prices', validate(updateSpacePricesSchema), prices.update);
++  router.put('/amenities', validate(updateSpaceAmenitiesSchema), amenities.update);
++  router.put('/contacts', validate(updateSpaceContactsSchema), contacts.update);
++  for (const group of FACT_GROUPS) {
++    router.post(`/${group}/confirm`, confirm.confirm(group));
++  }
++  return router;
++}
+diff --git a/apps/api/src/shared/auth/can.ts b/apps/api/src/shared/auth/can.ts
+index b78b268d..a4d0f4d9 100644
+--- a/apps/api/src/shared/auth/can.ts
++++ b/apps/api/src/shared/auth/can.ts
+@@ -53,6 +53,7 @@ const PERMISSIONS = {
+   'space.facts.update': 'adminWhileUnverifiedElseOwner',
+   // A space's photos: no fact group, no date, but kept by whoever keeps its facts.
+   'space.photos.manage': 'adminWhileUnverifiedElseOwner',
++  'space.read': 'staff',
+   'dataReports.resolve': 'adminWhileUnverifiedElseOwner',
+   'space.dataReports.read': 'adminOrOwner',
+ 
+diff --git a/apps/api/src/shared/auth/can.unit.test.ts b/apps/api/src/shared/auth/can.unit.test.ts
+index a211cd56..9d93958f 100644
+--- a/apps/api/src/shared/auth/can.unit.test.ts
++++ b/apps/api/src/shared/auth/can.unit.test.ts
+@@ -76,6 +76,7 @@ const SPACE_EXPECTATIONS: Record<SpaceAction, SpaceCells> = {
+   'space.profile.update': ADMIN_WHILE_UNVERIFIED,
+   'space.facts.update': ADMIN_WHILE_UNVERIFIED,
+   'space.photos.manage': ADMIN_WHILE_UNVERIFIED,
++  'space.read': STAFF,
+   'dataReports.resolve': ADMIN_WHILE_UNVERIFIED,
+   'space.dataReports.read': ADMIN_OR_OWNER,
+   'attendance.record': STAFF,
+diff --git a/apps/api/src/shared/auth/index.ts b/apps/api/src/shared/auth/index.ts
+index 4c7f7a19..b6d83f58 100644
+--- a/apps/api/src/shared/auth/index.ts
++++ b/apps/api/src/shared/auth/index.ts
+@@ -22,3 +22,4 @@ export {
+ export { requireRole } from './requireRole.ts';
+ export { signedIn } from './signedIn.ts';
+ export { loadSpaceLinks, spaceOf, type LinksLoader, type LoadedSpace } from './spaceLinks.ts';
++export { requireSpaceAccess } from './spaceAccess.ts';
+diff --git a/apps/api/src/shared/auth/spaceAccess.ts b/apps/api/src/shared/auth/spaceAccess.ts
+new file mode 100644
+index 00000000..2a87460b
+--- /dev/null
++++ b/apps/api/src/shared/auth/spaceAccess.ts
+@@ -0,0 +1,21 @@
++import type { RequestHandler } from 'express';
++
++import { AppError } from '../errors/index.ts';
++import { parseId } from '../validation/index.ts';
++import type { LinksLoader } from './spaceLinks.ts';
++
++/**
++ * The refusing space middleware for managed routes: an active link is required, and the route
++ * exposes no information about spaces the caller cannot manage.
++ */
++export function requireSpaceAccess(loader: LinksLoader): RequestHandler {
++  return async (req, _res, next) => {
++    const id = parseId(req.params.spaceId);
++    const links = await loader(id);
++    if (!links.some(({ deactivatedAt }) => deactivatedAt === null)) {
++      throw AppError.notFound(undefined, 'Space not found');
++    }
++    req.space = { id, links, linksUnder: (tx) => loader(id, tx) };
++    next();
++  };
++}
+diff --git a/docs/api/api-contract.md b/docs/api/api-contract.md
+index c8feb8a2..96f71502 100644
+--- a/docs/api/api-contract.md
++++ b/docs/api/api-contract.md
+@@ -174,6 +174,28 @@ The spaces a signed-in user works at, as owner or reception ([ADR 0009](../archi
+   ```
+ - **Errors:** `unauthorized` (401) without a valid access token; `forbidden` (403) `PASSWORD_CHANGE_REQUIRED` while a temporary password is pending.
+ 
++#### `GET /manage/spaces/:spaceId` · 🧾
++ - **Access:** the caller must have an active `OWNER` or `RECEPTION` link to the space. A hidden
++   space remains available; a soft-deleted or unknown space, and a caller without a link, answer
++   `not_found` (404) without revealing whether the space exists. An `ADMIN` uses the `/admin`
++   routes and is not admitted by the managed-space route without a space link.
++ - **200:** the same `AdminSpace` shape used by the admin's single-space read: the profile, all
++   fact groups, freshness dates, missing and stale groups, and `isVerified`. Reception is
++   read-only.
++
++#### Managed space writes · 🏢
++ `OWNER` only, on a verified space: `PATCH /manage/spaces/:spaceId` edits the profile;
++ `PUT /manage/spaces/:spaceId/{hours|prices|amenities|contacts}` saves one fact group; and
++ `POST /manage/spaces/:spaceId/{group}/confirm` confirms one fact group. The response is the
++ updated `AdminSpace`; the validation, audit actions and lock rules are the same as the admin's
++ routes. Reception and callers without an active link are refused as above.
++
++#### Managed photos · 🏢 / 🧾
++ `GET /manage/spaces/:spaceId/photos` is available to the owner and reception. The owner may
++ `POST` a photo, `DELETE /manage/spaces/:spaceId/photos/:photoId`, and
++ `PUT /manage/spaces/:spaceId/photos/order`; these reuse the admin photo service, upload
++ limit and storage rules. A photo upload is limited before its file is read.
++
+ ### Lookups (public)
+ 
+ #### `GET /lookups` · 🌐
+diff --git a/docs/backend/conventions.md b/docs/backend/conventions.md
+index d851f642..9aee307a 100644
+--- a/docs/backend/conventions.md
++++ b/docs/backend/conventions.md
+@@ -1,6 +1,6 @@
+ # Backend Conventions
+ 
+-> **Status:** Active · **Class:** Contract — rules to build against. **Built:** the shared errors, http and validation code, with `parseId`; `shared/auth` (the access tokens, `requireAuth`, `requireRole`, `signedIn`, `can()`, and the links loader without the refusal, `loadSpaceLinks`, on the admin's space routes); the audit writer (§6); the rate limiter; the level rule (§7), enforced by lint; `runInTransaction` in `db/`; the modules `sessions`, and `platform-settings` and `space-settings` minimally (the new-space defaults and the staleness thresholds; a space's settings row, created with it), beside the capabilities documented in [`docs/features/`](../README.md#features--one-document-per-capability); the logging of §10; the clock and the timer of §11; of §12, the composition root, the email port, the Google identity port, the storage port with its two adapters and the rate limits in PostgreSQL; of §13, the idempotency key's name, the session lock and the space's lock. **Not yet built:** `optionalAuth` and the refusing space middleware of `/manage` (§8); the audit reader (§6); every other module; Gaza time (§11); the scheduler port (§12); the idempotent creates and the ledger's translation table (§13) · **Last Updated:** 2026-10-13 · **Owner:** Basel Ghoneim
++> **Status:** Active · **Class:** Contract — rules to build against. **Built:** the shared errors, http and validation code, with `parseId`; `shared/auth` (the access tokens, `requireAuth`, `requireRole`, `signedIn`, `can()`, the refusing `requireSpaceAccess` and the links loader, `loadSpaceLinks`, on the admin's space routes); the audit writer (§6); the rate limiter; the level rule (§7), enforced by lint; `runInTransaction` in `db/`; the modules `sessions`, and `platform-settings` and `space-settings` minimally (the new-space defaults and the staleness thresholds; a space's settings row, created with it), beside the capabilities documented in [`docs/features/`](../README.md#features--one-document-per-capability); the logging of §10; the clock and the timer of §11; of §12, the composition root, the email port, the Google identity port, the storage port with its two adapters and the rate limits in PostgreSQL; of §13, the idempotency key's name, the session lock and the space's lock. **Not yet built:** `optionalAuth`; the audit reader (§6); every other module; Gaza time (§11); the scheduler port (§12); the idempotent creates and the ledger's translation table (§13) · **Last Updated:** 2026-10-15 · **Owner:** Basel Ghoneim
+ > **Authority:** The backend's modules, their levels, routers and placements, and the rules every module follows; layering, validation, errors, pagination, audit, logging, time, environments, idempotency and concurrency in `apps/api`. Why the backend is a modular monolith is in [ADR 0012](../architecture/decisions/0012-modular-monolith-backend.md); why identity is three modules is in [ADR 0013](../architecture/decisions/0013-identity-modules.md). Payload shapes and paths are owned by the [API contract](../api/api-contract.md); security mechanisms by [security.md](security.md); where each behaviour is tested by [testing.md](../development/testing.md).
+ 
+ The backend is one application divided into **modules**, one per capability, arranged in **levels** (§7). Each module is built from the same **layers** (§2). **A screen is not a capability** (§7): placements follow the rule that consumes a value, never the screen that shows it.
+@@ -192,7 +192,7 @@ The [API contract](../api/api-contract.md) owns the paths. The composition root
+ ### Space access
+ 
+ - `requireSpaceAccess` (`shared/auth`) takes a links loader. The composition root wires it with `space-links`' service and mounts it **once** on `/manage/spaces/:spaceId`, before every module's `manage` router.
+-- It refuses a caller with no active link at the space. Otherwise it puts the space's links on the request: the `SpaceResource` from which `can()` reads the caller's role and whether the space is verified.
++- It refuses a caller with no active link at the space with `not_found` (404), so a caller cannot learn whether an unrelated space exists. Otherwise it puts the space's links on the request: the `SpaceResource` from which `can()` reads the caller's role and whether the space is verified.
+ - On the admin's space routes, the composition root mounts the same loader without the refusal, so "verified" is known there too.
+ - **A change that decides under the space's lock reads the links again there,** through the loaded space's `linksUnder(tx)`: every link change takes that lock (§13), so a link committed after the loader ran still decides ([finding 43](../architecture/findings/43-two-races-around-a-spaces-facts.md)).
+ - Modules read the links from the request and pass them to their service. **No module imports `space-links` to learn its access or "verified".** `can()` decides per action.
+diff --git a/docs/backend/security.md b/docs/backend/security.md
+index c1facc80..177eb709 100644
+--- a/docs/backend/security.md
++++ b/docs/backend/security.md
+@@ -73,6 +73,7 @@
+ The model (roles, space scope, what each role may do) is owned by [ADR 0002](../architecture/decisions/0002-authorization-model.md). Mechanisms:
+ 
+ - `requireAuth` → 401 without a valid token. It then reads the account by the token's id, on every request: 401 for an account that does not exist, for a suspended one, for a token whose session version is not the account's ([Tokens and cookies](#tokens-and-cookies)), and for a token signed before a temporary password ([Passwords](#passwords)) (no code: each ended every session, so the web's refresh is refused and the session ends). The last two checks overlap, since a temporary password raises the version: the pending check stays as a second guard for any future path that sets a temporary password; the role the request carries is the account's now, never the token's ([ADR 0003](../architecture/decisions/0003-session-model.md), revised). `requireRole(...roles)` → 403.
++- `requireSpaceAccess` → `not_found` (404) for a caller without an active link, including an admin without a link, so managed routes do not reveal another space's existence. It is mounted once on `/manage/spaces/:spaceId`; an active `OWNER` or `RECEPTION` link is then available to `can()`.
+ - Services call `can(actor, action, resource)`; the space scope and the role at the space (`OWNER` or `RECEPTION`) come from the user's active `SpaceManager` link, never from the global role or the client ([ADR 0009](../architecture/decisions/0009-space-scoped-reception-role.md)).
+ - Suspended users cannot log in or refresh, and their unexpired access tokens are refused.
+ - **The admin edits a space's facts only while it is unverified,** with no active `OWNER` link; once an owner has joined, the owner does. Resolving its data reports follows the same rule. `can()` decides, from the links on the request ([conventions › Space access](conventions.md#space-access)).

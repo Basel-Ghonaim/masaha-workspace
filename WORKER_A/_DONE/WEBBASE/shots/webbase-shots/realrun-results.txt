@@ -1,0 +1,22 @@
+WEBBASE real run, 2026-10-12, head 9cb6382; web on 5320, API on 3320 (masaha_dev); local headless Chrome over CDP.
+
+Document title per page, read from document.title (h1 shown beside it):
+site ar /: الرئيسية · مساحة | /spaces: المساحات · مساحة | /about: عن مساحة · مساحة | /no-such-page: الصفحة غير موجودة · مساحة
+focus ar /login: تسجيل الدخول · مساحة | /register: إنشاء حساب · مساحة | /forgot-password: نسيت كلمة المرور · مساحة
+site en /: Home · Masaha | /spaces: Spaces · Masaha | /about: About Masaha · Masaha | /no-such-page: Page not found · Masaha
+focus en /login: Sign in · Masaha | /register: Create account · Masaha | /forgot-password: Forgot password · Masaha
+admin ar /dashboard/admin: نظرة عامة · مساحة | /spaces: المساحات · مساحة | /spaces/new: إضافة مساحة · مساحة | /lookups: القوائم · مساحة | /no-such-page: الصفحة غير موجودة · مساحة
+admin en /dashboard/admin: Overview · Masaha | /spaces: Spaces · Masaha | /spaces/new: Add space · Masaha | /lookups: Lookups · Masaha | /no-such-page: Page not found · Masaha
+Each dashboard page's top-bar h1 matched its title's page part.
+
+Live change: Arabic home -> "English" toggle -> title "Home · Masaha"; admin lookups in Arabic -> "English" -> "Lookups · Masaha".
+After a reload: language en and the chosen theme kept; storage held masaha.language=en, masaha.theme=light.
+
+Storage blocked (a profile that blocks site data, Arabic browser):
+reading localStorage -> SecurityError
+start: title الرئيسية · مساحة, lang ar, page rendered
+after the language and theme toggles: title Home · Masaha, lang en, theme flipped
+after a reload: Arabic again, the device's theme (nothing persisted)
+/spaces: المساحات · مساحة
+
+Not run: the space branch (/dashboard/spaces/...): the dev database's demo owner no longer signs in with the seed's demo password (the seed skips the demo data once it exists), and its data was left untouched. Those titles are proven by the component lane.

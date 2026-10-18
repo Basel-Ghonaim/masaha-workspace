@@ -1,0 +1,87 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "تخطَّ إلى المحتوى" [ref=e6] [cursor=pointer]:
+        - /url: "#main"
+      - link "مساحة" [ref=e7] [cursor=pointer]:
+        - /url: Home.html
+      - navigation "التنقل الرئيسي" [ref=e8]:
+        - link "الرئيسية" [ref=e9] [cursor=pointer]:
+          - /url: Home.html
+        - link "المساحات" [ref=e10] [cursor=pointer]:
+          - /url: Directory.html
+        - link "عن مساحة" [ref=e11] [cursor=pointer]:
+          - /url: About.html
+      - generic [ref=e12]:
+        - button "English" [ref=e13]
+        - button "المظهر الداكن" [ref=e15]
+        - link "تسجيل الدخول" [ref=e16] [cursor=pointer]:
+          - /url: Sign in.html
+  - main [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - heading "اعثر على مساحة عمل في غزة" [level=1] [ref=e20]
+        - paragraph [ref=e21]: ساعات العمل والأسعار والحالة المباشرة لمساحات العمل المشتركة، في مكان واحد.
+      - search [ref=e22]:
+        - textbox "ابحث عن مساحة" [ref=e28]:
+          - /placeholder: اسم المساحة أو المنطقة
+        - button "بحث" [ref=e29]
+    - region [ref=e30]:
+      - generic [ref=e31]:
+        - heading "متاحة الآن" [level=2] [ref=e33]
+        - generic [ref=e34]:
+          - button "الأقرب إليّ" [ref=e35]
+          - link "عرض الكل" [ref=e36] [cursor=pointer]:
+            - /url: Directory.html?available=1
+      - link "فوكس هاب النصر، غزة متاح موثّقة اليوم 08:00–18:00" [ref=e39] [cursor=pointer]:
+        - /url: Space details.html?id=focus
+        - generic [ref=e40]:
+          - generic [ref=e55]:
+            - generic [ref=e56]: فوكس هاب
+            - generic [ref=e57]: النصر، غزة
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - generic [ref=e60]: متاح
+              - generic [ref=e61]: موثّقة
+            - generic [ref=e66]:
+              - text: اليوم
+              - generic [ref=e67]: 08:00–18:00
+    - region [ref=e68]:
+      - heading "تصفّح حسب المنطقة" [level=2] [ref=e69]
+      - generic [ref=e70]:
+        - link "الرمال محافظة غزة · 3 مساحات" [ref=e71] [cursor=pointer]:
+          - /url: Directory.html?area=rimal
+          - generic [ref=e73]:
+            - generic [ref=e74]: الرمال
+            - generic [ref=e75]: محافظة غزة · 3 مساحات
+        - link "النصر محافظة غزة · مساحتان" [ref=e79] [cursor=pointer]:
+          - /url: Directory.html?area=nasr
+          - generic [ref=e81]:
+            - generic [ref=e82]: النصر
+            - generic [ref=e83]: محافظة غزة · مساحتان
+        - link "الشيخ رضوان محافظة غزة · مساحة واحدة" [ref=e87] [cursor=pointer]:
+          - /url: Directory.html?area=sheikh
+          - generic [ref=e89]:
+            - generic [ref=e90]: الشيخ رضوان
+            - generic [ref=e91]: محافظة غزة · مساحة واحدة
+        - link "كل المناطق قطاع غزة · 6 مساحات" [ref=e95] [cursor=pointer]:
+          - /url: Directory.html
+          - generic [ref=e97]:
+            - generic [ref=e98]: كل المناطق
+            - generic [ref=e99]: قطاع غزة · 6 مساحات
+    - region "هل تدير مساحة عمل؟" [ref=e103]:
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]: هل تدير مساحة عمل؟
+          - generic [ref=e107]: تواصل معنا لإضافة مساحتك وتحديث ساعاتها وأسعارها وحالتها المباشرة.
+        - link "تواصل معنا" [ref=e109] [cursor=pointer]:
+          - /url: About.html#owners
+  - contentinfo [ref=e110]:
+    - generic [ref=e111]:
+      - paragraph [ref=e112]: مساحة — دليل مساحات العمل المشتركة في قطاع غزة
+      - generic [ref=e113]:
+        - link "عن مساحة" [ref=e114] [cursor=pointer]:
+          - /url: About.html
+        - link "تواصل معنا" [ref=e115] [cursor=pointer]:
+          - /url: About.html#contact
+  - region "الإشعارات"

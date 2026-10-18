@@ -1,0 +1,24 @@
+# Review — PR #64, `b7397dc..2e4aa4d` (no price of zero)
+
+Head pinned: `2e4aa4d419c1b8093e4968791002196c0acdacfb` at start and end (`gh pr view 64 --json headRefOid`); range holds exactly the two commits below. Read-only review (`git fetch origin`, `git diff b7397dc <head>`, `git show <head>:<file>`, `git grep <head>`); working tree untouched.
+
+Verdict: ship it — one nit, no blocker, no should-fix.
+
+## Findings
+
+### Nit — contract's "out_of_range otherwise" overclaims for non-integers
+
+- **Severity:** nit.
+- **File:line:** `docs/api/api-contract.md:379` (at `2e4aa4d`): "`amountAgorot` an integer from 1 to 10,000,000 (`out_of_range` otherwise: no price is free)."
+- **Failing scenario:** `PUT /admin/spaces/:spaceId/prices` with `amountAgorot: 12.5` does not answer `out_of_range`. By hand from the shared rule (`packages/shared/src/spaces/requests.ts:197`, `z.number().int().min(1).max(...)`) and its test (`packages/shared/src/spaces/requests.unit.test.ts:211-213`, `12.5` → `['invalid_format']`), a fractional amount maps to `invalid_format` via `packages/shared/src/core/fieldErrors.ts`, while `0`, `-1` and `10_000_001` map to `out_of_range`. The contract's "otherwise" predicts `out_of_range` for every non-conforming value, including `12.5`.
+- **Fix:** qualify the parenthetical, e.g. "`amountAgorot` an integer from 1 to 10,000,000 (`out_of_range` outside the range, `invalid_format` when not an integer: no price is free)."
+
+## Checked and fine
+
+- **Migration SQL and name** (`apps/api/prisma/migrations/20261012144622_space_price_above_zero/migration.sql:1-4`): drops `space_prices_amount_check` and re-adds it as `CHECK ("amount_agorot" > 0)`; the name matches the init migration's constraint (`20260928133627_init/migration.sql:583-584`, `>= 0`); the timestamp `20261012144622` sorts after every earlier migration directory (latest other: `20261012123800_space_own_amenities`); `schema.prisma` and `migration_lock.toml` untouched in the range (Prisma does not model check constraints).
+- **Zero-price rows:** none can exist through the code — every seed and fixture writes positive amounts (`apps/api/src/db/seed/demo.ts:98-104`, `schema.api.test.ts:27`, `prices.api.test.ts:28,76,78,110`); the only `0` writes in the range are the new refusal tests. On a database hypothetically holding a 0 price, the `ADD CONSTRAINT ... CHECK ("amount_agorot" > 0)` statement fails and the migration aborts (plausible: Prisma runs Postgres migrations transactionally, so the preceding `DROP CONSTRAINT` rolls back with it — not verified against a live database in this read-only review, no test run was permitted).
+- **Desk tables untouched:** `visits_amounts_check` (`>= 0`, `20260929120200_front_desk/migration.sql:269-270`), package/subscription `price_agorot >= 0` (same file:227,239), and `payments_amount_check` (`> 0`) are all outside the diff, as decided.
+- **One shared rule, one write path:** `amountAgorot: z.number().int().min(1).max(PRICE_MAX_AGOROT)` (`packages/shared/src/spaces/requests.ts:197`); the only prices write path validates with it (`apps/api/src/modules/spaces/spaces.admin.routes.ts:52`, `validate(updateSpacePricesSchema)`); the service/repository perform no independent amount check and cannot be reached past validation; `apps/web/src` contains no `amountAgorot` handling (no editor in scope), so no second rule exists to drift.
+- **Tests fail against broken code, by hand:** shared test (`requests.unit.test.ts:202-216`) accepts `1`/`10_000_000`, refuses `0`/`-1`/`10_000_001` with `out_of_range` and `12.5` with `invalid_format` — against `min(0)`, the `0` case accepts and the test fails; API test (`prices.api.test.ts:138-145`) expects `422`, `{'prices.1.amountAgorot': ['out_of_range']}`, empty store and empty audit — against `min(0)` the save returns 200 and every expectation fails; DB test (`schema.api.test.ts:83-99`) inserts `0`/`-1` straight through Prisma expecting `/space_prices_amount_check/` rejection and `count() == 0`, plus accepts `1` — against the old `>= 0`, the `0` insert succeeds and the test fails. The `count() == 0` assertion is safe: `beforeEach(resetDatabase)` (`schema.api.test.ts:19-21`). Error paths are correct: `prices.1.amountAgorot` (second item differs by valid `STUDENT` audience, so no repeat masks it) and `too_small` on a number → `out_of_range` (`core/fieldErrors.ts:40-41`).
+- **Documents state it once, truly:** contract PUT line (1 to 10,000,000, `out_of_range`, no free price); `data-model.md:14` (above zero, free event is an announcement); `spaces.md:112` API decision plus `spaces.md:154` history entry referencing it.
+- **Commits and PR description:** `ec2139d` "feat(spaces): refuse a price of zero" (36 chars), `2e4aa4d` "feat(db): refuse a zero price in the database" (45 chars), both ≤ 50; the PR description names both (fourth and fifth commits) with matching subjects and migration name.

@@ -1,0 +1,15 @@
+# Run logs of the design reviews: many, noisy, regenerated
+DESIGN/ROUND2/LOGS/
+
+# The nightly snapshot's own log (it would make every night a commit)
+_SHARED/snapshot.log
+
+# Backups and temporary files
+*.bak
+*.tmp
+~$*
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
