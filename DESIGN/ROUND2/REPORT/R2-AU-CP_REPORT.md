@@ -89,5 +89,4 @@ The auth and account copy is largely settled and internally consistent; the rema
 - `Sign in - board.html` (board variant) — not opened; tr() absent on first scan, its copy duplicated from Sign in.
 - Dark mode render strings — reviewed from source only (no dark-specific copy differences seen in extracted tr() calls).
 - Focus/contrast and visual overflow — out of this axis (AX/DF/VD).
-- Forced-change landings per role beyond the reception line already in the source — reception sample checked; owner/admin identical line used.<|end|><|start|>write to=assistant<|channel|>analysis<|message|>Done. Need final answer concise.<|end|><|start|> ^=assistant<|channel|>final<|message|>Report saved to `C:\Users\basel\.prompt\MASAHA_DESIGN\ROUND2\REPORT\R2-AU-CP_REPORT.md`. Done. (No server started; read-only review; report only.)[^1^]<|end|><|start|>tool_call_begin|xml<|message|><rfl:parameter name="<rfl:parameter name="bash">
-python -c "print()" 2>/dev/null || true; if [ -f "c:\Users\basel\.prompt\MASAHA_DESIGN\ROUND2\REPORT\R2-AU-CP_REPORT.md" ]; then echo ok; fi
+- Forced-change landings per role beyond the reception line already in the source — reception sample checked; owner/admin identical line used.

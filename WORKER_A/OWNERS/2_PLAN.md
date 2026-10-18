@@ -26,6 +26,14 @@
 >   «تأكّد أنه الشخص المقصود: سيصبح مالكًا لهذه المساحة». A mistyped email that belongs to someone else must
 >   never become an owner by one click. No API change. Test it (a component test: the confirm shows the
 >   matched account; with no exact email match, no upgrade is offered).
+> - **Added 2026-10-18 (PR 2's review, deferred to PR 3 — its commit 1, «#89's leftovers», before §9's
+>   commits):** from `6_REVIEW_PR2_CLAUDE_CODE.md` — (a) names isolated in every line that names a record
+>   (the add/upgrade toasts, the password dialog, each space option's owners): use `NamedLine`/`namedLine`/
+>   `toastNamed` in `space-links`, or remove them if unused; (b) the space search uses its planned words
+>   (`choices.search`, `spacesPlaceholder`, `spaces`) — the box and the list are not both «اختر المساحة»;
+>   (c) `useSpaceChoices` reuses the users/spaces list's row rules and badge (one colour for «مخفية»);
+>   (d) PR 3's real run also takes PR 2's missing screenshots (English/dark, 390, 768: the add sheet, the
+>   upgrade confirm, the password dialog). Each with a test and its break where it changes behaviour.
 
 ## 1. Summary
 

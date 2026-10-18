@@ -6,7 +6,7 @@ PRs come from the reports and from `gh pr list --state merged` (branch match). "
 
 ## WORKER_A
 
-- WORKER_A · OWNERS · PR 1 merged (#88), PR 2 executing (OpenCode, feat/admin-add-owner), PR 3 after · one plan, three PRs
+- WORKER_A · OWNERS · PR 1 merged (#88), PR 2 merged (#89, 2026-10-18; OpenCode + two Claude Code fix rounds), PR 3 next — after the migration's quiet point; its commit 1 = #89's leftovers (plan approval note) · one plan, three PRs
 - WORKER_A · GALLERY · done · #85 (merged 2026-10-17; synced at adoption: REVIEW85, the report's fixes section, 5_FIXES_PROMPT) · S1 MASAHA_WORKER_A, S2 A_GALLERY, S5 gallery-shots
 - WORKER_A · ADMINLIST · done · #84 · S1 MASAHA_WORKER_A, S2 A_ADMINLIST, S5 adminlist-shots
 - WORKER_A · S2B3A · done · #50 · S1 MASAHA_WORKER_A, S5 s2b3a-shots
@@ -17,8 +17,8 @@ PRs come from the reports and from `gh pr list --state merged` (branch match). "
 
 ## WORKER_B
 
-- WORKER_B · PACKAGES · done · #87 (merged 2026-10-18) · move to _DONE after STAFF merges (STAFF cites its 3_EXEC_PROMPT.md)
-- WORKER_B · STAFF · executing · — · Claude Code, feat/space-staff; one PR with a migration; plan 2_PLAN.md (approval note answers its first stop)
+- WORKER_B · STAFF · done · #90 (merged 2026-10-18; migration temporary_password_expiry; findings 90–93) · _DONE
+- WORKER_B · PACKAGES · done · #87 (merged 2026-10-18) · _DONE
 - WORKER_B · HARDEN · done · #86 (merged 2026-10-17) · S1 MASAHA_WORKER_B, S2 B_HARDEN
 - WORKER_B · DELETED · done · #67 · S1 MASAHA_WORKER_B
 - WORKER_B · DIRECTORY · done · #73 · S1 MASAHA_WORKER_B

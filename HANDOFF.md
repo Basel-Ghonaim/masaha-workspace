@@ -58,10 +58,19 @@ required; whichever of STAFF and OWNERS PR 2 merges second adds `receptionSpaces
 After STAFF: review (OpenCode or Kilo), merge, then — after the merge — move `WORKER_B\PACKAGES` into `_DONE`
 (STAFF's prompts cite PACKAGES' `3_EXEC_PROMPT.md`; do not move it earlier).
 
+**Update 2026-10-18, later:** **#89** (OWNERS PR 2) merged at `60a78063`, **#90** (STAFF) at `18ab1705` = `main`.
+Branches deleted; `masaha` on `main`, `masaha-b` detached at `origin/main`; `masaha_dev` migrated, clients
+regenerated, shared `dist` rebuilt in both; PACKAGES and STAFF in `WORKER_B\_DONE`. Findings used: 88–89 (#89),
+90–93 (#90) — **next free 94**. Finding 88 may now be solvable with `AdminUserRow.receptionSpaces` (web side,
+PR 3 or USERS). **The quiet point has begun** — the migration is next; the owner decides who runs it.
+
 **Next for B (to decide with the owner):** the owner's settings (capacity, stay limit — O2), DI-41, then the desk
 (step 7) — with `_SHARED\OPEN_DECISIONS.md`'s four reception-permission points settled in those plans.
 
-**The owner has a few small decisions to give you** — ask for them at the start.
+**The owner's small decisions** (2026-10-18) were the two sub-supervisors and the migration — already settled
+in §0; nothing else pending from them. **Quiet point decided:** after both STAFF and OWNERS PR 2 merge, before
+OWNERS PR 3 or any new B item starts; the migration runs then. Who runs it (the migration supervisor or you) is
+re-decided by the owner at the quiet point.
 
 ## 3. Ledgers
 

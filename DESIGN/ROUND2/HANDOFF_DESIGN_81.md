@@ -88,3 +88,9 @@ decisions file). Then this file moves to `_DONE` and `HANDOFF.md` gets one line.
 ## Status log (append one dated line per step; newest last)
 
 - 2026-10-18 — created by the analyst; 26 of 40 done; Kilo + Playwright proven on PU-AX (2nd try) and AU-DF.
+- 2026-10-18 — AU-CP: the two corrupted end lines removed with the owner's word (backup in the session scratchpad); DK-DF and OW-AX handed to Kilo.
+- 2026-10-18 — OW-CP handed to Kilo (third parallel session).
+- 2026-10-18 — DK-DF try1 rejected (scope half-covered: no English, dark, fail/state matrix or My payments; 002 and 003 share one capture; 002 false — submit at the sheet's bottom with a plan chosen; 004 tabs not cramped and its quoted labels invented; 005 not an issue); set aside, to rerun with a stronger model.
+- 2026-10-18 — OW-AX try1 rejected (1440 only, 390/768 left out; 001 and 003 share one capture, 11 of 13 captures unused; 004 and 005 are not issues; garbled heading text); set aside, to rerun with a stronger model.
+- 2026-10-18 — OW-CP try1 rejected: 001 false (a6 carries no `extended` in owner-data.js, only a4 does; by source the dialog opens), 002 false (مدّد is also the imperative, same spelling); the extension dialog copy left unreviewed. Set aside, to rerun with a stronger model.
+- 2026-10-18 — OW-CP try2 rejected: 25 issues, 15 captures (10 issues cite "captured in review"); captures show other frames (009 settings issue shows Announcements, 003 void issue shows Overview); 017 and 022 not issues. Its 009 capture shows a6 with «تمديد الاشتراكات», confirming try1 001 false. Set aside.

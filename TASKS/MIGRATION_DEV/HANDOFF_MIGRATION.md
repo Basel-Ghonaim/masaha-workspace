@@ -63,3 +63,18 @@ and the task move to `_DONE`, and your conversation ends.
 ## Status log (append one dated line per step; newest last)
 
 - 2026-10-18 — created by the analyst; plan approved in principle; waiting for the owner's quiet point.
+- 2026-10-18 — owner fixed the quiet point: after STAFF and OWNERS PR 2 both merge, before any new item. Who
+  runs the migration (this supervisor or the main one) is re-decided then.
+- 2026-10-18 17:15 — owner declared the quiet point (#89, #90 merged; main = 18ab1705; no open PR). Checked: heads,
+  clean trees, no stash, `feat/admin-add-owner` / `feat/space-staff` gone — all true (§2's branch names are stale).
+  Not quiet yet: VS Code open with 3 Claude Code sessions (one resumes a `c--Users-basel-masaha` chat), Codex and
+  Copilot in it; `opencode serve` running with 2 Playwright MCPs. `4_REPORT.md` absent — Phase 0 not done. Waiting.
+- 2026-10-18 17:20 — owner closed VS Code (checked: no Code/codex/copilot/IDE claude left). Still running:
+  `opencode serve --service` (PID 3656, since 09:42) + its Playwright MCPs. Owner confirmed: memories from the main
+  worktree and `masaha-b` only. Found: `c--Users-basel-masaha\memory` has 35 files; `C--Users-basel-masaha-b` has
+  **no `memory\` folder** (transcripts only) — nothing to copy for B. `masaha-b` has no `apps\api\.storage`.
+- 2026-10-18 17:25 — owner amends: `masaha-design` and `masaha-design-b` are temporary — **not moved**. `masaha-b`:
+  delete if nothing is lost, move if something is. Checked: both design heads are on `origin/main`, ignored files
+  only `apps/api/src/generated/` → nothing lost; they are removed **by the owner** (`git worktree remove`), never by
+  me. `masaha-b`: head on `origin/main`, clean; unique only `.claude/settings.local.json` + two `.env` (backup in
+  Phase 0); 10 active workspace files name `masaha-b`. Recommended: move it (cheap, keeps worker B ready). Waiting.
