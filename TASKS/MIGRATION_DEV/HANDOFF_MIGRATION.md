@@ -28,21 +28,20 @@ ask the owner** — never improvise.
 
 - One NVMe disk (238 GB): `C:` 218 GB (35 free), `D:` a 19 GB partition (15 free). `C:\dev\` does not exist yet.
 - `git worktree list` (main `C:\Users\basel\masaha`): `masaha-b`, `masaha-design`, `masaha-design-b` linked.
-- Junctions `node_modules\@masaha\{api,shared,web}` are absolute; the design worktrees have `node_modules` too.
+- Junctions `node_modules\@masaha\{api,shared,web}` are absolute: `node_modules` is **deleted before the
+  moves** and reinstalled with `npm ci` in `app` and `app-b` only (the owner's amendment at the plan's top).
 - `docker-compose.yml` has `name: masaha`; the container is `masaha-postgres-1`; data in a volume. Never
   `npm run db:up` or `db:reset`; start with `docker start masaha-postgres-1`.
 - The repository has no absolute path; the Playwright MCP configs point to `C:\Users\basel\Downloads` only.
 - The workspace is the private repo `Basel-Ghonaim/masaha-workspace`; nightly task
   `masaha-workspace-snapshot` at 23:00 runs `_SHARED\snapshot.ps1`.
-- Memories: `C:\Users\basel\.claude\projects\{c--Users-basel-masaha, C--Users-basel-masaha-b,
-  C--Users-basel-masaha-design, C--Users-basel-masaha-design-b, D--masahaWorkspace}\memory\` (others named
-  `*masaha-*` belong to finished one-off workers — copy them only if the owner asks).
-- 80 active workspace files hold 474 old-path references (the plan's §1.5 lists the kinds).
+- Memories that matter (two): `C:\Users\basel\.claude\projects\c--Users-basel-masaha\memory\` (worker A)
+  and `C--Users-basel-masaha-b\memory\` (worker B). The others are left as they are.
 
 ## 4. Lessons the project paid for (keep them)
 
-- Never `npm ci` while VS Code is open — a locked native file leaves `node_modules` half-installed; use
-  `npm install`.
+- Never `npm ci` while VS Code is open — a locked native file leaves `node_modules` half-installed. During
+  the migration VS Code is closed, so `npm ci` is right.
 - Heredoc edits in Git Bash can mangle backslashes and Arabic: write scripts to files and run them with
   `python -I <file>`; write files as UTF-8, keep LF/CRLF as found; PowerShell 5.1's `Set-Content -Encoding utf8`
   adds a BOM — use `[IO.File]::WriteAllText(p, s, (New-Object Text.UTF8Encoding $false))`.
@@ -53,8 +52,8 @@ ask the owner** — never improvise.
 ## 5. Done means
 
 All seven phases verified; the owner opened the new folders and ran one worker; the workspace repo pushed with
-the path commit; the nightly task runs from the new path; memories copied and readable; the old folders kept
-7 days, then deleted only with the owner's word. Then: `HANDOFF.md` (the main one) gets one line, this file
+the path commit; the nightly task runs from the new path; memories copied and readable; the old copies deleted
+at the end of the same sitting, with the owner's word. **The whole task is one sitting of one to two hours.** Then: `HANDOFF.md` (the main one) gets one line, this file
 and the task move to `_DONE`, and your conversation ends.
 
 ## Status log (append one dated line per step; newest last)

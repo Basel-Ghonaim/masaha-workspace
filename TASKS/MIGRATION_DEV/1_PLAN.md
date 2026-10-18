@@ -5,6 +5,14 @@ under `C:\dev\masaha\`. **Executed only by the "organisation and migration super
 owner names, phase by phase, each phase verified before the next.** Written by the analyst from a read-only
 inventory of 2026-10-18; every step that depends on the machine's state at that moment is a **check first**.
 
+
+> **Amended by the owner, 2026-10-18 (binding):** (1) **the whole migration fits in one sitting of one to two
+> hours** — the owner does not stop work for days; the old copies are deleted **at the end of the same sitting**,
+> after §10's proof, with the owner's word. (2) **`node_modules` is deleted, not moved**, in all four worktrees
+> before Phase 1, and reinstalled afterwards with `npm ci` **only in `app` and `app-b`** (the design worktrees
+> only serve the prototype with Python and need none). (3) **Only two Claude Code memories matter**: worker A's
+> (main worktree, key `c--Users-basel-masaha`) and worker B's (`C--Users-basel-masaha-b`); the others are left.
+
 ## 0. Why, and the target
 
 Today Masaha lives in two places: four git worktrees in `C:\Users\basel\` and the working files on
@@ -61,7 +69,7 @@ lists candidates (and what `D:\MASAHA\` — `DOCS`, `DS`, `PROTOTYPE`, `VD` — 
   commits are fine (they move with the folder); record each branch and head first.
 - **One phase at a time; verify; record in `4_REPORT.md`; only then the next.** A failed check → stop, report,
   do not improvise. Every move is a rename on `C:` (fast, reversible); the cross-volume workspace move is a
-  **copy + hash check, never a move**, the old folder kept for 7 days.
+  **copy + hash check, never a move**; the old folder is deleted at the end of the sitting, after §10.
 - **Never** `git worktree prune`, `git clean`, `npm ci`, `db:up`, `db:reset`, a delete of `.git`, a delete of
   any old folder before §10.
 
@@ -73,8 +81,11 @@ lists candidates (and what `D:\MASAHA\` — `DOCS`, `DS`, `PROTOTYPE`, `VD` — 
    branch, head, `git status --short`, `git stash list`; `gh pr list --state open`.
 3. Backup outside every folder being moved, to `C:\dev-migration-backup\2026-10-<dd>\`: each worktree's
    `apps\api\.env`, `apps\web\.env` (copy, never print), a listing of `apps\api\.storage\` with sizes, and a
-   zip of `C:\Users\basel\.claude\projects\*masaha*` and `D--masahaWorkspace` (the memories).
-4. Record each junction: `Get-ChildItem <wt>\node_modules\@masaha -Force | Select Name,LinkType,Target`.
+   zip of the two memories that matter: `C:\Users\basel\.claude\projects\c--Users-basel-masaha` and
+   `C--Users-basel-masaha-b`.
+4. **Delete `node_modules` in all four worktrees** (VS Code closed, no node process): `cmd /c rmdir /s /q
+   <wt>\node_modules` — it holds absolute junctions that a move would carry broken, and it makes the moves
+   lighter. Check each is gone. (Nothing in it is unique: the lockfile rebuilds it.)
 
 ## 4. Phase 1 — the linked worktrees (main still in place)
 
@@ -101,8 +112,9 @@ git -C C:\dev\masaha\app worktree list
 
 ## 6. Phase 3 — the junctions
 
-In `app`, `app-b`, `design`, `design-b` (each that has `node_modules`): `npm install` (**not** `npm ci`), then
-re-run §3.4's listing: every `@masaha\*` target must be **inside the same worktree's new path**. Then in `app`
+In `app` and `app-b` only: `npm ci` (VS Code closed — it is safe then; it installs exactly the lockfile), then
+`Get-ChildItem node_modules\@masaha -Force | Select Name,LinkType,Target`: every target must be **inside the
+same worktree's new path**. The design worktrees get no `node_modules`. Then in `app`
 and `app-b`: `npm run build -w @masaha/shared` and `npx prisma generate` (from `apps/api`) if the client is ignored.
 
 ## 7. Phase 4 — prove the apps still work
@@ -119,8 +131,8 @@ stop it by PID and check the port is free. In `design`: serve the prototype once
 1. `robocopy D:\masahaWorkspace C:\dev\masaha\workspace /E /COPY:DAT /DCOPY:DAT /R:1 /W:1 /XJ` (includes `.git`).
 2. Verify: same file count and SHA-256 of every file (a Python script that walks both trees); `git -C
    C:\dev\masaha\workspace status` clean and `git log -1` equal to D's.
-3. Rename the old one: `Rename-Item D:\masahaWorkspace masahaWorkspace.OLD-<date>` (kept 7 days, read-only by
-   convention; never written again).
+3. Rename the old one: `Rename-Item D:\masahaWorkspace masahaWorkspace.OLD-<date>` (never written again;
+   deleted at the end of the sitting, §10).
 4. **Rewrite the active files' paths** (§1.5) with one script, in this order (longest first):
    `C:\Users\basel\masaha-design-b` → `C:\dev\masaha\design-b`; `C:\Users\basel\masaha-design` →
    `C:\dev\masaha\design`; `C:\Users\basel\masaha-b` → `C:\dev\masaha\app-b`; `C:\Users\basel\masaha` →
@@ -134,9 +146,8 @@ stop it by PID and check the port is free. In `design`: serve the prototype once
 
 ## 9. Phase 6 — Claude Code, VS Code and the habits
 
-1. **Memories:** copy each old key's `memory\` folder to the new key — `c--Users-basel-masaha` → `C--dev-masaha-app`,
-   `C--Users-basel-masaha-b` → `C--dev-masaha-app-b`, `-design` → `C--dev-masaha-design`, `-design-b` →
-   `C--dev-masaha-design-b`, `D--masahaWorkspace` → `C--dev-masaha-workspace` (**check the exact key** Claude
+1. **Memories (two only):** copy `c--Users-basel-masaha\memory\` → the key of `C:\dev\masaha\app`, and
+   `C--Users-basel-masaha-b\memory\` → the key of `C:\dev\masaha\app-b` (**check the exact key** Claude
    Code creates: open it once in the new folder, `/memory`, and see the folder it names; copy there). Then
    update the memory files that name old paths (`prompt-folders`, `workspace-backup`, `two-workers`,
    `worktree-databases`, `task-workers`, `pr-screenshots`, others found by a scan) — wording only.
@@ -152,13 +163,14 @@ stop it by PID and check the port is free. In `design`: serve the prototype once
 1. A scan of `C:\Users\basel` (top level), `D:\` and every active file finds no live use of an old path.
 2. The owner opens each new folder in VS Code and the workers' launch lines work; one design review and one
    focused test run from the new paths.
-3. After **7 days with no problem**, and only with the owner's word: delete `D:\masahaWorkspace.OLD-<date>` and
-   the empty old folders in `C:\Users\basel\`. Never earlier.
+3. **At the end of the same sitting**, once 1–2 pass and with the owner's word: delete
+   `D:\masahaWorkspace.OLD-<date>` (the workspace is also on GitHub) and the empty old folders in
+   `C:\Users\basel\`. The backup folder of §3.3 is deleted with them, or kept if the owner prefers.
 
 ## 11. Rollback (any phase)
 
 Phases 1–2 are renames: reverse them (`git worktree move` back, `Move-Item` back) and `git worktree repair`.
-Phase 3: `npm install` again in place. Phase 5: the old workspace is intact until §10 — rename it back, restore
+Phase 3: `npm ci` again. Phase 5: the old workspace is intact until §10 — rename it back, restore
 the task. Memories and settings: the zip of §3.3. Nothing is deleted before §10.
 
 ## 12. Report
