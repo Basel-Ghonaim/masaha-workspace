@@ -12,7 +12,7 @@ param(
 )
 
 $root = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
-$repo = 'C:\dev\masaha\design'
+$repo = 'C:\dev\masaha\app-design'
 $logs = Join-Path $root 'LOGS'
 $exe  = Join-Path $env:APPDATA 'npm\node_modules\opencode-ai\bin\opencode.exe'
 New-Item -ItemType Directory -Force $logs | Out-Null

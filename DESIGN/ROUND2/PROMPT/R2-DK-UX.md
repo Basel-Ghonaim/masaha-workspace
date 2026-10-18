@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\app-design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write the `origin/main` SHA at the top
   of the report — **and** the `origin/design/desk` SHA (`git rev-parse origin/design/desk`), because
@@ -22,7 +22,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 - Serve it on your own port **5429** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5429 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\dev\masaha\design` as the working directory.
+  run with `C:\dev\masaha\app-design` as the working directory.
 - Open pages as `http://127.0.0.1:5429/<Prototype URL>` with the parameters exactly as listed.
 - For desk-branch frames (section 4b): extract read-only with
   `git archive origin/design/desk docs/design/prototype | tar -x -C <empty temp dir>` (under your

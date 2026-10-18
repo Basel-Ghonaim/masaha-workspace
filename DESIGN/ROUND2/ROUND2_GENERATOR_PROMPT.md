@@ -7,7 +7,7 @@ your context. Then you write a run sheet and the summary prompts. Then you stop.
 
 ## 0. Where, and what you may touch
 
-- **Read from** `C:\dev\masaha\design` (a git worktree of the repository, detached at
+- **Read from** `C:\dev\masaha\app-design` (a git worktree of the repository, detached at
   `origin/main`). `git fetch origin` first; read files, never edit, commit, check out or install.
 - **Write only into** `C:\dev\masaha\workspace\DESIGN\ROUND2\`:
   `PROMPT\` (the review prompts and the summary prompts), and `RUN_SHEET.md` at its root. The reviews
@@ -86,7 +86,7 @@ not a sign-in's).
   the next number (`R2-DK-UX-001`).
 - **Who it is for:** an independent reviewer (OpenCode), alone, read-only, with no context but the
   prompt.
-- **Where:** read from `C:\dev\masaha\design` at `origin/main` (check `git rev-parse HEAD`
+- **Where:** read from `C:\dev\masaha\app-design` at `origin/main` (check `git rev-parse HEAD`
   equals `git rev-parse origin/main` after `git fetch`; write it at the top of the report); never edit,
   commit, check out or install.
 - **Its own port**, so forty can run at once: `python -m http.server <port> --bind 127.0.0.1

@@ -109,3 +109,6 @@ and the task move to `_DONE`, and your conversation ends.
   Migration complete. Waiting for the owner's deletes and his word to close the task.
 - 2026-10-18 18:20 — **closed** on the owner's word: one line in `HANDOFF.md` (§0), its row and `BOARD.md` point
   here; this folder moved to `TASKS\_DONE\MIGRATION_DEV`. The owner deletes the three old copies himself (4_REPORT §7.3).
+- 2026-10-18 18:25 — after closing, on the owner's word: two VS Code conversations of worker A **copied** (not moved)
+  from `c--Users-basel-masaha` to `C--dev-masaha-app` so `/resume` lists them — `f67d48b1…` ("Issue #81 design
+  handoff") and `2bdef896…` ("Masaha workspace handoff status logs"); SHA-256 equal; originals kept.

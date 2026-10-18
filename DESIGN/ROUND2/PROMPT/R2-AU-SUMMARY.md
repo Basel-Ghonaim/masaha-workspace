@@ -11,7 +11,7 @@ the owner.
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` only to consult the documents named below (lens,
+- Read from `C:\dev\masaha\app-design` only to consult the documents named below (lens,
   decisions, contract, glossary). `git fetch origin` first if you need the SHAs; never edit,
   commit, check out, or install.
 - Read the seven AU axis reports (they must all exist before you start; if one is missing, say so

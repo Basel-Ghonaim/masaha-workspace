@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge what is broken on
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\app-design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -20,7 +20,7 @@ not edit, commit, check out, install, or move files. You judge what is broken on
 
 - Serve it on your own port **5403** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5403 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\dev\masaha\design` as the working directory.
+  run with `C:\dev\masaha\app-design` as the working directory.
 - Open pages as `http://127.0.0.1:5403/<Prototype URL>` with the parameters exactly as listed.
 - Keep the browser console open on every page; report console errors with the page and parameters.
 - At the end: stop the server by its PID and check the port is free (`5403` answers nothing).

@@ -18,8 +18,8 @@ The migration needs **a quiet point** (no worker session open): agree it with th
 supervisor; after it, every path below reads `C:\dev\masaha\{app,app-b,design,design-b,workspace}`. When a
 sub-supervisor closes, its file moves to `_DONE` and you add one line here.
 
-- 2026-10-18 — **migration closed**: `C:\dev\masaha\{app,app-b,workspace}` (design worktrees removed by the owner;
-  re-create at `C:\dev\masaha\design` when needed); memory in `C--dev-masaha-app`; container `masaha-postgres-1`
+- 2026-10-18 — **migration closed**: `C:\dev\masaha\{app,app-b,app-design,workspace}` (`app-design`: the design worktree,
+  re-created detached at `origin/main`, no `node_modules`/`.env`); memory in `C--dev-masaha-app`; container `masaha-postgres-1`
   recreated from `app` (bind mount); nightly task on the new path; old copies handed to the owner to delete.
 
 ## 1. Your role and how you speak

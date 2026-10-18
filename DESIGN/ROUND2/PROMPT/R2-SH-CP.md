@@ -11,7 +11,7 @@ read Arabic fluently.
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\app-design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -22,7 +22,7 @@ read Arabic fluently.
 
 - Serve it on your own port **5439** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5439 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\dev\masaha\design` as the working directory.
+  run with `C:\dev\masaha\app-design` as the working directory.
 - Open pages as `http://127.0.0.1:5439/<Prototype URL>` with the parameters exactly as listed.
 - Read the copy source `docs/design/prototype/masaha/i18n.js` (and `shared.jsx`'s string table) for
   the exact strings.

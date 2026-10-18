@@ -11,7 +11,7 @@ not edit, commit, check out, install, or move files. You judge visual design and
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\app-design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -21,7 +21,7 @@ not edit, commit, check out, install, or move files. You judge visual design and
 
 - Serve it on your own port **5402** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5402 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\dev\masaha\design` as the working directory.
+  run with `C:\dev\masaha\app-design` as the working directory.
 - Open pages as `http://127.0.0.1:5402/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5402` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-AU-VD-001.png`) in

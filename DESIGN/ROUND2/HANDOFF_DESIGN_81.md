@@ -4,8 +4,8 @@
 `DECISIONS_ROUND2.md` with the owner), then it moves to `_DONE`. You are **one of three supervisors**. The main
 supervisor (the project's analyst, reading `C:\dev\masaha\workspace\HANDOFF.md`) reads this file's *Status log*;
 the organisation-and-migration supervisor moved these folders on 2026-10-18 (every path below reads
-`C:\dev\masaha\…`; the design worktree was removed — re-create it at `C:\dev\masaha\design` from `origin/main`
-when a review needs it).
+`C:\dev\masaha\…`; the design worktree is `C:\dev\masaha\app-design`, re-created 2026-10-18 detached at
+`origin/main`, with no `node_modules` and no `.env`).
 
 ## 1. Your task
 
@@ -29,7 +29,7 @@ of the designs, not of the app's code). Issue **#81** on GitHub is the owner's c
 - The run sheet: `…\ROUND2\REMAINING_KILO_AR.md` — the commands **and the line pasted after each** (its rules).
 - Settled decisions, which reviews must not report again: `C:\dev\masaha\workspace\DESIGN\DECISIONS\` (`DECISIONS_*.md`,
   `REVIEW_LENS.md`). Pending desk decisions (not this round's): `C:\dev\masaha\workspace\_SHARED\OPEN_DECISIONS.md`.
-- The worktree the reviews read: `C:\dev\masaha\design` (detached; keep it on `origin/main`:
+- The worktree the reviews read: `C:\dev\masaha\app-design` (detached; keep it on `origin/main`:
   `git fetch origin; git switch --detach origin/main`; first check `git diff --stat <old> origin/main --
   docs/design` — if the design changed, the finished reports may be stale: tell the owner).
 - Parts: AD admin · AU sign-in and account · DK desk · OW owner · PU public · SH shared. Axes: AX accessibility ·
@@ -55,7 +55,7 @@ of the designs, not of the app's code). Issue **#81** on GitHub is the owner's c
   (`kilo mcp list` → connected). **Pick a strong model by name, never "Auto"**: the first PU-AX try on Auto
   was rejected; the second, with a named model and the strict line, passed. OpenCode has the same Playwright
   config (`C:\Users\basel\.config\opencode\opencode.json`); free small models there do not call tools.
-- One review per **new session**, opened in `C:\dev\masaha\design`, three at a time at most; paste the
+- One review per **new session**, opened in `C:\dev\masaha\app-design`, three at a time at most; paste the
   command and the line from `REMAINING_KILO_AR.md` in the same message.
 - `main` moves with every merge of workers A and B: the line tells the reviewer to continue when
   `git diff --quiet HEAD origin/main -- docs/design` exits 0. Still move the worktree to `origin/main` between

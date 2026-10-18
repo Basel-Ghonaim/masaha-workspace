@@ -13,12 +13,12 @@ the rendered page, you check what it said it could not check, and you append one
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` (a detached worktree). First `git fetch origin`; check
+- Read from `C:\dev\masaha\app-design` (a detached worktree). First `git fetch origin`; check
   `git rev-parse HEAD` equals `git rev-parse origin/main`. If not, stop and say so. Never edit, commit,
   check out, install or move anything there.
 - Serve the prototype on port **5490** (no other review uses it):
   `python -m http.server 5490 --bind 127.0.0.1 --directory docs/design/prototype`, run from
-  `C:\dev\masaha\design`, in the background. Pages: `http://127.0.0.1:5490/<Prototype URL>`, with
+  `C:\dev\masaha\app-design`, in the background. Pages: `http://127.0.0.1:5490/<Prototype URL>`, with
   the parameters exactly as `docs/design/INDEX.md` lists them.
 - Screenshots: `browser_take_screenshot` with a **relative** filename `r2-shots/<PART-AXIS>/<ID>.png`
   (the server saves under `C:\Users\basel\Downloads`), e.g. `r2-shots/AD-VD/R2-AD-VD-003.png`.

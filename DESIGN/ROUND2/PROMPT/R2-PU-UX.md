@@ -10,7 +10,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` (a git worktree, detached at `origin/main`).
+- Read from `C:\dev\masaha\app-design` (a git worktree, detached at `origin/main`).
 - First: `git fetch origin`. Then check `git rev-parse HEAD` equals `git rev-parse origin/main`. If
   it does not, stop and say so in the report's last section. Write both SHAs at the top of the
   report.
@@ -20,7 +20,7 @@ not edit, commit, check out, install, or move files. You judge flows and experie
 
 - Serve it on your own port **5408** (no other review uses it), so all forty reviews can run at once:
   `python -m http.server 5408 --bind 127.0.0.1 --directory docs/design/prototype`
-  run with `C:\dev\masaha\design` as the working directory.
+  run with `C:\dev\masaha\app-design` as the working directory.
 - Open pages as `http://127.0.0.1:5408/<Prototype URL>` with the parameters exactly as listed.
 - At the end: stop the server by its PID and check the port is free (`5408` answers nothing).
 - Evidence captures: save each issue's cropped capture as `<ID>.png` (e.g. `R2-PU-UX-001.png`) in

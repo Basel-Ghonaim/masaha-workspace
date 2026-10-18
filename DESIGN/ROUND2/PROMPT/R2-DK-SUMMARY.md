@@ -11,7 +11,7 @@ the owner.
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` only to consult the documents named below (lens,
+- Read from `C:\dev\masaha\app-design` only to consult the documents named below (lens,
   decisions, contract, data model). `git fetch origin` first if you need the SHAs; never edit,
   commit, check out, or install. Note the DK reports cover **two sources** — `origin/main` and
   `origin/design/desk` (PR #80); keep the source with every item.

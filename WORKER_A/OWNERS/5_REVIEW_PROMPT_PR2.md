@@ -8,7 +8,7 @@ review: you start fresh and trust nothing you have not seen in the code. Write y
 most important findings.
 
 ## Rules
-- **Run from `C:\dev\masaha\design`, read only commit objects:** `git fetch origin` and
+- **Run from `C:\dev\masaha\app-design`, read only commit objects:** `git fetch origin` and
   `git fetch origin pull/89/head`; base = `origin/main` (`02b1067a` when written; if `main` has moved, say
   so); `git diff <base>...a074e6d2`, `git show <commit>`, `git show a074e6d2:<file>`. No edits, checkouts,
   installs, npm or test runs, servers, database commands, no GitHub comments. CI ran every lane on this head.

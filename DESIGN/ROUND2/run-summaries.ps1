@@ -5,7 +5,7 @@
 param([int]$MaxMinutes = 360)
 
 $root  = 'C:\dev\masaha\workspace\DESIGN\ROUND2'
-$repo  = 'C:\dev\masaha\design'
+$repo  = 'C:\dev\masaha\app-design'
 $logs  = Join-Path $root 'LOGS'
 $parts = 'AU', 'PU', 'AD', 'OW', 'DK', 'SH'
 New-Item -ItemType Directory -Force $logs | Out-Null

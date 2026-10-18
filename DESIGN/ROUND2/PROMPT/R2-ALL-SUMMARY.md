@@ -11,7 +11,7 @@ the owner.
 
 ## 2. Where
 
-- Read from `C:\dev\masaha\design` only to consult the documents named below. `git fetch
+- Read from `C:\dev\masaha\app-design` only to consult the documents named below. `git fetch
   origin` first if you need the SHAs; never edit, commit, check out, or install.
 - Read the six part summaries (they must all exist before you start; if one is missing, say so in
   the summary's last section and work with the rest):

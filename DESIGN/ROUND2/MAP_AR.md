@@ -10,7 +10,7 @@
 ## ثانيًا: المراجعات الأربعون
 4. اعرف الناقص: كل مراجعة لها ملف في `REPORT\` باسم `<ID>_REPORT.md`. الناقص هو ما ليس له ملف.
 5. اختر طريقة التشغيل:
-   - **باليد (الأضمن الآن):** افتح OpenCode من `C:\dev\masaha\design`، واختر نموذجًا يعمل، والصق:
+   - **باليد (الأضمن الآن):** افتح OpenCode من `C:\dev\masaha\app-design`، واختر نموذجًا يعمل، والصق:
      `Read C:\dev\masaha\workspace\DESIGN\ROUND2\PROMPT\<ID>.md whole and follow it.`
      ثلاث جلسات معًا على الأكثر.
    - **بالطابور (حين تتجدد حصص النماذج):** في PowerShell:
