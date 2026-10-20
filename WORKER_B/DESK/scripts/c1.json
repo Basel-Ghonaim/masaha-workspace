@@ -1,0 +1,8 @@
+[
+  {"name": "B1 max for min",
+   "edits": [{"file": "apps/api/src/modules/spaces/autoCheckout.ts", "old": "Math.max(Math.min(...dues), checkedInAt.getTime())", "new": "Math.max(Math.max(...dues), checkedInAt.getTime())"}],
+   "cwd": "apps/api", "cmd": "npx vitest run --project unit src/modules/spaces/autoCheckout.unit.test.ts"},
+  {"name": "B2 the closing read from the run's day",
+   "edits": [{"file": "apps/api/src/modules/spaces/autoCheckout.ts", "old": "const at = gazaClockOf(checkedInAt);", "new": "const at = gazaClockOf(new Date());"}],
+   "cwd": "apps/api", "cmd": "npx vitest run --project unit src/modules/spaces/autoCheckout.unit.test.ts"}
+]

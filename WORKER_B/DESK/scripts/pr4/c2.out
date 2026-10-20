@@ -1,0 +1,91 @@
+== B1 visits.writeOff as the staff's: exit 1
+  Test Files  1 failed (1)
+  Tests  3 failed | 389 passed (392)
+  AssertionError: expected true to be false // Object.is equality
+  AssertionError: expected true to be false // Object.is equality
+  AssertionError: expected true to be false // Object.is equality
+  restored apps\api\src\shared\auth\can.ts: sha ok
+  -> RED
+== B2 reason: z.string(): exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 2 passed (3)
+  AssertionError: expected { reason: '  Left without paying ' } to deeply equal { reason: 'Left without paying' }
+  restored packages\shared\src\visits\requests.ts: sha ok
+  -> RED
+== B7 writtenOffAt dropped from autoClosedPage: exit 1
+  Test Files  2 failed (2)
+  Tests  2 failed | 15 passed (17)
+  AssertionError: expected [ 1 ] to deeply equal []
+  AssertionError: expected [ 1, 2 ] to deeply equal [ 1 ]
+  restored apps\api\src\modules\visits\visits.repository.ts: sha ok
+  -> RED
+== B8 the balance taken as the charge: exit 1
+  Test Files  1 failed (1)
+  Tests  3 failed | 9 passed (12)
+  AssertionError: expected { reason: 'Left without paying', …(1) } to deeply equal { reason: 'Left without paying', …(1) }
+  AssertionError: expected 200 to be 409 // Object.is equality
+  AssertionError: expected { reason: 'Left without paying', …(1) } to deeply equal { reason: 'Left without paying', …(1) }
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B9 refused unless AUTO: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected 409 to be 200 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B10 the route's requireCan removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected 422 to be 403 // Object.is equality
+  restored apps\api\src\modules\desk\desk.manage.routes.ts: sha ok
+  -> RED
+== B11 can() on space.links: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected 200 to be 403 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B12 the no-charge check removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected 'VISIT_ALREADY_PAID' to be 'VISIT_NOT_PRICED' // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B13 the balance check removed: exit 1
+  Test Files  1 failed (1)
+  Tests  2 failed | 10 passed (12)
+  AssertionError: expected 200 to be 409 // Object.is equality
+  AssertionError: expected 200 to be 409 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B14 the already-written-off branch removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected { id: 1, visitorName: 'Omar', …(10) } to match object { Object (writeOff) }
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B15 validate removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected 500 to be 422 // Object.is equality
+  restored apps\api\src\modules\desk\desk.manage.routes.ts: sha ok
+  -> RED
+== B16 the balance read before the space's lock: exit 1
+  Test Files  1 failed (1)
+  Tests  2 failed | 10 passed (12)
+  AssertionError: expected 500 to be 409 // Object.is equality
+  AssertionError: expected { reason: 'Left without paying', …(1) } to deeply equal { reason: 'Left without paying', …(1) }
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B17 the undo audits but does not clear: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected { id: 1, visitorName: 'Omar', …(10) } to match object { id: 1, writeOff: null }
+  restored apps\api\src\modules\visits\visits.service.ts: sha ok
+  -> RED
+== B18 the not-written-off branch removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 11 passed (12)
+  AssertionError: expected 500 to be 200 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
