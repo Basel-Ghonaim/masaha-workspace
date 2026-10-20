@@ -1,0 +1,70 @@
+# PU-DF — the public site. INDEX.md's URLs for Home, Directory, Space details, About and Error,
+# without lang= and theme= (the pack adds both), plus the prompt's defect matrix.
+
+# Home
+Home.html?loc=none
+Home.html?loc=granted
+Home.html?loc=imprecise
+Home.html?loc=denied
+Home.html?loc=manual
+Home.html?loc=none&auth=1
+Home.html?loc=none&state=loading
+Home.html?loc=none&toast=linked
+
+# Directory — list
+Directory.html?loc=none
+Directory.html?loc=granted
+Directory.html?loc=imprecise
+Directory.html?loc=denied
+Directory.html?loc=manual
+Directory.html?loc=none&auth=1
+Directory.html?loc=none&demo=noresults
+Directory.html?loc=none&photos=loading
+Directory.html?loc=none&photos=failed
+Directory.html?loc=none&state=loading
+Directory.html?loc=none&sheet=filters
+Directory.html?loc=none&area=nasr,rimal&period=day&priceMax=20
+Directory.html?loc=none&period=day&priceMin=30&priceMax=10
+Directory.html?loc=none&fail=fav&auth=1
+
+# Directory — map
+Directory.html?view=map&loc=none
+Directory.html?view=map&selected=focus&loc=none
+Directory.html?view=map&loc=granted
+Directory.html?view=map&loc=manual
+Directory.html?view=map&loc=picking
+Directory.html?view=map&loc=denied
+Directory.html?view=map&loc=none&demo=noresults
+
+# Space details — the six spaces and their states
+Space details.html?id=focus&loc=none
+Space details.html?id=focus&loc=granted
+Space details.html?id=branch&loc=none
+Space details.html?id=golden&loc=none
+Space details.html?id=numberone&loc=none
+Space details.html?id=white&loc=none
+Space details.html?id=zm&loc=none
+Space details.html?id=focus&loc=none&demo=stale
+Space details.html?id=focus&loc=none&state=loading
+Space details.html?id=focus&loc=none&state=notfound
+Space details.html?id=focus&loc=none&photos=loading
+Space details.html?id=focus&loc=none&photos=failed
+Space details.html?id=focus&loc=none&dialog=signin
+Space details.html?id=focus&loc=none&dialog=signin-report
+Space details.html?id=focus&loc=none&auth=1&dialog=report
+Space details.html?id=golden&loc=none&auth=1&dialog=report
+Space details.html?id=focus&loc=none&auth=1&fav=1
+Space details.html?id=focus&loc=none&auth=1&fav=1&toast=welcomefav
+Space details.html?id=focus&loc=none&auth=1&fav=1&fail=fav&toast=welcome
+
+# About and Error
+About.html
+About.html#contact
+About.html#owners
+Error.html?type=404
+Error.html?type=error
+Error.html?type=offline
+Error.html?type=offline&fail=retry
+
+# Added 2026-10-20: the inverted range is only said inside the filters (B21 shows the list without them)
+Directory.html?loc=none&sheet=filters&period=day&priceMin=30&priceMax=10
