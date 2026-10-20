@@ -68,6 +68,99 @@ regenerated, shared `dist` rebuilt in both; PACKAGES and STAFF in `WORKER_B\_DON
 90–93 (#90) — **next free 94**. Finding 88 may now be solvable with `AdminUserRow.receptionSpaces` (web side,
 PR 3 or USERS). **The quiet point has begun** — the migration is next; the owner decides who runs it.
 
+**State at the end of 2026-10-19 (read this first; it supersedes the lines above where they differ):**
+- Masaha moved to `C:\dev\masaha\{app,app-b,app-design,workspace}` (MIGRATION_DEV closed). `main` =
+  `eff0a3d1` after **#91** (OWNERS PR 3) and **#92** (SETTINGS). Findings used up to **97**.
+- **Worker A — USERS #93** (`feat/admin-users`, 7 commits, 93 files): reviewed (`6_REVIEW_CLAUDE_CODE.md`:
+  one blocker — the table rebuilds rows; four should-fix); fix round prompt `7_FIXES_PROMPT.md` (finding 3,
+  the dialogs at the page) + carried items `0_CARRIED_FROM_91.md`. **Do not merge with the blocker.** Next
+  for A: **OWNER_SETUP** (owner's profile, prices & packages, staff, settings; one plan, two PRs) — its
+  planner was launched from `app-design`; review `2_PLAN.md` when saved. Then the **public site** (a third
+  worker «PUBLIC» in `app-c`, ports 3322/5322) after the current branches merge — its decisions were
+  offered, not yet approved.
+- **Worker B — DESK** (step 7 API): plan approved (approval note: quote age 5 min, A1/A3/A4 taken, PR 4 and
+  the sweep later); **PR 1 `feat/live-status` executing** (R3 amended by the owner: `@date-fns/tz` allowed in
+  shared core). **PR 1 is #94** (head `e07308b4`, CI green, CLEAN); its first headless review died with
+  the session (no report) — relaunched 2026-10-20 by the owner as one reviewer without subagents (to save
+  tokens); report `6_REVIEW_PR1_CLAUDE_CODE.md`.
+- **2026-10-20 morning:** #93's fix round sent (`7_FIXES_PROMPT.md`, finding 3 taken). OWNER_SETUP's
+  `2_PLAN.md` is saved (2026-10-19 17:58) and **not yet reviewed** — the next supervisor reviews it first.
+- **2026-10-20, later:** OWNER_SETUP approved (note at `2_PLAN.md`'s top: **three PRs** — A4 split; A3 for the
+  handover; the 403/404 refusal lines corrected — the managed boundary answers 404 without a link);
+  `3_EXEC_PROMPT_PR1.md` written, starts after #93 merges. **#94 reviewed** (no blocker; verified: head
+  `e07308b4`, CI green, CLEAN, subjects ≤ 50, no attribution, the three items true) → its small fixes in
+  `WORKER_B\DESK\0_CARRIED_FROM_94.md` (DESK PR 2's first commit; two nits await the owner). **The owner's
+  review rule:** serious/large fixes reopen the PR; small ones → the next PR's first commit, named in its
+  description (replaces the #91 rule below). **#94 merged** at `eabdb919` with the owner's word; branch
+  deleted (remote, local); `app-b` detached at `origin/main`, shared `dist` rebuilt (no migration). The
+  owner took both nits (a second carried commit). Next for B: `WORKER_B\DESK\3_EXEC_PROMPT_PR2.md`.
+- **2026-10-20, afternoon:** **#93 merged** at `7d48c9c3` with the owner's word (fix round verified: head
+  `9714165f`, CI run after #94 on the merge ref, CLEAN, 8 subjects ≤ 50, bodies, no attribution, the
+  page-held dialogs seen). Branch deleted; `app` on `main`; shared `dist` rebuilt; `masaha_dev` migrated
+  (#92's `reception_typed_prices` was pending) and the client regenerated. Nothing carried from #93.
+  B was already on `feat/desk-visits` (cut from `eabdb919`, carried commits done, C1–C2 in progress): no
+  file overlap yet; C3 will touch `overview.md` and the findings index → `WORKER_B\DESK\3b_REBASE_ON_93.md`
+  (rebase when it suits B). Next for A: `WORKER_A\OWNER_SETUP\3_EXEC_PROMPT_PR1.md`. Findings on
+  `main` end at 97. `WORKER_A\USERS` stays until OWNER_SETUP PR 1 has read its report.
+- **2026-10-20, evening:** **#95** (DESK PR 2) verified (head `b225d1fa`, CI green, CLEAN, on #93, subjects,
+  bodies) and reviewed (`6_REVIEW_PR2_CLAUDE_CODE.md`: no blocker) → small items in
+  `WORKER_B\DESK\0_CARRIED_FROM_95.md` (PR 3's first commit); two owner points: the lost-race payment
+  (409 recommended) and the four Arabic error lines; #95 awaits the merge word. **Finding numbers reserved:**
+  98 B (#95), 99 A (OWNER_SETUP PR 1), **100 B** (PR 3's carried commit); A's next start at **101**.
+  OWNER_SETUP PR 1: the routes test (finding 87) missed its 3 s locally twice under load (2.49 s alone);
+  recommended C — go on, CI's `test:component` is the judge.
+- **#95 merged** at `f77d2012` with the owner's word (as it was; the Arabic lines approved; the 409 for a
+  lost-race payment taken, in PR 3's carried commit). Branch deleted; `app-b` detached at `origin/main`, shared
+  `dist` rebuilt, `masaha_b_dev` up to date, client regenerated. **Owed:** `masaha_dev` (worker A's) gets
+  #95's migration `desk_visit_charge` once A's current session ends — not while it runs. Next for B:
+  `WORKER_B\DESK\3_EXEC_PROMPT_PR3.md`; after PR 3 merges, ask the planner for PR 4's plan section (A3).
+- **#96** (OWNER_SETUP PR 1, 98 files) verified: head `9fae4e00`, CI green (test:component included), CLEAN,
+  on `main`, subjects/bodies, web+docs only, finding 99. The owed migration applied to `masaha_dev`.
+  Review prompt `WORKER_A\OWNER_SETUP\5_REVIEW_PROMPT_PR1.md` (one reviewer, headless from `app-design`).
+- **#96 merged** at `c91f5b42` with the owner's word (review: no blocker; small items in
+  `WORKER_A\OWNER_SETUP\0_CARRIED_FROM_96.md`, PR 2's first commit). Branch deleted; `app` on `main`, shared
+  rebuilt (no schema). `WORKER_A\USERS` moved to `_DONE`. Next for A: `WORKER_A\OWNER_SETUP\3_EXEC_PROMPT_PR2.md`
+  (finding 87's local miss allowed when CI is green; a refused demo sign-in stops — the demo-password
+  point of the review awaits the owner, recommended: stop and re-seed, never reset through the app).
+- **#97** (DESK PR 3) verified: head `e122b95d`, CI green, CLEAN, on `main`, 5 subjects ≤ 50, bodies, finding
+  100; two new Arabic error lines await the owner. Review launched headless (`5_REVIEW_PROMPT_PR3.md` →
+  `6_REVIEW_PR3_CLAUDE_CODE.md`). **DESK PR 4 (collecting and write-off)** analysed with the owner and all
+  recommendations taken (any closed visit with a balance; the remainder of a partly paid one; unpriced first
+  priced; write-off undoable by the owner, a payment on a written-off visit refused; «تسجيل دينًا» in; the
+  build map's general `POST …/payments`; the shared device moved to the desk's screen item —
+  `_SHARED\OPEN_DECISIONS.md` point 4 updated). Planning prompt `WORKER_B\DESK\1_PLAN_PROMPT_PR4.md`.
+  **Finding numbers:** A from 101, B's PR 4 from 110.
+- **#97 merged** at `abc28e73` with the owner's word (review: no blocker; its small items and the owner's
+  choice (b) — every stay closed by 23:59 of its check-in day — in `WORKER_B\DESK\0_CARRIED_FROM_97.md`, PR 4's
+  first commits; the two Arabic lines approved). Branch deleted; `app-b` detached at `origin/main`, shared
+  rebuilt (no schema). PR 4's planning prompt updated (base `origin/main`). Worker A's `app` gets #97 on its
+  next rebase.
+- **DESK PR 4 plan** saved (`2_PLAN_PR4.md`, ≈ 45 files, one migration): routes in `desk`, «تسجيل دينًا» as
+  `PUT …/visits/:visitId/customer`, write-off `POST`/`DELETE`, the written-off refusal in the ledger trigger,
+  finding 100 folded, finding 110 (the prototype disagrees); awaits the owner (§13 Q1–Q7, four Arabic lines).
+  Numbering: PR 4's own finding keeps 110; its carried findings (from #97) take 111–113.
+- **Step 8 (SUBSCRIPTIONS)** analysed with the owner, all recommendations taken; planning prompt
+  `WORKER_B\SUBSCRIPTIONS\1_PLAN_PROMPT.md` (three PRs; starts after DESK PR 4; findings from 120).
+- DESK PR 4 approved (note at `2_PLAN_PR4.md`'s top) → `3_EXEC_PROMPT_PR4.md`; the step 8 planner reads from
+  `app-design` (never the executor's worktree). **#98** (OWNER_SETUP PR 2) verified (head `8c429ff4`, CI green,
+  CLEAN, web+docs, findings 81 resolved, 101) and reviewed (no blocker) → `0_CARRIED_FROM_98.md` (finding 102);
+  awaits the merge word. OWNER_SETUP PR 3's prompt `3_EXEC_PROMPT_PR3.md` is ready (A3, carried from #98).
+- **#98 merged** at `cf3190a4` with the owner's word; branch deleted; `app` on `main`, shared rebuilt,
+  `masaha_dev` up to date. Next for A: OWNER_SETUP PR 3.
+- **Step 8 plan approved** (note at `WORKER_B\SUBSCRIPTIONS\2_PLAN.md`'s top; A3 taken: the name correctable by
+  staff); its execution prompts are written per PR once DESK PR 4 merges. **PUBLIC** (step 3 web) analysed with
+  the owner, all recommendations taken (worker A, no third worker; four PRs; the space page polls the live status
+  every 60 s while visible, lists on focus only; no report/favourite until step 10; the platform's contact from
+  one web configuration, email only until the owner supplies values; build now, round 2 later, no proven defect
+  copied; the decisions file's amendments win; the corrected privacy line). Planning prompt
+  `WORKER_A\PUBLIC\1_PLAN_PROMPT.md`, run from `app-design`; findings from 130. Correct
+  `DESIGN\DECISIONS\DECISIONS_PUBLIC.md`'s superseded lines when the plan proposes the wording.
+- **Method now:** reviews run headless and read-only from `app-design`
+  (`claude -p … --allowedTools "Bash(git *)" "Bash(gh *)" Read Grep Glob Write Edit Agent`), launched by the
+  supervisor after verifying the PR; launching an unattended **executor** is refused by the permission
+  classifier — the owner starts executors by hand. Fix rounds run only what the change touches. Findings a
+  merged PR leaves go to the next PR's fix round (the owner's rule, #91).
+
 **Next for B (to decide with the owner):** the owner's settings (capacity, stay limit — O2), DI-41, then the desk
 (step 7) — with `_SHARED\OPEN_DECISIONS.md`'s four reception-permission points settled in those plans.
 
