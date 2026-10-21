@@ -1,0 +1,29 @@
+I reviewed #103 and found no blocker: it can be merged as it stands. The report is at `C:\dev\masaha\workspace\WORKER_A\PUBLIC\6_REVIEW_PR1B_CLAUDE_CODE.md`.
+
+CI was green on the head before I started, and the head (`52b7a2b0`) had not moved when I finished. I read only commit objects and ran no tests, build or server.
+
+The device's location stays private in the code:
+- It is rounded to three decimals before anything keeps it, and kept only in memory.
+- It is sent only in the `Masaha-Near` header, and only on `sort=distance` requests.
+- It never reaches the address, the browser's storage or a log, and «مسح موقعي» removes it.
+
+**Should-fix (small, for PUBLIC PR 2's first commit via `0_CARRIED_FROM_103.md`; you may prefer a fix round for the first two):**
+1. **Near me loses the keyboard focus and announces nothing.** «إيقاف الترتيب حسب المسافة» and «مسح موقعي» disappear while focused, and «الأقرب إليّ» is disabled while it locates. The "sorted by distance" line is not in a live region, so a screen reader hears nothing.
+2. **Near me can stay "locating" until a reload.** In Firefox, closing the permission prompt without choosing calls neither result, and the 8 s timeout never starts. The visitor is left with a disabled button under a privacy line saying their location is being sent. This is known Firefox behaviour, not something I ran.
+3. **«مسح الفلاتر» does two different things.** In the sheet it keeps the search and the order; in the no-match state it clears them too. `directory.md` says only the first, so it is wrong for the no-match button.
+4. **Two privacy guards lack what your new test rule requires.** No break removes the check that sends the header only while sorting. The "location kept but not sorting" state has no test at all, so a privacy line wrongly shown there would stay green.
+
+**Nits and findings to record:**
+- Cards can keep «على بعد … كم» after sorting stops, until the next answer arrives.
+- The price fields keep an invalid entry or a chosen period after «مسح الفلاتر».
+- The filters sheet reopens by itself after a width change.
+- Going Back to the site from the sign-in pages leaves the focus nowhere.
+- Finding 130's "Resolves when" names only the dashboard, though it now also covers the sign-in pages.
+- The place filter has no 50-area cap; this cannot happen with today's areas.
+- One unwrapped comment line.
+
+**The departures:**
+- Leaving out the `distances.*` words is right. The plan's line is wrong for the list: the shared rules refuse a location unless the list is sorted by distance, so «المسافات من موقعك.» would be false once sorting stops.
+- All eleven carried items are done as you decided: item 4 checked, item 9 recorded as finding 132.
+
+All break results, local test counts and real-run claims are from the executor's report. The only evidence I viewed myself was one screenshot and one network log.

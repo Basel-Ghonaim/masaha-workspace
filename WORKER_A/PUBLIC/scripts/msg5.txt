@@ -1,0 +1,12 @@
+feat(directory): list the spaces page by page
+
+Screen 2's list: the site's «المساحات» was a placeholder over a built API.
+A new web feature, directory, lists the publicly listed spaces 20 a page
+from GET /spaces: each card one link with its cover or mark, its name,
+its area (lookups' AreaName, set by the page), its live status by word,
+«موثّقة» and today's hours on Gaza's calendar; no price. The search,
+the order and the page live in the address (S5), a value the server
+would refuse falling back to its default, and a search with no letter
+to match kept off the request (S15). The cards stay while the next page
+loads (S13); a new page takes the focus to the results. Foundation §5's
+status roles follow DECISIONS_SHARED (S14).

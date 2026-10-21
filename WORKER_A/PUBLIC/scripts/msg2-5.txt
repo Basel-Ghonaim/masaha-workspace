@@ -1,0 +1,8 @@
+fix(directory): reset the price on clearing
+
+Carried from #103 (item 6). The price filter keeps its typed texts and a
+period chosen before any bound in its own state, reset only when the
+address's bounds change: «abc» in «إلى», or «شهر» with no bound, stayed
+after «مسح الفلاتر», and a bound typed within its pause came back after
+the clear. Both clear actions now reset the fields and the period, which
+also restarts the pause.

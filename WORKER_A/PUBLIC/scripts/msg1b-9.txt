@@ -1,0 +1,14 @@
+feat(directory): filter by place, price and state
+
+Screen 2's filters (U1, U5): the place, from lookups' area filter set in
+the list's slot by the page; «متاحة الآن فقط» and «المساحات الموثّقة
+فقط»; the price, a period and a budget in whole shekels, each refused
+bound said and left out; and «أخرى», student prices and open on Friday
+(S9). Each applies at once, in the address.
+
+They are drawn once per width, never twice with duplicate ids: a
+sidebar from 1024 px and a bottom sheet below it, the P5 exception (S6),
+so the design system's barrel exports useMediaQuery. The sheet's button
+is its own trigger and counts the filters in force; its primary button
+counts the spaces they leave, in Arabic agreement (design issues 2, 4,
+10, 11, 14).

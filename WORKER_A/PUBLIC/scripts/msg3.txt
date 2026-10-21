@@ -1,0 +1,8 @@
+feat(site): add a skip link and focus each page
+
+SH-018: the site's shell had no way past its header, and the design's
+skip link led to no target (R2-PU-AX-001). Its first focusable element
+is now «تخطَّ إلى المحتوى», leading to <main id="main">, and a new page
+moves the focus to main, so a client-side navigation never leaves it on
+a removed link; not on the first load, nor when only the search or the
+hash changes. Finding 130 records the dashboard's shells, which lack it.

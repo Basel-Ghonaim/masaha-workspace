@@ -1,0 +1,6 @@
+fix(directory): close the sheet when it widens
+
+Carried from #103 (item 7). The filters' sheet kept its open state when
+the screen reached 1024 px and the sidebar replaced it: turning a
+tablet back below 1024 px reopened the sheet unasked, with its focus
+trap. It now closes as soon as the screen is wide.

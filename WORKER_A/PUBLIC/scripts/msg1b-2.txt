@@ -1,0 +1,16 @@
+fix(directory): keep the focus while searching
+
+On page 2, a search typed after the pause replaced the address with page
+1, and when the answer came the results' heading took the focus from the
+field: the next keys were lost, and a phone's keyboard closed. The same
+happened for an order chosen past page 1, and on a pasted page past the
+last. The focus now moves only for a page the visitor chose: the pages
+are links, pushed; a search, an order and a page past the last replace
+the address.
+
+The count's live region also announced the old total under the new
+filters while the next answer loaded («21 مساحة مطابقة» before any
+match). It is now worded from a real answer only, keeping its last line
+meanwhile.
+
+Carried from #101 (review items 1 and 8).

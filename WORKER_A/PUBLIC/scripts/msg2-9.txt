@@ -1,0 +1,10 @@
+feat(map): show many marks and pick a centre
+
+The Directory's map needs many places on one map, a selected one, the
+visitor's point and a point picked at a centre crosshair (U6, U7).
+Leaflet stays in shared/map, held there by lint, so the map of many
+marks is generic: its caller names each mark by shape and tone and its
+meaning stays with the caller (S12); leaflet.css draws the marks, the
+selected ring, the visitor's point and the crosshair from the tokens.
+The tiles, controls and box of the point picker are shared with it, and
+the line a map shows when it cannot load is its caller's.

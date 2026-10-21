@@ -1,0 +1,7 @@
+test(directory): prove near me's privacy gates
+
+Carried from #103 (item 4, the owner's §3 rule). The stopped state, a
+point kept and nothing sent, had no component test: test 42 now stops
+the distance order and sees no privacy line, the button not pressed and
+no header on the next ask. The header's sorting gate in useDirectoryList
+had no break of its own; it was broken once and test 41 seen red.

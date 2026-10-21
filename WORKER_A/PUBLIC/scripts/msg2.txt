@@ -1,0 +1,7 @@
+refactor(spaces): share the name and clock rules
+
+The site's cards name a space and say today's hours, and spaces is
+dashboard-only, so spaceNameOf and SpaceNameView move to shared/lib's
+names and clockOf to its time, each with its tests, unchanged.
+clockTime keeps minuteOf and settledClock and imports clockOf; every
+importer reads @shared/lib.

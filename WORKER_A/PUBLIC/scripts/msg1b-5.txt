@@ -1,0 +1,13 @@
+fix(site): focus the page after signing in
+
+The site's shell and the focus shell are sibling layouts, so signing in
+mounts a fresh site shell, whose focus rule took the page it opened on
+for a first load and left the focus where it was: on the sign-in button,
+which was gone, so on nothing. The shell now tells a load (a pop: the
+first load, a reload) from an arrival by navigation, and on the latter
+its first page takes the focus too.
+
+Finding 130 gains the focus shell's own lack of the skip link and of the
+focus move between its pages.
+
+Carried from #101 (review item 5).

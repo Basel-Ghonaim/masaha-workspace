@@ -1,0 +1,12 @@
+fix(directory): keep near me's focus and status
+
+Carried from #103 (items 1 and 5). Stopping or clearing near me
+unmounted the focused button, so the focus fell to the page's top, and
+the granted line replaced the only live region with plain text, so it
+was never announced. The state line is now one live region that stays
+mounted while its content changes; stop and clear hand the focus back
+to «الأقرب إليّ», which is busy, not disabled, while it asks.
+
+A card also kept «على بعد … كم» from the answer still shown once the
+distance order stopped; it now words a distance only while the list
+is ordered by distance.

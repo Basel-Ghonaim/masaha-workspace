@@ -1,0 +1,113 @@
+--10
+  × falls back to the default for each value the server would refuse 6ms
+  Tests  1 failed | 4 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'relevance' to be undefined
+--11
+  × writes no default into the address 13ms
+  × writes what differs from the defaults, the budget with its period 12ms
+  Tests  2 failed | 3 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'page=1' to be '' // Object.is equality
+  AssertionError: expected 'period=DAY&min=10&page=1' to be 'period=DAY&min=10' // Object.is equality
+--12
+  × keeps a search of diacritics only off the request, and says so 9ms
+  Tests  1 failed | 4 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected { q: 'َِ', refused: true } to deeply equal { q: undefined, refused: true }
+--13
+  × asks in agorot, the period only with a bound, only the true flags, and the language only to order by name 9ms
+  Tests  1 failed (1)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected { limit: 20, q: 'Focus', …(8) } to deeply equal { limit: 20, q: 'Focus', …(8) }
+--14
+  × asks for a page of spaces with its query; a failure arrives as an AppError 15ms
+  Tests  1 failed (1)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected { …(19) } to match object { method: 'get', url: '/spaces', …(1) }
+--15
+  × shows a live state by its word and its role: available success, full warning, closed neutral, none in words 10ms
+  Tests  1 failed | 1 passed (2)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected { label: 'ممتلئ', …(1) } to deeply equal { label: 'ممتلئ', variant: 'warning' }
+--16
+  × reads today on Gaza’s calendar: an instant just past Gaza’s midnight is already its next day 8ms
+  Tests  1 failed | 2 passed (3)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'Today \u206608:00–22:00\u2069' to be 'Today \u206608:30–24:00\u2069' // Object.is equality
+--18
+  × a filter replaces the address and returns to the first page 28ms
+  Tests  1 failed | 3 passed (4)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected '?verified=1&sort=name&page=3' to be '?verified=1&sort=name' // Object.is equality
+--19
+  × the search reaches the address only once typing has paused 16ms
+  Tests  1 failed | 3 passed (4)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected '?q=Focus' to be '?page=2' // Object.is equality
+--20
+  × shows skeletons while the first page loads, then the cards 34ms
+  × a failure says so with its reference, and «إعادة المحاولة» asks again 8ms
+  Tests  2 failed | 5 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'failed' to be 'loading' // Object.is equality
+  AssertionError: expected undefined to be 'تعذّر تحميل المساحات' // Object.is equality
+--21
+  × a failure says so with its reference, and «إعادة المحاولة» asks again 3076ms
+  Tests  1 failed | 6 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'failed' to be 'ready' // Object.is equality
+--22
+  × no connection says so, not a server’s failure 41ms
+  Tests  1 failed | 6 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'حدث خطأ من جهتنا. حاول مرة أخرى.' to be 'لا يوجد اتصال. تحقّق من الإنترنت وحاو…' // Object.is equality
+--23
+  × tells an empty directory from no match; only no match offers clearing the filters 3030ms
+  Tests  1 failed | 6 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'noMatch' to be 'empty' // Object.is equality
+--24
+  × keeps the cards while the next page loads, marked busy 3089ms
+  Tests  1 failed | 6 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected false to be true // Object.is equality
+--25
+  × a page past the last shows the last 3022ms
+  Tests  1 failed | 6 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected '?page=5' to be '?page=2' // Object.is equality
+--26
+  × counts the Strip’s spaces, or the matching ones once a filter or a search narrows them 3089ms
+  Tests  1 failed | 6 passed (7)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'مساحتان في قطاع غزة' to be 'مساحتان مطابقتان' // Object.is equality
+--27
+  × names the search, the sort, the results and the pages; each card is one link named by its space; axe-clean at 390 px 3140ms
+  × names the search, the sort, the results and the pages; each card is one link named by its space; axe-clean at 1440 px 3051ms
+  × moves the focus to the results when the page changes, and only then 3047ms
+  Tests  3 failed | 2 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+  TestingLibraryElementError: Unable to find role="region" and name "النتائج"
+  TestingLibraryElementError: Unable to find role="region" and name "النتائج"
+  TestingLibraryElementError: Unable to find role="heading" and name "النتائج"
+--28
+  × moves the focus to the results when the page changes, and only then 174ms
+  Tests  1 failed | 4 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  Error: [2mexpect([22m[31melement[39m[2m).not.toHaveFocus()[22m
+--29
+  × a cover that fails to load shows the space’s mark in its place 3137ms
+  Tests  1 failed | 4 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected <img alt loading="lazy" …(3)></img> to be null
+--30
+  × offers «الأفضل تطابقًا» only while a search is typed 246ms
+  Tests  1 failed | 4 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected [ 'الأفضل تطابقًا', …(2) ] to deeply equal [ 'الأحدث تحديثًا', 'حسب الاسم' ]
+--44
+  × shows the Directory under its title 4257ms
+  Tests  1 failed | 4 passed (5)
+  ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+  AssertionError: expected 'Masaha' to be 'Spaces · Masaha' // Object.is equality

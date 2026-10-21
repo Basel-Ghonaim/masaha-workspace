@@ -1,0 +1,9 @@
+refactor(lists): share the page-in-range rule
+
+The site's directory kept a line-for-line copy of space-links'
+usePageInRange, which the site could not import (space-links is
+dashboard-only). The rule moves to shared/lists beside the list's pages,
+and its two admin lists and the directory's list read it from there, so a
+later fix reaches all three. No behaviour change.
+
+Carried from #101 (review item 6).

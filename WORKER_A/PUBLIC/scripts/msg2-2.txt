@@ -1,0 +1,8 @@
+fix(directory): stop locating when no answer comes
+
+Carried from #103 (item 2). The device's own timeout counts only once
+the permission is given, and a prompt dismissed without a choice, as
+Firefox allows, calls neither callback: near me stayed «جارٍ تحديد
+موقعك…» with its privacy line until a reload. No answer within 15 s now
+ends the ask as denied, with «اختر منطقتك»; each ask has its number in
+the store, so an answer after the wait, a clear or a new ask is dropped.

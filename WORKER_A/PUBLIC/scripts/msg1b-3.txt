@@ -1,0 +1,12 @@
+fix(directory): offer a retry after a limit
+
+After a 429 for the first page, the countdown ran with the retry
+disabled; when it ended, the refusal's view was gone and the list drew
+nothing at all: no cards, no line, no «إعادة المحاولة», until a reload.
+Many visitors behind one carrier's address can reach the guest limit.
+The failure now stays with its title, the limit's line and the retry,
+as the admin's spaces list keeps it.
+
+A failed refresh over the cards shown, which had no test, gains one.
+
+Carried from #101 (review items 2 and 10).

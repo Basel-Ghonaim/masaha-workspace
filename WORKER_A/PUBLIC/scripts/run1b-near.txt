@@ -1,0 +1,55 @@
+== near
+· ar 390 granted state line: 35 مساحة في قطاع غزة / الأقرب إليّ / مرتبة حسب المسافة من موقعك. المسافات تقريبية بخط مستقيم. يُرسَل موقعك مقرَّبًا لترتيب المساحات حسب المسافة فقط، ولا يُحفظ. / إيقاف الترتيب حسب المسافة / مسح موقعي
+· ar 390 granted pressed: true sort: الترتيب: حسب المسافة
+shot 1b-near-granted-ar-light-390
+· ar 390 distances: [["Bare Space","على بعد 0.7 كم"],["Contacts Only","على بعد 0.7 كم"],["Arrival Hub 77491","على بعد 0.9 كم"],["Offline Tiles Hub 66154","على بعد 1.2 كم"]]
+· ar 390 stopped — line: 35 مساحة في قطاع غزة / الأقرب إليّ / مسح موقعي sort: الترتيب: الأحدث تحديثًا
+shot 1b-near-stopped-ar-light-390
+· ar 390 again — pressed: true
+· ar 390 cleared — line: 35 مساحة في قطاع غزة / الأقرب إليّ
+· ar 390 after «clear»: requests 3 with the header 0
+shot 1b-near-cleared-ar-light-390
+· ar 390 denied state line: 35 مساحة في قطاع غزة / الأقرب إليّ / تعذّر تحديد موقعك / اختر منطقتك لتصفّح مساحاتها. / اختر منطقتك
+· ar 390 denied pressed: false sort: الترتيب: الأحدث تحديثًا
+shot 1b-near-denied-ar-light-390
+· ar 390 denied requests with the header after pressing: 0
+· ar 390 denied «choose your area» → focus: {"tag":"BUTTON","role":"combobox","inSheet":true,"inSidebar":false}
+shot 1b-near-choose-area-ar-light-390
+· ar 390 imprecise state line: 35 مساحة في قطاع غزة / الأقرب إليّ / تعذّر تحديد موقعك بدقة / يبدو أن موقعك خارج قطاع غزة، أو أن هامش الخطأ فيه أكبر من 2 كم، فلم نستخدمه. / اختر منطقتك
+· ar 390 imprecise pressed: false sort: الترتيب: الأحدث تحديثًا
+shot 1b-near-imprecise-ar-light-390
+· ar 390 imprecise requests with the header after pressing: 0
+· ar 390 imprecise «choose your area» → focus: {"tag":"BUTTON","role":"combobox","inSheet":true,"inSidebar":false}
+· ar 390 outside state line: 35 مساحة في قطاع غزة / الأقرب إليّ / تعذّر تحديد موقعك بدقة / يبدو أن موقعك خارج قطاع غزة، أو أن هامش الخطأ فيه أكبر من 2 كم، فلم نستخدمه. / اختر منطقتك
+· ar 390 outside pressed: false sort: الترتيب: الأحدث تحديثًا
+shot 1b-near-outside-ar-light-390
+· ar 390 outside requests with the header after pressing: 0
+· ar 390 outside «choose your area» → focus: {"tag":"BUTTON","role":"combobox","inSheet":true,"inSidebar":false}
+· ar 390 PRIVACY PROOF: {"requests":20,"withHeader":1,"coordinateInUrl":0,"headerWithoutDistance":0,"distanceWithoutHeader":0,"moreThanThreeDecimals":0}
+· en 1440 granted state line: 35 spaces in the Gaza Strip / Nearest to me / Sorted by distance from your location. Distances are approximate, in a straight line. Your location is sent rounded, only to sort spaces by distance, and is never stored. / Stop sorting by distance / Clear my location
+· en 1440 granted pressed: true sort: Sort: By distance
+shot 1b-near-granted-en-dark-1440
+· en 1440 distances: [["Bare Space","0.7 km away"],["Contacts Only","0.7 km away"],["Arrival Hub 77491","0.9 km away"],["Offline Tiles Hub 66154","1.2 km away"]]
+· en 1440 stopped — line: 35 spaces in the Gaza Strip / Nearest to me / Clear my location sort: Sort: Latest updates
+shot 1b-near-stopped-en-dark-1440
+· en 1440 again — pressed: true
+· en 1440 cleared — line: 35 spaces in the Gaza Strip / Nearest to me
+· en 1440 after «clear»: requests 2 with the header 0
+shot 1b-near-cleared-en-dark-1440
+· en 1440 denied state line: 35 spaces in the Gaza Strip / Nearest to me / We couldn’t find your location / Choose your area to browse its spaces. / Choose your area
+· en 1440 denied pressed: false sort: Sort: Latest updates
+shot 1b-near-denied-en-dark-1440
+· en 1440 denied requests with the header after pressing: 0
+· en 1440 denied «choose your area» → focus: {"tag":"BUTTON","role":"combobox","inSheet":false,"inSidebar":true}
+shot 1b-near-choose-area-en-dark-1440
+· en 1440 imprecise state line: 35 spaces in the Gaza Strip / Nearest to me / We couldn’t find your location precisely / Your position seems to be outside the Gaza Strip, or off by more than 2 km, so we didn’t use it. / Choose your area
+· en 1440 imprecise pressed: false sort: Sort: Latest updates
+shot 1b-near-imprecise-en-dark-1440
+· en 1440 imprecise requests with the header after pressing: 0
+· en 1440 imprecise «choose your area» → focus: {"tag":"BUTTON","role":"combobox","inSheet":false,"inSidebar":true}
+· en 1440 outside state line: 35 spaces in the Gaza Strip / Nearest to me / We couldn’t find your location precisely / Your position seems to be outside the Gaza Strip, or off by more than 2 km, so we didn’t use it. / Choose your area
+· en 1440 outside pressed: false sort: Sort: Latest updates
+shot 1b-near-outside-en-dark-1440
+· en 1440 outside requests with the header after pressing: 0
+· en 1440 outside «choose your area» → focus: {"tag":"BUTTON","role":"combobox","inSheet":false,"inSidebar":true}
+· en 1440 PRIVACY PROOF: {"requests":19,"withHeader":1,"coordinateInUrl":0,"headerWithoutDistance":0,"distanceWithoutHeader":0,"moreThanThreeDecimals":0}

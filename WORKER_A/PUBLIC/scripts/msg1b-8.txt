@@ -1,0 +1,9 @@
+docs(findings): record a paged list's silent wait
+
+#101's review found that the next page of a paged list shows no sign of
+loading: the shown rows stay, marked busy for assistive technology only,
+and the pages still mark the old page as current. Every paged list on the
+web behaves alike (the Directory and the admin's three lists), so it is
+recorded as a design point for the owner rather than changed in one list.
+
+Carried from #101 (review item 9): recorded, not built.

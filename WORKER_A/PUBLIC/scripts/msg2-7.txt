@@ -1,0 +1,7 @@
+docs(findings): widen 130 to the focus shell
+
+Carried from #103 (items 8 and 9). The review found two arrivals the
+site's shell misjudges, Back from the focus shell and a first load a
+guard redirects with replace: recorded, not built, with the focus
+shell's own gap. Finding 130's Resolves when named only the dashboard,
+so a dashboard item could close it while FocusLayout still lacks both.

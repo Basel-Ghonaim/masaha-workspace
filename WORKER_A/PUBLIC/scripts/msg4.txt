@@ -1,0 +1,9 @@
+feat(lookups): offer the public areas to the site
+
+The site's Directory filters by place and names each card's area, and no
+feature imports another, so lookups offers both and the page sets them
+in the directory's slots (S7). AreaFilter chooses any number of areas
+from the public catalogue, grouped under their governorates and found by
+either name, with its summary, loading and failure. AreaName takes its
+source: the public catalogue for the site, the admin's lists for the
+space editor, which now says so.

@@ -1,0 +1,7 @@
+docs(findings): record the place filter's cap
+
+Carried from #103 (item 10). The server takes at most 50 areas and the
+address reads more as none, while AreaFilter lets any number be chosen:
+past 50 areas in the catalogue, the 51st would clear the whole place
+filter silently. Not reachable with today's catalogue, so recorded as
+finding 133 rather than built.

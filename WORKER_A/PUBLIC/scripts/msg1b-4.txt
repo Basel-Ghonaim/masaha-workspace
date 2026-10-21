@@ -1,0 +1,10 @@
+fix(directory): drop a budget below its minimum
+
+A hand-edited or pasted address such as ?min=50&max=10 kept both bounds,
+so the request carried priceMin above priceMax, the server refused it
+with a 422, and the list was replaced by a failure. That broke the
+address's own rule: a value the server would refuse falls back and never
+reaches the request. The maximum is now left out when it is under the
+minimum, the rule the price filter's fields will use.
+
+Carried from #101 (review item 3).

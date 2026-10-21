@@ -1,0 +1,28 @@
+I reviewed PR #101 at head `e50d9222`: it's mergeable, with no blocker. All nine CI checks are green and GitHub shows it CLEAN. The head did not move during the review.
+
+I read the code, tests, docs and commit messages myself. I ran no tests or builds and viewed no screenshots. The real run, the screen widths, the breaks turning red and the evidence for finding 27 come only from the executor's report.
+
+**The five most important findings** (all should-fix and small, so they go into PR 1b's first commit via `0_CARRIED_FROM_101.md`):
+1. **Focus jumps mid-typing.** The focus moves to the hidden results heading whenever the shown page number changes. So typing a search, or picking a sort, from page 2 or later pulls the focus out of the field when the answer arrives. On a phone the keyboard closes. A pasted link past the last page does the same on first load. The fix is to move the focus only when the visitor chose a page (a push, not a replace). This is the most visible one; you may prefer a fix round for it.
+2. **Blank list after a rate-limit.** After a 429 with `Retry-After`, the list goes blank once the countdown ends: no line and no «إعادة المحاولة». The admin lists keep their retry in the same case.
+3. **Hand-edited budget fails the list.** `?min=50&max=10` reaches the server, which refuses it, and the list turns into a failure. That breaks S5's rule, which `directory.md` states as built.
+4. **`lookups.md` claims too much.** It says the site's Directory filters by `AreaFilter`, but nothing sets it on this head. That breaks the approval note's "documents say only what it built".
+5. **No focus after signing in.** Arriving on the site's shell from the sign-in shell is treated as a first load, so the focus is not moved. I saw this in the code; that the focus then falls to the page body is browser behaviour I did not observe.
+
+**The rest:**
+- **Duplicated rule (should-fix).** The page-past-the-last check is copied line for line from `space-links`' `usePageInRange`. That hook has no ties to `space-links` and should move to `shared/lists` with the other pieces.
+- **Card details may be skipped (should-fix, plausible).** Each card is one link named only by the space's name. A screen reader may then never read the status, «موثّقة», today's hours or the area. I did not test this with a screen reader.
+- **Nits and findings to record:**
+  - The live count briefly announces a wrong «مطابقة» line while the next answer loads.
+  - Nothing visible shows that the next page is loading on a slow connection; this matches the admin lists, so it's a finding to record.
+  - Two failure states have no test.
+  - Two count lines repeat the empty-state wording.
+
+**The executor's departures:** most hold.
+- The split of commit 5 left nothing half-wired.
+- Deferring `useMediaQuery` to 1b was correct; the execution prompt was wrong on that point.
+- The four changed tests are not weakened.
+- The extra files (99 against about 63) are all in scope.
+- Two do not hold: the inline copy of the page-past-the-last rule, and the shell's focus hook losing track when the shell is opened again.
+
+Report: `C:\dev\masaha\workspace\WORKER_A\PUBLIC\6_REVIEW_PR1A_CLAUDE_CODE.md`

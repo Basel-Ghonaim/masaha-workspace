@@ -1,0 +1,7 @@
+refactor(space-links): share the list's pages
+
+The site's Directory pages its list too, and space-links is dashboard-only,
+so the list's pages (ListPagination, paginationView, PaginationView,
+pageItems) and the paused search move to a new shared/lists module,
+unchanged, with their test. The seven space-links importers read
+@shared/lists; architecture §1 names the module.

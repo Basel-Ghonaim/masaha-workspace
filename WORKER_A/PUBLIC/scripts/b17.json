@@ -1,0 +1,1 @@
+[["  return new Intl.NumberFormat(language === 'ar' ? 'ar-u-nu-latn' : 'en', {\n    maximumFractionDigits: km < 10 ? 1 : 0,\n  }).format(km);", "  return km.toFixed(1);"]]

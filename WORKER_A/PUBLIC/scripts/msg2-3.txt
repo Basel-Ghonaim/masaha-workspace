@@ -1,0 +1,9 @@
+fix(directory): clear what found nothing
+
+Carried from #103 (item 3, the owner's choice). No match's «مسح الفلاتر»
+also erased the search and the order, while the sheet's button of the
+same name keeps them: one label, two meanings, and directory.md said
+only one. While a filter is in force it now takes off the filters, as
+the sheet's does; when the search alone narrows the list to nothing, it
+takes off the search alone (best match with it). clearAll had no other
+caller and gives way to clearSearch.
