@@ -72,6 +72,10 @@ directory, build step 3), **docs** (the owning document), **web** (worker A, ste
   *(prototype; API: a thumbnail for the cover — near the deferred storage layer, Issue #37, to plan
   with the owner; web: step 3)* — *open:* whether U9's four price cells stay once the card has a
   photo (the analyst proposes two: day and month).
+  > **Superseded by the amendments at the top (2026-10-12):** U9's card part («the card keeps its four general
+  > cells and one «للطلاب» line») and U12's open point (whether the cells stay) — the card shows no price;
+  > U2's sort list loses «الأقل سعرًا»; the amenities are no filter. The web builds the amended rules
+  > (PUBLIC, PR 1). *(Added by the supervisor with the owner's approval, 2026-10-21.)*
 
 ## The space page
 - **U8 — one order at every width** (PU-007): status & contact → announcements (when any) → prices →

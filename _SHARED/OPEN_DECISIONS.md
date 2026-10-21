@@ -16,7 +16,10 @@ Each line: what, the owner's leaning (2026-10-18), and the item that must settle
    Gaza needs a decision on the spot), **the owner is notified**; extending subscriptions stays the
    owner's. *Settle in: the announcements item.*
 3. **Every customer's phone number:** needed at the desk. → No export and no whole list for reception;
-   search and pages only. *Settle in: step 8 (customers).*
+   search and pages only. **Settled (#102, 2026-10-21):** a paged, searched list (at most 50 a page) for the
+   owner and reception; no export and no whole list for anyone in step 8; an export is the owner's, later, in
+   finance. Reception also reads an archived customer's file by id (its debts are collected at the desk —
+   the owner's word, 2026-10-21, carried to SUBSCRIPTIONS PR 2).
 4. **A shared desk device:** a payment may be recorded under another receptionist's session, spoiling
    «each staff member's collections». → A short idle sign-out for reception accounts and a visible
    «تبديل الموظف». *Settle in: the desk's screen item (worker A) — the owner's decision, 2026-10-20: it is a web
