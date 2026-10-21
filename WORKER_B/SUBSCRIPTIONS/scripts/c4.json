@@ -1,0 +1,23 @@
+[
+ {"id":"B32","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"const DEBT = Prisma.sql`coalesce(sum(greatest(due - paid, 0)), 0)::integer`;","new":"const DEBT = Prisma.sql`coalesce(sum(due - paid), 0)::integer`;",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"a debt is the sum of positive balances"},
+ {"id":"B33","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"sum(greatest(paid - due, 0)) FILTER (WHERE usage_based), 0)","new":"sum(greatest(paid - due, 0)), 0)",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"credit is only"},
+ {"id":"B34","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"FROM payments WHERE space_id = ${spaceId} AND voided_at IS NULL","new":"FROM payments WHERE space_id = ${spaceId}",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"a voided payment counts for nothing"},
+ {"id":"B35","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"        AND v.written_off_at IS NULL\n","new":"",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"a voided payment counts for nothing"},
+ {"id":"B36","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"FROM payments WHERE space_id = ${spaceId} AND voided_at IS NULL","new":"FROM payments WHERE ${spaceId} > 0 AND voided_at IS NULL",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"the payment filter"},
+ {"id":"B36b","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"      WHERE v.space_id = ${spaceId} AND v.customer_id IS NOT NULL","new":"      WHERE ${spaceId} > 0 AND v.customer_id IS NOT NULL",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"the payment filter"},
+ {"id":"B37","file":"apps/api/src/modules/payments/payments.repository.ts",
+  "old":"        ORDER BY created_at, kind <> 'VISIT', id`;","new":"        ORDER BY id`;",
+  "lane":"api","test":"src/modules/payments/balances.api.test.ts","name":"itemBalances lists"}
+]

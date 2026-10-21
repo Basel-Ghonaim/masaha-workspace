@@ -1,0 +1,108 @@
+[
+ {
+  "id": "B3",
+  "file": "apps/api/src/modules/customers/customerSearch.ts",
+  "old": "return /^\\d{2,}$/.test(digits)",
+  "new": "return /^\\d{1,}$/.test(digits)",
+  "lane": "unit",
+  "test": "src/modules/customers/customerSearch.unit.test.ts"
+ },
+ {
+  "id": "B11",
+  "file": "packages/shared/src/customers/requests.ts",
+  "old": "z.object({ name, phone: phoneSchema.nullable() }).partial()",
+  "new": "z.object({ name, phone: phoneSchema }).partial()",
+  "lane": "shared",
+  "test": "src/customers/requests.unit.test.ts"
+ },
+ {
+  "id": "B18",
+  "file": "apps/api/src/modules/customers/customers.service.ts",
+  "old": "        await audit(\n          {\n            actorId: actor.id,\n            action: 'customer.created',",
+  "new": "        if (Number(key) > 0) await audit(\n          {\n            actorId: actor.id,\n            action: 'customer.created',",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "audited customer.created"
+ },
+ {
+  "id": "B19",
+  "file": "apps/api/src/modules/customers/customers.repository.ts",
+  "old": "        where: { spaceId, phone, archivedAt: null },",
+  "new": "        where: { spaceId, phone },",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "an archived customer's phone is free"
+ },
+ {
+  "id": "B20",
+  "file": "apps/api/src/modules/customers/customers.service.ts",
+  "old": "if (phone !== undefined && (await heldByAnother(space.id, phone, null, tx))) {",
+  "new": "if (key === '' && phone !== undefined && (await heldByAnother(space.id, phone, null, tx))) {",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "an archived customer's phone is free"
+ },
+ {
+  "id": "B21",
+  "file": "apps/api/src/modules/customers/customers.service.ts",
+  "old": "        if (recorded) return toCustomer(recorded);",
+  "new": "        if (recorded && key === '') return toCustomer(recorded);",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "a retry with the same key"
+ },
+ {
+  "id": "B22",
+  "file": "apps/api/src/modules/customers/customers.service.ts",
+  "old": "        await lockFor(actor, space, tx);\n        const recorded",
+  "new": "        if (!can(actor, 'customers.manage', { links: await space.linksUnder(tx) })) throw AppError.forbidden();\n        const recorded",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "two requests with one key"
+ },
+ {
+  "id": "B23",
+  "file": "apps/api/src/modules/customers/customers.manage.routes.ts",
+  "old": "    mayManage,\n    requireIdempotencyKey,\n",
+  "new": "    mayManage,\n",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "before anything is read"
+ },
+ {
+  "id": "B24",
+  "file": "apps/api/src/modules/customers/customers.service.ts",
+  "old": "        if (Object.keys(data).length === 0) return toCustomer(current);\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "the same values write nothing"
+ },
+ {
+  "id": "B25",
+  "file": "apps/api/src/app.ts",
+  "old": "  manage.use(createCustomersManageRouter(createCustomersController(customers)));",
+  "new": "  api.use('/manage/spaces/:spaceId', requireAuth(), createCustomersManageRouter(createCustomersController(customers)));",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "on every route"
+ },
+ {
+  "id": "B26",
+  "file": "apps/api/src/modules/customers/customers.service.ts",
+  "old": "    if (!can(actor, 'customers.manage', { links: await space.linksUnder(tx) })) {",
+  "new": "    if (!can(actor, 'customers.manage', { links: space.links })) {",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "a reception link ended"
+ },
+ {
+  "id": "B25b",
+  "file": "apps/api/src/app.ts",
+  "old": "  manage.use(createCustomersManageRouter(createCustomersController(customers)));",
+  "new": "  api.use('/manage/spaces/:spaceId', requireAuth(), loadSpaceLinks((spaceId, tx) => spaceLinks.linksAt(spaceId, tx)), createCustomersManageRouter(createCustomersController(customers)));",
+  "lane": "api",
+  "test": "src/modules/customers/customers.api.test.ts",
+  "name": "on every route"
+ }
+]

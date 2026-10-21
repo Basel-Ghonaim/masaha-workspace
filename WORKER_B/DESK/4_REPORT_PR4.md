@@ -246,3 +246,121 @@
   step 9's *Goal*; the route table's payments row; the managed *Built* sentence and its access line); `overview.md`.
 - `npm run lint` → exit 0
 - **Commit:** `d48accf5 feat(desk): leave a visit's debt to a customer` (46)
+
+## 12.4 Verification on the head (`d48accf5`): STOPPED
+
+- `npm run typecheck` → exit 0 (head). `npm run lint` → exit 0 (head).
+- Free memory before the full unit lane: 3,578,984 KB; no `vitest`/`tsc` running.
+- `npm run test:unit` → exit 0: `Test Files  19 passed (19)` / `Tests  233 passed (233)`; `Test Files  52 passed
+  (52)` / `Tests  797 passed (797)`; `Test Files  84 passed (84)` / `Tests  858 passed (858)`.
+- **`npm run test:api` — KILLED FOR MEMORY. Not run to a result.**
+  - Command: `npm run test:api` (from the root, in a background shell, output to `scripts\pr4\api.log`).
+  - Free memory before it started: 2,586,372 KB.
+  - Claude Code stopped the shell because "the system is running low on memory". The log ends after global setup
+    (`21 migrations found` / `No pending migrations to apply.`) with no test result.
+  - The lane's own `vitest` (PIDs 22908 and 24048, both `C:\dev\masaha\app-b`) kept running after the shell died. With
+    780–800 MB free, I stopped both by process id. Since then no node process of `app-b` runs, no `vitest`/`tsc` runs
+    anywhere, and free memory is about 1,032,548 KB, so something outside node holds the rest.
+  - Per the exec prompt §3, a lane killed for memory stops the work: **no retry**.
+- **Not run (the work stopped before them):** `test:api` on the head, `format:check`, `check:links` on the head (it
+  last passed during C2), `npm run build -w @masaha/shared`, the `#PRNUM` / `apps/web` / `package.json` checks, the
+  real run on 3321, `#PRNUM` replacement, the push, the PR, CI, the conflict check against #98.
+- **Where the work stands:**
+  - Branch `feat/visit-debts`, six local commits on `abc28e73`; nothing pushed; `git status --short` clean.
+  - Every per-commit focused API file was green on its commit, and every planned break was seen red.
+  - Port 3321 is free; no API server was started.
+  - `masaha_b_dev` and `masaha_b_test` are both at the new migration.
+
+Status: STOPPED — at §12.4, the full `test:api` lane, killed for memory.
+
+## The owner's answer, and the work resumed
+
+- The owner's answer: wait until no `vitest` of `C:\dev\masaha\app\` runs, then re-run `npm run test:api` **once** on the
+  head. If it passes, carry on. If it is killed again: record it, carry on, and let CI's `test:api` judge.
+- Free memory before the re-run: 4,536,916 KB; no `vitest`/`tsc` running anywhere.
+- `npm run test:api` (head `d48accf5`, foreground) → exit 0 — `Test Files  65 passed (65)` / `Tests  998 passed (998)`.
+- `npm run format:check` → exit 0, `All matched files use Prettier code style!` · `npm run check:links` → exit 0 ·
+  `npm run build -w @masaha/shared` → exit 0.
+- `git grep -n "#PRNUM"` → documents only (11 files under `docs/`).
+
+### Rebase on #98 (main moved while the work was stopped)
+
+- #98 (`feat/owner-packages`) merged as `cf3190a4`. `git merge-tree` of the branch with `origin/main` → one conflict:
+  `docs/architecture/findings/README.md`, a document (the fast path). `docs/README.md` and `overview.md`
+  auto-merged.
+- `git rebase origin/main`. The index conflicted in C0a, C2 and C3, each resolved by hand:
+  - C0a: kept #98's 101 and this PR's 111–113, in numeric order;
+  - C2: 110 added in order;
+  - C3: 100 removed from *Open* (it is under *Resolved*), 101 kept.
+  - Script: `scripts\pr4\resolve_index.py`.
+- `main`'s change since `abc28e73` is only `apps/web` and `docs`, none of `apps/api`/`packages/shared`, so
+  `test:api` was not re-run.
+- `git rebase -x "npm run lint && npm run typecheck" origin/main` → each commit `OK`: `6ac84af7`, `fa5ba41f`,
+  `5d485e3d`, `c90de502`, `a7440b30`, `6200aa77`.
+- On the rebased head: `format:check` → exit 0; `check:links` → exit 0, `2455 links in 153 documents and 1461 source
+  files all resolve.`
+- `git diff --stat origin/main -- apps/web` → only the two `errors.ts` (10 insertions, 2 deletions);
+  `git diff --stat origin/main -- package.json package-lock.json` → empty.
+
+## 12.6 The real run (API on 3321, `masaha_b_dev`, head `6200aa77`)
+
+- `npm run dev -w @masaha/api` in the background; `/health` → `{"status":"ok","db":"up",…}`.
+- The first script run failed at its own `limit=100` (the page maximum is 50). The two visits it had inserted (12,
+  13; no payments) were deleted, the script corrected, and it was run again.
+- Space 1 (`masaha-demo`), owner 2, reception 3. Visits A = 14 (2,500) and B = 15 (1,500), closed `AUTO` yesterday,
+  no customer:
+  1. uncollected lists `[15, 14]` ✔
+  2. reception pays 1,000 with no phone → **422** `phone: required` ✔
+  3. with `0599000124` → **201**, `balanceAgorot 1500`, customer 7 created (`+970599000124`, named after the visit) ✔
+  4. the same key again → **201**, the same payment ✔
+  5. 2,000 with a new key → **409 `PAYMENT_EXCEEDS_DUE`** ✔
+  6. `PUT …/visits/15/customer { phone: "0599000125" }` → **200**, customer 8; again → **200**, audit rows unchanged ✔
+  7. write-off as reception → **403** ✔
+  8. write-off as the owner, reason "Real run" → **200**, `writeOff` set ✔
+  9. uncollected → `[15]`, A gone ✔
+  10. reception pays on A → **409 `VISIT_WRITTEN_OFF`** ✔
+  11. the owner undoes → **200**, `writeOff null`; listed `[15, 14]` again ✔
+  12. the rest, 1,500 → **201**, `balanceAgorot 0` ✔
+- Audit, the latest 10: `payment.recorded, visit.writeOffUndone, visit.writtenOff, visit.leftToCustomer,
+  customer.created, visit.leftToCustomer, customer.created, payment.recorded, space.settingsEdited, visit.priced`.
+- The server was stopped by process ids 20180, 9888 and 18812; port 3321 is free; `server.log` was deleted.
+- The demo data now holds visits 14 (paid in full: 1,000 + 1,500, customer 7) and 15 (uncollected, customer 8),
+  customers 7 and 8, and their audit entries.
+
+## 12.7 The PR number, push and PR
+
+- `gh api …issues?…` gave 98 as the latest number, so `n=99`, and `#PRNUM` → `#99` by `filter-branch` per commit tree.
+  `git grep '#PRNUM'` → nothing; `check:links` and `format:check` → exit 0. Pushed (`git push -u`).
+- `gh pr create` → **#100**, not #99: worker A had opened **#99** (`feat(staff): add the owner's staff page`) in
+  between. Fixed as the plan says:
+  - `origin/main`'s text documents hold no `#99` (only three `.webp` images match), so `#99` → `#100` by
+    `filter-branch` in `.md` files only;
+  - the same 38 lines in 11 files changed;
+  - `git grep -nI '#99' -- '*.md'` → nothing; `check:links` → `2455 links … all resolve`; `format:check` → exit 0;
+  - `git push --force-with-lease` → head **`68edd9bc`**.
+- Commits on the pushed head:
+  - `495623c7 fix(jobs): keep closing stays past a failing one` (48)
+  - `6172ac5b fix(visits): close every stay by its day's end` (46)
+  - `bfc1c1da feat(visits): store a visit's write-off` (39)
+  - `50aaf894 feat(desk): write a visit off, and undo it` (42)
+  - `6490a241 feat(desk): receive a payment for a visit` (41)
+  - `68edd9bc feat(desk): leave a visit's debt to a customer` (46)
+- Labels `feat`, `area:api`, `area:docs`, `area:web` exist and were set. The PR body is `scripts\pr4\pr_body.md`.
+
+## 12.8 Conflicts and open decisions
+
+- **#99** (worker A, `feat/owner-staff-settings`): `git merge-tree` with this head → conflicts in **documents only**:
+  `docs/architecture/findings/README.md`, `docs/features/space-settings.md`, `docs/project/overview.md` (and
+  `docs/README.md` auto-merges). This is the fast path when its turn comes; no code file is shared.
+- `C:\dev\masaha\workspace\_SHARED\OPEN_DECISIONS.md`: no `K6` or `DK-012` entry, so nothing was edited.
+
+## CI and the end state
+
+- `gh pr checks 100` on head `68edd9bc` (= `git rev-parse HEAD`): every check passes —
+  - lint 1m39s · typecheck 57s · format:check 47s · check:links 30s · check:classes 32s
+  - build 49s · test:unit 1m54s · test:api 5m32s · test:component 16m5s · CodeRabbit
+- `gh pr view 100 --json mergeStateStatus` → `CLEAN`.
+- Nothing merged, and no issue or comment written.
+- `git status --short` → clean. Port 3321 is free.
+
+Status: DONE — ready for review.

@@ -1,0 +1,70 @@
+[
+ {
+  "id": "C0-1a",
+  "file": "apps/api/src/modules/visits/visits.service.ts",
+  "old": "      return {\n        visits: closed,",
+  "new": "      if (failed > 0) throw new Error('failed');\n      return {\n        visits: closed,",
+  "lane": "api",
+  "test": "src/shared/jobs/jobs.api.test.ts"
+ },
+ {
+  "id": "C0-1b",
+  "file": "apps/api/src/shared/jobs/jobs.ts",
+  "old": "        failed: ran.some(({ done }) => done === null),",
+  "new": "        failed: false,",
+  "lane": "unit",
+  "test": "src/shared/jobs/jobs.unit.test.ts"
+ },
+ {
+  "id": "C0-2a",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "const checkedOutAt = await visits.stayEndAt(space.id, locked, pricedTo, settings, tx);",
+  "new": "const checkedOutAt = pricedTo;",
+  "lane": "api",
+  "test": "src/modules/desk/checkOut.api.test.ts",
+  "name": "next morning"
+ },
+ {
+  "id": "C0-2b",
+  "file": "apps/api/src/modules/visits/visits.service.ts",
+  "old": "const stay = { from: row.checkedInAt, to: stayEnd(row.checkedInAt, at, week, settings) };",
+  "new": "const stay = { from: row.checkedInAt, to: at };",
+  "lane": "api",
+  "test": "src/modules/visits/visits.api.test.ts"
+ },
+ {
+  "id": "C0-2c",
+  "file": "apps/api/src/modules/visits/visits.service.ts",
+  "old": "{ from: checkedInAt, to: stayEnd(checkedInAt, at, week, settings) },",
+  "new": "{ from: checkedInAt, to: at },",
+  "lane": "api",
+  "test": "src/modules/occupancy/present.api.test.ts"
+ },
+ {
+  "id": "C0-7a",
+  "file": "apps/api/src/modules/visits/visits.repository.ts",
+  "old": "SELECT id FROM visits WHERE id = ${visitId} AND space_id = ${spaceId} FOR UPDATE`;",
+  "new": "SELECT id FROM visits WHERE id = ${visitId} AND ${spaceId} > 0 FOR UPDATE`;",
+  "lane": "api",
+  "test": "src/modules/desk/writeOff.api.test.ts",
+  "name": "another space's visit is not_found"
+ },
+ {
+  "id": "C0-7b",
+  "file": "apps/api/src/shared/auth/spaceAccess.ts",
+  "old": "if (!can({ id: userId, role }, 'space.read', { links })) throw AppError.notFound();",
+  "new": "if (role === 'GUEST' && !can({ id: userId, role }, 'space.read', { links })) throw AppError.notFound();",
+  "lane": "api",
+  "test": "src/modules/desk/writeOff.api.test.ts",
+  "name": "another space's visit is not_found"
+ },
+ {
+  "id": "C0-7c",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "    const links = await space.linksUnder(tx);\n    if (!can(actor, action, { links })) throw AppError.forbidden();",
+  "new": "    const links = space.links;\n    if (!can(actor, action, { links })) throw AppError.forbidden();",
+  "lane": "api",
+  "test": "src/modules/desk/writeOff.api.test.ts",
+  "name": "while the undo waited"
+ }
+]

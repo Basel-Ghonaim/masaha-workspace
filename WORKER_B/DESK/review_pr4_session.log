@@ -1,0 +1,22 @@
+I've written the review of PR #100 to `C:\dev\masaha\workspace\WORKER_B\DESK\6_REVIEW_PR4_CLAUDE_CODE.md`. It covers head `68edd9bc`: CI was green and the PR `CLEAN` before I started, and the head hadn't moved when I finished.
+
+**Verdict:** no blocker, and nothing needs a fix round on this PR. The money rules, the write-off and its undo, «تسجيل دينًا», the migration and the two carried commits match the plan and your approval note. The trigger function is copied whole, with only the written-off rule added.
+
+**The five most important findings:**
+1. **Finding to record (plausible): a stay that always fails makes every cron call answer 500.** If the cron service turns a job off after repeated failures (I think cron-job.org does this, but haven't confirmed it), one bad stay would stop the auto check-out for every space. That is the halt carried item 1 was meant to remove.
+2. **Should-fix, small, for worker B's next PR: four document lines don't yet describe what this PR built.**
+   - `payments.md` has no `#100` history line.
+   - `payments.md` says only the check-out's key is found again; the payment route's is too.
+   - `visits.md` *Leaves* / *How it composes* still name only the check-in and check-out as running in the desk's transaction.
+   - Conventions §13's "the last one locks the item's row" now points at the written-off rule, not the ceiling.
+3. **Finding to record: the write-off and its undo have no idempotency key.** A retry that arrives late can flip a visit back after the owner has undone the write-off (or re-done it). This was your approved decision; this interleaving just wasn't discussed.
+4. **Finding to record: the one-day bound on a charge only holds when the job runs.** A manual check-out of a stay that is past its due time charges up to now. So it can cross midnight, and #95's nit 9 is only resolved as long as the job runs.
+5. **Nit: the PR description gets two facts wrong.**
+   - It says "B12 has no break of its own"; it is T12.
+   - It says `test:unit` and `test:api` ran "on the head", but they ran on the commit before the rebase.
+
+   It also leaves out the schema edited by hand and the D1/D2 reds that came only through the database breaks. This is a description edit, with no commit.
+
+The review also lists three lower nits and a "Checked and fine" section.
+
+On the API lane: it was not left to CI as its judge. It was killed once for memory, re-run once as you allowed, and passed (998 tests) on the commit before the rebase. I only read that in the executor's report. CI's `test:api` being green on the pushed head I saw myself.

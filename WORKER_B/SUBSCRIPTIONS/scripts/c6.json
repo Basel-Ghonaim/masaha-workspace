@@ -1,0 +1,42 @@
+[
+ {
+  "id": "C6-a",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "        WHERE v.space_id = ${spaceId} AND v.checkout_method = 'AUTO' AND v.written_off_at IS NULL\n",
+  "new": "        WHERE v.space_id = ${spaceId} AND v.checkout_method = 'AUTO'\n",
+  "lane": "api",
+  "test": "src/modules/payments/uncollected.api.test.ts"
+ },
+ {
+  "id": "C6-b",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "          AND (v.charge_agorot IS NULL OR v.charge_agorot - coalesce(p.paid, 0) > 0)`;",
+  "new": "          AND true`;",
+  "lane": "api",
+  "test": "src/modules/payments/uncollected.api.test.ts"
+ },
+ {
+  "id": "C6-c",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "          WHERE space_id = ${spaceId} AND visit_id IS NOT NULL AND voided_at IS NULL\n",
+  "new": "          WHERE space_id = ${spaceId} AND visit_id IS NOT NULL\n",
+  "lane": "api",
+  "test": "src/modules/payments/uncollected.api.test.ts"
+ },
+ {
+  "id": "C6-d",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "          ORDER BY v.checked_out_at DESC, v.id DESC LIMIT ${take} OFFSET ${skip}`,",
+  "new": "          ORDER BY v.id LIMIT ${take} OFFSET ${skip}`,",
+  "lane": "api",
+  "test": "src/modules/payments/uncollected.api.test.ts"
+ },
+ {
+  "id": "C6-d2",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "          ORDER BY v.checked_out_at DESC, v.id DESC LIMIT ${take} OFFSET ${skip}`,",
+  "new": "          ORDER BY v.checked_out_at, v.id LIMIT ${take} OFFSET ${skip}`,",
+  "lane": "api",
+  "test": "src/modules/payments/uncollected.api.test.ts"
+ }
+]

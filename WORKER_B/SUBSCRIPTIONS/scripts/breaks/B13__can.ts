@@ -1,0 +1,192 @@
+import type { Role, SpaceManagerRole } from '../../generated/prisma/enums.ts';
+
+// The permission table of ADR 0002 and ADR 0009: every protected action and the one rule that
+// decides it. Services call can() for actions on a resource; the one other role check is
+// requireRole, which guards the /admin prefix by the global role.
+
+/** Who is acting: the signed-in user, from the access token. */
+export interface Actor {
+  readonly id: number;
+  readonly role: Role;
+}
+
+/** One SpaceManager row: a user's link to the space, as its OWNER or RECEPTION. */
+export interface SpaceLink {
+  readonly userId: number;
+  readonly role: SpaceManagerRole;
+  /** A deactivated link grants nothing. */
+  readonly deactivatedAt: Date | null;
+}
+
+/**
+ * The space an action targets. `links` are its SpaceManager rows, loaded by the service from the
+ * database, never taken from the client. A space without an active OWNER link is unverified.
+ */
+export interface SpaceResource {
+  readonly links: readonly SpaceLink[];
+}
+
+/** A space with its switch that lets reception type a price by hand (its settings). */
+export interface PriceTypingResource extends SpaceResource {
+  readonly receptionMayTypePrices: boolean;
+}
+
+/** A resource that belongs to one user: their profile, favourites or data reports. */
+export interface OwnedResource {
+  readonly userId: number;
+}
+
+type Rule =
+  /** ADMIN only, on any space. */
+  | 'admin'
+  /** The space's OWNER. */
+  | 'owner'
+  /** The space's staff: its OWNER or its RECEPTION. */
+  | 'staff'
+  /** ADMIN, or the space's OWNER. */
+  | 'adminOrOwner'
+  /** The space's OWNER; its RECEPTION too where the space's settings allow it. */
+  | 'ownerOrAllowedReception'
+  /** ADMIN while the space is unverified; once verified, only its OWNER, and no longer ADMIN. */
+  | 'adminWhileUnverifiedElseOwner'
+  /** Any role, on their own resource only. */
+  | 'self'
+  /** Any signed-in user. */
+  | 'signedIn';
+
+const PERMISSIONS = {
+  'space.read': 'staff',
+  // The space's public facts: who keeps them depends on whether an owner has joined.
+  'space.profile.update': 'adminWhileUnverifiedElseOwner',
+  'space.facts.update': 'adminWhileUnverifiedElseOwner',
+  // A space's photos: no fact group, no date, but kept by whoever keeps its facts.
+  'space.photos.manage': 'adminWhileUnverifiedElseOwner',
+  'dataReports.resolve': 'adminWhileUnverifiedElseOwner',
+  'space.dataReports.read': 'adminOrOwner',
+
+  // The front desk, for the owner and reception (ADR 0009). Customers, attendance, payments and
+  // capacity are private from the admin (ADR 0002, ADR 0008).
+  'attendance.record': 'staff',
+  'occupancy.read': 'staff',
+  'customers.manage': 'staff',
+  'subscriptions.manage': 'staff',
+  'payments.record': 'staff',
+  /** The payments the actor recorded today (shift handover). */
+  'payments.readOwn': 'staff',
+  'announcements.manage': 'staff',
+  'space.liveStatus.override': 'staff',
+  /** A price typed by hand at the desk, where there is no rate (data model › Hand-typed prices). */
+  'prices.typeByHand': 'ownerOrAllowedReception',
+
+  // The owner's own: money, the space's setup and its staff.
+  'payments.read': 'owner',
+  'payments.void': 'owner',
+  'finance.read': 'owner',
+  'subscriptions.extendAfterClosure': 'owner',
+  'packages.manage': 'owner',
+  'space.capacity.manage': 'owner',
+  'space.settings.manage': 'owner',
+  'staff.manage': 'owner',
+  'space.auditLog.read': 'owner',
+  /** A visit's unpaid rest written off, and the write-off undone (K6). */
+  'visits.writeOff': 'owner',
+  /** A customer archived, and restored. */
+  'customers.archive': 'owner',
+
+  // The platform. Hiding, soft-deleting and linking apply to every space, verified or not.
+  'platform.spaces.manage': 'admin',
+  'platform.managers.manage': 'admin',
+  'platform.stats.read': 'admin',
+  'platform.users.manage': 'admin',
+  'platform.dataReports.read': 'admin',
+  'platform.lookups.manage': 'admin',
+  'platform.auditLog.read': 'admin',
+  'platform.settings.manage': 'admin',
+
+  // The user's own things.
+  'profile.update': 'self',
+  'favorites.manage': 'self',
+  'dataReports.readOwn': 'self',
+  'dataReports.create': 'signedIn',
+} as const satisfies Record<string, Rule>;
+
+export type Action = keyof typeof PERMISSIONS;
+
+type ActionWith<R extends Rule> = {
+  [A in Action]: (typeof PERMISSIONS)[A] extends R ? A : never;
+}[Action];
+
+/** Actions on one space; they take its `SpaceResource`. */
+export type SpaceAction = ActionWith<
+  'owner' | 'staff' | 'adminOrOwner' | 'adminWhileUnverifiedElseOwner'
+>;
+/** Actions decided by the space's switch too; they take a `PriceTypingResource`. */
+export type PriceTypingAction = ActionWith<'ownerOrAllowedReception'>;
+/** Actions on a user's own resource; they take an `OwnedResource`. */
+export type SelfAction = ActionWith<'self'>;
+/** Actions decided by the role alone; they take no resource. */
+export type UnscopedAction = ActionWith<'admin' | 'signedIn'>;
+
+export const ACTIONS = Object.keys(PERMISSIONS) as readonly Action[];
+
+/** What each rule needs to decide, so a call without the right resource does not compile. */
+interface RuleResources {
+  admin: [];
+  signedIn: [];
+  self: [resource: OwnedResource];
+  owner: [resource: SpaceResource];
+  staff: [resource: SpaceResource];
+  adminOrOwner: [resource: SpaceResource];
+  ownerOrAllowedReception: [resource: PriceTypingResource];
+  adminWhileUnverifiedElseOwner: [resource: SpaceResource];
+}
+
+/** Whether `actor` may perform `action` on `resource`. Pure: the caller loads the resource. */
+export function can<A extends Action>(
+  actor: Actor,
+  action: A,
+  ...args: RuleResources[(typeof PERMISSIONS)[A]]
+): boolean {
+  const rule: Rule = PERMISSIONS[action];
+  // The signature guarantees each rule the resource it reads.
+  const resource = (args as readonly (OwnedResource | SpaceResource | PriceTypingResource)[])[0];
+
+  switch (rule) {
+    case 'admin':
+      return isAdmin(actor);
+    case 'signedIn':
+      return true;
+    case 'self':
+      return actor.id === (resource as OwnedResource).userId;
+    case 'owner':
+      return roleAt(actor, resource as SpaceResource) === 'OWNER';
+    case 'staff':
+      return roleAt(actor, resource as SpaceResource) !== undefined;
+    case 'adminOrOwner':
+      return isAdmin(actor) || roleAt(actor, resource as SpaceResource) === 'OWNER';
+    case 'ownerOrAllowedReception': {
+      const space = resource as PriceTypingResource;
+      const role = roleAt(actor, space);
+      return role === 'OWNER' || (role === 'RECEPTION' && space.receptionMayTypePrices);
+    }
+    case 'adminWhileUnverifiedElseOwner': {
+      const space = resource as SpaceResource;
+      return isVerified(space) ? roleAt(actor, space) === 'OWNER' : isAdmin(actor);
+    }
+  }
+}
+
+function isAdmin(actor: Actor): boolean {
+  return actor.role === 'ADMIN';
+}
+
+// The actor's role at the space comes only from their active link, never from the global role
+// (ADR 0009): the global OWNER is a label, and reception staff are global USERs.
+function roleAt(actor: Actor, space: SpaceResource): SpaceManagerRole | undefined {
+  return space.links.find((link) => link.userId === actor.id && link.deactivatedAt === null)?.role;
+}
+
+/** Whether the space has an active OWNER link; a RECEPTION link never verifies it (ADR 0009). */
+export function isVerified(space: SpaceResource): boolean {
+  return space.links.some((link) => link.role === 'OWNER' && link.deactivatedAt === null);
+}
