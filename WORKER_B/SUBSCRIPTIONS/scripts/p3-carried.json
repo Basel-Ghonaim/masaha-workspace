@@ -1,0 +1,6 @@
+[
+ {"id":"I5","file":"apps/api/src/modules/subscriptions/subscriptions.repository.ts",
+  "old":"                    ELSE floor(extract(epoch FROM checked_out_at - checked_in_at) / 60)::integer",
+  "new":"                    ELSE round(extract(epoch FROM checked_out_at - checked_in_at) / 60)::integer",
+  "lane":"api","test":"src/modules/desk/statement.api.test.ts","name":"their sum is progress.minutesUsed"}
+]

@@ -1,0 +1,6 @@
+[
+ {"id":"B4","file":"apps/api/src/modules/occupancy/present.ts",
+  "old":"      for (const [spaceId, count] of checkInCounts) {",
+  "new":"      for (const [spaceId, count] of new Map<number, number>()) {",
+  "lane":"api","test":"src/modules/occupancy/present.api.test.ts","name":"count the same people present"}
+]

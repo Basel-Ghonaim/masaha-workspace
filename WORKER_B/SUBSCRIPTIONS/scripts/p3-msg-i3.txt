@@ -1,0 +1,9 @@
+fix(customers): keep the phone's suffix match
+
+#106 matched a whole number by its exact E.164 form only, which lost
+a case the suffix search used to find: a mobile stored under the
+other country code (+970521234567, typed 0521234567, read as
++972521234567). A whole number now matches the exact phone or a
+phone ending with its national digits and the trunk 0.
+
+Carried from #106 (review finding 3).

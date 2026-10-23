@@ -1,100 +1,14 @@
 [
- {
-  "id": "F1-or",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "  return Prisma.sql`\n    SELECT 'SUBSCRIPTION' AS kind, u.subscription_id AS id, u.customer_id, u.due_agorot AS due,\n           u.usage_based, s.created_at, coalesce(p.paid, 0) AS paid\n    FROM subscription_usage(${spaceId}, NULL::integer, ${today}::date, ${weekStart}::date) u\n    JOIN subscriptions s ON s.id = u.subscription_id\n    LEFT JOIN LATERAL (\n      SELECT sum(amount_agorot)::integer AS paid FROM payments\n      WHERE subscription_id = u.subscription_id AND voided_at IS NULL\n    ) p ON true\n    ${customerIds ? Prisma.sql`WHERE u.customer_id = ANY(${[...customerIds]}::integer[])` : Prisma.empty}\n    UNION ALL\n    SELECT 'VISIT', v.id, v.customer_id, v.charge_agorot, false, v.created_at, coalesce(p.paid, 0)\n    FROM visits v\n    LEFT JOIN LATERAL (\n      SELECT sum(amount_agorot)::integer AS paid FROM payments\n      WHERE visit_id = v.id AND voided_at IS NULL\n    ) p ON true\n    WHERE v.space_id = ${spaceId} AND v.customer_id IS NOT NULL AND v.checked_out_at IS NOT NULL\n      AND v.written_off_at IS NULL\n      ${asked ? Prisma.sql`AND v.customer_id IN ${asked}` : Prisma.empty}`;\n",
-  "new": "  return Prisma.sql`\n    WITH items AS (\n      SELECT 'SUBSCRIPTION' AS kind, u.subscription_id AS id, u.customer_id, u.due_agorot AS due,\n             u.usage_based, s.created_at\n      FROM subscription_usage(${spaceId}, NULL::integer, ${today}::date, ${weekStart}::date) u\n      JOIN subscriptions s ON s.id = u.subscription_id\n      ${customerIds ? Prisma.sql`WHERE u.customer_id = ANY(${[...customerIds]}::integer[])` : Prisma.empty}\n      UNION ALL\n      SELECT 'VISIT', v.id, v.customer_id, v.charge_agorot, false, v.created_at\n      FROM visits v\n      WHERE v.space_id = ${spaceId} AND v.customer_id IS NOT NULL AND v.checked_out_at IS NOT NULL\n        AND v.written_off_at IS NULL\n        ${asked ? Prisma.sql`AND v.customer_id IN ${asked}` : Prisma.empty}\n    ), paid AS (\n      SELECT visit_id, subscription_id, sum(amount_agorot)::integer AS paid\n      FROM payments WHERE space_id = ${spaceId} AND voided_at IS NULL\n      GROUP BY visit_id, subscription_id\n    )\n    SELECT i.kind, i.id, i.customer_id, i.due, i.usage_based, i.created_at,\n           coalesce(p.paid, 0) AS paid\n    FROM items i\n    LEFT JOIN paid p ON (i.kind = 'VISIT' AND p.visit_id = i.id)\n                     OR (i.kind = 'SUBSCRIPTION' AND p.subscription_id = i.id)`;\n",
-  "lane": "api",
-  "test": "src/modules/desk/customers.api.test.ts",
-  "name": "a payment on every item"
- },
- {
-  "id": "F1-whole",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "    ${customerIds ? Prisma.sql`WHERE u.customer_id = ANY(${[...customerIds]}::integer[])` : Prisma.empty}\n",
-  "new": "",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts"
- },
- {
-  "id": "B32",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "const DEBT = Prisma.sql`coalesce(sum(greatest(due - paid, 0)), 0)::integer`;",
-  "new": "const DEBT = Prisma.sql`coalesce(sum(due - paid), 0)::integer`;",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "a debt is the sum of positive balances"
- },
- {
-  "id": "B33",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "sum(greatest(paid - due, 0)) FILTER (WHERE usage_based), 0)",
-  "new": "sum(greatest(paid - due, 0)), 0)",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "credit is only"
- },
- {
-  "id": "B34",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "      WHERE visit_id = v.id AND voided_at IS NULL\n",
-  "new": "      WHERE visit_id = v.id\n",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "a voided payment counts for nothing"
- },
- {
-  "id": "B34s",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "      WHERE subscription_id = u.subscription_id AND voided_at IS NULL\n",
-  "new": "      WHERE subscription_id = u.subscription_id\n",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "a voided payment counts for nothing"
- },
- {
-  "id": "B35",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "      AND v.written_off_at IS NULL\n      ${asked",
-  "new": "      ${asked",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "a voided payment counts for nothing"
- },
- {
-  "id": "B36b",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "    WHERE v.space_id = ${spaceId} AND v.customer_id IS NOT NULL",
-  "new": "    WHERE ${spaceId} > 0 AND v.customer_id IS NOT NULL",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "the payment filter"
- },
- {
-  "id": "B37",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "ORDER BY created_at, kind <> 'VISIT', id`;",
-  "new": "ORDER BY id`;",
-  "lane": "api",
-  "test": "src/modules/payments/balances.api.test.ts",
-  "name": "itemBalances lists"
- },
- {
-  "id": "B43",
-  "file": "apps/api/src/modules/customers/customers.repository.ts",
-  "old": "Prisma.sql`id IN (SELECT unnest(${[...ids]}::integer[]))`",
-  "new": "Prisma.sql`id IN (${Prisma.join([...ids])})`",
-  "lane": "api",
-  "test": "src/modules/customers/customers.api.test.ts",
-  "name": "70,000 ids"
- },
- {
-  "id": "F2-any",
-  "file": "apps/api/src/modules/customers/customers.repository.ts",
-  "old": "Prisma.sql`id IN (SELECT unnest(${[...ids]}::integer[]))`",
-  "new": "Prisma.sql`id = ANY(${[...ids]}::integer[])`",
-  "lane": "api",
-  "test": "src/modules/desk/customers.api.test.ts",
-  "name": "20,000 ids is read as a set"
- }
+ {"id":"B39","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"        await repository.end(subscriptionId, { endsOn, endedAt, endedById: actor.id }, tx);",
+  "new":"        await repository.end(subscriptionId, { endsOn: terms.endsOn ?? endsOn, endedAt, endedById: actor.id }, tx);",
+  "lane":"api","test":"src/modules/subscriptions/end.api.test.ts","name":"sets the end to today"},
+ {"id":"B40","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"        let endsOn = terms.startsOn !== null && terms.startsOn > today ? terms.startsOn : today;",
+  "new":"        let endsOn = today;",
+  "lane":"api","test":"src/modules/subscriptions/end.api.test.ts","name":"an upcoming one ends on its start"},
+ {"id":"B41","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"    if (!can(actor, action, { links: await space.linksUnder(tx) })) throw AppError.forbidden();",
+  "new":"    if (!can(actor, action, { links: space.links })) throw AppError.forbidden();",
+  "lane":"api","test":"src/modules/subscriptions/end.api.test.ts","name":"the staff end"}
 ]

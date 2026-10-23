@@ -1,0 +1,11 @@
+feat(subscriptions): end a subscription early
+
+The staff end a subscription early: its end becomes today, or its
+start if it has not started, never later than its end was, with who
+ended it and when, audited. It is expired from then, and a repeat
+answers it as it is.
+
+Ending changes no money: what is owed stays owed, with no refund or
+proration, and an open check-in on it stays open (decision 5). The
+end shares the corrections' opening: the space's lock, can() under it
+and the subscription's row.

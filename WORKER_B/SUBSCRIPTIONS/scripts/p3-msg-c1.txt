@@ -1,0 +1,12 @@
+refactor(occupancy): define present once
+
+Present (open visits plus open subscription check-ins) was counted
+in three ways: the staff's read listed both, the check-in's warnings
+loaded both to count them, the directory summed two group counts;
+the desk's archive and the customer's file had their own copies.
+They agreed, but a change to one would drift (the owner's decision
+10, finding 111). present.ts now answers presentIn, presentCountsIn
+and isPresent, and every reader uses them; finding 111 resolved.
+
+The new test pins that the read, the next check-in's warning and the
+directory count the same people.

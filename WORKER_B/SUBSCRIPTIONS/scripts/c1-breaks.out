@@ -1,0 +1,40 @@
+[B8] test == dev before: True
+[B8] BROKEN exit 1
+    × carries a typed price's reason with who typed it, never blank 217ms
+    Tests  1 failed | 17 skipped (18)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: promise resolved "{ id: 1, spaceId: 1, …(21) }" instead of rejecting
+PSQL ERROR ERROR:  check constraint "subscriptions_price_reason_check" of relation "subscriptions" is violated by some row
+
+[B9] test == dev before: False
+[B9] BROKEN exit 1
+    × costs more than nothing, as a package does (finding 80) 208ms
+    Tests  1 failed | 17 skipped (18)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: promise resolved "{ id: 1, spaceId: 1, …(21) }" instead of rejecting
+PSQL ERROR ERROR:  check constraint "subscriptions_price_check" of relation "subscriptions" is violated by some row
+
+[B10] test == dev before: False
+[B10] BROKEN exit 1
+    × is renewed once, by one of the same customer's subscriptions 214ms
+    Tests  1 failed | 17 skipped (18)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: promise resolved "{ id: 3, spaceId: 1, …(21) }" instead of rejecting
+[B10] fingerprint restored: True
+[B10] RESTORED exit 0 ['Tests  1 passed | 17 skipped (18)']
+[B11] test == dev before: False
+[B11] BROKEN exit 1
+    × a fixed price never falls below what is paid: subscriptions_price_below_paid; usage-based may 251ms
+    Tests  1 failed | 16 skipped (17)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: promise resolved "{ id: 1, spaceId: 1, …(21) }" instead of rejecting
+[B11] fingerprint restored: True
+[B11] RESTORED exit 0 ['Tests  1 passed | 16 skipped (17)']
+[B12] test == dev before: False
+[B12] BROKEN exit 1
+    × never shares its key with another subscription of the space 219ms
+    Tests  1 failed | 17 skipped (18)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: promise resolved "{ id: 2, spaceId: 1, …(21) }" instead of rejecting
+[B12] fingerprint restored: True
+[B12] RESTORED exit 0 ['Tests  1 passed | 17 skipped (18)']

@@ -1,0 +1,10 @@
+feat(desk): check a subscriber out
+
+The desk closes a subscriber's check-in now, MANUAL, audited
+checkIn.checkedOut, under the space's lock and then the check-in's
+row. The answer carries what was paid on the subscription and what
+it still owes, so a usage-based subscriber's desk sees what the stay
+cost; the payment stays POST .../payments' (alternative A5 not
+taken). A check-in closed already, by the desk or the auto
+check-out, is answered as it is: closing is idempotent by design,
+so the route takes no key.

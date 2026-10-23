@@ -1,0 +1,9 @@
+fix(desk): refuse a key that subscribed another
+
+A subscribe retry answered whatever subscription its key had made,
+even under another customer's path: the desk was told Omar was
+subscribed when the key had subscribed Sara. The payment routes
+already refuse a key that paid another item; the subscribe now does
+the same, 409 with no code, before anything is read or written.
+
+Carried from #106 (review finding 1).

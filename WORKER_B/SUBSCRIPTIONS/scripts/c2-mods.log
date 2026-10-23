@@ -1,0 +1,122 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/desk src/modules/customers src/modules/subscriptions src/modules/payments src/modules/packages src/modules/occupancy
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+24 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/customers.api.test.ts (6 tests | 1 failed) 2525ms
+   ❯ the customers list (6)
+     × the list, the payment filter and a file answer with a payment on every item: 1,000 subscriptions, 2,000 paid visits 212ms
+ ❯ |api| src/modules/desk/customerFile.api.test.ts (4 tests | 1 failed) 1540ms
+   ❯ the customer's file (4)
+     × answers the customer, the debt and credit, each subscription with status, progress, due, paid and balance, and the unpaid visits with their payments, voided ones marked 445ms
+ ❯ |api| src/modules/payments/balances.api.test.ts (5 tests | 1 failed) 1249ms
+   ❯ the customers’ balances (5)
+     × credit is only a usage-based subscription’s; a fixed one paid in full is settled 164ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/customerFile.api.test.ts > the customer's file > answers the customer, the debt and credit, each subscription with status, progress, due, paid and balance, and the unpaid visits with their payments, voided ones marked
+AssertionError: expected { customer: { id: 1, …(3) }, …(5) } to deeply equal { customer: { id: 1, …(3) }, …(5) }
+
+- Expected
++ Received
+
+@@ -22,16 +22,18 @@
+        "id": 1,
+        "name": "Monthly",
+        "packageId": null,
+        "paidAgorot": 10000,
+        "priceAgorot": 30000,
++       "priceTyped": null,
+        "progress": {
+          "daysThisWeek": 1,
+          "daysUsed": 2,
+          "minutesToday": 60,
+          "minutesUsed": 150,
+        },
++       "renewalOfId": null,
+        "shiftId": null,
+        "startsOn": "2026-10-01",
+        "status": "ACTIVE",
+        "totalDays": null,
+        "totalHours": null,
+
+ ❯ src/modules/desk/customerFile.api.test.ts:110:30
+    108|     const response = await file(reception, sara.id);
+    109|     expect(response.status).toBe(200);
+    110|     expect(dataOf(response)).toEqual({
+       |                              ^
+    111|       customer: { id: sara.id, name: 'Sara', phone: '+970599000205', a…
+    112|       debtAgorot: 20_000 + 1_500,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |api| src/modules/desk/customers.api.test.ts > the customers list > the list, the payment filter and a file answer with a payment on every item: 1,000 subscriptions, 2,000 paid visits
+PrismaClientKnownRequestError: 
+Invalid `prisma.$executeRaw()` invocation:
+
+
+Raw query failed. Code: `23502`. Message: `null value in column "request_id" of relation "subscriptions" violates not-null constraint`
+ ❯ vn.handleRequestError ../../node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13
+ ❯ vn.handleAndLogRequestError ../../node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12
+ ❯ vn.request ../../node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12
+ ❯ a ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1014:24
+ ❯ src/modules/desk/customers.api.test.ts:245:5
+    243|       SELECT ${spaceId}, 'Paid ' || lpad(n::text, 4, '0'), now() FROM …
+    244|     await prisma.$executeRaw`ANALYZE customers`;
+    245|     await prisma.$executeRaw`
+       |     ^
+    246|       INSERT INTO subscriptions (space_id, customer_id, name, billing,…
+    247|       SELECT space_id, id, 'Monthly', 'FIXED', 3000, now() FROM custom…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |api| src/modules/payments/balances.api.test.ts > the customers’ balances > credit is only a usage-based subscription’s; a fixed one paid in full is settled
+PrismaClientKnownRequestError: 
+Invalid `prisma.subscription.update()` invocation in
+C:/dev/masaha/app-b/apps/api/src/modules/payments/balances.api.test.ts:86:31
+
+  83 await pay({ subscriptionId: paidInFull.id }, 20_000);
+  84 // Its price lowered under what was paid, directly (the price's guard is the next PR's): a
+  85 // fixed price still holds no credit.
+→ 86 await prisma.subscription.update(
+Database error. Code: `23514`. Message: `subscriptions_price_below_paid: 30000 agorot paid exceeds the price 20000`
+ ❯ vn.handleRequestError ../../node_modules/@prisma/client/src/runtime/RequestHandler.ts:238:13
+ ❯ vn.handleAndLogRequestError ../../node_modules/@prisma/client/src/runtime/RequestHandler.ts:184:12
+ ❯ vn.request ../../node_modules/@prisma/client/src/runtime/RequestHandler.ts:153:12
+ ❯ a ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:1014:24
+ ❯ src/modules/payments/balances.api.test.ts:86:5
+     84|     // Its price lowered under what was paid, directly (the price's gu…
+     85|     // fixed price still holds no credit.
+     86|     await prisma.subscription.update({ where: { id: fixed.id }, data: …
+       |     ^
+     87|
+     88|     expect(await repository.customerBalances(spaceId, [customer.id, se…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed | 13 passed (16)
+      Tests  3 failed | 156 passed (159)
+   Start at  10:31:00
+   Duration  76.30s (tests 72%, import 20%, transform 5%, setup 3%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/desk src/modules/customers src/modules/subscriptions src/modules/payments src/modules/packages src/modules/occupancy

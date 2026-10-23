@@ -2,6 +2,7 @@
 named test file (expect red), restore the migration's own text, compare the function's md5 before and
 after, run green. Usage: python dbbrk.py <migration.sql> <id> <old> <new> <test file> [<-t name>]"""
 import re, subprocess, sys
+sys.stdout.reconfigure(encoding='utf-8')
 REPO = r'C:\dev\masaha\app-b'
 
 def env_user():

@@ -1,0 +1,12 @@
+feat(subscriptions): correct a subscription
+
+The staff correct a subscription's limits, dates and name; only the
+owner corrects its price and billing, on a route of its own refused
+to reception before the body is read, with a reason recorded as the
+owner's typed price. Each correction is audited with what changed, and
+one that changes nothing writes nothing; an ended subscription is no
+longer corrected (SUBSCRIPTION_ENDED).
+
+A fixed price below what was paid is the database's refusal, through
+the price trigger, now translated to PRICE_BELOW_PAID. The name is
+correctable as the owner chose (Q8, A3).

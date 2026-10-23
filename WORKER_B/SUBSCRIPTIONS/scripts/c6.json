@@ -1,42 +1,34 @@
 [
- {
-  "id": "C6-a",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "        WHERE v.space_id = ${spaceId} AND v.checkout_method = 'AUTO' AND v.written_off_at IS NULL\n",
-  "new": "        WHERE v.space_id = ${spaceId} AND v.checkout_method = 'AUTO'\n",
-  "lane": "api",
-  "test": "src/modules/payments/uncollected.api.test.ts"
- },
- {
-  "id": "C6-b",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "          AND (v.charge_agorot IS NULL OR v.charge_agorot - coalesce(p.paid, 0) > 0)`;",
-  "new": "          AND true`;",
-  "lane": "api",
-  "test": "src/modules/payments/uncollected.api.test.ts"
- },
- {
-  "id": "C6-c",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "          WHERE space_id = ${spaceId} AND visit_id IS NOT NULL AND voided_at IS NULL\n",
-  "new": "          WHERE space_id = ${spaceId} AND visit_id IS NOT NULL\n",
-  "lane": "api",
-  "test": "src/modules/payments/uncollected.api.test.ts"
- },
- {
-  "id": "C6-d",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "          ORDER BY v.checked_out_at DESC, v.id DESC LIMIT ${take} OFFSET ${skip}`,",
-  "new": "          ORDER BY v.id LIMIT ${take} OFFSET ${skip}`,",
-  "lane": "api",
-  "test": "src/modules/payments/uncollected.api.test.ts"
- },
- {
-  "id": "C6-d2",
-  "file": "apps/api/src/modules/payments/payments.repository.ts",
-  "old": "          ORDER BY v.checked_out_at DESC, v.id DESC LIMIT ${take} OFFSET ${skip}`,",
-  "new": "          ORDER BY v.checked_out_at, v.id LIMIT ${take} OFFSET ${skip}`,",
-  "lane": "api",
-  "test": "src/modules/payments/uncollected.api.test.ts"
- }
+ {"id":"B5","file":"apps/api/src/modules/subscriptions/subscriptionChange.ts",
+  "old":"    (field) => edit[field] !== undefined && edit[field] !== current[field],",
+  "new":"    (field) => edit[field] !== undefined,",
+  "lane":"unit","test":"src/modules/subscriptions/subscriptionChange.unit.test.ts"},
+ {"id":"B-name","file":"apps/api/src/modules/subscriptions/subscriptionChange.ts",
+  "old":"const FIELDS = [\n  'name',\n",
+  "new":"const FIELDS = [\n",
+  "lane":"api","test":"src/modules/subscriptions/corrections.api.test.ts","name":"the staff correct limits, dates and the name"},
+ {"id":"B7","file":"apps/api/src/shared/auth/can.ts",
+  "old":"  'subscriptions.correctPrice': 'owner',",
+  "new":"  'subscriptions.correctPrice': 'staff',",
+  "lane":"unit","test":"src/shared/auth/can.unit.test.ts","name":"subscriptions.correctPrice"},
+ {"id":"B33","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"        const { data, before, after } = subscriptionChange(current, edit);",
+  "new":"        const data = { ...edit };\n        const before = {};\n        const after = { ...edit };",
+  "lane":"api","test":"src/modules/subscriptions/corrections.api.test.ts","name":"the staff correct limits, dates and the name"},
+ {"id":"B34","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"    if (terms.ended) throw AppError.conflict('SUBSCRIPTION_ENDED');\n",
+  "new":"",
+  "lane":"api","test":"src/modules/subscriptions/corrections.api.test.ts","name":"an end before the start"},
+ {"id":"B35","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"    if (!can(actor, action, { links: await space.linksUnder(tx) })) throw AppError.forbidden();",
+  "new":"    if (!can(actor, action, { links: space.links })) throw AppError.forbidden();",
+  "lane":"api","test":"src/modules/subscriptions/corrections.api.test.ts","name":"a reception link ended"},
+ {"id":"B36","file":"apps/api/src/modules/subscriptions/subscriptions.manage.routes.ts",
+  "old":"    requireCan('subscriptions.correctPrice'),\n",
+  "new":"",
+  "lane":"api","test":"src/modules/subscriptions/corrections.api.test.ts","name":"the owner corrects the price"},
+ {"id":"B37","file":"apps/api/src/shared/errors/constraintCodes.ts",
+  "old":"  subscriptions_price_below_paid: { type: 'conflict', code: 'PRICE_BELOW_PAID' },\n",
+  "new":"",
+  "lane":"api","test":"src/modules/subscriptions/corrections.api.test.ts","name":"a fixed price below what is paid"}
 ]

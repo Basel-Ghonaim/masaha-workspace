@@ -3,6 +3,7 @@ check SHA-256, run it again (expect green). Usage: python brk.py <breaks.json> <
 Each JSON entry: {"id", "file", "old", "new", "lane": "api"|"unit"|"shared", "test": "<path in workspace>",
 "name": optional -t filter}. Prints the red lines and the green line."""
 import hashlib, io, json, os, re, shutil, subprocess, sys
+sys.stdout.reconfigure(encoding='utf-8')
 REPO = r'C:\dev\masaha\app-b'
 BK = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'breaks')
 

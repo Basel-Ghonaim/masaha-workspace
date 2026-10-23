@@ -1,0 +1,76 @@
+== B5 (apps/api/src/modules/subscriptions/subscriptionChange.ts) broken run exit 1
+     × only the fields set to a new value; null clears 9ms
+     × the name is corrected like any field; the same values change nothing 2ms
+      Tests  2 failed (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/subscriptions/subscriptionChange.unit.test.ts > subscriptionChange > only the fields set to a new value; null clears
+AssertionError: expected { data: { name: 'شهري', …(4) }, …(2) } to deeply equal { data: { …(3) }, …(2) }
+ FAIL  |unit| src/modules/subscriptions/subscriptionChange.unit.test.ts > subscriptionChange > the name is corrected like any field; the same values change nothing
+AssertionError: expected { data: { name: 'شهري', …(6) }, …(2) } to deeply equal { data: {}, before: {}, after: {} }
+   restored: sha256 same
+   restored run exit 0: Tests  2 passed (2)
+== B-name (apps/api/src/modules/subscriptions/subscriptionChange.ts) broken run exit 1
+     × the staff correct limits, dates and the name, audited subscription.corrected with only what changed; the same values write nothing 402ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/corrections.api.test.ts > correcting a subscription > the staff correct limits, dates and the name, audited subscription.corrected with only what changed; the same values write nothing
+AssertionError: expected { id: 1, customerId: 1, …(18) } to match object { id: 1, name: 'شهري — مسائي', …(5) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B7 (apps/api/src/shared/auth/can.ts) broken run exit 1
+       × on an unverified space, for a reception left linked to it: false 7ms
+       × on a verified space, for the reception of this space: false 1ms
+       × follows the link's role, never the global role 1ms
+      Tests  3 failed | 10 passed | 405 skipped (418)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/shared/auth/can.unit.test.ts > can > subscriptions.correctPrice > on an unverified space, for a reception left linked to it: false
+AssertionError: expected true to be false // Object.is equality
+    149|       ])('on an unverified space, for %s: %s', (_who, expected, actor)…
+    150|         expect(can(actor, action, UNVERIFIED)).toBe(expected);
+ FAIL  |unit| src/shared/auth/can.unit.test.ts > can > subscriptions.correctPrice > on a verified space, for the reception of this space: false
+AssertionError: expected true to be false // Object.is equality
+    160|       ])('on a verified space, for %s: %s', (_who, expected, actor) =>…
+    161|         expect(can(actor, action, VERIFIED)).toBe(expected);
+ FAIL  |unit| src/shared/auth/can.unit.test.ts > can > subscriptions.correctPrice > follows the link's role, never the global role
+   restored: sha256 same
+   restored run exit 0: Tests  13 passed | 405 skipped (418)
+== B33 (apps/api/src/modules/subscriptions/subscriptions.service.ts) broken run exit 1
+     × the staff correct limits, dates and the name, audited subscription.corrected with only what changed; the same values write nothing 392ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/corrections.api.test.ts > correcting a subscription > the staff correct limits, dates and the name, audited subscription.corrected with only what changed; the same values write nothing
+AssertionError: expected [ { actorId: 2, …(6) } ] to deeply equal [ { actorId: 2, …(6) } ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B34 (apps/api/src/modules/subscriptions/subscriptions.service.ts) broken run exit 1
+     × an end before the start is out_of_range; an ended subscription is SUBSCRIPTION_ENDED, also for its price 416ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/corrections.api.test.ts > correcting a subscription > an end before the start is out_of_range; an ended subscription is SUBSCRIPTION_ENDED, also for its price
+AssertionError: expected 200 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B35 (apps/api/src/modules/subscriptions/subscriptions.service.ts) broken run exit 1
+     × a reception link ended while the correction waits is refused 403, writing nothing 424ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/corrections.api.test.ts > correcting a subscription > a reception link ended while the correction waits is refused 403, writing nothing
+AssertionError: expected 200 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B36 (apps/api/src/modules/subscriptions/subscriptions.manage.routes.ts) broken run exit 1
+     × the owner corrects the price and billing with a reason, recorded as the price typed, audited subscription.priceCorrected; reception 403 before the body is read 346ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/corrections.api.test.ts > correcting a subscription > the owner corrects the price and billing with a reason, recorded as the price typed, audited subscription.priceCorrected; reception 403 before the body is read
+AssertionError: expected 422 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B37 (apps/api/src/shared/errors/constraintCodes.ts) broken run exit 1
+     × a fixed price below what is paid is PRICE_BELOW_PAID, writing nothing 377ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/corrections.api.test.ts > correcting a subscription > a fixed price below what is paid is PRICE_BELOW_PAID, writing nothing
+AssertionError: expected 500 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)

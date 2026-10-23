@@ -1,5 +1,8 @@
 # SUBSCRIPTIONS — execute PR 2 only (`feat/subscriptions`)
 
+> **Superseded (2026-10-22):** PR 2 runs in two phases — `3_EXEC_PROMPT_PR2_CLAUDE.md` (build) and
+> `3_EXEC_PROMPT_PR2_OPENCODE.md` (lanes, real run, push, PR, CI). Kept for the record.
+
 You are the **executor** of the second of step 8's three pull requests, in a fresh conversation. You did not
 plan it and you will not review it. **The plan is approved; do not re-decide anything in it.**
 

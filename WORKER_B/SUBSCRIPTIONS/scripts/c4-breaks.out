@@ -1,0 +1,97 @@
+== B1 (apps/api/src/modules/subscriptions/renewal.ts) broken run exit 1
+     × a running renewed one → the day after its end, an upcoming one's too 9ms
+      Tests  1 failed | 1 passed (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/subscriptions/renewal.unit.test.ts > proposedStart > a running renewed one → the day after its end, an upcoming one's too
+AssertionError: expected '2026-10-30' to be '2026-10-31' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  2 passed (2)
+== B2 (apps/api/src/modules/payments/allocation.ts) broken run exit 1
+     × oldest first, each at most its balance, the rest to the new one 10ms
+     × an amount below the first debt pays only it; nothing owed → all to the new one 1ms
+     × 50 items at most: the 49 oldest debts, then the new one 2ms
+      Tests  3 failed (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/payments/allocation.unit.test.ts > allocate > oldest first, each at most its balance, the rest to the new one
+AssertionError: expected { parts: [ { …(2) }, { …(2) }, …(1) ] } to deeply equal { parts: [ { …(2) }, { …(2) }, …(1) ] }
+ FAIL  |unit| src/modules/payments/allocation.unit.test.ts > allocate > an amount below the first debt pays only it; nothing owed → all to the new one
+AssertionError: expected { parts: [ { …(2) }, { …(2) } ] } to deeply equal { parts: [ { item: { …(1) }, …(1) } ] }
+ FAIL  |unit| src/modules/payments/allocation.unit.test.ts > allocate > 50 items at most: the 49 oldest debts, then the new one
+AssertionError: expected { item: { visitId: 12 }, …(1) } to deeply equal { item: { visitId: 49 }, …(1) }
+   restored: sha256 same
+   restored run exit 0: Tests  3 passed (3)
+== B3 (apps/api/src/modules/payments/allocation.ts) broken run exit 1
+     × oldest first, each at most its balance, the rest to the new one 9ms
+     × 50 items at most: the 49 oldest debts, then the new one 2ms
+      Tests  2 failed | 1 passed (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/payments/allocation.unit.test.ts > allocate > oldest first, each at most its balance, the rest to the new one
+AssertionError: expected { parts: [ { item: { …(1) }, …(1) } ] } to deeply equal { parts: [ { …(2) }, { …(2) }, …(1) ] }
+ FAIL  |unit| src/modules/payments/allocation.unit.test.ts > allocate > 50 items at most: the 49 oldest debts, then the new one
+AssertionError: expected [ { item: { visitId: 1 }, …(1) } ] to have a length of 50 but got 1
+   restored: sha256 same
+   restored run exit 0: Tests  3 passed (3)
+== B4 (apps/api/src/shared/http/idempotencyKey.ts) broken run exit 1
+     × a derived key is a UUID, the same for the same key and index, different for another index or key 5ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/shared/http/idempotencyKey.unit.test.ts > derivedKey > a derived key is a UUID, the same for the same key and index, different for another index or key
+AssertionError: expected '13e7f3eb-90fb-8ac9-afb9-cf8c00bb4e26' not to be '13e7f3eb-90fb-8ac9-afb9-cf8c00bb4e26' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B24 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a renewal starts the day after the running one's end, or today once it expired 391ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > a renewal starts the day after the running one's end, or today once it expired
+AssertionError: expected { Object (subscription, payments, ...) } to match object { subscription: { …(4) } }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B25 (apps/api/src/modules/payments/allocation.ts) broken run exit 1
+     × an amount pays the older debts oldest first, one payment each, the rest to the new subscription; CUSTOMER_HAS_DEBT when one remains 421ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > an amount pays the older debts oldest first, one payment each, the rest to the new subscription; CUSTOMER_HAS_DEBT when one remains
+AssertionError: expected [ { visitId: null, …(3) } ] to match object [ { visitId: 1, …(2) }, …(1) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B26 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × an amount that settles every older debt pays the rest on the new one, with no warning 432ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > an amount that settles every older debt pays the rest on the new one, with no warning
+AssertionError: expected { warnings: [ 'CUSTOMER_HAS_DEBT' ] } to be undefined
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B27 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a rest above a fixed new price is PAYMENT_EXCEEDS_DUE and nothing is written: no subscription, no payment 438ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > a rest above a fixed new price is PAYMENT_EXCEEDS_DUE and nothing is written: no subscription, no payment
+AssertionError: expected 500 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B28 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a retry answers the same subscription and the same payments, their keys derived from the request's 456ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > a retry answers the same subscription and the same payments, their keys derived from the request's
+AssertionError: expected { Object (subscription, payments, ...) } to deeply equal { Object (subscription, payments, ...) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B29 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × two desks paying one debt: the second, while waiting, sees the first's payment and pays only what is left 453ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > two desks paying one debt: the second, while waiting, sees the first's payment and pays only what is left
+AssertionError: expected 409 to be 201 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B30 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a subscription is renewed once: a second renewal is SUBSCRIPTION_ALREADY_RENEWED, also one made while it waited 441ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/renewal.api.test.ts > renewing a subscription > a subscription is renewed once: a second renewal is SUBSCRIPTION_ALREADY_RENEWED, also one made while it waited
+AssertionError: expected 500 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
