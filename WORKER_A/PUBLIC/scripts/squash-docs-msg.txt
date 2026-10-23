@@ -1,0 +1,14 @@
+docs(findings): record #103's review findings
+
+Carried from #103 (items 8 to 10), recorded rather than built.
+
+Finding 130 widened to the focus shell (items 8, 9). The review found
+two arrivals the site's shell misjudges, Back from the focus shell and
+a first load a guard redirects with replace. Finding 130's Resolves
+when named only the dashboard, so a dashboard item could close it while
+FocusLayout still lacks both.
+
+Finding 133, the place filter's cap (item 10). The server takes at most
+50 areas and the address reads more as none, while AreaFilter lets any
+number be chosen: past 50 areas, the 51st would clear the whole place
+filter silently. Not reachable with today's catalogue.

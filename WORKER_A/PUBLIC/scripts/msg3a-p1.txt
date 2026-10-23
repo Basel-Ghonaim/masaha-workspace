@@ -1,0 +1,7 @@
+refactor(spaces): share the carrier and date rules
+
+The site's space page shows a phone's carrier and each fact group's date,
+as the dashboard's editor does (S3). A copy would drift, and spaces is
+dashboard-only, so carrierOf (with Carrier) and updatedAgo move to
+shared/lib as they are, with their tests; the four spaces importers read
+@shared/lib. No behaviour change.

@@ -1,0 +1,20 @@
+I reviewed #105 at head `f0fc8a73`: no blocker, it can be merged, with five small should-fix items. All ten CI checks are green, GitHub shows it CLEAN, and the head didn't move during the review, so there was no later change to compare. I read the code, tests, documents and commit messages only (no runs, no screenshots). Every red test, break and real-run result is marked in the report as coming from the executor's report.
+
+**The five should-fix findings:**
+1. **Picking a location outlives the map.** If the visitor leaves the map by «قائمة», by Back or by a link instead of «رجوع», nothing cancels the pick. The location they had before disappears from the list, and the map later reopens with the crosshair, unasked. The fix is to cancel the pick when the map view closes.
+2. **The chosen space is hard to reach by keyboard or screen reader.** From 768 px, its card comes after every pin in the tab order: 58 Tab presses with today's 59 spaces, up to 999 past the ceiling. On a phone, the sheet is drawn after the footer and nothing announces it.
+3. **Past 1,000 pins, picking can send the unrounded crosshair position in the `bounds` URL.** That breaks the pick card's "sent rounded" promise. It can't happen with today's data. The fix: no viewport re-ask while picking, and round the box.
+4. **On the map, the location line says the spaces are sorted by distance and the location sent.** The map's requests carry no location at all. The new wording needs your approval.
+5. **While the pins first load, the map shows no sign of loading.** `directory.md` says loading is shown.
+
+The rest are 11 smaller items, each marked for the next PR or as a finding to record. The ones worth knowing:
+- At 768–1023 px the picking card probably still covers the crosshair (my arithmetic, not run).
+- Escape doesn't close the card from 768 px.
+- The 1000 is hard-coded in the copy instead of read from the server's constant.
+- On the dark-theme observation: the hollow and dashed marks show as dark dots on the always-light map tiles, so the map and its legend disagree. I'd record it as a design finding for you.
+
+All 12 carried items match your decisions, and every departure in the report is judged in the report.
+
+Under your rule, all five should-fix findings go into PUBLIC PR 3's first commit (`0_CARRIED_FROM_105.md`). You may prefer a fix round on this PR for 1 and 2, since they sit on the map's main flows.
+
+The report is at `C:\dev\masaha\workspace\WORKER_A\PUBLIC\6_REVIEW_PR2_CLAUDE_CODE.md`.

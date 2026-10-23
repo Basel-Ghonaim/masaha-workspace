@@ -1,0 +1,8 @@
+docs: say the sheet and the map as they are
+
+Carried from #105 (items 11-13 of its review). The layer's Sheet called
+itself always modal while the directory now opens it with modal={false}:
+its comment and foundation's Sheet row say the non-modal use (no scrim, no
+trap). The overview's build line names the site's map. Architecture §6
+says why the map of many places is role="application" and what it costs a
+screen reader (browse mode off inside it).

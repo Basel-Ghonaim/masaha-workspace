@@ -1,0 +1,16 @@
+feat(directory): show a space's public page
+
+Screen 3: /spaces/:slug was the site's 404 over a built API. The page
+shows a space in U8's order at every width: its head, an unverified
+space's notice with the platform's contact in a dialog, the status card
+(today's hours, the distance while near me holds a point), the prices
+per audience and by shift (U9), the hours Saturday first with today,
+the amenities, the description, the place on a map with directions,
+and the contacts with their carriers; each fact group dated and marked
+stale (U4). From 1024 px the status and the contacts are an aside;
+from 768 px a breadcrumb leads back to the directory's last address;
+below it a back link and a bar for WhatsApp and a call. A hidden or
+unknown space says «لم نجد هذه المساحة».
+
+The closure's notice waits for step 10's announcements (finding 131);
+the photos and the live status's refresh follow in the next PR.

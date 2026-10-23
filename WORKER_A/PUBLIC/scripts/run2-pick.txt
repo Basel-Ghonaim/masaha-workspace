@@ -1,0 +1,29 @@
+== pick
+· ar 390 denied — state line: تعذّر تحديد موقعك | اختر منطقتك أو حدّد موقعك على الخريطة لنرتّب المساحات حسب المسافة. | اختر منطقتك | حدّد موقعي على الخريطة
+shot 2-pick-denied-ar-light-390
+· ar 390 address: ?view=map crosshair: true focus on: خريطة المساحات described by: الأسهم تحرّك الخريطة تحت العلامة في الوسط.
+· ar 390 marks tabbable: 0 near button shown: false
+shot 2-pick-crosshair-ar-light-390
+· ar 390 arrows pan: true
+shot 2-pick-panned-ar-light-390
+· ar 390 placed — state line: مرتبة حسب المسافة من الموقع الذي حدّدته على الخريطة. المسافات تقريبية بخط مستقيم. يُرسَل موقعك مقرَّبًا لترتيب المساحات حسب المسافة فقط، ولا يُحفظ. | إيقاف الترتيب حسب المسافة | تغيير الموقع | مسح موقعي — focus on: الأقرب إليّ — user point: موقعي (يدوي)
+shot 2-pick-placed-ar-light-390
+· ar 390 the list, sorted — first cards: ["على بعد 4.5 كم","على بعد 4.7 كم","على بعد 6.3 كم"] sort: الترتيب: حسب المسافة
+shot 2-pick-sorted-list-ar-light-390
+· ar 390 after «رجوع» — state line: مرتبة حسب المسافة من الموقع الذي حدّدته على الخريطة. المسافات تقريبية بخط مستقيم. يُرسَل موقعك مقرَّبًا لترتيب المساحات حسب المسافة فقط، ولا يُحفظ. | إيقاف الترتيب حسب المسافة | تغيير الموقع | مسح موقعي — user point: موقعي (يدوي)
+shot 2-pick-back-ar-light-390
+· ar 390 PRIVACY: api requests 15 with header 1 headers ["31.41,34.302"] all on sort=distance: true coordinate in a URL: 0
+· en 1440 denied — state line: We couldn’t find your location | Choose your area or set your location on the map to sort the spaces by distance. | Choose your area | Set my location on the map
+shot 2-pick-denied-en-dark-1440
+· en 1440 address: ?view=map crosshair: true focus on: Map of spaces described by: The arrow keys move the map under the mark in the centre.
+· en 1440 marks tabbable: 0 near button shown: false
+shot 2-pick-crosshair-en-dark-1440
+· en 1440 arrows pan: false
+shot 2-pick-panned-en-dark-1440
+· en 1440 placed — state line: Sorted by distance from the point you set on the map. Distances are approximate, in a straight line. Your location is sent rounded, only to sort spaces by distance, and is never stored. | Stop sorting by distance | Change location | Clear my location — focus on: Nearest to me — user point: My location (manual)
+shot 2-pick-placed-en-dark-1440
+· en 1440 the list, sorted — first cards: ["1.4 km away","3.2 km away","3.5 km away"] sort: Sort: By distance
+shot 2-pick-sorted-list-en-dark-1440
+· en 1440 after «رجوع» — state line: Sorted by distance from the point you set on the map. Distances are approximate, in a straight line. Your location is sent rounded, only to sort spaces by distance, and is never stored. | Stop sorting by distance | Change location | Clear my location — user point: My location (manual)
+shot 2-pick-back-en-dark-1440
+· en 1440 PRIVACY: api requests 20 with header 1 headers ["31.41,34.395"] all on sort=distance: true coordinate in a URL: 0

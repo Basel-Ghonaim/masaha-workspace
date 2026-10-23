@@ -1,0 +1,10 @@
+fix(directory): keep the pick's centre rounded
+
+Carried from #105 (item 3 of its review). Past the pins' ceiling, each
+pause of the map asked for the pins within the box in view, picking
+included: the box's centre was the crosshair's raw point, to the metre,
+in a URL hosts log, even if the visitor then went back.
+
+No box is handed back while a point is picked (the pick needs no pins),
+and boundsText rounds the box outward to two decimals (about 1 km), so
+it never carries a point and nearby pans share one cached answer.

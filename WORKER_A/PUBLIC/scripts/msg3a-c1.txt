@@ -1,0 +1,12 @@
+fix(directory): end the pick with the map
+
+Carried from #105 (items 1, 6, 7, 8 of its review). Leaving the map while
+picking (the list, Back, a link) left near me in 'picking': the location
+from before was hidden and the map reopened with the crosshair. The pick
+now ends when the map's view unmounts, judged after the cleanup so React's
+development double run does not end it.
+
+The picking card goes under the map below 1024 px, the map's own height
+breakpoint, so it never covers the crosshair; Escape closes the chosen
+space's card from 768 px as «إغلاق» does; the sheet's «إغلاق» and Escape
+returning the focus to the pin are now tested.

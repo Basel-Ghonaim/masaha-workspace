@@ -1,0 +1,17 @@
+I reviewed #107 at head `a85151b9` and it is mergeable: there is no blocker. CI is green, the PR is CLEAN, and the head did not move during the review. All five should-fixes are small, so they can go into PUBLIC PR 3b's first commit (`0_CARRIED_FROM_107.md`). None needs a fix round on this PR.
+
+**The five most important:**
+1. **The phone bar covers the footer.** Below 768 px, the fixed WhatsApp/Call bar hides the end of the site footer. The padding is inside `<main>`, not after the footer. I saw this in the code and in the executor's 390 px screenshot.
+2. **The location map is not really static on a phone.** The place map still pans with one finger (Leaflet's touch dragging is on by default), so it can catch the page's scroll. The architecture document says "the page scrolls past it", which is only true for the mouse wheel.
+3. **`frontend/architecture.md` contradicts itself.** It now says the space page is built, then ends with "the space details page are not built yet". Its date was also not updated.
+4. **`directory.md`'s Authority line is out of date.** It still lists only "the list, its filters and near me", leaving out the map and the space page. There is also a stray double comma in the map paragraph.
+5. **Test 75 does not check what its title says.** No test proves that `SpacePage` passes the dialog's "no way to reach us" line, or that a configured contact appears in the dialog. If that wiring were removed, every test would stay green.
+
+**On the executor's departures and proposals:**
+- **The phone line's words** («{name}: التفاصيل في أسفل الصفحة»): acceptable. The sheet is at the bottom of the screen and also last in reading order. Two optional nits: the name has no language mark, and the line sits inside a section that can be marked busy.
+- **Accepted:** the overlay stacking (`isolate` + `z-sticky`), «1,000» in Arabic, the `.env.example` placeholder email, `PlaceMapProps`, the shared test fixture, price labels carrying their language, keeping `publicSpacePath`, and the way back keeping the Directory's whole address.
+- **Tests written after their code:** each planned break targets a guard its test really checks. I read those breaks but did not re-run them; the red results are the executor's.
+
+The carried items 1–14 are all done, and each code fix has its test. The report also lists four nits and one "plausible" point: prices whose shift is missing would show an empty section, if the API can return that.
+
+The full review is in `C:\dev\masaha\workspace\WORKER_A\PUBLIC\6_REVIEW_PR3A_CLAUDE_CODE.md`.

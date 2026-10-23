@@ -1,0 +1,10 @@
+feat(directory): show the spaces on a map
+
+Screen 2's map (U6): «قائمة | خريطة» switches the Directory to every
+space that passes the filters as a pin, each live state a shape as well
+as a colour, with its legend in the map. A chosen pin shows its card
+from 768 px and, below it, a bottom sheet that is not modal, so the map
+behind it still pans. Past 1,000 pins the map says so and asks again
+within the box in view once it pauses. The view lives in the address
+with the filters; clearing the filters keeps it. The list's failure
+view is shared with the map's (useFailureView).

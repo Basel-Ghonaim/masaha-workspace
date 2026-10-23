@@ -1,0 +1,10 @@
+feat(platform-settings): read the public contact
+
+Decision 5 (S11): the site shows the platform's contact on About and to an
+unverified space's owner, read from two VITE_ variables until the
+platform's settings reach the web at step 11. One module reads them and
+keeps each only when valid (the shared email rule; a WhatsApp number in
+its stored form); PlatformContact draws the configured channels, WhatsApp
+first, and nothing (or the caller's line) when none is set. A constants
+file would put the owner's number in the repository; the catalogue holds
+words, not settings.

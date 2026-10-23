@@ -1,0 +1,14 @@
+listed spaces: 59
+GET /map/spaces: 200 pins: 59 truncated: false
+pins AVAILABLE: 10 masaha-demo noor-hub tal-al-hawa-desks radwan-study-hall sabra-lab jabalia-hub
+pins FULL: 1 sada-space
+pins CLOSED: 2 shati-sea-view zeitoun-works
+pins none: 46 bare-space contacts-only focus-hub golden-hub white-space map-click-hub-66154
+pins with a cover: 12
+GET /map/spaces?verified=true: 200 20
+GET /map/spaces?q=zzzzqqqq (no match): 200 0
+GET /map/spaces?bounds=31.4,34.3,31.55,34.5: 200 53
+sada-space: FULL at 31.5312,34.4583
+tal-al-hawa-desks: AVAILABLE at 31.5071,34.4405
+radwan-study-hall: AVAILABLE at 31.5361,34.4689
+shati-sea-view: CLOSED at 31.5335,34.4475

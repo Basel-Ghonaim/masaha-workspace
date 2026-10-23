@@ -1,0 +1,11 @@
+fix(directory): reach the chosen space first
+
+Carried from #105 (item 2 of its review). The map's overlay came after
+every pin in the page's order, so from 768 px the chosen space's
+«عرض التفاصيل» lay behind all the remaining pins, and below 768 px the
+sheet, which takes no focus, opened unannounced after the footer.
+
+The overlay (the card, the legend, «مركّز على موقعي») is now drawn
+before the map's panes, on its own layer kept inside the map's frame,
+so it precedes the pins in the tab order; below 768 px one polite line
+says where the details are. The focus still stays on the pin (U6).

@@ -1,0 +1,8 @@
+fix(directory): word the pins' ceiling
+
+Carried from #105 (items 9 and 10 of its review). The line past the pins'
+ceiling wrote 1000 into both catalogues, while @masaha/shared/directory
+exports MAP_PINS_CEILING: a change of the server's ceiling would leave the
+line false. It now takes the constant, formatted for the language (Western
+digits in Arabic too). The comment on map.pin no longer says the name is
+isolated, which the code deliberately does not do.

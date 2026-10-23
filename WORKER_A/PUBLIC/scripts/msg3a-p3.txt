@@ -1,0 +1,7 @@
+feat(map): show one place on a map
+
+PU-026: a space's page shows where it is on a map whose pin is a picture,
+named by the space, not a button and never dragged. Leaflet stays in
+shared/map (S12), so PlaceMap joins the picker and the map of many places
+there, lazy as they are, with the same tiles, zoom and attribution; it
+takes no keyboard panning and no wheel zoom, so the page scrolls past it.

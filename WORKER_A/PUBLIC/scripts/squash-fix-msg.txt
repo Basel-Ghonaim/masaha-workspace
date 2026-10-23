@@ -1,0 +1,42 @@
+fix(directory): carry #103's review fixes
+
+Carried from #103 (items 1 to 7 and 11), small fixes the review left to
+this PR's first commit.
+
+Near me's focus and status (items 1, 5, 11). Stopping or clearing near
+me unmounted the focused button, so the focus fell to the page's top,
+and the granted line replaced the only live region with plain text, so
+it was never announced. The state line is now one live region that
+stays mounted while its content changes; stop and clear hand the focus
+back to «الأقرب إليّ», which is busy, not disabled, while it asks. A
+card also kept «على بعد … كم» once the distance order stopped; it now
+words a distance only while the list is ordered by distance.
+
+No answer when locating (item 2). The device's own timeout counts only
+once the permission is given, and a prompt dismissed without a choice
+calls neither callback: near me stayed «جارٍ تحديد موقعك…» until a
+reload. No answer within 15 s now ends the ask as denied, with «اختر
+منطقتك»; each ask has its number in the store, so a late answer, a
+clear or a new ask is dropped.
+
+Clearing what found nothing (item 3, the owner's choice). No match's
+«مسح الفلاتر» also erased the search and the order, while the sheet's
+button of the same name keeps them. While a filter is in force it now
+takes off the filters; when the search alone narrows the list to
+nothing, it takes off the search alone. clearAll gives way to
+clearSearch.
+
+Near me's privacy gates (item 4). Test 42 now stops the distance order
+and sees no privacy line, the button not pressed and no header on the
+next ask; the header's sorting gate was broken once and test 41 seen
+red.
+
+The price on clearing (item 6). The price filter kept its typed texts
+and a period chosen before any bound after «مسح الفلاتر». Both clear
+actions now reset the fields and the period, which also restarts the
+pause.
+
+The sheet when the screen widens (item 7). The filters' sheet kept its
+open state when the sidebar replaced it at 1024 px, so turning a tablet
+back reopened it unasked, with its focus trap. It now closes as soon as
+the screen is wide.

@@ -1,0 +1,90 @@
+﻿
+> build
+> npm run build --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 build
+> tsc -p tsconfig.build.json
+
+
+> @masaha/api@0.0.0 build
+> tsc -p tsconfig.build.json
+
+
+> @masaha/web@0.0.0 build
+> vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 4212 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                         2.29 kB │ gzip:  1.00 kB
+dist/assets/ibm-plex-sans-arabic-latin-ext-400-normal-BeVLg08x.woff     5.10 kB
+dist/assets/ibm-plex-sans-arabic-latin-ext-500-normal-eJxPnL1P.woff     5.11 kB
+dist/assets/ibm-plex-sans-arabic-latin-ext-600-normal-DT29Q8HW.woff     5.12 kB
+dist/assets/ibm-plex-sans-arabic-latin-ext-500-normal-Ck_W4G78.woff2    6.54 kB
+dist/assets/ibm-plex-sans-arabic-latin-ext-400-normal-BpLfq-63.woff2    6.65 kB
+dist/assets/ibm-plex-sans-arabic-latin-ext-600-normal-DjDAeNQD.woff2    6.68 kB
+dist/assets/ibm-plex-sans-arabic-latin-400-normal-CFZh1unN.woff        17.51 kB
+dist/assets/ibm-plex-sans-arabic-latin-500-normal-BletK1Hp.woff        18.64 kB
+dist/assets/ibm-plex-sans-arabic-latin-600-normal-Dk5eISD_.woff        18.88 kB
+dist/assets/ibm-plex-sans-arabic-latin-400-normal-Bo5KPYvw.woff2       19.16 kB
+dist/assets/ibm-plex-sans-arabic-latin-500-normal-Cd6jVIg7.woff2       20.08 kB
+dist/.vite/manifest.json                                               20.17 kB │ gzip:  2.32 kB
+dist/assets/ibm-plex-sans-arabic-latin-600-normal-KrqB56Mw.woff2       20.50 kB
+dist/assets/ibm-plex-sans-arabic-arabic-400-normal-CyU-ddYS.woff2      42.84 kB
+dist/assets/ibm-plex-sans-arabic-arabic-400-normal-EA1o-u_Q.woff       44.13 kB
+dist/assets/ibm-plex-sans-arabic-arabic-500-normal-C4MQITzh.woff2      45.29 kB
+dist/assets/ibm-plex-sans-arabic-arabic-600-normal-0pRdybE_.woff2      45.68 kB
+dist/assets/ibm-plex-sans-arabic-arabic-600-normal-MJZ0liF5.woff       46.78 kB
+dist/assets/ibm-plex-sans-arabic-arabic-500-normal-DPXcppbm.woff       46.92 kB
+dist/assets/MapLayers-CcZTV7fm.css                                     18.65 kB │ gzip:  7.09 kB
+dist/assets/index-CitU5GDv.css                                         83.19 kB │ gzip: 21.61 kB
+dist/assets/languages-awfr4cLG.js                                       0.03 kB │ gzip:  0.05 kB
+dist/assets/isolate-2IkZAbg9.js                                         0.04 kB │ gzip:  0.06 kB
+dist/assets/direction-B5tfdk2S.js                                       0.07 kB │ gzip:  0.08 kB
+dist/assets/publicSpacePath-BCr3M_Ya.js                                 0.07 kB │ gzip:  0.09 kB
+dist/assets/lineParts-C94nuYP3.js                                       0.09 kB │ gzip:  0.11 kB
+dist/assets/wholeNumber-DAgS0BZs.js                                     0.14 kB │ gzip:  0.15 kB
+dist/assets/priceText-BZ-_TPtG.js                                       0.20 kB │ gzip:  0.17 kB
+dist/assets/HomePage-v30SCFNl.js                                        0.26 kB │ gzip:  0.22 kB
+dist/assets/AboutPage-BlozRy6G.js                                       0.33 kB │ gzip:  0.25 kB
+dist/assets/SiteThemeToggle-DFFokNYG.js                                 0.45 kB │ gzip:  0.30 kB
+dist/assets/NotFoundPage-CfG1lLsq.js                                    0.47 kB │ gzip:  0.29 kB
+dist/assets/OrDivider-BdQlfAOG.js                                       0.48 kB │ gzip:  0.31 kB
+dist/assets/ChangePasswordPage-_fNjAKHo.js                              0.50 kB │ gzip:  0.29 kB
+dist/assets/ResetPasswordPage-DMS_QkvY.js                               0.57 kB │ gzip:  0.32 kB
+dist/assets/PackagesPage-6GXNaQ_1.js                                    0.58 kB │ gzip:  0.40 kB
+dist/assets/useMutationState-B9O3YEMO.js                                0.66 kB │ gzip:  0.40 kB
+dist/assets/ForgotPasswordPage-DM9JObjE.js                              0.67 kB │ gzip:  0.34 kB
+dist/assets/FocusLayout-CutDOMQh.js                                     0.87 kB │ gzip:  0.45 kB
+dist/assets/SignInPage-COJCrOds.js                                      1.35 kB │ gzip:  0.60 kB
+dist/assets/MapLayers-C8dPWolK.js                                       1.37 kB │ gzip:  0.75 kB
+dist/assets/RegisterPage-D8myUs-8.js                                    1.38 kB │ gzip:  0.62 kB
+dist/assets/LeafletPointPicker-CHkfzpbn.js                              1.56 kB │ gzip:  0.85 kB
+dist/assets/uploads-C2gz4r11.js                                         1.93 kB │ gzip:  1.05 kB
+dist/assets/lists-HDQCixeU.js                                           2.17 kB │ gzip:  1.00 kB
+dist/assets/SettingsPage-CeaXRhp2.js                                    2.17 kB │ gzip:  1.13 kB
+dist/assets/clockOf-Q-2v1m1G.js                                         2.48 kB │ gzip:  1.15 kB
+dist/assets/LeafletMarkerMap-dQAuWIGb.js                                3.71 kB │ gzip:  1.68 kB
+dist/assets/react-dom-Ds-l_fTr.js                                       3.86 kB │ gzip:  1.40 kB
+dist/assets/SiteLayout-CvUKG7gv.js                                      4.11 kB │ gzip:  1.42 kB
+dist/assets/spaces-ConKPkOf.js                                          4.28 kB │ gzip:  2.02 kB
+dist/assets/data-CVL6eUqf.js                                            4.70 kB │ gzip:  1.95 kB
+dist/assets/useQuery-D_PAvmhu.js                                        8.03 kB │ gzip:  2.97 kB
+dist/assets/mutation-CmU9wGwd.js                                       10.57 kB │ gzip:  3.65 kB
+dist/assets/users-DX0_ESDP.js                                          12.76 kB │ gzip:  4.02 kB
+dist/assets/auth-CNhc7Waq.js                                           17.86 kB │ gzip:  5.50 kB
+dist/assets/lookups-D30E2s4E.js                                        30.38 kB │ gzip:  7.96 kB
+dist/assets/DirectoryPage-BCVePGyU.js                                  35.83 kB │ gzip: 11.08 kB
+dist/assets/data-table-DjHGLAFn.js                                     37.28 kB │ gzip: 11.76 kB
+dist/assets/forms-CIoeGTmf.js                                          49.02 kB │ gzip: 17.38 kB
+dist/assets/jsx-runtime-DzRKXg9v.js                                   123.71 kB │ gzip: 36.01 kB
+dist/assets/leaflet-BvTNgSZd.js                                       153.63 kB │ gzip: 44.98 kB
+dist/assets/dashboard-BvUi8NNv.js                                     172.65 kB │ gzip: 44.84 kB
+dist/assets/routing-IRy_W5bO.js                                       236.48 kB │ gzip: 75.93 kB
+dist/assets/index-DUpWdvjw.js                                         254.99 kB │ gzip: 79.80 kB
+dist/assets/design-system-Cw7uZ-pS.js                                 279.42 kB │ gzip: 81.61 kB
+
+✓ built in 2.04s

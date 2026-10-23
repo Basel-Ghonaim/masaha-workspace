@@ -1,0 +1,9 @@
+fix(directory): show the pins loading
+
+Carried from #105 (item 5 of its review). On a weak connection the tiles
+arrive before the pins, and for seconds the map showed no pin, no sign of
+loading and aria-busy false: it read as a Strip with no spaces, while
+directory.md says loading is said over the map.
+
+The map's section is busy from the first ask, and a muted line over the
+map's foot, «جارٍ تحميل المساحات…», stays until the first pins arrive.
