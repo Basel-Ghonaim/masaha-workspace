@@ -36,7 +36,36 @@ its task. (The migration supervisor closed on 2026-10-18: `TASKS\_DONE\MIGRATION
 
 ## 2. State at the end of 2026-10-21
 
-**`main` = `c3391d0e`** (#103). **No PR open.** Merged 2026-10-18…21: #89–#103 (#102 at `43b34cd3`, then #103;
+**Later on 2026-10-22: `main` = `5e8379af`** (#106 SUBSCRIPTIONS PR 2 merged at `ab0dadbd`, then #107 PUBLIC PR
+3a at `5e8379af`; both reviews: no blocker, every finding carried: `WORKER_B\SUBSCRIPTIONS\0_CARRIED_FROM_106.md`,
+`WORKER_A\PUBLIC\0_CARRIED_FROM_107.md`; the owner merged and cleaned). **Next:** A — PUBLIC PR 3b (commits 5-6,
+prompt to write); B — SUBSCRIPTIONS PR 3 (the check-ins, prompt to write). The owner's rule: every review fix rides
+on the worker's next task. `masaha_dev` needs #106's migration `subscription_terms` (deploy + generate in `app`).
+
+**2026-10-22: `main` = `a3828e09`** (#105, PUBLIC PR 2, the map: Claude Code built it; OpenCode squashed the
+carried commits (the owner's word), pushed and opened it; the supervisor redid three real-run cases with
+`scripts\run2b.mjs`; review: no blocker, every finding carried in `0_CARRIED_FROM_105.md`, findings 134-136 to
+record). `app` on `a3828e09`, shared built, branch and backups deleted. **Worker A: PUBLIC PR 3 next** (its
+prompt not written yet). **Worker B: SUBSCRIPTIONS PR 2 in two phases** (the owner's split): phase 1 (Claude
+Code) done, `feat/subscriptions` at `3d6bf290`, not pushed, 74 files kept as one PR; phase 2 (OpenCode)
+`3_EXEC_PROMPT_PR2_OPENCODE.md` with `scripts\prnum.sh` (expected #106), then a review. Workers and reviewers
+now launch lean: `--strict-mcp-config --no-chrome --settings C:\dev\masaha\workspace\_SHARED\worker-settings.json`.
+**OpenCode lessons:** it computed the PR number as text (#1041) and replaced it in the working tree, not the
+commits, then claimed a clean tree; give it scripts that check themselves, PowerShell commands only, and verify
+every claim. A history rewrite or force-push is refused by Claude Code's safety classifier for the supervisor:
+the owner runs those commands.
+
+**End of 2026-10-21: `main` = `5a0cda1a`** (#104, DEMO_SEED, merged without a separate review: dev-only, six
+files). **Worker B stopped for the day**, `app-b` detached at `5a0cda1a`, shared built; **tomorrow: launch
+SUBSCRIPTIONS PR 2** (`3_EXEC_PROMPT_PR2.md`; its preconditions now hold). **Worker A stopped for the day** on PUBLIC PR 2
+(the map), `feat/directory-map` local at `ecfb7556`, clean, commits 1–2 done: **resume with
+`3c_RESUME_PR2.md`** (any agent). **If Claude Code hits its weekly limit (91 % on 2026-10-21, renews
+2026-10-23):** A resumes with Codex or Copilot; B's SUBSCRIPTIONS PR 2 (money) waits for Claude; reviews and
+merges wait for Claude; `masaha_dev` holds the demo set (seeded by the supervisor from `app-b`'s code
+with A's `.env`, `SEED_DEMO=true`; the seed writes photos under its own worktree's `apps/api/.storage`, so the
+30 new files were copied into `app`'s). Its FULL and closed-today states hold for the day they were seeded
+only — a later real run needing them: a fresh seed (the owner's word) or "not performed, by design".
+Before: **`main` = `c3391d0e`** (#103). Merged 2026-10-18…21: #89–#103 (#102 at `43b34cd3`, then #103;
 both worktrees on `c3391d0e`, shared built, `masaha_dev` migrated to #102's two migrations, the merged tree's
 `typecheck` green; `OPEN_DECISIONS.md` point 3 applied). **Next, in order:** A — PUBLIC PR 2 (the map,
 `3_EXEC_PROMPT_PR2.md`, carried `0_CARRIED_FROM_103.md`); B — DEMO_SEED (`3_EXEC_PROMPT.md`, updated), then
@@ -116,6 +145,11 @@ reports, favourites — the public page's closure notice and report button wait 
 - **Finding numbers:** blocks per item to avoid collisions — A's OWNER_SETUP used 99–106, PUBLIC 130+; B's DESK
   110–116, SUBSCRIPTIONS 120+. On `main` now: up to 113 (114–116 come with SUBSCRIPTIONS PR 1). Assign a block
   in each new planning prompt.
+
+- **Simple tasks go to non-Claude-Code models (the owner, 2026-10-21):** e.g. seed data, chores, documents
+  only, a small fix outside money, authorization and the schema. Their prompts are self-contained (no Claude
+  skill, files named, commands spelled out); Claude Code keeps money, authorization, schema and large items,
+  and the reviews. Every such PR is verified in the code like any other.
 
 ## 4. The method
 
