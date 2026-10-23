@@ -53,6 +53,31 @@ At least: 4 governorates, 15+ areas, 12 verified / 12 unverified, 8 spaces with 
 Tests 1–3 are red before the code (their own break); 4–6 each get a separate break. *(As built: the code
 came first, so every test got its own break instead; see Breaks.)*
 
+## Pull request
+
+https://github.com/Basel-Ghonaim/masaha/pull/104. Head `25c0aa222c3a4c6185df3237a103999405b67b8d`. CI
+passed on that head: build, check:classes, check:links, format:check, lint, test:api, test:component,
+test:unit, typecheck and CodeRabbit (no inline comments). GitHub shows `CLEAN`.
+
+## Problems met, and how each was solved
+
+- **The 5 s test timeout** (the first test took 6.4 s): fixed by making the seed faster and seeding in hooks.
+  No config or timeout was changed. See "What was built".
+- **The route base:** `/api/spaces` answered 404 because the API is mounted at `/api/v1`, so the real run
+  used that.
+- **Two breaks red only through the hook:** redone so each fails on its own assertion. See Breaks.
+
+## Unexpected
+
+- `prisma db seed` would have kept the process alive: the photo service reads through the API's singleton
+  client, not the seed's own one. `run.ts` now disconnects both.
+- `masaha_b_dev` held 12 older spaces from earlier runs, so it lists 37 spaces, not 25.
+- The background API task ended with exit 127. That was the kill by PID, not a failure.
+
+## Early conflict check
+
+`gh pr list --state open` lists #104 alone, so there was no other pull request to check.
+
 ## What was built (against the plan)
 
 As planned, with these changes made while building:
