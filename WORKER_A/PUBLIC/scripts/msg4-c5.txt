@@ -1,0 +1,9 @@
+fix(site): reserve the bar's room only with a bar
+
+Below 768 px the footer kept room for the contact bar on every space
+page, by its path, so a space with no WhatsApp and no phone ended in a
+blank band. The space page now reserves that room through the site's
+layout while its space has either contact, and gives it back when it
+leaves.
+
+Carried from #108 (review nit).

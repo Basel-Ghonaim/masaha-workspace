@@ -1,0 +1,51 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/session
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/shared/session/services/refresh.unit.test.ts (10 tests | 2 failed) 38ms
+   ❯ refreshSession (10)
+     × ends a session the server ended for idleness, saying so until the next sign-in 3ms
+     × says no idleness for a session refused otherwise, or found ended by the restore 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/session/services/refresh.unit.test.ts > refreshSession > ends a session the server ended for idleness, saying so until the next sign-in
+TypeError: getSessionEnd is not a function
+ ❯ src/shared/session/services/refresh.unit.test.ts:94:12
+     92|
+     93|     expect(getSession()).toEqual({ status: 'anonymous', user: null, ac…
+     94|     expect(getSessionEnd()).toBe('idle');
+       |            ^
+     95|     expect(hasSessionHint()).toBe(false);
+     96|     expect(ended).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/shared/session/services/refresh.unit.test.ts > refreshSession > says no idleness for a session refused otherwise, or found ended by the restore
+TypeError: getSessionEnd is not a function
+ ❯ src/shared/session/services/refresh.unit.test.ts:106:12
+    104|     fakeTransport(() => refused(401, { type: 'unauthorized' }));
+    105|     await expect(refreshSession()).rejects.toMatchObject({ status: 401…
+    106|     expect(getSessionEnd()).toBeNull();
+       |            ^
+    107|
+    108|     setSessionHint(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  2 failed | 37 passed (39)
+   Start at  17:43:18
+   Duration  1.49s (import 64%, transform 32%, tests 3%, worker 1%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/session

@@ -1,0 +1,24 @@
+I've reviewed PR #111 at head `0363353`, and it's **mergeable**: I found no blocker. CI is green on that head, and the head hadn't moved when I finished. I read only commit objects; I didn't run any tests, builds or the browser, so any test result I mention comes from the executor's report or CI.
+
+All eight carried items and all five plan commits do what was decided. I accepted every departure in the executor's report. On test 77, the code shows the final version would turn red under both breaks; I worked that out by reading, not by running it.
+
+The five findings that matter, all small:
+
+1. **About's anchors don't move the focus.** Arriving at `/about#owners` (from Home's owners card) or `/about#contact` (from the footer) scrolls to the section, but the focus stays at the top of the page. A screen reader starts reading from the page title, and the next Tab jumps back up to the top. Fixing it changes S8's focus rule, so you'd approve it first.
+2. **About's note says «تواصل معنا» twice.** The note already ends with «تواصل معنا.», and the page adds a link with the same words after it. It's visible in the 1440 screenshot. The fix is to make the sentence's own last words the link.
+3. **Home's owners card doesn't say the status shows automatically.** Design issue 36 asks for that, but the plan's own Arabic text for the card leaves it out. The code follows that text word for word, so this is your wording call.
+4. **Home's heading can mislabel the cards.** On a slow connection, after near me is granted, the heading switches to «المساحات الأقرب إليك» while the "available now" cards are still on screen.
+5. **A second retry while offline says nothing.** Pressing «إعادة المحاولة» again while still offline gives a screen reader no new announcement.
+
+The rest are nits and things to record:
+- **Gallery:** the phone's single tile hides «عرض كل الصور (n)» from screen readers.
+- **Live status words:** the space page still has its own copy of the status word-and-colour rule beside `statusViewOf`.
+- **Untested paths:** three behaviours have neither a test nor a real-run case.
+- **Area counts:** they ignore the pins' `truncated` flag, so they'd run low past 1,000 spaces; record it as finding 137.
+- **The two site tests that time out at 3 s on clean `main`:** these look like a test defect from the same family as finding 87, not a slow app. That's a guess: I couldn't run them, and CI passes both.
+- **Docs:** five small gaps in the feature and overview documents.
+- **The executor's report:** it says Home listed 21 areas; its own run output shows 17.
+
+None of these needs a fix round on this PR. All the small fixes can go to the follow-up fix PR through `0_CARRIED_FROM_111.md`.
+
+Report: `C:\dev\masaha\workspace\WORKER_A\PUBLIC\6_REVIEW_PR4_CLAUDE_CODE.md`

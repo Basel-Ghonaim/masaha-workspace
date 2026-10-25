@@ -1,0 +1,305 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/routing src/shared/map src/shared/design-system src/features/directory src/features/lookups src/pages/site
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/site/shell/SiteLayout.component.test.tsx (10 tests | 2 failed) 5464ms
+   ❯ the site shell (10)
+     × renders the header, the page in the main landmark, and the footer 3369ms
+     × switches to the other language, and <html>'s lang and dir follow 229ms
+Not implemented: navigation to another Document
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > renders the header, the page in the main landmark, and the footer
+TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "Home"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Find a workspace in the Gaza Strip":
+  [36m<h1[39m
+    [33mclass[39m=[32m"text-heading-1 md:text-display"[39m
+  [36m/>[39m
+
+  Name "Available now":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-heading-2"[39m
+    [33mid[39m=[32m"_r_4_"[39m
+  [36m/>[39m
+
+  Name "Browse by area":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-heading-2 outline-none"[39m
+    [33mid[39m=[32m"_r_5_"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  Name "Do you run a coworking space?":
+  [36m<h2 />[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"max-w-2xl text-body text-muted-foreground"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  search:
+
+  Name "":
+  [36m<form[39m
+    [33mclass[39m=[32m"flex w-full max-w-2xl flex-col gap-2 md:flex-row md:items-end"[39m
+    [33mrole[39m=[32m"search"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  searchbox:
+
+  Name "Search for a space":
+  [36m<input[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mid[39m=[32m"_r_3_-control"[39m
+    [33mmaxlength[39m=[32m"80"[39m
+    [33mplaceholder[39m=[32m"Space name or area"[39m
+    [33mtype[39m=[32m"search"[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Search":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  Name "Nearest to me":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Available now":
+  [36m<section[39m
+    [33maria-busy[39m=[32m"false"[39m
+    [33maria-labelledby[39m=[32m"_r_4_"[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+  [36m/>[39m
+
+  Name "Browse by area":
+  [36m<section[39m
+    [33maria-labelledby[39m=[32m"_r_5_"[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "View all":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-primary underline-offset-4 hover:underline h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/spaces?available=1"[39m
+  [36m/>[39m
+
+  Name "Contact us":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/about#owners"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  [36m<div[39m
+    [33mclass[39m=[32m"not-empty:mt-2"[39m
+    [33mrole[39m=[32m"status"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col outline-none"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-10 md:px-8"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<h1[39m
+        [33mclass[39m=[32m"text-heading-1 md:text-display"[39m
+      [36m>[39m
+        [0mFind a workspace in the Gaza Strip[0m
+      [36m</h1>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"max-w-2xl text-body text-muted-foreground"[39m
+      [36m>[39m
+        [0mOpening hours, prices and live status of coworking spaces, in one place.[0m
+      [36m</p>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex w-full max-w-2xl flex-col gap-2 md:flex-row md:items-end"[39m
+        [33mrole[39m=[32m"search"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5 flex-1"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_3_-control"[39m
+              [33mid[39m=[32m"_r_3_-label"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"sr-only"[39m
+              [36m>[39m
+                [0mSearch for a space[0m
+              [36m</span>[39m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex shrink-0 text-muted-foreground [&_svg:not([class*='size-'])]:size-4"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-search"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m21 21-4.34-4.34"[39m
+                [36m/>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"11"[39m
+                  [33mcy[39m=[32m"11"[39m
+                  [33mr[39m=[32m"8"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</span>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mid[39m=[32m"_r_3_-control"[39m
+              [33mmaxlength[39m=[32m"80"[39m
+              [33mplaceholder[39m=[32m"Space name or area"[39m
+              [33mtype[39m=[32m"search"[39m
+              [33mvalue[39m=[32m""[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSearch[0m
+        [36m</button>[39m
+      [36m</form>[39m
+    [36m</div>[39m
+    [36m<section[39m
+      [33maria-busy[39m=[32m"false"[39m
+      [33maria-labelledby[39m=[32m"_r_4_"[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"text-heading-2"[39m
+            [33mid[39m=[32m"_r_4_"[39m
+          [36m>[39m
+            [0mAvailable now[0m
+          [36m</h2>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-pressed[39m=[32m"false"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+            [36m>[39m
+              [0mNearest to me[0m
+            [36m</button>[39m
+            [36m<a[39m...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:59:40
+     57|     expect(screen.getByRole('banner')).toBeInTheDocument();
+     58|     expect(
+     59|       within(screen.getByRole('main')).getByRole('heading', { level: 1…
+       |                                        ^
+     60|     ).toBeInTheDocument();
+     61|     expect(screen.getByRole('contentinfo')).toHaveTextContent(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > switches to the other language, and <html>'s lang and dir follow
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  الرئيسية[39m
+Received:
+[31m  اعثر على مساحة عمل في قطاع غزة[39m
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:114:55
+    112|     expect(document.documentElement).toHaveAttribute('lang', 'ar');
+    113|     expect(document.documentElement).toHaveAttribute('dir', 'rtl');
+    114|     expect(screen.getByRole('heading', { level: 1 })).toHaveTextConten…
+       |                                                       ^
+    115|   });
+    116|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 97 passed (98)
+      Tests  2 failed | 601 passed (603)
+   Start at  11:53:09
+   Duration  206.18s (import 55%, environment 24%, tests 12%, setup 7%, transform 2%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/routing src/shared/map src/shared/design-system src/features/directory src/features/lookups src/pages/site

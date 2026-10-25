@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/visitRates
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/visitRates.unit.test.ts (3 tests | 1 failed) 14ms
+   ❯ offersStudent (1)
+     × offers «Student» only where the chosen row carries student rates 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  16:54:48
+   Duration  452ms (transform 50%, import 25%, tests 14%, worker 12%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/visitRates.unit.test.ts > offersStudent > offers «Student» only where the chosen row carries student rates
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/features/desk/services/visitRates.unit.test.ts:50:37
+     48|   it('offers «Student» only where the chosen row carries student rates…
+     49|     expect(offersStudent(TERMS, null)).toBe(true);
+     50|     expect(offersStudent(TERMS, 1)).toBe(false);
+       |                                     ^
+     51|     expect(offersStudent({ ...TERMS, rates: [] }, null)).toBe(false);
+     52|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/visitRates

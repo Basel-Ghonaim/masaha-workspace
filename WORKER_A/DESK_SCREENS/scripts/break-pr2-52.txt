@@ -1,0 +1,65 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/openItems
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/openItems.unit.test.ts (2 tests | 1 failed) 12ms
+   ❯ openItems (2)
+     × lists the unpaid visits oldest first, the unpriced left out, then the subscriptions that owe 10ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  13:44:42
+   Duration  331ms (transform 61%, import 20%, tests 12%, worker 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/openItems.unit.test.ts > openItems > lists the unpaid visits oldest first, the unpriced left out, then the subscriptions that owe
+AssertionError: expected [ { key: 'visit-4', …(6) }, …(3) ] to deeply equal [ { key: 'visit-4', …(6) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -9,10 +9,21 @@
+      "leftAgorot": 2500,
+      "paidAgorot": 0,
+      "usage": false,
+    },
+    {
++     "dueAgorot": 0,
++     "item": {
++       "visitId": 5,
++     },
++     "key": "visit-5",
++     "label": "Visit 5",
++     "leftAgorot": 0,
++     "paidAgorot": 0,
++     "usage": false,
++   },
++   {
+      "dueAgorot": 2500,
+      "item": {
+        "visitId": 9,
+      },
+      "key": "visit-9",
+
+ ❯ src/features/desk/services/openItems.unit.test.ts:67:19
+     65|     );
+     66|
+     67|     expect(items).toEqual([
+       |                   ^
+     68|       {
+     69|         key: 'visit-4',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/openItems

@@ -1,0 +1,5 @@
+     × shows the spaces available now, six at most, and «عرض الكل» to the available list 106ms
+     × with a point, the nearest six through the header, titled «المساحات الأقرب إليك», «عرض الكل» keeping the order 87ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: expected [ { availableNow: true } ] to deeply equal [ { limit: 6, availableNow: true } ]
+AssertionError: expected [ { sort: 'distance' } ] to deeply equal [ { limit: 6, sort: 'distance' } ]

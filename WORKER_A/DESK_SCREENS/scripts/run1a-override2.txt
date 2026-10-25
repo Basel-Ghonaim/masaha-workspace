@@ -1,0 +1,11 @@
+== override
+· ar-light-1440 trigger before: يظهر للزوار: متاح — غيّرها · shows: يظهر للزوار: متاح
+shot 1a-override-panel-owner-ar-light-1440
+· set — toast: success: تظهر المساحة «ممتلئ» للزوار · trigger: يظهر للزوار: ممتلئ يدويًا، 0:30 متبقية — غيّرها · shows: يظهر للزوار: ممتلئ يدويًا · 0:30
+shot 1a-override-set-owner-ar-light-1440
+shot 1a-override-inforce-owner-ar-light-1440
+· cleared — toast: success: عادت الحالة تلقائية || success: تظهر المساحة «ممتلئ» للزوار · trigger: يظهر للزوار: متاح — غيّرها
+shot 1a-override-cleared-owner-ar-light-1440
+· requests: PUT /api/v1/manage/spaces/7/status-override 200 ; DELETE /api/v1/manage/spaces/7/status-override 200
+· en-dark-390 trigger before: Visitors see: Available — change it · shows: Available
+shot 1a-override-panel-owner-en-dark-390

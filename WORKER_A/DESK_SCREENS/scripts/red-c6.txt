@@ -1,0 +1,65 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/unpriced
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx (0 test)
+ ❯ |component| src/features/desk/hooks/unpriced/usePriceDialog.component.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/unpriced/usePriceDialog.component.test.tsx [ src/features/desk/hooks/unpriced/usePriceDialog.component.test.tsx ]
+Error: Failed to resolve import "../../components/unpriced/PriceDialog" from "src/features/desk/hooks/unpriced/usePriceDialog.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/hooks/unpriced/usePriceDialog.component.test.tsx:18:28
+  9  |  import { bodyOf, fakeTransport, ok, refused, restoreTransport } from "../../../../test/fakeTransport";
+  10 |  import { startPreferences } from "../../../../test/startPreferences";
+  11 |  import { PriceDialog } from "../../components/unpriced/PriceDialog";
+     |                               ^
+  12 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/hooks/unpriced/usePriceDialog.component.test.tsx";
+  13 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx [ src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx ]
+Error: Failed to resolve import "../../components/unpriced/UnpricedCard" from "src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx:10:29
+  7  |  import { fakeTransport, restoreTransport } from "../../../../test/fakeTransport";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { UnpricedCard } from "../../components/unpriced/UnpricedCard";
+     |                                ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx";
+  11 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  no tests
+   Start at  10:49:58
+   Duration  5.25s (environment 76%, setup 22%, transform 2%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/unpriced

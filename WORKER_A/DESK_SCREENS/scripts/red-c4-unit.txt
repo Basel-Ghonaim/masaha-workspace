@@ -1,0 +1,36 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/openItems
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/openItems.unit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/openItems.unit.test.ts [ src/features/desk/services/openItems.unit.test.ts ]
+Error: Cannot find module './openItems' imported from C:/dev/masaha/app/apps/web/src/features/desk/services/openItems.unit.test.ts
+ ❯ src/features/desk/services/openItems.unit.test.ts:5:1
+      3| import { subscriptionState } from '../../../test/deskCustomer';
+      4| import { deskVisit } from '../../../test/deskVisit';
+      5| import { openItems } from './openItems';
+       | ^
+      6|
+      7| function unpaid(id: number, checkedOutAt: string, balance: number | nu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  13:35:10
+   Duration  293ms (worker 95%, environment 5%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/openItems

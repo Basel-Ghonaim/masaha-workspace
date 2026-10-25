@@ -1,0 +1,8 @@
+test(map): prove the place map lets a phone scroll
+
+#107 turned the place map's drag and pinch off, so a finger over it
+scrolls the page, and kept its zoom buttons; no test held it. The test
+reads Leaflet's own classes on the real map: no drag, no touch zoom, both
+zoom buttons.
+
+Carried from #108 (#107's carried item 2).

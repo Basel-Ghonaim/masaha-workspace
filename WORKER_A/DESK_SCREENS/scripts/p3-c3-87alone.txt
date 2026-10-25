@@ -1,0 +1,51 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx -t reception’s four pages
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (54 tests | 1 failed | 53 skipped) 3049ms
+   ❯ the dashboard's navigation (6)
+     × lists reception’s four pages at its space, the front desk among them 3048ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists reception’s four pages at its space, the front desk among them
+TestingLibraryElementError: Unable to find role="navigation" and name "Space dashboard"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ pagesIn src/pages/dashboard/routes.component.test.tsx:146:28
+    144| /** The names of the pages a sidebar lists, in order: its first list (…
+    145| async function pagesIn(navigation: string) {
+    146|   const nav = await screen.findByRole('navigation', { name: navigation…
+       |                            ^
+    147|   const [pages] = within(nav).getAllByRole('list');
+    148|   return pages
+ ❯ src/pages/dashboard/routes.component.test.tsx:197:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 53 skipped (54)
+   Start at  17:26:00
+   Duration  13.23s (import 42%, tests 24%, transform 18%, environment 14%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx -t ^^^"reception’s^^^ four^^^ pages^^^"

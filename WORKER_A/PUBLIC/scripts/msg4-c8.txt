@@ -1,0 +1,8 @@
+fix(directory): return the focus to the photo tile
+
+#108's real-run gap: after Escape closed the photo viewer the focus
+fell to the page's body, since the viewer opens from a tile, not a
+trigger of its own. The gallery remembers the tile that opened it and
+hands the focus back there when it closes.
+
+Carried from #108 (item 8, found in this PR's real run).

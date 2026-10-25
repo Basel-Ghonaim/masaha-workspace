@@ -1,0 +1,9 @@
+fix(directory): keep the status on a failed read
+
+A failed 60-second refresh replaced a known live status with the
+failure line: TanStack Query keeps the last data beside the error, and
+the page checked the error first. The page now shows the failure only
+when no status was ever read, as the plan says ("a failed read after
+one keeps the last state").
+
+Carried from #108 (review finding 1).

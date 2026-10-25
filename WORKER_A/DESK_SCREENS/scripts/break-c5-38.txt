@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/unpriced
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx (3 tests | 1 failed) 556ms
+   ❯ useUnpricedCard (3)
+     × reads nothing, and shows nothing, for whoever may not type a price 224ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 4 passed (5)
+   Start at  10:54:17
+   Duration  12.96s (import 58%, environment 15%, transform 15%, tests 8%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx > useUnpricedCard > reads nothing, and shows nothing, for whoever may not type a price
+AssertionError: expected [ { …(20) } ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ src/features/desk/hooks/unpriced/useUnpricedCard.component.test.tsx:86:22
+     84|     await new Promise((resolve) => setTimeout(resolve, 200));
+     85|     expect(screen.queryByRole('region')).toBeNull();
+     86|     expect(requests).toHaveLength(0);
+       |                      ^
+     87|   });
+     88|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/unpriced

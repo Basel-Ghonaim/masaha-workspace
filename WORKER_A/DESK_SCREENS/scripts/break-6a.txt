@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/occupancy/hooks/now/useStateNowQuery
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/occupancy/hooks/now/useStateNowQuery.component.test.tsx (1 test | 1 failed) 159ms
+   ❯ useStateNowQuery (1)
+     × reads again every 30 s while visible, never while hidden, and at once on returning 157ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  16:20:12
+   Duration  3.19s (environment 50%, import 15%, transform 15%, setup 14%, tests 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/occupancy/hooks/now/useStateNowQuery.component.test.tsx > useStateNowQuery > reads again every 30 s while visible, never while hidden, and at once on returning
+AssertionError: expected 5 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 5
+
+ ❯ src/features/occupancy/hooks/now/useStateNowQuery.component.test.tsx:61:21
+     59|     setVisibility('hidden');
+     60|     await elapse(90_000);
+     61|     expect(reads()).toBe(2);
+       |                     ^
+     62|
+     63|     setVisibility('visible');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/occupancy/hooks/now/useStateNowQuery

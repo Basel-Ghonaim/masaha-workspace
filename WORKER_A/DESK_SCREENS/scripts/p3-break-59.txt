@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/file
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/file/useCustomerFile.component.test.tsx (5 tests | 1 failed) 415ms
+   ❯ useCustomerFile (5)
+     × says each subscription’s due, paid and left as the server answers them 82ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  17:00:50
+   Duration  10.78s (import 54%, transform 21%, environment 17%, setup 4%, tests 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/file/useCustomerFile.component.test.tsx > useCustomerFile > says each subscription’s due, paid and left as the server answers them
+AssertionError: expected '₪50' to be '₪30' // Object.is equality
+
+Expected: "₪30"
+Received: "₪50"
+
+ ❯ src/features/desk/hooks/file/useCustomerFile.component.test.tsx:75:38
+     73|     expect(heard(fixed?.money.due)).toBe('₪150');
+     74|     expect(heard(fixed?.money.paid)).toBe('₪100');
+     75|     expect(heard(fixed?.money.left)).toBe('₪30');
+       |                                      ^
+     76|     expect(fixed?.money.dueLabel).toBe('Due');
+     77|     expect(fixed?.badges.pay).toEqual({ label: 'Partly paid', tone: 'w…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/file

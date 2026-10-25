@@ -1,0 +1,3036 @@
+
+> @masaha/api@0.0.0 dev
+> tsx watch --conditions=@masaha/source --env-file-if-exists=.env src/server.ts | pino-pretty
+
+[10:12:21.117] INFO (7280): API listening
+    port: 3320
+    env: "development"
+[10:12:27.809] INFO (7280): request completed
+    req: {
+      "id": "8344ebd6-14cc-437a-800e-03299aa7d615",
+      "method": "GET",
+      "url": "/health",
+      "query": {},
+      "params": {},
+      "headers": {
+        "user-agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.9711",
+        "host": "localhost:3320",
+        "connection": "Keep-Alive"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56036
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "8344ebd6-14cc-437a-800e-03299aa7d615",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "64",
+        "etag": "W/\"40-SQnONLGPoOQkLQx3Z/Z57vo9Ydw\""
+      }
+    }
+    responseTime: 9
+[10:12:31.176] INFO (7280): job ran
+    job: "visits.autoCheckOut"
+    visits: 0
+    remaining: 0
+    failed: 0
+    ms: 72
+[10:12:31.188] INFO (7280): job ran
+    job: "subscriptions.autoCheckOut"
+    checkIns: 0
+    remaining: 0
+    failed: 0
+    ms: 12
+[10:12:46.444] INFO (7280): request completed
+    req: {
+      "id": "156b44d7-3ca7-4935-8170-63c80efe2eba",
+      "method": "GET",
+      "url": "/api/v1/spaces?limit=50&page=1",
+      "query": {
+        "limit": "50",
+        "page": "1"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "156b44d7-3ca7-4935-8170-63c80efe2eba",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "18275",
+        "etag": "W/\"4763-aktFYVdj5E+pZfmRVjtIwmDoLB8\""
+      }
+    }
+    responseTime: 276
+[10:12:46.512] INFO (7280): request completed
+    req: {
+      "id": "1e33f311-76b8-44e0-9bc3-8bfef2a1e4ec",
+      "method": "GET",
+      "url": "/api/v1/spaces?limit=50&page=2",
+      "query": {
+        "limit": "50",
+        "page": "2"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "1e33f311-76b8-44e0-9bc3-8bfef2a1e4ec",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "2730",
+        "etag": "W/\"aaa-Dsxq9bntTpUD7KvgAjO7y0q2IOU\""
+      }
+    }
+    responseTime: 48
+[10:12:46.576] INFO (7280): request completed
+    req: {
+      "id": "3664ae7c-f43c-4edc-ae64-f882d0a404eb",
+      "method": "GET",
+      "url": "/api/v1/spaces?availableNow=true&limit=6",
+      "query": {
+        "availableNow": "true",
+        "limit": "6"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "3664ae7c-f43c-4edc-ae64-f882d0a404eb",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "3179",
+        "etag": "W/\"c6b-wHmslI05y9c6qo/adyrTAbJkAN8\""
+      }
+    }
+    responseTime: 47
+[10:12:46.635] INFO (7280): request completed
+    req: {
+      "id": "cb99bef3-c454-43bd-a522-d3890d20b872",
+      "method": "GET",
+      "url": "/api/v1/spaces?sort=distance&limit=6",
+      "query": {
+        "sort": "distance",
+        "limit": "6"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "masaha-near": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "cb99bef3-c454-43bd-a522-d3890d20b872",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "no-store",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "2447",
+        "etag": "W/\"98f-yxXv0J3LMspYWE2758IPvLWT4Rg\""
+      }
+    }
+    responseTime: 44
+[10:12:46.673] INFO (7280): request completed
+    req: {
+      "id": "3972a79b-5819-4913-a5f8-c7a9b7d9d38b",
+      "method": "GET",
+      "url": "/api/v1/map/spaces",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "3972a79b-5819-4913-a5f8-c7a9b7d9d38b",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "19847",
+        "etag": "W/\"4d87-uw+XVsoDtLsICFI43KskH6x+5PY\""
+      }
+    }
+    responseTime: 34
+[10:12:46.704] INFO (7280): request completed
+    req: {
+      "id": "f8a334dd-e4be-4fc6-80be-c005771802b0",
+      "method": "GET",
+      "url": "/api/v1/lookups",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "f8a334dd-e4be-4fc6-80be-c005771802b0",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "2299",
+        "etag": "W/\"8fb-9PhUrbxPndrUdZlXrqgML+iYGYQ\""
+      }
+    }
+    responseTime: 27
+[10:12:46.831] INFO (7280): request completed
+    req: {
+      "id": "4e6c6d4b-bf0a-4da0-923f-154b8f765a95",
+      "method": "GET",
+      "url": "/api/v1/spaces/noor-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "4e6c6d4b-bf0a-4da0-923f-154b8f765a95",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "3204",
+        "etag": "W/\"c84-AK0piD8Eaa0efsdBn7an6tAauOE\""
+      }
+    }
+    responseTime: 114
+[10:12:46.899] INFO (7280): request completed
+    req: {
+      "id": "62814793-6af6-400c-ace3-af739abfc3a3",
+      "method": "GET",
+      "url": "/api/v1/spaces/sada-space",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "62814793-6af6-400c-ace3-af739abfc3a3",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1532",
+        "etag": "W/\"5fc-2oHUGuw/HVcHK31zLoFmgi+m8Ds\""
+      }
+    }
+    responseTime: 55
+[10:12:46.956] INFO (7280): request completed
+    req: {
+      "id": "65c2f1d3-feb9-41af-867f-8fc3717792d4",
+      "method": "GET",
+      "url": "/api/v1/spaces/tal-al-hawa-desks",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "65c2f1d3-feb9-41af-867f-8fc3717792d4",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1990",
+        "etag": "W/\"7c6-QK1EKKgd3romJ9sqCgO/m49KrzM\""
+      }
+    }
+    responseTime: 54
+[10:12:47.055] INFO (7280): request completed
+    req: {
+      "id": "e2374788-5742-473b-a75b-feebdb3f44dd",
+      "method": "GET",
+      "url": "/api/v1/spaces/radwan-study-hall",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "e2374788-5742-473b-a75b-feebdb3f44dd",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1368",
+        "etag": "W/\"558-kIepIxYescVHqDQufRQ93rq/pY0\""
+      }
+    }
+    responseTime: 96
+[10:12:47.181] INFO (7280): request completed
+    req: {
+      "id": "50422c76-1f13-4bdb-b9d2-16e7c11d7a73",
+      "method": "GET",
+      "url": "/api/v1/spaces/shati-sea-view",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "50422c76-1f13-4bdb-b9d2-16e7c11d7a73",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1686",
+        "etag": "W/\"696-0h8E+SsHL13JgwHWXCUER0uBMCU\""
+      }
+    }
+    responseTime: 119
+[10:12:47.300] INFO (7280): request completed
+    req: {
+      "id": "2d5a8e3c-61a3-4af4-9ac9-85ffeb930d52",
+      "method": "GET",
+      "url": "/api/v1/spaces/daraj-corner",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "2d5a8e3c-61a3-4af4-9ac9-85ffeb930d52",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "938",
+        "etag": "W/\"3aa-PL/4SjBxq9P92Hai/L7FxBNyVNs\""
+      }
+    }
+    responseTime: 114
+[10:12:47.437] INFO (7280): request completed
+    req: {
+      "id": "62bb89e4-ecd9-4ef9-832d-55190a4e54f9",
+      "method": "GET",
+      "url": "/api/v1/spaces/zeitoun-works",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "62bb89e4-ecd9-4ef9-832d-55190a4e54f9",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1282",
+        "etag": "W/\"502-L0cX1hOZapJ6jShlGar/Pk/fGQU\""
+      }
+    }
+    responseTime: 126
+[10:12:47.607] INFO (7280): request completed
+    req: {
+      "id": "0f1d5719-026a-46fc-8c87-327a2b20ea74",
+      "method": "GET",
+      "url": "/api/v1/spaces/sabra-lab",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "0f1d5719-026a-46fc-8c87-327a2b20ea74",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1578",
+        "etag": "W/\"62a-8T/soyuNpfmtat14EvAoRG6Hanw\""
+      }
+    }
+    responseTime: 168
+[10:12:47.803] INFO (7280): request completed
+    req: {
+      "id": "7e21ecaf-af15-4b69-b189-c24b8598b3f8",
+      "method": "GET",
+      "url": "/api/v1/spaces/tuffah-place",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "7e21ecaf-af15-4b69-b189-c24b8598b3f8",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1276",
+        "etag": "W/\"4fc-htpPDjLF6FoWsdkJMxqXk/aMNNA\""
+      }
+    }
+    responseTime: 179
+[10:12:47.938] INFO (7280): request completed
+    req: {
+      "id": "84ba817c-f0b6-4d5b-a90a-04fe0c305491",
+      "method": "GET",
+      "url": "/api/v1/spaces/freelancers-house",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "84ba817c-f0b6-4d5b-a90a-04fe0c305491",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1975",
+        "etag": "W/\"7b7-qtzBx+vElxvwbH3hl42Lo8dL5x4\""
+      }
+    }
+    responseTime: 127
+[10:12:48.064] INFO (7280): request completed
+    req: {
+      "id": "e1043e34-13ec-4e3f-a575-0fc29781ca3a",
+      "method": "GET",
+      "url": "/api/v1/spaces/nasr-coworking",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "e1043e34-13ec-4e3f-a575-0fc29781ca3a",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1257",
+        "etag": "W/\"4e9-Hilx7+gKHYZBEyYKoIPHde6D5Xk\""
+      }
+    }
+    responseTime: 114
+[10:12:48.131] INFO (7280): request completed
+    req: {
+      "id": "58474ec3-d96a-43e6-bae1-9a0b078802f5",
+      "method": "GET",
+      "url": "/api/v1/spaces/hawa-tech-space",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "58474ec3-d96a-43e6-bae1-9a0b078802f5",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1441",
+        "etag": "W/\"5a1-oPFgKZPLaZVDbKAL9p6HxU1FkE4\""
+      }
+    }
+    responseTime: 55
+[10:12:48.188] INFO (7280): request completed
+    req: {
+      "id": "2537ee8d-403b-4a6c-9657-0df5086c299f",
+      "method": "GET",
+      "url": "/api/v1/spaces/jabalia-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "2537ee8d-403b-4a6c-9657-0df5086c299f",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1588",
+        "etag": "W/\"634-jwyv7qMGyE7YquIBqiTXEGRTtNA\""
+      }
+    }
+    responseTime: 53
+[10:12:48.252] INFO (7280): request completed
+    req: {
+      "id": "4a2dc533-9441-4627-8cda-dc05242f01b6",
+      "method": "GET",
+      "url": "/api/v1/spaces/beit-lahia-desk",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "4a2dc533-9441-4627-8cda-dc05242f01b6",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1188",
+        "etag": "W/\"4a4-HvwcOMKGohvz4nZHBpWaaQlmSlY\""
+      }
+    }
+    responseTime: 51
+[10:12:48.314] INFO (7280): request completed
+    req: {
+      "id": "16a60a20-5a7a-4e70-81c7-c2978d038673",
+      "method": "GET",
+      "url": "/api/v1/spaces/deir-al-balah-campus",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "16a60a20-5a7a-4e70-81c7-c2978d038673",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "2877",
+        "etag": "W/\"b3d-MUFS3nxPSFZ2CfWVpfFH015H2jA\""
+      }
+    }
+    responseTime: 51
+[10:12:48.378] INFO (7280): request completed
+    req: {
+      "id": "83761225-a333-41ae-bd80-686cc02612bd",
+      "method": "GET",
+      "url": "/api/v1/spaces/palm-space",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "83761225-a333-41ae-bd80-686cc02612bd",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1352",
+        "etag": "W/\"548-7KunOzfIphPLX/rrcZOrtjuvuuo\""
+      }
+    }
+    responseTime: 53
+[10:12:48.445] INFO (7280): request completed
+    req: {
+      "id": "adc38450-6e25-4930-a0f6-9bd296b40614",
+      "method": "GET",
+      "url": "/api/v1/spaces/nuseirat-station",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "adc38450-6e25-4930-a0f6-9bd296b40614",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1690",
+        "etag": "W/\"69a-jQYvuvDagnqqCJFPmDGtJFBO/nw\""
+      }
+    }
+    responseTime: 57
+[10:12:48.498] INFO (7280): request completed
+    req: {
+      "id": "97cb62f3-0d25-4f13-8c39-eb1c31f24e1a",
+      "method": "GET",
+      "url": "/api/v1/spaces/nuseirat-study-house",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "97cb62f3-0d25-4f13-8c39-eb1c31f24e1a",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1588",
+        "etag": "W/\"634-g3VPb+2ilZZHiBcFYvFcCpeMcr4\""
+      }
+    }
+    responseTime: 51
+[10:12:48.566] INFO (7280): request completed
+    req: {
+      "id": "fc87edb3-4317-4e31-997f-f5be363c0d72",
+      "method": "GET",
+      "url": "/api/v1/spaces/bureij-work",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "fc87edb3-4317-4e31-997f-f5be363c0d72",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1126",
+        "etag": "W/\"466-UtFTLQwpQ9YwqPASkk4MshJQaW0\""
+      }
+    }
+    responseTime: 55
+[10:12:48.625] INFO (7280): request completed
+    req: {
+      "id": "3ceca446-8557-48e2-89af-312fb7709ea5",
+      "method": "GET",
+      "url": "/api/v1/spaces/maghazi-room",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "3ceca446-8557-48e2-89af-312fb7709ea5",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1340",
+        "etag": "W/\"53c-aKcnEzkpNH1BsBotwNaDVGgdOEQ\""
+      }
+    }
+    responseTime: 51
+[10:12:48.688] INFO (7280): request completed
+    req: {
+      "id": "71226828-be94-4a5c-b08b-64a9e2c8a212",
+      "method": "GET",
+      "url": "/api/v1/spaces/zawaida-garden",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "71226828-be94-4a5c-b08b-64a9e2c8a212",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1595",
+        "etag": "W/\"63b-stdqRzzl9iFIWE2KJ7yNkNoXzEo\""
+      }
+    }
+    responseTime: 51
+[10:12:48.748] INFO (7280): request completed
+    req: {
+      "id": "66ac1d56-c368-4fe4-8f62-9817121e50fc",
+      "method": "GET",
+      "url": "/api/v1/spaces/khan-younis-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "66ac1d56-c368-4fe4-8f62-9817121e50fc",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1957",
+        "etag": "W/\"7a5-tvQzB1w7/NF+M/okNiBcAAU3mF8\""
+      }
+    }
+    responseTime: 50
+[10:12:48.811] INFO (7280): request completed
+    req: {
+      "id": "fd36832e-61ba-454c-a899-6808220ec959",
+      "method": "GET",
+      "url": "/api/v1/spaces/mawasi-field-office",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "fd36832e-61ba-454c-a899-6808220ec959",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1172",
+        "etag": "W/\"494-UKXVPbfve0ibVzG37dhdBPSyWXw\""
+      }
+    }
+    responseTime: 50
+[10:12:48.875] INFO (7280): request completed
+    req: {
+      "id": "b9aad984-c1f6-49df-8649-b6d049e81e85",
+      "method": "GET",
+      "url": "/api/v1/spaces/khan-younis-library",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "b9aad984-c1f6-49df-8649-b6d049e81e85",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1561",
+        "etag": "W/\"619-bUtc1xfXIKsddmBOGvjHtXJHuXI\""
+      }
+    }
+    responseTime: 51
+[10:12:48.939] INFO (7280): request completed
+    req: {
+      "id": "7f5b52b2-8fc9-4e19-8b0d-5a7de0165d6f",
+      "method": "GET",
+      "url": "/api/v1/spaces/masaha-demo",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "7f5b52b2-8fc9-4e19-8b0d-5a7de0165d6f",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "3163",
+        "etag": "W/\"c5b-MlWUTbxWEguenEYFJW1qH1jId9M\""
+      }
+    }
+    responseTime: 53
+[10:12:49.002] INFO (7280): request completed
+    req: {
+      "id": "aa1ca453-8d4a-43ad-b1de-b45d5aeb44a5",
+      "method": "GET",
+      "url": "/api/v1/spaces/map-click-hub-66154",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "aa1ca453-8d4a-43ad-b1de-b45d5aeb44a5",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "628",
+        "etag": "W/\"274-Fa099FWR2ibNpwkgYjqNwOhiCcs\""
+      }
+    }
+    responseTime: 53
+[10:12:49.068] INFO (7280): request completed
+    req: {
+      "id": "ef68782c-d786-4655-8f7f-201441c70859",
+      "method": "GET",
+      "url": "/api/v1/spaces/palm-corner-pr1",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "ef68782c-d786-4655-8f7f-201441c70859",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "548",
+        "etag": "W/\"224-5/06pg4esCcObtYhrTQnQywWoiA\""
+      }
+    }
+    responseTime: 56
+[10:12:49.121] INFO (7280): request completed
+    req: {
+      "id": "41db8dc8-5dec-489c-8c1b-1aab29328bc5",
+      "method": "GET",
+      "url": "/api/v1/spaces/olive-desk-pr1",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "41db8dc8-5dec-489c-8c1b-1aab29328bc5",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "546",
+        "etag": "W/\"222-CkcT+9DbHmA6iyiUA/6aZITED88\""
+      }
+    }
+    responseTime: 46
+[10:12:49.186] INFO (7280): request completed
+    req: {
+      "id": "fe285c4a-53d0-4dd3-85e4-17088ade55f6",
+      "method": "GET",
+      "url": "/api/v1/spaces/gallery-test-space",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "fe285c4a-53d0-4dd3-85e4-17088ade55f6",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "896",
+        "etag": "W/\"380-g1Xkpz8YvOig1GfshUPt39hZh58\""
+      }
+    }
+    responseTime: 49
+[10:12:49.239] INFO (7280): request completed
+    req: {
+      "id": "afe678a6-294a-4c04-a3c5-ccede1d41375",
+      "method": "GET",
+      "url": "/api/v1/spaces/verify-delete-desk-1792071869895",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "afe678a6-294a-4c04-a3c5-ccede1d41375",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "602",
+        "etag": "W/\"25a-xPsYg5nzBC2i9PQIkyywXKc9KBM\""
+      }
+    }
+    responseTime: 50
+[10:12:49.295] INFO (7280): request completed
+    req: {
+      "id": "52ea4a6f-81fb-4acf-80bb-538255ec323b",
+      "method": "GET",
+      "url": "/api/v1/spaces/arrival-hub-77491",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "52ea4a6f-81fb-4acf-80bb-538255ec323b",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "799",
+        "etag": "W/\"31f-pJ0iDh9cOtxs9nudPoz3LQqFISs\""
+      }
+    }
+    responseTime: 50
+[10:12:49.347] INFO (7280): request completed
+    req: {
+      "id": "13a0c112-9ce3-41fb-a516-4b83100f8f51",
+      "method": "GET",
+      "url": "/api/v1/spaces/hours-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "13a0c112-9ce3-41fb-a516-4b83100f8f51",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1451",
+        "etag": "W/\"5ab-XuyxDaAgPQ8Mz2Xlz5QpAtLgQz8\""
+      }
+    }
+    responseTime: 49
+[10:12:49.403] INFO (7280): request completed
+    req: {
+      "id": "4c5e3a11-4f59-4322-880b-7646592eb29e",
+      "method": "GET",
+      "url": "/api/v1/spaces/wait-hub-22468",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "4c5e3a11-4f59-4322-880b-7646592eb29e",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "555",
+        "etag": "W/\"22b-GIN8QwyF1sl3culufZ9QmKSckT4\""
+      }
+    }
+    responseTime: 48
+[10:12:49.465] INFO (7280): request completed
+    req: {
+      "id": "058511c0-83fe-4faf-b975-054435393367",
+      "method": "GET",
+      "url": "/api/v1/spaces/deleted-hub-18663",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "058511c0-83fe-4faf-b975-054435393367",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "561",
+        "etag": "W/\"231-u8gFEFev2NwI5xZmuyYL5Q/qP+g\""
+      }
+    }
+    responseTime: 48
+[10:12:49.515] INFO (7280): request completed
+    req: {
+      "id": "79ff8163-fafa-4f81-ab58-9b610b1b5206",
+      "method": "GET",
+      "url": "/api/v1/spaces/concurrent-hub-82477",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "79ff8163-fafa-4f81-ab58-9b610b1b5206",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "609",
+        "etag": "W/\"261-ld7OblY5zPy8wx3hhPZGuWMUmj0\""
+      }
+    }
+    responseTime: 48
+[10:12:49.574] INFO (7280): request completed
+    req: {
+      "id": "85c191a4-902c-403b-b9a0-1af19279e099",
+      "method": "GET",
+      "url": "/api/v1/spaces/wait-hub-71578",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "85c191a4-902c-403b-b9a0-1af19279e099",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "555",
+        "etag": "W/\"22b-nSPh7nIqduomPUvOqJ6sq2IXhHM\""
+      }
+    }
+    responseTime: 49
+[10:12:49.634] INFO (7280): request completed
+    req: {
+      "id": "8b7321cb-053a-49ca-a9bb-bc34ea058f06",
+      "method": "GET",
+      "url": "/api/v1/spaces/concurrent-hub-32944",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "8b7321cb-053a-49ca-a9bb-bc34ea058f06",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "609",
+        "etag": "W/\"261-llOjYrx/QPMYE9r+9SwoKJuttuM\""
+      }
+    }
+    responseTime: 47
+[10:12:49.699] INFO (7280): request completed
+    req: {
+      "id": "5ac36731-06fb-491a-97f7-ba946daa9fec",
+      "method": "GET",
+      "url": "/api/v1/spaces/cameran-dejesus",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "5ac36731-06fb-491a-97f7-ba946daa9fec",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "680",
+        "etag": "W/\"2a8-WZZaIkJsrsROosNJXk5Rk2o+vgI\""
+      }
+    }
+    responseTime: 49
+[10:12:49.763] INFO (7280): request completed
+    req: {
+      "id": "0a876189-7737-48c5-b2e7-22492b0b5f94",
+      "method": "GET",
+      "url": "/api/v1/spaces/basel-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "0a876189-7737-48c5-b2e7-22492b0b5f94",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "882",
+        "etag": "W/\"372-qrQtsHF0cHpLizBhFWvoVMf4AwE\""
+      }
+    }
+    responseTime: 49
+[10:12:49.828] INFO (7280): request completed
+    req: {
+      "id": "723922f0-79ba-49b4-a974-e89d22e9708b",
+      "method": "GET",
+      "url": "/api/v1/spaces/hidden-area-hub-51024",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "723922f0-79ba-49b4-a974-e89d22e9708b",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "572",
+        "etag": "W/\"23c-XAuvX/3BDzbxMYUYT2Q0/P5b1QY\""
+      }
+    }
+    responseTime: 52
+[10:12:49.879] INFO (7280): request completed
+    req: {
+      "id": "661ca49b-4adb-4aca-9328-3891b9f32232",
+      "method": "GET",
+      "url": "/api/v1/spaces/hidden-area-hub-28390",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "661ca49b-4adb-4aca-9328-3891b9f32232",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "553",
+        "etag": "W/\"229-ovLOYVcGuA0opx9bbgFf2sz4uME\""
+      }
+    }
+    responseTime: 49
+[10:12:49.934] INFO (7280): request completed
+    req: {
+      "id": "4476e197-ffa0-44e7-8bcf-c716ef583f5d",
+      "method": "GET",
+      "url": "/api/v1/spaces/run-hub-78578",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "4476e197-ffa0-44e7-8bcf-c716ef583f5d",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "796",
+        "etag": "W/\"31c-zCbKujicu4A6R1DE+A+oMzcntC8\""
+      }
+    }
+    responseTime: 48
+[10:12:49.996] INFO (7280): request completed
+    req: {
+      "id": "4053fba8-ad20-411e-84be-04b9a10dcda0",
+      "method": "GET",
+      "url": "/api/v1/spaces/run-hub-35719",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "4053fba8-ad20-411e-84be-04b9a10dcda0",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "796",
+        "etag": "W/\"31c-vDIbLIFzN64IDiQVRmqur3g2mPE\""
+      }
+    }
+    responseTime: 48
+[10:12:50.060] INFO (7280): request completed
+    req: {
+      "id": "633e99cb-eb6c-4548-a142-f62421c81f62",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-8295-390enlight",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "633e99cb-eb6c-4548-a142-f62421c81f62",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "571",
+        "etag": "W/\"23b-gvyzbeVMXU9oR9qmdjVeo9rGwy0\""
+      }
+    }
+    responseTime: 49
+[10:12:50.124] INFO (7280): request completed
+    req: {
+      "id": "d14d5e99-a7f5-4620-b60b-f9b96ac911d4",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-8295-390ardark",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "d14d5e99-a7f5-4620-b60b-f9b96ac911d4",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "569",
+        "etag": "W/\"239-CP7v7DyxABwzeheQ14ZfbZ8G2lQ\""
+      }
+    }
+    responseTime: 50
+[10:12:50.175] INFO (7280): request completed
+    req: {
+      "id": "0f55441e-2ec5-4038-ac57-361c0a5f1911",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-8295-1440endark",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "0f55441e-2ec5-4038-ac57-361c0a5f1911",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "571",
+        "etag": "W/\"23b-7Ku3rFjBxZ0slBWYtV/qMrJ76/M\""
+      }
+    }
+    responseTime: 49
+[10:12:50.228] INFO (7280): request completed
+    req: {
+      "id": "0abca911-edf5-4c68-8a2e-41fd25fd1d2e",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-8295-1440arlight",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "0abca911-edf5-4c68-8a2e-41fd25fd1d2e",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "573",
+        "etag": "W/\"23d-37U0hG1Qcl6ksQV2k7Yk8EbKIqk\""
+      }
+    }
+    responseTime: 46
+[10:12:50.284] INFO (7280): request completed
+    req: {
+      "id": "8196345d-2ff9-4be3-a2b5-5d7c9aa605ca",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-6393-390enlight",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "8196345d-2ff9-4be3-a2b5-5d7c9aa605ca",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "571",
+        "etag": "W/\"23b-bXpFCFp5itJwamMkkGb0RpEJOxE\""
+      }
+    }
+    responseTime: 47
+[10:12:50.333] INFO (7280): request completed
+    req: {
+      "id": "20dfddf4-ee71-4fa3-baea-0dce41d014d3",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-6393-390ardark",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "20dfddf4-ee71-4fa3-baea-0dce41d014d3",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "569",
+        "etag": "W/\"239-Y6wRjPVNJt5lvqk0rOBXinPVnb4\""
+      }
+    }
+    responseTime: 46
+[10:12:50.386] INFO (7280): request completed
+    req: {
+      "id": "6e5253a7-ba97-4d1f-90c0-50ba803bbe83",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-6393-1440endark",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "6e5253a7-ba97-4d1f-90c0-50ba803bbe83",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "571",
+        "etag": "W/\"23b-WNdyKK5j+7IGHaB0CMTrYnH+G/g\""
+      }
+    }
+    responseTime: 48
+[10:12:50.455] INFO (7280): request completed
+    req: {
+      "id": "0ca2e1b7-73a8-474d-b44a-a9c7b134ed10",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-6393-1440arlight",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "0ca2e1b7-73a8-474d-b44a-a9c7b134ed10",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "573",
+        "etag": "W/\"23d-bDPwvVVv8mVSNijtA5BG64fdDAs\""
+      }
+    }
+    responseTime: 50
+[10:12:50.519] INFO (7280): request completed
+    req: {
+      "id": "79482e0e-7854-43e3-abfd-c76bbfc6c5a7",
+      "method": "GET",
+      "url": "/api/v1/spaces/shot-hub-9371-1440arlight",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "79482e0e-7854-43e3-abfd-c76bbfc6c5a7",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "573",
+        "etag": "W/\"23d-7uDxGArrovbk9fzl1XqMSTb6S8I\""
+      }
+    }
+    responseTime: 47
+[10:12:50.568] INFO (7280): request completed
+    req: {
+      "id": "aabfa4f5-43d2-4c43-af9b-f8aac0fe42bd",
+      "method": "GET",
+      "url": "/api/v1/spaces/offline-tiles-hub-66154",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "aabfa4f5-43d2-4c43-af9b-f8aac0fe42bd",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "564",
+        "etag": "W/\"234-oulFpB94kFjF5gU0Vmwrm5k5XFY\""
+      }
+    }
+    responseTime: 46
+[10:12:50.622] INFO (7280): request completed
+    req: {
+      "id": "9f290393-38b1-4a58-94ec-2758f75a79a9",
+      "method": "GET",
+      "url": "/api/v1/spaces/pasted-hub-66154",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "9f290393-38b1-4a58-94ec-2758f75a79a9",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "541",
+        "etag": "W/\"21d-Nvng9TclCbwrXudwlF973WaRFCk\""
+      }
+    }
+    responseTime: 50
+[10:12:50.677] INFO (7280): request completed
+    req: {
+      "id": "bb2807e2-904f-4a1c-8ff4-a637acad249b",
+      "method": "GET",
+      "url": "/api/v1/spaces/white-space",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "bb2807e2-904f-4a1c-8ff4-a637acad249b",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1276",
+        "etag": "W/\"4fc-iJKg2ieb6XNXceoRrqYopIy9cJg\""
+      }
+    }
+    responseTime: 53
+[10:12:50.737] INFO (7280): request completed
+    req: {
+      "id": "d1c0cc80-8149-44e0-84b4-828c7f45e653",
+      "method": "GET",
+      "url": "/api/v1/spaces/focus-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "d1c0cc80-8149-44e0-84b4-828c7f45e653",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1234",
+        "etag": "W/\"4d2-GLooyQAS6WpcN+JPBJ4IwbyCDo4\""
+      }
+    }
+    responseTime: 52
+[10:12:50.802] INFO (7280): request completed
+    req: {
+      "id": "768e8206-b0aa-4eaf-9318-373737fb386f",
+      "method": "GET",
+      "url": "/api/v1/spaces/contacts-only",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "768e8206-b0aa-4eaf-9318-373737fb386f",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "611",
+        "etag": "W/\"263-k5Upg0+ITF5GwzRP9u/QgP6x+JY\""
+      }
+    }
+    responseTime: 48
+[10:12:50.854] INFO (7280): request completed
+    req: {
+      "id": "3d58ecbc-31b0-44a2-b049-750197d280f4",
+      "method": "GET",
+      "url": "/api/v1/spaces/bare-space",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56045
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "3d58ecbc-31b0-44a2-b049-750197d280f4",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "539",
+        "etag": "W/\"21b-mwTl8XPlmwWX8hEjjy/5IuysGzU\""
+      }
+    }
+    responseTime: 50
+[10:12:50.906] INFO (7280): request completed
+    req: {
+      "id": "ca61eff5-b535-4e89-814e-8691a51ef6ed",
+      "method": "GET",
+      "url": "/api/v1/spaces/golden-hub",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56039
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "ca61eff5-b535-4e89-814e-8691a51ef6ed",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1160",
+        "etag": "W/\"488-baAzRiW5zmRdLlQvW+kXfCqe+8c\""
+      }
+    }
+    responseTime: 50
+[10:12:59.386] INFO (7280): request completed
+    req: {
+      "id": "85971132-93d8-464e-96bd-8c2dc1287407",
+      "method": "GET",
+      "url": "/api/v1/lookups",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "user-agent": "curl/8.21.0",
+        "accept": "*/*"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56046
+    }
+    res: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "85971132-93d8-464e-96bd-8c2dc1287407",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "2299",
+        "etag": "W/\"8fb-9PhUrbxPndrUdZlXrqgML+iYGYQ\""
+      }
+    }
+    responseTime: 46

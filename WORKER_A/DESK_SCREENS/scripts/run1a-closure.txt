@@ -1,0 +1,11 @@
+== closure
+· the control at a closed space — disabled: true · reason: يظهر للزوار: مغلق الآن
+لا تُضبط الحالة والمساحة مغلقة الآن.
+shot 1a-closure-desk-owner-ar-light-1440
+· toast: warning: سُجّلت زيارة زائر تجربة 3 | المساحة معلَنة مغلقة الآن، وسُجّل الحضور رغم ذلك.
+shot 1a-closure-warning-owner-ar-light-1440
+· the check-in: POST /api/v1/manage/spaces/52/visits 201 key d086c88a-55b4-4553-ab8f-49985243faf7
+· check-out dialog: تسجيل خروج · زائر تجربة 3 | زيارة | الدخول | 17:32 | الخروج | 17:33 | المدة | 0 د | الدفع | مدة محسوبة 1 د | تقريب لأعلى بعد 15 دقيقة | المستحق | ‏5 ₪ | المستلم الآن (₪) | مُلئ بالمستحق؛ غيّره إن دفع غيره. | يبقى ‏5 ₪ دينًا على زائر تجربة 3 | الاسم | رقم الجوال | استلام المبلغ كاملًا | خروج بدون دفع
+shot 1a-closure-checkout-owner-ar-light-1440
+· toast: success: سُجّل خروج زائر تجربة 3 | لم يدفع · يبقى ‏5 ₪ دينًا على زائر تجربة 3 || warning: سُجّلت زيارة زائر تجربة 3 | المساحة معلَنة مغلقة الآن، وسُجّل الحضور رغم ذلك.
+shot 1a-closure-out-owner-ar-light-1440

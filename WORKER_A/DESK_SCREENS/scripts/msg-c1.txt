@@ -1,0 +1,10 @@
+feat(occupancy): match the present to a search
+
+K1's first group: the desk's one search lists the people present who
+answer it before any customer. A person matches by a part of their name,
+or, for a subscriber, by their phone's last two digits or more (the
+phones of the open check-ins, passed in); a visit carries no phone, so
+digits never find one. The group reads the same state now as the present
+list, so it costs no request; the page sets each row's action, as it
+does for the list. The present list's empty line now points to the
+search too.

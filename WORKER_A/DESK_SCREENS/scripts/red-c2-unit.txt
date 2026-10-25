@@ -1,0 +1,77 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/balanceView src/features/desk/services/statusView src/features/desk/services/dayText src/features/desk/repository
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/dayText.unit.test.ts (0 test)
+ ❯ |unit| src/features/desk/services/balanceView.unit.test.ts (0 test)
+ ❯ |unit| src/features/desk/services/statusView.unit.test.ts (0 test)
+ ❯ |unit| src/features/desk/repository/deskRepository.unit.test.ts (6 tests | 1 failed) 18ms
+   ❯ the desk repository (6)
+     × searches the customers with the query it is given 3ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/balanceView.unit.test.ts [ src/features/desk/services/balanceView.unit.test.ts ]
+Error: Cannot find module './balanceView' imported from C:/dev/masaha/app/apps/web/src/features/desk/services/balanceView.unit.test.ts
+ ❯ src/features/desk/services/balanceView.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { balanceView } from './balanceView';
+       | ^
+      3|
+      4| const WORDS = {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| src/features/desk/services/dayText.unit.test.ts [ src/features/desk/services/dayText.unit.test.ts ]
+Error: Cannot find module './dayText' imported from C:/dev/masaha/app/apps/web/src/features/desk/services/dayText.unit.test.ts
+ ❯ src/features/desk/services/dayText.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { dayText } from './dayText';
+       | ^
+      3|
+      4| describe('dayText', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |unit| src/features/desk/services/statusView.unit.test.ts [ src/features/desk/services/statusView.unit.test.ts ]
+Error: Cannot find module './statusView' imported from C:/dev/masaha/app/apps/web/src/features/desk/services/statusView.unit.test.ts
+ ❯ src/features/desk/services/statusView.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { statusView } from './statusView';
+       | ^
+      3|
+      4| const LABELS = {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/repository/deskRepository.unit.test.ts > the desk repository > searches the customers with the query it is given
+TypeError: repository.customers is not a function
+ ❯ src/features/desk/repository/deskRepository.unit.test.ts:175:29
+    173|     const requests = serve(() => customersPage([customerRow()]));
+    174|
+    175|     await expect(repository.customers(7, { q: 'Sara', page: 1, limit: …
+       |                             ^
+    176|       data: [customerRow()],
+    177|       meta: { totalRecords: 1 },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  4 failed (4)
+      Tests  1 failed | 5 passed (6)
+   Start at  12:26:27
+   Duration  1.27s (import 57%, transform 38%, worker 3%, tests 2%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/balanceView src/features/desk/services/statusView src/features/desk/services/dayText src/features/desk/repository

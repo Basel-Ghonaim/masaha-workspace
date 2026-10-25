@@ -1,0 +1,38 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/subscriber/useSubscriberCheckIn
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx (7 tests | 1 failed) 1041ms
+   ❯ useSubscriberCheckIn (7)
+     × checks an active subscription in at once, with one key per check-in 245ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  13:23:49
+   Duration  16.62s (import 53%, transform 21%, environment 16%, tests 6%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx > useSubscriberCheckIn > checks an active subscription in at once, with one key per check-in
+AssertionError: expected 'abe60e25-a93b-408e-8b4d-de7bf0a73f18' not to be 'abe60e25-a93b-408e-8b4d-de7bf0a73f18' // Object.is equality
+ ❯ src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx:79:24
+     77|     const [first, second] = keysOf(requests);
+     78|     expect(first).toMatch(/^[0-9a-f-]{36}$/);
+     79|     expect(second).not.toBe(first);
+       |                        ^
+     80|   });
+     81|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/subscriber/useSubscriberCheckIn

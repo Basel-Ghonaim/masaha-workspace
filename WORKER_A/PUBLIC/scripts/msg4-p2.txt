@@ -1,0 +1,6 @@
+feat(lookups): list the public areas for home
+
+U1's «تصفّح حسب المنطقة» lists the areas that have spaces, each with its
+governorate. usePublicAreas hands the site the public catalogue's areas
+in its order, named in the interface's language, with their state and a
+retry; Home counts them against the pins.

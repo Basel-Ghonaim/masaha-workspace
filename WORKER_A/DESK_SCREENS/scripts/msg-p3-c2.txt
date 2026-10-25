@@ -1,0 +1,11 @@
+feat(desk): show a customer's file
+
+Screen 15, «ملف الزبون», at the customers list's new route: titled by the
+customer's name once their file loads, under a trail back to the list.
+The header says the phone, who is here, the current subscription's
+status and the balance from the one badge; the unpaid visits read as
+«غير محصّل» rows, «تحصيل» opening the payment on one; each subscription
+is a card under one heading (DI-42) with its dates, terms, progress and
+the server's due, paid and left, never computed, and «استلام المتبقي»
+while it owes (DI-44). No tabs: the API holds no paid visits nor
+attendance across subscriptions (DI-43).

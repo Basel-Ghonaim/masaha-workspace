@@ -1,0 +1,35 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/customersQueryOf.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/customersQueryOf.unit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/customersQueryOf.unit.test.ts [ src/features/desk/services/customersQueryOf.unit.test.ts ]
+Error: Cannot find module './customersQueryOf' imported from C:/dev/masaha/app/apps/web/src/features/desk/services/customersQueryOf.unit.test.ts
+ ❯ src/features/desk/services/customersQueryOf.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { customersQueryOf, paramsOf } from './customersQueryOf';
+       | ^
+      3|
+      4| const read = (search: string, owner = true) => customersQueryOf(new UR…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:35:38
+   Duration  336ms (worker 96%, environment 4%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/customersQueryOf.unit.test.ts

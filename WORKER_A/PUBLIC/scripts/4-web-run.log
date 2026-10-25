@@ -1,0 +1,95 @@
+
+> dev
+> npm run dev -w @masaha/web
+
+
+> @masaha/web@0.0.0 dev
+> vite
+
+12:05:25 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+
+  VITE v8.3.1  ready in 983 ms
+
+  ➜  Local:   http://localhost:5320/
+  ➜  Network: use --host to expose
+12:05:26 PM [vite] (client) [optimizer] scanning dependencies...
+12:05:28 PM [vite] (client) [optimizer] bundling dependencies...
+12:11:46 PM [vite] .env changed, restarting server...
+12:11:46 PM [vite] server restarted.
+12:17:39 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/SpaceDetails.tsx
+12:17:39 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/Gallery.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/Gallery.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/SpaceDetails.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/StatusLegend.tsx, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/home/AreaCards.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/StatusLegend.tsx, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/home/AreaCards.tsx, /src/pages/site/public/space/SpacePage.tsx, /src/features/directory/components/home/HomeSpaces.tsx, /src/features/directory/components/DirectoryView.tsx, /src/features/directory/components/DirectoryList.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/home/AreaCards.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/icons/IconsSection.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/AboutPage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/app/App.tsx, /src/pages/site/shell/SiteRouteError.tsx, /src/pages/site/public/about/AboutPage.tsx, /src/pages/site/shell/SiteFooter.tsx, /src/pages/site/shell/SiteHeader.tsx, /src/pages/site/shell/SiteMenu.tsx, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/home/HomeSearch.tsx, /src/pages/site/public/home/OwnersCard.tsx, /src/pages/site/public/home/AreaCards.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteFooter.tsx
+12:18:35 PM [vite] (client) page reload src/shared/copy/arabic/directory.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/home/HomeSpaces.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/StatusLegend.tsx, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/home/AreaCards.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/home/AreaCards.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteRouteError.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/StatusLegend.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/AreaCards.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomeSearch.tsx
+12:18:35 PM [vite] (client) page reload src/features/directory/hooks/home/useHomeSpaces.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/OwnersCard.tsx
+12:18:35 PM [vite] (client) page reload src/pages/site/public/home/useAreaCards.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/english/directory.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/icons/iconSet.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/routing/states/RetryState.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/app/App.tsx
+12:18:35 PM [vite] (client) page reload src/shared/copy/arabic/site.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/arabic/status.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/english/directory.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/english/site.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/english/status.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/icons/iconSet.tsx
+12:18:35 PM [vite] (client) page reload src/shared/design-system/icons/index.ts
+12:18:35 PM [vite] (client) page reload src/shared/design-system/index.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/routing/states/RetryState.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/routing/states/RouteErrorState.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/Gallery.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/SpaceDetails.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/app/App.tsx
+12:18:35 PM [vite] (client) page reload src/shared/copy/arabic/status.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/english/status.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/icons/IconsSection.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/icons/iconSet.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteRouteError.tsx
+12:18:35 PM [vite] (client) page reload src/shared/design-system/icons/index.ts
+12:18:35 PM [vite] (client) page reload src/shared/design-system/index.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/routing/states/RetryState.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/shared/routing/states/RouteErrorState.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) page reload src/shared/copy/arabic/directory.ts
+12:18:35 PM [vite] (client) page reload src/shared/copy/english/directory.ts
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/home/HomeSpaces.tsx
+12:18:35 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:35 PM [vite] (client) page reload src/features/directory/hooks/home/useHomeSpaces.ts
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/AreaCards.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomeSearch.tsx
+12:18:36 PM [vite] (client) page reload src/shared/copy/arabic/site.ts
+12:18:36 PM [vite] (client) page reload src/shared/copy/english/site.ts
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/app/App.tsx, /src/pages/site/public/about/AboutPage.tsx, /src/pages/site/shell/SiteFooter.tsx, /src/pages/site/shell/SiteHeader.tsx, /src/pages/site/shell/SiteMenu.tsx, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/OwnersCard.tsx
+12:18:36 PM [vite] (client) page reload src/pages/site/public/home/useAreaCards.ts
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/DirectoryView.tsx, /src/features/directory/components/DirectoryList.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/AboutPage.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteFooter.tsx
+12:18:36 PM [vite] (client) page reload src/shared/copy/arabic/site.ts
+12:18:36 PM [vite] (client) page reload src/shared/copy/english/site.ts
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/HomePage.tsx, /src/pages/site/public/space/SpacePage.tsx
+12:18:36 PM [vite] (client) hmr update /src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/about/StatusLegend.tsx

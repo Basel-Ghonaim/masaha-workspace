@@ -1,0 +1,8 @@
+feat(routing): offer home and say a failed retry
+
+PU-024: the site's offline and error states offer «الرئيسية» after
+«إعادة المحاولة», and a retry while the browser still reports no
+connection no longer reloads into the same state: it says «ما زال
+الاتصال مفقودًا.» and the button is ready again. Offline gets its own
+icon, the layer's new WifiOffIcon (Lucide's WifiOff, not mirrored).
+The general error's line no longer speaks of fault (design issue 39).

@@ -1,0 +1,214 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/occupancy/components/LiveStatusControl
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/occupancy/components/LiveStatusControl.component.test.tsx (3 tests | 3 failed) 9120ms
+   ❯ LiveStatusControl (3)
+     × names the trigger with the full line at 390, though it shows the state word only 3073ms
+     × shows the full line from 768 px, and opens the panel with the states and the durations 3029ms
+     × is disabled while the space is closed, its reason beside it 3016ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  16:21:16
+   Duration  19.99s (tests 46%, import 33%, transform 10%, environment 9%, setup 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/occupancy/components/LiveStatusControl.component.test.tsx > LiveStatusControl > names the trigger with the full line at 390, though it shows the state word only
+TestingLibraryElementError: Unable to find role="button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-2"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"popover-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mAvailable[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-2"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"popover-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mAvailable[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/occupancy/components/LiveStatusControl.component.test.tsx:49:34
+     47|     renderControl(NOW);
+     48|
+     49|     const trigger = await screen.findByRole('button', {
+       |                                  ^
+     50|       name: heard('Visitors see: Available — change it'),
+     51|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/occupancy/components/LiveStatusControl.component.test.tsx > LiveStatusControl > shows the full line from 768 px, and opens the panel with the states and the durations
+TestingLibraryElementError: Unable to find role="button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-2"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"popover-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mVisitors see: ⁨Available⁩[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-2"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"popover-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mVisitors see: ⁨Available⁩[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/occupancy/components/LiveStatusControl.component.test.tsx:61:34
+     59|     renderControl(NOW);
+     60|
+     61|     const trigger = await screen.findByRole('button', {
+       |                                  ^
+     62|       name: heard('Visitors see: Available — change it'),
+     63|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/occupancy/components/LiveStatusControl.component.test.tsx > LiveStatusControl > is disabled while the space is closed, its reason beside it
+TestingLibraryElementError: Unable to find role="button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-2"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) border-border bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"popover-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mdisabled[39m=[32m""[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mVisitors see: ⁨Closed now⁩[0m
+        [36m</button>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe status can’t be set while the space is closed.[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-2"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) border-border bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"popover-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mdisabled[39m=[32m""[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mVisitors see: ⁨Closed now⁩[0m
+        [36m</button>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe status can’t be set while the space is closed.[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/occupancy/components/LiveStatusControl.component.test.tsx:80:20
+     78|
+     79|     expect(
+     80|       await screen.findByRole('button', { name: heard('Visitors see: C…
+       |                    ^
+     81|     ).toBeDisabled();
+     82|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/occupancy/components/LiveStatusControl

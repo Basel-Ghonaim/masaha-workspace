@@ -1,0 +1,156 @@
+{
+ "54": {
+  "file": "apps/web/src/features/desk/services/customersQueryOf.ts",
+  "lane": "test:unit",
+  "test": "src/features/desk/services/customersQueryOf.unit.test.ts",
+  "edits": [
+   [
+    "(owner || status !== 'ARCHIVED') &&",
+    "(owner || status !== 'ARCHIVED' || true) &&"
+   ]
+  ]
+ },
+ "56": {
+  "file": "apps/web/src/features/desk/hooks/customers/useCustomersList.ts",
+  "lane": "test:component",
+  "test": "src/features/desk/hooks/customers/useCustomersList.component.test.tsx",
+  "edits": [
+   [
+    "            : status === 'ARCHIVED'\n              ? ('archivedEmpty' as const)\n              : filters.anyApplied\n                ? ('noMatch' as const)\n                : ('empty' as const),",
+    "            : ('empty' as const),"
+   ]
+  ]
+ },
+ "57": {
+  "file": "apps/web/src/features/desk/components/customers/CustomersFilters.tsx",
+  "lane": "test:component",
+  "test": "src/features/desk/components/customers",
+  "edits": [
+   [
+    "        {wide ? (",
+    "        {wide && false ? ("
+   ]
+  ]
+ },
+ "61": {
+  "file": "apps/web/src/pages/dashboard/space/customers/CustomerPage.tsx",
+  "lane": "test:component",
+  "test": "src/pages/dashboard/routes.component.test.tsx -t customer",
+  "edits": [
+   [
+    "  useRecordTitle(title);\n",
+    "  void useRecordTitle;\n"
+   ]
+  ]
+ },
+ "59": {
+  "file": "apps/web/src/features/desk/hooks/file/useCustomerFile.ts",
+  "lane": "test:component",
+  "test": "src/features/desk/hooks/file",
+  "edits": [
+   [
+    "left: price(Math.max(0, subscription.balanceAgorot)),",
+    "left: price(Math.max(0, subscription.dueAgorot - subscription.paidAgorot)),"
+   ]
+  ]
+ },
+ "60": {
+  "file": "apps/web/src/features/desk/components/file/SubscriptionCard.tsx",
+  "lane": "test:component",
+  "test": "src/features/desk/components/file",
+  "edits": [
+   [
+    "          <h3>\n            <span dir=\"auto\">{card.title.name}</span>\n          </h3>",
+    "          <span dir=\"auto\">{card.title.name}</span>"
+   ]
+  ]
+ },
+ "58": {
+  "file": "apps/web/src/features/desk/services/payStatus.ts",
+  "lane": "test:unit",
+  "test": "src/features/desk/services/payStatus.unit.test.ts",
+  "edits": [
+   [
+    "  if (paidAgorot > 0) return { key: 'partial', tone: 'warning' };",
+    "  if (paidAgorot >= 0) return { key: 'partial', tone: 'warning' };"
+   ]
+  ]
+ },
+ "62": {
+  "file": "apps/web/src/features/desk/hooks/edit/useEditDialog.ts",
+  "lane": "test:component",
+  "test": "src/features/desk/hooks/edit",
+  "edits": [
+   [
+    "      const typed = phone.trim();\n      return {",
+    "      const typed = phone.trim();\n      return { name, phone: typed === '' ? null : typed };\n      // eslint-disable-next-line no-unreachable\n      return {"
+   ]
+  ]
+ },
+ "63": {
+  "file": "apps/web/src/features/desk/hooks/archive/useArchiveFlow.ts",
+  "lane": "test:component",
+  "test": "src/features/desk/hooks/archive",
+  "edits": [
+   [
+    "              if (debtAgorot > 0) {",
+    "              if (debtAgorot > 0 && false) {"
+   ]
+  ]
+ },
+ "64": {
+  "file": "apps/web/src/features/desk/components/menu/CustomerMenu.tsx",
+  "lane": "test:component",
+  "test": "src/features/desk/components/menu",
+  "edits": [
+   [
+    "      <DropdownMenuContent align=\"end\" aria-label={menu.label}>",
+    "      <DropdownMenuContent align=\"end\">"
+   ]
+  ]
+ },
+ "64b": {
+  "file": "apps/web/src/features/desk/components/menu/CustomerMenu.tsx",
+  "lane": "test:component",
+  "test": "src/features/desk/components/menu",
+  "edits": [
+   [
+    "        <Button variant=\"ghost\" size=\"icon\" aria-label={menu.label}>",
+    "        <Button variant=\"ghost\" size=\"icon\">"
+   ]
+  ]
+ },
+ "statement-red": {
+  "file": "apps/web/src/features/desk/components/statement/Statement.tsx",
+  "lane": "test:component",
+  "test": "src/features/desk/components/statement",
+  "edits": [
+   [
+    "  if (statement.state === 'closed') return null;",
+    "  if (statement.state === 'closed' || statement.state === 'ready') return null;"
+   ]
+  ]
+ },
+ "65": {
+  "file": "apps/web/src/features/desk/hooks/statement/useStatement.ts",
+  "lane": "test:component",
+  "test": "src/features/desk/hooks/statement",
+  "edits": [
+   [
+    "          payment.voided === null\n            ? null",
+    "          payment.voided === null || payment.voided !== null\n            ? null"
+   ]
+  ]
+ },
+ "67": {
+  "file": "apps/web/src/shared/session/services/refresh.ts",
+  "lane": "test:unit",
+  "test": "src/shared/session",
+  "edits": [
+   [
+    "endSession({ endedBy: failure.code === 'SESSION_IDLE' ? 'idle' : null });",
+    "endSession({ endedBy: null });"
+   ]
+  ]
+ }
+}

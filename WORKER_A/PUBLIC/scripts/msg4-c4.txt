@@ -1,0 +1,10 @@
+test(directory): drive the refresh by page events
+
+Test 77 set TanStack Query's focus manager by hand, so it could not catch
+a broken hook-up to the browser. It now hides and shows the page as the
+browser does (its visibility and the visibilitychange event), and waits
+for a poll's request before saying none was made: the old synchronous
+check passed even with refetchIntervalInBackground on. A return at once,
+while the status is still fresh, proves refetchOnWindowFocus: 'always'.
+
+Carried from #108 (review finding 4).

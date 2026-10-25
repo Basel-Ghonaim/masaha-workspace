@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/space/desk/useSwitchStaff.component.test.tsx (2 tests | 1 failed) 124ms
+   ❯ useSwitchStaff (2)
+     × signs out on the server, then opens sign-in with the desk as `next` 85ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/desk/useSwitchStaff.component.test.tsx > useSwitchStaff > signs out on the server, then opens sign-in with the desk as `next`
+TypeError: Cannot read properties of undefined (reading 'element')
+ ❯ ../../node_modules/react-router/dist/development/lib/router/router.js:313:37
+ ❯ updateState ../../node_modules/react-router/dist/development/lib/router/router.js:310:61
+ ❯ completeNavigation ../../node_modules/react-router/dist/development/lib/router/router.js:383:3
+ ❯ startNavigation ../../node_modules/react-router/dist/development/lib/router/router.js:524:4
+ ❯ Object.navigate ../../node_modules/react-router/dist/development/lib/router/router.js:475:9
+ ❯ ../../node_modules/react-router/dist/development/lib/hooks.js:1298:21
+ ❯ Object.run src/pages/dashboard/space/desk/useSwitchStaff.ts:35:11
+     33|     }
+     34|     const next = new URLSearchParams({ next: spaceDeskPath(spaceId) });
+     35|     await navigate(`${SIGN_IN_PATH}?${next.toString()}`, { replace: tr…
+       |           ^
+     36|   }
+     37| }
+ ❯ src/pages/dashboard/space/desk/useSwitchStaff.component.test.tsx:31:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 74 passed (75)
+   Start at  16:51:08
+   Duration  39.64s (import 59%, tests 18%, transform 10%, environment 10%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard

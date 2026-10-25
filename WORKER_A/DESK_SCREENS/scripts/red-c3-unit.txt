@@ -1,0 +1,54 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/repository src/features/desk/services/progressLines
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/progressLines.unit.test.ts (0 test)
+ ❯ |unit| src/features/desk/repository/deskRepository.unit.test.ts (7 tests | 1 failed) 20ms
+   ❯ the desk repository (7)
+     × checks a subscriber in with its key, out with none; reads the open check-ins and a file 3ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/progressLines.unit.test.ts [ src/features/desk/services/progressLines.unit.test.ts ]
+Error: Cannot find module './progressLines' imported from C:/dev/masaha/app/apps/web/src/features/desk/services/progressLines.unit.test.ts
+ ❯ src/features/desk/services/progressLines.unit.test.ts:3:1
+      1| import type { SubscriptionState } from '@masaha/shared/subscriptions';
+      2| import { describe, expect, it } from 'vitest';
+      3| import { progressLines } from './progressLines';
+       | ^
+      4|
+      5| const WORDS = {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/repository/deskRepository.unit.test.ts > the desk repository > checks a subscriber in with its key, out with none; reads the open check-ins and a file
+TypeError: repository.checkInSubscriber is not a function
+ ❯ src/features/desk/repository/deskRepository.unit.test.ts:188:22
+    186|     const requests = serve(() => ({ status: 200, data: { success: true…
+    187|
+    188|     await repository.checkInSubscriber(7, { subscriptionId: 1 }, 'key-…
+       |                      ^
+    189|     await repository.checkOutSubscriber(7, 3);
+    190|     await repository.openCheckIns(7);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed | 6 passed (7)
+   Start at  13:12:03
+   Duration  1.25s (import 59%, transform 38%, tests 2%, worker 2%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/repository src/features/desk/services/progressLines

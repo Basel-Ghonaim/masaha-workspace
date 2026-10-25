@@ -1,0 +1,7 @@
+fix(directory): count every photo in the viewer
+
+The viewer's position printed the tiles' count, five at most, so a
+space with seven photos read "6 / 5". It now prints the photos' total,
+which the viewer already moves across.
+
+Carried from #108 (review finding 2).
