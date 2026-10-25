@@ -1,0 +1,69 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/packages/hooks/offered
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx (2 tests | 2 failed) 28ms
+   ❯ useOfferedPackages (2)
+     × lists the offered packages only, in the list’s order 23ms
+     × says it failed, and reads them again on «Try again» 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx > useOfferedPackages > lists the offered packages only, in the list’s order
+TypeError: useOfferedPackages is not a function
+ ❯ src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx:32:41
+     30|   it('lists the offered packages only, in the list’s order', async () …
+     31|     const requests = fakeTransport(() => ok([HOURS, RETIRED, WEEK]));
+     32|     const { result } = renderHook(() => useOfferedPackages(7), { wrapp…
+       |                                         ^
+     33|
+     34|     expect(result.current.state).toBe('loading');
+ ❯ TestComponent ../../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+ ❯ renderRootSync ../../node_modules/react-dom/cjs/react-dom-client.development.js:18985:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx > useOfferedPackages > says it failed, and reads them again on «Try again»
+TypeError: useOfferedPackages is not a function
+ ❯ src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx:45:41
+     43|     let answer = refused(500, { type: 'server' });
+     44|     const requests = fakeTransport(() => answer);
+     45|     const { result } = renderHook(() => useOfferedPackages(7), { wrapp…
+       |                                         ^
+     46|
+     47|     await waitFor(() => {
+ ❯ TestComponent ../../node_modules/@testing-library/react/dist/pure.js:339:27
+ ❯ Object.react_stack_bottom_frame ../../node_modules/react-dom/cjs/react-dom-client.development.js:28571:20
+ ❯ renderWithHooks ../../node_modules/react-dom/cjs/react-dom-client.development.js:8030:22
+ ❯ updateFunctionComponent ../../node_modules/react-dom/cjs/react-dom-client.development.js:10569:19
+ ❯ beginWork ../../node_modules/react-dom/cjs/react-dom-client.development.js:12205:18
+ ❯ runWithFiberInDEV ../../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ performUnitOfWork ../../node_modules/react-dom/cjs/react-dom-client.development.js:19176:22
+ ❯ workLoopSync ../../node_modules/react-dom/cjs/react-dom-client.development.js:19004:41
+ ❯ renderRootSync ../../node_modules/react-dom/cjs/react-dom-client.development.js:18985:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  14:20:41
+   Duration  4.44s (environment 60%, import 16%, setup 11%, transform 11%, tests 1%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/packages/hooks/offered

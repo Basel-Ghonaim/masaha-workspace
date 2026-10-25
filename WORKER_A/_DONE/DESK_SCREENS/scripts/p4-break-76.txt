@@ -1,0 +1,191 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (10 tests | 1 failed) 5767ms
+   ❯ useSubscriptionSheet (10)
+     × renews from the statement’s start, with the renewed one; a renewal renewed meanwhile is worded 3100ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > renews from the statement’s start, with the renewed one; a renewal renewed meanwhile is worded
+Error: [2mexpect([22m[31melement[39m[2m).toHaveValue([22m[32m2026-11-05[39m[2m)[22m
+
+Expected the element to have value:
+[32m  2026-11-05[39m
+Received:
+[31m  2026-10-26[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"sheet-overlay"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-describedby[39m=[32m"radix-_r_3i_"[39m
+      [33maria-labelledby[39m=[32m"radix-_r_3h_"[39m
+      [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+      [33mdata-side[39m=[32m"end"[39m
+      [33mdata-slot[39m=[32m"sheet-content"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mid[39m=[32m"radix-_r_3g_"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+        [33mdata-slot[39m=[32m"sheet-header"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"sheet-title"[39m
+          [33mid[39m=[32m"radix-_r_3h_"[39m
+        [36m>[39m
+          [0mRenew subscription[0m
+        [36m</h2>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"sheet-description"[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mid[39m=[32m"radix-_r_3i_"[39m
+        [36m>[39m
+          [0mSara Khalid[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-5 pb-4"[39m
+          [33mdata-slot[39m=[32m"sheet-body"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-col gap-2"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-label"[39m
+              [36m>[39m
+                [0mPackage[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex min-w-0 items-start justify-between gap-3 rounded-lg border border-primary p-3"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"flex min-w-0 flex-col gap-0.5"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"flex flex-wrap items-baseline gap-2"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-label"[39m
+                      [33mdir[39m=[32m"auto"[39m
+                    [36m>[39m
+                      [0m10 days[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-label"[39m
+                      [33mdir[39m=[32m"ltr"[39m
+                    [36m>[39m
+                      [0m⁨₪150⁩[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                  [36m>[39m
+                    [0m30 days · 10 days[0m
+                  [36m</span>[39m
+                [36m</span>[39m
+                [36m<button[39m
+                  [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+                  [33mdata-slot[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mChange package[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid grid-cols-2 gap-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground"[39m
+                  [33mfor[39m=[32m"_r_3k_-control"[39m
+                  [33mid[39m=[32m"_r_3k_-label"[39m
+                [36m>[39m
+                  [0mFrom[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex...
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:374:52
+    372|     expect(within(sheet).getByRole('button', { name: 'Change package' …
+    373|     await waitFor(() => {
+    374|       expect(within(sheet).getByLabelText('From')).toHaveValue('2026-1…
+       |                                                    ^
+    375|     });
+    376|     await user.click(within(sheet).getByRole('button', { name: /Renew …
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  15:07:37
+   Duration  14.65s (tests 40%, import 32%, transform 16%, environment 9%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet

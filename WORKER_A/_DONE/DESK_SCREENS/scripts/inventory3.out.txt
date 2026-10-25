@@ -1,0 +1,78 @@
+
+=== demo-owner@example.com (id 14) links [{"spaceId":7,"role":"OWNER"}]
+-- space 7 (OWNER) occupancy 200: present=0
+customers 200: total=7
+   filter &status=UPCOMING: 200 total=0 
+   filter &status=ACTIVE: 200 total=0 
+   filter &status=ENDING_SOON: 200 total=2 نور حسن, يوسف أبو علي
+   filter &status=EXPIRED: 200 total=2 سارة خالد, محمد عوض
+   filter &status=ARCHIVED: 200 total=0 
+   filter &kind=PACKAGE: 200 total=2 سارة خالد, محمد عوض
+   filter &kind=CUSTOM: 200 total=2 نور حسن, يوسف أبو علي
+   filter &kind=NONE: 200 total=3 خالد, رامي سالم, زائر تجربة 2
+   filter &payment=OWES: 200 total=4 خالد, زائر تجربة 2, سارة خالد, محمد عوض
+   filter &payment=CREDIT: 200 total=0 
+   filter &payment=SETTLED: 200 total=3 رامي سالم, نور حسن, يوسف أبو علي
+   customer 8 خالد phone=…303 archived=- debt=1500 credit=0 current=null
+      file 200: present=null
+      unpaid visit 3 خالد charge=2500 paid=1000 balance=1500 voided=0
+   customer 5 رامي سالم phone=…205 archived=- debt=0 credit=0 current=null
+      file 200: present=null
+   customer 6 زائر تجربة 2 phone=…301 archived=- debt=500 credit=0 current=null
+      file 200: present=null
+      unpaid visit 27 زائر تجربة 2 charge=500 paid=0 balance=500 voided=0
+   customer 1 سارة خالد phone=…201 archived=- debt=3160 credit=0 current={"id":1,"name":"امتحانات بالساعة","packageId":4,"endsOn":"2026-10-21","status":"EXPIRED"}
+      file 200: present=null
+      sub 1 «امتحانات بالساعة» EXPIRED PER_HOUR pkg=4 price=400 2026-10-01..2026-10-21 ended=null typed=false due=9660 paid=6500 balance=3160
+         statement 200: checkIns=5 open=0 auto=1 payments=2 voided=0 renewal={"startsOn":"2026-10-25"} renewedBy=null
+   customer 2 محمد عوض phone=…202 archived=- debt=5000 credit=0 current={"id":2,"name":"أسبوعان، 6 أيام","packageId":5,"endsOn":"2026-10-16","status":"EXPIRED"}
+      file 200: present=null
+      sub 2 «أسبوعان، 6 أيام» EXPIRED FIXED pkg=5 price=15000 2026-10-03..2026-10-16 ended=null typed=false due=15000 paid=10000 balance=5000
+         statement 200: checkIns=2 open=0 auto=0 payments=1 voided=0 renewal={"startsOn":"2026-10-25"} renewedBy=null
+   customer 3 نور حسن phone=null archived=- debt=0 credit=0 current={"id":3,"name":"يوم بعد يوم","packageId":null,"endsOn":"2026-10-27","status":"ENDING_SOON"}
+      file 200: present=null
+      sub 3 «يوم بعد يوم» ENDING_SOON FIXED pkg=null price=20000 2026-09-27..2026-10-27 ended=null typed=true due=20000 paid=20000 balance=0
+         statement 200: checkIns=3 open=0 auto=0 payments=2 voided=1 renewal={"startsOn":"2026-10-28"} renewedBy=null
+   customer 4 يوسف أبو علي phone=…204 archived=- debt=0 credit=0 current={"id":4,"name":"20 ساعة","packageId":null,"endsOn":null,"status":"ENDING_SOON"}
+      file 200: present=null
+      sub 4 «20 ساعة» ENDING_SOON FIXED pkg=null price=10000 null..null ended=null typed=true due=10000 paid=10000 balance=0
+         statement 200: checkIns=3 open=0 auto=0 payments=1 voided=0 renewal={"startsOn":"2026-10-25"} renewedBy=null
+
+=== demo-reception@example.com (id 15) links [{"spaceId":7,"role":"RECEPTION"}]
+-- space 7 (RECEPTION) occupancy 200: present=0
+customers 200: total=7
+   filter &status=UPCOMING: 200 total=0 
+   filter &status=ACTIVE: 200 total=0 
+   filter &status=ENDING_SOON: 200 total=2 نور حسن, يوسف أبو علي
+   filter &status=EXPIRED: 200 total=2 سارة خالد, محمد عوض
+   filter &status=ARCHIVED: 403 total=- {"type":"forbidden","message":"Not permitted","requestId":"c4ec16bd-cfb7-43a8-b046-91e1b6bd0317"}
+   filter &kind=PACKAGE: 200 total=2 سارة خالد, محمد عوض
+   filter &kind=CUSTOM: 200 total=2 نور حسن, يوسف أبو علي
+   filter &kind=NONE: 200 total=3 خالد, رامي سالم, زائر تجربة 2
+   filter &payment=OWES: 200 total=4 خالد, زائر تجربة 2, سارة خالد, محمد عوض
+   filter &payment=CREDIT: 200 total=0 
+   filter &payment=SETTLED: 200 total=3 رامي سالم, نور حسن, يوسف أبو علي
+   customer 8 خالد phone=…303 archived=- debt=1500 credit=0 current=null
+      file 200: present=null
+      unpaid visit 3 خالد charge=2500 paid=1000 balance=1500 voided=0
+   customer 5 رامي سالم phone=…205 archived=- debt=0 credit=0 current=null
+      file 200: present=null
+   customer 6 زائر تجربة 2 phone=…301 archived=- debt=500 credit=0 current=null
+      file 200: present=null
+      unpaid visit 27 زائر تجربة 2 charge=500 paid=0 balance=500 voided=0
+   customer 1 سارة خالد phone=…201 archived=- debt=3160 credit=0 current={"id":1,"name":"امتحانات بالساعة","packageId":4,"endsOn":"2026-10-21","status":"EXPIRED"}
+      file 200: present=null
+      sub 1 «امتحانات بالساعة» EXPIRED PER_HOUR pkg=4 price=400 2026-10-01..2026-10-21 ended=null typed=false due=9660 paid=6500 balance=3160
+         statement 200: checkIns=5 open=0 auto=1 payments=2 voided=0 renewal={"startsOn":"2026-10-25"} renewedBy=null
+   customer 2 محمد عوض phone=…202 archived=- debt=5000 credit=0 current={"id":2,"name":"أسبوعان، 6 أيام","packageId":5,"endsOn":"2026-10-16","status":"EXPIRED"}
+      file 200: present=null
+      sub 2 «أسبوعان، 6 أيام» EXPIRED FIXED pkg=5 price=15000 2026-10-03..2026-10-16 ended=null typed=false due=15000 paid=10000 balance=5000
+         statement 200: checkIns=2 open=0 auto=0 payments=1 voided=0 renewal={"startsOn":"2026-10-25"} renewedBy=null
+   customer 3 نور حسن phone=null archived=- debt=0 credit=0 current={"id":3,"name":"يوم بعد يوم","packageId":null,"endsOn":"2026-10-27","status":"ENDING_SOON"}
+      file 200: present=null
+      sub 3 «يوم بعد يوم» ENDING_SOON FIXED pkg=null price=20000 2026-09-27..2026-10-27 ended=null typed=true due=20000 paid=20000 balance=0
+         statement 200: checkIns=3 open=0 auto=0 payments=2 voided=1 renewal={"startsOn":"2026-10-28"} renewedBy=null
+   customer 4 يوسف أبو علي phone=…204 archived=- debt=0 credit=0 current={"id":4,"name":"20 ساعة","packageId":null,"endsOn":null,"status":"ENDING_SOON"}
+      file 200: present=null
+      sub 4 «20 ساعة» ENDING_SOON FIXED pkg=null price=10000 null..null ended=null typed=true due=10000 paid=10000 balance=0
+         statement 200: checkIns=3 open=0 auto=0 payments=1 voided=0 renewal={"startsOn":"2026-10-25"} renewedBy=null

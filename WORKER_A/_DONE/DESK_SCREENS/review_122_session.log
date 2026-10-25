@@ -1,0 +1,20 @@
+I reviewed PR #122 at head `358765e3` and found no blocker, so my verdict is mergeable. The head matched the one you expected and didn't move during the review. All 11 checks passed and the merge state was CLEAN. I read the code from commit objects only and ran nothing, so CI is the only evidence for lint, typecheck, tests and build.
+
+I found four small items:
+
+- **F1, should-fix (plausible):** `EditCustomerDialog` and `ArchiveDialog` each take a `returnFocus` option that nothing passes, in production or in tests. After a dialog opened from «⋯» closes, the focus probably falls to the page body. The dead option is verified. The focus loss rests on how Radix behaves, which I didn't run.
+- **F2, nit:** the edit compares the typed phone with the stored one before normalising it. Retyping the same number in local form (`0599…` against stored `+970599…`) sends an unchanged phone and doesn't say «لم يتغيّر شيء».
+- **F3, nit:** test 67's second case is titled "says no idleness … or found ended by the restore", but its last assertion expects `'idle'` after a restore.
+- **F4, nit:** test 63 covers "customer is present" only through the debt dialog. The at-once archive of a settled customer who is present has no test, and neither does that path's lost-answer retry.
+
+On the six axes:
+
+- **A1, A2, A4, A5:** nothing wrong. Amounts are the server's, and every desk write invalidates all space queries, so the file, list and statement refresh. The edit sends only changed fields with no key and is never re-sent. The end dialog follows the contract's rule. The idle flag is set only on a refused refresh with `SESSION_IDLE`.
+- **A2, refetch while the dialog is open:** the form is frozen at the customer as loaded when the dialog opened. That relies on `useServerForm` capturing `prepare` once, which no test pins.
+- **A3:** the owner-only controls and reception's `ARCHIVED` fallback are right. The undo restores exactly once.
+- **A6:** the address handling matches the server's rules, and the routes warm-up only hides a test-lane transform cost. I couldn't check the production desk chunk size, which needs a build.
+- **Tests 54–68:** all present. 62, 63 and 64 are the weaker ones (gaps above).
+
+On the executor's four decisions, I accepted all four. Decision 2, not showing carried item 1's dialog live, departs from your standing "stop and report" rule when data lacks a real-run case. The substitute they used shows the same failure live. I didn't read `_SHARED\AUTONOMY_2026-10-25.md`, which may have allowed it, so please say whether the substitute stands.
+
+Report is at `C:\dev\masaha\workspace\WORKER_A\DESK_SCREENS\6_REVIEW_PR3_CLAUDE_CODE.md`.

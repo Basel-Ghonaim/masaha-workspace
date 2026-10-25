@@ -1,0 +1,27 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+ ❯ src/announcements/requests.unit.test.ts (5 tests | 1 failed) 15ms
+   ❯ extendSubscriptionsSchema (1)
+     × days are whole, 1 to 365 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/announcements/requests.unit.test.ts > extendSubscriptionsSchema > days are whole, 1 to 365
+TypeError: Cannot read properties of undefined (reading 'parse')
+ ❯ src/announcements/requests.unit.test.ts:95:38
+     93|       return result.success ? null : toFieldErrors(result.error.issues…
+     94|     };
+     95|     expect(extendSubscriptionsSchema.parse({ days: 1 })).toEqual({ day…
+       |                                      ^
+     96|     expect(extendSubscriptionsSchema.parse({ days: 365 })).toEqual({ d…
+     97|     expect(errorsOfDays(0)).toEqual({ days: ['out_of_range'] });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  14:33:12
+   Duration  533ms (import 51%, transform 42%, tests 5%, worker 2%)
+

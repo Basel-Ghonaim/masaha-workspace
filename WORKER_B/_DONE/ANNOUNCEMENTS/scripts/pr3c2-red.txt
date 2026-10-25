@@ -1,0 +1,119 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+28 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/directory/favorites.api.test.ts (4 tests | 4 failed) 1984ms
+   ❯ GET /me/favorites (4)
+     × the favourites, whole, newest saved first: a listed space as its card with its live status; a deleted or hidden one listed false with its name 499ms
+     × none saved is an empty list 312ms
+     × sort=distance with Masaha-Near: nearest first with their distance, those that left last, no-store; the header without sort is invalid_choice on near 365ms
+     × another user's favourites never; no card carries a capacity or a count 352ms
+ ❯ |api| src/modules/favorites/favorites.api.test.ts (7 tests | 1 failed) 3475ms
+   ❯ the favourites, anonymously (1)
+     × anonymous is 401 on the three routes 319ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > the favourites, whole, newest saved first: a listed space as its card with its live status; a deleted or hidden one listed false with its name
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/directory/favorites.api.test.ts:63:29
+     61|     const response = await favorites(user);
+     62|
+     63|     expect(response.status).toBe(200);
+       |                             ^
+     64|     const listed = (await request(app).get('/api/v1/spaces').expect(20…
+     65|       data: { id: number; liveStatus: unknown }[];
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > none saved is an empty list
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/directory/favorites.api.test.ts:89:29
+     87|     const response = await favorites(user);
+     88|
+     89|     expect(response.status).toBe(200);
+       |                             ^
+     90|     expect(dataOf(response)).toEqual([]);
+     91|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > sort=distance with Masaha-Near: nearest first with their distance, those that left last, no-store; the header without sort is invalid_choice on near
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/directory/favorites.api.test.ts:108:29
+    106|     const response = await favorites(user, '?sort=distance', '31.500,3…
+    107|
+    108|     expect(response.status).toBe(200);
+       |                             ^
+    109|     expect(response.headers['cache-control']).toBe('no-store');
+    110|     const rows = dataOf(response) as (Favorite & { space: { distanceMe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > another user's favourites never; no card carries a capacity or a count
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ src/modules/directory/favorites.api.test.ts:150:29
+    148|     const response = await favorites(user);
+    149|
+    150|     expect((dataOf(response) as Favorite[]).map(({ space }) => space.i…
+       |                             ^
+    151|     expect((dataOf(response) as Favorite[])[0]?.savedAt).toBe('2026-10…
+    152|     expect(JSON.stringify(response.body)).not.toMatch(/capacity|count|…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > the favourites, anonymously > anonymous is 401 on the three routes
+AssertionError: expected 404 to be 401 // Object.is equality
+
+- Expected
++ Received
+
+- 401
++ 404
+
+ ❯ src/modules/favorites/favorites.api.test.ts:170:31
+    168|     const list = await request(app).get('/api/v1/me/favorites');
+    169|     for (const response of [await save(null), await remove(null), list…
+    170|       expect(response.status).toBe(401);
+       |                               ^
+    171|     }
+    172|     expect(await storedFavorites()).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  5 failed | 6 passed (11)
+   Start at  16:36:54
+   Duration  14.45s (tests 51%, transform 25%, import 20%, setup 3%)
+

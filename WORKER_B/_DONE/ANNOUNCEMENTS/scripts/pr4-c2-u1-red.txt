@@ -1,0 +1,27 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+ ❯ src/core/gazaTime.unit.test.ts (6 tests | 1 failed) 31ms
+   ❯ daysFrom (1)
+     × counts calendar days across a month, a year and a leap day 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/core/gazaTime.unit.test.ts > daysFrom > counts calendar days across a month, a year and a leap day
+TypeError: daysFrom is not a function
+ ❯ src/core/gazaTime.unit.test.ts:62:12
+     60| describe('daysFrom', () => {
+     61|   it('counts calendar days across a month, a year and a leap day', () …
+     62|     expect(daysFrom('2026-10-21', '2026-10-21')).toBe(0);
+       |            ^
+     63|     expect(daysFrom('2026-10-31', '2026-11-01')).toBe(1);
+     64|     expect(daysFrom('2026-12-31', '2027-01-01')).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  14:24:51
+   Duration  319ms (transform 41%, tests 28%, import 25%, worker 5%)
+

@@ -1,0 +1,28 @@
+[
+ {
+  "id": "B3",
+  "file": "packages/shared/src/subscriptions/requests.ts",
+  "old": "if (to < from || to > addDays(from, CHECK_IN_RANGE_MAX_DAYS))",
+  "new": "if (to < from || addDays(from, CHECK_IN_RANGE_MAX_DAYS) === '')",
+  "lane": "shared",
+  "test": "src/subscriptions/requests.unit.test.ts"
+ },
+ {
+  "id": "B17",
+  "file": "apps/api/src/modules/subscriptions/subscriptions.repository.ts",
+  "old": "        select: CHECK_IN_ROW,\n        orderBy: [{ checkedInAt: 'asc' }, { id: 'asc' }],\n      });\n    },\n\n    /**\n     * A page",
+  "new": "        select: CHECK_IN_ROW,\n        orderBy: [{ checkedInAt: 'asc' }, { id: 'asc' }],\n        take: 20,\n      });\n    },\n\n    /**\n     * A page",
+  "lane": "api",
+  "test": "src/modules/subscriptions/checkIns.api.test.ts",
+  "name": "open=true answers every open check-in"
+ },
+ {
+  "id": "B18",
+  "file": "apps/api/src/modules/subscriptions/subscriptions.repository.ts",
+  "old": "AND ${GAZA_DAY} BETWEEN",
+  "new": "AND (checked_in_at AT TIME ZONE 'UTC')::date BETWEEN",
+  "lane": "api",
+  "test": "src/modules/subscriptions/checkIns.api.test.ts",
+  "name": "a range pages the check-ins by their Gaza date"
+ }
+]

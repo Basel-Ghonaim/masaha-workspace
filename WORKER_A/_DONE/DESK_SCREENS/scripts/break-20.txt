@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/check-in
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx (4 tests | 1 failed) 1418ms
+   ❯ useVisitDialog (4)
+     × keeps one key on a retry after no answer and on a second press while pending; a new key when opened again 275ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  16:55:23
+   Duration  10.81s (import 49%, transform 20%, environment 14%, tests 13%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx > useVisitDialog > keeps one key on a retry after no answer and on a second press while pending; a new key when opened again
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx:146:33
+    144|     const first = keysOf(requests);
+    145|     expect(first.length).toBeGreaterThanOrEqual(4);
+    146|     expect(new Set(first).size).toBe(1);
+       |                                 ^
+    147|
+    148|     await user.click(screen.getByRole('button', { name: 'Open' }));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/check-in

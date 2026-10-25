@@ -1,0 +1,14 @@
+feat(visits): store a visit's write-off
+
+The owner may write off what a closed visit still owes (K6). The visit
+keeps who, when and why in three columns, set together, never with a
+blank reason, and only on a closed, priced visit: a CHECK, as the typed
+charge's reason has. Undoing clears them; the audit keeps the history.
+
+The payments trigger gains a fourth rule: a written-off visit takes no
+payment (payments_visit_written_off). It lives in the ledger so every
+insert path is covered, and the visit's row lock it already takes
+decides a write-off racing a payment.
+
+Every visit the desk is answered now carries writeOff, null unless
+written off; the tests that compare a whole visit gain it.

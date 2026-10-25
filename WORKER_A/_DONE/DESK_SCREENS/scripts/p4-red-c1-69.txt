@@ -1,0 +1,43 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/overlays/Sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/shared/design-system/components/overlays/Sheet/Sheet.component.test.tsx (10 tests | 1 failed) 1450ms
+   ❯ Sheet (10)
+     × takes the full width below 768 px from either side, a quarter less from there on 61ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/overlays/Sheet/Sheet.component.test.tsx > Sheet > takes the full width below 768 px from either side, a quarter less from there on
+Error: [2mexpect([22m[31melement[39m[2m).toHaveClass([22m[32m[32m"w-full md:w-3/4 md:max-w-sm"[32m[39m[2m)[22m
+
+Expected the element to have class:
+[32m  w-full md:w-3/4 md:max-w-sm[39m
+Received:
+[31m  fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-3/4 max-w-sm border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end[39m
+ ❯ src/shared/design-system/components/overlays/Sheet/Sheet.component.test.tsx:104:19
+    102|     const sheet = screen.getByRole('dialog', { name: 'Filter the repor…
+    103|     // The width is the classes' (jsdom lays nothing out); the real ru…
+    104|     expect(sheet).toHaveClass('w-full', 'md:w-3/4', 'md:max-w-sm');
+       |                   ^
+    105|     expect(sheet).not.toHaveClass('w-3/4');
+    106|     // The body lets a long field shrink inside the sheet rather than …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  14:16:08
+   Duration  7.41s (environment 36%, import 30%, tests 20%, setup 9%, transform 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/overlays/Sheet

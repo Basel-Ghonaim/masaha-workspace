@@ -1,0 +1,12 @@
+feat(desk): edit, archive and restore a customer
+
+Each customer listed — a row of «الزبائن», a card of the desk's search,
+the file's header — gains their «⋯», named by them (DI-39): «ملف
+الزبون», «تعديل البيانات» and the owner's «أرشفة…», destructive (DI-46).
+The edit sends only the fields that differ from the customer as loaded,
+a cleared phone as null, nothing when none does, and carries no key, so
+it is never re-sent by itself: a late retry cannot put back what another
+desk changed (finding 123). The owner archives a settled customer at
+once with «تراجع», asks first for one who owes, naming the debt, and is
+told a present customer must check out first (DK-014, P9, DI-47); an
+archived one shows «استرجاع». Reception is offered neither.

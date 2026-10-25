@@ -1,0 +1,8 @@
+== debt
+· dialog: تسجيل دين · خالد | يبقى ‏25 ₪ دينًا على صاحب هذا الرقم، ويُنشأ له ملف زبون إن لم يكن له ملف. | الاسم | رقم الجوال | تسجيل الدين
+· focused: text خالد
+shot 1b-debt-dialog-reception-ar-light-390
+· toast: success: سُجّل ‏25 ₪ دينًا على خالد
+· card after: زيارتان غير محصّلتين | عمر | خروج تلقائي عند الإغلاق · 7 أكتوبر 08:50–22:00 | ‏25 ₪ | تحصيل | تسجيل دين | خالد | خروج تلقائي عند الإغلاق · 6 أكتوبر 14:00–22:00 | ‏25 ₪ | تحصيل
+shot 1b-debt-toast-reception-ar-light-390
+·    2026-10-25T09:10:17.177Z PUT /api/v1/manage/spaces/7/visits/3/customer 200 Idempotency-Key: none

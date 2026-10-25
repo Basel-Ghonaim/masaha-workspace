@@ -1,0 +1,24 @@
+== B14 (apps/api/src/modules/subscriptions/subscriptions.repository.ts) broken run exit 1
+     × closes it now, MANUAL, audited checkIn.checkedOut, answered with the subscription's due, paid and balance 726ms
+      Tests  1 failed | 2 skipped (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscriberCheckOut.api.test.ts > checking a subscriber out > closes it now, MANUAL, audited checkIn.checkedOut, answered with the subscription's due, paid and balance
+AssertionError: expected 500 to be 200 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 2 skipped (3)
+== B15 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a closed check-in is answered as it is, nothing written or audited 502ms
+      Tests  1 failed | 2 skipped (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscriberCheckOut.api.test.ts > checking a subscriber out > a closed check-in is answered as it is, nothing written or audited
+AssertionError: expected { id: 1, …(7) } to match object { id: 1, …(4) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 2 skipped (3)
+== B16 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × another space's or an unknown check-in is not_found, so is any to a stranger and the admin; a link ended while waiting is 403 644ms
+      Tests  1 failed | 2 skipped (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscriberCheckOut.api.test.ts > checking a subscriber out > another space's or an unknown check-in is not_found, so is any to a stranger and the admin; a link ended while waiting is 403
+AssertionError: expected 200 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 2 skipped (3)

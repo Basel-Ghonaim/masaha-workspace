@@ -1,0 +1,138 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+28 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/favorites/favorites.api.test.ts (7 tests | 6 failed) 11755ms
+   ❯ POST /me/favorites/:spaceId (5)
+     × a signed-in user saves a listed space, 204; again 204 with one row 511ms
+     × two saves at once make one, both 204 4601ms
+     × the 201st is FAVORITES_LIMIT_REACHED; one already saved at 200 answers 204 502ms
+     × two saves of different spaces at 199 at once: one 204, one FAVORITES_LIMIT_REACHED 4507ms
+   ❯ DELETE /me/favorites/:spaceId (1)
+     × remove is 204 whether saved or not; another user's favourite stays 330ms
+   ❯ the favourites, anonymously (1)
+     × anonymous is 401 on the three routes 309ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > a signed-in user saves a listed space, 204; again 204 with one row
+AssertionError: expected 404 to be 204 // Object.is equality
+
+- Expected
++ Received
+
+- 204
++ 404
+
+ ❯ src/modules/favorites/favorites.api.test.ts:71:26
+     69|   it('a signed-in user saves a listed space, 204; again 204 with one r…
+     70|     const first = await save(user);
+     71|     expect(first.status).toBe(204);
+       |                          ^
+     72|     expect(first.body).toEqual({});
+     73|     expect(await storedFavorites()).toEqual([{ userId: user.id, spaceI…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > two saves at once make one, both 204
+Error: 2 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout src/modules/favorites/favorites.api.test.ts:87:9
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ src/modules/favorites/favorites.api.test.ts:82:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > the 201st is FAVORITES_LIMIT_REACHED; one already saved at 200 answers 204
+AssertionError: expected 404 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 404
+
+ ❯ src/modules/favorites/favorites.api.test.ts:117:25
+    115|
+    116|     const full = await save(user);
+    117|     expect(full.status).toBe(409);
+       |                         ^
+    118|     expect(errorOf(full)).toMatchObject({ type: 'conflict', code: 'FAV…
+    119|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > two saves of different spaces at 199 at once: one 204, one FAVORITES_LIMIT_REACHED
+Error: 2 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout src/modules/favorites/favorites.api.test.ts:134:9
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ src/modules/favorites/favorites.api.test.ts:130:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > DELETE /me/favorites/:spaceId > remove is 204 whether saved or not; another user's favourite stays
+AssertionError: expected 404 to be 204 // Object.is equality
+
+- Expected
++ Received
+
+- 204
++ 404
+
+ ❯ src/modules/favorites/favorites.api.test.ts:151:39
+    149|   it("remove is 204 whether saved or not; another user's favourite sta…
+    150|     const other = await signIn('USER', 'other@example.com');
+    151|     expect((await save(user)).status).toBe(204);
+       |                                       ^
+    152|     expect((await save(other)).status).toBe(204);
+    153|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > the favourites, anonymously > anonymous is 401 on the three routes
+AssertionError: expected 404 to be 401 // Object.is equality
+
+- Expected
++ Received
+
+- 401
++ 404
+
+ ❯ src/modules/favorites/favorites.api.test.ts:169:31
+    167|   it('anonymous is 401 on the three routes', async () => {
+    168|     for (const response of [await save(null), await remove(null)]) {
+    169|       expect(response.status).toBe(401);
+       |                               ^
+    170|     }
+    171|     expect(await storedFavorites()).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 1 passed (7)
+   Start at  16:28:45
+   Duration  20.64s (tests 73%, transform 16%, import 9%, setup 1%)
+

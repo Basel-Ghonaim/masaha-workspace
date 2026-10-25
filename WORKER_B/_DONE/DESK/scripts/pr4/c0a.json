@@ -1,0 +1,8 @@
+[
+  {"name": "C0a-1 the per-stay catch removed (visits)",
+   "edits": [{"file": "apps/api/src/modules/visits/visits.service.ts", "old": "        }).catch((err: unknown) => {\n          notClosed(stay.id, err);\n          return false;\n        });", "new": "        });"}],
+   "cwd": "apps/api", "cmd": "npx vitest run --project api src/shared/jobs/jobs.api.test.ts"},
+  {"name": "C0a-2 a space without settings skipped silently",
+   "edits": [{"file": "apps/api/src/modules/visits/visits.service.ts", "old": "          notClosed(stay.id, new Error(`The space ${String(stay.spaceId)} has no settings row.`));\n", "new": ""}],
+   "cwd": "apps/api", "cmd": "npx vitest run --project api src/shared/jobs/jobs.api.test.ts"}
+]

@@ -1,0 +1,320 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/check-out
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx (8 tests | 1 failed) 5700ms
+   ❯ useCheckOutDialog (8)
+     × with no rate, has whoever may type a price type it with its reason 3241ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  16:56:52
+   Duration  15.38s (tests 38%, import 35%, transform 14%, environment 10%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx > useCheckOutDialog > with no rate, has whoever may type a price type it with its reason
+TestingLibraryElementError: Unable to find an element with the text: This field is required.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<ol[39m
+        [33mdata-sonner-theme[39m=[32m"light"[39m
+        [33mdata-sonner-toaster[39m=[32m"true"[39m
+        [33mdata-x-position[39m=[32m"right"[39m
+        [33mdata-y-position[39m=[32m"bottom"[39m
+        [33mdir[39m=[32m"ltr"[39m
+        [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"true"[39m
+          [33mdata-index[39m=[32m"0"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨Omar⁩ checked out[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm"[39m
+              [33mdata-description[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨₪30⁩ received in cash[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ol>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_1c_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_1b_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mid[39m=[32m"radix-_r_1c_"[39m
+      [36m>[39m
+        [0mCheck out · ⁨Omar⁩[0m
+      [36m</h2>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground self-start"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"neutral"[39m
+      [36m>[39m
+        [0mVisit[0m
+      [36m</span>[39m
+    [36m</div>[39m
+    [36m<form[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [33mnova...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<ol[39m
+        [33mdata-sonner-theme[39m=[32m"light"[39m
+        [33mdata-sonner-toaster[39m=[32m"true"[39m
+        [33mdata-x-position[39m=[32m"right"[39m
+        [33mdata-y-position[39m=[32m"bottom"[39m
+        [33mdir[39m=[32m"ltr"[39m
+        [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"true"[39m
+          [33mdata-index[39m=[32m"0"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨Omar⁩ checked out[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm"[39m
+              [33mdata-description[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨₪30⁩ received in cash[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ol>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_1c_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_1b_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mid[39m=[32m"radix-_r_1c_"[39m
+      [36m>[39m
+        [0mCheck out · ⁨Omar⁩[0m
+      [36m</h2>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground self-start"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"neutral"[39m
+      [36m>[39m
+        [0mVisit[0m
+      [36m</span>[39m
+    [36m</div>[39m
+    [36m<form[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [33mnova...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx:192:25
+    190|     await user.type(typed, '30');
+    191|     await user.click(screen.getByRole('button', { name: heard('Check o…
+    192|     expect(await screen.findByText('This field is required.')).toBeInT…
+       |                         ^
+    193|     expect(posts(requests)).toHaveLength(0);
+    194|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/check-out

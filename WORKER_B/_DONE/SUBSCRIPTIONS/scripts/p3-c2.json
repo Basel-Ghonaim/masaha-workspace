@@ -1,0 +1,132 @@
+[
+ {
+  "id": "B1",
+  "file": "apps/api/src/modules/subscriptions/limits.ts",
+  "old": "progress.daysThisWeek >= daysPerWeek",
+  "new": "progress.daysThisWeek > daysPerWeek",
+  "lane": "unit",
+  "test": "src/modules/subscriptions/limits.unit.test.ts"
+ },
+ {
+  "id": "B1h",
+  "file": "apps/api/src/modules/subscriptions/limits.ts",
+  "old": "progress.minutesToday >= hoursPerDay * 60",
+  "new": "progress.minutesToday > hoursPerDay * 60",
+  "lane": "unit",
+  "test": "src/modules/subscriptions/limits.unit.test.ts"
+ },
+ {
+  "id": "B2",
+  "file": "apps/api/src/modules/subscriptions/limits.ts",
+  "old": "daysPerWeek !== null && !checkedInToday && ",
+  "new": "daysPerWeek !== null && ",
+  "lane": "unit",
+  "test": "src/modules/subscriptions/limits.unit.test.ts"
+ },
+ {
+  "id": "B5",
+  "file": "apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old": "      const created = await repository.createCheckIn(checkIn, tx);\n      await audit(",
+  "new": "      const created = await repository.createCheckIn(checkIn, tx);\n      if (created.id < 0) await audit(",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "the owner and reception check a subscriber in"
+ },
+ {
+  "id": "B6",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        const warnings = await subscriberWarnings(space, subscriptionId, at, null, tx);\n        const created = await subscriptions.checkIn(\n          actor.id,\n          { spaceId: space.id, key, customerId: customer.id, subscriptionId, checkedInAt: at },\n          tx,\n        );\n",
+  "new": "        const created = await subscriptions.checkIn(\n          actor.id,\n          { spaceId: space.id, key, customerId: customer.id, subscriptionId, checkedInAt: at },\n          tx,\n        );\n        const warnings = await subscriberWarnings(space, subscriptionId, at, null, tx);\n",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "warns, never refuses"
+ },
+ {
+  "id": "B7",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        const made = await subscriptions.findCheckInByKey(space.id, key, tx);\n        if (made && made.subscriptionId !== subscriptionId) {",
+  "new": "        const made = (await subscriptions.findCheckInByKey(space.id, key, tx)) && null;\n        if (made && made.subscriptionId !== subscriptionId) {",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "a retry answers"
+ },
+ {
+  "id": "B7k",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        if (made && made.subscriptionId !== subscriptionId) {\n          throw AppError.conflict(\n            undefined,\n            'This idempotency key checked in another subscription',",
+  "new": "        if (made && made.subscriptionId !== subscriptionId && made.id < 0) {\n          throw AppError.conflict(\n            undefined,\n            'This idempotency key checked in another subscription',",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "a retry answers"
+ },
+ {
+  "id": "B8",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "    if (!(await spaces.lock(space.id, tx))) {\n      throw AppError.notFound(undefined, 'Space not found');\n    }\n    const links = await space.linksUnder(tx);",
+  "new": "    if (!(space.id > 0)) {\n      throw AppError.notFound(undefined, 'Space not found');\n    }\n    const links = await space.linksUnder(tx);",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "a retry answers"
+ },
+ {
+  "id": "B9",
+  "file": "apps/api/src/modules/occupancy/present.ts",
+  "old": "return [...openVisits, ...checkIns].some(",
+  "new": "return [...checkIns].some(",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "a customer present by a check-in or a visit"
+ },
+ {
+  "id": "B10",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        if (customer.archivedAt) throw AppError.conflict('CUSTOMER_ARCHIVED');\n        if (await occupancy.isPresent(space.id, customer.id, tx)) {",
+  "new": "        if (await occupancy.isPresent(space.id, customer.id, tx)) {",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "an unknown subscription is invalid_choice"
+ },
+ {
+  "id": "B11",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "    const links = await space.linksUnder(tx);\n    if (!can(actor, action, { links })) throw AppError.forbidden();",
+  "new": "    const links = space.links;\n    if (!can(actor, action, { links })) throw AppError.forbidden();",
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "a reception link ended while waiting is 403"
+ },
+ {
+  "id": "B12",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "edits": [
+   [
+    "      return runInTransaction(async (tx) => {\n        await lockAtDesk(actor, space, tx);\n        const at = now();\n        const made = await subscriptions.findCheckInByKey(",
+    "      return runInTransaction(async (tx) => {\n        const early = await subscriptions.limitWarnings(space.id, subscriptionId, now(), null, tx);\n        await lockAtDesk(actor, space, tx);\n        const at = now();\n        const made = await subscriptions.findCheckInByKey("
+   ],
+   [
+    "        const warnings = await subscriberWarnings(space, subscriptionId, at, null, tx);\n        const created",
+    "        const warnings = [...(await occupancy.checkInWarnings(space.id, at, tx)), ...early];\n        const created"
+   ]
+  ],
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "while the subscription is ended"
+ },
+ {
+  "id": "B13",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "edits": [
+   [
+    "      return runInTransaction(async (tx) => {\n        await lockAtDesk(actor, space, tx);\n        const at = now();\n        const made = await subscriptions.findCheckInByKey(",
+    "      return runInTransaction(async (tx) => {\n        const [early] = await subscriptions.statesOf(space.id, { ids: [subscriptionId] }, now(), tx);\n        const earlyCustomer = early && (await customers.findIn(space.id, early.customerId, tx));\n        await lockAtDesk(actor, space, tx);\n        const at = now();\n        const made = await subscriptions.findCheckInByKey("
+   ],
+   [
+    "        if (customer.archivedAt) throw AppError.conflict('CUSTOMER_ARCHIVED');\n        if (await occupancy",
+    "        if (earlyCustomer?.archivedAt) throw AppError.conflict('CUSTOMER_ARCHIVED');\n        if (await occupancy"
+   ]
+  ],
+  "lane": "api",
+  "test": "src/modules/desk/subscriberCheckIn.api.test.ts",
+  "name": "while the customer is archived"
+ }
+]

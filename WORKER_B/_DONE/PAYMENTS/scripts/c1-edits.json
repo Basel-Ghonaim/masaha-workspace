@@ -1,0 +1,32 @@
+[
+  {
+    "file": "apps/web/src/shared/copy/english/errors.ts",
+    "old": "    'This visit was written off; the owner must undo the write-off before it takes a payment.',",
+    "new": "    'This visit was written off; the owner must undo the write-off before it takes a payment or one of its payments is voided.',"
+  },
+  {
+    "file": "apps/web/src/shared/copy/arabic/errors.ts",
+    "old": "    'سُجّلت هذه الزيارة «لن يُحصَّل»؛ يتراجع المالك عن ذلك أولًا قبل استلام أي دفعة لها.',",
+    "new": "    'سُجّلت هذه الزيارة «لن يُحصَّل»؛ يتراجع المالك عن ذلك أولًا قبل استلام أي دفعة لها أو إلغاء إحدى دفعاتها.',"
+  },
+  {
+    "file": "docs/api/api-contract.md",
+    "old": "VISIT_WRITTEN_OFF` (a payment on a written-off visit, from the ledger, or leaving it to a customer, 2026-10-20, #100)",
+    "new": "VISIT_WRITTEN_OFF` (a payment on a written-off visit, from the ledger, or leaving it to a customer, 2026-10-20, #100; or voiding one of its payments, 2026-10-24, #PRNUM)"
+  },
+  {
+    "file": "docs/architecture/data-model.md",
+    "old": "and a written-off visit takes no payment (`payments_visit_written_off`, 2026-10-20, #100).",
+    "new": "and a written-off visit takes no payment, nor is one of its payments voided until the write-off is undone (`payments_visit_written_off`, 2026-10-20, #100; the void 2026-10-24, #PRNUM), so a write-off keeps covering what the visit owed when it was written off."
+  },
+  {
+    "file": "docs/backend/conventions.md",
+    "old": "and a written-off visit takes none, and a fixed price",
+    "new": "and a written-off visit takes none, nor are its payments voided until the write-off is undone (2026-10-24, #PRNUM), and a fixed price"
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "a visit is paid only once its charge is set; a written-off visit takes no payment. The service repeats none of them.",
+    "new": "a visit is paid only once its charge is set; a written-off visit takes no payment, and its payments are not voided until the write-off is undone. The service repeats none of them."
+  }
+]

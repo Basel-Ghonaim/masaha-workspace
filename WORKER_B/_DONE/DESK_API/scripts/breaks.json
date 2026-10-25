@@ -1,0 +1,32 @@
+{
+  "B1-read-committed": {
+    "file": "apps/api/src/db/transaction.ts",
+    "old": "{ isolationLevel: 'RepeatableRead' }",
+    "new": "{ isolationLevel: 'ReadCommitted' }"
+  },
+  "B2-passive-unmarked": {
+    "file": "apps/api/src/app.ts",
+    "old": "  api.get('/manage/spaces/:spaceId/occupancy', markPassive);\n",
+    "new": ""
+  },
+  "B3-idle-ends-every-session": {
+    "file": "apps/api/src/modules/sessions/sessions.service.ts",
+    "old": "        await repository.deleteFamily(stored.familyId, tx);\n        return { outcome: 'idle' };",
+    "new": "        await repository.deleteUserTokens(stored.userId, tx);\n        return { outcome: 'idle' };"
+  },
+  "B4-owners-included": {
+    "file": "apps/api/src/shared/auth/idle.ts",
+    "old": "return roles.includes('RECEPTION') && !roles.includes('OWNER');",
+    "new": "return roles.includes('RECEPTION');"
+  },
+  "B5-period-days-off-by-one": {
+    "file": "apps/api/src/modules/desk/desk.service.ts",
+    "old": "PUBLISHED_PERIOD_DAYS[published.period] - 1)",
+    "new": "PUBLISHED_PERIOD_DAYS[published.period])"
+  },
+  "B6-labelled-price-taken": {
+    "file": "apps/api/src/modules/spaces/prices/prices.repository.ts",
+    "old": "          labelAr: null,\n",
+    "new": ""
+  }
+}

@@ -1,0 +1,234 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/subscriptions/closures/extension.api.test.ts (11 tests | 9 failed) 19794ms
+   ❯ the preview (3)
+     × an upcoming closure is ANNOUNCEMENT_NOT_STARTED; an announcement of another type, a deleted one, another space's, not_found; 0 or 366 days 422 363ms
+   ❯ the extension (8)
+     × the owner extends: each covered subscription's end moves by the days typed, one link each, audited closure.subscriptionsExtended; 201 with the count 303ms
+     × which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's 281ms
+     × reception is 403 before the key or body is read; a stranger and the admin not_found 295ms
+     × a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure is a conflict 291ms
+     × two owners at once with two keys make one extension 4291ms
+     × a subscription ended early, or added, while the extension waits is read as committed 4289ms
+     × a closure whose end moved earlier while the extension waits is extended on its new span 4300ms
+     × an owner whose link ended while waiting is refused 403 4292ms
+ ❯ |api| src/modules/announcements/extendedClosure.api.test.ts (2 tests | 2 failed) 842ms
+   ❯ an extended closure (2)
+     × after its extension a closure's delete, new type, new start and later end are CLOSURE_EXTENDED, writing nothing; its text and end now are 200 324ms
+     × the list shows the extension applied, and the summary no longer awaits it 265ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/announcements/extendedClosure.api.test.ts > an extended closure > after its extension a closure's delete, new type, new start and later end are CLOSURE_EXTENDED, writing nothing; its text and end now are 200
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/announcements/extendedClosure.api.test.ts:68:37
+     66| describe('an extended closure', () => {
+     67|   it("after its extension a closure's delete, new type, new start and …
+     68|     expect((await extend()).status).toBe(201);
+       |                                     ^
+     69|     const before = await stored();
+     70|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/11]⎯
+
+ FAIL  |api| src/modules/announcements/extendedClosure.api.test.ts > an extended closure > the list shows the extension applied, and the summary no longer awaits it
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/announcements/extendedClosure.api.test.ts:107:37
+    105|     expect(dataOf(await summary())).toMatchObject({ closuresAwaitingEx…
+    106|
+    107|     expect((await extend()).status).toBe(201);
+       |                                     ^
+    108|
+    109|     const { name } = await prisma.user.findUniqueOrThrow({ where: { id…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the preview > an upcoming closure is ANNOUNCEMENT_NOT_STARTED; an announcement of another type, a deleted one, another space's, not_found; 0 or 366 days 422
+AssertionError: expected 404 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 404
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:162:31
+    160|     const upcoming = await closure({ startsAt: new Date('2026-11-11T08…
+    161|     for (const response of [await preview(owner, upcoming.id), await e…
+    162|       expect(response.status).toBe(409);
+       |                               ^
+    163|       expect(errorOf(response).code).toBe('ANNOUNCEMENT_NOT_STARTED');
+    164|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > the owner extends: each covered subscription's end moves by the days typed, one link each, audited closure.subscriptionsExtended; 201 with the count
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:237:29
+    235|     const response = await extend(owner, id, { days: 4 });
+    236|
+    237|     expect(response.status).toBe(201);
+       |                             ^
+    238|     expect(dataOf(response)).toEqual({
+    239|       announcementId: id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:273:59
+    271|     const before = await endsById();
+    272|
+    273|     expect((await extend(owner, id, { days: 2 })).status).toBe(201);
+       |                                                           ^
+    274|
+    275|     const after = await endsById();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > reception is 403 before the key or body is read; a stranger and the admin not_found
+AssertionError: expected 404 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 404
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:289:28
+    287|
+    288|     const refused = await extend(reception, id, { days: 'many' }, null…
+    289|     expect(refused.status).toBe(403);
+       |                            ^
+    290|     expect(errorOf(refused).type).toBe('forbidden');
+    291|     for (const caller of [stranger, admin]) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure is a conflict
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:303:26
+    301|     const key = randomUUID();
+    302|     const first = await extend(owner, id, { days: 4 }, key);
+    303|     expect(first.status).toBe(201);
+       |                          ^
+    304|
+    305|     const retry = await extend(owner, id, { days: 4 }, key);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > two owners at once with two keys make one extension
+Error: 2 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout src/modules/subscriptions/closures/extension.api.test.ts:332:9
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:328:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a subscription ended early, or added, while the extension waits is read as committed
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:351:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a closure whose end moved earlier while the extension waits is extended on its new span
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:386:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/11]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > an owner whose link ended while waiting is refused 403
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:409:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/11]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  11 failed | 2 passed (13)
+   Start at  14:33:14
+   Duration  29.57s (tests 80%, transform 11%, import 8%, setup 1%)
+

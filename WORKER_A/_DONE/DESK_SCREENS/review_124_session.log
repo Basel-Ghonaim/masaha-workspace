@@ -1,0 +1,18 @@
+I've reviewed PR #124: **mergeable after a fix round.** All 11 checks are green, the head stayed at `bc8fe86a` (CLEAN) the whole time, and the PR touches no `apps/api`, `packages/shared` or `errors.ts`. I ran nothing, as the review rules require. F2 and F5 below are reasoned from the code, not seen happening.
+
+**Findings:**
+1. **should-fix: a lost answer is shown as "not saved", which can lead to a second subscription.** After a new customer is created, any failed subscribe shows «لم يُحفظ الاشتراك». That includes a lost answer, where the server may already have recorded the subscription and its payment. Closing then toasts «في الزبائن بدون اشتراك». A receptionist who believes that and opens a new sheet gets a new key, so a second subscription and payment go through. Fix: show that half state only when the server refused.
+2. **should-fix: the sheet doesn't give the focus back when opened from a «⋯» menu item.** This is the same defect as #122's F1. Commit `0b022eea`'s own message describes this exact mechanism for the edit and archive dialogs. The sheet's code comment says the focus returns, but nothing returns it.
+3. **should-fix: renewing a subscription bought at a published price selects the wrong price.** It defaults to the first published line instead of the one renewed. A monthly ₪350 renewal opens with «أسبوعي» ₪120 checked, so one press renews a month as a week.
+4. **should-fix: the plan's test 72 can't catch its money rule** ("the payment sent is the recorded amount"). Every test sends exactly what is due. Changing the line that picks the recorded amount over the typed one leaves every test green.
+5. **nit:** coming back to the browser window after 30 s re-reads the prices and briefly turns the choices into loading placeholders.
+6. **nit:** `desk.md`'s code map doesn't list the sheet's files.
+
+**Finding 171** is built as the supervisor decided. Two gaps remain:
+- **A price raised after the sheet read it is still charged.** The extra stays as debt, said only in the toast. For a new customer this also skips the phone rule, since no phone was asked when nothing seemed owed.
+- **Packages aren't re-read when the sheet opens,** so an edited package price has the same path.
+
+The carried items F1–F4, S12 and the documents are true to the code. Of tests 69–77, all are present; 72 is weaker than planned (finding 4).
+
+The report also judges each decision the executor took alone and lists what I didn't check:
+`C:\dev\masaha\workspace\WORKER_A\DESK_SCREENS\6_REVIEW_PR4_CLAUDE_CODE.md`

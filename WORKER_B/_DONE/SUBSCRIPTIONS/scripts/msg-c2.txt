@@ -1,0 +1,14 @@
+feat(desk): subscribe a customer
+
+The desk makes a customer's subscription in one transaction under the
+space's lock: from an offered package of the space, whose terms it
+copies (ending validityDays after the start, both days included), or
+from terms typed by whoever may type a price, with the reason recorded
+beside who typed it. The start date is the one sent, else today.
+
+A retry with the same key answers the first subscription as of now; an
+archived customer is refused. The answer carries the subscription's
+state and money and the customer's debt; payments come with renewals.
+
+A subscription now shows the one it renews and its typed price, so the
+customer file's exact answer gains both fields.

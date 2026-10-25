@@ -1,0 +1,322 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx (4 tests | 1 failed) 4861ms
+   ❯ SubscriptionSheet (4)
+     × is titled by its mode, its first field focused 3349ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx > SubscriptionSheet > is titled by its mode, its first field focused
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<input
+  aria-required="true"
+  autocomplete="off"
+  class="h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"
+  data-slot="input"
+  dir="auto"
+  id="_r_3_-control"
+  name="name"
+/>[39m
+Received element with focus:
+  [31m<body
+  data-scroll-locked="1"
+  style="pointer-events: none;"
+>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+  <div
+    aria-hidden="true"
+    data-aria-hidden="true"
+  />
+  <div
+    aria-hidden="true"
+    class="fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"
+    data-aria-hidden="true"
+    data-slot="sheet-overlay"
+    data-state="open"
+    style="pointer-events: auto;"
+  />
+  <div
+    aria-describedby="radix-_r_2_"
+    aria-labelledby="radix-_r_1_"
+    class="fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"
+    data-side="end"
+    data-slot="sheet-content"
+    data-state="open"
+    id="radix-_r_0_"
+    role="dialog"
+    style="pointer-events: auto;"
+    tabindex="-1"
+  >
+    <div
+      class="flex flex-col gap-1 p-4"
+      data-slot="sheet-header"
+    >
+      <h2
+        class="text-heading-3"
+        data-slot="sheet-title"
+        id="radix-_r_1_"
+      >
+        New customer
+      </h2>
+      <p
+        class="text-body-sm text-muted-foreground"
+        data-slot="sheet-description"
+        dir="auto"
+        id="radix-_r_2_"
+      >
+        The name and mobile, then the subscription and the payment.
+      </p>
+    </div>
+    <form
+      class="flex min-h-0 flex-1 flex-col"
+      novalidate=""
+    >
+      <div
+        class="min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-5 pb-4"
+        data-slot="sheet-body"
+      >
+        <div
+          class="flex flex-col gap-3"
+        >
+          <div … />
+          <div … />
+        </div>
+        <div
+          class="flex flex-col gap-3"
+        >
+          <div … />
+        </div>
+        <div
+          class="grid grid-cols-2 gap-3"
+        >
+          <div … />
+          <div … />
+        </div>
+        <div
+          aria-labelledby="_r_a_"
+          class="flex flex-col gap-3 rounded-lg bg-muted p-3"
+          role="group"
+        >
+          <span … />
+          <p … />
+          <div … />
+          <span … />
+          <div … />
+          <p … />
+          <button … />
+        </div>
+      </div>
+      <div
+        class="mt-auto flex flex-col gap-2 p-4"
+        data-slot="sheet-footer"
+      >
+        <button
+          class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) w-full"
+          data-slot="button"
+          type="submit"
+        >
+          Save and receive ⁨₪300⁩
+        </button>
+      </div>
+    </form>
+    <button
+      aria-label="Close"
+      class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"
+      data-slot="button"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="lucide lucide-x"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 6 6 18"
+        />
+        <path
+          d="m6 6 12 12"
+        />
+      </svg>
+    </button>
+  </div>
+  <span
+    aria-hidden="true"
+    data-aria-hidden="true"
+    data-radix-focus-guard=""
+    style="outline: none; opacity: 0; position: fixed; pointer-events: none;"
+    tabindex="0"
+  />
+</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"sheet-overlay"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-describedby[39m=[32m"radix-_r_2_"[39m
+      [33maria-labelledby[39m=[32m"radix-_r_1_"[39m
+      [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+      [33mdata-side[39m=[32m"end"[39m
+      [33mdata-slot[39m=[32m"sheet-content"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mid[39m=[32m"radix-_r_0_"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+        [33mdata-slot[39m=[32m"sheet-header"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"sheet-title"[39m
+          [33mid[39m=[32m"radix-_r_1_"[39m
+        [36m>[39m
+          [0mNew customer[0m
+        [36m</h2>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"sheet-description"[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mid[39m=[32m"radix-_r_2_"[39m
+        [36m>[39m
+          [0mThe name and mobile, then the subscription and the payment.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-5 pb-4"[39m
+          [33mdata-slot[39m=[32m"sheet-body"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground"[39m
+                  [33mfor[39m=[32m"_r_3_-control"[39m
+                  [33mid[39m=[32m"_r_3_-label"[39m
+                [36m>[39m
+                  [0mName[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+                [33mdata-slot[39m=[32m"input-group"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33maria-required[39m=[32m"true"[39m
+                  [33mautocomplete[39m=[32m"off"[39m
+                  [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+                  [33mdata-slot[39m=[32m"input"[39m
+                  [33mdir[39m=[32m"auto"[39m
+                  [33mid[39m=[32m"_r_3_-control"[39m
+                  [33mname[39m=[32m"name"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground"[39m
+                  [33mfor[39m=[32m"_r_4_-control"[39m
+                  [33mid[39m=[32m"_r_4_-label"[39m
+                [36m>[39m
+                  [0mMobile number[0m
+                [36m</label>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                [36m>[39m
+                  [0mOptional[0m
+                [36m</span>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-...
+ ❯ src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx:64:68
+     62|     expect(within(sheet).getByRole('heading', { name: 'New customer' }…
+     63|     await waitFor(() => {
+     64|       expect(within(sheet).getByRole('textbox', { name: 'Name' })).toH…
+       |                                                                    ^
+     65|     });
+     66|   });
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  14:46:53
+   Duration  21.40s (import 45%, tests 23%, transform 17%, environment 12%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/sheet

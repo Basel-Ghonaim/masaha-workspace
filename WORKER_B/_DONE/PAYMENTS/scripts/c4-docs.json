@@ -1,0 +1,87 @@
+[
+  {
+    "file": "docs/api/api-contract.md",
+    "old": "  voided: { at, by: { id, name }, reason } | null\n}\n```\n",
+    "new": "  voided: { at, by: { id, name }, reason } | null\n}\n```\n\n#### `GET /manage/spaces/:spaceId/payments` · 🧾\nThe payments list, 2026-10-24, #PRNUM: the owner's ledger, and reception's own payments of today («دفعاتي اليوم»). Read without a lock.\n- **Query** (`paymentsQuerySchema`, `@masaha/shared/payments`): `from` and `to`, Gaza dates, both included, `to` not before `from` and at most 92 days with both counted (`out_of_range` on `to`); both or neither (half a range: `required` on the missing one), neither for today; `recordedById`, who recorded it; `method`, `CASH` or `TRANSFER`; `kind`, `VISIT` or `SUBSCRIPTION`; `voided`, `INCLUDE` (the default), `EXCLUDE` or `ONLY`; `page`, `limit` (§4).\n- **Who reads what**, decided before anything is read: the owner (`payments.read`), every payment of the space, by the query; reception, its own payments received today in Gaza, by `method`, `kind`, `voided` and the page — a `from`, `to` or `recordedById` from it is `forbidden` (403), never ignored.\n- **200:** a page of `PaymentRow`: the payments received in the range's Gaza days (a payment counts on the day it was received), the latest received first, then by id, voided ones listed and marked unless `voided` leaves them out; `meta: PaymentsMeta`, the pagination and `totals` over the whole filter but `voided` and the page: what was received — the payments not voided — in all and by method, how many, and the voided ones' count and amount apart. A voided payment is never received. The page, its count and the totals are read apart, so a payment recorded between them shows on the next read.\n- **Errors:** `validation` (422) on the query; `forbidden` (403) for reception's range or `recordedById`; `not_found` (404).\n\n```ts\nPaymentTotals = {\n  count: number,                                  // the payments not voided\n  receivedAgorot: number,                         // their sum\n  byMethod: { CASH: number, TRANSFER: number },   // their sum by method\n  voided: { count: number, amountAgorot: number }\n}\nPaymentsMeta = PaginationMeta & { totals: PaymentTotals }\n```\n"
+  },
+  {
+    "file": "docs/backend/conventions.md",
+    "old": "and `visits` answers the page's visits (2026-10-20, #97; one query since 2026-10-21, #102, finding 113).\n",
+    "new": "and `visits` answers the page's visits (2026-10-20, #97; one query since 2026-10-21, #102, finding 113).\n- **The payments list** → `payments`, naming its rows through `visits`, `subscriptions`, `customers` and `users`, one set query each; reception's narrowed to its own of today by `can()`, before any query. 2026-10-24, #PRNUM.\n"
+  },
+  {
+    "file": "docs/backend/security.md",
+    "old": "- Suspended users cannot log in or refresh, and their unexpired access tokens are refused.",
+    "new": "- **The payments list** is the staff's read, narrowed in its service by `can()`'s `payments.read` before any query: the owner reads every payment of the space; reception its own of today (Gaza), and a range or `recordedById` from it is `forbidden` (403). 2026-10-24, #PRNUM.\n- Suspended users cannot log in or refresh, and their unexpired access tokens are refused."
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "The API is built for a visit's payment, a subscription's, and the uncollected visits; no web screen yet.",
+    "new": "The API is built for a visit's payment, a subscription's, the owner's void, the payments list and the uncollected visits; no web screen yet."
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "- Voids a payment, in the desk's transaction:",
+    "new": "- Answers the payments list: the owner's, by a range of Gaza days, who recorded them, method, kind and void; reception's own of today; the latest received first, paged, with the totals of the whole filter.\n- Voids a payment, in the desk's transaction:"
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "## Who uses it\n\n",
+    "new": "## Who uses it\n\n- **The space's owner**, whose ledger reads every payment, and **reception**, whose «دفعاتي اليوم» reads its own of today, through its own route. No web screen yet.\n"
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "**The balances.** One query shape",
+    "new": "**The payments list.** `can()` decides first, before any query: the owner reads the query's range and filters; anyone else of the staff, their own payments of today, and a range or `recordedById` from them is `forbidden`. The window is the range's Gaza days, from its first midnight to the midnight after its last (`paymentsWindow`, pure; today without one); a payment counts on the day it was received. The page (the latest received first, then by id), its count and the totals run in parallel, on the payments' `space_id, received_at` index; the totals leave the void filter out and sum the payments not voided by method, the voided ones apart. The page's rows are named by `rowsOf`. Read without a lock.\n\n**The balances.** One query shape"
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "### API decisions\n\n",
+    "new": "### API decisions\n\n- **The totals ride in the list's `meta`, with its pagination** (S3). *Why:* the ledger's footer and «دفعاتي اليوم»'s cards need them with the rows, in one request on the desk's weak connection; `meta` carries what an endpoint adds. A summary route was the alternative. 2026-10-24, #PRNUM.\n- **The list filters by kind and by void too, `INCLUDE` by default; the totals never count a voided payment as received** (S4). *Why:* the prototype's «النوع» and «إظهار الملغاة»; «دفعاتي اليوم» lists voided ones marked. 2026-10-24, #PRNUM.\n- **A range is both ends or neither, at most 92 days with both counted, today by default** (S5). *Why:* a quarter covers the ledger's periods; longer ones are finance's (step 11). 2026-10-24, #PRNUM.\n- **One route, narrowed by `can()`; reception's range or `recordedById` is refused, not ignored** (S6). *Why:* an ignored filter would answer a page that looks like what was asked and is not; a refusal shows the screen's bug at once. A route of reception's own was the alternative. 2026-10-24, #PRNUM.\n"
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "the controller and the manage router, and the balance's rule (`balance.ts`).",
+    "new": "the controller and the manage router, the balance's rule (`balance.ts`) and the list's window (`paymentsWindow.ts`)."
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "the payment's request (`paymentSchema`, `PAYMENT_METHODS`) and the void's (`voidPaymentSchema`); the responses (`VisitPayment`, `UncollectedVisit`, `PaymentRow`, `PaymentItem`).",
+    "new": "the payment's request (`paymentSchema`, `PAYMENT_METHODS`), the void's (`voidPaymentSchema`) and the list's query (`paymentsQuerySchema`); the responses (`VisitPayment`, `UncollectedVisit`, `PaymentRow`, `PaymentItem`, `PaymentTotals`, `PaymentsMeta`)."
+  },
+  {
+    "file": "docs/features/payments.md",
+    "old": "- #106 — a payment on a subscription, through the desk's payment route; `record` for both items; the allocation of a subscribe's amount, oldest debt first, and the payments of derived keys found in one query.",
+    "new": "- #106 — a payment on a subscription, through the desk's payment route; `record` for both items; the allocation of a subscribe's amount, oldest debt first, and the payments of derived keys found in one query.\n- #PRNUM — the owner's void of a payment, a written-off visit's once the write-off is undone (the ledger's fourth rule both ways); a visit closed by hand with no customer that owes after a void, uncollected; the payments list with its totals, reception's own of today."
+  },
+  {
+    "file": "docs/plans/v1-mvp.md",
+    "old": "- **Supported by:** [ADR 0010](../architecture/decisions/0010-manual-payment-ledger.md) and [ADR 0015](../architecture/decisions/0015-idempotency-and-concurrency.md); conventions §13: [the ledger's rules](../backend/conventions.md#the-ledgers-rules).\n",
+    "new": "- **Supported by:** [ADR 0010](../architecture/decisions/0010-manual-payment-ledger.md) and [ADR 0015](../architecture/decisions/0015-idempotency-and-concurrency.md); conventions §13: [the ledger's rules](../backend/conventions.md#the-ledgers-rules).\n- **Built:** payments voided by the owner, a written-off visit's once the write-off is undone; the payments list, the owner's and reception's own of today (#PRNUM, [api-contract › Front desk (managed)](../api/api-contract.md#front-desk-managed)) — step 9's API is complete; the screen remains planned.\n"
+  },
+  {
+    "file": "docs/plans/v1-mvp.md",
+    "old": "and the announcements: the post, the edit, the end, the start and the delete, the list and its summary (#112) ([Subscriptions (managed)]",
+    "new": "and the announcements: the post, the edit, the end, the start and the delete, the list and its summary (#112), and the payments: the list (`GET …/payments`) and the owner's void (`POST …/payments/:paymentId/void`) (#PRNUM) ([Subscriptions (managed)]"
+  },
+  {
+    "file": "docs/plans/v1-mvp.md",
+    "old": "| list: the owner sees all (date, staff and method filters), reception its own today. Recording one is built (`POST`, a visit's since step 7; a subscription's since #106) |",
+    "new": "| list: the owner sees all (date, staff and method filters), reception its own today (built, #PRNUM). Recording one is built (`POST`, a visit's since step 7; a subscription's since #106) |"
+  },
+  {
+    "file": "docs/plans/v1-mvp.md",
+    "old": "| POST | `/manage/spaces/:spaceId/payments/:paymentId/void` | 🏢 | reason required |",
+    "new": "| POST | `/manage/spaces/:spaceId/payments/:paymentId/void` | 🏢 | reason required (built, #PRNUM) |"
+  },
+  {
+    "file": "docs/project/overview.md",
+    "old": "- [Announcements](../features/announcements.md): on the API,",
+    "new": "- [Payments](../features/payments.md): on the API, a visit's and a subscription's payment, recorded once per key; the owner's void, with a reason; the payments list, the owner's by Gaza days, staff, method, kind and void with its totals, and reception's own of today; the uncollected visits.\n- [Announcements](../features/announcements.md): on the API,"
+  },
+  {
+    "file": "docs/README.md",
+    "old": "- [payments.md](features/payments.md) — the payment ledger: so far a visit's payment at its check-out or after it, the ledger's rules the database owns and their translation (API only).",
+    "new": "- [payments.md](features/payments.md) — the payment ledger: a visit's and a subscription's payment, the owner's void, the payments list and the uncollected visits, the ledger's rules the database owns and their translation (API only)."
+  }
+]

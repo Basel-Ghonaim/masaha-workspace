@@ -1,0 +1,14 @@
+[
+ {"id":"B39","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"        await repository.end(subscriptionId, { endsOn, endedAt, endedById: actor.id }, tx);",
+  "new":"        await repository.end(subscriptionId, { endsOn: terms.endsOn ?? endsOn, endedAt, endedById: actor.id }, tx);",
+  "lane":"api","test":"src/modules/subscriptions/end.api.test.ts","name":"sets the end to today"},
+ {"id":"B40","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"        let endsOn = terms.startsOn !== null && terms.startsOn > today ? terms.startsOn : today;",
+  "new":"        let endsOn = today;",
+  "lane":"api","test":"src/modules/subscriptions/end.api.test.ts","name":"an upcoming one ends on its start"},
+ {"id":"B41","file":"apps/api/src/modules/subscriptions/subscriptions.service.ts",
+  "old":"    if (!can(actor, action, { links: await space.linksUnder(tx) })) throw AppError.forbidden();",
+  "new":"    if (!can(actor, action, { links: space.links })) throw AppError.forbidden();",
+  "lane":"api","test":"src/modules/subscriptions/end.api.test.ts","name":"the staff end"}
+]

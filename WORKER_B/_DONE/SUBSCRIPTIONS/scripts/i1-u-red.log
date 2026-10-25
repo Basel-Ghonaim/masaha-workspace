@@ -1,0 +1,69 @@
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit src/modules/customers/customerSearch.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+ ❯ |unit| src/modules/customers/customerSearch.unit.test.ts (3 tests | 2 failed) 12ms
+   ❯ searchTermsOf (3)
+     × a whole number in any form searches that phone, in its stored form 8ms
+     × digits only, two or more, once a phone's separators are removed, search the phone's end 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/customers/customerSearch.unit.test.ts > searchTermsOf > a whole number in any form searches that phone, in its stored form
+AssertionError: expected { phoneDigits: '0599000205' } to deeply equal { phone: '+970599000205' }
+
+- Expected
++ Received
+
+  {
+-   "phone": "+970599000205",
++   "phoneDigits": "0599000205",
+  }
+
+ ❯ src/modules/customers/customerSearch.unit.test.ts:7:41
+      5| describe('searchTermsOf', () => {
+      6|   it('a whole number in any form searches that phone, in its stored fo…
+      7|     expect(searchTermsOf('0599000205')).toEqual({ phone: '+97059900020…
+       |                                         ^
+      8|     expect(searchTermsOf('0521234567')).toEqual({ phone: '+97252123456…
+      9|     expect(searchTermsOf('00970599000205')).toEqual({ phone: '+9705990…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/modules/customers/customerSearch.unit.test.ts > searchTermsOf > digits only, two or more, once a phone's separators are removed, search the phone's end
+AssertionError: expected { name: '059-900' } to deeply equal { phoneDigits: '059900' }
+
+- Expected
++ Received
+
+  {
+-   "phoneDigits": "059900",
++   "name": "059-900",
+  }
+
+ ❯ src/modules/customers/customerSearch.unit.test.ts:17:38
+     15|     expect(searchTermsOf('05 99')).toEqual({ phoneDigits: '0599' });
+     16|     expect(searchTermsOf('+970 599')).toEqual({ phoneDigits: '970599' …
+     17|     expect(searchTermsOf('059-900')).toEqual({ phoneDigits: '059900' }…
+       |                                      ^
+     18|     expect(searchTermsOf('(059) 9.00')).toEqual({ phoneDigits: '059900…
+     19|     expect(searchTermsOf('12')).toEqual({ phoneDigits: '12' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  10:04:17
+   Duration  330ms (transform 50%, import 26%, tests 15%, worker 9%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/modules/customers/customerSearch.unit.test.ts

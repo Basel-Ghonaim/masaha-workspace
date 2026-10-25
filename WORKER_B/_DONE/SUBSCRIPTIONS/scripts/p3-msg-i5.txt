@@ -1,0 +1,10 @@
+fix(desk): read a check-in's minutes in SQL
+
+The statement counted each check-in's minutes in TypeScript while
+subscription_usage counts the progress in SQL: two copies of one
+rule, against S1's "no second copy". They agree today, but could
+drift. The check-ins read now answers each closed stay's minutes by
+the function's own expression, so a statement's minutes add up to
+its progress.
+
+Carried from #106 (review finding 7).

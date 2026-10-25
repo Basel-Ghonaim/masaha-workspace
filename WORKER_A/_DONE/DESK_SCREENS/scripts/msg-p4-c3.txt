@@ -1,0 +1,12 @@
+feat(desk): subscribe a new or known customer
+
+Screen 16 on the web (decision 3, K3): one end sheet from every entry
+(the desk's and the customers' top bars, the search's new-customer link,
+a customer's «⋯») for a new customer then their subscription, or a known
+customer's new one, from an offered package or, for whoever may type a
+price, custom terms with their reason. It lists the earlier debts and
+their total, fills the money block with them plus the new price, and
+says the parts the server allocated from the answer (finding 125).
+A new customer and the subscribe are two intents with two keys; a
+subscribe refused after the customer was saved keeps every field and
+sends the subscribe alone (DI-37).

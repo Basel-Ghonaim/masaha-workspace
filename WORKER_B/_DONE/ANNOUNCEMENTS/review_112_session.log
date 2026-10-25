@@ -1,0 +1,19 @@
+I reviewed PR #112 and my verdict is **mergeable**: no blocker and nothing serious. All CI checks were green on head `fdae748b`, the PR is CLEAN, and the head hadn't moved when I checked again at the end. Nothing was run, checked out or edited; I read commit objects only.
+
+**Three small document fixes for ANNOUNCEMENTS PR 2's first commit** (through `0_CARRIED_FROM_112.md`):
+- **F1, should-fix:** in `docs/backend/conventions.md` §9 *Composed reads* (line 284), the new announcements bullet was inserted between "The customers list and the customer file" and that bullet's own sub-bullets. Rendered, the customers list's filter and paging rules read as if they belonged to the announcements list.
+- **F2, should-fix:** `docs/features/announcements.md` never mentions the public page's read (`publicOf`), though `directory.md` says that rule belongs to `announcements` and the README's map line says "and the public ones".
+- **F3, nit:** the contract says the owner's overview "reads" the summary, but no overview exists yet; it should say "will read". The `OPEN_DECISIONS.md` line the executor left in their report has the same wording.
+
+**Nits:**
+- **F4:** "start now" skips the rule that an announcement may run at most 365 days. An upcoming one, 300 days ahead with an end 365 days after its start, becomes a 665-day period when started now. If you'd rather leave the code as it is, record it as finding 150.
+- **F5 (a decision, not a bug):** if someone deletes an announcement and the original poster's client then retries the post, the answer is 201 showing the deleted announcement as if it were live. This follows ADR 0015's "a retry returns the first result"; the contract could say how a retry of a deleted one answers.
+- **F6:** the `#112` history lines sit before `#110` in `desk.md` and before `#109` in `subscriptions.md`.
+
+**All nine departures are accepted.** On the one you singled out, passing the instant and `since`/`take` between modules: the conventions allow it. It's a direct call down a level, the conventions prefer passing a parameter over a port, the one clock is still the only source of time, and `closedAt` and `checkInWarnings` already take the caller's instant on `main`. The 30-day rule stays in `subscriptions`, which owns the summary.
+
+**One thing for you:** the `OPEN_DECISIONS.md` point 2 line is still unwritten. The executor was right not to write it, because their prompt forbade writing outside their folder. You or the analyst should apply it, changed to "will read".
+
+Partway through the review, another process's fetch overwrote this worktree's `FETCH_HEAD`. I pinned every read to `fdae748b` from then on and re-read the one file I had read from the wrong commit.
+
+Report: `C:\dev\masaha\workspace\WORKER_B\ANNOUNCEMENTS\6_REVIEW_PR1_CLAUDE_CODE.md`

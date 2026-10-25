@@ -1,0 +1,56 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (6 tests | 1 failed) 2116ms
+   ❯ useSubscriptionSheet (6)
+     × offers «Custom» only to whoever may type a price 312ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > offers «Custom» only to whoever may type a price
+AssertionError: expected <button type="button" …(9)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  aria-checked="false"
+  class="relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary mt-0.5"
+  data-radix-collection-item=""
+  data-slot="radio-group-item"
+  data-state="unchecked"
+  id="_r_3_-custom"
+  role="radio"
+  tabindex="-1"
+  type="button"
+  value="custom"
+/>
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:130:61
+    128|     await termsRead(requests);
+    129|     await screen.findByRole('radio', { name: /10 days/ });
+    130|     expect(screen.queryByRole('radio', { name: /Custom/ })).toBeNull();
+       |                                                             ^
+    131|   });
+    132|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  14:44:37
+   Duration  12.04s (import 46%, transform 20%, tests 18%, environment 13%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet

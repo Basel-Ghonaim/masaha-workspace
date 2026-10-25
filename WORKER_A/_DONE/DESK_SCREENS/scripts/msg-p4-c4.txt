@@ -1,0 +1,14 @@
+feat(desk): renew a subscription with its debts
+
+K3 and DK-007: «تجديد» on a customer's latest subscription opens the sheet
+for its renewal, which starts where the statement says, offers the
+renewed package as one line with «تغيير الباقة» or repeats its custom
+terms, and sends renewalOfId over the customer's earlier debts. A
+subscription renewed meanwhile is said and the sheet makes a new one.
+
+Spec D (#118) on the web: the space's published week and month prices
+are offered first under «منشورة للزوار», each sent as published { period,
+audience, shiftId?, name }, never a price id. The prices are read again
+each time the sheet opens, the toast states the price the server
+charged, and a refusal for the price reads them again (finding 171, the
+supervisor's decision for the owner to confirm; the finding stays open).

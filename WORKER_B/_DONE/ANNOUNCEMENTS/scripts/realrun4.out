@@ -1,0 +1,25 @@
+     space 1 (masaha-demo); reception 3, owner 2
+     covered 2026-10-24..2026-10-26: subscriptions 1, 2, 3, 5
+       1 ends 2026-11-07
+       2 ends 2026-11-02
+       3 ends 2026-11-13
+       5 ends 2026-11-23
+PASS reception posts a closure started two days ago, ending in an hour 201 -
+     closure 2
+PASS the preview proposes 3 days and counts the covered 200 -
+PASS reception extends: 403 403 -
+PASS the owner extends by 3 days with key E 201 -
+PASS E again answers the same 201 -
+PASS another key: CLOSURE_ALREADY_EXTENDED 409 CLOSURE_ALREADY_EXTENDED
+       1 ends 2026-11-10 (was 2026-11-07)
+       2 ends 2026-11-05 (was 2026-11-02)
+       3 ends 2026-11-16 (was 2026-11-13)
+       5 ends 2026-11-26 (was 2026-11-23)
+PASS each covered end three days later 200 -
+PASS PATCH type GENERAL: CLOSURE_EXTENDED 409 CLOSURE_EXTENDED
+PASS DELETE: CLOSURE_EXTENDED 409 CLOSURE_EXTENDED
+PASS end now: 200 ENDED 200 -
+     extension 1; its rows: 1, 2, 3, 5
+PASS one subscription_extensions row each 200 -
+     audit: announcement.created, closure.subscriptionsExtended, announcement.ended
+ALL PASS

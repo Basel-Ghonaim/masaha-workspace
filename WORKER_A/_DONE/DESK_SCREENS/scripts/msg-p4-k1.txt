@@ -1,0 +1,6 @@
+fix(desk): return the focus after edit and archive
+
+Carried from #122 (review F1). The edit and archive dialogs open from a
+menu item that has left the page by the time they close, so the focus fell
+to the body. CustomerActions now keeps a ref to the «⋯» trigger and passes
+it to both dialogs as their returnFocus.

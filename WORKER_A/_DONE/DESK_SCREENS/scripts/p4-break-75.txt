@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (6 tests | 1 failed) 2197ms
+   ❯ useSubscriptionSheet (6)
+     × asks the prior debts plus the new price; the toast says the price, the parts and the debt from the answer, with the debt warning 188ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > asks the prior debts plus the new price; the toast says the price, the parts and the debt from the answer, with the debt warning
+AssertionError: expected 'Subscription saved · Sara Khalid10 da…' to contain '10 days · ₪160'
+
+Expected: "10 days · ₪160"
+Received: "Subscription saved · Sara Khalid10 days · ₪150Visit of 20 Oct: ₪20 received10 days: ₪150 received₪10 stays owedThe customer still owes on an earlier item."
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:309:19
+    307|     const title = await findToast(heard('Subscription saved · Sara Kha…
+    308|     const lines = (title.closest('[data-sonner-toast]')?.textContent ?…
+    309|     expect(lines).toContain('10 days · ₪160');
+       |                   ^
+    310|     expect(lines).toMatch(/Visit of [^:]+: ₪20 received/);
+    311|     expect(lines).toContain('10 days: ₪150 received');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  14:45:05
+   Duration  12.13s (import 45%, transform 21%, tests 19%, environment 12%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet

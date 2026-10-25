@@ -1,0 +1,106 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/currentShift
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/currentShift.unit.test.ts (3 tests | 3 failed) 33ms
+   ❯ currentShift (3)
+     × chooses the shift whose range holds Gaza’s minute now, its end not included 30ms
+     × chooses none outside every shift 1ms
+     × reads past midnight on Gaza’s clock, not UTC’s 1ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  16:54:51
+   Duration  648ms (import 51%, transform 38%, tests 10%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/currentShift.unit.test.ts > currentShift > chooses the shift whose range holds Gaza’s minute now, its end not included
+AssertionError: expected { id: 3, nameAr: 'ليلية', …(3) } to be { id: 1, nameAr: 'صباحي', …(3) } // Object.is equality
+
+- Expected
++ Received
+
+  {
+-   "endsMinute": 960,
+-   "id": 1,
+-   "nameAr": "صباحي",
++   "endsMinute": 480,
++   "id": 3,
++   "nameAr": "ليلية",
+    "nameEn": null,
+-   "startsMinute": 480,
++   "startsMinute": 0,
+  }
+
+ ❯ src/features/desk/services/currentShift.unit.test.ts:20:72
+     18|     // 07:59 and 08:00 in Gaza, summer (UTC+3).
+     19|     expect(currentShift(SHIFTS, new Date('2026-07-01T04:59:00.000Z')))…
+     20|     expect(currentShift(SHIFTS, new Date('2026-07-01T05:00:00.000Z')))…
+       |                                                                        ^
+     21|     expect(currentShift(SHIFTS, new Date('2026-07-01T13:00:00.000Z')))…
+     22|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |unit| src/features/desk/services/currentShift.unit.test.ts > currentShift > chooses none outside every shift
+AssertionError: expected { id: 2, nameAr: 'مسائي', …(3) } to be null
+
+- Expected:
+null
+
++ Received:
+{
+  "endsMinute": 1320,
+  "id": 2,
+  "nameAr": "مسائي",
+  "nameEn": null,
+  "startsMinute": 960,
+}
+
+ ❯ src/features/desk/services/currentShift.unit.test.ts:26:72
+     24|   it('chooses none outside every shift', () => {
+     25|     // 22:30 in Gaza.
+     26|     expect(currentShift(SHIFTS, new Date('2026-07-01T19:30:00.000Z')))…
+       |                                                                        ^
+     27|     expect(currentShift([], new Date('2026-07-01T09:00:00.000Z'))).toB…
+     28|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |unit| src/features/desk/services/currentShift.unit.test.ts > currentShift > reads past midnight on Gaza’s clock, not UTC’s
+AssertionError: expected null to be { id: 3, nameAr: 'ليلية', …(3) } // Object.is equality
+
+- Expected:
+{
+  "endsMinute": 480,
+  "id": 3,
+  "nameAr": "ليلية",
+  "nameEn": null,
+  "startsMinute": 0,
+}
+
++ Received:
+null
+
+ ❯ src/features/desk/services/currentShift.unit.test.ts:32:72
+     30|   it('reads past midnight on Gaza’s clock, not UTC’s', () => {
+     31|     // 01:30 in Gaza on 2 July is 22:30 UTC on 1 July.
+     32|     expect(currentShift(SHIFTS, new Date('2026-07-01T22:30:00.000Z')))…
+       |                                                                        ^
+     33|   });
+     34| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/currentShift

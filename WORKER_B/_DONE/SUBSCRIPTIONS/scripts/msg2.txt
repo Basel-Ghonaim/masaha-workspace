@@ -1,0 +1,10 @@
+fix(subscriptions): answer a duplicate check-in
+
+The contract names the open check-in index as the backstop behind
+MEMBER_ALREADY_CHECKED_IN, but its unique violation was not mapped: a
+check-in written for the customer without the space's lock, while the
+desk's own waited on the index, answered 500.
+
+The repository now turns that violation into a refusal, as create does
+for its foreign key, and the service answers the conflict code. The
+API test races an uncommitted check-in against the desk's.

@@ -1,0 +1,49 @@
+
+> test:unit
+> npm run test:unit --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+
+ Test Files  24 passed (24)
+      Tests  261 passed (261)
+   Start at  14:49:07
+   Duration  3.65s (import 66%, transform 25%, tests 6%, worker 3%)
+
+    Isolate  24 workers spawned · ~832ms startup each (spawn + environment, per file)
+             at least ~983ms faster with isolate: false — reuses workers across files instead of one per file
+
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+
+ Test Files  69 passed (69)
+      Tests  877 passed (877)
+   Start at  14:49:12
+   Duration  12.10s (import 59%, transform 19%, tests 19%, worker 3%)
+
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/web
+
+
+ Test Files  135 passed (135)
+      Tests  978 passed (978)
+   Start at  14:49:26
+   Duration  39.79s (import 83%, transform 10%, tests 6%, worker 1%)
+
+    Isolate  135 workers spawned · ~843ms startup each (spawn + environment, per file)
+             at least ~9.50s faster with isolate: false — reuses workers across files instead of one per file
+

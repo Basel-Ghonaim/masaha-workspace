@@ -1,0 +1,207 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/announcements/announcements.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+25 migrations found in prisma/migrations
+
+Applying migration `20261024095504_announcement_key`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261024095504_announcement_key/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+ ❯ |api| src/modules/announcements/announcements.api.test.ts (9 tests | 8 failed) 7087ms
+   ❯ posting an announcement (5)
+     × the owner and reception post an announcement, 201, its state, audited announcement.created 479ms
+     × a retry with the same key answers the first, 201; two at once with one key make one 288ms
+     × a missing or invalid key, and an invalid body, are 422 before anything is read 229ms
+     × the period's refusals: an end before now, a start 31 days back, an end 366 days after the start, each 422 on its field, writing nothing 252ms
+     × a reception link ended while the post waits on the space's lock is refused 403, writing nothing 4253ms
+   ❯ editing an announcement (3)
+     × an edit changes only what it sends, audited with before and after; the same values write nothing; textEn null clears; endsAt null removes the end 266ms
+     × an ended one's text is edited, its end kept; a changed end before now, or a start moved past the end, is 422 215ms
+     × another space's announcement, or none, is not_found; an invalid body is 422 229ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > the owner and reception post an announcement, 201, its state, audited announcement.created
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/announcements/announcements.api.test.ts:102:28
+    100|       key,
+    101|     );
+    102|     expect(closure.status).toBe(201);
+       |                            ^
+    103|     const { id } = dataOf(closure) as { id: number };
+    104|     expect(dataOf(closure)).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a retry with the same key answers the first, 201; two at once with one key make one
+AssertionError: expected [ 404, 404 ] to deeply equal [ 201, 201 ]
+
+- Expected
++ Received
+
+  [
+-   201,
+-   201,
++   404,
++   404,
+  ]
+
+ ❯ src/modules/announcements/announcements.api.test.ts:158:42
+    156|     const first = await post(reception, { type: 'CLOSURE', textAr: 'مغ…
+    157|     const retry = await post(reception, { type: 'CLOSURE', textAr: 'مغ…
+    158|     expect([first.status, retry.status]).toEqual([201, 201]);
+       |                                          ^
+    159|     expect(dataOf(retry)).toEqual(dataOf(first));
+    160|     expect(await stored()).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a missing or invalid key, and an invalid body, are 422 before anything is read
+AssertionError: expected 404 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 404
+
+ ❯ src/modules/announcements/announcements.api.test.ts:182:28
+    180|   it('a missing or invalid key, and an invalid body, are 422 before an…
+    181|     const missing = await post(owner, { type: 'NEWS' }, null);
+    182|     expect(missing.status).toBe(422);
+       |                            ^
+    183|     expect(errorOf(missing).errors).toEqual({ idempotencyKey: ['requir…
+    184|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > the period's refusals: an end before now, a start 31 days back, an end 366 days after the start, each 422 on its field, writing nothing
+AssertionError: expected 404 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 404
+
+ ❯ src/modules/announcements/announcements.api.test.ts:202:30
+    200|     ] as const) {
+    201|       const refused = await post(owner, { type: 'CLOSURE', textAr: 'مغ…
+    202|       expect(refused.status).toBe(422);
+       |                              ^
+    203|       expect(errorOf(refused).errors).toEqual({ [field]: ['out_of_rang…
+    204|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a reception link ended while the post waits on the space's lock is refused 403, writing nothing
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/announcements/announcements.api.test.ts:210:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > editing an announcement > an edit changes only what it sends, audited with before and after; the same values write nothing; textEn null clears; endsAt null removes the end
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/announcements/announcements.api.test.ts:231:25
+    229|
+    230|     const text = await edit(reception, id, { type: 'CLOSURE', textAr: …
+    231|     expect(text.status).toBe(200);
+       |                         ^
+    232|     expect(dataOf(text)).toEqual({
+    233|       id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > editing an announcement > an ended one's text is edited, its end kept; a changed end before now, or a start moved past the end, is 422
+AssertionError: expected undefined to match object { textAr: 'انتهى', state: 'ENDED' }
+
+- Expected:
+{
+  "state": "ENDED",
+  "textAr": "انتهى",
+}
+
++ Received:
+undefined
+
+ ❯ src/modules/announcements/announcements.api.test.ts:274:64
+    272|   it("an ended one's text is edited, its end kept; a changed end befor…
+    273|     const { id } = await insert({ endsAt: new Date(days(-0.5)) });
+    274|     expect(dataOf(await edit(owner, id, { textAr: 'انتهى' }))).toMatch…
+       |                                                                ^
+    275|       textAr: 'انتهى',
+    276|       state: 'ENDED',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > editing an announcement > another space's announcement, or none, is not_found; an invalid body is 422
+AssertionError: expected 404 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 404
+
+ ❯ src/modules/announcements/announcements.api.test.ts:295:28
+    293|
+    294|     const invalid = await edit(owner, id, { textAr: null });
+    295|     expect(invalid.status).toBe(422);
+       |                            ^
+    296|     expect(errorOf(invalid).errors).toEqual({ textAr: ['invalid_format…
+    297|     for (const announcementId of [theirs.id, 999_999]) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed | 1 passed (9)
+   Start at  12:01:13
+   Duration  15.80s (tests 61%, transform 24%, import 14%, setup 1%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/announcements/announcements.api.test.ts

@@ -1,0 +1,8 @@
+[
+  {"name": "C0-a comparison with the check-in removed",
+   "edits": [{"file": "apps/api/src/modules/desk/desk.service.ts", "old": "if (checkedOutAt < locked.checkedInAt) {", "new": "if (false) {"}],
+   "cwd": "apps/api", "cmd": "npx vitest run --project api src/modules/desk/checkOut.api.test.ts"},
+  {"name": "C0-b the closed visit's payment refusal removed",
+   "edits": [{"file": "apps/api/src/modules/desk/desk.service.ts", "old": "if (!recorded && request.payment) throw AppError.conflict('VISIT_ALREADY_CLOSED');", "new": ""}],
+   "cwd": "apps/api", "cmd": "npx vitest run --project api src/modules/desk/checkOut.api.test.ts"}
+]

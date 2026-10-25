@@ -1,0 +1,13 @@
+fix(favorites): read the listing before the lock
+
+The save asked whether the space is listed inside its transaction, on
+other pool connections, while it held the user's row (the session
+lock): conventions §8 has the orchestrator pass its tx, and the
+data-reports create already reads the listing first. The listing is
+now read before the transaction; inside it the answers keep their
+order: the lock, already saved (204), not listed (not_found), the
+ceiling, the insert. No answer changes.
+
+Two documented behaviours gain their tests (carried from #121's
+review): a saved space that left, saved again, is 204 with one row;
+a favourite in an inactive area is listed false with its name.

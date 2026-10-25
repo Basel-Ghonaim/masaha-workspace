@@ -1,0 +1,340 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/uncollected/useUncollectedCard
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/uncollected/useUncollectedCard.component.test.tsx (7 tests | 1 failed) 4160ms
+   ❯ useUncollectedCard (7)
+     × shows the last page in place of one past it, never the empty line 3019ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/uncollected/useUncollectedCard.component.test.tsx > useUncollectedCard > shows the last page in place of one past it, never the empty line
+TestingLibraryElementError: Unable to find an element with the text: Visitor 21. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"_r_31_"[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+      [33mid[39m=[32m"uncollected"[39m
+      [33mrole[39m=[32m"region"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mid[39m=[32m"_r_31_"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+          [36m>[39m
+            [0m21 visits not collected[0m
+          [36m</h2>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"flex flex-col divide-y"[39m
+        [33mid[39m=[32m"_r_32_"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Pages of uncollected visits"[39m
+          [33mclass[39m=[32m"flex w-full md:w-auto"[39m
+          [33mdata-slot[39m=[32m"pagination"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"flex w-full items-center justify-between gap-1 md:w-auto md:justify-start max-md:[&>li:has([data-slot=pagination-link],[data-slot=pagination-ellipsis])]:hidden"[39m
+            [33mdata-slot[39m=[32m"pagination-content"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 pointer-coarse:h-(--control-height) gap-1 px-2 max-md:h-(--control-height) max-md:border-(--card-border) max-md:bg-card max-md:px-3 aria-disabled:pointer-events-none aria-disabled:opacity-50"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"pagination-previous"[39m
+                [33mhref[39m=[32m"/desk?uncollectedPage=2"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m15 18-6-6 6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mPrevious[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33maria-label[39m=[32m"Page 1"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-8 px-0 pointer-coarse:size-(--control-height)"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"pagination-link"[39m
+                [33mhref[39m=[32m"/desk"[39m
+              [36m>[39m
+                [0m1[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33maria-label[39m=[32m"Page 2"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-8 px-0 pointer-coarse:size-(--control-height)"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"pagination-link"[39m
+                [33mhref[39m=[32m"/desk?uncollectedPage=2"[39m
+              [36m>[39m
+                [0m2[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"text-center text-body-sm text-muted-foreground md:hidden"[39m
+              [33mdata-slot[39m=[32m"pagination-summary"[39m
+            [36m>[39m
+              [0mPage 3 of 2[0m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33maria-disabled[39m=[32m"true"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 pointer-coarse:h-(--control-height) gap-1 px-2 max-md:h-(--control-height) max-md:border-(--card-border) max-md:bg-card max-md:px-3 aria-disabled:pointer-events-none aria-disabled:opacity-50"[39m
+                [33mdata-slot[39m=[32m"pagination-next"[39m
+                [33mrole[39m=[32m"link"[39m
+              [36m>[39m
+                [0mNext[0m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m9 18 6-6-6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</nav>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_32_"[39m
+          [33maria-expanded[39m=[32m"true"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mShow fewer[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"_r_31_"[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+      [33mid[39m=[32m"uncollected"[39m
+      [33mrole[39m=[32m"region"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mid[39m=[32m"_r_31_"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+          [36m>[39m
+            [0m21 visits not collected[0m
+          [36m</h2>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"flex flex-col divide-y"[39m
+        [33mid[39m=[32m"_r_32_"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Pages of uncollected visits"[39m
+          [33mclass[39m=[32m"flex w-full md:w-auto"[39m
+          [33mdata-slot[39m=[32m"pagination"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"flex w-full items-center justify-between gap-1 md:w-auto md:justify-start max-md:[&>li:has([data-slot=pagination-link],[data-slot=pagination-ellipsis])]:hidden"[39m
+            [33mdata-slot[39m=[32m"pagination-content"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 pointer-coarse:h-(--control-height) gap-1 px-2 max-md:h-(--control-height) max-md:border-(--card-border) max-md:bg-card max-md:px-3 aria-disabled:pointer-events-none aria-disabled:opacity-50"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"pagination-previous"[39m
+                [33mhref[39m=[32m"/desk?uncollectedPage=2"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m15 18-6-6 6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mPrevious[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33maria-label[39m=[32m"Page 1"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-8 px-0 pointer-coarse:size-(--control-height)"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"pagination-link"[39m
+                [33mhref[39m=[32m"/desk"[39m
+              [36m>[39m
+                [0m1[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33maria-label[39m=[32m"Page 2"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-8 px-0 pointer-coarse:size-(--control-height)"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"pagination-link"[39m
+                [33mhref[39m=[32m"/desk?uncollectedPage=2"[39m
+              [36m>[39m
+                [0m2[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"text-center text-body-sm text-muted-foreground md:hidden"[39m
+              [33mdata-slot[39m=[32m"pagination-summary"[39m
+            [36m>[39m
+              [0mPage 3 of 2[0m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mdata-slot[39m=[32m"pagination-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33maria-disabled[39m=[32m"true"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 pointer-coarse:h-(--control-height) gap-1 px-2 max-md:h-(--control-height) max-md:border-(--card-border) max-md:bg-card max-md:px-3 aria-disabled:pointer-events-none aria-disabled:opacity-50"[39m
+                [33mdata-slot[39m=[32m"pagination-next"[39m
+                [33mrole[39m=[32m"link"[39m
+              [36m>[39m
+                [0mNext[0m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m9 18 6-6-6-6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</nav>[39m
+        [36m<button[39m
+          [33maria-controls[39m=[32m"_r_32_"[39m
+          [33maria-expanded[39m=[32m"true"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mShow fewer[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/hooks/uncollected/useUncollectedCard.component.test.tsx:130:25
+    128|     renderCard({ entry: '/desk?uncollectedPage=3' });
+    129|
+    130|     expect(await screen.findByText('Visitor 21')).toBeVisible();
+       |                         ^
+    131|     expect(screen.getByRole('button', { name: 'Collect' })).toBeVisibl…
+    132|     expect(screen.getByRole('navigation', { name: 'Pages of uncollecte…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  12:16:33
+   Duration  16.03s (import 40%, tests 27%, transform 16%, environment 14%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/uncollected/useUncollectedCard

@@ -1,0 +1,48 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/packages/hooks/offered
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx (2 tests | 1 failed) 270ms
+   ❯ useOfferedPackages (2)
+     × lists the offered packages only, in the list’s order 124ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx > useOfferedPackages > lists the offered packages only, in the list’s order
+AssertionError: expected [ 5, 4, 3 ] to deeply equal [ 5, 3 ]
+
+- Expected
++ Received
+
+  [
+    5,
++   4,
+    3,
+  ]
+
+ ❯ src/features/packages/hooks/offered/useOfferedPackages.component.test.tsx:38:57
+     36|       expect(result.current.state).toBe('ready');
+     37|     });
+     38|     expect(result.current.packages.map(({ id }) => id)).toEqual([5, 3]…
+       |                                                         ^
+     39|     expect(requests.map(({ url }) => url)).toEqual(['/manage/spaces/7/…
+     40|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  14:21:45
+   Duration  3.47s (environment 50%, transform 14%, import 14%, setup 13%, tests 8%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/packages/hooks/offered

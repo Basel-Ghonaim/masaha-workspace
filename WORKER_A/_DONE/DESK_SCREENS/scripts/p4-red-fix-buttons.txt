@@ -1,0 +1,92 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (12 tests | 2 failed) 3203ms
+   ❯ useSubscriptionSheet (12)
+     × shows every choice on «Change package», and sends nothing 182ms
+     × reads the choices again on «Try again» when they failed, and sends nothing 119ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > shows every choice on «Change package», and sends nothing
+AssertionError: expected [ { …(3) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "body": {
++       "packageId": 3,
++       "payment": {
++         "amountAgorot": 15000,
++         "method": "CASH",
++       },
++       "renewalOfId": 4,
++       "startsOn": "2026-11-05",
++     },
++     "key": "26cc6ea5-4759-4eb0-b531-ec6a54cdefa9",
++     "url": "/manage/spaces/7/customers/4/subscriptions",
++   },
++ ]
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:466:29
+    464|     await user.click(await screen.findByRole('button', { name: 'Change…
+    465|     expect(await screen.findByRole('radio', { name: /10 days/ })).toBe…
+    466|     expect(posts(requests)).toEqual([]);
+       |                             ^
+    467|   });
+    468|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > reads the choices again on «Try again» when they failed, and sends nothing
+AssertionError: expected [ { …(3) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "body": {
++       "packageId": 3,
++       "payment": {
++         "amountAgorot": 15000,
++         "method": "CASH",
++       },
++       "startsOn": "2026-10-26",
++     },
++     "key": "46736ace-bfcc-4382-9b6b-d08761c4633f",
++     "url": "/manage/spaces/7/customers/4/subscriptions",
++   },
++ ]
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:479:29
+    477|     expect(retryPackages).toHaveBeenCalledTimes(1);
+    478|     expect(refreshPrices).toHaveBeenCalledTimes(1);
+    479|     expect(posts(requests)).toEqual([]);
+       |                             ^
+    480|   });
+    481| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 10 passed (12)
+   Start at  15:25:04
+   Duration  12.13s (import 40%, tests 27%, transform 19%, environment 11%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet

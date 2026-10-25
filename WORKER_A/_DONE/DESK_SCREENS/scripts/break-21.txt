@@ -1,0 +1,43 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/check-in
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx (4 tests | 1 failed) 1466ms
+   ❯ useVisitDialog (4)
+     × says the server’s warnings in the toast, as a warning 229ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  16:55:36
+   Duration  11.30s (import 50%, transform 20%, tests 13%, environment 13%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx > useVisitDialog > says the server’s warnings in the toast, as a warning
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"data-type"[32m[39m[2m, [22m[32m[32m"warning"[32m[39m[2m) // element.getAttribute("data-type") === "warning"[22m
+
+Expected the element to have attribute:
+[32m  data-type="warning"[39m
+Received:
+[31m  data-type="success"[39m
+ ❯ src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx:175:18
+    173|     const toast = await findToast(heard('Rami checked in'));
+    174|     const item = toast.closest('[data-sonner-toast]');
+    175|     expect(item).toHaveAttribute('data-type', 'warning');
+       |                  ^
+    176|     await waitFor(() => {
+    177|       expect(item).toHaveTextContent('The space is full; the check-in …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/check-in

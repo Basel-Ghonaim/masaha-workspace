@@ -1,0 +1,7 @@
+[
+  {
+    "file": "apps/api/src/modules/payments/payments.service.ts",
+    "old": "        const { subscriptionId } = itemOf(row) as { subscriptionId: number };\n",
+    "new": "        const { subscriptionId } = row;\n        if (subscriptionId === null) throw new Error('A payment settles exactly one item.');\n"
+  }
+]

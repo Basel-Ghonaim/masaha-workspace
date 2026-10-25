@@ -1,0 +1,12 @@
+· idle from 2026-10-26T08:08:18.408Z
+· idle until 2026-10-26T08:24:18.413Z
+file:///C:/dev/masaha/workspace/WORKER_A/DESK_SCREENS/scripts/cdp3.mjs:126
+      if (!ok) throw new Error(`no element to click: ${what}`);
+                     ^
+
+Error: no element to click: the sidebar’s customers
+    at Object.click (file:///C:/dev/masaha/workspace/WORKER_A/DESK_SCREENS/scripts/cdp3.mjs:126:22)
+    at async idle (file:///C:/dev/masaha/workspace/WORKER_A/DESK_SCREENS/scripts/run3.mjs:104:7)
+    at async file:///C:/dev/masaha/workspace/WORKER_A/DESK_SCREENS/scripts/run3.mjs:371:1
+
+Node.js v24.19.0

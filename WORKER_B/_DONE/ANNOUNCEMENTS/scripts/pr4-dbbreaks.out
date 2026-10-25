@@ -1,0 +1,20 @@
+== B5: DROP TRIGGER "announcements_guard_extended" ON "announcements";
+     × refuses a new type, start, deletion or later end; its text and an earlier end pass; another closure is untouched 243ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: promise resolved "{ id: 1, spaceId: 1, …(9) }" instead of rejecting
+      Tests  1 failed | 1 passed (2)
+   restored; run again:
+      Tests  2 passed (2)
+== B6: DROP INDEX "closure_extensions_request_id_key";
+     × an extension's key is unique 348ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: promise resolved "{ id: 2, announcementId: 2, …(5) }" instead of rejecting
+      Tests  1 failed | 1 passed (2)
+ERROR:  could not create unique index "closure_extensions_request_id_key"
+DETAIL:  Key (request_id)=(a81d5671-ed16-4dae-b84a-75248eab6173) is duplicated.
+!!! B6 RESTORE FAILED
+== the rules now:
+ announcements_guard_extended
+
+
+      Tests  2 passed (2)

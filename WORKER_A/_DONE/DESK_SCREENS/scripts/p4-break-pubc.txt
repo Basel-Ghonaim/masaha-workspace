@@ -1,0 +1,56 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/publishedChoices
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/publishedChoices.unit.test.ts (1 test | 1 failed) 11ms
+   ❯ publishedChoices (1)
+     × offers the standard week and month prices, named, sent by their key 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/publishedChoices.unit.test.ts > publishedChoices > offers the standard week and month prices, named, sent by their key
+AssertionError: expected [ { …(4) }, { …(4) }, { …(4) } ] to deeply equal [ { …(4) }, { …(4) } ]
+
+- Expected
++ Received
+
+@@ -9,6 +9,12 @@
+      "amount": "₪200",
+      "terms": "30 days",
+      "title": "Monthly · students · Morning",
+      "value": "price-MONTH-STUDENT-2",
+    },
++   {
++     "amount": "₪300",
++     "terms": "30 days",
++     "title": "Monthly",
++     "value": "price-MONTH-GENERAL-none",
++   },
+  ]
+
+ ❯ src/features/desk/services/publishedChoices.unit.test.ts:36:45
+     34|     );
+     35|
+     36|     expect(options.map(({ line }) => line)).toEqual([
+       |                                             ^
+     37|       { value: 'price-WEEK-GENERAL-none', title: 'Weekly', amount: '₪9…
+     38|       {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  15:08:23
+   Duration  319ms (transform 54%, import 23%, tests 14%, worker 8%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/publishedChoices

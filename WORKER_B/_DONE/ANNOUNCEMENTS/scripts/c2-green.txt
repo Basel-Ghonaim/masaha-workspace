@@ -1,0 +1,23 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/announcements
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+25 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+
+ Test Files  2 passed (2)
+      Tests  13 passed (13)
+   Start at  12:12:21
+   Duration  14.79s (tests 51%, transform 24%, import 23%, setup 2%)
+

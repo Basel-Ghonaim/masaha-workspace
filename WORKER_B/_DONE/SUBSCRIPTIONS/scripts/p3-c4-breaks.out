@@ -1,0 +1,24 @@
+== B3 (packages/shared/src/subscriptions/requests.ts) broken run exit 1
+     × open=true, or a range of Gaza dates of at most 92 days, to not before from 8ms
+      Tests  1 failed | 3 passed (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/subscriptions/requests.unit.test.ts > the check-ins query > open=true, or a range of Gaza dates of at most 92 days, to not before from
+AssertionError: expected null to deeply equal { to: [ 'out_of_range' ] }
+   restored: sha256 same
+   restored run exit 0: Tests  4 passed (4)
+== B17 (apps/api/src/modules/subscriptions/subscriptions.repository.ts) broken run exit 1
+     × open=true answers every open check-in, the earliest first, whole: no closed one, no other space’s 706ms
+      Tests  1 failed | 2 skipped (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/checkIns.api.test.ts > the space's check-ins > open=true answers every open check-in, the earliest first, whole: no closed one, no other space’s
+AssertionError: expected [ Array(20) ] to deeply equal [ Array(21) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 2 skipped (3)
+== B18 (apps/api/src/modules/subscriptions/subscriptions.repository.ts) broken run exit 1
+     × a range pages the check-ins by their Gaza date, the latest first, the total right 464ms
+      Tests  1 failed | 2 skipped (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/checkIns.api.test.ts > the space's check-ins > a range pages the check-ins by their Gaza date, the latest first, the total right
+AssertionError: expected [ 5, 4 ] to deeply equal [ 4, 3 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 2 skipped (3)

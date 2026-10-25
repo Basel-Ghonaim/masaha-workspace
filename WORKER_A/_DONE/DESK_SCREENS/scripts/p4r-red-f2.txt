@@ -1,0 +1,129 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/menu/CustomerActions
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/menu/CustomerActions.component.test.tsx (3 tests | 1 failed) 1186ms
+   ❯ CustomerActions (3)
+     × gives the focus back to «⋯» once the subscription sheet it opened is closed 254ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/menu/CustomerActions.component.test.tsx > CustomerActions > gives the focus back to «⋯» once the subscription sheet it opened is closed
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  aria-label="More actions: ⁨Sara Khalid⁩"
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"
+  data-slot="dropdown-menu-trigger"
+  data-state="closed"
+  id="radix-_r_l_"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="lucide lucide-ellipsis-vertical lucide-more-vertical"
+    fill="none"
+    height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="1"
+    />
+    <circle
+      cx="12"
+      cy="5"
+      r="1"
+    />
+    <circle
+      cx="12"
+      cy="19"
+      r="1"
+    />
+  </svg>
+</button>[39m
+Received element with focus:
+  [31m<body
+  style=""
+>
+  <div>
+    <main>
+      <button
+        aria-expanded="false"
+        aria-haspopup="menu"
+        aria-label="More actions: ⁨Sara Khalid⁩"
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"
+        data-slot="dropdown-menu-trigger"
+        data-state="closed"
+        id="radix-_r_l_"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-ellipsis-vertical lucide-more-vertical"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="1"
+          />
+          <circle
+            cx="12"
+            cy="5"
+            r="1"
+          />
+          <circle
+            cx="12"
+            cy="19"
+            r="1"
+          />
+        </svg>
+      </button>
+    </main>
+  </div>
+</body>[39m
+ ❯ src/features/desk/components/menu/CustomerActions.component.test.tsx:146:21
+    144|       expect(screen.queryByRole('dialog')).toBeNull();
+    145|     });
+    146|     expect(trigger).toHaveFocus();
+       |                     ^
+    147|   });
+    148| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  16:36:01
+   Duration  10.66s (import 49%, transform 23%, environment 13%, tests 11%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/menu/CustomerActions

@@ -1,0 +1,9 @@
+Rebasing (2/8)Executing: npm exec -w @masaha/api -- prisma generate > /dev/null 2>&1 && npm run build -w @masaha/shared > /dev/null 2>&1 && npm run lint > /dev/null 2>&1 && npm run typecheck > /dev/null 2>&1 && echo PASS-$(git rev-parse --short HEAD)
+PASS-0529fef0
+Rebasing (3/8)Rebasing (4/8)Executing: npm exec -w @masaha/api -- prisma generate > /dev/null 2>&1 && npm run build -w @masaha/shared > /dev/null 2>&1 && npm run lint > /dev/null 2>&1 && npm run typecheck > /dev/null 2>&1 && echo PASS-$(git rev-parse --short HEAD)
+PASS-bb221048
+Rebasing (5/8)Rebasing (6/8)Executing: npm exec -w @masaha/api -- prisma generate > /dev/null 2>&1 && npm run build -w @masaha/shared > /dev/null 2>&1 && npm run lint > /dev/null 2>&1 && npm run typecheck > /dev/null 2>&1 && echo PASS-$(git rev-parse --short HEAD)
+PASS-90db34b6
+Rebasing (7/8)Rebasing (8/8)Executing: npm exec -w @masaha/api -- prisma generate > /dev/null 2>&1 && npm run build -w @masaha/shared > /dev/null 2>&1 && npm run lint > /dev/null 2>&1 && npm run typecheck > /dev/null 2>&1 && echo PASS-$(git rev-parse --short HEAD)
+PASS-14a49e3a
+Successfully rebased and updated refs/heads/feat/subscriptions.

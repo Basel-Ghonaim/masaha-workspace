@@ -1,0 +1,80 @@
+== B1 (packages/shared/src/payments/requests.ts) broken run exit 1
+     × both ends or neither, to not before from, at most 92 days with both included; the methods, kinds and void filters; recordedById positive; voided INCLUDE by default 11ms
+      Tests  1 failed | 1 skipped (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/payments/requests.unit.test.ts > the payments query > both ends or neither, to not before from, at most 92 days with both included; the methods, kinds and void filters; recordedById positive; voided INCLUDE by default
+AssertionError: expected null to deeply equal { to: [ 'out_of_range' ] }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 1 skipped (2)
+== B2 (apps/api/src/modules/payments/paymentsWindow.ts) broken run exit 1
+     × today in Gaza when no range is given (23:30 UTC is the next Gaza day); a range from its first Gaza midnight to the midnight after its last day 34ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/payments/paymentsWindow.unit.test.ts > the payments list's window > today in Gaza when no range is given (23:30 UTC is the next Gaza day); a range from its first Gaza midnight to the midnight after its last day
+AssertionError: expected { Object (from, to) } to deeply equal { Object (from, to) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B3 (apps/api/src/modules/payments/paymentsWindow.ts) broken run exit 1
+     × today in Gaza when no range is given (23:30 UTC is the next Gaza day); a range from its first Gaza midnight to the midnight after its last day 41ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/payments/paymentsWindow.unit.test.ts > the payments list's window > today in Gaza when no range is given (23:30 UTC is the next Gaza day); a range from its first Gaza midnight to the midnight after its last day
+AssertionError: expected { Object (from, to) } to deeply equal { Object (from, to) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B17 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × the owner lists a range newest received first, then by id, paged; each row names its item, its customer, who recorded it, and a void’s who, when and why 493ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the owner lists a range newest received first, then by id, paged; each row names its item, its customer, who recorded it, and a void’s who, when and why
+AssertionError: expected [ 2, 3, 1 ] to deeply equal [ 3, 2, 1 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B18 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × the range counts Gaza days, both included (23:30 on to in, 00:00 after it out); recordedById, method, kind and voided filter 492ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the range counts Gaza days, both included (23:30 on to in, 00:00 after it out); recordedById, method, kind and voided filter
+AssertionError: expected [ 7, 6, 3, 2, 1, 5 ] to deeply equal [ 6, 3, 2, 1, 5 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B19 (apps/api/src/modules/payments/payments.service.ts) broken run exit 1
+     × the totals cover the whole filter but voided and the page: received, by method, the count, the voided count and amount; a voided payment is never received 504ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the totals cover the whole filter but voided and the page: received, by method, the count, the voided count and amount; a voided payment is never received
+AssertionError: expected { Object (count, receivedAgorot, ...) } to deeply equal { Object (count, receivedAgorot, ...) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B20 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × the totals cover the whole filter but voided and the page: received, by method, the count, the voided count and amount; a voided payment is never received 508ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the totals cover the whole filter but voided and the page: received, by method, the count, the voided count and amount; a voided payment is never received
+AssertionError: expected { Object (count, receivedAgorot, ...) } to deeply equal { Object (count, receivedAgorot, ...) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B21 (apps/api/src/modules/payments/payments.service.ts) broken run exit 1
+     × reception lists its own payments of today: another receptionist’s, the owner’s and its own of yesterday absent; its own voided one listed and marked; the totals its own 459ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > reception’s payments of today > reception lists its own payments of today: another receptionist’s, the owner’s and its own of yesterday absent; its own voided one listed and marked; the totals its own
+AssertionError: expected [ 5, 4, 2, 1 ] to deeply equal [ 2, 1 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B22 (apps/api/src/modules/payments/payments.service.ts) broken run exit 1
+     × reception's from, to or recordedById is 403 before anything is read 371ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > reception’s payments of today > reception's from, to or recordedById is 403 before anything is read
+AssertionError: expected 200 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B24 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × a stranger, another space's owner and the admin not_found; another space's payments never listed 507ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/list.api.test.ts > who reads the payments > a stranger, another space's owner and the admin not_found; another space's payments never listed
+TypeError: Cannot read properties of undefined (reading 'map')
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)

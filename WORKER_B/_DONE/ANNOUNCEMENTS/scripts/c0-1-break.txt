@@ -1,0 +1,8 @@
+== C0-1 (apps/api/src/modules/sessions/sessions.service.ts) broken run exit 1
+     × renews nothing on a refresh: the new token keeps the session’s last activity 830ms
+      Tests  1 failed | 6 passed (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/auth/idle.api.test.ts > reception's idle session > renews nothing on a refresh: the new token keeps the session’s last activity
+AssertionError: expected '2026-10-21T07:10:00.000Z' to be '2026-10-21T07:00:00.000Z' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  7 passed (7)

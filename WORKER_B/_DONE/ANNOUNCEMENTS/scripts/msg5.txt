@@ -1,0 +1,10 @@
+feat(occupancy): warn of a closure at check-in
+
+A check-in while a closure the space announced runs succeeds with the
+warning CLOSURE_IN_FORCE, after SPACE_FULL and OUTSIDE_OPENING_HOURS:
+the desk records who came, and learns the space told its users it is
+closed. It is a code of its own, not OUTSIDE_OPENING_HOURS: a closure
+inside the hours would read as a mistake in the hours.
+
+Both check-ins read it, a visit's and a subscriber's, through the one
+checkInWarnings, with the same rule as the live status (closedAt).

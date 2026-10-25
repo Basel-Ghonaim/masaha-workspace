@@ -1,0 +1,40 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/statement
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/statement/Statement.component.test.tsx (2 tests | 2 failed) 351ms
+   ❯ Statement (2)
+     × opens in its card, controlled by «Show the statement», a voided payment struck; axe-clean at 390 225ms
+     × opens in its card, controlled by «Show the statement», a voided payment struck; axe-clean at 1440 124ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  17:36:41
+   Duration  10.68s (import 54%, transform 24%, environment 15%, setup 4%, tests 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/statement/Statement.component.test.tsx > Statement > opens in its card, controlled by «Show the statement», a voided payment struck; axe-clean at 390
+ FAIL  |component| src/features/desk/components/statement/Statement.component.test.tsx > Statement > opens in its card, controlled by «Show the statement», a voided payment struck; axe-clean at 1440
+AssertionError: expected null not to be null
+ ❯ src/features/desk/components/statement/Statement.component.test.tsx:82:29
+     80|       expect(toggle).toHaveAccessibleName('Hide the statement');
+     81|       const statement = document.getElementById(toggle.getAttribute('a…
+     82|       expect(statement).not.toBeNull();
+       |                             ^
+     83|       const payments = await within(statement as HTMLElement).findByRo…
+     84|         level: 4,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/statement

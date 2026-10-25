@@ -1,0 +1,24 @@
+== B39 (apps/api/src/modules/subscriptions/subscriptions.service.ts) broken run exit 1
+     × sets the end to today, records who and when, audited subscription.ended; the money is unchanged; the status EXPIRED 368ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/end.api.test.ts > ending a subscription early > sets the end to today, records who and when, audited subscription.ended; the money is unchanged; the status EXPIRED
+AssertionError: expected { id: 1, customerId: 1, …(18) } to match object { id: 1, startsOn: '2026-10-01', …(5) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B40 (apps/api/src/modules/subscriptions/subscriptions.service.ts) broken run exit 1
+     × an upcoming one ends on its start; again → as it is, nothing audited 342ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/end.api.test.ts > ending a subscription early > an upcoming one ends on its start; again → as it is, nothing audited
+AssertionError: expected 500 to be 200 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B41 (apps/api/src/modules/subscriptions/subscriptions.service.ts) broken run exit 1
+     × the staff end; another space's subscription, a stranger and the admin not_found; a link ended meanwhile 403 452ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/end.api.test.ts > ending a subscription early > the staff end; another space's subscription, a stranger and the admin not_found; a link ended meanwhile 403
+AssertionError: expected 200 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)

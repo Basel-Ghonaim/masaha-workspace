@@ -1,0 +1,206 @@
+
+> dev
+> npm run dev -w @masaha/web
+
+
+> @masaha/web@0.0.0 dev
+> vite
+
+
+  [32m[1mVITE[22m v8.3.1[39m  [2mready in [0m[1m864[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5320[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m10:07:35 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/FileHeader.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/card/CustomerCard.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/customers/CustomerPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/file/CustomerFile.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx and 11 more[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/customers/CustomerPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/SignInPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/index.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/services/refresh.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/archive/ArchiveDialog.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/edit/EditCustomerDialog.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/end/EndDialog.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerActions.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditDialog.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchive.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/statement/Statement.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchiveFlow.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditCustomer.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useRestore.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/statement/useStatementQuery.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerMenu.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/customers/CustomerPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/file/CustomerFile.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/search/DeskSearch.tsx and 4 more[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/card/CustomerCard.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/FileHeader.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/search/DeskSearch.tsx[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/store.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/customers/CustomerPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/file/CustomerFile.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx and 8 more[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/customers/CustomerPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/search/DeskSearch.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/file/useCustomerFile.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/repository/deskRepository.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/archive/ArchiveDialog.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/edit/EditCustomerDialog.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerActions.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerMenu.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchive.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchiveFlow.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useRestore.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditCustomer.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditDialog.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/SignInPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/index.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/services/refresh.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/queryKeys.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/SignInPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/index.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/store.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/services/refresh.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/end/EndDialog.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/statement/Statement.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/statement/useStatementQuery.ts[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:07:37 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/end/useEndSubscription.ts[22m
+[2m10:25:04 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/card/CustomerCard.tsx[22m
+[2m10:28:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/archive/ArchiveDialog.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/end/EndDialog.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/UnpaidVisits.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/edit/EditCustomerDialog.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/FileHeader.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerActions.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchiveFlow.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditDialog.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/statement/useStatementQuery.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/end/useEndSubscription.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useRestore.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/statement/useStatement.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/statement/Statement.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/file/useCustomerFile.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditCustomer.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/customers/CustomerPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/services/payStatus.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchive.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerMenu.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/end/useEndDialog.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/customers/CustomerPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx and 6 more[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/card/CustomerCard.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/SignInPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/index.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/services/refresh.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx, /src/features/desk/components/unpriced/UnpricedCard.tsx and 2 more[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/search/DeskSearch.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/services/termsLine.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx and 6 more[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/store.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/app/App.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/file/useCustomerFile.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/services/payStatus.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/services/termsLine.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/customers/CustomerPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/card/CustomerCard.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/file/useCustomerFile.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx and 6 more[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/search/DeskSearch.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/customers/CustomerPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/customers/CustomersList.tsx[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/file/useCustomerFile.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/customers/CustomerPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/space/desk/DeskPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx and 6 more[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/english/desk.ts[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx, /src/features/desk/components/unpriced/UnpricedCard.tsx and 2 more[22m
+[2m10:28:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/file/useCustomerFile.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/SignInPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/index.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/services/refresh.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/session/store.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx and 6 more[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/dashboard/space/customers/CustomersPage.tsx, /src/pages/dashboard/space/desk/DeskPage.tsx, /src/features/desk/components/customers/CustomersList.tsx, /src/features/desk/components/pay/PayDialog.tsx, /src/features/desk/components/card/CustomerCard.tsx, /src/features/desk/components/check-out/CheckOutAction.tsx, /src/features/desk/components/search/DeskSearch.tsx, /src/features/desk/components/uncollected/UncollectedCard.tsx and 6 more[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/copy/arabic/desk.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/FileHeader.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/SubscriptionCard.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/UnpaidVisits.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/archive/ArchiveDialog.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/edit/EditCustomerDialog.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerActions.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/menu/CustomerMenu.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchive.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useArchiveFlow.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/archive/useRestore.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditCustomer.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/edit/useEditDialog.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/end/EndDialog.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/statement/Statement.tsx[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/statement/useStatement.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/statement/useStatementQuery.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/end/useEndDialog.ts[22m
+[2m10:29:00 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/features/desk/hooks/end/useEndSubscription.ts[22m
+[2m10:29:20 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+[2m10:29:33 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/desk/components/file/CustomerFile.tsx[22m
+npm error Lifecycle script `dev` failed with error:
+npm error code 4294967295
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vite

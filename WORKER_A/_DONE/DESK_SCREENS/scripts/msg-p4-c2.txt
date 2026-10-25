@@ -1,0 +1,5 @@
+feat(packages): offer the packages to the desk
+
+The desk's subscription sheet chooses from the space's offered packages.
+useOfferedPackages reads them through the owner's list's own query, so
+the two share one cache, and leaves the retired ones out.

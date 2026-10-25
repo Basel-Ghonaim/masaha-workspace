@@ -1,0 +1,341 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (16 tests | 2 failed) 13031ms
+   ❯ useSubscriptionSheet (16)
+     × renews a subscription from a published price with that price chosen, its amount on the submit 3081ms
+     × chooses nothing for a renewal it cannot match, the submit blocked until a choice 112ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > renews a subscription from a published price with that price chosen, its amount on the submit
+TestingLibraryElementError: Unable to find role="button" and name "Change package"
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_79_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_78_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_77_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_78_"[39m
+    [36m>[39m
+      [0mRenew subscription[0m
+    [36m</h2>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [33mdata-slot[39m=[32m"sheet-description"[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mid[39m=[32m"radix-_r_79_"[39m
+    [36m>[39m
+      [0mSara Khalid[0m
+    [36m</p>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-5 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_7b_-control"[39m
+              [33mid[39m=[32m"_r_7b_-label"[39m
+            [36m>[39m
+              [0mPackage[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"_r_7b_-label"[39m
+            [33maria-required[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/radio-group grid gap-4"[39m
+            [33mdata-slot[39m=[32m"radio-group"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_7b_-control"[39m
+            [33mrole[39m=[32m"radiogroup"[39m
+            [33mstyle[39m=[32m"outline: none;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col gap-2"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mPublished[0m
+              [36m</p>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"flex min-w-0 cursor-pointer items-start gap-3 rounded-lg border border-border p-3 has-data-checked:border-primary"[39m
+                [33mfor[39m=[32m"_r_7a_-price-WEEK-GENERAL-none"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-checked[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary mt-0.5"[39m
+                  [33mdata-radix-collection-item[39m=[32m""[39m
+                  [33mdata-slot[39m=[32m"radio-group-item"[39m
+                  [33mdata-state[39m=[32m"checked"[39m
+                  [33mid[39m=[32m"_r_7a_-price-WEEK-GENERAL-none"[39m
+                  [33mrole[39m=[32m"radio"[39m
+                  [33mtabindex[39m=[32m"0"[39m
+                  [33mtype[39m=[32m"button"[39m
+                  [33mvalue[39m=[32m"price-WEEK-GENERAL-none"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"size-2.5 rounded-full bg-primary-foreground"[39m
+                    [33mdata-slot[39m=[32m"radio-group-indicator"[39m
+                    [33mdata-state[39m=[32m"checked"[39m
+                  [36m/>[39m
+                [36m</button>[39m
+                [36m<input[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mstyle[39m=[32m"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"[39m
+                  [33mtabindex[39m=[32m"-1"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"price-WEEK-GENERAL-none"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col gap-0.5"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"flex flex-wrap items-baseline justify-between gap-2"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-label"[39m
+                      [33mdir[39m=[32m"auto"[39m
+                    [36m>[39m
+                      [0mWeekly[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-label"[39m
+                      [33mdir[39m=[32m"ltr"[39m
+                    [36m>[39m
+                      [0m⁨₪120⁩[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                  [36m>[39m
+                    [0m7 days[0m
+                  [36m</span>[39m
+                [36m</span>[39m
+              [36m</label>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"flex min-w-0 cursor-pointer items-start gap-3 rounded-lg border borde...
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_79_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_78_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_77_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_78_"[39m
+    [36m>[39m
+      [0mRenew subscription[0m
+    [36m</h2>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [33mdata-slot[39m=[32m"sheet-description"[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mid[39m=[32m"radix-_r_79_"[39m
+    [36m>[39m
+      [0mSara Khalid[0m
+    [36m</p>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-5 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_7b_-control"[39m
+              [33mid[39m=[32m"_r_7b_-label"[39m
+            [36m>[39m
+              [0mPackage[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"_r_7b_-label"[39m
+            [33maria-required[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/radio-group grid gap-4"[39m
+            [33mdata-slot[39m=[32m"radio-group"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_7b_-control"[39m
+            [33mrole[39m=[32m"radiogroup"[39m
+            [33mstyle[39m=[32m"outline: none;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col gap-2"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mPublished[0m
+              [36m</p>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"flex min-w-0 cursor-pointer items-start gap-3 rounded-lg border border-border p-3 has-data-checked:border-primary"[39m
+                [33mfor[39m=[32m"_r_7a_-price-WEEK-GENERAL-none"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-checked[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary mt-0.5"[39m
+                  [33mdata-radix-collection-item[39m=[32m""[39m
+                  [33mdata-slot[39m=[32m"radio-group-item"[39m
+                  [33mdata-state[39m=[32m"checked"[39m
+                  [33mid[39m=[32m"_r_7a_-price-WEEK-GENERAL-none"[39m
+                  [33mrole[39m=[32m"radio"[39m
+                  [33mtabindex[39m=[32m"0"[39m
+                  [33mtype[39m=[32m"button"[39m
+                  [33mvalue[39m=[32m"price-WEEK-GENERAL-none"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"size-2.5 rounded-full bg-primary-foreground"[39m
+                    [33mdata-slot[39m=[32m"radio-group-indicator"[39m
+                    [33mdata-state[39m=[32m"checked"[39m
+                  [36m/>[39m
+                [36m</button>[39m
+                [36m<input[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mchecked[39m=[32m""[39m
+                  [33mstyle[39m=[32m"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"[39m
+                  [33mtabindex[39m=[32m"-1"[39m
+                  [33mtype[39m=[32m"radio"[39m
+                  [33mvalue[39m=[32m"price-WEEK-GENERAL-none"[39m
+                [36m/>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col gap-0.5"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"flex flex-wrap items-baseline justify-between gap-2"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-label"[39m
+                      [33mdir[39m=[32m"auto"[39m
+                    [36m>[39m
+                      [0mWeekly[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"text-label"[39m
+                      [33mdir[39m=[32m"ltr"[39m
+                    [36m>[39m
+                      [0m⁨₪120⁩[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                  [36m>[39m
+                    [0m7 days[0m
+                  [36m</span>[39m
+                [36m</span>[39m
+              [36m</label>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"flex min-w-0 cursor-pointer items-start gap-3 rounded-lg border borde...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:579:32
+    577|
+    578|     const sheet = await screen.findByRole('dialog', { name: 'Renew sub…
+    579|     expect(await within(sheet).findByRole('button', { name: 'Change pa…
+       |                                ^
+    580|     expect(within(sheet).getByText('Monthly')).toBeVisible();
+    581|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > chooses nothing for a renewal it cannot match, the submit blocked until a choice
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeChecked()[22m
+
+Received element is checked:
+  [31m<button
+  aria-checked="true"
+  class="relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary mt-0.5"
+  data-radix-collection-item=""
+  data-slot="radio-group-item"
+  data-state="checked"
+  id="_r_7q_-price-WEEK-GENERAL-none"
+  role="radio"
+  tabindex="0"
+  type="button"
+  value="price-WEEK-GENERAL-none"
+/>[39m
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:616:24
+    614|       expect(screen.getByLabelText('From')).toHaveValue('2026-10-26');
+    615|     });
+    616|     expect(weekly).not.toBeChecked();
+       |                        ^
+    617|     expect(screen.getByRole('radio', { name: /10 days/ })).not.toBeChe…
+    618|     const submit = screen.getByRole('button', { name: /Renew without p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 14 passed (16)
+   Start at  16:28:48
+   Duration  22.40s (tests 59%, import 22%, transform 11%, environment 6%, setup 2%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet

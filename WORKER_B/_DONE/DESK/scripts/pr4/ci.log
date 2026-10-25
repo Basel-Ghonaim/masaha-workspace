@@ -1,0 +1,3464 @@
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request less than a minute ago
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  * Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+* check:links (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run check:links
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* format:check (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run format:check
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* check:classes (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run check:classes
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* test:unit (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run test:unit
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* typecheck (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run typecheck
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* lint (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run lint
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* build (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  * Run npm ci
+  * Run npm run build
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 1 minute ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* format:check (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:unit (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:unit
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* typecheck (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run typecheck
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* lint (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run lint
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+* build (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:unit (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:unit
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* lint (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run lint
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 2 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 3 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 4 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 5 minutes ago
+
+JOBS
+* test:api (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:api
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+  * Stop containers
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 6 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 7 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 7 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 8 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 8 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 9 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 9 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 10 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 10 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 11 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 11 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 12 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 12 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 13 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 13 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 14 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 15 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 15 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 16 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 16 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+* test:component (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  * Run npm run test:component
+  * Run npm run check:build
+  * Post Run actions/setup-node@v7
+  * Post Run actions/checkout@v7
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+
+✓ feat/visit-debts CI Basel-Ghonaim/masaha#100 · 39444136751
+Triggered via pull_request about 17 minutes ago
+
+JOBS
+✓ test:api in 5m32s (ID 118701782806)
+  ✓ Set up job
+  ✓ Initialize containers
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:api
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Stop containers
+  ✓ Complete job
+✓ check:links in 30s (ID 118701783125)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:links
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ format:check in 47s (ID 118701783363)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run format:check
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:component in 16m5s (ID 118701783369)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:component
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ check:classes in 32s (ID 118701783378)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run check:classes
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ test:unit in 1m54s (ID 118701783492)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run test:unit
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ typecheck in 57s (ID 118701783616)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run typecheck
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ lint in 1m39s (ID 118701783626)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run lint
+  - Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+✓ build in 49s (ID 118701783650)
+  ✓ Set up job
+  ✓ Run actions/checkout@v7
+  ✓ Run actions/setup-node@v7
+  ✓ Run npm ci
+  ✓ Run npm run build
+  ✓ Run npm run check:build
+  ✓ Post Run actions/setup-node@v7
+  ✓ Post Run actions/checkout@v7
+  ✓ Complete job
+
+ANNOTATIONS
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:links: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+format:check: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+check:classes: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+typecheck: .github#1
+
+- "The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+build: .github#1
+

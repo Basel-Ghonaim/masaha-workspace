@@ -1,0 +1,101 @@
+[
+ {
+  "id": "B5",
+  "file": "apps/api/src/modules/payments/payments.service.ts",
+  "old": "      await audit(\n        {\n          actorId: byId,\n          action: 'payment.voided',\n          entityType: 'payment',\n          entityId: row.id,\n          spaceId,\n          after: { ...itemOf(row), amountAgorot: row.amountAgorot, method: row.method, reason },\n        },\n        tx,\n      );\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "the owner voids a payment with a reason"
+ },
+ {
+  "id": "B6",
+  "file": "apps/api/src/modules/desk/desk.manage.routes.ts",
+  "old": "    '/payments/:paymentId/void',\n    requireCan('payments.void'),\n",
+  "new": "    '/payments/:paymentId/void',\n",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "reception is 403 before the body is read"
+ },
+ {
+  "id": "B7",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        if (locked.voidedAt) {",
+  "new": "        if (locked.voidedAt && false) {",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "a second void answers it as it is"
+ },
+ {
+  "id": "B8",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "SELECT id FROM payments WHERE id = ${id} AND space_id = ${spaceId} FOR UPDATE",
+  "new": "SELECT id FROM payments WHERE id = ${id} FOR UPDATE",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "another space's payment, or an unknown id, is not_found"
+ },
+ {
+  "id": "B9",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        await lockAtDesk(actor, space, tx, 'payments.void');",
+  "new": "        await spaces.lock(space.id, tx);\n        if (!can(actor, 'payments.void', { links: space.links })) throw AppError.forbidden();",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "an owner whose link ended while the void waits"
+ },
+ {
+  "id": "B10",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "      WHERE subscription_id = u.subscription_id AND voided_at IS NULL",
+  "new": "      WHERE subscription_id = u.subscription_id",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "a fixed subscription paid in full, its payment voided"
+ },
+ {
+  "id": "B11",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "      WHERE visit_id = v.id AND voided_at IS NULL",
+  "new": "      WHERE visit_id = v.id",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "a visit with a customer, its payment voided"
+ },
+ {
+  "id": "B12",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "      return tx.payment.update({\n        where: { id },\n        data: { voidedAt: at, voidedById: byId, voidReason: reason },\n        select: ITEM_PAYMENT,\n      });",
+  "new": "      return (async () => {\n        const { visitId } = await tx.payment.findUniqueOrThrow({ where: { id } });\n        await tx.payment.updateMany({\n          where: { visitId, voidedAt: null },\n          data: { voidedAt: at, voidedById: byId, voidReason: reason },\n        });\n        return tx.payment.findUniqueOrThrow({ where: { id }, select: ITEM_PAYMENT });\n      })();",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "voiding one of an item"
+ },
+ {
+  "id": "B13",
+  "file": "apps/api/src/modules/payments/payments.repository.ts",
+  "old": "SELECT id FROM payments WHERE id = ${id} AND space_id = ${spaceId} FOR UPDATE",
+  "new": "SELECT id FROM payments WHERE id = ${id} AND space_id = ${spaceId}",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "two voids at once void it once"
+ },
+ {
+  "id": "B14",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        await lockAtDesk(actor, space, tx, 'payments.void');",
+  "new": "        if (!can(actor, 'payments.void', { links: space.links })) throw AppError.forbidden();",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "a void waiting while its visit is written off"
+ },
+ {
+  "id": "B23",
+  "file": "apps/api/src/modules/desk/desk.service.ts",
+  "old": "        if (visitId === undefined) throw AppError.validation({ visitId: ['required'] });\n        const locked = await visits.lockIn(space.id, visitId, tx);\n        if (!locked) throw AppError.notFound(undefined, 'Visit not found');\n\n        const recorded = await payments.findByKey(space.id, key, tx);",
+  "new": "        if (visitId === undefined) throw AppError.validation({ visitId: ['required'] });\n        const locked = await visits.lockIn(space.id, visitId, tx);\n        if (!locked) throw AppError.notFound(undefined, 'Visit not found');\n\n        const recorded = null as Awaited<ReturnType<typeof payments.findByKey>>;",
+  "lane": "api",
+  "test": "src/modules/desk/void.api.test.ts",
+  "name": "a retry of the payment's request after its void"
+ }
+]

@@ -1,0 +1,72 @@
+== B6s (packages/shared/src/desk/requests.ts) broken run exit 1
+     × subscribe takes exactly one of a package and custom terms 10ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/desk/requests.unit.test.ts > subscribing a customer > subscribe takes exactly one of a package and custom terms
+AssertionError: expected null to deeply equal { packageId: [ 'invalid_choice' ] }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B13 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a subscription from a package copies its terms, ending validityDays after its start, audited subscription.created 458ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a subscription from a package copies its terms, ending validityDays after its start, audited subscription.created
+AssertionError: expected { Object (subscription, payments, ...) } to deeply equal { Object (subscription, payments, ...) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B14 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a retired package, or another space's, is invalid_choice on packageId, writing nothing 411ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a retired package, or another space's, is invalid_choice on packageId, writing nothing
+AssertionError: expected 201 to be 422 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B15 (apps/api/src/modules/subscriptions/subscriptions.repository.ts) broken run exit 1
+     × a custom subscription records who typed its price and why 402ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a custom subscription records who typed its price and why
+AssertionError: expected { Object (subscription, payments, ...) } to match object { subscription: { …(12) }, …(2) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B16 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × reception types a custom price only where the space allows it: 403 PRICE_TYPING_NOT_ALLOWED; the owner always may 389ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > reception types a custom price only where the space allows it: 403 PRICE_TYPING_NOT_ALLOWED; the owner always may
+AssertionError: expected 201 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B17 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × an archived customer is CUSTOMER_ARCHIVED; another space's or an unknown customer not_found 449ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > an archived customer is CUSTOMER_ARCHIVED; another space's or an unknown customer not_found
+AssertionError: expected 201 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B18 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a retry with the same key answers the first subscription, 201; two at once make one 440ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a retry with the same key answers the first subscription, 201; two at once make one
+AssertionError: expected [ 201, 500 ] to deeply equal [ 201, 201 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B19 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a retry with the same key answers the first subscription, 201; two at once make one 4462ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a retry with the same key answers the first subscription, 201; two at once make one
+Error: 2 request(s) never waited on a lock
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B20 (apps/api/src/modules/desk/desk.service.ts) broken run exit 1
+     × a reception link ended while the request waits is refused 403, writing nothing 469ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a reception link ended while the request waits is refused 403, writing nothing
+AssertionError: expected 201 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)

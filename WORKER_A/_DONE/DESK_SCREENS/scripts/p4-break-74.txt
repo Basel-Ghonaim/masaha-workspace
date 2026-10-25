@@ -1,0 +1,38 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (6 tests | 1 failed) 2256ms
+   ❯ useSubscriptionSheet (6)
+     × creates a new customer then subscribes them with two keys; a refused subscribe keeps the customer and is sent alone 206ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > creates a new customer then subscribes them with two keys; a refused subscribe keeps the customer and is sent alone
+AssertionError: expected 'b1df8786-ce28-4f7e-bb78-4205d5ca9bdc' to not deeply equal 'b1df8786-ce28-4f7e-bb78-4205d5ca9bdc'
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:193:31
+    191|     ]);
+    192|     expect(first[0]?.body).toEqual({ name: 'Sara Khalid' });
+    193|     expect(first[0]?.key).not.toEqual(first[1]?.key);
+       |                               ^
+    194|
+    195|     refuse = false;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  14:44:51
+   Duration  12.40s (import 44%, transform 20%, tests 19%, environment 13%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet

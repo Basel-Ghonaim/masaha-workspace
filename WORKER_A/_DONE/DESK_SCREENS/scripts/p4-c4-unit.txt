@@ -1,0 +1,17 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk src/shared/copy
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+
+ Test Files  22 passed (22)
+      Tests  89 passed (89)
+   Start at  15:14:50
+   Duration  2.77s (transform 56%, import 37%, tests 4%, worker 3%)
+
+  Transform  |unit| transforming modules took 5.64s · 56% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

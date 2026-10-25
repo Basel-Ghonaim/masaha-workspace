@@ -1,0 +1,366 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/check-out
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/check-out/CheckOutDialog.component.test.tsx (1 test | 1 failed) 3552ms
+   ❯ CheckOutDialog (1)
+     × is titled by the visitor; the money block is a named group; «Received now» is focused and described as filled with the due; a failure is an alert; axe-clean 3551ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  16:57:23
+   Duration  13.33s (import 44%, tests 27%, transform 16%, environment 11%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/check-out/CheckOutDialog.component.test.tsx > CheckOutDialog > is titled by the visitor; the money block is a named group; «Received now» is focused and described as filled with the due; a failure is an alert; axe-clean
+TestingLibraryElementError: Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"radix-_r_1_"[39m
+  [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+  [33mdata-slot[39m=[32m"dialog-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_0_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-2"[39m
+    [33mdata-slot[39m=[32m"dialog-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"dialog-title"[39m
+      [33mid[39m=[32m"radix-_r_1_"[39m
+    [36m>[39m
+      [0mCheck out · ⁨Omar⁩[0m
+    [36m</h2>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground self-start"[39m
+      [33mdata-slot[39m=[32m"badge"[39m
+      [33mdata-variant[39m=[32m"neutral"[39m
+    [36m>[39m
+      [0mVisit[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<dl[39m
+      [33mclass[39m=[32m"grid grid-cols-3 gap-2 text-body-sm"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<dt[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mIn[0m
+        [36m</dt>[39m
+        [36m<dd[39m
+          [33mclass[39m=[32m"text-start"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m10:00[0m
+        [36m</dd>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<dt[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mOut[0m
+        [36m</dt>[39m
+        [36m<dd[39m
+          [33mclass[39m=[32m"text-start"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m16:57[0m
+        [36m</dd>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<dt[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mDuration[0m
+        [36m</dt>[39m
+        [36m<dd[39m
+          [33mclass[39m=[32m"text-start"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m2767h 57m[0m
+        [36m</dd>[39m
+      [36m</div>[39m
+    [36m</dl>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"_r_3_"[39m
+      [33mclass[39m=[32m"flex flex-col gap-3 rounded-lg bg-muted p-3"[39m
+      [33mrole[39m=[32m"group"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"sr-only"[39m
+        [33mid[39m=[32m"_r_3_"[39m
+      [36m>[39m
+        [0mPayment[0m
+      [36m</span>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"flex flex-col gap-0.5 text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [36m<li>[39m
+          [0mBilled time ⁨02:15⁩[0m
+        [36m</li>[39m
+        [36m<li>[39m
+          [0mRounded up after 15 minutes[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"flex items-baseline justify-between gap-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+        [36m>[39m
+          [0mDue[0m
+        [36m</span>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-heading-2"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m⁨₪12.50⁩[0m
+        [36m</span>[39m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_5_-control"[39m
+            [33mid[39m=[32m"_r_5_-label"[39m
+          [36m>[39m
+            [0mReceived now (₪)[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33maria-describedby[39m=[32m"_r_4_"[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_5_-control"[39m
+            [33minputmode[39m=[32m"decimal"[39m
+            [33mvalue[39m=[32m"12.50"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"sr-only"[39m
+        [33mid[39m=[32m"_r_4_"[39m
+      [36m>[39m
+        [0mFilled with the amount due; change it if they pay another amount.[0m
+      [36m</span>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-betwee...
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"radix-_r_1_"[39m
+  [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+  [33mdata-slot[39m=[32m"dialog-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_0_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-2"[39m
+    [33mdata-slot[39m=[32m"dialog-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"dialog-title"[39m
+      [33mid[39m=[32m"radix-_r_1_"[39m
+    [36m>[39m
+      [0mCheck out · ⁨Omar⁩[0m
+    [36m</h2>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground self-start"[39m
+      [33mdata-slot[39m=[32m"badge"[39m
+      [33mdata-variant[39m=[32m"neutral"[39m
+    [36m>[39m
+      [0mVisit[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<dl[39m
+      [33mclass[39m=[32m"grid grid-cols-3 gap-2 text-body-sm"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<dt[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mIn[0m
+        [36m</dt>[39m
+        [36m<dd[39m
+          [33mclass[39m=[32m"text-start"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m10:00[0m
+        [36m</dd>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<dt[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mOut[0m
+        [36m</dt>[39m
+        [36m<dd[39m
+          [33mclass[39m=[32m"text-start"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m16:57[0m
+        [36m</dd>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col"[39m
+      [36m>[39m
+        [36m<dt[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mDuration[0m
+        [36m</dt>[39m
+        [36m<dd[39m
+          [33mclass[39m=[32m"text-start"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m2767h 57m[0m
+        [36m</dd>[39m
+      [36m</div>[39m
+    [36m</dl>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"_r_3_"[39m
+      [33mclass[39m=[32m"flex flex-col gap-3 rounded-lg bg-muted p-3"[39m
+      [33mrole[39m=[32m"group"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"sr-only"[39m
+        [33mid[39m=[32m"_r_3_"[39m
+      [36m>[39m
+        [0mPayment[0m
+      [36m</span>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"flex flex-col gap-0.5 text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [36m<li>[39m
+          [0mBilled time ⁨02:15⁩[0m
+        [36m</li>[39m
+        [36m<li>[39m
+          [0mRounded up after 15 minutes[0m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"flex items-baseline justify-between gap-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+        [36m>[39m
+          [0mDue[0m
+        [36m</span>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-heading-2"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m⁨₪12.50⁩[0m
+        [36m</span>[39m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_5_-control"[39m
+            [33mid[39m=[32m"_r_5_-label"[39m
+          [36m>[39m
+            [0mReceived now (₪)[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33maria-describedby[39m=[32m"_r_4_"[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_5_-control"[39m
+            [33minputmode[39m=[32m"decimal"[39m
+            [33mvalue[39m=[32m"12.50"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"sr-only"[39m
+        [33mid[39m=[32m"_r_4_"[39m
+      [36m>[39m
+        [0mFilled with the amount due; change it if they pay another amount.[0m
+      [36m</span>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-betwee...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/components/check-out/CheckOutDialog.component.test.tsx:53:33
+     51|
+     52|     await user.click(within(dialog).getByRole('button', { name: /Check…
+     53|     expect(await within(dialog).findByRole('alert')).toHaveTextContent…
+       |                                 ^
+     54|     expect(await axe(document.body)).toHaveNoViolations();
+     55|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/check-out

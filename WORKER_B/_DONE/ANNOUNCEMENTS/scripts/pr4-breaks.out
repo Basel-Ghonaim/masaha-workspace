@@ -1,0 +1,145 @@
+== B1 (packages/shared/src/core/gazaTime.ts) broken run exit 1
+     × counts calendar days across a month, a year and a leap day 8ms
+      Tests  1 failed | 5 skipped (6)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/core/gazaTime.unit.test.ts > daysFrom > counts calendar days across a month, a year and a leap day
+AssertionError: expected 1 to be +0 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 5 skipped (6)
+== B2 (apps/api/src/modules/announcements/closureSpan.ts) broken run exit 1
+     × a closure's days from its start's Gaza day to its end's; an end at midnight covers the day before; a running one to today; a start at 23:30 UTC is the next Gaza day 9ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/announcements/closureSpan.unit.test.ts > closureSpan > a closure's days from its start's Gaza day to its end's; an end at midnight covers the day before; a running one to today; a start at 23:30 UTC is the next Gaza day
+AssertionError: expected '2026-11-06' to be '2026-11-07' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B3 (apps/api/src/modules/announcements/closureSpan.ts) broken run exit 1
+     × a closure's days from its start's Gaza day to its end's; an end at midnight covers the day before; a running one to today; a start at 23:30 UTC is the next Gaza day 31ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/announcements/closureSpan.unit.test.ts > closureSpan > a closure's days from its start's Gaza day to its end's; an end at midnight covers the day before; a running one to today; a start at 23:30 UTC is the next Gaza day
+AssertionError: expected { firstDay: '2026-11-05', …(2) } to deeply equal { firstDay: '2026-11-05', …(2) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B4 (packages/shared/src/announcements/requests.ts) broken run exit 1
+     × days are whole, 1 to 365 7ms
+      Tests  1 failed | 4 passed (5)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/announcements/requests.unit.test.ts > extendSubscriptionsSchema > days are whole, 1 to 365
+AssertionError: expected null to deeply equal { days: [ 'out_of_range' ] }
+   restored: sha256 same
+   restored run exit 0: Tests  5 passed (5)
+== B7 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × the preview answers the covered days, the proposal and how many it covered, writing nothing 437ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the preview > the preview answers the covered days, the proposal and how many it covered, writing nothing
+AssertionError: expected { firstDay: '2026-11-08', …(4) } to deeply equal { firstDay: '2026-11-08', …(4) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B8 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × the owner extends: each covered subscription's end moves by the days typed, one link each, audited closure.subscriptionsExtended; 201 with the count 2100ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > the owner extends: each covered subscription's end moves by the days typed, one link each, audited closure.subscriptionsExtended; 201 with the count
+AssertionError: expected '2026-12-03' to be '2026-12-04' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B9 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's 802ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's
+AssertionError: expected '2026-12-02' to be '2026-11-30' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B10 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's 492ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's
+AssertionError: expected '2026-12-13' to be '2026-12-11' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B11 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's 472ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > which move: one running through, one ending during it; not one starting after its last day, one ended before its first, one ended early, one with no end, another space's
+AssertionError: expected '2026-12-02' to be '2026-11-30' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B12 (apps/api/src/modules/subscriptions/closures/closures.manage.routes.ts) broken run exit 1
+     × reception is 403 before the key or body is read; a stranger and the admin not_found 410ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > reception is 403 before the key or body is read; a stranger and the admin not_found
+AssertionError: expected 422 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B13 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure is a conflict 536ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure is a conflict
+AssertionError: expected 409 to be 201 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B14 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × two owners at once with two keys make one extension 4473ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > two owners at once with two keys make one extension
+Error: 2 request(s) never waited on a lock
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B15 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × an upcoming closure is ANNOUNCEMENT_NOT_STARTED; an announcement of another type, a deleted one, another space's, not_found; 0 or 366 days 422 530ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the preview > an upcoming closure is ANNOUNCEMENT_NOT_STARTED; an announcement of another type, a deleted one, another space's, not_found; 0 or 366 days 422
+AssertionError: expected 201 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B16 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × an applied extension is answered by the preview instead of a proposal 454ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the preview > an applied extension is answered by the preview instead of a proposal
+AssertionError: expected { firstDay: '2026-11-08', …(4) } to deeply equal { firstDay: '2026-11-08', …(4) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B17 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × a subscription ended early, or added, while the extension waits is read as committed 1515ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a subscription ended early, or added, while the extension waits is read as committed
+AssertionError: expected 500 to be 201 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B18 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × a closure whose end moved earlier while the extension waits is extended on its new span 577ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a closure whose end moved earlier while the extension waits is extended on its new span
+AssertionError: expected { announcementId: 1, days: 4, …(3) } to match object { subscriptions: 4 }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B19 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × an owner whose link ended while waiting is refused 403 522ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > an owner whose link ended while waiting is refused 403
+AssertionError: expected 201 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B20 (apps/api/src/shared/errors/constraintCodes.ts) broken run exit 1
+     × after its extension a closure's delete, new type, new start and later end are CLOSURE_EXTENDED, writing nothing; its text and end now are 200 538ms
+      Tests  1 failed | 1 skipped (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/extendedClosure.api.test.ts > an extended closure > after its extension a closure's delete, new type, new start and later end are CLOSURE_EXTENDED, writing nothing; its text and end now are 200
+AssertionError: expected 500 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 1 skipped (2)
+exit=0

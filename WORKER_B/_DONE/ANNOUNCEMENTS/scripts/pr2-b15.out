@@ -1,0 +1,9 @@
+== B15 (repository select + mapper) broken run exit 1
+     × the owner lists the space's reports, newest first, filtered; the reporter is nowhere in the answer 387ms
+     × the owner resolves with or without a reply, and dismisses with one; audited dataReport.resolved, dataReport.dismissed; a dismissal without a reply is 422 283ms
+      Tests  2 failed | 5 passed (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+AssertionError: expected { id: 1, field: 'HOURS', …(5) } to deeply equal { id: 1, field: 'HOURS', …(4) }
+   restored: sha256 same
+   restored run exit 0: ['Tests  7 passed (7)']

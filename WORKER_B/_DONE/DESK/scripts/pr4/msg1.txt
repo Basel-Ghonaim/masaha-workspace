@@ -1,0 +1,16 @@
+fix(jobs): keep closing stays past a failing one
+
+Carried from #97 (its review, findings 1, 4, 5, 6 and 3/7).
+
+One stay that kept failing halted its job for every space, run after
+run: the stays are read oldest first and nothing caught a stay's own
+failure. Each stay is now closed in its own try: a failure is logged
+with the stay's id and counted, the next stays are still closed, and
+the job then fails so the cron service shows it. A space without its
+settings row fails only its own stays (settingsFor leaves it out).
+
+Documents: visits.md's boundary says which transactions are its own;
+the scheduler's local timing has one home; .env.example no longer reads
+as if the secret stopped the timer; the runbook names the header
+exactly. Findings 111-113 record #95's nits 7 and 8 and #97's growing
+uncollected read.

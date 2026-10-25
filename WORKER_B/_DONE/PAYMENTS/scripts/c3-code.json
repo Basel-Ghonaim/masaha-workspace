@@ -1,0 +1,12 @@
+[
+  {
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "        WHERE v.space_id = ${spaceId} AND v.checkout_method = 'AUTO' AND v.written_off_at IS NULL\n          AND (v.charge_agorot IS NULL OR v.charge_agorot - coalesce(p.paid, 0) > 0)`;",
+    "new": "        WHERE v.space_id = ${spaceId} AND v.checked_out_at IS NOT NULL\n          AND (v.checkout_method = 'AUTO' OR (v.customer_id IS NULL AND v.charge_agorot IS NOT NULL))\n          AND v.written_off_at IS NULL\n          AND (v.charge_agorot IS NULL OR v.charge_agorot - coalesce(p.paid, 0) > 0)`;"
+  },
+  {
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "     * A page of the space's uncollected visits (data model › Uncollected visits): closed by the auto\n     * check-out, not written off, not settled (balance > 0, or no charge yet), the latest closed\n     * first, then by id;",
+    "new": "     * A page of the space's uncollected visits (data model › Uncollected visits): closed by the auto\n     * check-out, or closed by hand, priced, with no customer (only a void leaves one owing), not\n     * written off, not settled (balance > 0, or no charge yet), the latest closed first, then by id;"
+  }
+]

@@ -1,0 +1,29 @@
+== B15 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × a visit paid in full at a manual check-out with no customer, its payment voided, is uncollected with its balance; with a customer it is not (its customer’s debt); an open visit never is 585ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/uncollected.api.test.ts > the uncollected visits > a visit paid in full at a manual check-out with no customer, its payment voided, is uncollected with its balance; with a customer it is not (its customer’s debt); an open visit never is
+AssertionError: expected [] to deeply equal [ { id: 1, paidAgorot: +0, …(1) } ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== BQ1 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × a visit closed by hand unpriced, with no customer, is not listed uncollected: the unpriced visits’ list 532ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/uncollected.api.test.ts > the uncollected visits > a visit closed by hand unpriced, with no customer, is not listed uncollected: the unpriced visits’ list
+AssertionError: expected [ { id: 1, paidAgorot: +0, …(1) } ] to deeply equal []
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B16 (apps/api/src/modules/payments/payments.repository.ts) broken run exit 0
+      Tests  1 passed | 6 skipped (7)
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+   !!! B16 STAYED GREEN
+== B16b (apps/api/src/modules/payments/payments.repository.ts) broken run exit 1
+     × a visit paid in full at a manual check-out with no customer, its payment voided, is uncollected with its balance; with a customer it is not (its customer’s debt); an open visit never is 520ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/payments/uncollected.api.test.ts > the uncollected visits > a visit paid in full at a manual check-out with no customer, its payment voided, is uncollected with its balance; with a customer it is not (its customer’s debt); an open visit never is
+AssertionError: expected [ …(2) ] to deeply equal [ { id: 1, paidAgorot: +0, …(1) } ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)

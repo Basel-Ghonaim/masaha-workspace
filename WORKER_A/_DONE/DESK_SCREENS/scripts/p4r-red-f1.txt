@@ -1,0 +1,50 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (14 tests | 1 failed) 9553ms
+   ❯ useSubscriptionSheet (14)
+     × says no answer, not «not saved», when the subscribe’s answer is lost, and retries with its key 3182ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > says no answer, not «not saved», when the subscribe’s answer is lost, and retries with its key
+AssertionError: expected <div …(2)></div> to be null
+
+- Expected:
+null
+
++ Received:
+<div
+  class="text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"
+  data-slot="alert-description"
+>
+  ⁨Sara Khalid⁩ was added to the customers; the subscription wasn’t saved.
+</div>
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:507:65
+    505|       ),
+    506|     ).toBeVisible();
+    507|     expect(screen.queryByText(/the subscription wasn’t saved/)).toBeNu…
+       |                                                                 ^
+    508|     const lost = posts(requests).filter(({ url }) => url?.endsWith('/s…
+    509|     expect(new Set(lost.map(({ key }) => key)).size).toBe(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 13 passed (14)
+   Start at  16:24:53
+   Duration  20.82s (tests 47%, import 28%, environment 11%, transform 11%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet

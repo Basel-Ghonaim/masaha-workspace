@@ -1,0 +1,16 @@
+
+=== demo-owner@example.com (id 14) links [{"spaceId":7,"role":"OWNER"}]
+-- space 7 (OWNER) occupancy 200: status=AVAILABLE capacity=40 present=0
+visit-terms 200: mayTypePrice=true
+uncollected 200: total=2
+   visit 1 عمر method=AUTO in=2026-10-07T05:50:07.624Z out=2026-10-07T19:00:00.000Z customer=null charge=2500 paid=0 balance=2500 writeOff=null
+   visit 3 خالد method=AUTO in=2026-10-06T11:00:00.000Z out=2026-10-06T19:00:00.000Z customer=null charge=2500 paid=0 balance=2500 writeOff=null
+unpriced 200: total=0 
+
+=== demo-reception@example.com (id 15) links [{"spaceId":7,"role":"RECEPTION"}]
+-- space 7 (RECEPTION) occupancy 200: status=AVAILABLE capacity=40 present=0
+visit-terms 200: mayTypePrice=false
+uncollected 200: total=2
+   visit 1 عمر method=AUTO in=2026-10-07T05:50:07.624Z out=2026-10-07T19:00:00.000Z customer=null charge=2500 paid=0 balance=2500 writeOff=null
+   visit 3 خالد method=AUTO in=2026-10-06T11:00:00.000Z out=2026-10-06T19:00:00.000Z customer=null charge=2500 paid=0 balance=2500 writeOff=null
+unpriced 200: total=0 

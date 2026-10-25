@@ -1,0 +1,550 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/edit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/edit/useEditDialog.component.test.tsx (5 tests | 4 failed) 4268ms
+   ❯ useEditDialog (5)
+     × sends only what changed, and says what the answer saved 500ms
+     × sends nothing when nothing changed, and says so 3078ms
+     × sends null for a cleared phone 145ms
+     × is never sent again by itself after no answer; the user retries 233ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  17:29:13
+   Duration  13.83s (import 36%, tests 31%, environment 15%, transform 14%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/edit/useEditDialog.component.test.tsx > useEditDialog > sends only what changed, and says what the answer saved
+AssertionError: expected { name: 'Sara Khalid', …(1) } to deeply equal { phone: '+970599000304' }
+
+- Expected
++ Received
+
+  {
++   "name": "Sara Khalid",
+    "phone": "+970599000304",
+  }
+
+ ❯ src/features/desk/hooks/edit/useEditDialog.component.test.tsx:64:42
+     62|     await findToast(heard('Sara Khalid’s details saved'));
+     63|     expect(patches(requests)).toHaveLength(1);
+     64|     expect(bodyOf(patches(requests)[0])).toEqual({ phone: '+9705990003…
+       |                                          ^
+     65|     expect(onClose).toHaveBeenCalledTimes(1);
+     66|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/features/desk/hooks/edit/useEditDialog.component.test.tsx > useEditDialog > sends nothing when nothing changed, and says so
+TestingLibraryElementError: Unable to find an element with the text: Nothing changed. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<ol[39m
+        [33mdata-sonner-theme[39m=[32m"light"[39m
+        [33mdata-sonner-toaster[39m=[32m"true"[39m
+        [33mdata-x-position[39m=[32m"right"[39m
+        [33mdata-y-position[39m=[32m"bottom"[39m
+        [33mdir[39m=[32m"ltr"[39m
+        [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"true"[39m
+          [33mdata-index[39m=[32m"0"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨Sara Khalid⁩’s details saved[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ol>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_6_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_5_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mid[39m=[32m"radix-_r_6_"[39m
+      [36m>[39m
+        [0mEdit details[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+    [36m<form[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [33mnovalidate[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_8_-control"[39m
+            [33mid[39m=[32m"_r_8_-label"[39m
+          [36m>[39m
+            [0mName[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"auto"[39m
+            [33mid[39m=[32m"_r_8_-control"[39m
+            [33mname[39m=[32m"name"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_9_-control"[39m
+            [33mid[39m=[32m"_r_9_-label"[39m
+          [36m>[39m
+            [0mMobile number[0m
+          [36m</label>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mOptional[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33maria-describedby[39m=[32m"_r_9_-helper"[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_9_-control"[39m
+            [33mname[39m=[32m"phone"[39m
+            [33mtype[39m=[32m"tel"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+          [33mid[39m=[32m"_r_9_-helper"[39m
+        [36m>[39m
+          [0mDebt reminders go to this number on WhatsApp.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"[39m
+        [33mdata-slot[39m=[32m"dialog-footer"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSave[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</form>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<ol[39m
+        [33mdata-sonner-theme[39m=[32m"light"[39m
+        [33mdata-sonner-toaster[39m=[32m"true"[39m
+        [33mdata-x-position[39m=[32m"right"[39m
+        [33mdata-y-position[39m=[32m"bottom"[39m
+        [33mdir[39m=[32m"ltr"[39m
+        [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"true"[39m
+          [33mdata-index[39m=[32m"0"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨Sara Khalid⁩’s details saved[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ol>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_6_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_5_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mid[39m=[32m"radix-_r_6_"[39m
+      [36m>[39m
+        [0mEdit details[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+    [36m<form[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [33mnovalidate[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_8_-control"[39m
+            [33mid[39m=[32m"_r_8_-label"[39m
+          [36m>[39m
+            [0mName[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33maria-required[39m=[32m"true"[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"auto"[39m
+            [33mid[39m=[32m"_r_8_-control"[39m
+            [33mname[39m=[32m"name"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_9_-control"[39m
+            [33mid[39m=[32m"_r_9_-label"[39m
+          [36m>[39m
+            [0mMobile number[0m
+          [36m</label>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mOptional[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33maria-describedby[39m=[32m"_r_9_-helper"[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_9_-control"[39m
+            [33mname[39m=[32m"phone"[39m
+            [33mtype[39m=[32m"tel"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+          [33mid[39m=[32m"_r_9_-helper"[39m
+        [36m>[39m
+          [0mDebt reminders go to this number on WhatsApp.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"[39m
+        [33mdata-slot[39m=[32m"dialog-footer"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSave[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</form>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/hooks/edit/useEditDialog.component.test.tsx:74:25
+     72|     await user.click(screen.getByRole('button', { name: 'Save' }));
+     73|
+     74|     expect(await screen.findByText('Nothing changed')).toBeVisible();
+       |                         ^
+     75|     expect(patches(requests)).toHaveLength(0);
+     76|     expect(onClose).not.toHaveBeenCalled();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/features/desk/hooks/edit/useEditDialog.component.test.tsx > useEditDialog > sends null for a cleared phone
+AssertionError: expected { name: 'Sara Khalid', phone: null } to deeply equal { phone: null }
+
+- Expected
++ Received
+
+  {
++   "name": "Sara Khalid",
+    "phone": null,
+  }
+
+ ❯ src/features/desk/hooks/edit/useEditDialog.component.test.tsx:87:42
+     85|
+     86|     await findToast(heard('Sara Khalid’s details saved'));
+     87|     expect(bodyOf(patches(requests)[0])).toEqual({ phone: null });
+       |                                          ^
+     88|   });
+     89|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |component| src/features/desk/hooks/edit/useEditDialog.component.test.tsx > useEditDialog > is never sent again by itself after no answer; the user retries
+AssertionError: expected { name: 'Sara K.', …(1) } to deeply equal { name: 'Sara K.' }
+
+- Expected
++ Received
+
+  {
+    "name": "Sara K.",
++   "phone": "+970599000201",
+  }
+
+ ❯ src/features/desk/hooks/edit/useEditDialog.component.test.tsx:114:42
+    112|     await findToast(heard('Sara K.’s details saved'));
+    113|     expect(patches(requests)).toHaveLength(2);
+    114|     expect(bodyOf(patches(requests)[1])).toEqual({ name: 'Sara K.' });
+       |                                          ^
+    115|   });
+    116|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/edit

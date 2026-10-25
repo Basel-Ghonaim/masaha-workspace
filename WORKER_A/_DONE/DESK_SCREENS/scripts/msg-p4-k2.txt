@@ -1,0 +1,6 @@
+fix(desk): compare the edited phone normalised
+
+Carried from #122 (review F2). The edit compared the typed phone with the
+stored E.164 one before normalising, so the same number typed locally was
+sent as a change (finding 123: an unchanged field is not sent). It now
+compares the number in the form the schema stores.

@@ -1,0 +1,80 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/sheetRequest
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/sheetRequest.unit.test.ts (4 tests | 4 failed) 7ms
+   ❯ sheetRequest (4)
+     × sends a package’s id only, with the start and the amount recorded 4ms
+     × sends custom terms with their reason, and no package 1ms
+     × refuses custom terms without their reason, on the reason 0ms
+     × sends a new customer’s name and phone apart from the subscription 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/sheetRequest.unit.test.ts > sheetRequest > sends a package’s id only, with the start and the amount recorded
+TypeError: sheetSchema is not a function
+ ❯ parsed src/features/desk/services/sheetRequest.unit.test.ts:26:18
+     24|
+     25| const parsed = (values: SheetValues, newCustomer = false) => {
+     26|   const result = sheetSchema(newCustomer).safeParse(sheetInput(values,…
+       |                  ^
+     27|   if (!result.success) throw new Error(JSON.stringify(result.error.iss…
+     28|   return result.data;
+ ❯ src/features/desk/services/sheetRequest.unit.test.ts:33:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| src/features/desk/services/sheetRequest.unit.test.ts > sheetRequest > sends custom terms with their reason, and no package
+TypeError: sheetSchema is not a function
+ ❯ parsed src/features/desk/services/sheetRequest.unit.test.ts:26:18
+     24|
+     25| const parsed = (values: SheetValues, newCustomer = false) => {
+     26|   const result = sheetSchema(newCustomer).safeParse(sheetInput(values,…
+       |                  ^
+     27|   if (!result.success) throw new Error(JSON.stringify(result.error.iss…
+     28|   return result.data;
+ ❯ src/features/desk/services/sheetRequest.unit.test.ts:43:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |unit| src/features/desk/services/sheetRequest.unit.test.ts > sheetRequest > refuses custom terms without their reason, on the reason
+TypeError: sheetSchema is not a function
+ ❯ src/features/desk/services/sheetRequest.unit.test.ts:78:20
+     76|
+     77|   it('refuses custom terms without their reason, on the reason', () =>…
+     78|     const result = sheetSchema(false).safeParse(
+       |                    ^
+     79|       sheetInput(
+     80|         { ...VALUES, choice: 'custom', custom: { ...VALUES.custom, pri…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |unit| src/features/desk/services/sheetRequest.unit.test.ts > sheetRequest > sends a new customer’s name and phone apart from the subscription
+TypeError: sheetSchema is not a function
+ ❯ parsed src/features/desk/services/sheetRequest.unit.test.ts:26:18
+     24|
+     25| const parsed = (values: SheetValues, newCustomer = false) => {
+     26|   const result = sheetSchema(newCustomer).safeParse(sheetInput(values,…
+       |                  ^
+     27|   if (!result.success) throw new Error(JSON.stringify(result.error.iss…
+     28|   return result.data;
+ ❯ src/features/desk/services/sheetRequest.unit.test.ts:91:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  14:32:38
+   Duration  337ms (transform 57%, import 24%, tests 10%, worker 8%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/sheetRequest

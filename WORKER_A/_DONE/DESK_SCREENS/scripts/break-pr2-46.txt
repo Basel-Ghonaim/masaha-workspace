@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/search
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/search/DeskSearch.component.test.tsx (2 tests | 1 failed) 1270ms
+   ❯ DeskSearch (2)
+     × takes the focus on arrival from 768 px, not at 390 76ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  12:38:03
+   Duration  11.69s (import 50%, transform 23%, environment 12%, tests 11%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/search/DeskSearch.component.test.tsx > DeskSearch > takes the focus on arrival from 768 px, not at 390
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveFocus()[22m
+
+Received element is focused:
+  [31m<input
+  aria-controls="_r_4_"
+  aria-label="Search by name or the mobile’s last digits"
+  class="h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"
+  data-slot="input"
+  placeholder="Name or the mobile’s last digits"
+  type="search"
+  value=""
+/>[39m
+ ❯ src/features/desk/components/search/DeskSearch.component.test.tsx:87:47
+     85|     stubScreenWidth(390);
+     86|     renderSearch();
+     87|     expect(screen.getByRole('searchbox')).not.toHaveFocus();
+       |                                               ^
+     88|   });
+     89| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/search

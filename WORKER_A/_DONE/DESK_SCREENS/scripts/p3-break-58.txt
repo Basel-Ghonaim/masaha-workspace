@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/payStatus.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/payStatus.unit.test.ts (1 test | 1 failed) 11ms
+   ❯ payStatus (1)
+     × is paid when nothing is owed, partly paid when something was paid, else unpaid 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  17:00:48
+   Duration  341ms (transform 51%, import 26%, tests 13%, worker 10%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/payStatus.unit.test.ts > payStatus > is paid when nothing is owed, partly paid when something was paid, else unpaid
+AssertionError: expected { key: 'partial', tone: 'warning' } to deeply equal { key: 'unpaid', tone: 'destructive' }
+
+- Expected
++ Received
+
+  {
+-   "key": "unpaid",
+-   "tone": "destructive",
++   "key": "partial",
++   "tone": "warning",
+  }
+
+ ❯ src/features/desk/services/payStatus.unit.test.ts:19:63
+     17|       tone: 'warning',
+     18|     });
+     19|     expect(payStatus({ paidAgorot: 0, balanceAgorot: 5000 })).toEqual({
+       |                                                               ^
+     20|       key: 'unpaid',
+     21|       tone: 'destructive',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/payStatus.unit.test.ts

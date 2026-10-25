@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/spaces/hooks/editor/useSpacePrices
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/spaces/hooks/editor/useSpacePrices.component.test.tsx (2 tests | 1 failed) 339ms
+   ❯ useSpacePrices (2)
+     × keeps the prices shown while the space is read again behind them, and hides them for a refresh 164ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/spaces/hooks/editor/useSpacePrices.component.test.tsx > useSpacePrices > keeps the prices shown while the space is read again behind them, and hides them for a refresh
+AssertionError: expected 'loading' to be 'ready' // Object.is equality
+
+Expected: "ready"
+Received: "loading"
+
+ ❯ src/features/spaces/hooks/editor/useSpacePrices.component.test.tsx:78:34
+     76|       expect(requests).toHaveLength(2);
+     77|     });
+     78|     expect(result.current.state).toBe('ready');
+       |                                  ^
+     79|     expect(result.current.prices).toHaveLength(1);
+     80|     act(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  16:41:16
+   Duration  3.08s (environment 47%, transform 15%, import 13%, setup 13%, tests 12%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/spaces/hooks/editor/useSpacePrices

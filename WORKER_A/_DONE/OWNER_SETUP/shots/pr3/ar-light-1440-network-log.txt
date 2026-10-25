@@ -1,0 +1,28 @@
+POST /auth/login
+GET /manage/spaces
+GET /manage/spaces/7/staff
+POST /auth/refresh
+GET /manage/spaces
+GET /manage/spaces/7/staff
+POST /manage/spaces/7/staff {"name":"موظف تجريبي","email":"pr3-staff-1792507945089@example.com"}
+GET /manage/spaces/7/staff
+POST /manage/spaces/7/staff/35/temporary-password/handover {"channel":"WHATSAPP"}
+POST /manage/spaces/7/staff {"name":"حساب موجود","email":"baselghonaim@gmail.com"}
+POST /manage/spaces/7/staff/35/temporary-password
+GET /manage/spaces/7/staff
+POST /manage/spaces/7/staff/35/temporary-password/handover {"channel":"WHATSAPP"}
+PATCH /manage/spaces/7/staff/15 {"isActive":false}
+PATCH /manage/spaces/7/staff/15 {"isActive":true}
+GET /manage/spaces/7/capacity
+GET /manage/spaces/7/settings
+PUT /manage/spaces/7/capacity {"capacity":35}
+PATCH /manage/spaces/7/settings {"maxStayMinutes":300}
+PATCH /manage/spaces/7/settings {"maxStayMinutes":null}
+PUT /manage/spaces/7/capacity {"capacity":40}
+PATCH /manage/spaces/7/settings {"visitRoundingMinutes":10,"visitRounding":"UP_AFTER_MINUTES"}
+PATCH /manage/spaces/7/settings {"visitRounding":"NEAREST_HALF_HOUR","visitRoundingMinutes":null}
+PATCH /manage/spaces/7/settings {"visitRounding":"UP_AFTER_MINUTES","visitRoundingMinutes":15}
+PATCH /manage/spaces/7/settings {"receptionMayTypePrices":true}
+PATCH /manage/spaces/7/settings {"receptionMayTypePrices":false}
+PATCH /manage/spaces/7/settings {"reminderTemplate":"مرحبًا {الاسم}، عليك {المبلغ} في {المساحة}. شكرًا."}
+PATCH /manage/spaces/7/settings {"reminderTemplate":null}

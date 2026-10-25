@@ -1,0 +1,7 @@
+shot 3-carried2-dialog-reception-ar-light-1440
+· after the check-in, the search: {"value":"","focused":true} toast: success: سُجّلت زيارة زائر تجربة 5
+shot 3-carried2-cleared-reception-ar-light-1440
+· check-out: تسجيل خروج · زائر تجربة 5 | زيارة | الدخول | 10:13 | الخروج | 10:13 | المدة | 0 د | الدفع | مدة محسوبة 1 د | تقريب لأعلى بعد 15 دقيقة | المستحق | ‏5 ₪ | المستلم الآن (₪) | مُلئ بالمستحق؛ غيّره إن دفع غيره. | الطريقة | نقدًا | تحويل | يُسجَّل المبلغ كاملًا. | لم يدفع شيئًا | خروج واستلام ‏5 ₪
+· toast: success: سُجّل خروج زائر تجربة 5 | استُلم ‏5 ₪ نقدًا || success: سُجّلت زيارة زائر تجربة 5
+·    2026-10-26T08:13:27.106Z POST /api/v1/manage/spaces/7/visits 201 Idempotency-Key: a1999351-666d-42db-8d12-e93cd8dc58b0 body: {"visitorName":"زائر تجربة 5","audience":"GENERAL","shiftId":1}
+·    2026-10-26T08:13:30.542Z POST /api/v1/manage/spaces/7/visits/50/check-out 200 Idempotency-Key: c3b88f99-9713-4415-9eb0-54f7ff7f231c body: {"checkedOutAt":"2026-10-26T08:13:28.630Z","payment":{"amountAgorot":500,"method":"CASH"}}

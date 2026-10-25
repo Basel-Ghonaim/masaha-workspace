@@ -1,0 +1,938 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (49 tests | 3 failed) 22698ms
+   ❯ the space's front desk (3)
+     × shows the owner the desk under its title, with who is present and their check-out 3076ms
+     × shows reception the desk under its title, with who is present and their check-out 3063ms
+     × puts «Check in a visit» in the bar at the foot below 768 px, and «Switch staff» in the «⋯» menu 3048ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 46 passed (49)
+   Start at  16:57:49
+   Duration  31.53s (tests 73%, import 16%, transform 6%, environment 4%, setup 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows the owner the desk under its title, with who is present and their check-out
+TestingLibraryElementError: Unable to find role="heading" and name "Present now 1 / 40"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Space dashboard"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-3 p-1.5"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+            [36m>[39m
+              [0mF[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+              [33mdata-slot[39m=[32m"sidebar-text"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [0mFocus Hub[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mAn-Nasr[0m
+              [36m</span>[39m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-layout-dashboard"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"12"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"16"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"min-w-0 flex-1 truncate"[39m
+                  [36m>[39m
+                    [0mOverview[0m
+                  [36m</span>[39m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33maria-current[39m=[32m"page"[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"true"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7/desk"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-concierge-bell"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Space dashboard"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-3 p-1.5"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+            [36m>[39m
+              [0mF[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+              [33mdata-slot[39m=[32m"sidebar-text"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [0mFocus Hub[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mAn-Nasr[0m
+              [36m</span>[39m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-layout-dashboard"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"12"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"16"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"min-w-0 flex-1 truncate"[39m
+                  [36m>[39m
+                    [0mOverview[0m
+                  [36m</span>[39m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33maria-current[39m=[32m"page"[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"true"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7/desk"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-concierge-bell"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:766:22
+    764|       await topBarTitle('Front desk');
+    765|       expect(
+    766|         await screen.findByRole('heading', { level: 2, name: 'Present …
+       |                      ^
+    767|       ).toBeInTheDocument();
+    768|       expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows reception the desk under its title, with who is present and their check-out
+TestingLibraryElementError: Unable to find role="heading" and name "Present now 1 / 40"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Space dashboard"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-3 p-1.5"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+            [36m>[39m
+              [0mF[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+              [33mdata-slot[39m=[32m"sidebar-text"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [0mFocus Hub[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mAn-Nasr[0m
+              [36m</span>[39m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33maria-current[39m=[32m"page"[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"true"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7/desk"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-concierge-bell"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1Z"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M20 16a8 8 0 1 0-16 0"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M12 4v4"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M10 4h4"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"min-w-0 flex-1 truncate"[39m
+                  [36m>[39m
+                    [0mFront desk[0m
+                  [36m</span>[39m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7/customers"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-users"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M16 3.128a4 4 0 0 1 0 7.744"[39m
+              ...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Space dashboard"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-3 p-1.5"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+            [36m>[39m
+              [0mF[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+              [33mdata-slot[39m=[32m"sidebar-text"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [0mFocus Hub[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mAn-Nasr[0m
+              [36m</span>[39m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33maria-current[39m=[32m"page"[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"true"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7/desk"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-concierge-bell"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1Z"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M20 16a8 8 0 1 0-16 0"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M12 4v4"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M10 4h4"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"min-w-0 flex-1 truncate"[39m
+                  [36m>[39m
+                    [0mFront desk[0m
+                  [36m</span>[39m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/spaces/7/customers"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-users"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"[39m
+                    [36m/>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M16 3.128a4 4 0 0 1 0 7.744"[39m
+              ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:766:22
+    764|       await topBarTitle('Front desk');
+    765|       expect(
+    766|         await screen.findByRole('heading', { level: 2, name: 'Present …
+       |                      ^
+    767|       ).toBeInTheDocument();
+    768|       expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > puts «Check in a visit» in the bar at the foot below 768 px, and «Switch staff» in the «⋯» menu
+TestingLibraryElementError: Unable to find role="button" and name "Check in a visit"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+        [33mdata-slot[39m=[32m"sidebar-inset"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"sticky top-0 z-sticky flex min-h-14 items-center gap-3 border-b border-border bg-background px-4 py-2 md:px-8"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"dialog"[39m
+            [33maria-label[39m=[32m"Menu"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+            [33mdata-slot[39m=[32m"sidebar-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-menu"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 5h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 12h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 19h16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"min-w-0 truncate text-heading-3"[39m
+            [36m>[39m
+              [0mFront desk[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-1"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-languages"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m5 8 6 6"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 5h12"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 2h1"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18h6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<bdi[39m
+                [33mlang[39m=[32m"ar"[39m
+              [36m>[39m
+                [0mالعربية[0m
+              [36m</bdi>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"Dark theme"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-moon"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+              [33mdata-state[39m=[32m"closed"[39m
+              [33mid[39m=[32m"radix-_r_lv_"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+                [33mdata-size[39m=[32m"sm"[39m
+                [33mdata-slot[39m=[32m"avatar"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                  [33mdata-slot[39m=[32m"avatar-fallback"[39m
+                [36m>[39m
+                  [0mS[0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex flex-1 flex-col gap-6 px-4 py-6 md:px-8"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-x-0 bottom-0 z-sticky border-t border-border bg-background px-4 py-3 md:hidden"[39m
+          [33mdata-slot[39m=[32m"page-action-bar"[39m
+          [33mhidden[39m=[32m""[39m
+        [36m/>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+        [33mdata-slot[39m=[32m"sidebar-inset"[39m
+      [36m>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"sticky top-0 z-sticky flex min-h-14 items-center gap-3 border-b border-border bg-background px-4 py-2 md:px-8"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"dialog"[39m
+            [33maria-label[39m=[32m"Menu"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+            [33mdata-slot[39m=[32m"sidebar-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-menu"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 5h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 12h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 19h16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2"[39m
+          [36m>[39m
+            [36m<h1[39m
+              [33mclass[39m=[32m"min-w-0 truncate text-heading-3"[39m
+            [36m>[39m
+              [0mFront desk[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-1"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-languages"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m5 8 6 6"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 5h12"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 2h1"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18h6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<bdi[39m
+                [33mlang[39m=[32m"ar"[39m
+              [36m>[39m
+                [0mالعربية[0m
+              [36m</bdi>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"Dark theme"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-moon"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+              [33mdata-state[39m=[32m"closed"[39m
+              [33mid[39m=[32m"radix-_r_lv_"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+                [33mdata-size[39m=[32m"sm"[39m
+                [33mdata-slot[39m=[32m"avatar"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                  [33mdata-slot[39m=[32m"avatar-fallback"[39m
+                [36m>[39m
+                  [0mS[0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex flex-1 flex-col gap-6 px-4 py-6 md:px-8"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"fixed inset-x-0 bottom-0 z-sticky border-t border-border bg-background px-4 py-3 md:hidden"[39m
+          [33mdata-slot[39m=[32m"page-action-bar"[39m
+          [33mhidden[39m=[32m""[39m
+        [36m/>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:786:33
+    784|
+    785|     await topBarTitle('Front desk');
+    786|     const action = await screen.findByRole('button', { name: 'Check in…
+       |                                 ^
+    787|     expect(screen.getByRole('banner')).not.toContainElement(action);
+    788|     expect(screen.getByRole('main')).not.toContainElement(action);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes

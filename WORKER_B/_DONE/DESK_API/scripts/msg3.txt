@@ -1,0 +1,6 @@
+docs(data-model): no PR number in a migration
+
+The PR number is written into the documents just before the push. A
+migration carrying it changes its checksum after it was applied, as
+payment_void_guard's did. Write the rule beside the migrations' other
+rules; that migration stays as it is (review N3 of #114, carried).

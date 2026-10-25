@@ -1,0 +1,32 @@
+[
+  {
+    "file": "apps/api/src/modules/desk/desk.service.ts",
+    "old": "import type { PaymentRequest } from '@masaha/shared/payments';",
+    "new": "import type { PaymentRequest, PaymentRow, VoidPaymentRequest } from '@masaha/shared/payments';"
+  },
+  {
+    "file": "apps/api/src/modules/desk/desk.service.ts",
+    "old": "    /**\n     * Undoes a visit's write-off, the owner's, in one transaction: the space's lock and `can()`;\n",
+    "new": "    /**\n     * Voids a payment of the space, the owner's (ADR 0010 rules 3–5), in one transaction and in this\n     * order: the space's lock and `can()` (`payments.void`); the payment's row (`FOR UPDATE`), the\n     * space's (else `not_found`); voided already → answered as it is, its first reason and voider\n     * kept, writing nothing; else its void, which the ledger refuses for a written-off visit's\n     * (`VISIT_WRITTEN_OFF`), audited. Nothing else is rewritten: every figure leaves it out on read.\n     */\n    voidPayment(\n      actor: Actor,\n      space: LoadedSpace,\n      paymentId: number,\n      { reason }: VoidPaymentRequest,\n    ): Promise<PaymentRow> {\n      return runInTransaction(async (tx) => {\n        await lockAtDesk(actor, space, tx, 'payments.void');\n        const locked = await payments.lockIn(space.id, paymentId, tx);\n        if (!locked) throw AppError.notFound(undefined, 'Payment not found');\n        if (locked.voidedAt) {\n          const [row] = await payments.rowsOf(space.id, [locked], tx);\n          if (!row) throw new Error(`The payment ${String(paymentId)} was not answered.`);\n          return row;\n        }\n        return payments.void(\n          { spaceId: space.id, row: locked, at: now(), byId: actor.id, reason },\n          tx,\n        );\n      });\n    },\n\n    /**\n     * Undoes a visit's write-off, the owner's, in one transaction: the space's lock and `can()`;\n"
+  },
+  {
+    "file": "apps/api/src/modules/desk/desk.controller.ts",
+    "old": "import type { CheckInSubscriberRequest, DeskCheckIn } from '@masaha/shared/subscriptions';",
+    "new": "import type { PaymentRow, VoidPaymentRequest } from '@masaha/shared/payments';\nimport type { CheckInSubscriberRequest, DeskCheckIn } from '@masaha/shared/subscriptions';"
+  },
+  {
+    "file": "apps/api/src/modules/desk/desk.controller.ts",
+    "old": "    /** 200 with the visit; the same phone again answers it as it is. */",
+    "new": "    /** 200 with the payment as the list shows it; one voided already is answered as it is. */\n    voidPayment: async (req: Request, res: Response) => {\n      const { userId, role } = signedIn(req);\n      const payment = await service.voidPayment(\n        { id: userId, role },\n        spaceOf(req),\n        parseId(req.params.paymentId),\n        req.body as VoidPaymentRequest,\n      );\n      sendSuccess(res, payment satisfies PaymentRow);\n    },\n\n    /** 200 with the visit; the same phone again answers it as it is. */"
+  },
+  {
+    "file": "apps/api/src/modules/desk/desk.manage.routes.ts",
+    "old": "import { checkInSubscriberSchema } from '@masaha/shared/subscriptions';",
+    "new": "import { voidPaymentSchema } from '@masaha/shared/payments';\nimport { checkInSubscriberSchema } from '@masaha/shared/subscriptions';"
+  },
+  {
+    "file": "apps/api/src/modules/desk/desk.manage.routes.ts",
+    "old": "    controller.receivePayment,\n  );\n",
+    "new": "    controller.receivePayment,\n  );\n  router.post(\n    '/payments/:paymentId/void',\n    requireCan('payments.void'),\n    validate(voidPaymentSchema),\n    controller.voidPayment,\n  );\n"
+  }
+]

@@ -1,0 +1,16 @@
+== C0a (apps/api/src/modules/favorites/favorites.service.ts) broken run exit 1
+     × a signed-in user saves a listed space, 204; again 204 with one row, even once hidden 491ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > a signed-in user saves a listed space, 204; again 204 with one row, even once hidden
+AssertionError: expected 404 to be 204 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== C0b (apps/api/src/modules/spaces/public/publicListing.repository.ts) broken run exit 1
+     × the favourites, whole, newest saved first: a listed space as its card with its live status; a deleted, hidden or inactive-area one listed false with its name 472ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > the favourites, whole, newest saved first: a listed space as its card with its live status; a deleted, hidden or inactive-area one listed false with its name
+AssertionError: expected [ { listed: false, …(2) }, …(4) ] to deeply equal [ { listed: false, …(2) }, …(4) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)

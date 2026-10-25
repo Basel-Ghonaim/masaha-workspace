@@ -1,0 +1,55 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/auth/idle.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+27 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/auth/idle.api.test.ts (6 tests | 1 failed) 5323ms
+   ❯ reception's idle session (6)
+     × ends the idle session on its refresh, clearing the cookies, and leaves the person's other device 834ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/auth/idle.api.test.ts > reception's idle session > ends the idle session on its refresh, clearing the cookies, and leaves the person's other device
+AssertionError: expected 401 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 401
+
+ ❯ src/modules/auth/idle.api.test.ts:144:55
+    142|     expect(cookieValue(refused, 'masaha_session')).toBe('');
+    143|     expect(await familySize(desk)).toBe(0);
+    144|     expect((await me(phone, at(20 * MINUTE))).status).toBe(200);
+       |                                                       ^
+    145|     expect(await familySize(phone)).toBe(1);
+    146|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  10:35:44
+   Duration  13.18s (tests 55%, transform 32%, import 12%, setup 1%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/auth/idle.api.test.ts

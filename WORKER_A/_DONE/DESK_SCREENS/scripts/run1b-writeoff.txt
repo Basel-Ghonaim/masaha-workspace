@@ -1,0 +1,14 @@
+== writeoff
+· dialog: لن يُحصَّل مبلغ هذه الزيارة؟ | خالد · 6 أكتوبر · ‏25 ₪. تخرج الزيارة من «غير محصّل» (ومن دين زبونها إن كان لها زبون). ليست دفعة ولا حذفًا: تبقى في السجل مع السبب، ويمكن التراجع عنها من الإشعار. | السبب | رجوع | لن يُحصَّل
+shot 1b-writeoff-dialog-owner-ar-light-1440
+· toast: success: لن يُحصَّل ‏25 ₪ · خالد | تراجع
+· card after: زيارة واحدة غير محصّلة | عمر | خروج تلقائي عند الإغلاق · 7 أكتوبر 08:50–22:00 | ‏25 ₪ | تحصيل | تسجيل دين
+· focus after: زيارة واحدة غير محصّلة
+shot 1b-writeoff-toast-owner-ar-light-1440
+· 12 s later — toast: success: لن يُحصَّل ‏25 ₪ · خالد | تراجع
+· after «تراجع» — toast: success: أُعيدت الزيارة إلى «غير محصّل»
+· card after: زيارتان غير محصّلتين | عمر | خروج تلقائي عند الإغلاق · 7 أكتوبر 08:50–22:00 | ‏25 ₪ | تحصيل | تسجيل دين | خالد | خروج تلقائي عند الإغلاق · 6 أكتوبر 14:00–22:00 | ‏25 ₪ | تحصيل | تسجيل دين
+shot 1b-writeoff-undone-owner-ar-light-1440
+· the writes, 12 s after the undo: 2
+·    2026-10-25T09:09:26.767Z POST /api/v1/manage/spaces/7/visits/3/write-off 200 Idempotency-Key: none
+·    2026-10-25T09:09:41.314Z DELETE /api/v1/manage/spaces/7/visits/3/write-off 200 Idempotency-Key: none

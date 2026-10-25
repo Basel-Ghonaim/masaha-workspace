@@ -1,0 +1,12 @@
+feat(desk): list the space's customers
+
+Screen 14, «الزبائن», replaces the placeholder: the space's customers 20
+a page from the customers route, searched once typing pauses, with the
+status chips («مؤرشف» for the owner only), the kind and the payment.
+Every filter and the page live in the address, read by the contract's
+own rules so a value the server would refuse falls back, and a change
+replaces it and returns to the first page (S11). From 768 px a table of
+five columns, the name a link to the customer's file; cards below it,
+where the kind and the payment move into a sheet with their count (P5).
+The list's card words come from the desk's search card, so a customer
+reads the same in both.

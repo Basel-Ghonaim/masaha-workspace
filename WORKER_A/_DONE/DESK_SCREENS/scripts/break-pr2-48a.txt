@@ -1,0 +1,1000 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/subscriber/useSubscriberCheckIn
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx (7 tests | 3 failed) 12721ms
+   ❯ useSubscriberCheckIn (7)
+     × checks an active subscription in at once, with one key per check-in 3346ms
+     × keeps the key across a retry after no answer 4891ms
+     × says they are already here, the server’s warnings after, and clears and focuses the search 3127ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 4 passed (7)
+   Start at  13:23:16
+   Duration  30.85s (tests 42%, import 33%, transform 11%, environment 11%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx > useSubscriberCheckIn > checks an active subscription in at once, with one key per check-in
+TestingLibraryElementError: Unable to find an element with the text: (content) => content.replace(/[⁦-⁩]/g, "") === expected. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<input[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33maria-label[39m=[32m"Search"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mSara Khalid[0m
+          [36m</h3>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"card-description"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mdir[39m=[32m"ltr"[39m
+          [36m>[39m
+            [0m+970599000201[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-body-sm"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mExams by the hour[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"success"[39m
+          [36m>[39m
+            [0mActive[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-muted-foreground"[39m
+          [36m>[39m
+            [0muntil ⁨21 October⁩[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"neutral"[39m
+          [36m>[39m
+            [0mSettled[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-3 px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Check in ⁨Sara Khalid⁩"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCheck in[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_1_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_0_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mdir[39m=[32m"auto"[39m
+        [33mid[39m=[32m"radix-_r_1_"[39m
+      [36m>[39m
+        [0mCheck in · ⁨Sara Khalid⁩[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"rounded-md bg-muted motion-safe:animate-pulse h-5 w-3/4"[39m
+        [33mdata-slot[39m=[32m"skeleton"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+    [36m>[39m
+      [0mA visit is recorded under their name; it isn’t added to their file.[0m
+    [36m</p>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"[39m
+      [33mdata-slot[39m=[32m"dialog-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mBack[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck in anyway[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck in as a visit[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<input[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Search"[39m
+        [33mdata-aria-hidden[39m=[32m"true"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+        [33mdata-aria-hidden[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"card"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-header"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-heading-3"[39m
+            [33mdata-slot[39m=[32m"card-title"[39m
+          [36m>[39m
+            [36m<h3[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mSara Khalid[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+            [33mdata-slot[39m=[32m"card-description"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mdir[39m=[32m"ltr"[39m
+            [36m>[39m
+              [0m+970599000201[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-body-sm"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mExams by the hour[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"success"[39m
+            [36m>[39m
+              [0mActive[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"text-muted-foreground"[39m
+            [36m>[39m
+              [0muntil ⁨21 October⁩[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"neutral"[39m
+            [36m>[39m
+              [0mSettled[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap"[39m
+          [33mdata-slot[39m=[32m"card-footer"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check in ⁨Sara Khalid⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck in[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"dialog-overlay"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"radix-_r_1_"[39m
+      [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+      [33mdata-slot[39m=[32m"dialog-content"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mid[39m=[32m"radix-_r_0_"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+      [33mtabindex[39m=[32m"-1"...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx:67:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx > useSubscriberCheckIn > keeps the key across a retry after no answer
+TestingLibraryElementError: Unable to find an element with the text: No answer came back. Try again — it won’t be recorded twice.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<input[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33maria-label[39m=[32m"Search"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mSara Khalid[0m
+          [36m</h3>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"card-description"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mdir[39m=[32m"ltr"[39m
+          [36m>[39m
+            [0m+970599000201[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-body-sm"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mExams by the hour[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"success"[39m
+          [36m>[39m
+            [0mActive[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-muted-foreground"[39m
+          [36m>[39m
+            [0muntil ⁨21 October⁩[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"neutral"[39m
+          [36m>[39m
+            [0mSettled[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-3 px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Check in ⁨Sara Khalid⁩"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCheck in[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_4_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_3_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mdir[39m=[32m"auto"[39m
+        [33mid[39m=[32m"radix-_r_4_"[39m
+      [36m>[39m
+        [0mCheck in · ⁨Sara Khalid⁩[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"rounded-md bg-muted motion-safe:animate-pulse h-5 w-3/4"[39m
+        [33mdata-slot[39m=[32m"skeleton"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+    [36m>[39m
+      [0mA visit is recorded under their name; it isn’t added to their file.[0m
+    [36m</p>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"[39m
+      [33mdata-slot[39m=[32m"dialog-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mBack[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck in anyway[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck in as a visit[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<input[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Search"[39m
+        [33mdata-aria-hidden[39m=[32m"true"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+        [33mdata-aria-hidden[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"card"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-header"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-heading-3"[39m
+            [33mdata-slot[39m=[32m"card-title"[39m
+          [36m>[39m
+            [36m<h3[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mSara Khalid[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+            [33mdata-slot[39m=[32m"card-description"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mdir[39m=[32m"ltr"[39m
+            [36m>[39m
+              [0m+970599000201[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-body-sm"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mExams by the hour[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"success"[39m
+            [36m>[39m
+              [0mActive[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"text-muted-foreground"[39m
+            [36m>[39m
+              [0muntil ⁨21 October⁩[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"neutral"[39m
+            [36m>[39m
+              [0mSettled[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap"[39m
+          [33mdata-slot[39m=[32m"card-footer"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check in ⁨Sara Khalid⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck in[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"dialog-overlay"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"radix-_r_4_"[39m
+      [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+      [33mdata-slot[39m=[32m"dialog-content"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mid[39m=[32m"radix-_r_3_"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+      [33mtabindex[39m=[32m"-1"...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx:96:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx > useSubscriberCheckIn > says they are already here, the server’s warnings after, and clears and focuses the search
+TestingLibraryElementError: Unable to find an element with the text: (content) => content.replace(/[⁦-⁩]/g, "") === expected. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<input[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33maria-label[39m=[32m"Search"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mSara Khalid[0m
+          [36m</h3>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"card-description"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mdir[39m=[32m"ltr"[39m
+          [36m>[39m
+            [0m+970599000201[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-body-sm"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mExams by the hour[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"success"[39m
+          [36m>[39m
+            [0mActive[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-muted-foreground"[39m
+          [36m>[39m
+            [0muntil ⁨21 October⁩[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"neutral"[39m
+          [36m>[39m
+            [0mSettled[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center gap-3 px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Check in ⁨Sara Khalid⁩"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCheck in[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"dialog-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_g_"[39m
+    [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+    [33mdata-slot[39m=[32m"dialog-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_f_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mdata-slot[39m=[32m"dialog-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"dialog-title"[39m
+        [33mdir[39m=[32m"auto"[39m
+        [33mid[39m=[32m"radix-_r_g_"[39m
+      [36m>[39m
+        [0mCheck in · ⁨Sara Khalid⁩[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"rounded-md bg-muted motion-safe:animate-pulse h-5 w-3/4"[39m
+        [33mdata-slot[39m=[32m"skeleton"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+    [36m>[39m
+      [0mA visit is recorded under their name; it isn’t added to their file.[0m
+    [36m</p>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"[39m
+      [33mdata-slot[39m=[32m"dialog-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mBack[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck in anyway[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck in as a visit[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<input[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Search"[39m
+        [33mdata-aria-hidden[39m=[32m"true"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+        [33mdata-aria-hidden[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"card"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-header"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-heading-3"[39m
+            [33mdata-slot[39m=[32m"card-title"[39m
+          [36m>[39m
+            [36m<h3[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mSara Khalid[0m
+            [36m</h3>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+            [33mdata-slot[39m=[32m"card-description"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mdir[39m=[32m"ltr"[39m
+            [36m>[39m
+              [0m+970599000201[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-body-sm"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mExams by the hour[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"success"[39m
+            [36m>[39m
+              [0mActive[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"text-muted-foreground"[39m
+            [36m>[39m
+              [0muntil ⁨21 October⁩[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"neutral"[39m
+            [36m>[39m
+              [0mSettled[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap"[39m
+          [33mdata-slot[39m=[32m"card-footer"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check in ⁨Sara Khalid⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck in[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"dialog-overlay"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"radix-_r_g_"[39m
+      [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+      [33mdata-slot[39m=[32m"dialog-content"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mid[39m=[32m"radix-_r_f_"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+      [33mtabindex[39m=[32m"-1"...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx:192:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/subscriber/useSubscriberCheckIn

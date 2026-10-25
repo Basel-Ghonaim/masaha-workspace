@@ -1,0 +1,14 @@
+feat(desk): receive a payment for a visit
+
+The desk can now take a payment for a closed visit after its check-out:
+POST …/payments, its body naming the visit, with an Idempotency-Key.
+The payment is inserted first, so the ledger's refusals answer their
+codes before a phone is asked for; its trigger now also refuses a
+written-off visit (VISIT_WRITTEN_OFF, through the translation table).
+A retry answers the first payment with the sums as of now.
+
+If part stays unpaid, one rule now serves the check-out and the
+payment: a visit with a customer keeps it, and a phone that is not that
+customer's is refused (VISIT_HAS_CUSTOMER); a visit with none needs a
+phone. This resolves finding 100: an unpaid check-out no longer moves a
+customer's debt to whoever the phone belongs to.

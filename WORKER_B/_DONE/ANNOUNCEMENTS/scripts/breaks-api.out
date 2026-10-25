@@ -1,0 +1,141 @@
+== B7 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × the owner and reception post an announcement, 201, its state, audited announcement.created 414ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > the owner and reception post an announcement, 201, its state, audited announcement.created
+AssertionError: expected [] to deeply equal [ { actorId: 2, …(6) }, …(1) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B8 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × a retry with the same key answers the first, 201; two at once with one key make one 390ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a retry with the same key answers the first, 201; two at once with one key make one
+AssertionError: expected [ 201, 500 ] to deeply equal [ 201, 201 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B9 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × a retry with the same key answers the first, 201; two at once with one key make one 4391ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a retry with the same key answers the first, 201; two at once with one key make one
+Error: 2 request(s) never waited on a lock
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B10 (apps/api/src/modules/announcements/announcements.manage.routes.ts) broken run exit 1
+     × a missing or invalid key, and an invalid body, are 422 before anything is read 312ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a missing or invalid key, and an invalid body, are 422 before anything is read
+AssertionError: expected { type: [ 'invalid_choice' ], …(1) } to deeply equal { idempotencyKey: [ 'required' ] }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B11 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × a reception link ended while the post waits on the space's lock is refused 403, writing nothing 382ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > posting an announcement > a reception link ended while the post waits on the space's lock is refused 403, writing nothing
+AssertionError: expected 201 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B12 (apps/api/src/app.ts) broken run exit 1
+     × a stranger, another space's owner and the admin get not_found on every route 354ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > the announcements' routes > a stranger, another space's owner and the admin get not_found on every route
+AssertionError: expected 401 to be 404 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B13 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × an edit changes only what it sends, audited with before and after; the same values write nothing; textEn null clears; endsAt null removes the end 430ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/announcements.api.test.ts > editing an announcement > an edit changes only what it sends, audited with before and after; the same values write nothing; textEn null clears; endsAt null removes the end
+AssertionError: expected [ { actorId: 2, …(6) }, …(2) ] to deeply equal [ { actorId: 2, …(6) }, …(1) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B14 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × end now sets the end to now on a running one, audited; an ended one answers as it is; an upcoming one is ANNOUNCEMENT_NOT_STARTED 382ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/lifecycle.api.test.ts > ending an announcement now > end now sets the end to now on a running one, audited; an ended one answers as it is; an upcoming one is ANNOUNCEMENT_NOT_STARTED
+AssertionError: expected 500 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B15 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × start now sets the start to now on an upcoming one, audited; a started one answers as it is, nothing audited 666ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/lifecycle.api.test.ts > starting an announcement now > start now sets the start to now on an upcoming one, audited; a started one answers as it is, nothing audited
+AssertionError: expected undefined to match object { …(2) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B16 (apps/api/src/modules/announcements/announcements.service.ts) broken run exit 1
+     × delete is soft and 204, audited; again 204 writing nothing; then it leaves the list, the public page and the live status 700ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/lifecycle.api.test.ts > deleting an announcement > delete is soft and 204, audited; again 204 writing nothing; then it leaves the list, the public page and the live status
+PrismaClientKnownRequestError:
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B17 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 1
+     × an edit, an end or a start of a deleted or another space's announcement is not_found 626ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/announcements/lifecycle.api.test.ts > a deleted or another space's announcement > an edit, an end or a start of a deleted or another space's announcement is not_found
+AssertionError: expected 200 to be 404 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B18 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 0
+      Tests  1 passed | 3 skipped (4)
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+   !!! B18 STAYED GREEN
+== B19 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × a closure carries extension null, or its days, how many moved and who applied it; other types carry none 455ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/list.api.test.ts > the managed list > a closure carries extension null, or its days, how many moved and who applied it; other types carry none
+AssertionError: expected [ { id: 1, type: 'CLOSURE', …(6) } ] to deeply equal [ ObjectContaining{…} ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B20 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 1
+     × the summary counts running, upcoming and ended, and the started closures with no extension 357ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/list.api.test.ts > the summary > the summary counts running, upcoming and ended, and the started closures with no extension
+AssertionError: expected { running: 2, upcoming: 1, …(2) } to deeply equal { running: 2, upcoming: 1, …(2) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B21 (apps/api/src/app.ts) broken run exit 1
+     × reception reads the list and the summary; a stranger and the admin not_found 294ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/list.api.test.ts > the list's routes > reception reads the list and the summary; a stranger and the admin not_found
+AssertionError: expected 404 to be 200 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B22 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 1
+     × the page carries the running and upcoming announcements by start then id, each with its start and end; never an ended or deleted one 378ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/directory/page.api.test.ts > GET /spaces/:slug > the page carries the running and upcoming announcements by start then id, each with its start and end; never an ended or deleted one
+AssertionError: expected [ Array(5) ] to deeply equal [ Array(4) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B23 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 1
+     × at most 20 366ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/directory/page.api.test.ts > GET /spaces/:slug > at most 20
+AssertionError: expected [ …(21) ] to have a length of 20 but got 21
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B24 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 1
+     × a check-in during a running closure succeeds 201 with CLOSURE_IN_FORCE after SPACE_FULL and OUTSIDE_OPENING_HOURS; an outage, an ended or a deleted closure warns nothing 446ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/checkIn.api.test.ts > checking a visitor in > a check-in during a running closure succeeds 201 with CLOSURE_IN_FORCE after SPACE_FULL and OUTSIDE_OPENING_HOURS; an outage, an ended or a deleted closure warns nothing
+AssertionError: expected { success: true, …(2) } to not have property "meta"
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)

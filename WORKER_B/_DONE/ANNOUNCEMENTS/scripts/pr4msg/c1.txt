@@ -1,0 +1,12 @@
+feat(db): guard an extended closure
+
+Decision 6, refined by the owner's Q3: once a closure's subscriptions
+were extended it keeps its type and start, is never deleted, and its
+end only comes earlier, so a running closure can still end.
+announcements cannot read closure_extensions (subscriptions' table),
+and a service check would race with an extension, so the database
+holds it: the trigger announcements_guard_extended, translated to
+CLOSURE_EXTENDED (409).
+
+The extension gains its client key (request_id), unique on its own
+since an extension has no space column; existing rows get one first.

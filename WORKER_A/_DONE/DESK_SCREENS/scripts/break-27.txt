@@ -1,0 +1,61 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/check-out
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx (8 tests | 2 failed) 3097ms
+   ❯ useCheckOutDialog (8)
+     × says VISIT_ALREADY_CLOSED recorded nothing, and reads the quote again on PAYMENT_EXCEEDS_DUE 162ms
+     × says a 403 is no longer open to them, and reads their own spaces again 149ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed (8)
+   Start at  16:57:09
+   Duration  12.59s (import 43%, tests 25%, transform 18%, environment 11%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx > useCheckOutDialog > says VISIT_ALREADY_CLOSED recorded nothing, and reads the quote again on PAYMENT_EXCEEDS_DUE
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  Nothing was recorded. Another desk checked this visit out first, so this payment wasn’t recorded. Don’t take the money twice.[39m
+Received:
+[31m  We couldn’t check outNothing was recorded. This visit was already checked out; this payment was not recorded.[39m
+ ❯ src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx:245:46
+    243|     await received();
+    244|     await user.click(screen.getByRole('button', { name: heard('Check o…
+    245|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                                              ^
+    246|       'Nothing was recorded. Another desk checked this visit out first…
+    247|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx > useCheckOutDialog > says a 403 is no longer open to them, and reads their own spaces again
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  Nothing was recorded. This is no longer open to you at this space.[39m
+Received:
+[31m  We couldn’t check outNothing was recorded. You don’t have permission to do this.Reference: ⁦req-1⁩[39m
+ ❯ src/features/desk/hooks/check-out/useCheckOutDialog.component.test.tsx:297:46
+    295|     await user.click(screen.getByRole('button', { name: heard('Check o…
+    296|
+    297|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                                              ^
+    298|       'Nothing was recorded. This is no longer open to you at this spa…
+    299|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/check-out

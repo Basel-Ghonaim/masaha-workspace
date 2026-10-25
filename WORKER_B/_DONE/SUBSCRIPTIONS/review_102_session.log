@@ -1,0 +1,26 @@
+The review of #102 is written to `C:\dev\masaha\workspace\WORKER_B\SUBSCRIPTIONS\6_REVIEW_PR1_CLAUDE_CODE.md`. I read commit objects only and ran no tests or queries, so the performance point comes from reading the SQL, not from a measurement. CI was green on head `900eebb4`, the PR was `CLEAN`, and the head had not moved when I finished.
+
+**Verdict: #102 needs one fix round.** Everything else can go to PR 2's first commit or be recorded as findings.
+
+1. **Fix round on #102 (should-fix, serious).** The query that computes balances joins payments to items with an `OR` (`payments.repository.ts`, `balancesOf`).
+   - The SQL is the plan's own (D5), and the executor copied it faithfully. PostgreSQL can't hash-join on that, so each item is checked against every paid item of the space.
+   - It runs over the whole space on every list page, every payment filter and every file.
+   - In PR 2 it will also run inside the subscribe's transaction, while the space's lock is held.
+   - T26 seeds no payments, so the test never exercises it.
+   - Fix: join two separate aggregates (or one indexed lookup per item), limit the items to the customers asked for, and give T26 payments or record the query plans.
+2. **T26 no longer proves "the ids are one parameter" (small, PR 2).** At 20,000 ids, binding one parameter per id still fits under PostgreSQL's 65,535 limit, so that regression would pass the test. The executor saw it fail only in an uncommitted scratch run. A list call with 70,000 ids that don't exist needs no seed data.
+3. **The phone search misses Israeli numbers typed in full, and any number typed with `00` (small, PR 2).** `0521234567` doesn't find a customer stored as `+972521234567`. The +970 test passes only because `970` ends in 0. Fix: when the term is a full phone number, normalise it and match exactly.
+4. **Three documents are now untrue (small, PR 2).**
+   - `occupancy.md:25` says customers and subscriptions have no capability document.
+   - ADR 0015 rule 4 says customers carry no key. The plan puts this line in PR 2, but it contradicts `main` as soon as #102 merges.
+   - The head sentence of a `payments.md` decision is stale.
+5. **The auto check-out can stall silently (nit, plausible; record as finding 121).** If 500 or more stays always fail to close, they fill every batch while the job answers 200. No known path causes this today.
+
+The report also covers:
+- **Findings to record:** an integer overflow in `subscription_usage` on extreme prices (finding 6) and a lost update on customer edits (finding 8, the same class as finding 115).
+- **The owner's call:** reception can read an archived customer's file by id (finding 7).
+- **Small nits:** in finding 9.
+- **The departures:** each one judged; all were acceptable, apart from T26's size.
+- **A "Checked and fine" list:** authorization, money, the customer rules, status, the migrations, the documents and the commits.
+
+Throughout, the report marks what I saw in the code apart from what comes only from the executor's report.

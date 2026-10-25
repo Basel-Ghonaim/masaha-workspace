@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/write-off
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/write-off/useWriteOffDialog.component.test.tsx (3 tests | 1 failed) 5737ms
+   ❯ useWriteOffDialog (3)
+     × never sends a write-off or its undo again by itself after no answer 4664ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  10:22:55
+   Duration  15.99s (tests 36%, import 36%, transform 14%, environment 10%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/write-off/useWriteOffDialog.component.test.tsx > useWriteOffDialog > never sends a write-off or its undo again by itself after no answer
+AssertionError: expected [ { …(19) }, { …(19) }, { …(19) } ] to have a length of 1 but got 3
+
+- Expected
++ Received
+
+- 1
++ 3
+
+ ❯ src/features/desk/hooks/write-off/useWriteOffDialog.component.test.tsx:145:34
+    143|       await vi.advanceTimersByTimeAsync(10_000);
+    144|     });
+    145|     expect(of(requests, 'post')).toHaveLength(1);
+       |                                  ^
+    146|
+    147|     lost = false;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/write-off

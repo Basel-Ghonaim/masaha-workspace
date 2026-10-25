@@ -1,0 +1,51 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (18 tests | 1 failed) 10769ms
+   ❯ useSubscriptionSheet (18)
+     × sends the amount recorded, never the amount typed: ₪200 on a ₪150 price records ₪150 375ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > sends the amount recorded, never the amount typed: ₪200 on a ₪150 price records ₪150
+AssertionError: expected { packageId: 3, …(2) } to match object { payment: { …(2) } }
+(2 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "payment": {
+-     "amountAgorot": 15000,
++     "amountAgorot": 20000,
+      "method": "CASH",
+    },
+  }
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:639:24
+    637|     await findToast(heard('Subscription saved · Sara Khalid'));
+    638|     const [sent] = posts(requests);
+    639|     expect(sent?.body).toMatchObject({ payment: { amountAgorot: record…
+       |                        ^
+    640|   });
+    641| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  16:32:32
+   Duration  20.15s (tests 54%, import 25%, transform 12%, environment 7%, setup 2%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet

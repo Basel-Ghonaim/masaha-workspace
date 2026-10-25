@@ -1,0 +1,19 @@
+I've reviewed #123 (head `ff8743c8`). **Verdict: mergeable.** It has no blockers and nothing that needs a fix round. CI is green on that head, GitHub shows it CLEAN, and the head didn't move while I reviewed.
+
+**Findings:**
+1. **A finding to record as 151 (owner's decision, not a fix here).** Say the desk renews a subscription early, so the renewal starts the day after the old end. If a closure is then extended, only the old subscription moves. Its new end runs into the renewal, which still starts on its original date. The customer's extra days end up running at the same time as a renewal they already bought, so the compensation is effectively lost. The plan named only a different overlap case (a renewal that starts during the closure). I saw the mechanism in the code; how much it hurts at the desk is only plausible, because I didn't confirm which subscription the desk checks in when two run at once.
+2. **Nit:** retrying with a key checks only the closure, not the space in the URL. An owner of space B who had space A's key would get A's extension back (days, count, who applied it). That needs another client's UUID, so the risk is negligible.
+3. **Nit:** `data-model.md:23` says the extension's key is "unique within its space". The schema and line 140 of the same document say it is unique on its own.
+4. **Nit:** in `subscriptions.md`, the `#123` history line sits above `#118`, out of order.
+
+Findings 2–4 belong in worker B's next PR as its first commit.
+
+**Also confirmed:**
+- **Error texts:** both Arabic lines are byte-identical to the approved text.
+- **Departures:** I judged every departure and every decision the executor took without the owner as right or acceptable. Moving `daysFrom` leaves `subscriptionStatus` behaving exactly as before.
+- **Trigger:** changing a closure's type to anything else can't get past it.
+- **No bypass:** every edit and soft delete goes through the one update path, so nothing avoids the trigger.
+
+The red runs, the deliberate breaks and the real run appear only in the executor's report; I ran nothing myself, as the rules asked.
+
+Report: `C:\dev\masaha\workspace\WORKER_B\ANNOUNCEMENTS\6_REVIEW_PR4_CLAUDE_CODE.md`

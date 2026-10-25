@@ -1,0 +1,41 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+ ❯ src/subscriptions/requests.unit.test.ts (4 tests | 2 failed) 12ms
+   ❯ the check-ins query (2)
+     × open=true, or a range of Gaza dates of at most 92 days, to not before from 3ms
+     × neither, a range half given, or both: each is refused 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/subscriptions/requests.unit.test.ts > the check-ins query > open=true, or a range of Gaza dates of at most 92 days, to not before from
+TypeError: Cannot read properties of undefined (reading 'parse')
+ ❯ src/subscriptions/requests.unit.test.ts:53:32
+     51|
+     52|   it('open=true, or a range of Gaza dates of at most 92 days, to not b…
+     53|     expect(checkInsQuerySchema.parse({ open: 'true' })).toMatchObject(…
+       |                                ^
+     54|     expect(checkInsQuerySchema.parse({ from: '2026-07-21', to: '2026-1…
+     55|       from: '2026-07-21',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/subscriptions/requests.unit.test.ts > the check-ins query > neither, a range half given, or both: each is refused
+TypeError: Cannot read properties of undefined (reading 'safeParse')
+ ❯ errors src/subscriptions/requests.unit.test.ts:48:40
+     46| describe('the check-ins query', () => {
+     47|   const errors = (input: unknown) => {
+     48|     const result = checkInsQuerySchema.safeParse(input);
+       |                                        ^
+     49|     return result.success ? null : toFieldErrors(result.error.issues, …
+     50|   };
+ ❯ src/subscriptions/requests.unit.test.ts:66:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  15:49:22
+   Duration  590ms (transform 51%, import 44%, tests 3%, worker 2%)
+

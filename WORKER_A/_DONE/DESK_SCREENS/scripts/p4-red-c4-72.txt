@@ -1,0 +1,58 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/sheetRequest
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/services/sheetRequest.unit.test.ts (6 tests | 1 failed) 19ms
+   ❯ sheetRequest (6)
+     × sends a published price by its key and the name the desk gives it, never a price id 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/sheetRequest.unit.test.ts > sheetRequest > sends a published price by its key and the name the desk gives it, never a price id
+AssertionError: expected false to deeply equal { subscription: { …(3) } }
+
+- Expected:
+{
+  "subscription": {
+    "payment": {
+      "amountAgorot": 15000,
+      "method": "CASH",
+    },
+    "published": {
+      "audience": "STUDENT",
+      "name": "Monthly · students",
+      "period": "MONTH",
+    },
+    "startsOn": "2026-11-01",
+  },
+}
+
++ Received:
+false
+
+ ❯ src/features/desk/services/sheetRequest.unit.test.ts:116:43
+    114|     );
+    115|     const result = sheetSchema(false).safeParse(input);
+    116|     expect(result.success && result.data).toEqual({
+       |                                           ^
+    117|       subscription: {
+    118|         published: { period: 'MONTH', audience: 'STUDENT', name: 'Mont…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  15:00:10
+   Duration  805ms (transform 63%, import 33%, tests 3%, worker 1%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/sheetRequest

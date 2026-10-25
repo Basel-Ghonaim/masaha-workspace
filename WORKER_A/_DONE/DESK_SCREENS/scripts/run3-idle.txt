@@ -1,0 +1,9 @@
+· idle from 2026-10-26T08:30:55.670Z
+· idle until 2026-10-26T08:46:55.672Z
+· the page after 16 minutes, untouched: /login?next=%2Fdashboard%2Fspaces%2F7%2Fdesk
+· landed /login?next=%2Fdashboard%2Fspaces%2F7%2Fdesk
+· line: انتهت جلستك بعد 15 دقيقة دون نشاط. سجّل الدخول من جديد.
+shot 3-idle-reception-ar-light-1440
+·    2026-10-26T08:30:50.420Z POST /api/v1/auth/login 200 Idempotency-Key: none body: {"email":"demo-reception@example.com","password":"<hidden>"}
+·    2026-10-26T08:45:57.002Z GET /api/v1/manage/spaces/7/occupancy 401 Idempotency-Key: none
+·    2026-10-26T08:45:57.059Z POST /api/v1/auth/refresh 401 Idempotency-Key: none

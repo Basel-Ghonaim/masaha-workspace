@@ -1,0 +1,16 @@
+docs(customers): say what the customers' PR built
+
+Three documents were left untrue by #102: occupancy said customers and
+subscriptions had no capability document, and payments still described
+the uncollected visits as composed from visits' ids. Both now say what
+is built. ADR 0015's line on keys is revised with the subscriptions'
+key, later in this PR.
+
+The contract states that reception reads an archived customer's file
+(their debts are collected at the desk, the owner's decision), and
+CUSTOMER_ARCHIVED's comment says edited, as the contract does.
+
+Findings 121-123 recorded from the review of #102: the auto check-out
+stalling behind stays that always fail, subscription_usage overflowing
+integer on extreme prices, and a delayed edit retry reverting another
+desk's edit.

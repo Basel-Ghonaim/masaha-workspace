@@ -1,0 +1,258 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+26 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/void.api.test.ts (13 tests | 12 failed) 17560ms
+   ❯ voiding a payment (6)
+     × the owner voids a payment with a reason: 200 with the row, its void at now by the owner with the reason; audited payment.voided 607ms
+     × reception is 403 before the body is read (an empty body), a stranger, another space’s owner and the admin not_found 387ms
+     × a missing or blank reason is 422, writing nothing 336ms
+     × a second void answers it as it is, its first reason and voider, writing nothing and auditing nothing 357ms
+     × an owner whose link ended while the void waits on the space’s lock is 403, writing nothing 4318ms
+   ❯ a written-off visit (2)
+     × a written-off visit's payment is VISIT_WRITTEN_OFF, writing nothing; once the write-off is undone it is voided 432ms
+     × a void waiting while its visit is written off is VISIT_WRITTEN_OFF 4310ms
+   ❯ what a void changes (4)
+     × a fixed subscription paid in full, its payment voided: the statement answers paid 0, its balance the price; the price may then be corrected below the old paid 435ms
+     × a visit with a customer, its payment voided, counts in the customer's debt and the file's unpaid visits; a usage-based subscription's credit shrinks by it 422ms
+     × voiding one of an item’s two payments leaves the other, the item and every other payment as they were 354ms
+     × a retry of the payment's request after its void answers it, 201, records nothing, the sums showing the void 322ms
+   ❯ two voids at once (1)
+     × two voids at once void it once: the second answers the first’s reason 4314ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > voiding a payment > the owner voids a payment with a reason: 200 with the row, its void at now by the owner with the reason; audited payment.voided
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:125:29
+    123|
+    124|     const response = await voidIt(owner, id);
+    125|     expect(response.status).toBe(200);
+       |                             ^
+    126|     expect(dataOf(response)).toEqual({
+    127|       id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > voiding a payment > reception is 403 before the body is read (an empty body), a stranger, another space’s owner and the admin not_found
+AssertionError: expected 404 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:164:28
+    162|
+    163|     const refused = await voidIt(reception, id, {});
+    164|     expect(refused.status).toBe(403);
+       |                            ^
+    165|     expect(errorOf(refused).type).toBe('forbidden');
+    166|     for (const caller of [stranger, unrelatedOwner, admin]) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > voiding a payment > a missing or blank reason is 422, writing nothing
+AssertionError: expected 404 to be 422 // Object.is equality
+
+- Expected
++ Received
+
+- 422
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:180:28
+    178|
+    179|     const missing = await voidIt(owner, id, {});
+    180|     expect(missing.status).toBe(422);
+       |                            ^
+    181|     expect(errorOf(missing).errors).toEqual({ reason: ['required'] });
+    182|     const blank = await voidIt(owner, id, { reason: '   ' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > voiding a payment > a second void answers it as it is, its first reason and voider, writing nothing and auditing nothing
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:193:26
+    191|     const { id } = await pay({ visitId: visit.id }, 2_000);
+    192|     const first = await voidIt(owner, id);
+    193|     expect(first.status).toBe(200);
+       |                          ^
+    194|
+    195|     const secondOwner = await signInOwnerOf(spaceId);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > voiding a payment > an owner whose link ended while the void waits on the space’s lock is 403, writing nothing
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/desk/void.api.test.ts:230:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > a written-off visit > a written-off visit's payment is VISIT_WRITTEN_OFF, writing nothing; once the write-off is undone it is voided
+AssertionError: expected 404 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:257:28
+    255|
+    256|     const refused = await voidIt(owner, id);
+    257|     expect(refused.status).toBe(409);
+       |                            ^
+    258|     expect(errorOf(refused)).toMatchObject({ type: 'conflict', code: '…
+    259|     expect(await storedVoid(id)).toEqual(NOT_VOIDED);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > a written-off visit > a void waiting while its visit is written off is VISIT_WRITTEN_OFF
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/desk/void.api.test.ts:277:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > what a void changes > a fixed subscription paid in full, its payment voided: the statement answers paid 0, its balance the price; the price may then be corrected below the old paid
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:312:46
+    310|     expect(errorOf(belowPaid).code).toBe('PRICE_BELOW_PAID');
+    311|
+    312|     expect((await voidIt(owner, id)).status).toBe(200);
+       |                                              ^
+    313|     expect(await statement()).toMatchObject({ paidAgorot: 0, balanceAg…
+    314|     expect((await correct()).status).toBe(200);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > what a void changes > a visit with a customer, its payment voided, counts in the customer's debt and the file's unpaid visits; a usage-based subscription's credit shrinks by it
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:344:59
+    342|     expect(await file()).toEqual({ debtAgorot: 0, creditAgorot: 1_000,…
+    343|
+    344|     expect((await voidIt(owner, visitPayment.id)).status).toBe(200);
+       |                                                           ^
+    345|     expect((await voidIt(owner, ahead.id)).status).toBe(200);
+    346|     expect(await file()).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > what a void changes > voiding one of an item’s two payments leaves the other, the item and every other payment as they were
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:370:53
+    368|     const before = await everything();
+    369|
+    370|     expect((await voidIt(owner, voided.id)).status).toBe(200);
+       |                                                     ^
+    371|     const after = await everything();
+    372|     expect(after).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > what a void changes > a retry of the payment's request after its void answers it, 201, records nothing, the sums showing the void
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/desk/void.api.test.ts:397:54
+    395|     expect(dataOf(first)).toMatchObject({ paidAgorot: 1_000, balanceAg…
+    396|
+    397|     expect((await voidIt(owner, payment.id)).status).toBe(200);
+       |                                                      ^
+    398|     const retry = await receive();
+    399|     expect(retry.status).toBe(201);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/12]⎯
+
+ FAIL  |api| src/modules/desk/void.api.test.ts > two voids at once > two voids at once void it once: the second answers the first’s reason
+Error: 1 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout test/locks.ts:65:7
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ whileHeld test/locks.ts:61:3
+ ❯ src/modules/desk/void.api.test.ts:410:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/12]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  12 failed | 1 passed (13)
+   Start at  15:44:47
+   Duration  26.80s (tests 81%, transform 11%, import 7%, setup 1%)
+

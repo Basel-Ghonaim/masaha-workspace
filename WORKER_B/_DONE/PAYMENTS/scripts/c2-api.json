@@ -1,0 +1,27 @@
+[
+  {
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "  recordedById: true,\n} as const;\n",
+    "new": "  recordedById: true,\n} as const;\n\nconst ITEM_PAYMENT = { ...VISIT_PAYMENT, voidedAt: true, voidedById: true, voidReason: true } as const;\n"
+  },
+  {
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "    /** Inserts the payment; the insert trigger checks it against its item's due. */",
+    "new": "    /**\n     * The space's payment, its row locked (`FOR UPDATE`) in the caller's transaction, voided or not;\n     * `null` when the space has none with this id.\n     */\n    async lockIn(spaceId: number, id: number, tx: Tx): Promise<ItemPaymentRow | null> {\n      const locked = await tx.$queryRaw<{ id: number }[]>`\n        SELECT id FROM payments WHERE id = ${id} AND space_id = ${spaceId} FOR UPDATE`;\n      if (locked.length === 0) return null;\n      return tx.payment.findUniqueOrThrow({ where: { id }, select: ITEM_PAYMENT });\n    },\n\n    /** Voids the payment: its void's three columns, and nothing else (the change trigger's rule). */\n    void(\n      id: number,\n      { at, byId, reason }: { at: Date; byId: number; reason: string },\n      tx: Tx,\n    ): Promise<ItemPaymentRow> {\n      return tx.payment.update({\n        where: { id },\n        data: { voidedAt: at, voidedById: byId, voidReason: reason },\n        select: ITEM_PAYMENT,\n      });\n    },\n\n    /** Inserts the payment; the insert trigger checks it against its item's due. */"
+  },
+  {
+    "file": "apps/api/src/modules/payments/payments.mapper.ts",
+    "old": "import type { ItemPayment, VisitPayment } from '@masaha/shared/payments';",
+    "new": "import type { ItemPayment, PaymentItem, PaymentRow, VisitPayment } from '@masaha/shared/payments';"
+  },
+  {
+    "file": "apps/api/src/modules/payments/payments.mapper.ts",
+    "old": "        ? { at: voidedAt.toISOString(), byId: voidedById, reason: voidReason }\n        : null,\n  };\n}\n",
+    "new": "        ? { at: voidedAt.toISOString(), byId: voidedById, reason: voidReason }\n        : null,\n  };\n}\n\n/** A payment as the payments list shows it, with the names its item, customer and people have. */\nexport function toPaymentRow(\n  row: ItemPaymentRow,\n  names: {\n    item: PaymentItem;\n    customer: { id: number; name: string } | null;\n    recordedBy: { id: number; name: string };\n    voidedBy: { id: number; name: string } | null;\n  },\n): PaymentRow {\n  const { voidedAt, voidReason } = row;\n  return {\n    id: row.id,\n    amountAgorot: row.amountAgorot,\n    method: row.method,\n    note: row.note,\n    receivedAt: row.receivedAt.toISOString(),\n    item: names.item,\n    customer: names.customer,\n    recordedBy: names.recordedBy,\n    voided:\n      voidedAt && names.voidedBy && voidReason !== null\n        ? { at: voidedAt.toISOString(), by: names.voidedBy, reason: voidReason }\n        : null,\n  };\n}\n"
+  },
+  {
+    "file": "apps/api/src/app.ts",
+    "old": "  const payments = createPaymentsService({ audit: writeAudit, visits });",
+    "new": "  const payments = createPaymentsService({\n    audit: writeAudit,\n    visits,\n    users,\n    customers,\n    subscriptions,\n  });"
+  }
+]

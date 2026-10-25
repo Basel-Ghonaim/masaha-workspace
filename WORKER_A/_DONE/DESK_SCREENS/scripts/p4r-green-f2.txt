@@ -1,0 +1,549 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/menu src/features/desk/components/sheet src/features/desk/components/search src/features/desk/components/customers src/features/desk/components/file src/features/desk/components/statement src/features/desk/hooks/subscriber/useSubscriberCheckIn src/features/desk/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 22 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "requires the reason of a custom price, and sends nothing without it". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "creates a new customer then subscribes them with two keys; a refused subscribe keeps the customer and is sent alone". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "says a new customer saved with no subscription once the sheet is closed". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "asks a new customer’s phone while something stays owed". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "asks the prior debts plus the new price; the toast says the price, the parts and the debt from the answer, with the debt warning". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "renews from the statement’s start, with the renewed one; a renewal renewed meanwhile is worded". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "subscribes from a published price by its key and name, never a price id, at the price’s amount". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "says a published price changed or removed, keeps the sheet, and reads the prices again". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "says a published price now lower than the amount, keeps the sheet, and reads the prices again". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "shows every choice on «Change package», and sends nothing". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "reads the choices again on «Try again» when they failed, and sends nothing". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "says no answer, not «not saved», when the subscribe’s answer is lost, and retries with its key". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "retries a lost subscribe with the same key, the customer not created again". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "renews a subscription from a published price with that price chosen, its amount on the submit". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "chooses nothing for a renewal it cannot match, the submit blocked until a choice". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "names a known customer’s new subscription, the package’s terms a plain line". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "sends the amount recorded, never the amount typed: ₪200 on a ₪150 price records ₪150". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "has no accessibility violations at 390 px". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "sends the amount recorded, never the amount typed: ₪100 on a ₪150 price records ₪100". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "has no accessibility violations at 1440 px". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: returnFocus is not a function
+ ❯ onCloseAutoFocus src/features/desk/components/sheet/SubscriptionSheet.tsx:65:26
+     63|         }}
+     64|         onCloseAutoFocus={(event) => {
+     65|           const target = returnFocus();
+       |                          ^
+     66|           if (target?.isConnected === true) {
+     67|             event.preventDefault();
+ ❯ Object.handleEvent [as current] ../../node_modules/@radix-ui/primitive/dist/index.mjs:8:27
+ ❯ HTMLDivElement.<anonymous> ../../node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs:11:65
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+ ❯ innerInvokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:378:16
+ ❯ invokeEventListeners ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:320:3
+ ❯ HTMLDivElementImpl._dispatch ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:269:9
+ ❯ HTMLDivElementImpl.dispatchEvent ../../node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:137:17
+ ❯ HTMLDivElement.dispatchEvent ../../node_modules/jsdom/lib/generated/idl/EventTarget.js:240:20
+ ❯ Timeout._onTimeout ../../node_modules/@radix-ui/react-focus-scope/dist/index.mjs:97:23
+
+This error originated in "src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  9 passed (9)
+      Tests  45 passed (45)
+     Errors  22 errors
+   Start at  16:37:21
+   Duration  26.77s (import 54%, tests 18%, environment 15%, transform 8%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/menu src/features/desk/components/sheet src/features/desk/components/search src/features/desk/components/customers src/features/desk/components/file src/features/desk/components/statement src/features/desk/hooks/subscriber/useSubscriberCheckIn src/features/desk/hooks/sheet

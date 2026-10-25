@@ -1,0 +1,12 @@
+feat(subscriptions): preview a closure's extension
+
+Before extending, the owner sees the days the server proposes and how
+many subscriptions the closure covered (decision 3 and 4): from the
+Gaza day of its start to the day of its last instant, so an end at
+midnight covers the day before (S4), to today while it runs; at most
+365 days. The covered rule is one SQL fragment, so the extension will
+move exactly what the preview counted. An applied extension is
+answered instead, with how many it moved.
+
+daysFrom moves from subscriptionStatus.ts to the shared Gaza time,
+where closureSpan needs it too: one function, not a copy.

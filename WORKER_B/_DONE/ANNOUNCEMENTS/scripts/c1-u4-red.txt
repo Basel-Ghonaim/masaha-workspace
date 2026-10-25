@@ -1,0 +1,36 @@
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run src/announcements/requests.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+ ❯ src/announcements/requests.unit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/announcements/requests.unit.test.ts [ src/announcements/requests.unit.test.ts ]
+Error: Cannot find module './requests.ts' imported from C:/dev/masaha/app-b/packages/shared/src/announcements/requests.unit.test.ts
+ ❯ src/announcements/requests.unit.test.ts:4:1
+      2|
+      3| import { toFieldErrors } from '../core/index.ts';
+      4| import {
+       | ^
+      5|   announcementsQuerySchema,
+      6|   createAnnouncementSchema,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  11:56:45
+   Duration  598ms (worker 97%, environment 3%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\packages\shared
+npm error workspace @masaha/shared@0.0.0
+npm error location C:\dev\masaha\app-b\packages\shared
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run src/announcements/requests.unit.test.ts

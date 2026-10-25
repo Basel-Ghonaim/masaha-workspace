@@ -1,0 +1,60 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+26 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/db/payments.api.test.ts (18 tests | 1 failed) 5142ms
+   ❯ the due (8)
+     × a written-off visit's payment is not voided: payments_visit_written_off; once undone it is 278ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/db/payments.api.test.ts > the due > a written-off visit's payment is not voided: payments_visit_written_off; once undone it is
+AssertionError: promise resolved "{ id: 1, spaceId: 1, …(12) }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "amountAgorot": 1000,
++   "createdAt": 2026-10-24T13:34:51.959Z,
++   "id": 1,
++   "idempotencyKey": "6139e876-b472-4a7d-8940-820bec0ef75a",
++   "method": "CASH",
++   "note": null,
++   "receivedAt": 2026-10-24T13:34:51.959Z,
++   "recordedById": 1,
++   "spaceId": 1,
++   "subscriptionId": null,
++   "visitId": 1,
++   "voidReason": "Recorded twice",
++   "voidedAt": 2026-10-24T13:34:51.971Z,
++   "voidedById": 2,
+  }
+
+ ❯ src/db/payments.api.test.ts:228:73
+    226|     const voided = { voidedAt: new Date(), voidedById: owner.id, voidR…
+    227|
+    228|     await expect(prisma.payment.update({ where: { id }, data: voided }…
+       |                                                                         ^
+    229|       /payments_visit_written_off/,
+    230|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 17 passed (18)
+   Start at  15:34:44
+   Duration  8.72s (tests 94%, transform 3%, setup 3%)
+

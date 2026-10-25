@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/occupancy/hooks/now/usePresentList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/occupancy/hooks/now/usePresentList.component.test.tsx (5 tests | 1 failed) 585ms
+   ❯ usePresentList (5)
+     × keeps the rows after a failed refresh, and says it shows the last list 164ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  16:20:35
+   Duration  10.24s (import 53%, transform 21%, environment 16%, tests 6%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/occupancy/hooks/now/usePresentList.component.test.tsx > usePresentList > keeps the rows after a failed refresh, and says it shows the last list
+AssertionError: expected 'empty' to be 'ready' // Object.is equality
+
+Expected: "ready"
+Received: "empty"
+
+ ❯ src/features/occupancy/hooks/now/usePresentList.component.test.tsx:166:34
+    164|       expect(result.current.refreshFailure).toBe('We couldn’t refresh;…
+    165|     });
+    166|     expect(result.current.state).toBe('ready');
+       |                                  ^
+    167|     expect(result.current.rows).toHaveLength(3);
+    168|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/occupancy/hooks/now/usePresentList

@@ -1,0 +1,1232 @@
+
+> @masaha/api@0.0.0 dev
+> tsx watch --conditions=@masaha/source --env-file-if-exists=.env src/server.ts | pino-pretty
+
+[12:08:02.625] [32mINFO[39m (11880): [36mAPI listening[39m
+    [35mport[39m: 3320
+    [35menv[39m: "development"
+[12:08:02.686] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "8ae97742-8c8d-46ef-9fd1-9f3cdeded824",
+      "method": "GET",
+      "url": "/health",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "user-agent": "curl/8.21.0",
+        "accept": "*/*"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 61641
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "8ae97742-8c8d-46ef-9fd1-9f3cdeded824",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "64",
+        "etag": "W/\"40-bNqKuUTp2sCFc78ATggfO8DZCx4\""
+      }
+    }
+    [35mresponseTime[39m: 15
+[12:08:12.708] [32mINFO[39m (11880): [36mjob ran[39m
+    [35mjob[39m: "visits.autoCheckOut"
+    [35mvisits[39m: 0
+    [35mremaining[39m: 0
+    [35mfailed[39m: 0
+    [35mms[39m: 97
+[12:08:12.719] [32mINFO[39m (11880): [36mjob ran[39m
+    [35mjob[39m: "subscriptions.autoCheckOut"
+    [35mcheckIns[39m: 0
+    [35mremaining[39m: 0
+    [35mfailed[39m: 0
+    [35mms[39m: 11
+[12:08:22.299] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "8b9a9cac-c04f-4d41-9748-b6f6197a3f6b",
+      "method": "POST",
+      "url": "/api/v1/auth/login",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate",
+        "content-length": "69"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "8b9a9cac-c04f-4d41-9748-b6f6197a3f6b",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "set-cookie": "[Redacted]",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "426",
+        "etag": "W/\"1aa-AuClqeFQWQlZEQat/7Jkaybekv4\""
+      }
+    }
+    [35mresponseTime[39m: 363
+[12:08:22.362] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "b6d6c7fe-3768-4f42-a573-5d38371399fc",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/occupancy",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "b6d6c7fe-3768-4f42-a573-5d38371399fc",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "100",
+        "etag": "W/\"64-8gLyYd1pnJSg80GMPX8xfd+3aQY\""
+      }
+    }
+    [35mresponseTime[39m: 53
+[12:08:22.392] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "520ce3da-b86b-43f6-b4d0-9e2c52f3db7c",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/check-ins?open=true",
+      "query": {
+        "open": "true"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "520ce3da-b86b-43f6-b4d0-9e2c52f3db7c",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "26",
+        "etag": "W/\"1a-s3B6blipWxCo2IriQlJeaz0uh7I\""
+      }
+    }
+    [35mresponseTime[39m: 27
+[12:08:22.428] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "77564576-8361-4522-8875-4e95fb88b189",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/uncollected-visits?page=1&limit=50",
+      "query": {
+        "page": "1",
+        "limit": "50"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "77564576-8361-4522-8875-4e95fb88b189",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1048",
+        "etag": "W/\"418-jjj+pxs7t304ASddsnYZWdvv+Zk\""
+      }
+    }
+    [35mresponseTime[39m: 34
+[12:08:22.486] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "dbfcdcbf-def5-401c-90fb-28bcb94f7e7f",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers?page=1&limit=50",
+      "query": {
+        "page": "1",
+        "limit": "50"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "dbfcdcbf-def5-401c-90fb-28bcb94f7e7f",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1380",
+        "etag": "W/\"564-2dtbZsTsz4N/+uPcbezQrrqQ1lI\""
+      }
+    }
+    [35mresponseTime[39m: 55
+[12:08:22.540] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "535a8043-4162-4869-9504-47eccc94b5ef",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/8",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "535a8043-4162-4869-9504-47eccc94b5ef",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "814",
+        "etag": "W/\"32e-NGK3EtVSt28JnAo6TU3jF0ZXpSE\""
+      }
+    }
+    [35mresponseTime[39m: 37
+[12:08:22.569] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "a9d18575-716f-4c0a-8020-400b061a2ea9",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/5",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "a9d18575-716f-4c0a-8020-400b061a2ea9",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "704",
+        "etag": "W/\"2c0-KjIUU2zB1qUMiJ33+451gX2uoZM\""
+      }
+    }
+    [35mresponseTime[39m: 25
+[12:08:22.616] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "9a2a1cc7-e7e3-4db4-9eb7-1687b7b93140",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/6",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "9a2a1cc7-e7e3-4db4-9eb7-1687b7b93140",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "720",
+        "etag": "W/\"2d0-ogxoElBwLwGSDm7owPVhnFIIAdk\""
+      }
+    }
+    [35mresponseTime[39m: 34
+[12:08:22.649] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "559c4f94-51d4-47b2-a94e-b41cfa78ab34",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/1",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "559c4f94-51d4-47b2-a94e-b41cfa78ab34",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "677",
+        "etag": "W/\"2a5-LsVKorCVBIUV+oMHlkZ7LI79+OY\""
+      }
+    }
+    [35mresponseTime[39m: 18
+[12:08:22.670] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "cf28b2b9-117a-4bcd-a115-940915d3a62a",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/2",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "cf28b2b9-117a-4bcd-a115-940915d3a62a",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "665",
+        "etag": "W/\"299-u5nBUwGx0k5yfl35lXsORO8/6Ik\""
+      }
+    }
+    [35mresponseTime[39m: 20
+[12:08:22.696] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "6e74eee7-e3f2-484d-9f74-1ccee0f6da63",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/3",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "6e74eee7-e3f2-484d-9f74-1ccee0f6da63",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "702",
+        "etag": "W/\"2be-LEAhNQ1U2LDlXaqpcfLYTrlrjQo\""
+      }
+    }
+    [35mresponseTime[39m: 19
+[12:08:22.716] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "cf084b08-676c-49a1-8d67-730861e43b44",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/4",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 14
+    [35mrole[39m: "OWNER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "cf084b08-676c-49a1-8d67-730861e43b44",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "698",
+        "etag": "W/\"2ba-6sZVv9oNNm/I8RUwsRUNTbYSwc0\""
+      }
+    }
+    [35mresponseTime[39m: 17
+[12:08:23.001] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "bde892bc-1cee-4647-8f46-87a6abc1f38e",
+      "method": "POST",
+      "url": "/api/v1/auth/login",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate",
+        "content-length": "73"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "bde892bc-1cee-4647-8f46-87a6abc1f38e",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "set-cookie": "[Redacted]",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "435",
+        "etag": "W/\"1b3-SE5q2r1atZXV7TvxXbyvoOZNSu8\""
+      }
+    }
+    [35mresponseTime[39m: 273
+[12:08:23.025] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "be660234-990c-48ce-9025-d33eafa7e284",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/occupancy",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "be660234-990c-48ce-9025-d33eafa7e284",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "100",
+        "etag": "W/\"64-8gLyYd1pnJSg80GMPX8xfd+3aQY\""
+      }
+    }
+    [35mresponseTime[39m: 14
+[12:08:23.056] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "ea8a4757-f7be-4ae8-86bf-5a475a003f62",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/check-ins?open=true",
+      "query": {
+        "open": "true"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "ea8a4757-f7be-4ae8-86bf-5a475a003f62",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "26",
+        "etag": "W/\"1a-s3B6blipWxCo2IriQlJeaz0uh7I\""
+      }
+    }
+    [35mresponseTime[39m: 13
+[12:08:23.076] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "4bb190f6-c801-4825-a593-4f5dd63938fc",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/uncollected-visits?page=1&limit=50",
+      "query": {
+        "page": "1",
+        "limit": "50"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "4bb190f6-c801-4825-a593-4f5dd63938fc",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1048",
+        "etag": "W/\"418-jjj+pxs7t304ASddsnYZWdvv+Zk\""
+      }
+    }
+    [35mresponseTime[39m: 17
+[12:08:23.109] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "36a187da-8c08-4487-9780-fcf2b09fe3d9",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers?page=1&limit=50",
+      "query": {
+        "page": "1",
+        "limit": "50"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "36a187da-8c08-4487-9780-fcf2b09fe3d9",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1380",
+        "etag": "W/\"564-2dtbZsTsz4N/+uPcbezQrrqQ1lI\""
+      }
+    }
+    [35mresponseTime[39m: 18
+[12:08:23.147] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "60d716ca-3c66-46b3-90ac-3fda8ec61265",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/8",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "60d716ca-3c66-46b3-90ac-3fda8ec61265",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "814",
+        "etag": "W/\"32e-NGK3EtVSt28JnAo6TU3jF0ZXpSE\""
+      }
+    }
+    [35mresponseTime[39m: 23
+[12:08:23.176] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "be900ddc-4d17-4ef2-89cd-64148e680426",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/5",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "be900ddc-4d17-4ef2-89cd-64148e680426",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "704",
+        "etag": "W/\"2c0-KjIUU2zB1qUMiJ33+451gX2uoZM\""
+      }
+    }
+    [35mresponseTime[39m: 22
+[12:08:23.201] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "48386d15-89c9-44aa-a64a-741ff65028d9",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/6",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "48386d15-89c9-44aa-a64a-741ff65028d9",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "720",
+        "etag": "W/\"2d0-ogxoElBwLwGSDm7owPVhnFIIAdk\""
+      }
+    }
+    [35mresponseTime[39m: 22
+[12:08:23.237] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "5e6e5e69-f38c-4783-af53-8309fc772b84",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/1",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "5e6e5e69-f38c-4783-af53-8309fc772b84",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "677",
+        "etag": "W/\"2a5-LsVKorCVBIUV+oMHlkZ7LI79+OY\""
+      }
+    }
+    [35mresponseTime[39m: 18
+[12:08:23.262] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "7e9795b2-6e5e-4a03-8e3d-581ef652caed",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/2",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "7e9795b2-6e5e-4a03-8e3d-581ef652caed",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "665",
+        "etag": "W/\"299-u5nBUwGx0k5yfl35lXsORO8/6Ik\""
+      }
+    }
+    [35mresponseTime[39m: 17
+[12:08:23.280] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "0412c976-bcdc-45e0-a8ba-67d87fbc9931",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/3",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61652
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "0412c976-bcdc-45e0-a8ba-67d87fbc9931",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "702",
+        "etag": "W/\"2be-LEAhNQ1U2LDlXaqpcfLYTrlrjQo\""
+      }
+    }
+    [35mresponseTime[39m: 17
+[12:08:23.313] [32mINFO[39m (11880): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "7faa6c75-db50-4491-8443-888631a5e892",
+      "method": "GET",
+      "url": "/api/v1/manage/spaces/7/customers/4",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3320",
+        "connection": "keep-alive",
+        "authorization": "[Redacted]",
+        "accept": "*/*",
+        "accept-language": "*",
+        "sec-fetch-mode": "cors",
+        "user-agent": "node",
+        "accept-encoding": "gzip, deflate"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 61653
+    }
+    [35muserId[39m: 15
+    [35mrole[39m: "USER"
+    [35mspaceId[39m: 7
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "7faa6c75-db50-4491-8443-888631a5e892",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5320",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "698",
+        "etag": "W/\"2ba-6sZVv9oNNm/I8RUwsRUNTbYSwc0\""
+      }
+    }
+    [35mresponseTime[39m: 19
+npm error Lifecycle script `dev` failed with error:
+npm error code 4294967295
+npm error path C:\dev\masaha\app\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsx watch --conditions=@masaha/source --env-file-if-exists=.env src/server.ts | pino-pretty

@@ -1,0 +1,25 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+ ❯ |unit| src/modules/announcements/closureSpan.unit.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/announcements/closureSpan.unit.test.ts [ src/modules/announcements/closureSpan.unit.test.ts ]
+Error: Cannot find module './closureSpan.ts' imported from C:/dev/masaha/app-b/apps/api/src/modules/announcements/closureSpan.unit.test.ts
+ ❯ src/modules/announcements/closureSpan.unit.test.ts:3:1
+      1| import { describe, expect, it } from 'vitest';
+      2|
+      3| import { closureSpan } from './closureSpan.ts';
+       | ^
+      4|
+      5| // Gaza is UTC+2 from 2026-10-24: the instants below carry their offse…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  14:24:54
+   Duration  267ms (worker 96%, environment 4%)
+

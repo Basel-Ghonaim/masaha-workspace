@@ -1,0 +1,86 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/subscriber src/features/desk/components/subscriber
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/subscriber/PreCheckInDialog.component.test.tsx (0 test)
+ ❯ |component| src/features/desk/hooks/subscriber/useCheckOutSubscriber.component.test.tsx (0 test)
+ ❯ |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/subscriber/PreCheckInDialog.component.test.tsx [ src/features/desk/components/subscriber/PreCheckInDialog.component.test.tsx ]
+Error: Failed to resolve import "./PreCheckInDialog" from "src/features/desk/components/subscriber/PreCheckInDialog.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/components/subscriber/PreCheckInDialog.component.test.tsx:6:33
+  3  |  import { describe, expect, it, vi } from "vitest";
+  4  |  import { axe } from "vitest-axe";
+  5  |  import { PreCheckInDialog } from "./PreCheckInDialog";
+     |                                    ^
+  6  |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/components/subscriber/PreCheckInDialog.component.tes...
+  7  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useCheckOutSubscriber.component.test.tsx [ src/features/desk/hooks/subscriber/useCheckOutSubscriber.component.test.tsx ]
+Error: Failed to resolve import "../../hooks/subscriber/useCheckOutSubscriber" from "src/features/desk/components/check-out/CheckOutAction.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/components/check-out/CheckOutAction.tsx:7:38
+  3  |  import { isolate } from "@shared/localisation";
+  4  |  import { useRef, useState } from "react";
+  5  |  import { useCheckOutSubscriber } from "../../hooks/subscriber/useCheckOutSubscriber";
+     |                                         ^
+  6  |  import { CheckOutDialog } from "./CheckOutDialog";
+  7  |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/components/check-out/CheckOutAction.tsx";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx [ src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx ]
+Error: Failed to resolve import "../../hooks/subscriber/useSubscriberCheckIn" from "src/features/desk/components/card/CustomerCard.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/components/card/CustomerCard.tsx:14:37
+  2  |  import { useRef } from "react";
+  3  |  import { useCustomerCard } from "../../hooks/card/useCustomerCard";
+  4  |  import { useSubscriberCheckIn } from "../../hooks/subscriber/useSubscriberCheckIn";
+     |                                        ^
+  5  |  import { PreCheckInDialog } from "../subscriber/PreCheckInDialog";
+  6  |  import { BalanceBadge } from "./BalanceBadge";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  no tests
+   Start at  13:12:06
+   Duration  11.14s (environment 79%, setup 19%, transform 1%, worker 1%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/subscriber src/features/desk/components/subscriber

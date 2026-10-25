@@ -1,0 +1,5 @@
+refactor(payments): reuse the item payment select
+
+paymentsOfSubscription and paymentsOfVisits spelled out the select that
+ITEM_PAYMENT names, and uncollectedPage's JSDoc ran past 100 columns.
+No behaviour change (review N4 of #114, carried).

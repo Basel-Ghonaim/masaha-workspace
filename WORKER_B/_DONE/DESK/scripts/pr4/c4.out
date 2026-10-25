@@ -1,0 +1,59 @@
+== B4 phone optional: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 2 passed (3)
+  AssertionError: expected null to deeply equal { phone: [ 'required' ] }
+  restored packages\shared\src\desk\requests.ts: sha ok
+  -> RED
+== B32 visits.leaveTo not called: exit 1
+  Test Files  1 failed (1)
+  Tests  3 failed | 4 passed (7)
+  AssertionError: expected { id: 1, visitorName: 'Omar', …(10) } to match object { id: 1, customer: { id: 1, …(2) } }
+  AssertionError: expected { id: 1, visitorName: 'Omar', …(10) } to match object { charge: null, …(1) }
+  AssertionError: expected 200 to be 409 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B33 a no-charge refusal added: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 6 passed (7)
+  AssertionError: expected 409 to be 200 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B34 the same-customer branch removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 6 passed (7)
+  AssertionError: expected [ { actorId: 2, …(6) }, …(2) ] to deeply equal [ { actorId: 2, …(6) }, …(1) ]
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B35 the written-off check removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 6 passed (7)
+  AssertionError: expected 200 to be 409 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B36 the balance check removed: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 6 passed (7)
+  AssertionError: expected 200 to be 409 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B37 validate removed: exit 1
+  Test Files  1 failed (1)
+  Tests  2 failed | 5 passed (7)
+  AssertionError: expected 500 to be 200 // Object.is equality
+  AssertionError: expected 500 to be 422 // Object.is equality
+  restored apps\api\src\modules\desk\desk.manage.routes.ts: sha ok
+  -> RED
+== B38 can() on space.links: exit 1
+  Test Files  1 failed (1)
+  Tests  1 failed | 6 passed (7)
+  AssertionError: expected 200 to be 403 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED
+== B39 the visit read without its lock, before the space's: exit 1
+  Test Files  1 failed (1)
+  Tests  3 failed | 4 passed (7)
+  AssertionError: expected { id: 1, visitorName: 'Omar', …(11) } to deeply equal { id: 1, visitorName: 'Omar', …(10) }
+  AssertionError: expected 500 to be 409 // Object.is equality
+  AssertionError: expected 200 to be 409 // Object.is equality
+  restored apps\api\src\modules\desk\desk.service.ts: sha ok
+  -> RED

@@ -1,0 +1,14 @@
+feat(subscriptions): extend after a closure
+
+The owner moves the end of every subscription a closure covered by
+the days typed (decisions 3-5, approved 2026-10-21): running on any
+of its days, never one ended early or with no end, the preview's own
+fragment. Once per closure (CLOSURE_ALREADY_EXTENDED) under one key,
+unique on its own (S11); only once the closure has started; one
+transaction locking the space, the closure, then the subscriptions by
+id; audited closure.subscriptionsExtended. No undo: a wrong one is
+corrected per subscription.
+
+Reception is refused before the key or body is read, and can() is
+asked again under the space's lock. Decision 4's rule replaces "all
+active subscriptions" in the data model, the overview and ADR 0009.

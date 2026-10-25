@@ -1,0 +1,14 @@
+feat(data-reports): let the admin decide reports
+
+The admin lists every report, by status, field and space, with who
+reported and who decided by name and whether the space is verified now;
+a soft-deleted space's reports are left out (ADR 0007).
+
+The admin decides an unverified space's report only. The links are read
+through space-links under the space's lock, so an owner linked while the
+decision waits makes it 403, and an owner's decision committed first
+makes the admin's REPORT_ALREADY_DECIDED. The reply is stored as
+Masaha's.
+
+The plan, the overview and the documentation map now list data reports
+as built on the API (decision 10's wording in both).
