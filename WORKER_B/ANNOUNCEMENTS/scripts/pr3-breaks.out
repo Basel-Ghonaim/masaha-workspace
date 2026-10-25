@@ -1,0 +1,75 @@
+== B1 (apps/api/src/modules/directory/favoritesOrder.ts) broken run exit 1
+     × saved newest first; by distance the listed nearest first and those that left last 8ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/directory/favoritesOrder.unit.test.ts > favoritesOrder > saved newest first; by distance the listed nearest first and those that left last
+AssertionError: expected [ 5, 3, 9, 1, 7 ] to deeply equal [ 7, 3, 1, 5, 9 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B2 (apps/api/src/modules/favorites/favorites.service.ts) broken run exit 1
+     × a signed-in user saves a listed space, 204; again 204 with one row 511ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > a signed-in user saves a listed space, 204; again 204 with one row
+AssertionError: expected 500 to be 204 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B3 (apps/api/src/modules/favorites/favorites.service.ts) broken run exit 1
+     × two saves at once make one, both 204 469ms
+     × two saves of different spaces at 199 at once: one 204, one FAVORITES_LIMIT_REACHED 465ms
+      Tests  2 failed | 5 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > two saves at once make one, both 204
+AssertionError: expected [ 500, 204 ] to deeply equal [ 204, 204 ]
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > two saves of different spaces at 199 at once: one 204, one FAVORITES_LIMIT_REACHED
+AssertionError: expected [ 204, 204 ] to deeply equal [ 204, 409 ]
+   restored: sha256 same
+   restored run exit 0: Tests  2 passed | 5 skipped (7)
+== B4 (apps/api/src/modules/favorites/favorites.service.ts) broken run exit 1
+     × a hidden, deleted, unknown space, or one in an inactive area, is not saved: not_found 368ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > a hidden, deleted, unknown space, or one in an inactive area, is not saved: not_found
+AssertionError: expected 204 to be 404 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B5 (apps/api/src/modules/favorites/favorites.service.ts) broken run exit 1
+     × the 201st is FAVORITES_LIMIT_REACHED; one already saved at 200 answers 204 537ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > POST /me/favorites/:spaceId > the 201st is FAVORITES_LIMIT_REACHED; one already saved at 200 answers 204
+AssertionError: expected 204 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B6 (apps/api/src/modules/favorites/favorites.repository.ts) broken run exit 1
+     × remove is 204 whether saved or not; another user's favourite stays 525ms
+      Tests  1 failed | 6 skipped (7)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/favorites/favorites.api.test.ts > DELETE /me/favorites/:spaceId > remove is 204 whether saved or not; another user's favourite stays
+AssertionError: expected [] to deeply equal [ { userId: 2, spaceId: 1, …(1) } ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 6 skipped (7)
+== B7 (apps/api/src/modules/directory/directory.service.ts) broken run exit 1
+     × the favourites, whole, newest saved first: a listed space as its card with its live status; a deleted or hidden one listed false with its name 583ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > the favourites, whole, newest saved first: a listed space as its card with its live status; a deleted or hidden one listed false with its name
+AssertionError: expected [ { listed: true, …(2) }, …(1) ] to deeply equal [ { listed: false, …(2) }, …(3) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B8 (apps/api/src/modules/directory/listQuery.ts) broken run exit 1
+     × sort=distance with Masaha-Near: nearest first with their distance, those that left last, no-store; the header without sort is invalid_choice on near 549ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > sort=distance with Masaha-Near: nearest first with their distance, those that left last, no-store; the header without sort is invalid_choice on near
+AssertionError: expected undefined to be 'no-store' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B9 (apps/api/src/modules/favorites/favorites.repository.ts) broken run exit 1
+     × another user's favourites never; no card carries a capacity or a count 605ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/directory/favorites.api.test.ts > GET /me/favorites > another user's favourites never; no card carries a capacity or a count
+AssertionError: expected [ 2, 1, 1 ] to deeply equal [ 1 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)

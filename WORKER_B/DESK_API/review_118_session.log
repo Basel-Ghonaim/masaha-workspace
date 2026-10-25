@@ -1,0 +1,20 @@
+I've written the review to `C:\dev\masaha\workspace\WORKER_B\DESK_API\6_REVIEW_CLAUDE_CODE.md`. CI was green on head `12abd264`, and the head didn't move during the review. I ran nothing: every finding comes from reading the code, and anything I only saw in the executor's report is marked as such.
+
+**Verdict: mergeable.** No blocker. These go to worker B's next PR through `0_CARRIED_FROM_118.md`:
+
+- **Should-fix 1:** no test checks that a refresh of a live reception session leaves its last-activity time alone. If the rotation started renewing it, all six idle tests would still pass. A desk left open and reloaded would then never end.
+- **Should-fix 2:** no spec D test uses a price that has a shift. If the lookup ignored the shift, every test would still pass, and the customer could be charged the wrong price.
+- **Nit 3:** ADR 0003's revision says "the guard and the refresh end an idle one". Under O1 the guard only refuses; the refresh deletes.
+- **Nit 4:** the test helper `signAccess` dates its session by the database clock, not the test's. A future test with a clock more than 15 minutes ahead would get a puzzling `SESSION_IDLE`.
+
+**Two findings to record:**
+- **170:** if a request lands in the same instant as a refresh from another tab, its renewal can be lost on the newest token row. The cost is one extra sign-in; it never keeps a session alive.
+- **171:** if the owner changes a published price between the desk showing it and reception subscribing, the customer is charged the new amount with no warning. This follows the spec, so it's for the owner to decide with worker A's PR 4.
+
+**`SESSION_IDLE`'s Arabic line,** exactly as in the code and the spec, for the owner's approval:
+> انتهت جلستك بعد 15 دقيقة دون نشاط. سجّل الدخول من جديد.
+
+**Departures:** all acceptable.
+- Locking `visits` rather than `customers` in the snapshot tests was the right choice. `customers` is the file's first read, so locking it would have made the test prove nothing.
+- I agree with the executor that the first `test:api` timeout came from the lane's load, not the snapshot. That test's list reads aren't wrapped, and its one file read is short.
+- The supervisor should tell worker A's PR 4 to send the name as `published.name`. A top-level `name` is dropped and the request fails with 422.

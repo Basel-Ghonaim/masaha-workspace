@@ -1,0 +1,12 @@
+fix(desk): close a subscriber's stay at its due
+
+A subscriber's check-out closed the check-in at now, while a visit's
+check-out stops at the stay's due time and the data model says no path
+charges a stay into the next day. An overnight check-in closed the next
+morning counted every hour to then in the subscription's minutes and
+due, which no route corrects.
+
+The check-out now closes at the earlier of now and the due time, from
+the space's week and settings read under its lock. The cap is one
+helper of spaces, stayEnd, which the visit's check-out now uses too, so
+the two stays share one rule. The audit keeps the request's own time.

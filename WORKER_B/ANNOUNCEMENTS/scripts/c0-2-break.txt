@@ -1,0 +1,8 @@
+== C0-2 (apps/api/src/modules/spaces/prices/prices.repository.ts) broken run exit 1
+     × a shift's published price is the one of that shift, and copies it; the price with no shift copies none 847ms
+      Tests  1 failed | 14 passed (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a shift's published price is the one of that shift, and copies it; the price with no shift copies none
+AssertionError: expected { id: 2, customerId: 1, …(20) } to match object { priceAgorot: 25000, shiftId: null }
+   restored: sha256 same
+   restored run exit 0: Tests  15 passed (15)

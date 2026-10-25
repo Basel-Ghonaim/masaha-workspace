@@ -1,0 +1,24 @@
+I've written the review: **mergeable**. The code has no blocker or should-fix. There are four small document or naming nits and one design point to record. CI was green on `36718fde` and the head didn't move during the review.
+
+**Findings:**
+1. **Finding 150, to record (plausible):** the owner's list shows each report's exact time (`createdAt`, to the millisecond). The owner also sees the desk's check-ins by name and time. In a small space, a report that appears minutes after one visitor checked in can point to who sent it. This comes from the approved answer shape, not a code bug. Hiding the exact time from the owner (showing the day or the hour) is the owner's call.
+2. **Nit:** the conventions allow four router kinds per module (public, me, manage, admin). This PR calls the reports router "site", which isn't one of them. It serves only signed-in users, so it is a `me` router. Before this PR, the conventions already said `me`. Rename it in the docs and code.
+3. **Nit:** the feature document and the contract say that when the owner and the admin decide at once, the second one sees the report already decided (409). In the common order that's not what happens: the owner decides first and stays linked, so the admin gets 403. The admin only gets 409 if the owner was unlinked in between.
+4. **Nit:** in `data-reports.md`, the sentence about the reporter being left out of the owner's list sits under the wrong bullet.
+5. **Nit:** one comment line in `apps/api/test/app.ts` runs past the 100-character wrap.
+
+Items 2–5 go into PR 3's first commit (`0_CARRIED_FROM_120.md`).
+
+**Privacy and authorization:** the reporter can't reach the owner by any path I traced:
+- the list
+- the decision's answer, including a repeated identical decision
+- the error bodies
+- the audit's `after`
+
+T9's text search covers only the list. The decision's answer is still pinned by T11's exact comparison of the whole answer.
+
+**`REPORT_ALREADY_DECIDED`** is in the catalogue exactly as the owner approved: «سبق البتّ في هذا البلاغ.» (409).
+
+All eight of the executor's departures are judged right or acceptable. The five items carried from #118 match the code and the #118 review. The break outputs and the real run's results I only read in the executor's report; I didn't open the scripts' output files.
+
+The report is at `C:\dev\masaha\workspace\WORKER_B\ANNOUNCEMENTS\6_REVIEW_PR2_CLAUDE_CODE.md`.

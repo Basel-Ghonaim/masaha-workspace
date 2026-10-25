@@ -1,0 +1,40 @@
+[
+  {
+    "id": "B15",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "AND (v.checkout_method = 'AUTO' OR (v.customer_id IS NULL AND v.charge_agorot IS NOT NULL))",
+    "new": "AND v.checkout_method = 'AUTO'",
+    "lane": "api",
+    "test": "src/modules/payments/uncollected.api.test.ts",
+    "name": "a visit paid in full at a manual check-out with no customer"
+  },
+  {
+    "id": "BQ1",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "AND (v.checkout_method = 'AUTO' OR (v.customer_id IS NULL AND v.charge_agorot IS NOT NULL))",
+    "new": "AND (v.checkout_method = 'AUTO' OR v.customer_id IS NULL)",
+    "lane": "api",
+    "test": "src/modules/payments/uncollected.api.test.ts",
+    "name": "a visit closed by hand unpriced"
+  },
+  {
+    "id": "B16",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "        WHERE v.space_id = ${spaceId} AND v.checked_out_at IS NOT NULL\n",
+    "new": "        WHERE v.space_id = ${spaceId}\n",
+    "lane": "api",
+    "test": "src/modules/payments/uncollected.api.test.ts",
+    "name": "a visit paid in full at a manual check-out with no customer"
+  },
+  {
+    "id": "B16b",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "edits": [
+      ["        WHERE v.space_id = ${spaceId} AND v.checked_out_at IS NOT NULL\n", "        WHERE v.space_id = ${spaceId}\n"],
+      ["AND (v.checkout_method = 'AUTO' OR (v.customer_id IS NULL AND v.charge_agorot IS NOT NULL))", "AND (v.checkout_method = 'AUTO' OR v.customer_id IS NULL)"]
+    ],
+    "lane": "api",
+    "test": "src/modules/payments/uncollected.api.test.ts",
+    "name": "a visit paid in full at a manual check-out with no customer"
+  }
+]

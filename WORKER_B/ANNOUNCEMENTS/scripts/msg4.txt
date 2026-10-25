@@ -1,0 +1,10 @@
+feat(directory): show a space's announcements
+
+A space's public page carries its running and upcoming announcements,
+never an ended or a deleted one, by start then id, at most 20, each with
+its start and end, so a visitor learns of a closure or an offer before
+coming. They are read after the space's share lock: an announcement is no
+fact group, and one posted between the two reads shows on the next.
+
+PublicSpace gains a required field, so the web's one fixture typed by it
+gains announcements: [] (worker B's licence for a shared type change).

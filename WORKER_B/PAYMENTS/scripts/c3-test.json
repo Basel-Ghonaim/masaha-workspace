@@ -1,0 +1,22 @@
+[
+  {
+    "file": "apps/api/src/modules/payments/uncollected.api.test.ts",
+    "old": "import { createSpace, createVisit, stay } from '../../../test/factories.ts';",
+    "new": "import { createCustomer, createSpace, createVisit, stay } from '../../../test/factories.ts';"
+  },
+  {
+    "file": "apps/api/src/modules/payments/uncollected.api.test.ts",
+    "old": "  {\n    checkoutMethod = 'AUTO',\n    space = spaceId,\n  }: { checkoutMethod?: 'AUTO' | 'MANUAL'; space?: number } = {},\n) {\n  return createVisit(space, {\n    ...stay('2026-10-17', '09:00', to),\n    checkoutMethod,\n    chargeAgorot,\n  });\n}",
+    "new": "  {\n    checkoutMethod = 'AUTO',\n    space = spaceId,\n    customerId = null,\n  }: { checkoutMethod?: 'AUTO' | 'MANUAL'; space?: number; customerId?: number | null } = {},\n) {\n  return createVisit(space, {\n    ...stay('2026-10-17', '09:00', to),\n    checkoutMethod,\n    chargeAgorot,\n    customerId,\n  });\n}"
+  },
+  {
+    "file": "apps/api/src/modules/payments/uncollected.api.test.ts",
+    "old": "  it(\"lists the visits closed automatically and not fully paid, the unpriced ones included; never a manual check-out's\", async () => {\n    const unpaid = await closed('18:00', 2_500);\n    const partly = await closed('17:00', 2_000);\n    await pay(partly.id, 500);\n    const unpriced = await closed('16:00', null);\n    await closed('15:00', 2_500, { checkoutMethod: 'MANUAL' });",
+    "new": "  it(\"lists the visits closed automatically and not fully paid, the unpriced ones included; never a manual check-out's left to its customer\", async () => {\n    const unpaid = await closed('18:00', 2_500);\n    const partly = await closed('17:00', 2_000);\n    await pay(partly.id, 500);\n    const unpriced = await closed('16:00', null);\n    // A manual check-out's unpaid rest is left to a customer: their debt, not the desk's list.\n    const { id: customerId } = await createCustomer(spaceId);\n    await closed('15:00', 2_500, { checkoutMethod: 'MANUAL', customerId });"
+  },
+  {
+    "file": "apps/api/src/modules/payments/uncollected.api.test.ts",
+    "old": "  it('a written-off visit is not listed, nor counted; undone, it is again', async () => {",
+    "new": "  it('a visit paid in full at a manual check-out with no customer, its payment voided, is uncollected with its balance; with a customer it is not (its customer’s debt); an open visit never is', async () => {\n    const voidedCash = await closed('18:00', 2_000, { checkoutMethod: 'MANUAL' });\n    const { id: customerId } = await createCustomer(spaceId);\n    const withCustomer = await closed('17:00', 2_000, { checkoutMethod: 'MANUAL', customerId });\n    const paidInFull = await closed('16:00', 2_000, { checkoutMethod: 'MANUAL' });\n    await pay(paidInFull.id, 2_000);\n    await createVisit(spaceId, { checkedInAt: new Date('2026-10-18T09:00:00+03:00') });\n    for (const { id } of [voidedCash, withCustomer]) {\n      const payment = await pay(id, 2_000);\n      await prisma.payment.update({\n        where: { id: payment.id },\n        data: { voidedAt: new Date(), voidedById: owner.id, voidReason: 'Recorded twice' },\n      });\n    }\n\n    const response = await list(owner);\n    expect(rowsOf(response)).toEqual([\n      { id: voidedCash.id, paidAgorot: 0, balanceAgorot: 2_000 },\n    ]);\n    expect((response.body as { meta: { totalRecords: number } }).meta.totalRecords).toBe(1);\n  });\n\n  it('a visit closed by hand unpriced, with no customer, is not listed uncollected: the unpriced visits’ list', async () => {\n    await closed('18:00', null, { checkoutMethod: 'MANUAL' });\n\n    expect(rowsOf(await list(owner))).toEqual([]);\n  });\n\n  it('a written-off visit is not listed, nor counted; undone, it is again', async () => {"
+  }
+]

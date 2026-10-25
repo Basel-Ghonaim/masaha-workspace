@@ -1,0 +1,12 @@
+feat(announcements): post and edit announcements
+
+The staff (owner and reception) post an announcement and edit it.
+A post carries an Idempotency-Key, unique within the space: reception
+posts a closure on the spot, on a weak connection, and a retried post
+must never make a second closure the owner could extend twice.
+
+The migration announcement_key adds the key, backfilled for the rows
+made before it; the tests and the demo seed that insert announcements
+gain one. The period is held to its bounds (a start 30 days back to
+365 ahead, an end after now and within 365 days of the start), and an
+edit checks only what it changes, so an ended one stays correctable.

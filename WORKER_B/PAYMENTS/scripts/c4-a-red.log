@@ -1,0 +1,168 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+26 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/payments/list.api.test.ts (8 tests | 8 failed) 2946ms
+   ❯ the owner’s payments list (5)
+     × the owner lists a range newest received first, then by id, paged; each row names its item, its customer, who recorded it, and a void’s who, when and why 505ms
+     × the range counts Gaza days, both included (23:30 on to in, 00:00 after it out); recordedById, method, kind and voided filter 351ms
+     × the totals cover the whole filter but voided and the page: received, by method, the count, the voided count and amount; a voided payment is never received 300ms
+     × no range lists today’s (Gaza) payments only 293ms
+     × a range over 92 days is 422 out_of_range on to; half a range required 237ms
+   ❯ reception’s payments of today (2)
+     × reception lists its own payments of today: another receptionist’s, the owner’s and its own of yesterday absent; its own voided one listed and marked; the totals its own 269ms
+     × reception's from, to or recordedById is 403 before anything is read 231ms
+   ❯ who reads the payments (1)
+     × a stranger, another space's owner and the admin not_found; another space's payments never listed 251ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the owner lists a range newest received first, then by id, paged; each row names its item, its customer, who recorded it, and a void’s who, when and why
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/payments/list.api.test.ts:131:29
+    129|
+    130|     const response = await list(owner, DAY);
+    131|     expect(response.status).toBe(200);
+       |                             ^
+    132|     expect(idsOf(response)).toEqual([noon.id, transfer.id, morning.id]…
+    133|     const [, voided, cash] = dataOf(response) as unknown[];
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the range counts Gaza days, both included (23:30 on to in, 00:00 after it out); recordedById, method, kind and voided filter
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ idsOf src/modules/payments/list.api.test.ts:105:20
+    103|
+    104| const idsOf = (response: request.Response) =>
+    105|   (dataOf(response) as { id: number }[]).map(({ id }) => id);
+       |                    ^
+    106| const metaOf = (response: request.Response) =>
+    107|   (response.body as { meta: { totals: unknown; totalRecords: number } …
+ ❯ src/modules/payments/list.api.test.ts:183:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > the totals cover the whole filter but voided and the page: received, by method, the count, the voided count and amount; a voided payment is never received
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/payments/list.api.test.ts:227:31
+    225|     for (const query of ['', '&limit=1', '&limit=1&page=3', '&voided=O…
+    226|       const response = await list(owner, `${DAY}${query}`);
+    227|       expect(response.status).toBe(200);
+       |                               ^
+    228|       expect(metaOf(response).totals).toEqual(totals);
+    229|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > no range lists today’s (Gaza) payments only
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ idsOf src/modules/payments/list.api.test.ts:105:20
+    103|
+    104| const idsOf = (response: request.Response) =>
+    105|   (dataOf(response) as { id: number }[]).map(({ id }) => id);
+       |                    ^
+    106| const metaOf = (response: request.Response) =>
+    107|   (response.body as { meta: { totals: unknown; totalRecords: number } …
+ ❯ src/modules/payments/list.api.test.ts:244:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > the owner’s payments list > a range over 92 days is 422 out_of_range on to; half a range required
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/payments/list.api.test.ts:255:28
+    253|   it('a range over 92 days is 422 out_of_range on to; half a range req…
+    254|     const longest = await list(owner, '?from=2026-07-21&to=2026-10-20'…
+    255|     expect(longest.status).toBe(200);
+       |                            ^
+    256|     const tooLong = await list(owner, '?from=2026-07-21&to=2026-10-21'…
+    257|     expect(tooLong.status).toBe(422);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > reception’s payments of today > reception lists its own payments of today: another receptionist’s, the owner’s and its own of yesterday absent; its own voided one listed and marked; the totals its own
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/payments/list.api.test.ts:278:29
+    276|
+    277|     const response = await list(reception);
+    278|     expect(response.status).toBe(200);
+       |                             ^
+    279|     expect(idsOf(response)).toEqual([voided.id, kept.id]);
+    280|     expect((dataOf(response) as unknown[])[0]).toMatchObject({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > reception’s payments of today > reception's from, to or recordedById is 403 before anything is read
+AssertionError: expected 404 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 404
+
+ ❯ src/modules/payments/list.api.test.ts:298:31
+    296|     for (const query of [DAY, `?recordedById=${String(reception.id)}`]…
+    297|       const response = await list(reception, query);
+    298|       expect(response.status).toBe(403);
+       |                               ^
+    299|       expect(errorOf(response).type).toBe('forbidden');
+    300|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  |api| src/modules/payments/list.api.test.ts > who reads the payments > a stranger, another space's owner and the admin not_found; another space's payments never listed
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ idsOf src/modules/payments/list.api.test.ts:105:20
+    103|
+    104| const idsOf = (response: request.Response) =>
+    105|   (dataOf(response) as { id: number }[]).map(({ id }) => id);
+       |                    ^
+    106| const metaOf = (response: request.Response) =>
+    107|   (response.body as { meta: { totals: unknown; totalRecords: number } …
+ ❯ src/modules/payments/list.api.test.ts:313:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed (8)
+   Start at  16:11:20
+   Duration  11.55s (tests 40%, transform 36%, import 21%, setup 3%)
+

@@ -1,0 +1,96 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+28 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/data-reports/myReports.api.test.ts (3 tests | 3 failed) 1222ms
+   ❯ GET /me/reports (3)
+     × the caller's reports, newest first, paged, filtered open or decided; another user's never 357ms
+     × a decided report carries its status, reply and repliedBy: SPACE when the owner decided, MASAHA when the admin did, even after the space gained an owner 286ms
+     × a space that left the directory (hidden, deleted, inactive area) is listed false, with its name 246ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/data-reports/myReports.api.test.ts > GET /me/reports > the caller's reports, newest first, paged, filtered open or decided; another user's never
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/data-reports/myReports.api.test.ts:58:24
+     56|
+     57|     const all = await mine(user);
+     58|     expect(all.status).toBe(200);
+       |                        ^
+     59|     expect(ids(all)).toEqual([newest.id, decided.id, oldest.id]);
+     60|     expect((all.body as { meta: object }).meta).toMatchObject({ page: …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |api| src/modules/data-reports/myReports.api.test.ts > GET /me/reports > a decided report carries its status, reply and repliedBy: SPACE when the owner decided, MASAHA when the admin did, even after the space gained an owner
+AssertionError: expected undefined to match object [ { status: 'RESOLVED', …(1) }, …(1) ]
+
+- Expected:
+[
+  {
+    "decision": {
+      "at": "2026-10-25T08:55:00.000Z",
+      "note": null,
+      "repliedBy": "SPACE",
+      "status": "RESOLVED",
+    },
+    "status": "RESOLVED",
+  },
+  {
+    "decision": {
+      "at": "2026-10-25T08:45:00.000Z",
+      "note": "الساعات صحيحة",
+      "repliedBy": "MASAHA",
+      "status": "DISMISSED",
+    },
+    "status": "DISMISSED",
+  },
+]
+
++ Received:
+undefined
+
+ ❯ src/modules/data-reports/myReports.api.test.ts:100:30
+     98|
+     99|     const response = await mine(user, '?status=DECIDED');
+    100|     expect(dataOf(response)).toMatchObject([
+       |                              ^
+    101|       {
+    102|         status: 'RESOLVED',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |api| src/modules/data-reports/myReports.api.test.ts > GET /me/reports > a space that left the directory (hidden, deleted, inactive area) is listed false, with its name
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ src/modules/data-reports/myReports.api.test.ts:137:29
+    135|
+    136|     const response = await mine(user);
+    137|     expect((dataOf(response) as { space: object }[]).map(({ space }) =…
+       |                             ^
+    138|       { id: far.id, slug: 'far-away', nameEn: 'Far Away', nameAr: null…
+    139|       { id: deleted.id, slug: 'deleted', nameEn: 'Deleted', nameAr: nu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed (3)
+   Start at  13:39:02
+   Duration  9.10s (transform 52%, tests 23%, import 22%, setup 3%)
+

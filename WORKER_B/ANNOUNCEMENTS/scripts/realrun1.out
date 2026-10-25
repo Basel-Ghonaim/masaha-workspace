@@ -1,0 +1,25 @@
+PASS precondition: the demo space (masaha-demo) listed, its live status not CLOSED, no running closure 200 -
+     live status before: AVAILABLE
+PASS reception posts a CLOSURE starting now → 201 RUNNING 201 -
+PASS the same key again → 201, the same id 201 -
+PASS GET ?state=RUNNING → it, extension: null 200 -
+PASS anonymous GET /spaces/<slug> → it in announcements 200 -
+PASS GET /spaces/<slug>/occupancy → CLOSED 200 -
+PASS reception checks a visitor in → 201 with CLOSURE_IN_FORCE 201 -
+     warnings: ["CLOSURE_IN_FORCE"]
+PASS its check-out → 200, closed 200 -
+     check-out: reception paid its quote's charge, 8 agorot, in cash
+PASS PATCH the text → 200 200 -
+PASS POST …/end → 200 ENDED 200 -
+PASS the page no longer shows it 200 -
+PASS the live status is no longer CLOSED by it 200 -
+PASS an upcoming GENERAL tomorrow → 201 UPCOMING 201 -
+PASS POST …/start → 200 RUNNING 200 -
+PASS DELETE → 204 204 -
+PASS DELETE again → 204 204 -
+PASS GET …/summary → 200 200 -
+     summary: {"running":0,"upcoming":0,"ended":1,"closuresAwaitingExtension":1}
+PASS the directory owner lists the demo space's announcements → 404 404 -
+PASS the directory owner posts on the demo space → 404 404 -
+audit (latest first): announcement.deleted, announcement.started, announcement.created, announcement.ended, announcement.edited, payment.recorded, visit.checkedOut, visit.checkedIn, announcement.created, checkIn.checkedOut
+ALL PASS

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "B1",
+    "file": "packages/shared/src/payments/requests.ts",
+    "old": "      if (to < from || to > addDays(from, PAYMENTS_RANGE_MAX_DAYS - 1)) issue('to', 'out_of_range');",
+    "new": "      if (to < from) issue('to', 'out_of_range');",
+    "lane": "shared",
+    "test": "src/payments/requests.unit.test.ts",
+    "name": "both ends or neither"
+  },
+  {
+    "id": "B2",
+    "file": "apps/api/src/modules/payments/paymentsWindow.ts",
+    "old": "  return { from: gazaInstant(from, 0), to: gazaInstant(addDays(to, 1), 0) };",
+    "new": "  return { from: gazaInstant(from, 0), to: gazaInstant(to, 0) };",
+    "lane": "unit",
+    "test": "src/modules/payments/paymentsWindow.unit.test.ts"
+  },
+  {
+    "id": "B3",
+    "file": "apps/api/src/modules/payments/paymentsWindow.ts",
+    "old": "    const today = gazaClockOf(now).date;",
+    "new": "    const today = now.toISOString().slice(0, 10);",
+    "lane": "unit",
+    "test": "src/modules/payments/paymentsWindow.unit.test.ts"
+  },
+  {
+    "id": "B17",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "        orderBy: [{ receivedAt: 'desc' }, { id: 'desc' }],",
+    "new": "        orderBy: [{ receivedAt: 'desc' }, { id: 'asc' }],",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "the owner lists a range newest received first"
+  },
+  {
+    "id": "B18",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "    receivedAt: { gte: from, lt: to },",
+    "new": "    receivedAt: { gte: from, lte: to },",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "the range counts Gaza days"
+  },
+  {
+    "id": "B19",
+    "file": "apps/api/src/modules/payments/payments.service.ts",
+    "old": "        repository.totals(filter),\n      ]);\n      return { rows: await rowsOf(space.id, rows), total, totals };",
+    "new": "        Promise.resolve(null),\n      ]);\n      void totals;\n      const live = rows.filter((r) => r.voidedAt === null);\n      const sum = (rs: typeof rows) => rs.reduce((s, r) => s + r.amountAgorot, 0);\n      return {\n        rows: await rowsOf(space.id, rows),\n        total,\n        totals: {\n          count: live.length,\n          receivedAgorot: sum(live),\n          byMethod: {\n            CASH: sum(live.filter((r) => r.method === 'CASH')),\n            TRANSFER: sum(live.filter((r) => r.method === 'TRANSFER')),\n          },\n          voided: { count: rows.length - live.length, amountAgorot: sum(rows) - sum(live) },\n        },\n      };",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "the totals cover the whole filter"
+  },
+  {
+    "id": "B20",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "          where: { ...where, voidedAt: null },",
+    "new": "          where,",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "the totals cover the whole filter"
+  },
+  {
+    "id": "B21",
+    "file": "apps/api/src/modules/payments/payments.service.ts",
+    "old": "      const mayReadAll = can(actor, 'payments.read', { links: space.links });",
+    "new": "      const mayReadAll = true || can(actor, 'payments.read', { links: space.links });",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "reception lists its own payments of today"
+  },
+  {
+    "id": "B22",
+    "file": "apps/api/src/modules/payments/payments.service.ts",
+    "old": "      ) {\n        throw AppError.forbidden();\n      }\n      const filter = {",
+    "new": "      ) {\n        // refusal removed\n      }\n      const filter = {",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "reception's from, to or recordedById is 403"
+  },
+  {
+    "id": "B24",
+    "file": "apps/api/src/modules/payments/payments.repository.ts",
+    "old": "  return {\n    spaceId,\n    receivedAt: { gte: from, lt: to },",
+    "new": "  return {\n    receivedAt: { gte: from, lt: to },",
+    "lane": "api",
+    "test": "src/modules/payments/list.api.test.ts",
+    "name": "another space's payments never listed"
+  }
+]

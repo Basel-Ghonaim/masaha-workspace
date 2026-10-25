@@ -1,0 +1,100 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+28 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/data-reports/create.api.test.ts (5 tests | 4 failed) 5447ms
+   ❯ POST /spaces/:slug/reports (5)
+     × a signed-in user reports a listed space, 201 OPEN; anonymous is 401 295ms
+     × the same field while one is open answers it, 200, no new row; once decided a new one is 201 192ms
+     × two identical reports at once make one 4194ms
+     × the 11th report within the hour is 429 with Retry-After, repeats and invalid bodies counted; another user at the same address is not 190ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/data-reports/create.api.test.ts > POST /spaces/:slug/reports > a signed-in user reports a listed space, 201 OPEN; anonymous is 401
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/data-reports/create.api.test.ts:39:29
+     37|     const response = await report(user, { field: 'OTHER', message: ' أ…
+     38|
+     39|     expect(response.status).toBe(201);
+       |                             ^
+     40|     const [stored] = await storedReports();
+     41|     expect(dataOf(response)).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |api| src/modules/data-reports/create.api.test.ts > POST /spaces/:slug/reports > the same field while one is open answers it, 200, no new row; once decided a new one is 201
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/data-reports/create.api.test.ts:79:26
+     77|   it('the same field while one is open answers it, 200, no new row; on…
+     78|     const first = await report(user, { field: 'HOURS' });
+     79|     expect(first.status).toBe(201);
+       |                          ^
+     80|
+     81|     const again = await report(user, { field: 'HOURS', message: 'الجمع…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |api| src/modules/data-reports/create.api.test.ts > POST /spaces/:slug/reports > two identical reports at once make one
+Error: 2 request(s) never waited on a lock
+ ❯ waitingOnLock test/locks.ts:37:13
+     35|     if (rows.length >= count) return rows.map(({ pid }) => pid);
+     36|     if (Date.now() > deadline) {
+     37|       throw new Error(`${String(count)} request(s) never waited on a l…
+       |             ^
+     38|     }
+     39|     await new Promise((resolve) => setTimeout(resolve, POLL_MS));
+ ❯ prisma.$transaction.timeout src/modules/data-reports/create.api.test.ts:110:9
+ ❯ Proxy._transactionWithCallback ../../node_modules/@prisma/client/src/runtime/getPrismaClient.ts:861:18
+ ❯ src/modules/data-reports/create.api.test.ts:102:5
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |api| src/modules/data-reports/create.api.test.ts > POST /spaces/:slug/reports > the 11th report within the hour is 429 with Retry-After, repeats and invalid bodies counted; another user at the same address is not
+AssertionError: expected 404 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 404
+
+ ❯ src/modules/data-reports/create.api.test.ts:123:62
+    121|
+    122|   it('the 11th report within the hour is 429 with Retry-After, repeats…
+    123|     expect((await report(user, { field: 'PRICES' })).status).toBe(201);
+       |                                                              ^
+    124|     for (let sent = 2; sent <= 9; sent += 1) {
+    125|       expect((await report(user, { field: 'PRICES' })).status).toBe(20…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  13:29:31
+   Duration  12.82s (tests 59%, transform 26%, import 14%, setup 2%)
+

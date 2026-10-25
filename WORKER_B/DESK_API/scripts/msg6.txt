@@ -1,0 +1,11 @@
+feat(auth): name the session in the access token
+
+Reception's idle rule (the next commit) is kept per session, the
+refresh-token family, and requireAuth must know which session a request
+belongs to without a cookie. The access token now carries its family's
+id as the claim sid; a token without one is refused 401, as a token
+without a session version was, and the web's refresh replaces it.
+
+Every access token alive at deploy is refused once and refreshed. Test
+helpers that signed tokens by hand now open a real session through one
+helper, signAccess.

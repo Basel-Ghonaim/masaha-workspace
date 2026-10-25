@@ -1,0 +1,11 @@
+feat(desk): read a statement from one snapshot
+
+A statement's paid and balance, its payments and its check-ins were
+separate queries on the pool: a payment or a check-in committed between
+them answered sums that its own lists contradict (finding 124). The
+statement and the customer's file now run their reads in one read-only
+REPEATABLE READ transaction, a new injected port beside runInTransaction,
+passing its tx to every read; three reads gain the optional tx.
+
+The race tests hold the visits' table, which only the money read touches,
+while a check-in and a payment commit; under READ COMMITTED they fail.

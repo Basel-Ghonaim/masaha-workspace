@@ -1,0 +1,17 @@
+[
+  {
+    "file": "docs/api/api-contract.md",
+    "old": "- **200:** `Announcement`, its start now; one started already (running or ended) is answered as it is, writing nothing.\n- **Errors**, each writing nothing: `forbidden` (403); `not_found` (404) for an announcement that is not the space's, or deleted.\n\n#### `DELETE",
+    "new": "- **200:** `Announcement`, its start now; one started already (running or ended) is answered as it is, writing nothing.\n- **Errors**, each writing nothing: `forbidden` (403); `not_found` (404) for an announcement that is not the space's, or deleted; `validation` (422) `out_of_range` on `endsAt` for an end that would fall more than 365 days after now (the period's bound, held on start now too; 2026-10-24, #PRNUM).\n\n#### `DELETE"
+  },
+  {
+    "file": "docs/features/announcements.md",
+    "old": "Start now sets an upcoming one's start to now; a started one is answered as it is.",
+    "new": "Start now sets an upcoming one's start to now, refused (`validation` on `endsAt`) when its end would then fall more than 365 days after its start; a started one is answered as it is."
+  },
+  {
+    "file": "docs/features/announcements.md",
+    "old": "a typo in a year must never make a closure of a decade; ending one now is its own route. 2026-10-24, #112.",
+    "new": "a typo in a year must never make a closure of a decade; ending one now is its own route. 2026-10-24, #112. Revised: start now holds the end's bound too, an end more than 365 days after now refused. *Why:* starting a far-off announcement now kept its end, so its period could pass 365 days. 2026-10-24, #PRNUM."
+  }
+]

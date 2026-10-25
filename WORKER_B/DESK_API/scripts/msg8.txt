@@ -1,0 +1,10 @@
+feat(desk): subscribe from a published price
+
+The public's packages are the space's published prices (data model >
+Package), and reception subscribes from them (the owner's decision 14.4).
+The subscribe takes published: { period, audience, shiftId?, name },
+exactly one of packageId, published and custom. The price is named by
+its key, never an id: a prices save writes the rows anew, so an id the
+desk read would die at the owner's next save. Its terms are copied:
+fixed at its amount, its audience and shift, no limits, for 7 or 30
+days with both ends counted. Nothing is typed, so reception may use it.

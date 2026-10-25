@@ -1,0 +1,47 @@
+[
+  {
+    "file": "docs/backend/conventions.md",
+    "old": "- **The customers list and the customer file** → `desk`.\n- **The managed announcements list and its summary** → `subscriptions` (`closures`), the lowest module above `announcements` that owns a closure's extension: `announcements` pages one state and counts them, and `subscriptions` adds each closure's extension, how many it moved and who applied it, and counts the started closures with none. The writes stay `announcements`'. The owner's overview will read `closures.summary`. 2026-10-24, #112.\n  - The status and payment filters resolve to customer ids first, from `subscriptions` and `payments`; a filter for none (`kind=NONE`, `payment=SETTLED`) resolves to the ids to leave out.\n  - `customers` then applies the search and the pagination to those ids (§5), each list one array parameter read as a set, so no list meets PostgreSQL's bound on parameters. 2026-10-21, #102.\n  - The file adds each subscription's progress, the payments, the balance and the attendance.\n",
+    "new": "- **The customers list and the customer file** → `desk`.\n  - The status and payment filters resolve to customer ids first, from `subscriptions` and `payments`; a filter for none (`kind=NONE`, `payment=SETTLED`) resolves to the ids to leave out.\n  - `customers` then applies the search and the pagination to those ids (§5), each list one array parameter read as a set, so no list meets PostgreSQL's bound on parameters. 2026-10-21, #102.\n  - The file adds each subscription's progress, the payments, the balance and the attendance.\n- **The managed announcements list and its summary** → `subscriptions` (`closures`), the lowest module above `announcements` that owns a closure's extension: `announcements` pages one state and counts them, and `subscriptions` adds each closure's extension, how many it moved and who applied it, and counts the started closures with none. The writes stay `announcements`'. The owner's overview will read `closures.summary`. 2026-10-24, #112.\n"
+  },
+  {
+    "file": "docs/features/announcements.md",
+    "old": "- Pages one state's announcements and counts them by state, for the managed list and its summary, which [`subscriptions`](subscriptions.md) composes with each closure's extension.\n",
+    "new": "- Pages one state's announcements and counts them by state, for the managed list and its summary, which [`subscriptions`](subscriptions.md) composes with each closure's extension.\n- Answers a space's running and upcoming announcements, not deleted, by start then id, up to the count the caller gives, for its public page.\n"
+  },
+  {
+    "file": "docs/features/announcements.md",
+    "old": "- **[`subscriptions`](subscriptions.md),** whose managed list and summary read its pages, its counts and its started closures.\n",
+    "new": "- **[`subscriptions`](subscriptions.md),** whose managed list and summary read its pages, its counts and its started closures.\n- **[`directory`](directory.md),** whose space page reads its running and upcoming announcements.\n"
+  },
+  {
+    "file": "docs/features/announcements.md",
+    "old": "`subscriptions` adds the extensions ([its document](subscriptions.md)).\n",
+    "new": "`subscriptions` adds the extensions ([its document](subscriptions.md)).\n\n**The public read** (`publicOf`). A space's announcements not deleted whose end is none or after now — running and upcoming, never an ended one — by start then id, at most the count the caller gives; [`directory`](directory.md) asks 20 for a space's page.\n"
+  },
+  {
+    "file": "docs/features/announcements.md",
+    "old": "- 2026-10-24, #112 — posted (idempotent), edited, ended, started and deleted by the staff; the pages and counts the managed list composes.",
+    "new": "- 2026-10-24, #112 — posted (idempotent), edited, ended, started and deleted by the staff; the pages and counts the managed list composes; the running and upcoming ones a space's public page reads."
+  },
+  {
+    "file": "docs/api/api-contract.md",
+    "old": "(the owner's overview reads the same count). Built 2026-10-24, #112.",
+    "new": "(the owner's overview will read the same count). Built 2026-10-24, #112."
+  },
+  {
+    "file": "docs/api/api-contract.md",
+    "old": "- **201:** `Announcement`; a retry with the same key answers the first announcement as it is now, 201, and writes nothing; two requests with one key at once make one (the space's lock, the key unique within the space behind it).",
+    "new": "- **201:** `Announcement`; a retry with the same key answers the first announcement as it is now, 201, and writes nothing; a retry of a deleted announcement answers it as it was, deleted from every read (2026-10-24, #PRNUM); two requests with one key at once make one (the space's lock, the key unique within the space behind it)."
+  },
+  {
+    "file": "docs/features/desk.md",
+    "old": "- #112 — the closure warning on both check-ins, from `occupancy`.\n- #110 — a subscriber's check-out after its due time closed at it; a check-in caught by the open check-in index answered `MEMBER_ALREADY_CHECKED_IN`, not a 500.\n",
+    "new": "- #110 — a subscriber's check-out after its due time closed at it; a check-in caught by the open check-in index answered `MEMBER_ALREADY_CHECKED_IN`, not a 500.\n- #112 — the closure warning on both check-ins, from `occupancy`.\n"
+  },
+  {
+    "file": "docs/features/subscriptions.md",
+    "old": "- #112 — the managed announcements list, each closure with its extension, and its summary (`closures/`).\n- #109 — a check-in's minutes in SQL; a subscriber's check-in and check-out, audited, and the limits' warnings (`limits.ts`); the check-ins' lists.\n",
+    "new": "- #109 — a check-in's minutes in SQL; a subscriber's check-in and check-out, audited, and the limits' warnings (`limits.ts`); the check-ins' lists.\n- #112 — the managed announcements list, each closure with its extension, and its summary (`closures/`).\n"
+  }
+]

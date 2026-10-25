@@ -1,0 +1,12 @@
+PASS database is masaha_b_dev — masaha_b_dev
+PASS demo space found — id 1
+PASS a demo subscription with payments exists — id 1
+PASS 1 statement 200, paid = listed payments, minutes = listed check-ins, balance = due − paid — 200 paid 6000/6000 minutes 720/720
+PASS 2 file 200, each subscription balance = due − paid, debt = positive balances — 200 debt 0
+PASS 3a reception active → 200 — 200
+PASS 3b reception idle 16 min → 401 SESSION_IDLE, session kept — 401 SESSION_IDLE
+PASS 3c its refresh → 401 SESSION_IDLE, cookies cleared, session gone — 401 SESSION_IDLE
+PASS the demo space publishes a general month price — 35000 agorot
+PASS 4 reception subscribes from the month price → 201, FIXED at its amount, 30 days, nothing typed — 201 subscription 5 2026-10-25→2026-11-23
+PASS 5 the owner → 200, its session never renewed (not idle-bound) — 200
+ALL PASS

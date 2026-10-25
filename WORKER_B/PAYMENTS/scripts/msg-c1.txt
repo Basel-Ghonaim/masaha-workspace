@@ -1,0 +1,11 @@
+feat(db): keep a written-off visit's payments
+
+A write-off records what the visit still owed. Voiding one of its
+payments afterwards would raise that debt while the visit stays
+written off, so the owner would forgive money nobody decided to
+forgive. The ledger's fourth rule now holds both ways, in the
+database: payments_guard_change, copied from the payments migration,
+refuses the void of a written-off visit's payment under the existing
+constraint name payments_visit_written_off (VISIT_WRITTEN_OFF), until
+the write-off is undone. No table changes and no new error code; the
+code's two catalogue lines now cover a void too.

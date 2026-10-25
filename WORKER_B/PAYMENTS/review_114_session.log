@@ -1,0 +1,16 @@
+I've reviewed PR #114 and written the report. **Verdict: mergeable.** I found no blocker and no should-fix, so it needs no fix round. I worked only from the head's commit objects and ran nothing, so the executor's reds, breaks and real run are their claims, labelled that way in the report.
+
+- **CI:** green on head `8ae243f0` when I started. The head did not move during the review.
+- **Merge state:** it now shows `UNKNOWN` instead of `CLEAN`, because #115 (the demo seed change) merged into `main` meanwhile. The PR still merges cleanly onto the new `main` (no conflicting files). It should show `CLEAN` again before you merge.
+
+**Findings (all nits):**
+1. **Docs claim too much about reception's 403.** The contract, security.md and payments.md say reception's `from`, `to` or `recordedById` is refused with 403, "never ignored". But the query is validated before that check, so reception sending only `from` gets a 422 instead. It is still refused, so this is a wording problem, not a security one. Fix: one clause in the docs, as the first commit of worker B's next PR (DESK_API, through `0_CARRIED_FROM_114.md`).
+2. **The two date-range lists count 92 days differently.** The payments list allows 92 days with both ends counted; the check-ins list allows 93. The payments list is the right one: it matches the approved plan, and a calendar quarter is at most 92 days. But the plan's reason ("one bound for both lists") no longer holds, and the same constant name means two different spans. Changing the check-ins list would change a merged endpoint, so it's your decision. I recommend recording it as **finding 170**; nothing changes in this PR.
+3. **PR number in a migration comment.** This is the only migration that carries a PR number, and it is what forced the executor's checksum workaround. It's harmless on the head and must not be edited now. For future plans, keep `#PRNUM` out of migrations.
+4. **Cosmetics in `payments.repository.ts`:** one comment line is over 100 columns, and a new select constant isn't reused in two older queries. Next PR, or leave it.
+
+**Departures:** I judged all seven; each is acceptable.
+- **Tests written after their code:** holding back the route or schema to get a red proves little by itself. Each guard still has a break that, from reading the code, would turn its test red.
+- **The migration on the head:** it is exactly what a fresh database applies. The function body matches the original line for line plus the one new check, and CI applied it fresh.
+
+The report is at `C:\dev\masaha\workspace\WORKER_B\PAYMENTS\6_REVIEW_CLAUDE_CODE.md`.

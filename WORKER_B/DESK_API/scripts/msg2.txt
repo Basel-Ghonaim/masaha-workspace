@@ -1,0 +1,6 @@
+fix(subscriptions): count 92 days with both ends
+
+The dated check-ins list accepted to = from + 92, 93 days counted, while
+the payments list counts its 92 days with both ends. One constant name
+meant two spans. Align the check-ins list on the payments list's rule;
+no screen reads it yet (review N2 of #114, carried).
