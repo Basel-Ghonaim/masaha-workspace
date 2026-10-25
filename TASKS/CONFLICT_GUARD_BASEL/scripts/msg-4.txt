@@ -1,0 +1,21 @@
+docs: record #111's review
+
+Four document fixes from #111's review (findings 9, 11b, 11c, 13):
+
+1. `docs/features/lookups.md` line 5: Scope now includes "Home and Directory"
+   (was "the site's Directory" only). Last Updated already 2026-10-24.
+
+2. `docs/frontend/architecture.md` §2: the sub-bullet "Offline and the
+   general error (`RetryState`, PU-024)" gains `(2026-10-24, #111)` to
+   match its neighbours.
+
+3. New finding 137: Home's area counts fall short past 1,000 spaces
+   (`docs/architecture/findings/137-...md`).
+
+4. New finding 138: A failed refresh keeps a status that still reads live
+   (`docs/architecture/findings/138-...md`).
+
+5. `docs/architecture/findings/README.md`: both findings added under
+   `## Open` after 136.
+
+All `npm run check:links` passes with the new files.

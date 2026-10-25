@@ -1,0 +1,142 @@
+
+> @masaha/api@0.0.0 dev
+> tsx watch --conditions=@masaha/source --env-file-if-exists=.env src/server.ts | pino-pretty
+
+[16:52:31.264] [32mINFO[39m (32100): [36mAPI listening[39m
+    [35mport[39m: 3323
+    [35menv[39m: "development"
+[16:52:41.357] [32mINFO[39m (32100): [36mjob ran[39m
+    [35mjob[39m: "visits.autoCheckOut"
+    [35mvisits[39m: 0
+    [35mremaining[39m: 0
+    [35mfailed[39m: 0
+    [35mms[39m: 108
+[16:52:41.369] [32mINFO[39m (32100): [36mjob ran[39m
+    [35mjob[39m: "subscriptions.autoCheckOut"
+    [35mcheckIns[39m: 0
+    [35mremaining[39m: 0
+    [35mfailed[39m: 0
+    [35mms[39m: 12
+[16:52:42.140] [32mINFO[39m (32100): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "5c5805a0-f7d2-4ef2-9d61-b8f264df30cd",
+      "method": "GET",
+      "url": "/health",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3323",
+        "user-agent": "curl/8.21.0",
+        "accept": "*/*"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56006
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "5c5805a0-f7d2-4ef2-9d61-b8f264df30cd",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5323",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "64",
+        "etag": "W/\"40-R+slZlC37nyRU6o9Jy6+eeMfFEY\""
+      }
+    }
+    [35mresponseTime[39m: 6
+[16:52:42.208] [32mINFO[39m (32100): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "45d38f7e-16de-42d0-862d-9671eec541f9",
+      "method": "GET",
+      "url": "/health",
+      "query": {},
+      "params": {},
+      "headers": {
+        "host": "localhost:3323",
+        "user-agent": "curl/8.21.0",
+        "accept": "*/*"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56007
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "45d38f7e-16de-42d0-862d-9671eec541f9",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5323",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "64",
+        "etag": "W/\"40-YRm0EE0NdPlAaKPGzP9vuxBIdSM\""
+      }
+    }
+    [35mresponseTime[39m: 2
+[16:52:52.526] [32mINFO[39m (32100): [36mrequest completed[39m
+    [35mreq[39m: {
+      "id": "f2ae9a77-dd6f-41bd-ad56-a3875a2951ab",
+      "method": "GET",
+      "url": "/api/v1/spaces?limit=50",
+      "query": {
+        "limit": "50"
+      },
+      "params": {},
+      "headers": {
+        "host": "localhost:3323",
+        "user-agent": "curl/8.21.0",
+        "accept": "*/*"
+      },
+      "remoteAddress": "::1",
+      "remotePort": 56012
+    }
+    [35mres[39m: {
+      "statusCode": 200,
+      "headers": {
+        "x-request-id": "f2ae9a77-dd6f-41bd-ad56-a3875a2951ab",
+        "content-security-policy": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+        "cross-origin-opener-policy": "same-origin",
+        "cross-origin-resource-policy": "same-origin",
+        "origin-agent-cluster": "?1",
+        "referrer-policy": "no-referrer",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-content-type-options": "nosniff",
+        "x-dns-prefetch-control": "off",
+        "x-download-options": "noopen",
+        "x-frame-options": "SAMEORIGIN",
+        "x-permitted-cross-domain-policies": "none",
+        "x-xss-protection": "0",
+        "access-control-allow-origin": "http://localhost:5323",
+        "vary": "Origin",
+        "access-control-allow-credentials": "true",
+        "cache-control": "public, max-age=30",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "12509",
+        "etag": "W/\"30dd-W85STNBtMpw6a6VQB0tEXSjG1A8\""
+      }
+    }
+    [35mresponseTime[39m: 103

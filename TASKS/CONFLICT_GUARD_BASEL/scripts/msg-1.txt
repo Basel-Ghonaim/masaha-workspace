@@ -1,0 +1,7 @@
+fix(docs): drop a stray conflict marker
+
+The `docs/design/INDEX.md` file contained a leftover `<<<<<<< HEAD` line
+from an old merge (line 868). This is not a real conflict — the merge was
+already completed — but the marker was never removed. Removing it cleans
+up the document and prevents the new `check:conflicts` script from flagging
+it as a false positive once that check is added.

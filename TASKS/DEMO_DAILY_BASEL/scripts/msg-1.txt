@@ -1,0 +1,13 @@
+chore(seed): renew the demo directory's day each run
+
+When the demo directory set already exists, running the seed again now
+renews its day-bound states for today's Gaza day:
+
+- Spaces with `present > 0` get exactly `present` open visits checked in
+  today (at `now - i seconds`). Old open visits from earlier days are
+  deleted so they don't distort the count.
+- The `closedToday` space (`radwan-study-hall`) has its hours updated so
+  today's weekday is closed; `hoursUpdatedAt` is bumped only when the
+  hours actually change.
+- A second run the same day changes nothing (idempotent).
+- The demo space (`demo.ts`) and any space outside the set are untouched.

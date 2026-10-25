@@ -6,8 +6,10 @@ it and writes "approved" (or changes) at its top; then you build, test, push and
 commands **in PowerShell**; read each exit code with `$LASTEXITCODE` right after the command (passed only if 0).
 
 - **Your worktree:** `C:\dev\masaha\app-design` (the design worker's; prepared: dependencies installed, shared
-  built, its own databases). **Start only after the task `TASKS\CONFLICT_GUARD_BASEL` has its PR open** (this
-  worktree holds one branch at a time). Never touch `C:\dev\masaha\app` or `app-b` (workers A and B use them).
+  built, its own databases). `TASKS\CONFLICT_GUARD_BASEL` merged (#113, 2026-10-24): the worktree is free and
+  `npm run check:conflicts` now runs in CI. Others read in this worktree (a reviewer or a planner, commit objects
+  only): if a `git` command fails on a `.lock` file, wait 30 s and retry once; failed again → stop and report;
+  never delete a `.lock` file. Never touch `C:\dev\masaha\app` or `app-b` (workers A and B use them).
   **When you finish** (the PR open and green, or stopped), leave `app-design` detached at `origin/main` and
   clean: `git switch --detach origin/main` — reviewers read there.
 - **Your databases:** `masaha_design_dev` and `masaha_design_test` in the Docker container `masaha-postgres-1`
@@ -43,6 +45,18 @@ space is closed today. Rules:
 6. Old visits from earlier days: decide in the plan what happens to them (left as they are if the API's
    *present* already ignores them; closed or removed only if they would distort today's state), and why.
    The set's visits are demo data in a development database only.
+
+**What changed since 2026-10-22 (read it on `origin/main`, line numbers may have moved):**
+- **#109** — *present* is defined once, in `apps/api/src/modules/occupancy/present.ts`: open visits **and**
+  subscription check-ins. The set's present people are visits; renew them as visits and check `present.ts`'s
+  rule (what makes a visit count as present today) before deciding rule 6.
+- **#112** — the set now inserts a closure announcement with an `idempotencyKey` (`demoDirectory.ts` ≈ 682).
+  Leave it as it is; a renewal never adds a second one.
+- **The auto check-out (#97)** closes every open visit at its due time (the space's closing time, or 23:59 —
+  `spaces/autoCheckout.ts`), run every 5 minutes in development. A seed run after a space's closing time would
+  leave visits the job closes at once. Say in the plan how the renewal behaves then (for example: the visits'
+  check-in at the start of today's opening, and a run after closing renews nothing for that space and says so),
+  and test it with a fixed clock.
 
 Out of scope: the demo space of `demo.ts`, any API route, the schema (no migration), the web, any other seed.
 

@@ -1,0 +1,22 @@
+chore(ci): fail on merge-conflict markers
+
+Adds a new `npm run check:conflicts` script that scans all git-tracked files
+for merge-conflict markers (`<<<<<<< `, `>>>>>>> `, `||||||| `, and `=======`
+between `<<<<<<< ` and `>>>>>>> `). It skips binary files by extension,
+prints each hit as `<file>:<line> <marker>`, and exits non-zero if any are
+found. Modeled on the existing `check:links` script: same location
+(`apps/api/scripts/`), same style, same unit-test pattern.
+
+The unit test covers: a real conflict block, a setext heading (ignored),
+a marker mid-line (ignored), a clean file, a minimal conflict, multiple
+conflicts, CRLF line endings, and a diff3 base marker.
+
+Wired into:
+- `apps/api/package.json` (script `check:conflicts`)
+- Root `package.json` (script `check:conflicts`)
+- `.github/workflows/ci.yml` (matrix task `check:conflicts`)
+- `docs/development/setup.md` (commands table + CI sentence)
+- `CLAUDE.md` (commands list)
+
+Tested: the check passes on the clean tree, fails when a marker is added
+to `docs/design/INDEX.md` (line 868), and passes again after restore.

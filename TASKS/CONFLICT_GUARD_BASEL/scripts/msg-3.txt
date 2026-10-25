@@ -1,0 +1,7 @@
+docs(workflow): say what a merge apart guards
+
+The "merge apart" rule in §9 now states that a merge into `main` needs no
+rebase and no new CI run only when it deletes or renames no file **the PR
+refers to** (not merely "no file" anywhere in the repo). This matches the
+intent documented in issue #71: a merge that deletes a file unrelated to
+the PR should not force a rebase.
