@@ -1,7 +1,0 @@
-== B38 (payments_guard_insert) broken run exit 1
-     × a payment that waited while the owner lowered the price is refused PAYMENT_EXCEEDS_DUE 438ms
-      Tests  1 failed | 6 skipped (7)
-⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
-AssertionError: expected 201 to be 409 // Object.is equality
-   restored: md5 same
-   restored run exit 0: Tests  1 passed | 6 skipped (7)

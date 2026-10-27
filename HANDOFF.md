@@ -1,7 +1,8 @@
-# Masaha — the main supervisor's handoff (2026-10-25, end of day)
+# Masaha — the main supervisor's handoff (2026-10-26, evening)
 
 You are taking over as the owner's **analyst and control room** for Masaha — the **main supervisor**. This file
-supersedes the 2026-10-24 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-10-24.md`, the record of #110–#118). This file covers #118–#121 and worker A's PR 3 in flight.
+supersedes the 2026-10-25 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-10-25.md`, the record of #118–#121).
+This file covers #122–#124 and the two plans in flight.
 Your auto-memory loads too; the repository and this file win. **Read this file whole, then the *Status log* of
 `DESIGN\ROUND2\HANDOFF_DESIGN_81.md`, then `BOARD.md`.**
 
@@ -38,68 +39,90 @@ is ready, and you turn it into a Work Item then.
 - **Cost:** keep conversations short; read each file once; start a new conversation from this file when one
   grows long.
 
-## 2. State at the end of 2026-10-25 (start here on 2026-10-26)
+## 2. State (start here)
 
-**`main` = `1a89da5d`** (#121 merged). Merged 2026-10-24…25: #110 (fix: a subscriber's check-out capped at its
-due), #111 (PUBLIC PR 4), #112 (ANNOUNCEMENTS PR 1), #113 (check:conflicts), #114 (PAYMENTS), #115 (demo seed
-renews daily), #116 (DESK_SCREENS PR 1a), #117 (PR 1b), #118 (DESK_API; migration `session_activity`), #119
-(DESK_SCREENS PR 2, the desk's subscribers; Codex review: F1, F2 carried, F3 rejected), #120 (ANNOUNCEMENTS PR 2,
-data reports; migration `data_report_rules`; Claude review: mergeable), #121 (ANNOUNCEMENTS PR 3, favourites;
-Claude review: mergeable, one small should-fix carried). **No PR open at day's end.** Remote branches: `main` and
-the old `feat/admin-owners` (ask before deleting).
+> **Now — 2026-10-27 (this block wins over the 2026-10-26 state below, kept as its record):**
+> - **`main` = `39ef0504`** — **#124 merged** after its fix round (F1–F6 folded, verified by the supervisor in the
+>   code; no second review). **The DESK_SCREENS plan is complete.** Finding 171 stays Open: **ask the owner to
+>   confirm** the provisional choice (prices re-read on opening, the toast states the server's amount). Remote
+>   branches: `main` and the old `feat/admin-owners` only.
+> - **Finished task folders moved to `_DONE`:** `WORKER_A\_DONE\{DESK_SCREENS,OWNER_SETUP,OWNERS}`,
+>   `WORKER_B\_DONE\{ANNOUNCEMENTS,DEMO_SEED,DESK,DESK_API,PAYMENTS,SUBSCRIPTIONS}` (paths in this file and the active
+>   plans rewritten). Active: `WORKER_A\PAYMENTS_STEP10`, `WORKER_A\PUBLIC`, `WORKER_B\FINANCE_AUDIT`.
+> - **Both plans approved** (the owner accepted every recommendation; the approval notes at the top of each
+>   `2_PLAN.md`): **FINANCE_AUDIT** (worker B, 3 PRs: audit → platform settings → finance; finding 152 recorded in PR
+>   1) and **PAYMENTS_STEP10** (worker A, 5 PRs: payments → announcements → data reports → 4a report → 4b favourites;
+>   finding 165 recorded in PR 1). **Both executions run under the autonomy rule, no stop until ready for review.**
+> - **PR 1's execution prompts are written; the owner launches the two workers in parallel:**
+>   `WORKER_B\FINANCE_AUDIT\3_EXEC_PROMPT_PR1.md` (in `app-b`) and `WORKER_A\PAYMENTS_STEP10\3_EXEC_PROMPT_PR1.md`
+>   (in `app`). When each replies: verify (§1's list), show the owner its decisions, then the review — **Claude** for
+>   B's PRs and for A's PRs 1–2, a free model for A's 3, 4a, 4b — on this conversation's model and effort.
+> - **Tracking Issues, the owner's request:** **#125** (FINANCE_AUDIT) and **#126** (PAYMENTS_STEP10) — a paragraph
+>   on the plan, then one checkbox per PR with a short paragraph. **Tick a PR's box when it merges** (fetch the body
+>   to a file, edit it with a script, `gh issue edit <n> --body-file`, read it back). **Issues take numbers too:** the
+>   next PR is #127 or later — the prompts check with the issues API, not `gh pr list`.
 
-**The owner's autonomy rule** (`_SHARED\AUTONOMY_2026-10-25.md`): workers decide open points themselves and list
-them under *Decisions taken without the owner* — in force only when the owner (or you, on his word) says so for
-a run; show those decisions to him. **It is in force for worker A's overnight run** (below).
+**`main` = `e6737da5`** (#123 merged). Merged 2026-10-26: **#122** (DESK_SCREENS PR 3, the customers list and file,
+edit / archive / restore, the statement and the end, the idle line; light Claude review: F1–F4 → carried into PR 4),
+**#123** (ANNOUNCEMENTS PR 4, the closure extension; migration `closure_extension_key` with its trigger; Claude review:
+mergeable — finding 151 and three nits → `WORKER_B\FINANCE_AUDIT\0_CARRIED_FROM_123.md`). **The ANNOUNCEMENTS plan
+(step 10's API) is complete.** Open: **#124**. Remote branches: `main`, `feat/subscription-sheet` (#124), the old
+`feat/admin-owners` (ask before deleting).
 
-**Worker A** (`C:\dev\masaha\app`, ports 3320/5320, `masaha_dev`; its Claude session was named `app-00`) —
-**DESK_SCREENS PR 3, finishing overnight.** It stopped at the size bound with seven commits made locally on
-`feat/customers-file` (`0e732e61`…`39248050`: the two carried from #119, then commits 1–5 — customers list, the
-file, edit/archive/restore, the statement and the end, the idle line on sign-in), 81 files, nothing pushed. **The
-owner chose option A: one PR of 81 files** (a one-off exception, as #116's 90). The answer
-`WORKER_A\DESK_SCREENS\3_EXEC_PROMPT_PR3_ANSWER.md` was **sent to its session on 2026-10-25 evening**: the head
-checks, the real run, `#PRNUM` (expected **#122**), push, PR, CI, under the autonomy rule. Accepted by the
-supervisor: the routes test's warm-up import, break 64 on the trigger's label, the restored `desk.md` edits
-(checked: commits 1–4 each carry their own). **First thing on 2026-10-26:** read its final reply and
-`4_REPORT_PR3.md`; verify the PR in the code (§1's list) and its *Decisions taken without the owner*; then the
-review (a free model's, the owner's choice: write `5_REVIEW_PROMPT_PR3.md` on `5_REVIEW_PROMPT_PR2.md`'s model; the
-statement's money and voided payments, the edit's changed-fields-only and no re-send, archive/restore, the idle
-line). If it stopped instead, read where and why. Findings 162–163 its; a new one from 165. Then, in order:
-- **PR 4** (the subscription sheet): spec D's request is `published: { period, audience, shiftId?, name }` —
-  the name **inside** `published`; **finding 171** (a published price changed between the desk's read and the
-  subscribe is charged silently) is decided with the owner in PR 4's prompt.
-- **The public site's fix PR** whenever the owner finishes his in-person review: `WORKER_A\PUBLIC\
-  0_CARRIED_FROM_111.md` (the #111 fixes as decided, the finding-87 family of slow tests, and the owner's own
-  find: the Directory's page change jumps twice — `preventScrollReset` on `ListPagination`'s three links and the
-  results' scroll moved after the new page arrives) **plus his list**. His review is **still open**; never block
-  other work on it.
-- The plan: `WORKER_A\DESK_SCREENS\2_PLAN.md` — its approval note binds (A1 split, spec D as above, DI-1…53
-  approved, the real runs' writes).
+**Right now all three are working — the owner launched them:**
 
-**Worker B** (`C:\dev\masaha\app-b`, port 3321, `masaha_b_dev`/`_test`) — **idle, detached at `1a89da5d`, clean.
-Next: ANNOUNCEMENTS PR 4** (`feat/closure-extension`, one migration `closure_extension_key` with the trigger, the
-last of step 10; **its execution prompt is not written** — write it on `3_EXEC_PROMPT_PR3.md`'s model, the plan's
-PR 4 parts, with the two-phase rule's spirit for the trigger: the migration's SQL read before applying). It opens
-with **`0_CARRIED_FROM_121.md`** (the favourites' save reads the listing before the user's lock; two missing tests;
-document dates and lines; #120's item 4 only if touched). B's next free finding is **151**. A Claude review
-follows (money: subscriptions' ends move; schema: the trigger). The plan: `WORKER_B\ANNOUNCEMENTS\2_PLAN.md`,
-approved 2026-10-21. **PR 4 may run beside A's PR 3:** it touches `apps/api`, `packages/shared`, the two
-`errors.ts`, docs; A's PR 3 none of those code files.
+1. **Worker A — #124's fix round** (`C:\dev\masaha\app`, ports 3320/5320, `masaha_dev`). #124 = DESK_SCREENS PR 4,
+   the subscription sheet (head `bc8fe86a` before the round, 70 files, CI green, CLEAN). Its Claude review
+   (`WORKER_A\_DONE\DESK_SCREENS\6_REVIEW_PR4_CLAUDE_CODE.md`): mergeable after a fix round — F1 (a lost subscribe answer
+   told as "not saved", inviting a second subscription — **money**, confirmed), F2 (the sheet's focus after a «⋯»
+   item), F3 (a published-price renewal preselects the first price — **money**, confirmed), F4 (test 72 cannot
+   fail), F5–F6 nits. **The owner: all six fixed now, none carried.** Its prompt `WORKER_A\_DONE\DESK_SCREENS\
+   7_FIX_ROUND_PR4.md`: rebase on #123 first (merged now), each fix folded into its commit, **only the touched test
+   files locally — no full lane; CI judges**, no real run, the autonomy rule, no stop until ready for review.
+   **When it replies:** verify (§1's list: the new head, CI green, CLEAN, no `fixup!`, no rebase left, subjects, the
+   folds), read its decisions, and judge F1–F6 in the code; a second review only if the owner asks. Then merge on
+   the owner's word and clean (`backup/subscription-sheet-pre-prnum` among the branches). **The DESK_SCREENS plan
+   ends with #124.** Finding 171 stays Open: the sheet re-reads prices on opening and the toast states the server's
+   amount — the supervisor's provisional choice under the autonomy rule; **the owner has not confirmed it yet** —
+   ask him.
+   - The run's slip: two extra renewals (subscriptions 5 and 6) left in `masaha_dev` — the owner may end them or
+     reseed; never by the supervisor without his word.
+2. **Worker B — planning FINANCE_AUDIT** (step 11's API: the audit reader, platform settings, finance; three PRs in
+   that order). The owner's 12 decisions are in `WORKER_B\FINANCE_AUDIT\1_PLAN_PROMPT.md` (binding: income = cash
+   collected without voids; Gaza months and fixed windows, no free range; the server aggregates; CSV built by the web,
+   no export route; finance the owner's alone; occupancy from closed stays, auto check-outs included; the owner's audit
+   shows the admin as Masaha; the admin's per AD-028; kept for ever; the contact details into the typed catalogue,
+   finding 40; finding 151 option A). PR 1 opens with `0_CARRIED_FROM_123.md` (finding 151: the extension moves a
+   covered subscription's not-yet-started renewal chain; a retried key kept to its space; two document fixes). The
+   planner started before #123 merged and read `origin/feat/closure-extension` as merged — **the same tree as `main`
+   now** (`git diff ff8743c8 e6737da5` is empty); fix its header's base in the approval note. B's findings: **151**
+   (the carried file's), the item's own from **152**. **When `2_PLAN.md` arrives:** check its key claims in the code,
+   show the owner its decisions (items with options and a recommendation), write the approval note at its top, then
+   PR 1's execution prompt (two-phase if PR 1 has a migration; the autonomy rule if the owner says so for the run).
+3. **The design worktree (`C:\dev\masaha\app-design`, read-only) — planning worker A's next item, PAYMENTS_STEP10**
+   (steps 9–10's screens: PR 1 payments — the owner's list and the void, «دفعاتي اليوم»; PR 2 announcements with the
+   extension; PR 3 data reports, owner and admin; PR 4 the user's side — favourites, my reports, the report dialog,
+   the space page's announcements, the favourite action). The owner's 6 decisions in `WORKER_A\PAYMENTS_STEP10\
+   1_PLAN_PROMPT.md`: one item, four PRs in that order; PR 4 last, before or after the public fix PR; finding 8's
+   filter tag in the first PR that uses it; **Claude reviews PRs 1–2, a free model PRs 3–4**; **every execution
+   under the autonomy rule, no stop until ready for review**. PR 1 starts after #124 merges. A's findings from **165**.
+   **When `2_PLAN.md` arrives:** as for B's.
 
-**The owner's test environment** (`TASKS\HOME_REVIEW_ENV\`, run by a cheaper model): temporary worktree
-`C:\dev\masaha\app-review` (at `b1e94b41`, #117, unless the owner ran the update commands given 2026-10-25 —
-check `git -C C:\dev\masaha\app-review log -1`; it carries the owner's own uncommitted one-line experiment in
-`DirectoryResults.tsx`, the scroll on page change — never discard it), databases `masaha_review_dev`/`_test`,
-API 3324, web 5324, accounts in `app-review\REVIEW_ACCOUNTS.md` (never print them). Updating it to `main` now
-needs `migrate deploy` for #118's and #120's migrations. The desk: `http://localhost:5324/dashboard/spaces/1/desk`.
-Phase 2 (150 more spaces) and teardown only on the owner's word — both are in its `3_EXEC_PROMPT.md`.
+**Still open, not running:**
+- **The public site's fix PR** (worker A): `WORKER_A\PUBLIC\0_CARRIED_FROM_111.md` + the owner's in-person review
+  (still open) + his page-change jump find. Never block other work on it; it runs before or after PAYMENTS_STEP10's
+  PR 4 (the owner's decision 3).
+- **Issue #72** (the editor's DI-27 comment in `docs/design/prototype/Admin space edit.html`): a one-file design task,
+  **postponed by the owner** (2026-10-26). Memory: the prototype's shared globals (`_excluded`) may still break
+  `ActionButton` after the editor's modules — check in a browser before dropping the workaround.
+- **The owner's test environment** (`app-review`, `TASKS\HOME_REVIEW_ENV\`): moved by the owner to `3855e37f` (#122)
+  — his `DirectoryResults.tsx` experiment kept, never discard it; updating it to `e6737da5` needs `migrate deploy`
+  (#123's migration). Ports 3324/5324; accounts in `app-review\REVIEW_ACCOUNTS.md` (never print them).
+- **Step 12** (the overviews) follows step 11; the owner's rule that the overview shows no amounts (DECISIONS_OWNER's
+  top note) stands.
 
-**Other worktrees:** `app-design` detached at `b2f13a47`, clean — reviewers and planners read there (commit
-objects only; the headless Claude reviews of #120 and #121 ran there).
-
-**Progress:** step 3 (the public site) built; steps 7–9 APIs built; step 10 PRs 1–3 built (announcements, data
-reports, favourites; PR 4 the closure extension left); the desk's screens 1a, 1b and 2 merged (3 finishing, 4
-left).
+**Progress:** steps 1–10's APIs built; step 11's API planning; the desk's screens (steps 7–8) built but #124;
+steps 9–10's screens planning; the public site built (its fix PR pending the owner's review).
 
 ## 3. The owner's standing rules (put them in every prompt they touch)
 
@@ -107,7 +130,7 @@ left).
   the **next PR's first commit** through `0_CARRIED_FROM_<n>.md` in that PR's folder, named in its description.
   A merged PR's review with a **critical** finding → a fix branch at once (as #110).
 - **Reviews — who:** the owner chooses. **Free models (Codex, OpenCode)** for web PRs: self-contained,
-  read-only prompts with a mandatory checklist (models: `WORKER_A\DESK_SCREENS\5_REVIEW_PROMPT_PR1A.md`,
+  read-only prompts with a mandatory checklist (models: `WORKER_A\_DONE\DESK_SCREENS\5_REVIEW_PROMPT_PR1A.md`,
   `…PR1B.md`) — **verify their findings in the code before acting**: OpenCode over-states (it listed "no change
   needed" points as findings and misread TanStack's defaults); Codex was precise. **Claude reviews** for the
   backend, money, auth and schema (headless, below).
@@ -119,11 +142,22 @@ left).
 - **Never leave silently:** an executor that would leave a carried item or a review nit undone stops and asks.
 - **Demo data:** a case the data lacks → stop and report; never change data through the app to pass it; a
   reseed only on the owner's word. Real runs name every write.
-- **Fix rounds** run only what the change touches; CI runs the rest.
+- **Fix rounds** run **only the touched test files** (plus lint and typecheck), each fix folded into its original
+  commit; **a full lane locally is forbidden** in a fix round — CI judges (the owner, 2026-10-26). A fix round fixes
+  every finding of the review unless the owner carries some.
+- **The autonomy rule** (`_SHARED\AUTONOMY_2026-10-25.md`): when the owner says so for a run — and by default for
+  every PAYMENTS_STEP10 execution — the executor never stops until ready for review (PR open, CI green, CLEAN,
+  report); decisions are recorded under *Decisions taken without the owner*, which you show him. "Ready for review"
+  includes opening the PR and CI; stopping before the PR was not adopted.
+- **The PR number:** with two workers pushing, each prompt says: check the next number just before the push, and
+  after `gh pr create` compare it; if it differs, redo `#PRNUM` on its own branch and `--force-with-lease` it.
 - **Simple tasks go to non-Claude-Code models** (chores, seed, documents, environment setup): self-contained
   prompts, PowerShell, exit codes read; the supervisor reviews their plans and writes corrections at the plan's
   top (the model: `TASKS\CONFLICT_GUARD_BASEL\2_PLAN.md`, `TASKS\DEMO_DAILY_BASEL\2_PLAN.md`).
 - **Exceptions the owner granted:** #115's 52-character subject (one-off); #116's 90 files in one PR.
+- **No stop for size (2026-10-26):** an executor never stops to ask about the file count; it carries on and
+  writes the count (and, past the plan's estimate, why it grew) in its report and reply; the supervisor tells the
+  owner. Every execution prompt says so.
 
 ## 4. The method
 
@@ -134,19 +168,26 @@ left).
   `start-work-item`, the stop rule, the standing rules, the final-reply template with COULD NOT RUN) → the owner
   launches → you verify → a review → the verdict → merge on the owner's word → clean.
 - **Two-phase executors** for auth/schema items: a short plan, stop, your approval note, then the build (the
-  model: `WORKER_B\DESK_API\3_EXEC_PROMPT.md` and its `2_PLAN.md`'s note).
+  model: `WORKER_B\_DONE\DESK_API\3_EXEC_PROMPT.md` and its `2_PLAN.md`'s note).
 - **Claude reviews**, headless and read-only from `app-design`:
   `cd /c/dev/masaha/app-design && "/c/Users/basel/AppData/Roaming/npm/claude" -p "Read <5_REVIEW_PROMPT…> whole
   and do it." --add-dir 'C:\dev\masaha\workspace' --strict-mcp-config --no-chrome --settings
   'C:\dev\masaha\workspace\_SHARED\worker-settings.json' --allowedTools "Bash(git *)" "Bash(gh *)" Read Grep
   Glob Write Edit > <folder>/review_<pr>_session.log 2>&1` with `run_in_background` (the log stays empty until it
-  ends; ≈ 20–40 minutes; it dies with your session). Models: `WORKER_B\DESK_API\5_REVIEW_PROMPT.md`,
-  `WORKER_B\PAYMENTS\5_REVIEW_PROMPT.md`.
-- **Models of the other files:** execution prompts `WORKER_A\DESK_SCREENS\3_EXEC_PROMPT_PR2.md`,
-  `WORKER_B\PAYMENTS\3_EXEC_PROMPT.md`; carried files `WORKER_B\ANNOUNCEMENTS\0_CARRIED_FROM_118.md`,
-  `WORKER_A\DESK_SCREENS\0_CARRIED_FROM_117.md`; planning prompts `WORKER_A\DESK_SCREENS\1_PLAN_PROMPT.md`,
-  `WORKER_B\PAYMENTS\1_PLAN_PROMPT.md`; approval notes at the top of `WORKER_A\DESK_SCREENS\2_PLAN.md` and
-  `WORKER_B\PAYMENTS\2_PLAN.md`.
+  ends; ≈ 20–40 minutes; it dies with your session). **The owner's choice (2026-10-26): reviews run on the
+  supervisor conversation's own model and effort** — read them with `get_session self` and pass `--model <id>
+  --effort <level>` (today `claude-opus-5-5`, `medium`). Models: `WORKER_B\_DONE\ANNOUNCEMENTS\5_REVIEW_PROMPT_PR4.md`,
+  `WORKER_A\_DONE\DESK_SCREENS\5_REVIEW_PROMPT_PR4.md`; a light review on chosen axes: `…\5_REVIEW_PROMPT_PR3.md`.
+  Launch a review only once every check on the head is green (`gh pr checks <n> --watch` in the background).
+- **Watching workers while the owner is away:** `_SHARED\scripts\watch_ready.sh <deadline epoch>
+  <name>=<branch>=<report>…` in the background (every 10 minutes; ready = PR open, checks all passed, CLEAN, the
+  report naming the PR and unchanged for one interval; the owner's limit was 2 hours); on READY, verify and launch
+  the review.
+- **Models of the other files:** execution prompts `WORKER_A\_DONE\DESK_SCREENS\3_EXEC_PROMPT_PR2.md`,
+  `WORKER_B\_DONE\PAYMENTS\3_EXEC_PROMPT.md`; carried files `WORKER_B\_DONE\ANNOUNCEMENTS\0_CARRIED_FROM_118.md`,
+  `WORKER_A\_DONE\DESK_SCREENS\0_CARRIED_FROM_117.md`; planning prompts `WORKER_A\_DONE\DESK_SCREENS\1_PLAN_PROMPT.md`,
+  `WORKER_B\_DONE\PAYMENTS\1_PLAN_PROMPT.md`; approval notes at the top of `WORKER_A\_DONE\DESK_SCREENS\2_PLAN.md` and
+  `WORKER_B\_DONE\PAYMENTS\2_PLAN.md`.
 - **Workers are launched by the owner:** `cd C:\dev\masaha\app[-b]` → `claude --add-dir
   C:\dev\masaha\workspace --strict-mcp-config --no-chrome --settings
   C:\dev\masaha\workspace\_SHARED\worker-settings.json` → "Read <prompt> whole and execute it." (Opus; high
@@ -154,11 +195,11 @@ left).
 
 ## 5. Ledgers
 
-- **Open decisions:** `_SHARED\OPEN_DECISIONS.md` — point 2 settled (#112), point 4 built (#118, its line written).
-- **Open Issues:** #72 (the editor's DI-27 comment — next design PR touching the editor), #81 (design round 2).
-  #71 closed by #113.
-- **Findings:** on `main` 150 (accepted), 160, 161, 164, 170, 171. A's PR 3 writes 162–163; A's next free 165;
-  B's next free 151.
+- **Open decisions:** `_SHARED\OPEN_DECISIONS.md` — point 2 built (#123, its *Built as* line written), point 4
+  built (#118).
+- **Open Issues:** #72 (postponed by the owner), #81 (design round 2). #71 closed by #113.
+- **Findings:** on `main` 150 (accepted), 160–164, 170, 171 (Open; the owner to confirm the provisional choice).
+  151 is FINANCE_AUDIT PR 1's (resolved there); B's own next free **152**; A's next free **165**.
 - **The owner's in-person review of the public site:** open; its fixes go to the public fix PR.
 - **Design decisions:** `DESIGN\DECISIONS\` — the logo (foundation §15 row 5) is the one open visual decision,
   handled by the logo worker.
@@ -188,7 +229,7 @@ Backup: private repo `Basel-Ghonaim/masaha-workspace`, nightly 23:00.
 - **`git checkout -- <file>` loses uncommitted work** (worker A, PR 3, 2026-10-25: it reset `desk.md`; re-applied
   by its script) — prompts say: restore from a backup copy, never checkout.
 - **Size bounds:** web PRs grow past the plan's estimate when a shared control (the «⋯» menu) reaches several
-  screens; the owner granted 65 (#119) and 81 (PR 3) — set the bound with room, and say the owner's precedent.
+  screens; the owner granted 65 (#119) and 81 (PR 3). Since 2026-10-26 no prompt stops on size (§3).
 - **A transaction's reads go through its `tx`** (conventions §8): #121's save read the listing on other pool
   connections while holding the user's lock (pool of 10, no `max`) — reviewers look for it.
 - **The demo seed renews its day-bound states on every run (#115)**, so FULL and closed-today hold today after

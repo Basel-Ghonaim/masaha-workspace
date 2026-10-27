@@ -1,8 +1,0 @@
-== I5 (apps/api/src/modules/subscriptions/subscriptions.repository.ts) broken run exit 1
-     × each check-in's minutes are counted as the attendance is: their sum is progress.minutesUsed 1006ms
-      Tests  1 failed | 3 skipped (4)
-⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
- FAIL  |api| src/modules/desk/statement.api.test.ts > a subscription's statement > each check-in's minutes are counted as the attendance is: their sum is progress.minutesUsed
-AssertionError: expected [ 31, 45 ] to deeply equal [ 30, 44 ]
-   restored: sha256 same
-   restored run exit 0: Tests  1 passed | 3 skipped (4)

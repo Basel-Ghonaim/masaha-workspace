@@ -1,5 +1,0 @@
- CREATE UNIQUE INDEX data_reports_open_key ON public.data_reports USING btree (user_id, space_id, field) WHERE (status = 'OPEN'::"DataReportStatus")
- data_reports_decision_check CHECK ((((status = 'OPEN'::"DataReportStatus") = (resolved_at IS NULL)) AND ((resolved_at IS NULL) = (resolved_by_id IS NULL)) AND ((resolved_at IS NULL) = (resolved_as IS NULL)) AND ((status <> 'OPEN'::"DataReportStatus") OR (resolution_note IS NULL)) AND ((resolution_note IS NULL) OR (btrim(resolution_note) <> ''::text))))
- data_reports_dismissal_note_check CHECK (((status <> 'DISMISSED'::"DataReportStatus") OR (resolution_note IS NOT NULL)))
- data_reports_other_message_check CHECK (((field <> 'OTHER'::"DataReportField") OR ((message IS NOT NULL) AND (btrim(message) <> ''::text))))
-

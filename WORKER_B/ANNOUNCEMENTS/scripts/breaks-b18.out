@@ -1,8 +1,0 @@
-== B18 (apps/api/src/modules/announcements/announcements.repository.ts) broken run exit 1
-     × the list pages one state: running and upcoming by start, ended by end latest first; the total right 518ms
-      Tests  1 failed | 3 skipped (4)
-⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
- FAIL  |api| src/modules/subscriptions/closures/list.api.test.ts > the managed list > the list pages one state: running and upcoming by start, ended by end latest first; the total right
-AssertionError: expected [ 6, 7 ] to deeply equal [ 7, 6 ]
-   restored: sha256 same
-   restored run exit 0: Tests  1 passed | 3 skipped (4)

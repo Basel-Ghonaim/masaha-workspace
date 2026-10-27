@@ -1,0 +1,38 @@
+=== owner id 14 أحمد الشوا links [{"spaceId":7,"role":"OWNER"}]
+=== reception id 15 ليلى النجار links [{"spaceId":7,"role":"RECEPTION"}]
+
+-- space 7
+today 200 totals {"count":0,"receivedAgorot":0,"byMethod":{"CASH":0,"TRANSFER":0},"voided":{"count":0,"amountAgorot":0}} rows=0
+month 200 totals {"count":15,"receivedAgorot":106500,"byMethod":{"CASH":96500,"TRANSFER":10000},"voided":{"count":1,"amountAgorot":20000}} pages=1 records=16
+   pay 16 8000 CASH 2026-10-26T13:29:18.680Z SUBSCRIPTION#8 cust=5:رامي سالم by=14:أحمد الشوا voided=-
+   pay 15 12000 CASH 2026-10-26T13:28:56.151Z SUBSCRIPTION#7 cust=9:مشترك تجربة by=15:ليلى النجار voided=-
+   pay 14 15000 CASH 2026-10-26T13:24:01.514Z SUBSCRIPTION#6 cust=2:محمد عوض by=15:ليلى النجار voided=-
+   pay 13 15000 CASH 2026-10-26T13:23:36.641Z SUBSCRIPTION#5 cust=2:محمد عوض by=15:ليلى النجار voided=-
+   pay 12 5000 CASH 2026-10-26T13:23:36.641Z SUBSCRIPTION#2 cust=2:محمد عوض by=15:ليلى النجار voided=-
+   pay 11 500 CASH 2026-10-26T08:13:30.593Z VISIT#50 cust=-:- by=15:ليلى النجار voided=-
+   pay 10 1500 CASH 2026-10-25T12:04:16.983Z VISIT#4 cust=5:رامي سالم by=15:ليلى النجار voided=-
+   pay 9 500 CASH 2026-10-25T12:03:22.035Z SUBSCRIPTION#1 cust=1:سارة خالد by=15:ليلى النجار voided=-
+   pay 8 1000 CASH 2026-10-25T09:10:42.396Z VISIT#3 cust=8:خالد by=15:ليلى النجار voided=-
+   pay 7 500 CASH 2026-10-24T15:28:45.631Z VISIT#26 cust=-:- by=15:ليلى النجار voided=-
+   pay 1 1500 CASH 2026-10-06T09:00:00.000Z VISIT#2 cust=-:- by=15:ليلى النجار voided=-
+   pay 3 10000 TRANSFER 2026-10-03T09:00:00.000Z SUBSCRIPTION#2 cust=2:محمد عوض by=15:ليلى النجار voided=-
+   pay 2 6000 CASH 2026-10-01T09:00:00.000Z SUBSCRIPTION#1 cust=1:سارة خالد by=15:ليلى النجار voided=-
+   pay 6 10000 CASH 2026-09-29T09:00:00.000Z SUBSCRIPTION#4 cust=4:يوسف أبو علي by=14:أحمد الشوا voided=-
+   pay 5 20000 CASH 2026-09-27T09:00:00.000Z SUBSCRIPTION#3 cust=3:نور حسن by=15:ليلى النجار voided=-
+   pay 4 20000 CASH 2026-09-27T09:00:00.000Z SUBSCRIPTION#3 cust=3:نور حسن by=15:ليلى النجار voided=أحمد الشوا: سُجّلت مرتين
+voided (92 days) 200 records=1
+   pay 4 20000 CASH 2026-09-27T09:00:00.000Z SUBSCRIPTION#3 cust=3:نور حسن by=15:ليلى النجار voided=أحمد الشوا: سُجّلت مرتين
+staff 200: [[15,"ليلى النجار",true],[35,"موظف تجريبي",true]]
+uncollected 200 records=2
+   visit 1 عمر cust=- paid=0 balance=2500 writeOff=false
+   visit 3 خالد cust=- paid=1000 balance=1500 writeOff=false
+customers owing 200 records=3
+   customer 8 خالد debt=1500 current=null
+      unpaid visit 3 balance=1500
+   customer 6 زائر تجربة 2 debt=500 current=null
+      unpaid visit 27 balance=500
+   customer 1 سارة خالد debt=3160 current={"id":1,"name":"امتحانات بالساعة","packageId":4,"endsOn":"2026-10-21","status":"EXPIRED"}
+      sub 1 «امتحانات بالساعة» EXPIRED due=9660 paid=6500 balance=3160
+
+reception at 7 (RECEPTION) mine 200 totals {"count":0,"receivedAgorot":0,"byMethod":{"CASH":0,"TRANSFER":0},"voided":{"count":0,"amountAgorot":0}}
+reception range → 403  forbidden

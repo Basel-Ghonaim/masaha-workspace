@@ -1,7 +1,0 @@
-fix(announcements): hold the period on start now
-
-Carried from #112 (review F4, decided by the owner): start now set an
-upcoming announcement's start to now and kept its end, so one posted
-far ahead could run more than the 365 days the period allows. start()
-now checks the end against the new start, as an edit that moves the
-start does, and refuses with 422 endsAt out_of_range, writing nothing.

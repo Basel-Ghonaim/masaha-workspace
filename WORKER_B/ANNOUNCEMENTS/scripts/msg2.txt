@@ -1,9 +1,0 @@
-feat(announcements): end, start or delete one
-
-The staff end a running announcement now, start an upcoming one now,
-and delete one in any state, softly (ADR 0007): the row stays for the
-audit and for a closure's extension, and leaves every read at once.
-
-Each repeat answers as it is, writing nothing. Ending one not started
-yet is refused with ANNOUNCEMENT_NOT_STARTED: its end would come before
-its start, which the dates check refuses; deleting it is the way.

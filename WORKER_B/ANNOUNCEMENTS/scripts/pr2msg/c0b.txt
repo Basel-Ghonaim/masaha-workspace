@@ -1,7 +1,0 @@
-test(desk): copy a shift's published price
-
-Spec D's lookup matches the shift, but no test used a price with one: a
-lookup that dropped the shift would charge the price with no shift and lose
-the shift on the subscription, with every test green (review of #118,
-point 2). A space with a month price and a morning-shift month price is
-now subscribed with each key.

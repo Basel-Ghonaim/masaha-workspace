@@ -26,6 +26,28 @@ no letter inside a filled square tile, no dots.
 Also give a simplified version for 16–32 px: pin + Meem only, desk line removed.
 ```
 
-## Axis 2 — the form
+## Axis 2 — the form (settled 2026-10-26)
+
+**Decision (owner, 1b 2c 3a 4a):**
+- **Lockups:** the mark alone (favicon, collapsed sidebar), a horizontal lockup (mark beside the word) and a
+  stacked one (mark above the word: social avatar, door sign, receipt).
+- **Drawing style:** a geometric **thick monoline**: one stroke weight, about 1/8 of the mark's width, rounded ends.
+- **Geometry:** soft rounded corners on a square grid; the mark fits a square.
+- **Two languages:** one mark, two words («مساحة», "Masaha"). The mark sits right of the Arabic word and left of
+  the English one; it is **never mirrored** (it is an Arabic letter). A bilingual lockup only if wanted, for print.
+
+The image tool makes **the mark only**; the words and lockups are set later with the real font in a design tool.
+
+**Prompt text (form part, draft):**
+
+```text
+Style: geometric monoline mark with ONE thick stroke weight
+(about 1/8 of the mark's width), rounded stroke ends, soft rounded corners,
+built on a square grid and fitting inside a square.
+Calm, practical, trustworthy. Not playful, not decorative, not calligraphic.
+The mark alone: no text, no letters other than the Meem shape itself.
+```
+
+## Axis 3 — the colour
 
 Open.

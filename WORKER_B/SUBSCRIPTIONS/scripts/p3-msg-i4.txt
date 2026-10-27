@@ -1,9 +1,0 @@
-fix(desk): warn only on older debts
-
-CUSTOMER_HAS_DEBT says the customer still owes on an earlier item,
-but it was raised by any other item that owed. On a retry, answered
-as of now, the subscription's own unpaid renewal (made since) raised
-it. Only the items before the subscription in the allocation's order
-(itemBalances: created_at, a visit first, id) count now.
-
-Carried from #106 (review finding 6).

@@ -1,9 +1,0 @@
-feat(api): keep one idempotency key per intent
-
-ADR 0015 rule 1 on the web (S4): a key made per press would record a
-check-in or a payment twice after a double press or a retry over a weak
-connection. useIntentKey holds one key for one intent (a dialog opened
-for one item, or one tap), kept until renew(); withIdempotencyKey puts
-it in the header the transport re-sends with. postWithMeta hands back a
-POST's data with the envelope's optional meta, a check-in's warnings,
-which getPage cannot take since it requires meta.

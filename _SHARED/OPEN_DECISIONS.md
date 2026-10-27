@@ -17,7 +17,11 @@ Each line: what, the owner's leaning (2026-10-18), and the item that must settle
    owner's. *Settle in: the announcements item.* **Settled (#112, 2026-10-24):** reception posts a closure;
    the owner learns of it in the app only — the managed list's extension state per closure and the summary's
    `closuresAwaitingExtension`, which the overview (step 12) will read through `subscriptions`'
-   `closures.summary`; no email.
+   `closures.summary`; no email. **Built as (#123, 2026-10-26):** the owner's preview of a started closure
+   (the covered days, the proposal, how many it covers) and the extension, once per closure under one key, the
+   owner only (reception 403); an extended closure is guarded by a database trigger (`CLOSURE_EXTENDED`: no new
+   type or start, no deletion, no later end). Its renewal-chain gap is finding 151, fixed first in FINANCE_AUDIT
+   PR 1 (the owner's option A).
 3. **Every customer's phone number:** needed at the desk. → No export and no whole list for reception;
    search and pages only. **Settled (#102, 2026-10-21):** a paged, searched list (at most 50 a page) for the
    owner and reception; no export and no whole list for anyone in step 8; an export is the owner's, later, in
@@ -28,7 +32,7 @@ Each line: what, the owner's leaning (2026-10-18), and the item that must settle
    «تبديل الموظف». *Settle in: the desk's screen item (worker A) — the owner's decision, 2026-10-20: it is a web
    behaviour; DESK PR 4 records payments without it.* **Revised by the owner, 2026-10-24:** a sign-out in the
    browser alone protects nothing; reception's session ends after **15 minutes idle on the server** (an API
-   change, worker B) and the web shows «تبديل الموظف» — both specified in `WORKER_A\DESK_SCREENS\2_PLAN.md`.
+   change, worker B) and the web shows «تبديل الموظف» — both specified in `WORKER_A\_DONE\DESK_SCREENS\2_PLAN.md`.
    **Built as (#118, 2026-10-25):** the server ends a session of an account whose only active links are
    reception links after 15 minutes with no request other than the desk's polled state; the access token names
    its session (`sid`); every other request renews it (at most one write a minute); an idle session's requests

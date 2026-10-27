@@ -1,9 +1,0 @@
-fix(desk): say when a customer's file fails
-
-A not-started subscription's choice reads its start date from the
-customer's file; when that read failed, the dialog showed a loading
-line for ever, since a failure and a load both left the reason empty.
-The dialog now says the start could not be read, with a retry of the
-file's read, and shows the start date once it loads.
-
-Carried from #119's review (F1).

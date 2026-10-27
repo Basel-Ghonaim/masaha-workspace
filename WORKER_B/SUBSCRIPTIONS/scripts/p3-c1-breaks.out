@@ -1,8 +1,0 @@
-== B4 (apps/api/src/modules/occupancy/present.ts) broken run exit 1
-     × the read, the check-in's warning and the directory count the same people present 697ms
-      Tests  1 failed | 9 skipped (10)
-⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
- FAIL  |api| src/modules/occupancy/present.api.test.ts > present, defined once > the read, the check-in's warning and the directory count the same people present
-AssertionError: expected 'AVAILABLE' to be 'FULL' // Object.is equality
-   restored: sha256 same
-   restored run exit 0: Tests  1 passed | 9 skipped (10)

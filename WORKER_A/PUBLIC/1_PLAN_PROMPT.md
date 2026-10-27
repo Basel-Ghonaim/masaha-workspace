@@ -140,7 +140,7 @@ the findings index; the code of `pages/site` (the shell, `routes.tsx`, `navigati
 
 ## 5. The plan's shape
 
-As `C:\dev\masaha\workspace\WORKER_A\OWNER_SETUP\2_PLAN.md`: summary; the contract per PR (scope, acceptance
+As `C:\dev\masaha\workspace\WORKER_A\_DONE\OWNER_SETUP\2_PLAN.md`: summary; the contract per PR (scope, acceptance
 criteria, out of scope); the reading done and what it changed; the decisions as built; stronger decisions
 (S…) and **Proposed alternatives**; related findings (folded or not, why); design issues found in the
 reading (each with its fix, built only once the owner approves); the files; the interfaces and the words; the

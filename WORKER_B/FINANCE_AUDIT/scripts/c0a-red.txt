@@ -1,0 +1,143 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/subscriptions/closures/extension.api.test.ts (15 tests | 5 failed) 10773ms
+   ❯ the extension (8)
+     × the owner extends: each covered subscription's end moves by the days typed, one link each, audited closure.subscriptionsExtended; 201 with the count 663ms
+   ❯ the renewal chain (finding 151) (4)
+     × a renewal not started moves with the subscription it renews: S ends 12-03, R runs 12-04 → 2027-01-02, one link each, audited with renewalIds 438ms
+     × a renewal of that renewal moves too; a renewal started (today) or ended early stays; another space's never 535ms
+     × the preview counts what the extension moves, the chain included; the list's extension says the same 480ms
+     × a renewal sold while the extension waits on the space's lock moves too 588ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > the owner extends: each covered subscription's end moves by the days typed, one link each, audited closure.subscriptionsExtended; 201 with the count
+AssertionError: expected [ { actorId: 1, …(6) } ] to deeply equal [ { actorId: 1, …(6) } ]
+
+- Expected
++ Received
+
+@@ -2,11 +2,10 @@
+    {
+      "action": "closure.subscriptionsExtended",
+      "actorId": 1,
+      "after": {
+        "days": 4,
+-       "renewalIds": [],
+        "subscriptionIds": [
+          1,
+          2,
+          3,
+          4,
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:255:34
+    253|       .sort((a, b) => a - b);
+    254|     expect(await links()).toEqual(coveredIds.map((subscriptionId) => (…
+    255|     expect(await auditEntries()).toEqual([
+       |                                  ^
+    256|       {
+    257|         actorId: owner.id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal not started moves with the subscription it renews: S ends 12-03, R runs 12-04 → 2027-01-02, one link each, audited with renewalIds
+AssertionError: expected { announcementId: 1, days: 3, …(3) } to match object { days: 3, subscriptions: 2 }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "days": 3,
+-   "subscriptions": 2,
++   "subscriptions": 1,
+  }
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:455:30
+    453|
+    454|     expect(response.status).toBe(201);
+    455|     expect(dataOf(response)).toMatchObject({ days: 3, subscriptions: 2…
+       |                              ^
+    456|     const after = await termsById();
+    457|     expect(after.get(renewed.id)).toBe('2026-11-01 → 2026-12-03');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal of that renewal moves too; a renewal started (today) or ended early stays; another space's never
+AssertionError: expected '2026-12-01 → 2026-12-30' to be '2026-12-03 → 2027-01-01' // Object.is equality
+
+Expected: "2026-12-03 → 2027-01-01"
+Received: "2026-12-01 → 2026-12-30"
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:501:35
+    499|     const after = await termsById();
+    500|     expect(after.get(renewed.id)).toBe('2026-11-01 → 2026-12-02');
+    501|     expect(after.get(renewal.id)).toBe('2026-12-03 → 2027-01-01');
+       |                                   ^
+    502|     expect(after.get(second.id)).toBe('2027-01-02 → 2027-01-31');
+    503|     expect(after.get(endsOnTheDay.id)).toBe('2026-10-10 → 2026-11-11');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > the preview counts what the extension moves, the chain included; the list's extension says the same
+AssertionError: expected { firstDay: '2026-11-08', …(4) } to match object { subscriptions: 4, applied: null }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "applied": null,
+-   "subscriptions": 4,
++   "subscriptions": 2,
+  }
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:529:46
+    527|     await subscribe(customer, '2026-10-20', '2026-11-19');
+    528|
+    529|     expect(dataOf(await preview(owner, id))).toMatchObject({ subscript…
+       |                                              ^
+    530|
+    531|     expect(dataOf(await extend(owner, id, { days: 3 }))).toMatchObject…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal sold while the extension waits on the space's lock moves too
+AssertionError: expected { announcementId: 1, days: 3, …(3) } to match object { subscriptions: 2 }
+(6 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "subscriptions": 2,
++   "subscriptions": 1,
+  }
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:570:30
+    568|
+    569|     expect(response.status).toBe(201);
+    570|     expect(dataOf(response)).toMatchObject({ subscriptions: 2 });
+       |                              ^
+    571|     const after = await termsById();
+    572|     expect(after.get(renewed.id)).toBe('2026-11-01 → 2026-12-03');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 10 passed (15)
+   Start at  13:47:29
+   Duration  25.70s (tests 58%, transform 25%, import 16%, setup 2%)
+

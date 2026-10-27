@@ -1,9 +1,0 @@
-docs: say the guard refuses an idle session
-
-ADR 0003's revision said the guard ends an idle session; it refuses it
-with SESSION_IDLE and keeps the family, and the refresh ends it, as
-security.md and the contract say (review of #118, point 3). The idle row
-now says a soft-deleted space's links count, as for OWNER (departure 8).
-
-Findings 170 (a renewal racing a rotation) and 171 (a published price
-changed before the subscribe) record the review's points 5 and 6.
