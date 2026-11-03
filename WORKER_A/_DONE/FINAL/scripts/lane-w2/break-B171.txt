@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/space-links/components/link
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/space-links/components/link/LinkOwnerDialog.component.test.tsx (7 tests | 1 failed) 6179ms
+   ❯ LinkOwnerDialog (7)
+     × a space linked meanwhile is worded as another owner 882ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  16:07:03
+   Duration  28.47s (transform 27%, import 26%, tests 22%, environment 18%, setup 6%)
+
+  Transform  |component| transforming modules took 7.51s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-links/components/link/LinkOwnerDialog.component.test.tsx > LinkOwnerDialog > a space linked meanwhile is worded as another owner
+AssertionError: expected 'Link an owner to Focus HubThey become…' to contain 'They become another owner of Focus Hu…'
+
+Expected: "They become another owner of Focus Hub; it stays verified."
+Received: "Link an owner to Focus HubThey become another owner of this space.PersonHadiOwners and users, by name or email. Suspended accounts can’t be linked.Focus Hub becomes verified and its owner edits it; the Masaha team no longer does.A new owner with no account? Add them on the space owners page.Link"
+
+ ❯ src/features/space-links/components/link/LinkOwnerDialog.component.test.tsx:200:55
+    198|     await userEvent.click(within(dialog).getByRole('combobox', { name:…
+    199|     await userEvent.click(await screen.findByRole('option', { name: /H…
+    200|     expect(dialog.textContent?.replace(/[⁦-⁩]/g, '')).toContain(
+       |                                                       ^
+    201|       'They become another owner of Focus Hub; it stays verified.',
+    202|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/space-links/components/link

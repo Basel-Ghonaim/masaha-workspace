@@ -1,0 +1,57 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |unit| src/features/space-links/services/rowView.unit.test.ts (12 tests | 1 failed) 152ms
+   ❯ rowView (12)
+     × names the stale groups and the missing ones on a warning badge each, in order 67ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/space-links/services/rowView.unit.test.ts > rowView > names the stale groups and the missing ones on a warning badge each, in order
+AssertionError: expected [ { …(2) }, { …(2) } ] to deeply equal [ { …(2) }, { …(2) } ]
+
+- Expected
++ Received
+
+@@ -2,9 +2,9 @@
+    {
+      "label": "قديمة: الأسعار، التواصل",
+      "variant": "warning",
+    },
+    {
+-     "label": "غير مُدخلة: ساعات العمل",
++     "label": "ناقصة: ساعات العمل",
+      "variant": "warning",
+    },
+  ]
+
+ ❯ src/features/space-links/services/rowView.unit.test.ts:133:37
+    131|       { label: 'Missing: Opening hours', variant: 'warning' },
+    132|     ]);
+    133|     expect(arabic(stale).freshness).toEqual([
+       |                                     ^
+    134|       { label: 'قديمة: الأسعار، التواصل', variant: 'warning' },
+    135|       { label: 'غير مُدخلة: ساعات العمل', variant: 'warning' },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 178 passed (179)
+      Tests  1 failed | 1152 passed (1153)
+   Start at  12:42:34
+   Duration  33.57s (import 71%, transform 18%, tests 9%, worker 2%)
+
+    Isolate  179 workers spawned · ~736ms startup each (spawn + environment, per file)
+             at least ~11.24s faster with isolate: false — reuses workers across files instead of one per file
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit

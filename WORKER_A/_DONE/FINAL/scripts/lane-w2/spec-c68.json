@@ -1,0 +1,8 @@
+[
+  {"label": "B170", "file": "apps/web/src/features/space-links/hooks/link/usePersonChoices.ts",
+   "old": "            ? desks === null\n              ? words.user\n              : words.userAtDesk({ spaces: desks })", "new": "            ? words.user",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/space-links/components/link"},
+  {"label": "B170b", "file": "apps/web/src/features/space-links/hooks/link/useLinkOwnerDialog.ts",
+   "old": "          ...(facts.desks === null ? [] : [lines.staysAtDesk({ spaces: facts.desks })]),\n", "new": "",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/space-links/components/link"}
+]

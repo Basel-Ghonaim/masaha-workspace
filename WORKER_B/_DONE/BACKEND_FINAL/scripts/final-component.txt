@@ -1,0 +1,74 @@
+
+> test:component
+> npm run test:component --workspaces --if-present
+
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/web
+
+ ❯ |component| src/pages/site/routes.component.test.tsx (13 tests | 2 failed) 19529ms
+   ❯ the site's routes (13)
+     × shows the Directory under its title 3022ms
+     × shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search 5118ms
+Not implemented: navigation to another Document
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows the Directory under its title
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ pageTitle src/pages/site/routes.component.test.tsx:108:30
+    106| /** The page's title, inside the shell's main landmark. */
+    107| async function pageTitle() {
+    108|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    109| }
+    110|
+ ❯ src/pages/site/routes.component.test.tsx:196:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/site/routes.component.test.tsx:206:5
+    204|     [1440, 'from 768 px a breadcrumb back to the Directory with its la…
+    205|     [390, 'below it a back link'],
+    206|   ])('shows a space’s page titled by its name; at %i, %s', async (widt…
+       |     ^
+    207|     stubScreenWidth(width);
+    208|     fakeTransport((request) =>
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 299 passed (300)
+      Tests  2 failed | 1742 passed (1744)
+   Start at  14:06:24
+   Duration  574.72s (environment 35%, import 32%, tests 20%, setup 11%, transform 2%)
+
+Environment  |component| jsdom was created 300 times · 1146.68s total, 35% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-b\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component

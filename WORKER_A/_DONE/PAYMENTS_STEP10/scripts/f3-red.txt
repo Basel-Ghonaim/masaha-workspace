@@ -1,0 +1,194 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/statement/Statement.component.test.tsx (5 tests | 1 failed) 5731ms
+   ❯ Statement › a payment’s void (3)
+     × gives the focus to the payments’ heading once the voided payment’s «⋯» leaves 4057ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/statement/Statement.component.test.tsx > Statement › a payment’s void > gives the focus to the payments’ heading once the voided payment’s «⋯» leaves
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<h4
+  class="text-label"
+>
+  Payments
+</h4>[39m
+Received element with focus:
+  [31m<body
+  style=""
+>
+  <div>
+    <main>
+      <h1>
+        Sara Khalid
+      </h1>
+      <div
+        class="flex flex-col gap-6"
+      >
+        <div
+          class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+          data-slot="card"
+        >
+          <div … />
+        </div>
+        <section
+          aria-labelledby="_r_1a_"
+          class="flex flex-col gap-4"
+        >
+          <h2 … />
+          <div … />
+        </section>
+      </div>
+    </main>
+  </div>
+</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mstyle[39m=[32m""[39m
+  [36m>[39m
+    [36m<div>[39m
+      [36m<main>[39m
+        [36m<h1>[39m
+          [0mSara Khalid[0m
+        [36m</h1>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+            [33mdata-slot[39m=[32m"card"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex gap-3 px-(--card-padding) flex-row flex-wrap items-center gap-x-4 gap-y-2"[39m
+              [33mdata-slot[39m=[32m"card-content"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0m+970599000201[0m
+                [36m</span>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+                [33mdata-slot[39m=[32m"badge"[39m
+                [33mdata-variant[39m=[32m"success"[39m
+              [36m>[39m
+                [0mActive[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex items-center gap-2 text-body-sm"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-muted-foreground"[39m
+                [36m>[39m
+                  [0mBalance[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+                  [33mdata-slot[39m=[32m"badge"[39m
+                  [33mdata-variant[39m=[32m"neutral"[39m
+                [36m>[39m
+                  [0mSettled[0m
+                [36m</span>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"ms-auto"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-expanded[39m=[32m"false"[39m
+                  [33maria-haspopup[39m=[32m"menu"[39m
+                  [33maria-label[39m=[32m"More actions: ⁨Sara Khalid⁩"[39m
+                  [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+                  [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+                  [33mdata-state[39m=[32m"closed"[39m
+                  [33mid[39m=[32m"radix-_r_1b_"[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-ellipsis-vertical lucide-more-vertical"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<circle[39m
+                      [33mcx[39m=[32m"12"[39m
+                      [33mcy[39m=[32m"12"[39m
+                      [33mr[39m=[32m"1"[39m
+                    [36m/>[39m
+                    [36m<circle[39m
+                      [33mcx[39m=[32m"12"[39m
+                      [33mcy[39m=[32m"5"[39m
+                      [33mr[39m=[32m"1"[39m
+                    [36m/>[39m
+                    [36m<circle[39m
+                      [33mcx[39m=[32m"12"[39m
+                      [33mcy[39m=[32m"19"[39m
+                      [33mr[39m=[32m"1"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</button>[39m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<section[39m
+            [33maria-labelledby[39m=[32m"_r_1a_"[39m
+            [33mclass[39m=[32m"flex flex-col gap-4"[39m
+          [36m>[39m
+            [36m<h2[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mid[39m=[32m"_r_1a_"[39m
+            [36m>[39m
+              [0mSubscriptions[0m
+            [36m</h2>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"grid gap-4 md:grid-cols-2 xl:grid-cols-3"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+                [33mdata-slot[39m=[32m"card"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+                  [33mdata-slot[39m=[32m"card-header"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"te...
+ ❯ src/features/desk/components/statement/Statement.component.test.tsx:186:24
+    184|     });
+    185|     await waitFor(() => {
+    186|       expect(payments).toHaveFocus();
+       |                        ^
+    187|     });
+    188|     expect(requests.filter(({ method }) => method === 'post').map(({ u…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  16:58:00
+   Duration  23.61s (import 45%, tests 25%, transform 16%, environment 12%, setup 3%)
+

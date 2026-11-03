@@ -1,0 +1,10 @@
+feat(jobs): sweep expired counters and tokens
+
+A session nobody refreshes again, a reset link never used, a recovery
+whose browser never came back and a rate-limit key never hit again kept
+their rows for good (finding 17). Two timed jobs join the auto
+check-outs: sessions.sweepExpired deletes the refresh tokens, reset
+tokens and recoveries that ended, and rateLimits.sweepExpired the
+counters whose window ended, at most 5,000 rows a table a run, so a run
+stays within the function's time. Each condition is checked again on
+the row deleted, so a key hit at that moment keeps its new window.

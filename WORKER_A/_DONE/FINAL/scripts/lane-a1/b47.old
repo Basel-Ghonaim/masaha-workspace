@@ -1,0 +1,1 @@
+      const names = await users.namesFor([...new Set(links.map(({ userId }) => userId))], tx);

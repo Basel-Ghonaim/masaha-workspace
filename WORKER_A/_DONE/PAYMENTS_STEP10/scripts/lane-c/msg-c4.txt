@@ -1,0 +1,14 @@
+feat(favorites): save a space from its card
+
+PU-014 and U12: the heart on the Directory's and Home's cards and
+beside a space's name. It flips at once and holds while its write is
+pending (the one optimistic state, architecture §7); the save or the
+removal is sent once with no key, said with «تراجع», or put back and
+said with «إعادة المحاولة» (DI-49); a full list offers «إدارة المفضّلة».
+
+The saved state is the directory's: the user's favourites, read once
+per signed-in visit, tell each card and the page whether the space is
+saved; a write reads the whole ['me'] scope again (S13). The card's
+action stands beside its link, never inside it. A guest's press holds
+the favourite in memory (S14) and the page asks them to sign in; the
+site's shell saves it once they are back (C4).

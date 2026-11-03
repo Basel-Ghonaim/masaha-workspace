@@ -1,0 +1,48 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/audit/components/AuditLog.component.test.tsx src/features/data-reports/components/admin/AdminReportsList.component.test.tsx src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx src/features/lookups/components/list/AmenitiesSection.component.test.tsx src/features/lookups/components/list/GovernoratesSection.component.test.tsx src/features/lookups/components/sheet/AmenitySheet.component.test.tsx src/features/lookups/components/sheet/LookupSheet.component.test.tsx src/features/lookups/hooks/add/useAddAmenityForm.component.test.tsx src/features/lookups/hooks/add/useAddAreaForm.component.test.tsx src/features/lookups/hooks/add/useAddGovernorateForm.component.test.tsx src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx src/features/lookups/hooks/edit/useEditAreaForm.component.test.tsx src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx src/features/lookups/hooks/list/useAmenityRow.component.test.tsx src/features/lookups/hooks/list/useGovernorateCard.component.test.tsx src/features/platform-settings/components/PlatformContact.component.test.tsx src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx src/features/space-links/components/add-owner/AddOwner.component.test.tsx src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx src/features/space-links/components/link/LinkOwnerDialog.component.test.tsx src/features/space-links/components/owner-actions/OwnerActionsMenu.component.test.tsx src/features/space-links/components/owners-list/OwnersList.component.test.tsx src/features/space-links/hooks/add-owner/useAddOwnerForm.component.test.tsx src/features/space-links/hooks/admin-list/useAdminSpacesList.component.test.tsx src/features/spaces/components/editor/SpaceEditor.component.test.tsx src/features/spaces/components/menu/SpaceActionsMenu.component.test.tsx src/features/spaces/components/photos/PhotosSection.component.test.tsx src/features/spaces/hooks/hide/useSetSpaceHidden.component.test.tsx src/pages/dashboard/admin/UsersPage.component.test.tsx src/pages/dashboard/admin/audit/AuditPage.component.test.tsx src/pages/dashboard/routes.component.test.tsx src/pages/dashboard/space/audit/AuditPage.component.test.tsx src/pages/site/routes.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 1 unhandled error during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯ Uncaught Exception ⎯⎯⎯⎯⎯
+TypeError: event.target.setPointerCapture is not a function
+ ❯ onPointerDown ../../node_modules/sonner/dist/index.mjs?v=fde37c24:750:26
+ ❯ executeDispatch ../../node_modules/react-dom/cjs/react-dom-client.development.js:20804:9
+ ❯ runWithFiberInDEV ../../node_modules/react-dom/cjs/react-dom-client.development.js:1048:13
+ ❯ processDispatchQueue ../../node_modules/react-dom/cjs/react-dom-client.development.js:20854:19
+ ❯ ../../node_modules/react-dom/cjs/react-dom-client.development.js:21423:9
+ ❯ batchedUpdates$1 ../../node_modules/react-dom/cjs/react-dom-client.development.js:3437:40
+ ❯ dispatchEventForPluginEventSystem ../../node_modules/react-dom/cjs/react-dom-client.development.js:21008:7
+ ❯ dispatchEvent ../../node_modules/react-dom/cjs/react-dom-client.development.js:26142:11
+ ❯ dispatchDiscreteEvent ../../node_modules/react-dom/cjs/react-dom-client.development.js:26110:11
+ ❯ HTMLDivElement.callTheUserObjectsOperation ../../node_modules/jsdom/lib/generated/idl/EventListener.js:26:30
+
+This error originated in "src/features/spaces/hooks/hide/useSetSpaceHidden.component.test.tsx" test file. It doesn't mean the error was thrown inside the file itself, but while it was running.
+The last test to run before this error was "hiding offers «تراجع» that shows it again". This means either:
+- the error was thrown while Vitest was running this test, or
+- the error was thrown after the test completed, and this was the most recent test at that point.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  33 passed (33)
+      Tests  371 passed (371)
+     Errors  1 error
+   Start at  11:54:37
+   Duration  130.88s (tests 41%, import 25%, environment 20%, transform 7%, setup 7%)
+
+    Isolate  33 workers spawned · ~5.08s startup each (spawn + environment, per file)
+             at least ~10.16s faster with isolate: false — reuses workers across files instead of one per file
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/audit/components/AuditLog.component.test.tsx src/features/data-reports/components/admin/AdminReportsList.component.test.tsx src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx src/features/lookups/components/list/AmenitiesSection.component.test.tsx src/features/lookups/components/list/GovernoratesSection.component.test.tsx src/features/lookups/components/sheet/AmenitySheet.component.test.tsx src/features/lookups/components/sheet/LookupSheet.component.test.tsx src/features/lookups/hooks/add/useAddAmenityForm.component.test.tsx src/features/lookups/hooks/add/useAddAreaForm.component.test.tsx src/features/lookups/hooks/add/useAddGovernorateForm.component.test.tsx src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx src/features/lookups/hooks/edit/useEditAreaForm.component.test.tsx src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx src/features/lookups/hooks/list/useAmenityRow.component.test.tsx src/features/lookups/hooks/list/useGovernorateCard.component.test.tsx src/features/platform-settings/components/PlatformContact.component.test.tsx src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx src/features/space-links/components/add-owner/AddOwner.component.test.tsx src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx src/features/space-links/components/link/LinkOwnerDialog.component.test.tsx src/features/space-links/components/owner-actions/OwnerActionsMenu.component.test.tsx src/features/space-links/components/owners-list/OwnersList.component.test.tsx src/features/space-links/hooks/add-owner/useAddOwnerForm.component.test.tsx src/features/space-links/hooks/admin-list/useAdminSpacesList.component.test.tsx src/features/spaces/components/editor/SpaceEditor.component.test.tsx src/features/spaces/components/menu/SpaceActionsMenu.component.test.tsx src/features/spaces/components/photos/PhotosSection.component.test.tsx src/features/spaces/hooks/hide/useSetSpaceHidden.component.test.tsx src/pages/dashboard/admin/UsersPage.component.test.tsx src/pages/dashboard/admin/audit/AuditPage.component.test.tsx src/pages/dashboard/routes.component.test.tsx src/pages/dashboard/space/audit/AuditPage.component.test.tsx src/pages/site/routes.component.test.tsx

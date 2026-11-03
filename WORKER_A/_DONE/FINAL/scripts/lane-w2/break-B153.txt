@@ -1,0 +1,77 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/audit/components/AuditLog.component.test.tsx (8 tests | 2 failed) 5605ms
+   ❯ AuditLog (the owner’s) (8)
+     × the owner’s log: Masaha as «فريق مساحة», the system as «النظام» 574ms
+     × the actor filter shows only with more than one actor 671ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed (8)
+   Start at  15:16:12
+   Duration  21.11s (tests 27%, import 26%, transform 25%, environment 17%, setup 5%)
+
+  Transform  |component| transforming modules took 5.21s · 25% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/audit/components/AuditLog.component.test.tsx > AuditLog (the owner’s) > the owner’s log: Masaha as «فريق مساحة», the system as «النظام»
+AssertionError: expected [ 'Admin', 'إخفاء مساحة', 'فوكس هب' ] to deeply equal [ 'فريق مساحة', 'إخفاء مساحة', …(1) ]
+
+- Expected
++ Received
+
+  [
+-   "فريق مساحة",
++   "Admin",
+    "إخفاء مساحة",
+    "فوكس هب",
+  ]
+
+ ❯ src/features/audit/components/AuditLog.component.test.tsx:107:33
+    105|     const table = screen.getByRole('table', { name: 'سجل التدقيق' });
+    106|     const [masaha, system] = rowsOf(table);
+    107|     expect(masaha?.slice(1, 4)).toEqual(['فريق مساحة', 'إخفاء مساحة', …
+       |                                 ^
+    108|     expect(system?.slice(1, 4)).toEqual(['النظام', 'خروج تلقائي', 'زيا…
+    109|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/audit/components/AuditLog.component.test.tsx > AuditLog (the owner’s) > the actor filter shows only with more than one actor
+AssertionError: expected [ 'All', 'Huda Saleh', 'Admin' ] to deeply equal [ 'All', 'Huda Saleh', …(1) ]
+
+- Expected
++ Received
+
+  [
+    "All",
+    "Huda Saleh",
+-   "The Masaha team",
++   "Admin",
+  ]
+
+ ❯ src/features/audit/components/AuditLog.component.test.tsx:125:79
+    123|     const actor = screen.getByRole('combobox', { name: 'Actor' });
+    124|     await user.click(actor);
+    125|     expect(screen.getAllByRole('option').map((option) => option.textCo…
+       |                                                                               ^
+    126|       'All',
+    127|       'Huda Saleh',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/audit

@@ -1,0 +1,63 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/overview/components/owner
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx (9 tests | 1 failed) 5209ms
+   ❯ OwnerOverview (9)
+     × shows no meter, and asks for the capacity, without one 206ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  15:08:32
+   Duration  28.74s (import 30%, transform 26%, tests 19%, environment 19%, setup 7%)
+
+  Transform  |component| transforming modules took 7.01s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx > OwnerOverview > shows no meter, and asks for the capacity, without one
+AssertionError: expected <div data-slot="meter" …(6)>…(1)</div> to be null
+
+- Expected:
+null
+
++ Received:
+<div
+  aria-label="Occupancy"
+  aria-valuemin="0"
+  aria-valuenow="0"
+  aria-valuetext="1 of null"
+  class="h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted"
+  data-slot="meter"
+  role="meter"
+>
+  <div
+    class="h-full rounded-(--radius-pill) transition-[inline-size] bg-primary"
+    data-tone="primary"
+    style="inline-size: 0%;"
+  />
+</div>
+
+ ❯ src/features/overview/components/owner/OwnerOverview.component.test.tsx:178:50
+    176|
+    177|     const present = await screen.findByRole('region', { name: 'Present…
+    178|     expect(within(present).queryByRole('meter')).toBeNull();
+       |                                                  ^
+    179|     expect(within(present).getByText('1')).toBeInTheDocument();
+    180|     expect(within(present).getByText('No live status')).toBeInTheDocum…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/overview/components/owner

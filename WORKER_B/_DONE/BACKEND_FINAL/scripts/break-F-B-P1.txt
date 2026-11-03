@@ -1,0 +1,146 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/finance/debts.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-f/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_f_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/finance/debts.api.test.ts (5 tests | 2 failed) 3790ms
+   ❯ who owes and who is in credit (5)
+     × who owes, largest first, paged, the total right: the phone, an archived customer kept and marked, the oldest item still owing and its day 821ms
+     × who is in credit, largest first 518ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  12:54:13
+   Duration  17.34s (transform 45%, tests 35%, import 18%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/finance/debts.api.test.ts > who owes and who is in credit > who owes, largest first, paged, the total right: the phone, an archived customer kept and marked, the oldest item still owing and its day
+AssertionError: expected [ { …(3) }, { …(3) } ] to deeply equal [ { …(3) }, { …(3) } ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "amountAgorot": 32000,
++     "amountAgorot": 1000,
+      "customer": {
+        "archived": false,
+-       "id": 2,
+-       "name": "Large",
+-       "phone": "+970599000001",
++       "id": 1,
++       "name": "Small",
++       "phone": null,
+      },
+      "oldestItem": {
+-       "id": 2,
++       "id": 1,
+        "kind": "VISIT",
+-       "name": "Omar",
+-       "since": "2026-10-18",
++       "name": "Small",
++       "since": "2026-10-20",
+      },
+    },
+    {
+-     "amountAgorot": 10000,
++     "amountAgorot": 32000,
+      "customer": {
+-       "archived": true,
+-       "id": 3,
+-       "name": "Archived",
+-       "phone": null,
++       "archived": false,
++       "id": 2,
++       "name": "Large",
++       "phone": "+970599000001",
+      },
+      "oldestItem": {
+        "id": 2,
+-       "kind": "SUBSCRIPTION",
+-       "name": "شهري",
+-       "since": "2026-10-01",
++       "kind": "VISIT",
++       "name": "Omar",
++       "since": "2026-10-18",
+      },
+    },
+  ]
+
+ ❯ src/modules/finance/debts.api.test.ts:170:27
+    168|
+    169|     expect(first.status).toBe(200);
+    170|     expect(rowsOf(first)).toEqual([
+       |                           ^
+    171|       {
+    172|         customer: { id: seeded.large.id, name: 'Large', phone: PHONE, …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/finance/debts.api.test.ts > who owes and who is in credit > who is in credit, largest first
+AssertionError: expected [ { …(3) }, { …(3) } ] to deeply equal [ { …(3) }, { …(3) } ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "amountAgorot": 4000,
++     "amountAgorot": 1000,
+      "customer": {
+        "archived": false,
+-       "id": 6,
+-       "name": "More",
++       "id": 5,
++       "name": "Less",
+        "phone": null,
+      },
+      "oldestItem": null,
+    },
+    {
+-     "amountAgorot": 1000,
++     "amountAgorot": 4000,
+      "customer": {
+        "archived": false,
+-       "id": 5,
+-       "name": "Less",
++       "id": 6,
++       "name": "More",
+        "phone": null,
+      },
+      "oldestItem": null,
+    },
+  ]
+
+ ❯ src/modules/finance/debts.api.test.ts:214:30
+    212|     const response = await debts('?state=CREDIT');
+    213|
+    214|     expect(rowsOf(response)).toEqual([
+       |                              ^
+    215|       {
+    216|         customer: { id: seeded.more.id, name: 'More', phone: null, arc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-f\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-f\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/finance/debts.api.test.ts

@@ -1,0 +1,11 @@
+feat(desk): void a payment
+
+The owner voids a payment on the web (DK-016; ADR 0010 rules 3-5): a
+payment's «⋯», named by its amount and who, opens a dialog that says the
+void's true consequence and asks its reason. It is sent once with no
+key, as the route answers a second void with the first; the written-off
+visit's refusal, a payment gone and a 403 are each worded. The void is
+the desk module's route, so it is desk's on the web, exported for the
+payments page's rows (S1); a subscription's statement offers it to the
+owner too (S10), so a payment on the wrong subscription is voided where
+it is found.

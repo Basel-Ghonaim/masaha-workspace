@@ -1,0 +1,214 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/display/Meter
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx (4 tests | 4 failed) 171ms
+   ❯ Meter (4)
+     × is a named meter with its value 86ms
+     × as progress is a progressbar 14ms
+     × keeps its value inside its bounds 17ms
+     × has no accessibility violations 51ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  16:42:37
+   Duration  3.01s (environment 48%, import 25%, setup 17%, tests 6%, transform 4%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx > Meter > is a named meter with its value
+TestingLibraryElementError: Unable to find an accessible element with the role "meter" and name "Seats taken"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"Seats taken"[39m
+      [33maria-valuemax[39m=[32m"40"[39m
+      [33maria-valuemin[39m=[32m"0"[39m
+      [33maria-valuenow[39m=[32m"27"[39m
+      [33maria-valuetext[39m=[32m"27 of 40"[39m
+      [33mclass[39m=[32m"h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted"[39m
+      [33mdata-slot[39m=[32m"meter"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"h-full rounded-(--radius-pill) transition-[inline-size] bg-primary"[39m
+        [33mdata-tone[39m=[32m"primary"[39m
+        [33mstyle[39m=[32m"inline-size: 67.5%;"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/shared/design-system/components/display/Meter/Meter.component.test.tsx:10:26
+      8|     render(<Meter label="Seats taken" value={27} max={40} valueText="2…
+      9|
+     10|     const meter = screen.getByRole('meter', { name: 'Seats taken' });
+       |                          ^
+     11|     expect(meter).toHaveAttribute('aria-valuemin', '0');
+     12|     expect(meter).toHaveAttribute('aria-valuemax', '40');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx > Meter > as progress is a progressbar
+TestingLibraryElementError: Unable to find an accessible element with the role "progressbar" and name "Uploading the photo"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"Uploading the photo"[39m
+      [33maria-valuemax[39m=[32m"100"[39m
+      [33maria-valuemin[39m=[32m"0"[39m
+      [33maria-valuenow[39m=[32m"30"[39m
+      [33mclass[39m=[32m"h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted"[39m
+      [33mdata-slot[39m=[32m"meter"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"h-full rounded-(--radius-pill) transition-[inline-size] bg-primary"[39m
+        [33mdata-tone[39m=[32m"primary"[39m
+        [33mstyle[39m=[32m"inline-size: 30%;"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/shared/design-system/components/display/Meter/Meter.component.test.tsx:20:19
+     18|     render(<Meter kind="progress" label="Uploading the photo" value={3…
+     19|
+     20|     expect(screen.getByRole('progressbar', { name: 'Uploading the phot…
+       |                   ^
+     21|       'aria-valuenow',
+     22|       '30',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx > Meter > keeps its value inside its bounds
+TestingLibraryElementError: Unable to find an accessible element with the role "meter"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"Seats taken"[39m
+      [33maria-valuemax[39m=[32m"40"[39m
+      [33maria-valuemin[39m=[32m"0"[39m
+      [33maria-valuenow[39m=[32m"40"[39m
+      [33mclass[39m=[32m"h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted"[39m
+      [33mdata-slot[39m=[32m"meter"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"h-full rounded-(--radius-pill) transition-[inline-size] bg-primary"[39m
+        [33mdata-tone[39m=[32m"primary"[39m
+        [33mstyle[39m=[32m"inline-size: 100%;"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/shared/design-system/components/display/Meter/Meter.component.test.tsx:30:19
+     28|     render(<Meter label="Seats taken" value={45} max={40} />);
+     29|
+     30|     expect(screen.getByRole('meter')).toHaveAttribute('aria-valuenow',…
+       |                   ^
+     31|   });
+     32|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx > Meter > has no accessibility violations
+Error: expect(received).toHaveNoViolations(expected)
+
+Expected the HTML found at $('div[aria-label="Seats taken"]') to have no violations:
+
+<div data-slot="meter" aria-label="Seats taken" aria-valuemin="0" aria-valuemax="40" aria-valuenow="27" class="h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted">
+
+Received:
+
+"Elements must only use supported ARIA attributes (aria-allowed-attr)"
+
+Fix all of the following:
+  ARIA attributes are not allowed: aria-valuemin="0", aria-valuemax="40", aria-valuenow="27"
+
+You can find more information on this issue here: 
+https://dequeuniversity.com/rules/axe/4.13/aria-allowed-attr?application=axeAPI
+
+Expected the HTML found at $('div[aria-label="Uploading the photo"]') to have no violations:
+
+<div data-slot="meter" aria-label="Uploading the photo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" class="h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted">
+
+Received:
+
+"Elements must only use supported ARIA attributes (aria-allowed-attr)"
+
+Fix all of the following:
+  ARIA attributes are not allowed: aria-valuemin="0", aria-valuemax="100", aria-valuenow="30"
+
+You can find more information on this issue here: 
+https://dequeuniversity.com/rules/axe/4.13/aria-allowed-attr?application=axeAPI
+
+────────
+
+Expected the HTML found at $('div[aria-label="Seats taken"]') to have no violations:
+
+<div data-slot="meter" aria-label="Seats taken" aria-valuemin="0" aria-valuemax="40" aria-valuenow="27" class="h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted">
+
+Received:
+
+"Elements must only use permitted ARIA attributes (aria-prohibited-attr)"
+
+Fix all of the following:
+  aria-label attribute cannot be used on a div with no valid role attribute.
+
+You can find more information on this issue here: 
+https://dequeuniversity.com/rules/axe/4.13/aria-prohibited-attr?application=axeAPI
+
+Expected the HTML found at $('div[aria-label="Uploading the photo"]') to have no violations:
+
+<div data-slot="meter" aria-label="Uploading the photo" aria-valuemin="0" aria-valuemax="100" aria-valuenow="30" class="h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted">
+
+Received:
+
+"Elements must only use permitted ARIA attributes (aria-prohibited-attr)"
+
+Fix all of the following:
+  aria-label attribute cannot be used on a div with no valid role attribute.
+
+You can find more information on this issue here: 
+https://dequeuniversity.com/rules/axe/4.13/aria-prohibited-attr?application=axeAPI
+ ❯ src/shared/design-system/components/display/Meter/Meter.component.test.tsx:41:34
+     39|     );
+     40|
+     41|     expect(await axe(container)).toHaveNoViolations();
+       |                                  ^
+     42|   });
+     43| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/display/Meter

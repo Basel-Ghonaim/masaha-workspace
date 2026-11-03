@@ -1,0 +1,118 @@
+[
+ {
+  "id": "B1",
+  "file": "packages/shared/src/platform-settings/requests.ts",
+  "old": "const days = z.int().min(1).max(STALENESS_DAYS_MAX);",
+  "new": "const days = z.int().min(1);",
+  "lane": "shared",
+  "test": "src/platform-settings/requests.unit.test.ts"
+ },
+ {
+  "id": "B2",
+  "file": "packages/shared/src/space-settings/requests.ts",
+  "old": "  .superRefine(roundingPair);\nexport type NewSpaceDefaults",
+  "new": "  ;\nexport type NewSpaceDefaults",
+  "lane": "shared",
+  "test": "src/space-settings/requests.unit.test.ts",
+  "name": "takes the four defaults"
+ },
+ {
+  "id": "B3",
+  "file": "apps/api/src/modules/platform-settings/settingsChange.ts",
+  "old": ".filter((field) => becomes[field] !== was[field]);",
+  "new": ".filter(() => true);",
+  "lane": "unit",
+  "test": "src/modules/platform-settings/settingsChange.unit.test.ts"
+ },
+ {
+  "id": "B4",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.service.ts",
+  "old": "          if (isOptional(key)) return [key, null];\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/platform-settings/adminSettings.api.test.ts",
+  "name": "the admin reads each card"
+ },
+ {
+  "id": "B5",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.service.ts",
+  "old": "      if (!change) return card.fromValues(stored);\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/platform-settings/adminSettings.api.test.ts",
+  "name": "each card saves on its own"
+ },
+ {
+  "id": "B6",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.service.ts",
+  "old": "          await repository.write(key, values[key], tx);",
+  "new": "          if (key !== 'newSpaceDefaults') await repository.write(key, values[key], tx);",
+  "lane": "api",
+  "test": "src/modules/platform-settings/adminSettings.api.test.ts",
+  "name": "a saved default is copied"
+ },
+ {
+  "id": "B7",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.repository.ts",
+  "old": "        ORDER BY \"key\" FOR UPDATE`;",
+  "new": "        ORDER BY \"key\"`;",
+  "lane": "api",
+  "test": "src/modules/platform-settings/adminSettings.api.test.ts",
+  "name": "two saves of one card at once"
+ },
+ {
+  "id": "B8",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.service.ts",
+  "old": "      await repository.ensure(card.keys.filter(isOptional), tx);\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/platform-settings/adminSettings.api.test.ts",
+  "name": "two first saves of the contact"
+ },
+ {
+  "id": "B9",
+  "file": "apps/api/src/app.ts",
+  "old": "  admin.use('/settings', createPlatformSettingsAdminRouter(platformSettingsController));\n",
+  "new": "",
+  "edits": [
+   [
+    "  admin.use('/settings', createPlatformSettingsAdminRouter(platformSettingsController));\n",
+    ""
+   ],
+   [
+    "  api.use('/settings', createPlatformSettingsPublicRouter(platformSettingsController));\n",
+    "  api.use('/settings', createPlatformSettingsPublicRouter(platformSettingsController));\n  api.use('/admin/settings', createPlatformSettingsAdminRouter(platformSettingsController));\n"
+   ]
+  ],
+  "lane": "api",
+  "test": "src/modules/platform-settings/adminSettings.api.test.ts",
+  "name": "on the six routes"
+ },
+ {
+  "id": "B10",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.controller.ts",
+  "old": "      res.set('Cache-Control', `public, max-age=${String(PUBLIC_CONTACT_MAX_AGE_SECONDS)}`);\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/platform-settings/publicContact.api.test.ts",
+  "name": "anyone reads the contact"
+ },
+ {
+  "id": "B11",
+  "file": "apps/api/src/modules/platform-settings/platform-settings.service.ts",
+  "old": "        return [key, schemaOf(key).parse(row.value)];",
+  "new": "        return [key, row.value];",
+  "lane": "api",
+  "test": "src/modules/platform-settings/publicContact.api.test.ts",
+  "name": "fails its schema"
+ },
+ {
+  "id": "B12",
+  "file": "apps/api/src/modules/audit/platformEvents.ts",
+  "old": "  'platformSettings.newSpaceDefaultsEdited',\n  'platformSettings.stalenessEdited',\n  'platformSettings.contactEdited',\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "settings actions"
+ }
+]

@@ -1,0 +1,37 @@
+[heavy] waiting (try 1 of 60)
+[heavy] waiting (try 2 of 60)
+[heavy] waiting (try 3 of 60)
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+
+src/features/staff/hooks/list/useStaffList.component.test.tsx(12,7): error TS2741: Property 'addedAt' is missing in type '{ userId: number; name: string; email: string; isActive: true; temporaryPassword: null; }' but required in type 'StaffMember'.
+src/features/staff/hooks/people/useStaffPeople.component.test.tsx(12,64): error TS2322: Type '{ userId: number; name: string; email: string; isActive: boolean; addedAt?: string | undefined; temporaryPassword: { expiresAt: string; } | null; }' is not assignable to type 'StaffMember'.
+  Types of property 'addedAt' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+src/features/staff/hooks/reissue/useReissueDialog.component.test.tsx(13,7): error TS2741: Property 'addedAt' is missing in type '{ userId: number; name: string; email: string; isActive: true; temporaryPassword: { expiresAt: string; }; }' but required in type 'StaffMember'.
+src/features/staff/repository/staffRepository.unit.test.ts(8,7): error TS2741: Property 'addedAt' is missing in type '{ userId: number; name: string; email: string; isActive: true; temporaryPassword: null; }' but required in type 'StaffMember'.
+src/features/staff/services/staffBadges.unit.test.ts(9,64): error TS2322: Type '{ userId: number; name: string; email: string; isActive: boolean; addedAt?: string | undefined; temporaryPassword: { expiresAt: string; } | null; }' is not assignable to type 'StaffMember'.
+  Types of property 'addedAt' are incompatible.
+    Type 'string | undefined' is not assignable to type 'string'.
+      Type 'undefined' is not assignable to type 'string'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path C:\dev\masaha\app-lane-a1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc -b

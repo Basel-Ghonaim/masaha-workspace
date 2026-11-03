@@ -1,0 +1,439 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/components/favorites
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/directory/components/favorites/FavoritesView.component.test.tsx (4 tests | 2 failed) 3733ms
+   ❯ FavoritesView (4)
+     × hands the focus on when a removed space leaves: the next row, else the first heart, else the count 144ms
+     × gives the count the focus when the last space that left goes and no card is there 3114ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/components/favorites/FavoritesView.component.test.tsx > FavoritesView > hands the focus on when a removed space leaves: the next row, else the first heart, else the count
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<button
+  type="button"
+>
+  Remove·
+  Far Hub
+</button>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <section
+      aria-labelledby="_r_6_"
+      class="flex flex-col gap-4"
+    >
+      <h2
+        class="sr-only"
+        id="_r_6_"
+      >
+        Saved spaces
+      </h2>
+      <div
+        class="flex flex-col"
+      >
+        <div
+          class="flex flex-wrap items-center justify-between gap-3"
+        >
+          <p
+            aria-live="polite"
+            class="text-body-sm text-muted-foreground outline-none"
+            tabindex="-1"
+          >
+            2 saved spaces
+          </p>
+          <button
+            aria-pressed="false"
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+            data-slot="button"
+          >
+            Nearest to me
+          </button>
+        </div>
+        <div
+          class="not-empty:mt-2"
+          role="status"
+        />
+      </div>
+      <div
+        class="grid gap-4 md:grid-cols-2 xl:grid-cols-3"
+      >
+        <div
+          class="relative h-full"
+        >
+          <a
+            aria-describedby="_r_8_-area _r_8_-status _r_8_-verified"
+            aria-labelledby="_r_7_"
+            class="block h-full rounded-lg text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            data-discover="true"
+            href="/spaces/masaha-hub"
+          >
+            <div
+              class="flex flex-col gap-(--card-padding) rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg h-full overflow-hidden pt-0 hover:bg-accent"
+              data-slot="card"
+            >
+              <div
+                class="relative flex aspect-2/1 w-full items-center justify-center overflow-hidden bg-muted md:aspect-video"
+              >
+                <span
+                  aria-hidden="true"
+                  class="flex size-16 items-center justify-center rounded-xl bg-primary text-heading-1 text-primary-foreground"
+                >
+                  M
+                </span>
+              </div>
+              <div
+                class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+                data-slot="card-header"
+              >
+                <div
+                  class="text-heading-3"
+                  data-slot="card-title"
+                >
+                  <h3
+                    id="_r_7_"
+                  >
+                    <span … />
+                  </h3>
+                </div>
+                <div
+                  class="text-body-sm text-muted-foreground"
+                  data-slot="card-description"
+                  id="_r_8_-area"
+                >
+                  Al-Rimal
+                </div>
+              </div>
+              <div
+                class="px-(--card-padding) flex flex-col gap-2"
+                data-slot="card-content"
+              >
+                <div
+                  class="flex flex-wrap items-center gap-2"
+                >
+                  <span
+                    class="inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"
+                    data-slot="badge"
+                    data-variant="success"
+                    id="_r_8_-status"
+                  >
+                    Available
+                  </span>
+                  <span
+                    class="flex items-center gap-1 text-body-sm text-primary"
+                    id="_r_8_-verified"
+                  >
+                    <svg … />
+                    Verified
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <div
+            class="absolute end-3 top-3"
+            data-card-action="true"
+          >
+            <button
+              aria-pressed="true"
+              type="button"
+            >
+              Heart·
+              Masaha Hub
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul
+        class="flex flex-col gap-4"
+      >
+        <li
+          data-unlisted-key="10"
+        >
+          <div
+            class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg bg-muted"
+            data-slot="card"
+          >
+            <div
+              class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+              data-slot="card-header"
+            >
+              <div
+                class="text-heading-3"
+                data-slot="card-title"
+              >
+                <h3
+                  class="text-muted-foreground"
+                >
+                  <span>
+                    Far Hub
+                  </span>
+                </h3>
+              </div>
+              <div
+                class="text-body-sm text-muted-foreground"
+                data-slot="card-description"
+              >
+                This space is no longer listed in the directory
+              </div>
+              <div
+                class="col-start-2 row-span-2 row-start-1 self-start justify-self-end"
+                data-slot="card-action"
+              >
+                <button
+                  type="button"
+                >
+                  Remove·
+                  Far Hub
+                </button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</body>[39m
+ ❯ src/features/directory/components/favorites/FavoritesView.component.test.tsx:125:68
+    123|       expect(screen.queryByText('Old Hub')).not.toBeInTheDocument();
+    124|     });
+    125|     expect(screen.getByRole('button', { name: 'Remove Far Hub' })).toH…
+       |                                                                    ^
+    126|
+    127|     await userEvent.click(screen.getByRole('button', { name: 'Remove F…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/directory/components/favorites/FavoritesView.component.test.tsx > FavoritesView > gives the count the focus when the last space that left goes and no card is there
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<p
+  aria-live="polite"
+  class="text-body-sm text-muted-foreground outline-none"
+  tabindex="-1"
+>
+  0 saved spaces
+</p>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <section
+      aria-labelledby="_r_9_"
+      class="flex flex-col gap-4"
+    >
+      <h2
+        class="sr-only"
+        id="_r_9_"
+      >
+        Saved spaces
+      </h2>
+      <div
+        class="flex flex-col"
+      >
+        <div
+          class="flex flex-wrap items-center justify-between gap-3"
+        >
+          <p
+            aria-live="polite"
+            class="text-body-sm text-muted-foreground outline-none"
+            tabindex="-1"
+          >
+            0 saved spaces
+          </p>
+          <button
+            aria-pressed="false"
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+            data-slot="button"
+          >
+            Nearest to me
+          </button>
+        </div>
+        <div
+          class="not-empty:mt-2"
+          role="status"
+        />
+      </div>
+      <div
+        class="flex flex-col items-center gap-2 px-4 py-10 text-center"
+        data-slot="empty-state"
+      >
+        <div
+          aria-hidden="true"
+          class="mb-2 flex size-14 items-center justify-center rounded-full bg-muted text-muted-foreground [&_svg:not([class*='size-'])]:size-6"
+        >
+          <svg
+            aria-hidden="true"
+            class="lucide lucide-heart"
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"
+            />
+          </svg>
+        </div>
+        <h3
+          class="text-heading-3"
+        >
+          You haven’t saved any spaces yet
+        </h3>
+        <p
+          class="max-w-sm text-body-sm text-muted-foreground"
+        >
+          Tap the heart on any space’s page to find it here.
+        </p>
+        <div
+          class="mt-4 flex w-full flex-col gap-2 md:w-auto md:flex-row md:justify-center"
+        >
+          <a
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"
+            data-discover="true"
+            data-slot="button"
+            href="/spaces"
+          >
+            Browse spaces
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-labelledby[39m=[32m"_r_9_"[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"sr-only"[39m
+          [33mid[39m=[32m"_r_9_"[39m
+        [36m>[39m
+          [0mSaved spaces[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3"[39m
+          [36m>[39m
+            [36m<p[39m
+              [33maria-live[39m=[32m"polite"[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground outline-none"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+            [36m>[39m
+              [0m0 saved spaces[0m
+            [36m</p>[39m
+            [36m<button[39m
+              [33maria-pressed[39m=[32m"false"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+            [36m>[39m
+              [0mNearest to me[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"not-empty:mt-2"[39m
+            [33mrole[39m=[32m"status"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col items-center gap-2 px-4 py-10 text-center"[39m
+          [33mdata-slot[39m=[32m"empty-state"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"mb-2 flex size-14 items-center justify-center rounded-full bg-muted text-muted-foreground [&_svg:not([class*='size-'])]:size-6"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-heart"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"text-heading-3"[39m
+          [36m>[39m
+            [0mYou haven’t saved any spaces yet[0m
+          [36m</h3>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"max-w-sm text-body-sm text-muted-foreground"[39m
+          [36m>[39m
+            [0mTap the heart on any space’s page to find it here.[0m
+          [36m</p>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-4 flex w-full flex-col gap-2 md:w-auto md:flex-row md:justify-center"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/spaces"[39m
+            [36m>[39m
+              [0mBrowse spaces[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m...
+ ❯ src/features/directory/components/favorites/FavoritesView.component.test.tsx:140:50
+    138|
+    139|     await waitFor(() => {
+    140|       expect(screen.getByText('0 saved spaces')).toHaveFocus();
+       |                                                  ^
+    141|     });
+    142|   });
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  13:34:30
+   Duration  9.92s (tests 39%, transform 23%, import 20%, environment 15%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/components/favorites

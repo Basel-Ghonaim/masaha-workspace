@@ -1,0 +1,61 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/icons/Icon.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/shared/design-system/icons/Icon.component.test.tsx (47 tests | 2 failed) 152ms
+   ❯ icon mirroring (47)
+     × never mirrors HeartIcon 5ms
+     × draws the heart, filled by the class it is given, never mirrored 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/icons/Icon.component.test.tsx > icon mirroring > never mirrors HeartIcon
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveClass([22m[32m[32m"-scale-x-100"[32m[39m[2m)[22m
+
+Expected the element not to have class:
+[32m  -scale-x-100[39m
+Received:
+[31m  lucide lucide-heart -scale-x-100[39m
+ ❯ src/shared/design-system/icons/Icon.component.test.tsx:114:36
+    112|
+    113|   it.each(NON_DIRECTIONAL)('never mirrors $name', ({ icon }) => {
+    114|     expect(svgOf('rtl', icon)).not.toHaveClass(MIRRORED);
+       |                                    ^
+    115|   });
+    116|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/shared/design-system/icons/Icon.component.test.tsx > icon mirroring > draws the heart, filled by the class it is given, never mirrored
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveClass([22m[32m[32m"-scale-x-100"[32m[39m[2m)[22m
+
+Expected the element not to have class:
+[32m  -scale-x-100[39m
+Received:
+[31m  lucide lucide-heart -scale-x-100 fill-current[39m
+ ❯ src/shared/design-system/icons/Icon.component.test.tsx:125:21
+    123|     expect(svg).toBeInTheDocument();
+    124|     expect(svg).toHaveClass('fill-current');
+    125|     expect(svg).not.toHaveClass(MIRRORED);
+       |                     ^
+    126|   });
+    127| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 45 passed (47)
+   Start at  11:45:29
+   Duration  2.83s (environment 57%, import 17%, setup 14%, tests 6%, transform 5%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/icons/Icon.component.test.tsx

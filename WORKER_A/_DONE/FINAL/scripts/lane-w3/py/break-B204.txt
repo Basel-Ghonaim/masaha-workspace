@@ -1,0 +1,89 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/written-off
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/written-off/WrittenOffVisits.component.test.tsx (5 tests | 1 failed) 1425ms
+   ❯ the owner’s written-off visits (5)
+     × lists who, when, how much and why, by whom, with «Undo», and is axe-clean 572ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:04:01
+   Duration  17.69s (transform 33%, import 32%, environment 21%, tests 8%, setup 5%)
+
+  Transform  |component| transforming modules took 5.63s · 33% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/written-off/WrittenOffVisits.component.test.tsx > the owner’s written-off visits > lists who, when, how much and why, by whom, with «Undo», and is axe-clean
+TestingLibraryElementError: Unable to find an element with the text: (content) => content.replace(/[⁦-⁩]/g, "") === expected. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3 px-5 py-3"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"flex flex-wrap items-baseline gap-2"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"text-label text-foreground underline-offset-4 hover:underline"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdir[39m=[32m"auto"[39m
+        [33mhref[39m=[32m"/file/40"[39m
+      [36m>[39m
+        [0mKhalid Nasser[0m
+      [36m</a>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [36m>[39m
+        [0m6 October[0m
+      [36m</span>[39m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-body-sm"[39m
+    [36m>[39m
+      [0mWritten off ⁨₪25⁩ · ⁨Left the country⁩[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+    [36m>[39m
+      [0mWritten off by ⁨⁩ on 7 October[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m>[39m
+    [0mUndo[0m
+  [36m</button>[39m
+[36m</li>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/desk/components/written-off/WrittenOffVisits.component.test.tsx:82:24
+     80|     const row = name.closest('li') as HTMLElement;
+     81|     expect(within(row).getByText(heard('Written off ₪25 · Left the cou…
+     82|     expect(within(row).getByText(heard('Written off by Huda on 7 Octob…
+       |                        ^
+     83|     expect(within(row).getByRole('button', { name: 'Undo' })).toBeVisi…
+     84|     expect(screen.queryByText('Rami')).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/written-off

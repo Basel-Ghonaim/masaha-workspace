@@ -1,0 +1,66 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/favorites src/features/directory/repository
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |unit| src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts (0 test)
+ ❯ |unit| src/features/favorites/repository/favoritesRepository.unit.test.ts (0 test)
+ ❯ |unit| src/features/directory/repository/directoryRepository.unit.test.ts (6 tests | 1 failed) 18ms
+   ❯ the directory repository (6)
+     × asks for the user’s favourites, newest saved first or nearest first, the point in Masaha-Near only 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/favorites/repository/favoritesRepository.unit.test.ts [ src/features/favorites/repository/favoritesRepository.unit.test.ts ]
+Error: Cannot find module './favoritesRepository' imported from C:/dev/masaha/app-lane-c/apps/web/src/features/favorites/repository/favoritesRepository.unit.test.ts
+ ❯ src/features/favorites/repository/favoritesRepository.unit.test.ts:4:1
+      2| import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+      3| import { fakeAdapter, type FakeAnswer } from '../../../test/fakeAdapte…
+      4| import { createFavoritesRepository } from './favoritesRepository';
+       | ^
+      5|
+      6| /** The app's one client, wired as bootstrap wires it, answering every…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |unit| src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts [ src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts ]
+Error: Cannot find module './favoriteIntent' imported from C:/dev/masaha/app-lane-c/apps/web/src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts
+ ❯ src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts:2:1
+      1| import { afterEach, describe, expect, it } from 'vitest';
+      2| import { dropFavorite, holdFavorite, takeFavorite } from './favoriteIn…
+       | ^
+      3|
+      4| afterEach(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/directory/repository/directoryRepository.unit.test.ts > the directory repository > asks for the user’s favourites, newest saved first or nearest first, the point in Masaha-Near only
+TypeError: repository.favorites is not a function
+ ❯ src/features/directory/repository/directoryRepository.unit.test.ts:92:29
+     90|     const requests = serve({ status: 200, data: { success: true, data:…
+     91|
+     92|     await expect(repository.favorites({})).resolves.toEqual(favorites);
+       |                             ^
+     93|     await repository.favorites({ near: { lat: 31.521, lng: 34.453 } });
+     94|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  1 failed | 5 passed (6)
+   Start at  13:19:07
+   Duration  1.13s (import 52%, transform 44%, worker 2%, tests 2%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/favorites src/features/directory/repository

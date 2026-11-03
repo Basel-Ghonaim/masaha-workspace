@@ -1,0 +1,34 @@
+[heavy] waiting (try 1 of 60)
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/space-links/staff/staff.api.test.ts (13 tests | 1 failed) 44243ms
+   ❯ POST /manage/spaces/:spaceId/staff/:userId/temporary-password (3)
+     × the owner issues a new temporary password only while one is pending 7376ms
+ ❯ |api| src/modules/spaces/photos/reclaim.api.test.ts (2 tests | 1 failed) 10051ms
+   ❯ the reclamation of files no photo holds (2)
+     × removes at most 200 files a run, the rest left to the next 6276ms
+ ❯ |api| src/modules/favorites/favorites.api.test.ts (7 tests | 1 failed) 4848ms
+   ❯ POST /me/favorites/:spaceId (5)
+     × a signed-in user saves a listed space, 204; again 204 with one row, even once hidden 1051ms
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a2\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a2\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api

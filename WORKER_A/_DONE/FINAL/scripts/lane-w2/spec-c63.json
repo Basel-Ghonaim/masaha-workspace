@@ -1,0 +1,18 @@
+[
+  {"label": "B159", "file": "apps/web/src/features/platform-settings/components/admin/PlatformSettingsCards.tsx",
+   "old": "      {staleness.saved === undefined ? (", "new": "      {staleness.saved === undefined || contact.saved === undefined ? (",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/admin"},
+  {"label": "B160", "file": "apps/web/src/features/platform-settings/hooks/admin/useContactCard.ts",
+   "old": "  whatsapp: whatsapp.trim() === '' ? null : whatsapp.trim(),", "new": "  whatsapp: whatsapp.trim(),",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/admin"},
+  {"label": "B161", "file": "apps/web/src/features/platform-settings/hooks/admin/useStalenessCard.ts",
+   "old": "  priceStalenessDays: wholeNumberOf(values.priceStalenessDays),\n  stalenessDays: wholeNumberOf(values.stalenessDays),",
+   "new": "  priceStalenessDays: Math.min(365, Math.max(1, Number(wholeNumberOf(values.priceStalenessDays)))),\n  stalenessDays: Math.min(365, Math.max(1, Number(wholeNumberOf(values.stalenessDays)))),",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/admin"},
+  {"label": "B162", "file": "apps/web/src/features/platform-settings/hooks/admin/useDefaultsCard.ts",
+   "old": "        values.visitRounding === 'UP_AFTER_MINUTES'\n          ? {", "new": "        values.visitRounding !== undefined\n          ? {",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/admin"},
+  {"label": "B163", "file": "apps/web/src/features/platform-settings/hooks/admin/useAdminSettingsForm.ts",
+   "old": "    unsaved: isDirty ? words.unsaved : null,", "new": "    unsaved: null,",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/admin"}
+]

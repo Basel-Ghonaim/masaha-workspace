@@ -1,0 +1,804 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx (3 tests | 2 failed) 651ms
+   ❯ AdminReportsList (3)
+     × shows a table of eight columns from 1024 px, the filters in a row; axe-clean 395ms
+     × moves the filters into a bottom sheet below 768 px, the tags still shown; axe-clean 123ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  12:34:51
+   Duration  7.16s (import 33%, transform 32%, environment 20%, tests 9%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx > AdminReportsList > shows a table of eight columns from 1024 px, the filters in a row; axe-clean
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Remove the field filter"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33maria-live[39m=[32m"polite"[39m
+    [33mclass[39m=[32m"text-body-sm text-muted-foreground outline-none"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"line-clamp-2 text-body-sm break-words"[39m
+    [33mdir[39m=[32m"auto"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Data reports":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Data reports"[39m
+    [33mclass[39m=[32m"flex flex-col gap-3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radiogroup:
+
+  Name "Filter by status":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Filter by status"[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [33mdata-slot[39m=[32m"toggle-group"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mrole[39m=[32m"radiogroup"[39m
+    [33mstyle[39m=[32m"outline: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "All":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"on"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "New":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"off"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Reviewed":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"off"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Space":
+  [36m<input[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mid[39m=[32m"_r_3_-control"[39m
+    [33mreadonly[39m=[32m""[39m
+    [33mvalue[39m=[32m""[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  combobox:
+
+  Name "Field":
+  [36m<button[39m
+    [33maria-autocomplete[39m=[32m"none"[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33mclass[39m=[32m"flex h-(--control-height) w-full items-center justify-between gap-2 rounded-(--radius-control) border border-input bg-background ps-3 pe-2 text-(length:--control-text-size) leading-(--type-body-line-height) whitespace-nowrap text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-placeholder:text-muted-foreground *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-slot[39m=[32m"select-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mid[39m=[32m"_r_4_-control"[39m
+    [33mrole[39m=[32m"combobox"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  table:
+
+  Name "Data reports":
+  [36m<table[39m
+    [33maria-label[39m=[32m"Data reports"[39m
+    [33mclass[39m=[32m"w-full caption-bottom text-body-sm"[39m
+    [33mdata-slot[39m=[32m"table"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  rowgroup:
+
+  Name "":
+  [36m<thead[39m
+    [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  row:
+
+  Name "Space Field Report Reporter Date Status Handled by Actions":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "Focus Hub Opening hours The space opens at 9, not 8. Huda Saleh 21 October New Admin Open":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  columnheader:
+
+  Name "Space":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Field":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Report":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Reporter":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Date":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Status":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Handled by":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Actions":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  cell:
+
+  Name "Focus Hub":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Opening hours":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "The space opens at 9, not 8.":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Huda Saleh":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "21 October":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "New":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Admin":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Open":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Focus Hub":
+  [36m<a[39m
+    [33mclass[39m=[32m"text-label text-foreground underline-offset-4 hover:underline"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/spaces/7"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Open":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [0mThe admin decides unverified spaces’ reports. Verified spaces’ reports are decided by their owner and shown here for reference.[0m
+      [36m</p>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Data reports"[39m
+        [33mclass[39m=[32m"flex flex-col gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Filter by status"[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [33mdata-slot[39m=[32m"toggle-group"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mrole[39m=[32m"radiogroup"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"true"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"on"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mAll[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mNew[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mReviewed[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"grid items-start gap-3 md:grid-cols-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/data-reports/components/admin/AdminReportsList.component.test.tsx:79:19
+     77|     expect(screen.getByRole('textbox', { name: 'Space' })).toBeVisible…
+     78|     expect(screen.getByRole('combobox', { name: 'Field' })).toBeVisibl…
+     79|     expect(screen.getByRole('button', { name: 'Remove the field filter…
+       |                   ^
+     80|     expect(screen.getByRole('button', { name: 'Clear filters' })).toBe…
+     81|     expect(await axe(container)).toHaveNoViolations();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx > AdminReportsList > moves the filters into a bottom sheet below 768 px, the tags still shown; axe-clean
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Remove the field filter"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33maria-live[39m=[32m"polite"[39m
+    [33mclass[39m=[32m"text-body-sm text-muted-foreground outline-none"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"line-clamp-2 text-body-sm break-words"[39m
+    [33mdir[39m=[32m"auto"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Data reports":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Data reports"[39m
+    [33mclass[39m=[32m"flex flex-col gap-3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radiogroup:
+
+  Name "Filter by status":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Filter by status"[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [33mdata-slot[39m=[32m"toggle-group"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mrole[39m=[32m"radiogroup"[39m
+    [33mstyle[39m=[32m"outline: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "All":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"on"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "New":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"off"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Reviewed":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"off"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "1 filter applied":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"1 filter applied"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Open":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  list:
+
+  Name "Data reports":
+  [36m<ul[39m
+    [33maria-label[39m=[32m"Data reports"[39m
+    [33mclass[39m=[32m"flex flex-col gap-3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"rounded-lg border border-(--card-border) bg-card p-3 text-card-foreground shadow-raised"[39m
+    [33mdata-slot[39m=[32m"data-table-card"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Focus Hub":
+  [36m<a[39m
+    [33mclass[39m=[32m"text-label text-foreground underline-offset-4 hover:underline"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/spaces/7"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [0mThe admin decides unverified spaces’ reports. Verified spaces’ reports are decided by their owner and shown here for reference.[0m
+      [36m</p>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Data reports"[39m
+        [33mclass[39m=[32m"flex flex-col gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Filter by status"[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [33mdata-slot[39m=[32m"toggle-group"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mrole[39m=[32m"radiogroup"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"true"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"on"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mAll[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mNew[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mReviewed[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33maria-expanded[39m=[32m"false"[39m
+          [33maria-haspopup[39m=[32m"dialog"[39m
+          [33maria-label[39m=[32m"1 filter applied"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+          [33mdata-slot[39m=[32m"sheet-trigger"[39m
+          [33mdata-state[39m=[32m"closed"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mFilters[0m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-accent text-accent-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"primary"[39m
+          [36m>[39m
+            [0m1[0m
+          [36m</span>[39m
+        [36m</button>[39m
+        [36m<p[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground outline-none"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [0m1 report[0m
+        [36m</p>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-4"[39m
+          [33mdata-layout[39m=[32m"cards"[39m
+          [33mdata-slot[39m=[32m"data-table"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33maria-label[39m=[32m"Data reports"[39m
+            [33mclass[39m=[32m"flex flex-col gap-3"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"rounded-lg border border-(--card-border) bg-card p-3 text-card-foreground shadow-raised"[39m
+              [33mdata-slot[39m=[32m"data-table-card"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-col gap-2"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-2"[39m
+                [36m>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"text-label text-foreground underline-offset-4 hover:underline"[39m
+                    [33mdata-discover[39m=[32m"true"[39m
+                    [33mhref[39m=[32m"/spaces/7"[39m
+                  [36m>[39m
+                    [0mFocus Hub[0m
+                  [36m</a>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+                      [33mdata-slot[39m=[32m"badge"[39m
+                      [33mdata-variant[39m=[32m"info"[39m
+                    [36m>[39m
+                      [0mNew[0m
+                    [36m</span>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+                      [33mdata-slot[39m=[32m"badge"[39m
+                      [33mdata-variant[39m=[32m"info"[39m
+                    [36m>[39m
+                      [0mAdmin[0m
+                    [36m</span>[39m
+                  [36m</span>[39m
+                [36m</div>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-label"[39m
+                [36m>[39m
+                  [0mOpening hours[0m
+                [36m</span>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"line-clamp-2 text-body-sm break-words"[39m
+                  [33mdir[39m=[32m"auto"[39m
+                [36m>[39m
+                  [0mThe space opens at 9, not 8.[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center justify-between gap-3"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                  [36m>[39m
+                    [0m⁨Huda Saleh⁩ · 21 October[0m
+                  [36m</span>[39m
+                  [36m<button[39m
+                    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+                    [33mdata-slot[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mOpen[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/data-reports/components/admin/AdminReportsList.component.test.tsx:106:19
+    104|     await screen.findByText('The space opens at 9, not 8.');
+    105|     expect(screen.queryByRole('combobox', { name: 'Field' })).toBeNull…
+    106|     expect(screen.getByRole('button', { name: 'Remove the field filter…
+       |                   ^
+    107|     await user.click(screen.getByRole('button', { name: '1 filter appl…
+    108|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

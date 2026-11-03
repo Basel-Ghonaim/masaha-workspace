@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/file
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/file/CustomerFile.component.test.tsx (3 tests | 1 failed) 1225ms
+   ❯ CustomerFile (3)
+     × the file’s reminder link holds the filled template, with its caption 117ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  13:24:58
+   Duration  13.13s (transform 40%, import 26%, environment 18%, tests 10%, setup 6%)
+
+  Transform  |component| transforming modules took 5.16s · 40% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/file/CustomerFile.component.test.tsx > CustomerFile > the file’s reminder link holds the filled template, with its caption
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"https://wa.me/970599000201?text=Hi%20Sara%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[32m[39m[2m) // element.getAttribute("href") === "https://wa.me/970599000201?text=Hi%20Sara%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[22m
+
+Expected the element to have attribute:
+[32m  href="https://wa.me/970599000201?text=Hi%20Sara%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[39m
+Received:
+[31m  href="https://wa.me/970599000201?text=Hello%20Sara%2C%20a%20reminder%20from%20Masaha%20One%3A%20you%20owe%20%E2%82%AA65.%20You%20can%20pay%20at%20the%20space.%20Thank%20you."[39m
+ ❯ src/features/desk/components/file/CustomerFile.component.test.tsx:113:18
+    111|
+    112|     const link = await screen.findByRole('link', { name: 'WhatsApp rem…
+    113|     expect(link).toHaveAttribute(
+       |                  ^
+    114|       'href',
+    115|       `https://wa.me/970599000201?text=${encodeURIComponent('Hi Sara, …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/file

@@ -1,0 +1,156 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/spaces/components/editor/SpaceEditor.component.test.tsx -t landing
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx (36 tests | 1 failed | 33 skipped) 1561ms
+   ❯ the editor’s landing and notices (3)
+     × a report in the address shows its notice above its section 707ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed | 33 skipped (36)
+   Start at  12:24:32
+   Duration  13.84s (transform 45%, environment 19%, import 19%, tests 12%, setup 5%)
+
+  Transform  |component| transforming modules took 6.08s · 45% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx > the editor’s landing and notices > a report in the address shows its notice above its section
+TestingLibraryElementError: Unable to find an element with the text: The report’s notice. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mUnverified[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"outline-none"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-warning bg-warning-subtle text-warning-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"alert"[39m
+          [33mdata-variant[39m=[32m"warning"[39m
+          [33mrole[39m=[32m"status"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-triangle-alert lucide-alert-triangle"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 9v4"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 17h.01"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+            [33mdata-slot[39m=[32m"alert-title"[39m
+          [36m>[39m
+            [0mYou’re editing an unverified space[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+            [33mdata-slot[39m=[32m"alert-description"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0mVisitors see that the Masaha team collected this information. Each section saves on its own.[0m
+            [36m</p>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap gap-2"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mOwners’ actions[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:items-start lg:gap-8"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Profile sections"[39m
+          [33mclass[39m=[32m"lg:sticky lg:top-20 lg:col-span-3 lg:flex lg:flex-col lg:gap-1 sticky top-14 z-sticky -mx-4 flex gap-2 overflow-x-auto bg-background px-4 py-2 md:-mx-8 md:px-8 lg:mx-0 lg:p-0"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"location"[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_8%)] h-8 px-3 pointer-coarse:h-(--control-height) shrink-0 rounded-full lg:w-full lg:justify-start lg:rounded-md lg:border-transparent"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/spaces/7#profile"[39m
+          [36m>[39m
+            [0mThe space[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) shrink-0 rounded-full lg:w-full lg:justify-start lg:rounded-md lg:border-transparent"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/spaces/7#hours"[39m
+          [36m>[39m
+            [0mOpening hours[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) shrink...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/spaces/components/editor/SpaceEditor.component.test.tsx:392:27
+    390|       '[data-slot=card]',
+    391|     );
+    392|     const marker = screen.getByText('The report’s notice');
+       |                           ^
+    393|     expect(screen.getAllByText('The report’s notice')).toHaveLength(1);
+    394|     // Drawn just before the section, inside the sections' column.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/spaces/components/editor/SpaceEditor.component.test.tsx -t landing

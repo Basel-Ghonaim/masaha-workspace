@@ -1,0 +1,69 @@
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit src/db/seed/seedEnv.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+ ❯ |unit| src/db/seed/seedEnv.unit.test.ts (3 tests | 2 failed) 13ms
+   ❯ seedEnvSchema (3)
+     × stores the contact normalised: the WhatsApp in its one E.164 form, the email lowercased 7ms
+     × a foreign WhatsApp fails the seed, naming its variable 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/db/seed/seedEnv.unit.test.ts > seedEnvSchema > stores the contact normalised: the WhatsApp in its one E.164 form, the email lowercased
+ZodError: [
+  {
+    "origin": "string",
+    "code": "invalid_format",
+    "format": "email",
+    "pattern": "/^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$/",
+    "path": [
+      "SEED_CONTACT_EMAIL"
+    ],
+    "message": "Invalid email address"
+  }
+]
+ ❯ src/db/seed/seedEnv.unit.test.ts:13:31
+     11| describe('seedEnvSchema', () => {
+     12|   it('stores the contact normalised: the WhatsApp in its one E.164 for…
+     13|     const env = seedEnvSchema.parse({
+       |                               ^
+     14|       ...valid,
+     15|       SEED_CONTACT_EMAIL: ' Hello@Masaha.PS',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/db/seed/seedEnv.unit.test.ts > seedEnvSchema > a foreign WhatsApp fails the seed, naming its variable
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/db/seed/seedEnv.unit.test.ts:33:28
+     31|     const parsed = seedEnvSchema.safeParse({ ...valid, SEED_CONTACT_WH…
+     32|
+     33|     expect(parsed.success).toBe(false);
+       |                            ^
+     34|     expect(parsed.error?.issues.map((issue) => issue.path.join('.'))).…
+     35|       'SEED_CONTACT_WHATSAPP',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  12:08:32
+   Duration  567ms (import 50%, transform 45%, tests 4%, worker 2%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/db/seed/seedEnv.unit.test.ts

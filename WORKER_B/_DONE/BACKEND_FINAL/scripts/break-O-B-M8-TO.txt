@@ -1,0 +1,118 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/overview/adminOverview.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/overview/adminOverview.api.test.ts (9 tests | 2 failed) 6043ms
+   ❯ the admin's overview (9)
+     × completeness: the first five unverified spaces with a group stale or missing, hidden ones included, each with its groups and days; the total 442ms
+     × a saved threshold changes both overviews at once 468ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 7 passed (9)
+   Start at  13:13:06
+   Duration  18.16s (tests 49%, transform 34%, import 15%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > completeness: the first five unverified spaces with a group stale or missing, hidden ones included, each with its groups and days; the total
+AssertionError: expected { total: 7, first: [ { …(6) }, …(4) ] } to deeply equal { total: 6, first: [ { …(6) }, …(4) ] }
+
+- Expected
++ Received
+
+@@ -1,8 +1,21 @@
+  {
+    "first": [
+      {
++       "hidden": false,
++       "id": 7,
++       "missing": [],
++       "nameAr": null,
++       "nameEn": "Aaron",
++       "stale": [
++         {
++           "days": 90,
++           "group": "hours",
++         },
++       ],
++     },
++     {
+        "hidden": true,
+        "id": 2,
+        "missing": [],
+        "nameAr": null,
+        "nameEn": "Atlas",
+@@ -54,18 +67,8 @@
+            "days": 45,
+            "group": "prices",
+          },
+        ],
+      },
+-     {
+-       "hidden": false,
+-       "id": 3,
+-       "missing": [
+-         "contacts",
+    ],
+-       "nameAr": null,
+-       "nameEn": "Ivory",
+-       "stale": [],
+-     },
+-   ],
+-   "total": 6,
++   "total": 7,
+  }
+
+ ❯ src/modules/overview/adminOverview.api.test.ts:195:47
+    193|       stale: { group: string; days: number }[],
+    194|     ) => ({ id, nameEn, nameAr: null, hidden, missing, stale });
+    195|     expect((await overviewOf()).completeness).toEqual({
+       |                                               ^
+    196|       total: 6,
+    197|       first: [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > a saved threshold changes both overviews at once
+AssertionError: expected [ 2, 2 ] to deeply equal [ 2, 1 ]
+
+- Expected
++ Received
+
+  [
+    2,
+-   1,
++   2,
+  ]
+
+ ❯ src/modules/overview/adminOverview.api.test.ts:223:71
+    221|     });
+    222|     const before = await overviewOf();
+    223|     expect([before.spaces.staleOrMissing, before.completeness.total]).…
+       |                                                                       ^
+    224|
+    225|     const saved = await adminRequest(app, admin, 'put', '/settings/sta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/overview/adminOverview.api.test.ts

@@ -1,0 +1,54 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/spaces/space/create.api.test.ts (18 tests | 1 failed) 7416ms
+   ❯ POST /admin/spaces (18)
+     × creates an unverified, shown space, its profile dated now and its other groups missing, with its slug from the English name 395ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/spaces/space/create.api.test.ts > POST /admin/spaces > creates an unverified, shown space, its profile dated now and its other groups missing, with its slug from the English name
+AssertionError: expected { id: 1, slug: 'focus-hub', …(22) } to deeply equal { id: Any<Number>, …(22) }
+
+- Expected
++ Received
+
+@@ -26,10 +26,11 @@
+    "nameAr": "فوكس هب",
+    "nameEn": "Focus Hub",
+    "ownAmenities": [],
+    "owners": [],
+    "prices": [],
++   "retiredAmenities": [],
+    "slug": "focus-hub",
+    "staleGroups": [],
+    "updatedAt": {
+      "amenities": null,
+      "contacts": null,
+
+ ❯ src/modules/spaces/space/create.api.test.ts:84:30
+     82|     expect(response.status).toBe(201);
+     83|     const at = NOW.toISOString();
+     84|     expect(dataOf(response)).toEqual({
+       |                              ^
+     85|       id: expect.any(Number) as number,
+     86|       slug: 'focus-hub',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 17 passed (18)
+      Tests  1 failed | 348 passed (349)
+   Start at  15:30:48
+   Duration  228.94s (tests 74%, import 19%, transform 5%, setup 3%)
+

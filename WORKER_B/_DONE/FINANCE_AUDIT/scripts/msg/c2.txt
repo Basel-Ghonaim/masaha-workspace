@@ -1,0 +1,16 @@
+feat(audit): read the platform's audit log
+
+The admin reads only the platform's events, of every space and of none:
+the spaces' public facts and existence, their owners, the lookups and
+the reports' decisions; an account's events only when they name no
+space, since an owner's staff account's are the space's. Never a
+space's customers, subscriptions, check-ins, visits, payments, packages,
+announcements or extensions, its capacity, override, settings or staff.
+
+The list is default deny, in one pure file the SQL is built from, so the
+rule and its unit test cannot drift and an action added later stays
+hidden until it is listed. Each entry carries the space it names, whose
+names q also matches; the actor filter is a person's id.
+
+Finding 152 records what keeping every entry for ever costs against the
+database's 0.5 GB (the owner's Q10).

@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/users/components/settings
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx (10 tests | 1 failed) 4493ms
+   ❯ MyAccountSettings (10)
+     × the profile saves the name and the menu shows it at once 655ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  11:06:41
+   Duration  21.74s (transform 26%, import 26%, tests 21%, environment 21%, setup 6%)
+
+  Transform  |component| transforming modules took 5.51s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx > MyAccountSettings > the profile saves the name and the menu shows it at once
+AssertionError: expected 'Sara' to be 'Sara Ali' // Object.is equality
+
+Expected: "Sara Ali"
+Received: "Sara"
+
+ ❯ src/features/users/components/settings/MyAccountSettings.component.test.tsx:101:37
+     99|     expect(await findToast('Changes saved')).toBeVisible();
+    100|     expect(requests.map(lineOf)).toContain('patch /me');
+    101|     expect(getSession().user?.name).toBe('Sara Ali');
+       |                                     ^
+    102|   });
+    103|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/users/components/settings

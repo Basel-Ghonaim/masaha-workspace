@@ -1,0 +1,11 @@
+perf(design-system): serve the calendar on its own
+
+The ledger's period (#127) was the first screen to draw the layer's
+Calendar, and the build put react-day-picker in the shared design-system
+chunk every site visit downloads (finding 169).
+
+Calendar and DatePicker now have their own entry,
+@shared/design-system/calendar, as the data components do (finding 45);
+react-day-picker and date-fns are a calendar chunk that check:build
+refuses in the site's first download. The first download falls from
+1,140,210 to 1,064,781 bytes.

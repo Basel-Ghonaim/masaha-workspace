@@ -1,0 +1,64 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/space-links/staff/staff.api.test.ts -t date their link
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a1_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/space-links/staff/staff.api.test.ts (16 tests | 1 failed | 15 skipped) 2802ms
+   ❯ the date of a reception link (1)
+     × a staff member is answered with the date their link was made 1759ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 15 skipped (16)
+   Start at  17:31:08
+   Duration  23.19s (transform 59%, tests 19%, import 19%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/space-links/staff/staff.api.test.ts > the date of a reception link > a staff member is answered with the date their link was made
+AssertionError: expected [ { userId: 2, name: 'Sara', …(4) } ] to deeply equal [ ObjectContaining{…} ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "addedAt": "2026-09-14T08:30:00.000Z",
++     "addedAt": "2026-10-29T15:31:31.524Z",
++     "email": "reception@example.com",
++     "isActive": true,
++     "name": "Sara",
++     "temporaryPassword": null,
+      "userId": 2,
+    },
+  ]
+
+ ❯ src/modules/space-links/staff/staff.api.test.ts:240:28
+    238|     const changed = await staff(owner, 'patch', `/${String(reception.i…
+    239|
+    240|     expect(dataOf(listed)).toEqual([
+       |                            ^
+    241|       expect.objectContaining({ userId: reception.id, addedAt: '2026-0…
+    242|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/space-links/staff/staff.api.test.ts -t ^^^"date^^^ their^^^ link^^^"

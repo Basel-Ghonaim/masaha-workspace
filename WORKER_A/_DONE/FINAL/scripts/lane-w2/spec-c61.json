@@ -1,0 +1,20 @@
+[
+  {"label": "B150", "file": "apps/web/src/shared/copy/arabic/audit.ts",
+   "old": "    'visit.writtenOff': 'لن يُحصَّل',\n", "new": "",
+   "cmd": "npm run test:unit -w @masaha/web -- src/features/audit/services/actionWords"},
+  {"label": "B151", "file": "apps/web/src/features/audit/services/actionGroups.ts",
+   "old": "  lookups: startingWith('governorate.', 'area.', 'amenity.'),", "new": "  lookups: [...startingWith('governorate.', 'area.', 'amenity.'), ...startingWith('space.', 'payment.')],",
+   "cmd": "npm run test:unit -w @masaha/web -- src/features/audit/services/actionGroups"},
+  {"label": "B152", "file": "apps/web/src/features/audit/services/detailsOf.ts",
+   "old": "      return joined(money(after, 'amountAgorot'), method(), reason());", "new": "      return joined(money(after, 'amountAgorot'), method());",
+   "cmd": "npm run test:unit -w @masaha/web -- src/features/audit/services/detailsOf"},
+  {"label": "B153", "file": "apps/web/src/features/audit/hooks/useAuditLog.ts",
+   "old": "      : { text: words.actors[actor.kind], person: false };", "new": "      : { text: 'Admin', person: false };",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/audit"},
+  {"label": "B154", "file": "apps/web/src/features/audit/hooks/useAuditLog.ts",
+   "old": "        answer === undefined || (answer.meta.actors.length < 2 && actor === undefined)", "new": "        answer === undefined",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/audit"},
+  {"label": "B155", "file": "apps/web/src/features/audit/services/actionWords.ts",
+   "old": "    tone: DESTRUCTIVE[scope].includes(action) ? 'destructive' : 'neutral',", "new": "    tone: DESTRUCTIVE[scope].includes(action) ? 'neutral' : 'neutral',",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/audit"}
+]

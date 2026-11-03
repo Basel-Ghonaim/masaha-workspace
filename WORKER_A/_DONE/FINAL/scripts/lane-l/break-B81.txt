@@ -1,0 +1,80 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/display/Meter
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx (4 tests | 1 failed) 187ms
+   ❯ Meter (4)
+     × as progress is a progressbar 41ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  16:42:42
+   Duration  2.86s (environment 48%, import 27%, setup 14%, tests 7%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Meter/Meter.component.test.tsx > Meter > as progress is a progressbar
+TestingLibraryElementError: Unable to find an accessible element with the role "progressbar" and name "Uploading the photo"
+
+Here are the accessible roles:
+
+  meter:
+
+  Name "Uploading the photo":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Uploading the photo"[39m
+    [33maria-valuemax[39m=[32m"100"[39m
+    [33maria-valuemin[39m=[32m"0"[39m
+    [33maria-valuenow[39m=[32m"30"[39m
+    [33mclass[39m=[32m"h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted"[39m
+    [33mdata-slot[39m=[32m"meter"[39m
+    [33mrole[39m=[32m"meter"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"Uploading the photo"[39m
+      [33maria-valuemax[39m=[32m"100"[39m
+      [33maria-valuemin[39m=[32m"0"[39m
+      [33maria-valuenow[39m=[32m"30"[39m
+      [33mclass[39m=[32m"h-3 w-full overflow-hidden rounded-(--radius-pill) bg-muted"[39m
+      [33mdata-slot[39m=[32m"meter"[39m
+      [33mrole[39m=[32m"meter"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"h-full rounded-(--radius-pill) transition-[inline-size] bg-primary"[39m
+        [33mdata-tone[39m=[32m"primary"[39m
+        [33mstyle[39m=[32m"inline-size: 30%;"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/shared/design-system/components/display/Meter/Meter.component.test.tsx:20:19
+     18|     render(<Meter kind="progress" label="Uploading the photo" value={3…
+     19|
+     20|     expect(screen.getByRole('progressbar', { name: 'Uploading the phot…
+       |                   ^
+     21|       'aria-valuenow',
+     22|       '30',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/display/Meter

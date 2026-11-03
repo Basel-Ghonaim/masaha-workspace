@@ -1,0 +1,642 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (3 tests | 1 failed | 2 skipped) 447ms
+   ❯ PaymentsLedger (3)
+     × draws five columns and the filters in a row from 768 px; axe-clean at 1440 446ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  14:38:40
+   Duration  11.42s (import 57%, transform 21%, environment 14%, tests 4%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > draws five columns and the filters in a row from 768 px; axe-clean at 1440
+TestingLibraryElementError: Unable to find an accessible element with the role "combobox" and name "Staff"
+
+Here are the accessible roles:
+
+  main:
+
+  Name "":
+  [36m<main />[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Payments":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Payments ledger":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Payments ledger"[39m
+    [33mclass[39m=[32m"flex flex-col gap-3"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33maria-live[39m=[32m"polite"[39m
+    [33mclass[39m=[32m"flex flex-wrap gap-x-3 gap-y-1 text-body-sm"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33maria-live[39m=[32m"polite"[39m
+    [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Filters":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Filters"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Show voided":
+  [36m<button[39m
+    [33maria-pressed[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+    [33mdata-state[39m=[32m"off"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Act on 31":
+  [36m<button[39m
+    [33mdata-row-action[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Act on 32":
+  [36m<button[39m
+    [33mdata-row-action[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  toolbar:
+
+  Name "Quick filter":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Quick filter"[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [33mdata-slot[39m=[32m"toggle-group"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mrole[39m=[32m"toolbar"[39m
+    [33mstyle[39m=[32m"outline: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  table:
+
+  Name "Payments ledger":
+  [36m<table[39m
+    [33maria-label[39m=[32m"Payments ledger"[39m
+    [33mclass[39m=[32m"w-full caption-bottom text-body-sm"[39m
+    [33mdata-slot[39m=[32m"table"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  rowgroup:
+
+  Name "":
+  [36m<thead[39m
+    [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  row:
+
+  Name "Date Customer Amount Recorded by Actions":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "21 Oct10:30 Sara KhalidEvery other day ⁨₪25⁩Cash Laila Act on 31":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "21 Oct10:30 OmarVisit ⁨₪25⁩Cash Laila Act on 32":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  columnheader:
+
+  Name "Date":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Customer":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Amount":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Recorded by":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "Actions":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  cell:
+
+  Name "21 Oct10:30":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Sara KhalidEvery other day":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "⁨₪25⁩Cash":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Laila":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Act on 31":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "21 Oct10:30":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "OmarVisit":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "⁨₪25⁩Cash":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Laila":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Act on 32":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Sara Khalid":
+  [36m<a[39m
+    [33mclass[39m=[32m"self-start text-label text-foreground underline-offset-4 hover:underline"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdir[39m=[32m"auto"[39m
+    [33mhref[39m=[32m"/customers/4"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mPayments[0m
+      [36m</h1>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Payments ledger"[39m
+        [33mclass[39m=[32m"flex flex-col gap-3"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mclass[39m=[32m"flex flex-wrap gap-x-3 gap-y-1 text-body-sm"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-label"[39m
+          [36m>[39m
+            [0mToday · Total ⁨₪50⁩ · Cash ⁨₪50⁩ · Transfer ⁨₪0⁩ · 2 payments[0m
+          [36m</span>[39m
+        [36m</p>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"overflow-hidden rounded-lg border border-(--card-border) bg-card text-card-foreground shadow-raised"[39m
+          [33mdata-layout[39m=[32m"table"[39m
+          [33mdata-slot[39m=[32m"data-table"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"px-(--card-padding) py-4"[39m
+            [33mdata-slot[39m=[32m"data-table-toolbar"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col gap-3"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-expanded[39m=[32m"false"[39m
+                [33maria-haspopup[39m=[32m"dialog"[39m
+                [33maria-label[39m=[32m"Filters"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+                [33mdata-slot[39m=[32m"sheet-trigger"[39m
+                [33mdata-state[39m=[32m"closed"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mFilters[0m
+              [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-wrap items-center gap-3"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33maria-label[39m=[32m"Quick filter"[39m
+                  [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+                  [33mdata-slot[39m=[32m"toggle-group"[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                  [33mrole[39m=[32m"toolbar"[39m
+                  [33mstyle[39m=[32m"outline: none;"[39m
+                  [33mtabindex[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33maria-pressed[39m=[32m"false"[39m
+                    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+                    [33mdata-radix-collection-item[39m=[32m""[39m
+                    [33mdata-slot[39m=[32m"toggle-group-item"[39m
+                    [33mdata-state[39m=[32m"off"[39m
+                    [33mtabindex[39m=[32m"-1"[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [36m<svg[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+                      [33mfill[39m=[32m"none"[39m
+                      [33mheight[39m=[32m"24"[39m
+                      [33mstroke[39m=[32m"currentColor"[39m
+                      [33mstroke-linecap[39m=[32m"round"[39m
+                      [33mstroke-linejoin[39m=[32m"round"[39m
+                      [33mstroke-width[39m=[32m"2"[39m
+                      [33mviewBox[39m=[32m"0 0 24 24"[39m
+                      [33mwidth[39m=[32m"24"[39m
+                      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                    [36m>[39m
+                      [36m<path[39m
+                        [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                      [36m/>[39m
+                    [36m</svg>[39m
+                    [0mShow voided[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+                [36m<p[39m
+                  [33maria-live[39m=[32m"polite"[39m
+                  [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+                [36m>[39m
+                  [0m2 payments[0m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative w-full overflow-x-auto"[39m
+            [33mdata-slot[39m=[32m"table-container"[39m
+          [36m>[39m
+            [36m<table[39m
+              [33maria-label[39m=[32m"Payments ledger"[39m
+              [33mclass[39m=[32m"w-full caption-bottom text-body-sm"[39m
+              [33mdata-slot[39m=[32m"table"[39m
+            [36m>[39m
+              [36m<thead[39m
+                [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+                [33mdata-slot[39m=[32m"table-header"[39m
+              [36m>[39m
+                [36m<tr[39m
+                  [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"table-row"[39m
+                [36m>[39m
+                  [36m<th[39m
+                    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+                    [33mcolspan[39m=[32m"1"[39m
+                    [33mdata-slot[39m=[32m"table-head"[39m
+                  [36m>[39m
+                    [0mDate[0m
+                  [36m</th>[39m
+                  [36m<th[39m
+                    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+                    [33mcolspan[39m=[32m"1"[39m
+                    [33mdata-slot[39m=[32m"table-head"[39m
+                  [36m>[39m
+                    [0mCustomer[0m
+                  [36m</th>[39m
+                  [36m<th[39m
+                    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+                    [33mcolspan[39m=[32m"1"[39m
+                    [33mdata-slot[39m=[32m"table-head"[39m
+                  [36m>[39m
+                    [0mAmount[0m
+                  [36m</th>[39m
+                  [36m<th[39m
+                    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+                    [33mcolspan[39m=[32m"1"[39m
+                    [33mdata-slot[39m=[32m"table-head"[39m
+                  [36m>[39m
+                    [0mRecorded by[0m
+                  [36m</th>[39m
+                  [36m<th[39m
+                    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 w-px"[39m
+                    [33mcolspan[39m=[32m"1"[39m
+                    [33mdata-slot[39m=[32m"table-head"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"sr-only"[39m
+                    [36m>[39m
+                      [0mActions[0m
+                    [36m</span>[39m
+                  [36m</th>[39m
+                [36m</tr>[39m
+              [36m</thead>[39m
+              [36m<tbody[39m
+                [33mclass[39m=[32m"[&_tr:last-child]:border-0"[39m
+                [33mdata-slot[39m=[32m"table-body"[39m
+              [36m>[39m
+                [36m<tr[39m
+                  [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"table-row"[39m
+                [36m>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"flex flex-col"[39m
+                    [36m>[39m
+                      [36m<span>[39m
+                        [0m21 Oct[0m
+                      [36m</span>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"self-start text-caption text-muted-foreground"[39m
+                        [33mdir[39m=[32m"ltr"[39m
+                      [36m>[39m
+                        [0m10:30[0m
+                      [36m</span>[39m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"flex flex-col"[39m
+                    [36m>[39m
+                      [36m<a[39m
+                        [33mclass[39m=[32m"self-start text-label text-foreground underline-offset-4 hover:underline"[39m
+                        [33mdata-discover[39m=[32m"true"[39m
+                        [33mdir[39m=[32m"auto"[39m
+                        [33mhref[39m=[32m"/customers/4"[39m
+                      [36m>[39m
+                        [0mSara Khalid[0m
+                      [36m</a>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                        [33mdir[39m=[32m"auto"[39m
+                      [36m>[39m
+                        [0mEvery other day[0m
+                      [36m</span>[39m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"flex flex-col gap-1"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"text-label"[39m
+                        [36m>[39m
+                          [0m⁨₪25⁩[0m
+                        [36m</span>[39m
+                      [36m</span>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                      [36m>[39m
+                        [0mCash[0m
+                      [36m</span>[39m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdir[39m=[32m"auto"[39m
+                    [36m>[39m
+                      [0mLaila[0m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex justify-end"[39m
+                      [33mdata-row-key[39m=[32m"31"[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33mdata-row-action[39m=[32m""[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [0mAct on 31[0m
+                      [36m</button>[39m
+                    [36m</div>[39m
+                  [36m</td>[39m
+                [36m</tr>[39m
+                [36m<tr[39m
+                  [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"table-row"[39m
+                [36m>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"flex flex-col"[39m
+                    [36m>[39m
+                      [36m<span>[39m
+                        [0m21 Oct[0m
+                      [36m</span>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"self-start text-caption text-muted-foreground"[39m
+                        [33mdir[39m=[32m"ltr"[39m
+                      [36m>[39m
+                        [0m10:30[0m
+                      [36m</span>[39m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"flex flex-col"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"self-start text-label"[39m
+                        [33mdir[39m=[32m"auto"[39m
+                      [36m>[39m
+                        [0mOmar[0m
+                      [36m</span>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                        [33mdir[39m=[32m"auto"[39m
+                      [36m>[39m
+                        [0mVisit[0m
+                      [36m</span>[39m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mclass[39m=[32m"flex flex-col gap-1"[39m
+                    [36m>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+                      [36m>[39m
+                        [36m<span[39m
+                          [33mclass[39m=[32m"text-label"[39m
+                        [36m>[39m
+                          [0m⁨₪25⁩[0m
+                        [36m</span>[39m
+                      [36m</span>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                      [36m>[39m
+                        [0mCash[0m
+                      [36m</span>[39m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33mdir[39m=[32m"auto"[39m
+                    [36m>[39m
+                      [0mLaila[0m
+                    [36m</span>[39m
+                  [36m</td>[39m
+                  [36m<td[39m
+                    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+                    [33mdata-slot[39m=[32m"table-cell"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex justify-end"[39m
+                      [33mdata-row-key[39m=[32m"32"[39m
+                    [36m>[39m
+                      [36m<button[39m
+                        [33mdata-row-action[39m=[32m""[39m
+                        [33mtype[39m=[32m"button"[39m
+                      [36m>[39m
+                        [0mAct on 32[0m
+                      [36m</button>[39m
+                    [36m</div>[39m
+                  [36m</td>[39m
+                [36m</tr>[39m
+              [36m</tbody>[39m
+            [36m</table>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-4 border-t border-border px-(--card-padding) py-3"[39m
+            [33mdata-slot[39m=[32m"data-table-footer"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</section>[39m
+    [36m</main>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:73:19
+     71|     );
+     72|     expect(within(table).getByText('Omar')).toBeVisible();
+     73|     expect(screen.getByRole('combobox', { name: 'Staff' })).toBeVisibl…
+       |                   ^
+     74|     expect(screen.queryByRole('button', { name: 'Filters' })).toBeNull…
+     75|     expect(screen.getByRole('button', { name: /^Period/ })).toBeVisibl…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

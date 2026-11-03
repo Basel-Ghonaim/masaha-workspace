@@ -1,0 +1,27 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component --reporter=verbose src/pages/site/shell/SiteLayout.component.test.tsx src/app/App.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-t/apps/web
+
+ ✓ |component| src/app/App.component.test.tsx > App > renders the main landmark 624ms
+ ✓ |component| src/app/App.component.test.tsx > App > starts, and still changes its language and theme, in a browser that blocks storage 631ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > renders the header, the page in the main landmark, and the footer 369ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the wordmark, the pages and sign-in to their paths 207ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the footer to about and to its contact section 141ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > marks the current page's link, and only it, as the current page 203ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > switches to the other language, and <html>'s lang and dir follow 348ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > sets data-theme to the opposite of the theme shown 389ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > keeps the language in the header at every width, and the theme there from 768 px only (SH-005) 148ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > opens the phone menu with the links, the theme and sign-in, and closes it when a link is chosen 607ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > offers «تخطَّ إلى المحتوى» first, leading to the page’s main content 415ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > offers «Skip to content» first in the focus shell too, leading to its main 240ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > moves the focus to the main content when another page opens, not on the first load nor when only the search changes 423ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > closes the phone menu when the history moves under it 468ms
+
+ Test Files  2 passed (2)
+      Tests  14 passed (14)
+   Start at  15:21:50
+   Duration  21.94s (tests 41%, transform 21%, environment 17%, import 16%, setup 5%)
+

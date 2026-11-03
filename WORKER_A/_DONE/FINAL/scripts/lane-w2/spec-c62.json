@@ -1,0 +1,14 @@
+[
+  {"label": "R-C62-stub", "file": "apps/web/src/pages/dashboard/admin/audit/AuditPage.tsx",
+   "old": "      <AuditLog scope=\"platform\" linkOf={linkOf} />\n", "new": "",
+   "cmd": "npm run test:component -w @masaha/web -- src/pages/dashboard/admin/audit"},
+  {"label": "B156", "file": "apps/web/src/features/audit/hooks/useAuditLog.ts",
+   "old": "        named === null || entry.target.type === 'space'", "new": "        named === null || true",
+   "cmd": "npm run test:component -w @masaha/web -- src/pages/dashboard/admin/audit"},
+  {"label": "B157", "file": "apps/web/src/features/audit/services/targetOf.ts",
+   "old": "      isolated: name !== null,\n      link: null,", "new": "      isolated: name !== null,\n      link: linkOf(target),",
+   "cmd": "npm run test:component -w @masaha/web -- src/pages/dashboard/admin/audit"},
+  {"label": "B158", "file": "apps/web/src/features/audit/hooks/useAuditFilters.ts",
+   "old": "    setParams(latest.current, { replace: true });", "new": "    void setParams;",
+   "cmd": "npm run test:component -w @masaha/web -- src/pages/dashboard/admin/audit"}
+]

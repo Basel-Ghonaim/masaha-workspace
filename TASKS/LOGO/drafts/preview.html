@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسودات العلامة أ</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap">
+<style>
+  body { margin: 0; font-family: "IBM Plex Sans Arabic", sans-serif; background: #f3f6f6; color: #1d2b2c; }
+  .panel { padding: 24px 32px; }
+  .light { background: #ffffff; --ink: #02787d; --text: #1d2b2c; --muted: #5b6b6c; }
+  .dark { background: #001d1f; --ink: #50b3b8; --text: #e6f2f2; --muted: #9fb5b6; }
+  .row { display: flex; align-items: center; gap: 28px; padding: 14px 0; border-bottom: 1px solid color-mix(in srgb, var(--muted) 25%, transparent); }
+  .row:last-child { border-bottom: 0; }
+  .name { width: 150px; color: var(--muted); font-size: 14px; }
+  svg { color: var(--ink); display: block; }
+  .lockup { display: flex; align-items: center; gap: 10px; margin-inline-start: 24px; }
+  .lockup span { font-weight: 600; font-size: 30px; color: var(--ink); line-height: 1; }
+  .tile { width: 40px; height: 40px; border-radius: 8px; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 600; font-size: 20px; }
+  .note { color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="a1" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="miter"><path d="M42 30 V32 A10 10 0 0 1 32 42 H6 V16 A10 10 0 0 1 16 6 H32 A10 10 0 0 1 42 16"/></g></symbol>
+    <symbol id="b1" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 37 V21 A5 5 0 0 1 29 21 V37 L24 43 Z"/><path d="M19 37 H14 A8 8 0 0 1 6 29 V12 A8 8 0 0 1 14 4 H34 A8 8 0 0 1 42 12 V29 A8 8 0 0 1 34 37 H29"/></g></symbol>
+    <symbol id="b2" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M24 44 L18 37 H14 A8 8 0 0 1 6 29 V12 A8 8 0 0 1 14 4 H34 A8 8 0 0 1 42 12 V29 A8 8 0 0 1 34 37 H30 Z"/><path d="M19 33 V21 A5 5 0 0 1 29 21 V33 Z" fill="currentColor" stroke-width="2"/></g></symbol>
+    <symbol id="b3" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M38.76 17.76 A6 6 0 0 1 38.76 26.24 L24 41 L9.24 26.24 A6 6 0 0 1 9.24 17.76 L19.76 7.24 A6 6 0 0 1 28.24 7.24 Z" transform="translate(0 2)"/><path d="M20.5 31 V21.5 A3.5 3.5 0 0 1 27.5 21.5 V31 Z" fill="currentColor" stroke-width="1.5"/></g></symbol>
+  </defs>
+</svg>
+
+<section class="panel light" id="light"></section>
+<section class="panel dark" id="dark"></section>
+
+<script>
+  const drafts = [
+    ['a1', 'أ١. غرفة بفتحة'],
+    ['b1', 'ب١. دبوس مربع ببابه'],
+    ['b2', 'ب٢. دبوس مربع وباب مصمت'],
+    ['b3', 'ب٣. دبوس مائل وباب مصمت'],
+  ];
+  const mark = (id, size) =>
+    `<svg width="${size}" height="${size}" aria-hidden="true"><use href="#${id}"/></svg>`;
+  for (const panel of ['light', 'dark']) {
+    const el = document.getElementById(panel);
+    el.innerHTML = drafts.map(([id, name]) => `
+      <div class="row">
+        <div class="name">${name}</div>
+        ${[96, 48, 32, 16].map((s) => mark(id, s)).join('')}
+        <div class="lockup">${mark(id, 40)}<span>مساحة</span></div>
+      </div>`).join('') + `
+      <div class="row"><div class="name">للمقارنة: بلاطة مساحة</div><div class="tile">ه</div>
+      <div class="note">هكذا تبدو المساحة التي بلا صورة في الدليل</div></div>`;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/routing/guest
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |unit| src/shared/routing/guest/heldIntent.unit.test.ts (6 tests | 1 failed) 45ms
+   ❯ the held intent (6)
+     × is dropped once older than 15 minutes 15ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  11:31:32
+   Duration  1.86s (import 51%, transform 45%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/routing/guest/heldIntent.unit.test.ts > the held intent > is dropped once older than 15 minutes
+AssertionError: expected [ { kind: 'report', …(3) } ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   {
++     "at": 1793264400000,
++     "kind": "report",
++     "path": "/spaces/noor-hub",
++     "slug": "noor-hub",
++   },
++ ]
+
+ ❯ src/shared/routing/guest/heldIntent.unit.test.ts:63:17
+     61|     establishSession(aSession(), { source: 'signIn' });
+     62|
+     63|     expect(ran).toEqual([]);
+       |                 ^
+     64|     expect(items.has(KEY)).toBe(false);
+     65|     expect(takeIntentPath()).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/routing/guest

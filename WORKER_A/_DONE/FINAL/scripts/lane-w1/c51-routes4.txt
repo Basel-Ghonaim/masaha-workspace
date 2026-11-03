@@ -1,0 +1,149 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 4 failed | 12 skipped) 68736ms
+   ❯ the dashboard's guards (8)
+     × refuses reception the owner’s payments with the 403 inside the shell 3206ms
+     × shows reception its own payments today 3029ms
+     × refuses the owner reception’s payments today with the 403 3020ms
+   ❯ the admin's lookups page (5)
+     × opens the amenities’ tab from the address 3020ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:220:3
+    218|   // Reception lands on the desk, which loads lazily: its first transf…
+    219|   // seconds, so it is done before the tests, as the pages' own sectio…
+    220|   beforeAll(async () => {
+       |   ^
+    221|     await import('./space/desk/DeskPage');
+    222|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:203:30
+    201| /** The heading named `name` in the main landmark, where a status stat…
+    202| async function stateInMain(name: string) {
+    203|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    204| }
+    205|
+ ❯ src/pages/dashboard/routes.component.test.tsx:375:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today
+TestingLibraryElementError: Unable to find role="banner"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ topBarTitle src/pages/dashboard/routes.component.test.tsx:198:30
+    196|  */
+    197| async function topBarTitle(name: string) {
+    198|   return within(await screen.findByRole('banner')).findByRole('heading…
+       |                              ^
+    199| }
+    200|
+ ❯ src/pages/dashboard/routes.component.test.tsx:383:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses the owner reception’s payments today with the 403
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:203:30
+    201| /** The heading named `name` in the main landmark, where a status stat…
+    202| async function stateInMain(name: string) {
+    203|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    204| }
+    205|
+ ❯ src/pages/dashboard/routes.component.test.tsx:390:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the amenities’ tab from the address
+TestingLibraryElementError: Unable to find role="tab" and name "Amenities"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:607:25
+    605|     openLookups('?tab=amenities');
+    606|
+    607|     expect(await screen.findByRole('tab', { name: 'Amenities' })).toHa…
+       |                         ^
+    608|       'aria-selected',
+    609|       'true',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 53 passed | 12 skipped (69)
+   Start at  15:03:49
+   Duration  86.44s (tests 81%, transform 7%, environment 6%, import 5%, setup 1%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx

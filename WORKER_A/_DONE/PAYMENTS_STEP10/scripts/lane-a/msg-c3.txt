@@ -1,0 +1,12 @@
+feat(announcements): end, start or delete one
+
+O10 (DI-16 to DI-18): each card's actions by its state - «إنهاء الآن»
+on a running one, acting at once with «تراجع» in its toast (one PATCH
+of the old end, not offered on an extended closure, whose end may only
+come earlier), «ابدأ الآن» on an upcoming one, and «حذف…» in the «⋯»,
+which asks first, naming the announcement and the true consequence of
+its state. An extended closure says why it has no delete.
+
+Each write is idempotent by design: sent once with no key, never again
+by itself (S4). When the card holding the focus leaves its tab, the
+next card's first action takes it, else the tab shown (DI-24).

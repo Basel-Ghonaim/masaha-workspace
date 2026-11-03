@@ -1,0 +1,10 @@
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| scripts/checkBuild.unit.test.ts > dashboardCycleProblems > refuses a chunk the dashboard imports that imports it back
+AssertionError: expected [] to deeply equal [ Array(1) ]
+ FAIL  |unit| scripts/checkBuild.unit.test.ts > dashboardCycleProblems > refuses a cycle closed deeper down
+AssertionError: expected [] to deeply equal [ Array(1) ]
+ FAIL  |unit| scripts/dashboardOnly.unit.test.ts > isDashboardShared > takes a module only dashboard code imports, directly or through such modules
+AssertionError: expected false to be true // Object.is equality
+ FAIL  |unit| scripts/dashboardOnly.unit.test.ts > isDashboardShared > holds a cycle of such modules that only dashboard code enters
+AssertionError: expected false to be true // Object.is equality
+      Tests  4 failed | 35 passed (39)

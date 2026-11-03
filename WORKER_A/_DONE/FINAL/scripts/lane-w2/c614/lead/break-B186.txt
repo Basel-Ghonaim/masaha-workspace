@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/lookups/components/sheet/LookupSheet.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/lookups/components/sheet/LookupSheet.component.test.tsx (9 tests | 1 failed) 8157ms
+   ❯ the lookups’ sheet (9)
+     × a list of 10 offers no position, and saves the names alone 1001ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  11:01:24
+   Duration  23.53s (tests 35%, transform 24%, import 21%, environment 15%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/lookups/components/sheet/LookupSheet.component.test.tsx > the lookups’ sheet > a list of 10 offers no position, and saves the names alone
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <input
+  aria-describedby="_r_4f_-helper"
+  autocomplete="off"
+  class="h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"
+  data-slot="input"
+  dir="ltr"
+  id="_r_4f_-control"
+  inputmode="numeric"
+  name="position"
+/> instead[39m
+ ❯ src/features/lookups/components/sheet/LookupSheet.component.test.tsx:159:76
+    157|     await userEvent.click(screen.getByRole('button', { name: heard('Ed…
+    158|     const sheet = await screen.findByRole('dialog', { name: 'Edit area…
+    159|     expect(within(sheet).queryByRole('textbox', { name: 'Position' }))…
+       |                                                                            ^
+    160|     await userEvent.click(within(sheet).getByRole('button', { name: 'S…
+    161|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/lookups/components/sheet/LookupSheet.component.test.tsx

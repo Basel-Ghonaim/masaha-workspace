@@ -1,0 +1,10 @@
+     × place C:\repo\node_modules\react-day-picker\dist\esm\DayPicker.js in one library chunk 8ms
+     × place /repo/node_modules/react-day-picker/dist/esm/locale.js in one library chunk 1ms
+     × place /repo/node_modules/date-fns/addDays.js in one library chunk 1ms
+     × place /repo/node_modules/@date-fns/tz/date/index.js in one library chunk 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| scripts/libraryChunks.unit.test.ts > the library chunks' patterns > place C:\repo\node_modules\react-day-picker\dist\esm\DayPicker.js in one library chunk
+ FAIL  |unit| scripts/libraryChunks.unit.test.ts > the library chunks' patterns > place /repo/node_modules/react-day-picker/dist/esm/locale.js in one library chunk
+ FAIL  |unit| scripts/libraryChunks.unit.test.ts > the library chunks' patterns > place /repo/node_modules/date-fns/addDays.js in one library chunk
+ FAIL  |unit| scripts/libraryChunks.unit.test.ts > the library chunks' patterns > place /repo/node_modules/@date-fns/tz/date/index.js in one library chunk
+      Tests  4 failed | 13 passed (17)

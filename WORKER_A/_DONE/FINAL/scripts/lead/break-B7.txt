@@ -1,0 +1,64 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (68 tests | 2 failed | 55 skipped) 11453ms
+   ❯ the dashboard's navigation (12)
+     × lists reception’s four pages at its space, the front desk among them 155ms
+     × draws reception’s four pages with no group names 102ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 11 passed | 55 skipped (68)
+   Start at  16:46:25
+   Duration  17.43s (tests 67%, transform 13%, environment 9%, import 8%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists reception’s four pages at its space, the front desk among them
+AssertionError: expected [ 'Front desk', 'Customers', …(3) ] to deeply equal [ 'Front desk', 'Customers', …(2) ]
+
+- Expected
++ Received
+
+  [
+    "Front desk",
+    "Customers",
+    "My payments today",
+    "Announcements",
++   "Audit log",
+  ]
+
+ ❯ src/pages/dashboard/routes.component.test.tsx:222:46
+    220|     renderDashboard('/dashboard/spaces/7/desk');
+    221|
+    222|     expect(await pagesIn('Space dashboard')).toEqual(RECEPTION_PAGES);
+       |                                              ^
+    223|     expect(await topBarTitle('Front desk')).toBeInTheDocument();
+    224|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > draws reception’s four pages with no group names
+AssertionError: expected [ 'Front desk', 'Customers', …(3) ] to deeply equal [ 'Front desk', 'Customers', …(2) ]
+
+- Expected
++ Received
+
+  [
+    "Front desk",
+    "Customers",
+    "My payments today",
+    "Announcements",
++   "Audit log",
+  ]
+
+ ❯ src/pages/dashboard/routes.component.test.tsx:254:46
+    252|     renderDashboard('/dashboard/spaces/7/desk');
+    253|
+    254|     expect(await pagesIn('Space dashboard')).toEqual(RECEPTION_PAGES);
+       |                                              ^
+    255|     expect(await groupsIn('Space dashboard')).toEqual([]);
+    256|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

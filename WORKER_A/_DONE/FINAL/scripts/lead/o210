@@ -1,0 +1,4 @@
+  if (named === null || named.matches(FOCUSABLE)) return named;
+  return named.querySelector<HTMLElement>(
+    ':is(h1, h2, h3, h4, h5, h6)[tabindex], [role="heading"][tabindex]',
+  );

@@ -1,0 +1,38 @@
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/fields/Calendar/Calendar.component.test.tsx > Calendar > starts a range on a first click, ends it on the second, and starts afresh on a third
+AssertionError: expected [ { …(2) }, { …(2) }, { …(2) } ] to deeply equal [ { …(2) }, { …(2) }, { …(2) } ]
+
+- Expected
++ Received
+
+  [
+    {
+      "from": 2026-09-06T21:00:00.000Z,
+-     "to": undefined,
++     "to": 2026-09-06T21:00:00.000Z,
+    },
+    {
+      "from": 2026-09-06T21:00:00.000Z,
+      "to": 2026-09-08T21:00:00.000Z,
+    },
+    {
+-     "from": 2026-09-13T21:00:00.000Z,
+-     "to": undefined,
++     "from": 2026-09-06T21:00:00.000Z,
++     "to": 2026-09-13T21:00:00.000Z,
+    },
+  ]
+
+ ❯ src/shared/design-system/components/fields/Calendar/Calendar.component.test.tsx:158:20
+    156|     await userEvent.click(day(14));
+    157|
+    158|     expect(chosen).toEqual([
+       |                    ^
+    159|       { from: new Date(2026, 8, 7), to: undefined },
+    160|       { from: new Date(2026, 8, 7), to: new Date(2026, 8, 9) },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)

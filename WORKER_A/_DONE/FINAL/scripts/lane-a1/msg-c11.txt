@@ -1,0 +1,8 @@
+feat(sessions): give a replay its successor
+
+A refresh token presented again within the 30 s grace started a branch
+of its own, which reuse detection never saw (finding 21). A token's
+successor is now an HMAC of the token under a key derived once from
+JWT_SECRET (HKDF-SHA256, its own label), so every presentation within
+the grace gets the same successor, found by its hash and answered as it
+is. The deployment adds no setting (S7).

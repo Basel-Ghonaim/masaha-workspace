@@ -1,0 +1,32 @@
+[heavy] waiting 2 minutes (try 1 of 60)
+[heavy] waiting 2 minutes (try 2 of 60)
+[heavy] waiting 2 minutes (try 3 of 60)
+[heavy] waiting 2 minutes (try 4 of 60)
+
+> lint
+> eslint .
+
+
+C:\dev\masaha\app-lane-l\apps\web\src\pages\showcase\sections\data\ChartsSection.tsx
+  28:40  error  Invalid type "number" of template literal expression  @typescript-eslint/restrict-template-expressions
+
+C:\dev\masaha\app-lane-l\apps\web\src\shared\design-system\components\actions\DropdownMenu\DropdownMenu.tsx
+  89:35  error  Returning a void expression from an arrow function shorthand is forbidden. Please add braces to the arrow function  @typescript-eslint/no-confusing-void-expression
+
+C:\dev\masaha\app-lane-l\apps\web\src\shared\design-system\components\data\BarChart\BarChart.component.test.tsx
+  17:25  error  Invalid type "number" of template literal expression  @typescript-eslint/restrict-template-expressions
+  35:19  error  Forbidden non-null assertion                          @typescript-eslint/no-non-null-assertion
+
+C:\dev\masaha\app-lane-l\apps\web\src\shared\design-system\components\data\BarChart\BarChart.tsx
+  82:40  error  Invalid type "number" of template literal expression  @typescript-eslint/restrict-template-expressions
+  88:56  error  Invalid type "number" of template literal expression  @typescript-eslint/restrict-template-expressions
+
+C:\dev\masaha\app-lane-l\apps\web\src\shared\design-system\components\data\Heatmap\Heatmap.tsx
+  58:54  error  Invalid type "number" of template literal expression  @typescript-eslint/restrict-template-expressions
+
+C:\dev\masaha\app-lane-l\apps\web\src\shared\design-system\components\display\Meter\Meter.tsx
+  57:33  error  Invalid type "number" of template literal expression  @typescript-eslint/restrict-template-expressions
+
+✖ 8 problems (8 errors, 0 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

@@ -1,0 +1,9 @@
+feat(auth): keep a guest's action through a reset
+
+A guest's held favourite or report lived in memory only, so a password
+recovery, whose reset link opens a new tab, lost it (finding 168). It
+is now also kept in the browser's storage for its 15 minutes, never in
+the address. Only a sign-in in this browser confirms it, never a
+restore: the app goes back to the page it was pressed on, where the
+favourite is saved or the report's dialog opens. It is let go when it
+runs, when the guest lands on another site page, and on a sign-out.

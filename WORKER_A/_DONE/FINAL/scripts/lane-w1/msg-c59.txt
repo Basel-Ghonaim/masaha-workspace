@@ -1,0 +1,6 @@
+fix(packages): announce the terms, not the name
+
+The package sheet's summary was one polite live region holding the
+name the owner types, so a screen reader read the whole box again at
+each pause. The name now sits outside it; only the terms and the
+price, which follow from what is typed, are announced (finding 102).

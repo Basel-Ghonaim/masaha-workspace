@@ -1,0 +1,7 @@
+            <Link
+              to={menu.fileLink(row.id)}
+              dir="auto"
+              className="text-foreground underline-offset-4 hover:underline"
+            >
+              {card.name}
+            </Link>

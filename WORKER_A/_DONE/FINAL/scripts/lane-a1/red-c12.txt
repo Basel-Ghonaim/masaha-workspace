@@ -1,0 +1,198 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/sessions/sweep.api.test.ts src/shared/rate-limit/counter.api.test.ts src/shared/jobs/jobs.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_a_lane_a1_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/shared/jobs/jobs.api.test.ts (5 tests | 3 failed) 3087ms
+   ❯ the jobs endpoint (5)
+     × with the secret it runs the jobs and answers what each did 584ms
+     × a space without its settings row fails only its own stays: 200, counted, the rest closed 401ms
+     × a stay that cannot be closed is logged, the stays after it are still closed, and the run answers 200 counting it 593ms
+ ❯ |api| src/shared/rate-limit/counter.api.test.ts (6 tests | 1 failed) 819ms
+   ❯ sweepEndedWindows (1)
+     × a sweep deletes ended rate-limit windows, at most 5,000 a run 69ms
+ ❯ |api| src/modules/sessions/sweep.api.test.ts (2 tests | 2 failed) 1384ms
+   ❯ sessions: the sweep (2)
+     × a sweep deletes expired refresh tokens and sessions past their end, keeping live ones 751ms
+     × a sweep deletes expired reset tokens and recoveries 214ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/sessions/sweep.api.test.ts > sessions: the sweep > a sweep deletes expired refresh tokens and sessions past their end, keeping live ones
+TypeError: sessions.sweepExpired is not a function
+ ❯ src/modules/sessions/sweep.api.test.ts:37:33
+     35|     await refreshToken('live', later(1), later(1));
+     36|
+     37|     const done = await sessions.sweepExpired(NOW);
+       |                                 ^
+     38|
+     39|     expect(done).toEqual({ refreshTokens: 2, resetTokens: 0, recoverie…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  |api| src/modules/sessions/sweep.api.test.ts > sessions: the sweep > a sweep deletes expired reset tokens and recoveries
+TypeError: sessions.sweepExpired is not a function
+ ❯ src/modules/sessions/sweep.api.test.ts:58:33
+     56|     });
+     57|
+     58|     const done = await sessions.sweepExpired(NOW);
+       |                                 ^
+     59|
+     60|     expect(done).toEqual({ refreshTokens: 0, resetTokens: 1, recoverie…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |api| src/shared/jobs/jobs.api.test.ts > the jobs endpoint > with the secret it runs the jobs and answers what each did
+AssertionError: expected { …(2) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+@@ -14,22 +14,8 @@
+          "failed": 0,
+          "remaining": 0,
+        },
+        "name": "subscriptions.autoCheckOut",
+      },
+-     {
+-       "done": {
+-         "recoveries": 0,
+-         "refreshTokens": 0,
+-         "resetTokens": 0,
+-       },
+-       "name": "sessions.sweepExpired",
+-     },
+-     {
+-       "done": {
+-         "counters": 0,
+-       },
+-       "name": "rateLimits.sweepExpired",
+-     },
+    ],
+    "ranAt": "2026-10-18T16:00:00.000Z",
+  }
+
+ ❯ src/shared/jobs/jobs.api.test.ts:84:30
+     82|
+     83|     expect(response.status).toBe(200);
+     84|     expect(dataOf(response)).toEqual({
+       |                              ^
+     85|       ranAt: '2026-10-18T16:00:00.000Z',
+     86|       jobs: [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  |api| src/shared/jobs/jobs.api.test.ts > the jobs endpoint > a space without its settings row fails only its own stays: 200, counted, the rest closed
+AssertionError: expected { …(2) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+@@ -14,22 +14,8 @@
+          "failed": 0,
+          "remaining": 0,
+        },
+        "name": "subscriptions.autoCheckOut",
+      },
+-     {
+-       "done": {
+-         "recoveries": 0,
+-         "refreshTokens": 0,
+-         "resetTokens": 0,
+-       },
+-       "name": "sessions.sweepExpired",
+-     },
+-     {
+-       "done": {
+-         "counters": 0,
+-       },
+-       "name": "rateLimits.sweepExpired",
+-     },
+    ],
+    "ranAt": "2026-10-18T16:00:00.000Z",
+  }
+
+ ❯ src/shared/jobs/jobs.api.test.ts:128:30
+    126|
+    127|     expect(response.status).toBe(200);
+    128|     expect(dataOf(response)).toEqual({
+       |                              ^
+    129|       ranAt: '2026-10-18T16:00:00.000Z',
+    130|       jobs: [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  |api| src/shared/jobs/jobs.api.test.ts > the jobs endpoint > a stay that cannot be closed is logged, the stays after it are still closed, and the run answers 200 counting it
+AssertionError: expected { …(2) } to match object { jobs: [ { …(2) }, {}, {}, {} ] }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+@@ -6,10 +6,15 @@
+          "remaining": 0,
+          "visits": 1,
+        },
+        "name": "visits.autoCheckOut",
+      },
+-     {},
+-     {},
+-     {},
++     {
++       "done": {
++         "checkIns": 0,
++         "failed": 0,
++         "remaining": 0,
++       },
++       "name": "subscriptions.autoCheckOut",
++     },
+    ],
+  }
+
+ ❯ src/shared/jobs/jobs.api.test.ts:161:30
+    159|
+    160|     expect(response.status).toBe(200);
+    161|     expect(dataOf(response)).toMatchObject({
+       |                              ^
+    162|       jobs: [
+    163|         { name: 'visits.autoCheckOut', done: { visits: 1, remaining: 0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  |api| src/shared/rate-limit/counter.api.test.ts > sweepEndedWindows > a sweep deletes ended rate-limit windows, at most 5,000 a run
+TypeError: sweepEndedWindows is not a function
+ ❯ src/shared/rate-limit/counter.api.test.ts:71:18
+     69|
+     70|     expect(SWEEP_BATCH).toBe(5_000);
+     71|     expect(await sweepEndedWindows(now)).toBe(5_000);
+       |                  ^
+     72|     // The earliest ended go first: the one left ended last, at `now` …
+     73|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  6 failed | 7 passed (13)
+   Start at  16:50:12
+   Duration  23.68s (tests 33%, transform 32%, import 30%, setup 5%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/sessions/sweep.api.test.ts src/shared/rate-limit/counter.api.test.ts src/shared/jobs/jobs.api.test.ts

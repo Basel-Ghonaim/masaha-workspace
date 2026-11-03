@@ -1,0 +1,64 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/file
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/file/CustomerFile.component.test.tsx (3 tests | 2 failed) 1180ms
+   ❯ CustomerFile (3)
+     × the file’s reminder link holds the filled template, with its caption 105ms
+     × offers no reminder with no phone or nothing owed; the default text with no template 265ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  13:25:23
+   Duration  13.07s (transform 41%, import 26%, environment 18%, tests 9%, setup 5%)
+
+  Transform  |component| transforming modules took 5.22s · 41% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/file/CustomerFile.component.test.tsx > CustomerFile > the file’s reminder link holds the filled template, with its caption
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"https://wa.me/970599000201?text=Hi%20Sara%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[32m[39m[2m) // element.getAttribute("href") === "https://wa.me/970599000201?text=Hi%20Sara%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[22m
+
+Expected the element to have attribute:
+[32m  href="https://wa.me/970599000201?text=Hi%20Sara%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[39m
+Received:
+[31m  href="https://wa.me/970599000201?text=Hi%20Sara%20Khalid%2C%20you%20owe%20%E2%82%AA65%20at%20Masaha%20One."[39m
+ ❯ src/features/desk/components/file/CustomerFile.component.test.tsx:113:18
+    111|
+    112|     const link = await screen.findByRole('link', { name: 'WhatsApp rem…
+    113|     expect(link).toHaveAttribute(
+       |                  ^
+    114|       'href',
+    115|       `https://wa.me/970599000201?text=${encodeURIComponent('Hi Sara, …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/components/file/CustomerFile.component.test.tsx > CustomerFile > offers no reminder with no phone or nothing owed; the default text with no template
+AssertionError: expected 'https://wa.me/970599000201?text=Hello…' to contain 'Hello Sara, a reminder from S: you ow…'
+
+Expected: "Hello Sara, a reminder from S: you owe ₪65."
+Received: "https://wa.me/970599000201?text=Hello Sara Khalid, a reminder from S: you owe ₪65. You can pay at the space. Thank you."
+
+ ❯ src/features/desk/components/file/CustomerFile.component.test.tsx:174:65
+    172|     );
+    173|     const link = await screen.findByRole('link', { name: 'WhatsApp rem…
+    174|     expect(decodeURIComponent(link.getAttribute('href') ?? '')).toCont…
+       |                                                                 ^
+    175|       'Hello Sara, a reminder from S: you owe ₪65.',
+    176|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/file

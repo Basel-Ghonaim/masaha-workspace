@@ -1,0 +1,8 @@
+[
+  {"label": "B164", "file": "apps/web/src/features/platform-settings/hooks/usePlatformContact.ts",
+   "old": "    queryFn: () => repository.publicContact(),", "new": "    queryFn: () => Promise.resolve({ email: null, whatsapp: null }),",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/PlatformContact"},
+  {"label": "B165", "file": "apps/web/src/features/platform-settings/components/PlatformContact.tsx",
+   "old": "  if (channels.length === 0) return none;", "new": "  if (channels.length === 0) return null;",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/platform-settings/components/PlatformContact"}
+]

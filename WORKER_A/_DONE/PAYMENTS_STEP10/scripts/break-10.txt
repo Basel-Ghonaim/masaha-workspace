@@ -1,0 +1,38 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/payments/services/ledgerQueryOf.unit.test.ts (4 tests | 1 failed) 15ms
+   ❯ ledgerQueryOf (4)
+     × drops half a range, an inverted one and one of 93 days, and keeps 92 8ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  14:37:37
+   Duration  580ms (import 48%, transform 46%, tests 4%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/payments/services/ledgerQueryOf.unit.test.ts > ledgerQueryOf > drops half a range, an inverted one and one of 93 days, and keeps 92
+AssertionError: expected { from: '2026-07-22', …(3) } to deeply equal { voided: false, page: 1 }
+
+- Expected
++ Received
+
+  {
++   "from": "2026-07-22",
+    "page": 1,
++   "to": "2026-10-22",
+    "voided": false,
+  }
+
+ ❯ src/features/payments/services/ledgerQueryOf.unit.test.ts:39:59
+     37|     expect(read('to=2026-10-01').filters).toEqual({ voided: false, pag…
+     38|     expect(read('from=2026-10-21&to=2026-10-01').filters).toEqual({ vo…
+     39|     expect(read('from=2026-07-22&to=2026-10-22').filters).toEqual({ vo…
+       |                                                           ^
+     40|     expect(read('from=2026-07-23&to=2026-10-22').filters).toMatchObjec…
+     41|       from: '2026-07-23',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

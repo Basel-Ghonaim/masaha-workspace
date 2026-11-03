@@ -1,0 +1,57 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/hooks/mine
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/mine/useMyReports.component.test.tsx (4 tests | 1 failed) 440ms
+   ❯ useMyReports (4)
+     × links a listed space, names one that left as text with its line, and labels each reply by who replied 148ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/mine/useMyReports.component.test.tsx > useMyReports > links a listed space, names one that left as text with its line, and labels each reply by who replied
+AssertionError: expected { key: '42', space: { …(3) }, …(4) } to match object { space: { …(3) }, …(3) }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -4,11 +4,11 @@
+      "label": "Reply from the space",
+      "text": "Fixed.",
+    },
+    "space": {
+      "gone": "This space is no longer listed in the directory",
+-     "link": null,
++     "link": "/spaces/old-hub",
+      "name": {
+        "text": "Old Hub",
+      },
+    },
+    "status": {
+
+ ❯ src/features/data-reports/hooks/mine/useMyReports.component.test.tsx:84:18
+     82|       reply: null,
+     83|     });
+     84|     expect(gone).toMatchObject({
+       |                  ^
+     85|       space: {
+     86|         name: { text: 'Old Hub' },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:32:47
+   Duration  6.90s (transform 36%, environment 27%, import 23%, setup 8%, tests 7%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/hooks/mine

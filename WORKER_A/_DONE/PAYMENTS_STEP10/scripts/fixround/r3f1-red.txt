@@ -1,0 +1,4 @@
+     × removes a space that left, once, and says it cannot be saved again while out of the directory, with no «Undo»; axe-clean 3222ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+TestingLibraryElementError: Unable to find an element with the text: (name) => name.replace(/[⁦-⁩]/g, "") === expected. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+      Tests  1 failed (1)

@@ -1,0 +1,102 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/space-links/admin-spaces/adminSpaces.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/space-links/admin-spaces/adminSpaces.api.test.ts (27 tests | 1 failed) 10375ms
+   ❯ the admin's spaces, counted (2)
+     × staleEditable: unverified spaces, hidden included, with a group stale or missing; the verified never; the first five by name, and the total 377ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 26 passed (27)
+   Start at  13:04:35
+   Duration  19.09s (tests 69%, transform 22%, import 8%, setup 1%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/space-links/admin-spaces/adminSpaces.api.test.ts > the admin's spaces, counted > staleEditable: unverified spaces, hidden included, with a group stale or missing; the verified never; the first five by name, and the total
+AssertionError: expected { total: 8, first: [ { …(6) }, …(4) ] } to deeply equal { total: 7, first: [ { …(6) }, …(4) ] }
+
+- Expected
++ Received
+
+@@ -1,9 +1,22 @@
+  {
+    "first": [
+      {
+        "hidden": false,
++       "id": 8,
++       "missing": [],
++       "nameAr": null,
++       "nameEn": "Aaron",
++       "stale": [
++         {
++           "days": 90,
++           "group": "hours",
++         },
++       ],
++     },
++     {
++       "hidden": false,
+        "id": 1,
+        "missing": [],
+        "nameAr": null,
+        "nameEn": "Atlas",
+        "stale": [
+@@ -46,24 +59,11 @@
+        "nameEn": "Dune",
+        "stale": [
+          {
+            "days": 61,
+            "group": "hours",
+-         },
+-       ],
+          },
+-     {
+-       "hidden": false,
+-       "id": 5,
+-       "missing": [],
+-       "nameAr": null,
+-       "nameEn": "Ember",
+-       "stale": [
+-         {
+-           "days": 31,
+-           "group": "prices",
+-         },
+        ],
+      },
+    ],
+-   "total": 7,
++   "total": 8,
+  }
+
+ ❯ src/modules/space-links/admin-spaces/adminSpaces.api.test.ts:459:48
+    457|       stale: { group: string; days: number }[],
+    458|     ) => ({ id, nameEn, nameAr, hidden, missing, stale });
+    459|     expect(await adminSpaces.staleEditable(5)).toEqual({
+       |                                                ^
+    460|       total: 7,
+    461|       first: [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/space-links/admin-spaces/adminSpaces.api.test.ts

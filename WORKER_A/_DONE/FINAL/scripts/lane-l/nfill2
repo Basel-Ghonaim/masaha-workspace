@@ -1,0 +1,1 @@
+  return text.replaceAll(name, values.name).replaceAll(amount, values.amount).replaceAll(space, values.space) || String(valueOf[''] ?? '');

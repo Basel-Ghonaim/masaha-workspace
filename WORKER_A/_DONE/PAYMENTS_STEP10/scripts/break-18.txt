@@ -1,0 +1,195 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (3 tests | 1 failed | 2 skipped) 3382ms
+   ❯ PaymentsLedger (3)
+     × gives the focus to the next row’s action when the focused row leaves, else to the totals line 3380ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  14:38:54
+   Duration  14.51s (import 46%, tests 24%, transform 16%, environment 11%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > gives the focus to the next row’s action when the focused row leaves, else to the totals line
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<button
+  data-row-action=""
+  type="button"
+>
+  Act on 32
+</button>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <main>
+      <h1>
+        Payments
+      </h1>
+      <section
+        aria-label="Payments ledger"
+        class="flex flex-col gap-3"
+      >
+        <p
+          aria-live="polite"
+          class="flex flex-wrap gap-x-3 gap-y-1 text-body-sm"
+          tabindex="-1"
+        >
+          <span … />
+        </p>
+        <div
+          class="overflow-hidden rounded-lg border border-(--card-border) bg-card text-card-foreground shadow-raised"
+          data-layout="table"
+          data-slot="data-table"
+        >
+          <div … />
+          <div … />
+          <div … />
+        </div>
+      </section>
+    </main>
+  </div>
+</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<main>[39m
+        [36m<h1>[39m
+          [0mPayments[0m
+        [36m</h1>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Payments ledger"[39m
+          [33mclass[39m=[32m"flex flex-col gap-3"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33maria-live[39m=[32m"polite"[39m
+            [33mclass[39m=[32m"flex flex-wrap gap-x-3 gap-y-1 text-body-sm"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"text-label"[39m
+            [36m>[39m
+              [0mToday · Total ⁨₪50⁩ · Cash ⁨₪50⁩ · Transfer ⁨₪0⁩ · 2 payments[0m
+            [36m</span>[39m
+          [36m</p>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"overflow-hidden rounded-lg border border-(--card-border) bg-card text-card-foreground shadow-raised"[39m
+            [33mdata-layout[39m=[32m"table"[39m
+            [33mdata-slot[39m=[32m"data-table"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"px-(--card-padding) py-4"[39m
+              [33mdata-slot[39m=[32m"data-table-toolbar"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-col gap-3"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"grid items-start gap-3 md:grid-cols-2 xl:grid-cols-4"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+                    [33mdata-slot[39m=[32m"field"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+                    [36m>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"text-label text-foreground"[39m
+                        [33mfor[39m=[32m"_r_0_-control"[39m
+                        [33mid[39m=[32m"_r_0_-label"[39m
+                      [36m>[39m
+                        [0mPeriod[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<button[39m
+                      [33maria-expanded[39m=[32m"false"[39m
+                      [33maria-haspopup[39m=[32m"dialog"[39m
+                      [33maria-labelledby[39m=[32m"_r_0_-label _r_2_"[39m
+                      [33mclass[39m=[32m"flex h-(--control-height) w-full items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-(length:--control-text-size) leading-(--type-body-line-height) whitespace-nowrap text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-empty:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+                      [33mdata-slot[39m=[32m"date-picker-trigger"[39m
+                      [33mdata-state[39m=[32m"closed"[39m
+                      [33mid[39m=[32m"_r_0_-control"[39m
+                      [33mtype[39m=[32m"button"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"lucide lucide-calendar text-muted-foreground"[39m
+                        [33mfill[39m=[32m"none"[39m
+                        [33mheight[39m=[32m"24"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-linecap[39m=[32m"round"[39m
+                        [33mstroke-linejoin[39m=[32m"round"[39m
+                        [33mstroke-width[39m=[32m"2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"24"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M8 2v3"[39m
+                        [36m/>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M16 2v3"[39m
+                        [36m/>[39m
+                        [36m<rect[39m
+                          [33mheight[39m=[32m"18"[39m
+                          [33mrx[39m=[32m"2"[39m
+                          [33mwidth[39m=[32m"18"[39m
+                          [33mx[39m=[32m"3"[39m
+                          [33my[39m=[32m"3"[39m
+                        [36m/>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"M3 9h18"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                      [36m<span[39m
+                        [33mclass[39m=[32m"truncate"[39m
+                        [33mid[39m=[32m"_r_2_"[39m
+                      [36m>[39m
+                        [0mToday[0m
+                      [36m</span>[39m
+                    [36m</button>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+                    [33mdata-slot[39m=[32m"field"[39m
+                  [36m>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+                    [36m>[39m
+                      [36m<label[39m
+                        [33mclass[39m=[32m"text-label text-foreground"[39m
+                        [33mfor[39m=[32m"_r_3_-control"[39m
+                        [33mid[39m=[32m"_r_3_-label"[39m
+                      [36m>[39m
+                        [0mStaff[0m
+                      [36m</label>[39m
+                    [36m</div>[39m
+                    [36m<button[39m
+                      [33maria-autocomplete[39m=[32m"none"[39m
+                      [33maria-expanded[39m=[32m"false"[39m
+                      [33mclass[39m=[32m"flex h-(--control-height) w-full items-center justify-between gap-2 rounded-(--radius-control) border border-input bg-background ps-3 pe-2 text-(length:--control-text-size) leading-(--type-body-line-height) whitespace-nowrap text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-de...
+ ❯ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:111:65
+    109|     });
+    110|     await waitFor(() => {
+    111|       expect(screen.getByRole('button', { name: 'Act on 32' })).toHave…
+       |                                                                 ^
+    112|     });
+    113|
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

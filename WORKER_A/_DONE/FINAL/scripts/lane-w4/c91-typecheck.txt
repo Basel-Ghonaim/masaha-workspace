@@ -1,0 +1,47 @@
+[heavy] waiting (try 1 of 60)
+[heavy] waiting (try 2 of 60)
+[heavy] waiting (try 3 of 60)
+[heavy] waiting (try 4 of 60)
+[heavy] waiting (try 5 of 60)
+[heavy] waiting (try 6 of 60)
+[heavy] waiting (try 7 of 60)
+[heavy] waiting (try 8 of 60)
+[heavy] waiting (try 9 of 60)
+[heavy] waiting (try 10 of 60)
+[heavy] waiting (try 11 of 60)
+[heavy] waiting (try 12 of 60)
+[heavy] waiting (try 13 of 60)
+[heavy] waiting (try 14 of 60)
+[heavy] waiting (try 15 of 60)
+[heavy] waiting (try 16 of 60)
+[heavy] waiting (try 17 of 60)
+[heavy] waiting (try 18 of 60)
+[heavy] waiting (try 19 of 60)
+[heavy] waiting (try 20 of 60)
+[heavy] waiting (try 21 of 60)
+[heavy] waiting (try 22 of 60)
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+
+src/shared/design-system/leaflet.unit.test.ts(1,30): error TS2591: Cannot find name 'node:fs'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node` and then add 'node' to the types field in your tsconfig.
+src/shared/map/components/MarkerMap.component.test.tsx(121,8): error TS2741: Property 'under' is missing in type '{ markers: MapMarker[]; selectedId: null; onSelect: Mock<(id: number) => void>; bounds: { south: number; north: number; west: number; east: number; }; user: null; focus: null; pick: null; onViewChange: null; label: string; failed: string; overlay: () => null; }' but required in type 'MarkerMapProps'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc -b

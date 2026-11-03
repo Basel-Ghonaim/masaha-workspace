@@ -1,0 +1,39 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/finance/components
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/finance/components/IncomeTab.component.test.tsx (4 tests | 1 failed) 10162ms
+   ❯ Finance › Income (4)
+     × reads the month chosen into the address, its tile named by it 5030ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:29:04
+   Duration  26.09s (tests 40%, import 23%, transform 20%, environment 14%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/finance/components/IncomeTab.component.test.tsx > Finance › Income > reads the month chosen into the address, its tile named by it
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/finance/components/IncomeTab.component.test.tsx:152:3
+    150|   });
+    151|
+    152|   it('reads the month chosen into the address, its tile named by it', …
+       |   ^
+    153|     const { requests, router } = renderFinance((request) =>
+    154|       ok(aReport(request.params?.month ?? '2026-10')),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/finance/components

@@ -1,0 +1,13 @@
+fix(desk): say a refused payment recorded nothing
+
+A 429 in a money dialog (the visit's check-in and check-out, «تحصيل»,
+«استلام دفعة», the sheet) said only to wait, which leaves the desk
+unsure whether the money was taken (G13.13). It now adds that nothing
+was recorded and that a retry after the wait will not record twice.
+
+Every phone field shows its example «+970 59 000 0000» through one
+PhoneInput (G13.14); «تسجيل زيارة» and «حضور» carry the sign-in icon,
+«خروج» the sign-out icon, the present list's empty state its people
+icon, the search's none its no-match icon, the status control its
+chevron from 768 px (G13.15); the desk's search is the large field
+(G13.16).

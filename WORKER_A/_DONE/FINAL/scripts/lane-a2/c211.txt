@@ -1,0 +1,54 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/subscribe.api.test.ts (17 tests | 1 failed) 7918ms
+   ❯ subscribing a customer (17)
+     × a subscription from a package copies its terms, ending validityDays after its start, audited subscription.created 526ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a subscription from a package copies its terms, ending validityDays after its start, audited subscription.created
+AssertionError: expected [ { actorId: 2, …(6) } ] to deeply equal [ { actorId: 2, …(6) } ]
+
+- Expected
++ Received
+
+@@ -10,11 +10,10 @@
+        "endsOn": "2026-11-19",
+        "hoursPerDay": null,
+        "name": "شهري",
+        "packageId": 1,
+        "priceAgorot": 30000,
+-       "publishedPeriod": null,
+        "reason": null,
+        "renewalOfId": null,
+        "shiftId": null,
+        "startsOn": "2026-10-21",
+        "totalDays": null,
+
+ ❯ src/modules/desk/subscribe.api.test.ts:135:34
+    133|     });
+    134|     expect((response.body as { meta?: object }).meta).toBeUndefined();
+    135|     expect(await auditEntries()).toEqual([
+       |                                  ^
+    136|       {
+    137|         actorId: reception.id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 20 passed (21)
+      Tests  1 failed | 211 passed (212)
+   Start at  17:55:12
+   Duration  176.56s (tests 72%, import 20%, transform 5%, setup 3%)
+

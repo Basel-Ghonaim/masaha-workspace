@@ -1,0 +1,15 @@
+dist/assets/calendar-DrU4Sdyk.js  يوليو
+dist/assets/calendar-DrU4Sdyk.js  أغسطس
+dist/assets/calendar-DrU4Sdyk.js  سبتمبر
+dist/assets/calendar-DrU4Sdyk.js  Jul
+dist/assets/calendar-DrU4Sdyk.js  Aug
+dist/assets/calendar-DrU4Sdyk.js  Oct
+dist/assets/priceText-BZ-_TPtG.js  ILS
+src/pages/dashboard/space/announcements/AnnouncementsPage.tsx imports the dashboard chunk (_dashboard-DH2j8ltA.js), which imports it.
+src/pages/dashboard/space/SettingsPage.tsx imports the dashboard chunk (_dashboard-DH2j8ltA.js), which imports it.
+
+7 showcase string(s) in the build. The showcase must stay development-only. If a fixture string only matches unrelated text, reword the fixture.
+
+The site's first download must not reach the dashboard (ADR 0011): look for a static import of dashboard code outside the dashboard. No chunk the dashboard imports may import it back (finding 27): look for what only the dashboard imports that the dashboard-shared group no longer takes.
+No data-table or leaflet or calendar, nor Leaflet's stylesheet, in the site's first download.
+No site page reaches data-table or leaflet or calendar through its static imports.

@@ -1,0 +1,55 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/customers
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/hooks/customers/useCustomersList.component.test.tsx (8 tests | 1 failed) 820ms
+   ❯ useCustomersList (8)
+     × offers the type filter monthly and weekly first, in the design’s order, each its kind 81ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 10 passed (11)
+   Start at  13:50:01
+   Duration  8.86s (environment 33%, transform 29%, import 24%, setup 9%, tests 6%)
+
+  Transform  |component| transforming modules took 4.43s · 29% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/customers/useCustomersList.component.test.tsx > useCustomersList > offers the type filter monthly and weekly first, in the design’s order, each its kind
+AssertionError: expected [ 'All types', 'Package', …(2) ] to deeply equal [ 'All types', 'Monthly', …(4) ]
+
+- Expected
++ Received
+
+  [
+    "All types",
+-   "Monthly",
+-   "Weekly",
+    "Package",
+    "Custom",
+    "No subscription",
+  ]
+
+ ❯ src/features/desk/hooks/customers/useCustomersList.component.test.tsx:146:52
+    144|
+    145|     const { kind } = result.current.list.toolbar;
+    146|     expect(kind.options.map(({ label }) => label)).toEqual([
+       |                                                    ^
+    147|       'All types',
+    148|       'Monthly',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/customers

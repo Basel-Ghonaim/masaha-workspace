@@ -1,0 +1,115 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/payments/writtenOff.api.test.ts (2 tests | 1 failed) 1138ms
+   ❯ the space's written-off visits (2)
+     × the written-off list names who wrote off, the amount and the reason, newest first 479ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  17:45:54
+   Duration  10.38s (transform 55%, import 23%, tests 19%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/payments/writtenOff.api.test.ts > the space's written-off visits > the written-off list names who wrote off, the amount and the reason, newest first
+AssertionError: expected [ …(2) ] to deeply equal [ { …(4) }, { …(4) } ]
+
+- Expected
++ Received
+
+@@ -1,30 +1,64 @@
+  [
+    {
+-     "paidAgorot": 0,
++     "paidAgorot": 1000,
+      "visit": {
+-       "id": 2,
++       "audience": "GENERAL",
++       "charge": {
++         "amountAgorot": 3000,
++         "capApplied": null,
++         "reason": null,
++         "roundingMinutes": null,
++         "roundingRule": null,
++         "typedById": null,
++       },
++       "checkedInAt": "2026-10-17T06:00:00.000Z",
++       "checkedOutAt": "2026-10-17T09:00:00.000Z",
++       "checkoutMethod": "AUTO",
++       "customer": null,
++       "dayRateAgorot": null,
++       "hourRateAgorot": null,
++       "id": 1,
++       "shiftId": null,
++       "visitorName": "Omar",
+        "writeOff": {
+-         "at": "2026-10-17T12:00:00.000Z",
++         "at": "2026-10-17T09:00:00.000Z",
+          "byId": 1,
+-         "reason": "A regular, forgiven",
++         "reason": "Left without paying",
+        },
+      },
+      "writtenOffAgorot": 2000,
+      "writtenOffBy": {
+        "id": 1,
+        "name": "Ahmad",
+      },
+    },
+    {
+-     "paidAgorot": 1000,
++     "paidAgorot": 0,
+      "visit": {
+-       "id": 1,
++       "audience": "GENERAL",
++       "charge": {
++         "amountAgorot": 2000,
++         "capApplied": null,
++         "reason": null,
++         "roundingMinutes": null,
++         "roundingRule": null,
++         "typedById": null,
++       },
++       "checkedInAt": "2026-10-17T06:00:00.000Z",
++       "checkedOutAt": "2026-10-17T09:00:00.000Z",
++       "checkoutMethod": "AUTO",
++       "customer": null,
++       "dayRateAgorot": null,
++       "hourRateAgorot": null,
++       "id": 2,
++       "shiftId": null,
++       "visitorName": "Omar",
+        "writeOff": {
+-         "at": "2026-10-17T09:00:00.000Z",
++         "at": "2026-10-17T12:00:00.000Z",
+          "byId": 1,
+-         "reason": "Left without paying",
++         "reason": "A regular, forgiven",
+        },
+      },
+      "writtenOffAgorot": 2000,
+      "writtenOffBy": {
+        "id": 1,
+
+ ❯ src/modules/payments/writtenOff.api.test.ts:99:30
+     97|     const response = await list(owner);
+     98|     expect(response.status).toBe(200);
+     99|     expect(dataOf(response)).toEqual([
+       |                              ^
+    100|       {
+    101|         visit: expect.objectContaining({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

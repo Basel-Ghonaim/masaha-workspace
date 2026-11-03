@@ -1,0 +1,39 @@
+# My notes on findings fixes (planner)
+
+- 21: sessions.service rotate: successor = deriveSuccessor(token) = base64url(HMAC-SHA256(key, token)); key = HKDF(JWT_SECRET, 'masaha refresh successor') (no new env); within grace re-derive → existing row by hash → return same token (no new row). Test: two presentations in grace return same token; break: newToken() → red.
+- 32: POST /auth/google answers Session & { linked, created }; web useGoogleSignIn: created → register's welcome toast «أهلًا {name}، تم إنشاء حسابك».
+- 83: error envelope gains error.details?: { userId } for ALREADY_OWNER (contract §2); AppError (api) details; web toAppError keeps details; add-owner sheet: «هذا البريد لمالك مسبقًا.» + button «اربطه بالمساحة» opens link-from-person dialog for that owner+space.
+- 89: adminUsersQuerySchema gains email (exact, emailSchema) → GET /admin/users?email=; useEmailAccount uses it; failed read worded apart with retry.
+- 91(a): register + Google creation: address held by pending account (mustChangePassword, temporaryPasswordExpiresAt < now) with no footprint (no audit as actor, no favorites, no reports) → retire it in the transaction: links deactivated, sessions ended, suspended, email → tombstone `replaced-<id>@invalid.masaha`? audited user.replaced (new action) → then create. S: footprint guard (recovered accounts). OD.
+- 92: staff.setActive deactivate: endSessions only when countOtherActiveLinks === 0.
+- 93: tests: role!=='USER' half, 404 deactivated link on reissue + handover, ACCOUNT_IS_ADMIN on reactivation, confirm's expiry second check.
+- 99: AdminSpace gains retiredAmenities {id,nameAr,nameEn,iconKey?}[] (both admin and managed reads); owner's checklist shows each marked until a save leaves it out.
+- 106: admin → ACCOUNT_IS_ADMIN before ACCOUNT_HAS_LINKS in staff reissue; reminder insert buttons named «إدراج {الاسم}».
+- 112: OD accept (web one key per intent) vs build (remember key: visits.checkout_key column migration). Rec accept.
+- 115: OD move to Accepted (condition met, test 41). Rec yes.
+- 120: test pins one DST transition in PG = Node gazaClockOf.
+- 127: check-ins filter by two Gaza midnights as instants (Node) — index served.
+- 121: run answers 500 when closed nothing and failures filled the batch (stateless).
+- 122: migration subscription_usage due_agorot bigint (DROP + CREATE).
+- 126: whole phone matches on national digits without trunk (≥ 9).
+- 160: checkInVisitSchema customerId?; space's, not archived; refuse present (MEMBER_ALREADY_CHECKED_IN); desk «تسجيل كزيارة» sends it.
+- 162: ItemPayment gains recordedBy {id,name}, voided.by {id,name}; statement «سجّلها {name}», «ألغاها {name}: {reason}».
+- 164: GET …/written-off-visits (owner), page of { visit, writtenOffBy {id,name}, paidAgorot, writtenOffAgorot }; screen: desk uncollected card second view (owner) with «تراجع». DI.
+- 166: web only: AdminSpace.owners from GET /manage/spaces/:spaceId (🧾) already names owners → ledger staff filter offers other owners. EC verify.
+- 171: published.amountAgorot optional; 409 PUBLISHED_PRICE_CHANGED; desk sends shown amount; sheet line + refresh.
+- 17: jobs sessions.sweepExpired + rateLimits.sweepExpired, batched.
+- 63: storage port list(prefix); job photos.reclaimOrphans in Gaza 03:00 hour; keys not in rows & older than 1h deleted. Cloudinary Admin API resources by prefix. EC.
+- 22: OD accept second place in localisation.md (rec) vs move to shared.
+- 48: compose configs inline content (Compose ≥2.23.1), drop bind mount + sql file; setup.md. EC.
+- 27: rolldown group so dashboard-only shared modules don't import dashboard chunk back; check:build cycle rule. EC.
+- 105: verified Radix skips disabled (focusable: !disabled; typeahead filters) → layer DropdownMenuItem `held` (aria-disabled, not disabled; onSelect prevented).
+- 130: SkipLink + useMainFocus → shared/routing; rule: focus moves on every page change except the document's first page; DashboardLayout + FocusLayout.
+- 180: data-reports + announcements gain second entry `public.ts`; site imports only it; lint allows; check:build extended to site page chunks. OD confirm.
+- 132: DI: page marked at once + quiet sign.
+- 133: AreaFilter caps at DIRECTORY_AREAS_MAX with line.
+- 134: memo marks, stable handlers; measure.
+- 135: DI/OD light values inside .leaflet-container for marks + legend.
+- 136: Permissions API start; OD accept vs build. rec build.
+- 137: hide numbers when truncated.
+- 138: OD; rec build «آخر تحديث قبل …» after bound.
+- 74: prototype is living → update Admin space edit.html copy line.

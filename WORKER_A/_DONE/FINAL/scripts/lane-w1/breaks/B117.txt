@@ -1,0 +1,58 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/overview/components/admin
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/overview/components/admin/AdminOverview.component.test.tsx (4 tests | 1 failed) 1360ms
+   ❯ AdminOverview (4)
+     × shows the five tiles, each a link with its helper; axe-clean 770ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:13:49
+   Duration  25.20s (transform 40%, import 29%, environment 20%, tests 6%, setup 5%)
+
+  Transform  |component| transforming modules took 9.69s · 40% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/overview/components/admin/AdminOverview.component.test.tsx > AdminOverview > shows the five tiles, each a link with its helper; axe-clean
+AssertionError: expected [ [ …(2) ], [ …(2) ], [ …(2) ], …(1) ] to deeply equal [ [ …(2) ], [ …(2) ], [ …(2) ], …(2) ]
+
+- Expected
++ Received
+
+@@ -13,10 +13,6 @@
+    ],
+    [
+      "Unverified spaces, no owner4The admin edits them until an owner is linked",
+      "/spaces?status=unverified",
+    ],
+-   [
+-     "New users12Last 30 days",
+-     "/users",
+-   ],
+  ]
+
+ ❯ src/features/overview/components/admin/AdminOverview.component.test.tsx:84:19
+     82|       .getAllByRole('link')
+     83|       .map((link) => [link.textContent, link.getAttribute('href')]);
+     84|     expect(tiles).toEqual([
+       |                   ^
+     85|       ['Spaces1610 verified · 4 unverified · 2 hidden', '/spaces'],
+     86|       ['Open data reports53 waiting for the admin · 2 waiting for owne…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/overview/components/admin

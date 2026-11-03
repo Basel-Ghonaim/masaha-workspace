@@ -1,0 +1,7 @@
+refactor(users): require the names' transaction
+
+users.namesFor took an optional transaction, so a caller reading under
+a lock could take the names on another connection by forgetting it
+(finding 79). namesFor and its repository's findNames now take tx as a
+required Tx | undefined, and each caller says which it means: undefined
+for the reads that hold no transaction. Typecheck proves it.

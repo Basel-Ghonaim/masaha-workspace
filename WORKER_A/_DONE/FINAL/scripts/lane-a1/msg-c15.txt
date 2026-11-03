@@ -1,0 +1,8 @@
+feat(auth): print the reset link in the email
+
+A mail client that strips the button left the reset email with no way
+to the link (AC-021). Under the button, both languages now say "If the
+button doesn't work, copy this link:" and print the link as text, left
+to right and breaking anywhere, in the HTML and the text parts.
+localisation.md names the email's words as the catalogue's one accepted
+second home (OD1, finding 22).

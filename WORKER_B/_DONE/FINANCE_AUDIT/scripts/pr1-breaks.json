@@ -1,0 +1,239 @@
+[
+ {
+  "id": "B-C1",
+  "file": "apps/api/src/modules/subscriptions/closures/closures.service.ts",
+  "old": "        await repository.moveRenewals(renewals, days, at, tx);\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/subscriptions/closures/extension.api.test.ts",
+  "name": "a renewal not started moves"
+ },
+ {
+  "id": "B-C2",
+  "file": "apps/api/src/modules/subscriptions/closures/closures.repository.ts",
+  "old": "AND s.\"starts_on\" IS NOT NULL AND s.\"starts_on\" > ${today}::date`;",
+  "new": "AND s.\"starts_on\" IS NOT NULL`;",
+  "lane": "api",
+  "test": "src/modules/subscriptions/closures/extension.api.test.ts",
+  "name": "a renewal of that renewal moves too"
+ },
+ {
+  "id": "B-C3",
+  "file": "apps/api/src/modules/subscriptions/closures/closures.repository.ts",
+  "old": "      WHERE ${pending}\n      UNION\n      SELECT s.\"id\" FROM \"subscriptions\" s JOIN chain c ON s.\"renewal_of_id\" = c.\"id\"\n      WHERE ${pending}\n",
+  "new": "      WHERE ${pending}\n",
+  "lane": "api",
+  "test": "src/modules/subscriptions/closures/extension.api.test.ts",
+  "name": "a renewal of that renewal moves too"
+ },
+ {
+  "id": "B-C4",
+  "file": "apps/api/src/modules/subscriptions/closures/closures.repository.ts",
+  "old": "        SELECT ((SELECT count(*) FROM covered)\n          + (SELECT count(*) FROM chain WHERE \"id\" NOT IN (SELECT \"id\" FROM covered)))::integer AS count`;",
+  "new": "        SELECT (SELECT count(*) FROM covered)::integer AS count`;",
+  "lane": "api",
+  "test": "src/modules/subscriptions/closures/extension.api.test.ts",
+  "name": "the preview counts what the extension moves"
+ },
+ {
+  "id": "B-C5",
+  "file": "apps/api/src/modules/subscriptions/closures/closures.service.ts",
+  "edits": [
+   [
+    "      return runInTransaction(async (tx) => {\n        if (!(await spaces.lock(space.id, tx))) {",
+    "      return runInTransaction(async (tx) => {\n        const early = await repository.lockMoved(\n          space.id,\n          closureSpan(await announcements.closureIn(space.id, announcementId), now()),\n          gazaClockOf(now()).date,\n          tx,\n        );\n        if (!(await spaces.lock(space.id, tx))) {"
+   ],
+   [
+    "        const { covered, renewals } = await repository.lockMoved(\n          space.id,\n          closureSpan(closure, at),\n          gazaClockOf(at).date,\n          tx,\n        );",
+    "        const { covered, renewals } = early;"
+   ]
+  ],
+  "lane": "api",
+  "test": "src/modules/subscriptions/closures/extension.api.test.ts",
+  "name": "a renewal sold while the extension waits"
+ },
+ {
+  "id": "B-C6",
+  "file": "apps/api/src/modules/subscriptions/closures/closures.service.ts",
+  "old": "if (recorded.spaceId !== space.id || recorded.announcementId !== announcementId) {",
+  "new": "if (recorded.announcementId !== announcementId) {",
+  "lane": "api",
+  "test": "src/modules/subscriptions/closures/extension.api.test.ts",
+  "name": "a retry with the same key"
+ },
+ {
+  "id": "B1",
+  "file": "apps/api/src/modules/audit/platformEvents.ts",
+  "old": "  'dataReport.dismissed',\n] as const;",
+  "new": "  'dataReport.dismissed',\n  'payment.recorded',\n] as const;",
+  "lane": "unit",
+  "test": "src/modules/audit/platformEvents.unit.test.ts"
+ },
+ {
+  "id": "B2",
+  "file": "apps/api/src/modules/audit/platformEvents.ts",
+  "old": "(isListed(PLATFORM_ACCOUNT_ACTIONS, action) && spaceId === null)",
+  "new": "(isListed(PLATFORM_ACCOUNT_ACTIONS, action) && spaceId === spaceId)",
+  "lane": "unit",
+  "test": "src/modules/audit/platformEvents.unit.test.ts"
+ },
+ {
+  "id": "B3",
+  "file": "apps/api/src/modules/audit/auditPeriod.ts",
+  "old": "  return gazaInstant(addDays(gazaClockOf(now).date, -DAYS_BACK), 0);",
+  "new": "  return new Date(now.getTime() - 30 * 86_400_000);",
+  "lane": "unit",
+  "test": "src/modules/audit/auditPeriod.unit.test.ts"
+ },
+ {
+  "id": "B4",
+  "file": "packages/shared/src/audit/requests.ts",
+  "edits": [
+   [
+    "  .refine((text) => text.split(',').every(isAction), { params: { code: 'invalid_choice' } })\n",
+    ""
+   ],
+   [
+    ".pipe(z.array(z.enum(AUDIT_ACTIONS)).max(AUDIT_ACTIONS_MAX));",
+    ".pipe(z.array(z.string()).max(AUDIT_ACTIONS_MAX));"
+   ]
+  ],
+  "lane": "shared",
+  "test": "src/audit/requests.unit.test.ts"
+ },
+ {
+  "id": "B5",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "const shared = [Prisma.sql`a.\"space_id\" = ${spaceId}`];",
+  "new": "const shared = [Prisma.sql`(a.\"space_id\" IS NOT NULL OR ${spaceId} = 0)`];",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "the owner reads every entry"
+ },
+ {
+  "id": "B6",
+  "file": "apps/api/src/modules/audit/audit.mapper.ts",
+  "old": "  if (!linked) return { kind: 'MASAHA' };\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "the admin's actor is MASAHA"
+ },
+ {
+  "id": "B7",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "LEFT JOIN \"users\" tu ON a.\"entity_type\" = 'user' AND tu.\"id\" = a.\"entity_id\"",
+  "new": "LEFT JOIN \"users\" tu ON tu.\"id\" = a.\"entity_id\"",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "each target has its type"
+ },
+ {
+  "id": "B8",
+  "file": "packages/shared/src/audit/requests.ts",
+  "old": "period: z.enum(AUDIT_PERIODS).default('LAST_30_DAYS'),",
+  "new": "period: z.enum(AUDIT_PERIODS).default('ALL'),",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "the last 30 days by default"
+ },
+ {
+  "id": "B9",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "concat_ws(' ', ${TARGET_NAME}, ${TARGET_NAME_AR}${others})",
+  "new": "concat_ws(' ', ${TARGET_NAME_AR}${others})",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "q finds the entries"
+ },
+ {
+  "id": "B10",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "return Prisma.sql`a.\"actor_id\" = ${actor} AND sm.\"user_id\" IS NOT NULL`;",
+  "new": "return Prisma.sql`a.\"actor_id\" = ${actor}`;",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "the admin's id"
+ },
+ {
+  "id": "B11",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "            SELECT DISTINCT\n",
+  "new": "            SELECT\n",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "meta.actors lists"
+ },
+ {
+  "id": "B12",
+  "file": "apps/api/src/modules/audit/audit.manage.routes.ts",
+  "old": "    requireCan('space.auditLog.read'),\n",
+  "new": "",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "reception is 403"
+ },
+ {
+  "id": "B12a",
+  "file": "apps/api/src/app.ts",
+  "old": "  manage.use('/audit-log', createAuditManageRouter(auditController));",
+  "new": "  api.use('/manage/spaces/:spaceId/audit-log', requireAuth(), createAuditManageRouter(auditController));",
+  "lane": "api",
+  "test": "src/modules/audit/spaceAuditLog.api.test.ts",
+  "name": "reception is 403"
+ },
+ {
+  "id": "B13",
+  "file": "apps/api/src/modules/audit/platformEvents.ts",
+  "old": "  'dataReport.dismissed',\n] as const;",
+  "new": "  'dataReport.dismissed',\n  'payment.recorded',\n] as const;",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "the admin reads the platform's events"
+ },
+ {
+  "id": "B14",
+  "file": "apps/api/src/modules/audit/platformEvents.ts",
+  "old": "  'dataReport.dismissed',\n] as const;",
+  "new": "  'dataReport.dismissed',\n  'space.capacityEdited',\n] as const;",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "the admin reads the platform's events"
+ },
+ {
+  "id": "B15",
+  "file": "apps/api/src/modules/audit/platformEvents.ts",
+  "old": " AND a.\"space_id\" IS NULL))`;",
+  "new": "))`;",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "an account's event"
+ },
+ {
+  "id": "B16",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "shared.push(matches(q, Prisma.sql`, es.\"name_en\", es.\"name_ar\"`));",
+  "new": "shared.push(matches(q));",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "q finds a space's entries"
+ },
+ {
+  "id": "B17",
+  "file": "apps/api/src/modules/audit/audit.repository.ts",
+  "old": "const all = actor === undefined ? shared : [...shared, Prisma.sql`a.\"actor_id\" = ${actor}`];",
+  "new": "const all = actor === undefined || actor > 0 ? shared : [...shared, Prisma.sql`a.\"actor_id\" = ${actor}`];",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "actor narrows to one person"
+ },
+ {
+  "id": "B18",
+  "file": "apps/api/src/app.ts",
+  "old": "  admin.use('/audit-log', createAuditAdminRouter(auditController));",
+  "new": "  api.use('/admin/audit-log', createAuditAdminRouter(auditController));",
+  "lane": "api",
+  "test": "src/modules/audit/platformAuditLog.api.test.ts",
+  "name": "is "
+ }
+]

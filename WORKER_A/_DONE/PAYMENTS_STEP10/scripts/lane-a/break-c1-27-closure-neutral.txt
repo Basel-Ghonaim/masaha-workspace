@@ -1,0 +1,75 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/announcements/services/typeView.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |unit| src/features/announcements/services/typeView.unit.test.ts (2 tests | 2 failed) 14ms
+   ❯ typeView (2)
+     × warns of an outage and a closure, and is neutral for the rest 11ms
+     × names the type and says what it does 2ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  12:00:08
+   Duration  1.12s (transform 70%, import 27%, tests 2%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/announcements/services/typeView.unit.test.ts > typeView > warns of an outage and a closure, and is neutral for the rest
+AssertionError: expected { GENERAL: 'neutral', …(4) } to deeply equal { GENERAL: 'neutral', …(4) }
+
+- Expected
++ Received
+
+  {
+-   "CLOSURE": "warning",
++   "CLOSURE": "neutral",
+    "EVENT": "neutral",
+    "GENERAL": "neutral",
+    "OFFER": "neutral",
+    "OUTAGE": "warning",
+  }
+
+ ❯ src/features/announcements/services/typeView.unit.test.ts:12:7
+     10|     expect(
+     11|       Object.fromEntries(ANNOUNCEMENT_TYPES.map((type) => [type, typeV…
+     12|     ).toEqual({
+       |       ^
+     13|       GENERAL: 'neutral',
+     14|       OUTAGE: 'warning',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/features/announcements/services/typeView.unit.test.ts > typeView > names the type and says what it does
+AssertionError: expected { label: 'Temporary closure', …(2) } to deeply equal { label: 'Temporary closure', …(2) }
+
+- Expected
++ Received
+
+  {
+    "hint": "The space shows “Closed now” for the whole period",
+    "label": "Temporary closure",
+-   "tone": "warning",
++   "tone": "neutral",
+  }
+
+ ❯ src/features/announcements/services/typeView.unit.test.ts:22:40
+     20|
+     21|   it('names the type and says what it does', () => {
+     22|     expect(typeView('CLOSURE', WORDS)).toEqual({
+       |                                        ^
+     23|       label: 'Temporary closure',
+     24|       tone: 'warning',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/announcements/services/typeView.unit.test.ts

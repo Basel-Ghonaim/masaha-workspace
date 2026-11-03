@@ -1,0 +1,10 @@
+perf(subscriptions): bound check-ins by midnights
+
+The space's dated check-ins filtered on each check-in's Gaza date, an
+expression the (space_id, checked_in_at) index cannot serve, so each
+page and its count read every check-in of the space (finding 127).
+
+The filter now bounds checked_in_at by the Gaza midnight that starts
+the first day and the one that ends the last, instants from the shared
+calendar; PostgreSQL's Gaza dates equal it (the previous commit's
+test). A test pins both edges to the minute and the plan's index range.

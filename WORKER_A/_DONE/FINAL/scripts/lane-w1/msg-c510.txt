@@ -1,0 +1,8 @@
+fix(staff): word both cases and name the tokens
+
+A re-issue for an account become an admin's is now refused
+ACCOUNT_IS_ADMIN, so the dialog says so in its own line instead of
+the links' line, which was false for an admin; the re-activation
+keeps the list's line for the same code. The reminder's insert
+buttons are named with the token each shows, «إدراج {الاسم}», so the
+visible label is inside the name (WCAG 2.5.3). Finding 106.

@@ -11,7 +11,8 @@ Each line: what, the owner's leaning (2026-10-18), and the item that must settle
    › *Front desk and money*, ADR 0009 revised). *Enforced in: step 7 (visits) and step 8 (subscriptions).*
    **Carried to step 7 (Q4, the owner's answer) — built (#95, #97, 2026-10-20):** reception closes the visit
    unpriced (#95); the owner prices it (`PUT …/visits/:visitId/charge`, #97); «يحتاج انتباهك» counts
-   `GET …/unpriced-visits` and `GET …/uncollected-visits` (#97) — never closed free.
+   `GET …/unpriced-visits` and `GET …/uncollected-visits` (#97) — never closed free. **Built (#131, 2026-10-29):**
+   «يحتاج انتباهك» counts the uncollected and the unpriced visits on `GET …/overview`.
 2. **A closure announcement** turns the space «مغلق الآن» in public. → Reception keeps it (a power cut in
    Gaza needs a decision on the spot), **the owner is notified**; extending subscriptions stays the
    owner's. *Settle in: the announcements item.* **Settled (#112, 2026-10-24):** reception posts a closure;
@@ -21,12 +22,16 @@ Each line: what, the owner's leaning (2026-10-18), and the item that must settle
    (the covered days, the proposal, how many it covers) and the extension, once per closure under one key, the
    owner only (reception 403); an extended closure is guarded by a database trigger (`CLOSURE_EXTENDED`: no new
    type or start, no deletion, no later end). Its renewal-chain gap is finding 151, fixed first in FINANCE_AUDIT
-   PR 1 (the owner's option A).
+   PR 1 (the owner's option A). **Finding 151 resolved (#128, 2026-10-28):** the extension moves each covered
+   subscription's renewal chain not started (start and end, by the same days, under the same locks, linked and
+   audited); a key that extended another space's closure is a `conflict`. **Built (#131, 2026-10-29):** the
+   owner's overview reads `closuresAwaitingExtension`.
 3. **Every customer's phone number:** needed at the desk. → No export and no whole list for reception;
    search and pages only. **Settled (#102, 2026-10-21):** a paged, searched list (at most 50 a page) for the
    owner and reception; no export and no whole list for anyone in step 8; an export is the owner's, later, in
    finance. Reception also reads an archived customer's file by id (its debts are collected at the desk —
-   the owner's word, 2026-10-21, carried to SUBSCRIPTIONS PR 2).
+   the owner's word, 2026-10-21, carried to SUBSCRIPTIONS PR 2). **Built (#131, 2026-10-29):** the owner's debts
+   with their phones are read on `GET …/finance/debts`, the CSV built in the browser; no export route.
 4. **A shared desk device:** a payment may be recorded under another receptionist's session, spoiling
    «each staff member's collections». → A short idle sign-out for reception accounts and a visible
    «تبديل الموظف». *Settle in: the desk's screen item (worker A) — the owner's decision, 2026-10-20: it is a web
@@ -37,4 +42,5 @@ Each line: what, the owner's leaning (2026-10-18), and the item that must settle
    reception links after 15 minutes with no request other than the desk's polled state; the access token names
    its session (`sid`); every other request renews it (at most one write a minute); an idle session's requests
    answer 401 `SESSION_IDLE` and its refresh deletes it and answers the same, ending only that device's session.
-   «تبديل الموظف» is on the desk (#116); the sign-in page's idle line comes with DESK_SCREENS PR 3.
+   «تبديل الموظف» is on the desk (#116); the sign-in page's idle line comes with DESK_SCREENS PR 3. **Built (#131,
+   2026-10-29):** each staff member's collections are on `GET …/finance/income`.

@@ -1,0 +1,34 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports src/features/spaces src/features/lookups src/pages/dashboard/admin src/pages/dashboard/space
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+
+ Test Files  73 passed (73)
+      Tests  480 passed (480)
+   Start at  12:34:40
+   Duration  155.98s (environment 32%, import 31%, tests 22%, setup 9%, transform 5%)
+
+Environment  |component| jsdom was created 73 times · 278.61s total, 32% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/data-reports src/pages/dashboard src/features/spaces
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+
+ Test Files  19 passed (19)
+      Tests  99 passed (99)
+   Start at  12:37:20
+   Duration  6.21s (transform 50%, import 48%, tests 1%, worker 1%)
+
+  Transform  |unit| transforming modules took 17.93s · 50% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

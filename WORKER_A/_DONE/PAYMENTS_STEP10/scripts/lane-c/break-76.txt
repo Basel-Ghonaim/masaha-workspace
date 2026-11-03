@@ -1,0 +1,342 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/favorites/hooks/resume
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/favorites/hooks/resume/useResumeFavorite.component.test.tsx (4 tests | 1 failed) 3297ms
+   ❯ useResumeFavorite (4)
+     × saves it once when the shell mounts again with the session, as after the sign-in page 3018ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/favorites/hooks/resume/useResumeFavorite.component.test.tsx > useResumeFavorite > saves it once when the shell mounts again with the session, as after the sign-in page
+TestingLibraryElementError: Found multiple elements with the text: /^.Masaha Hub. saved to your favourites$/
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"text-label"[39m
+  [33mdata-title[39m=[32m""[39m
+[36m>[39m
+  [0m⁨Masaha Hub⁩ saved to your favourites[0m
+[36m</div>[39m
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"text-label"[39m
+  [33mdata-title[39m=[32m""[39m
+[36m>[39m
+  [0m⁨Masaha Hub⁩ saved to your favourites[0m
+[36m</div>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<ol[39m
+        [33mdata-sonner-theme[39m=[32m"light"[39m
+        [33mdata-sonner-toaster[39m=[32m"true"[39m
+        [33mdata-x-position[39m=[32m"right"[39m
+        [33mdata-y-position[39m=[32m"bottom"[39m
+        [33mdir[39m=[32m"ltr"[39m
+        [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"true"[39m
+          [33mdata-index[39m=[32m"0"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 2; --offset: 0px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨Masaha Hub⁩ saved to your favourites[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"false"[39m
+          [33mdata-index[39m=[32m"1"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 1; --toasts-before: 1; --z-index: 1; --offset: 14px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0m⁨Masaha Hub⁩ saved to your favourites[0m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ol>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<ol[39m
+          [33mdata-sonner-theme[39m=[32m"light"[39m
+          [33mdata-sonner-toaster[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+            [33mdata-dismissible[39m=[32m"true"[39m
+            [33mdata-expanded[39m=[32m"false"[39m
+            [33mdata-front[39m=[32m"true"[39m
+            [33mdata-index[39m=[32m"0"[39m
+            [33mdata-mounted[39m=[32m"true"[39m
+            [33mdata-promise[39m=[32m"false"[39m
+            [33mdata-removed[39m=[32m"false"[39m
+            [33mdata-sonner-toast[39m=[32m""[39m
+            [33mdata-styled[39m=[32m"false"[39m
+            [33mdata-swipe-out[39m=[32m"false"[39m
+            [33mdata-swiped[39m=[32m"false"[39m
+            [33mdata-swiping[39m=[32m"false"[39m
+            [33mdata-type[39m=[32m"success"[39m
+            [33mdata-visible[39m=[32m"true"[39m
+            [33mdata-x-position[39m=[32m"right"[39m
+            [33mdata-y-position[39m=[32m"bottom"[39m
+            [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 2; --offset: 0px; --initial-height: 0px;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+              [33mdata-icon[39m=[32m""[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"12"[39m
+                  [33mcy[39m=[32m"12"[39m
+                  [33mr[39m=[32m"10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+              [33mdata-content[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-label"[39m
+                [33mdata-title[39m=[32m""[39m
+              [36m>[39m
+                [0m⁨Masaha Hub⁩ saved to your favourites[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</li>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+            [33mdata-dismissible[39m=[32m"true"[39m
+            [33mdata-expanded[39m=[32m"false"[39m
+            [33mdata-front[39m=[32m"false"[39m
+            [33mdata-index[39m=[32m"1"[39m
+            [33mdata-mounted[39m=[32m"true"[39m
+            [33mdata-promise[39m=[32m"false"[39m
+            [33mdata-removed[39m=[32m"false"[39m
+            [33mdata-sonner-toast[39m=[32m""[39m
+            [33mdata-styled[39m=[32m"false"[39m
+            [33mdata-swipe-out[39m=[32m"false"[39m
+            [33mdata-swiped[39m=[32m"false"[39m
+            [33mdata-swiping[39m=[32m"false"[39m
+            [33mdata-type[39m=[32m"success"[39m
+            [33mdata-visible[39m=[32m"true"[39m
+            [33mdata-x-position[39m=[32m"right"[39m
+            [33mdata-y-position[39m=[32m"bottom"[39m
+            [33mstyle[39m=[32m"--index: 1; --toasts-before: 1; --z-index: 1; --offset: 14px; --initial-height: 0px;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+              [33mdata-icon[39m=[32m""[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"12"[39m
+                  [33mcy[39m=[32m"12"[39m
+                  [33mr[39m=[32m"10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/favorites/hooks/resume/useResumeFavorite.component.test.tsx:76:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  13:21:11
+   Duration  7.91s (tests 43%, transform 22%, environment 17%, import 13%, setup 5%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/favorites/hooks/resume

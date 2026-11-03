@@ -1,0 +1,302 @@
+[heavy] waiting (try 1 of 60)
+[heavy] waiting (try 2 of 60)
+[heavy] waiting (try 3 of 60)
+[heavy] waiting (try 4 of 60)
+[heavy] waiting (try 5 of 60)
+[heavy] waiting (try 6 of 60)
+[heavy] waiting (try 7 of 60)
+[heavy] waiting (try 8 of 60)
+[heavy] waiting (try 9 of 60)
+[heavy] waiting (try 10 of 60)
+[heavy] waiting (try 11 of 60)
+[heavy] waiting (try 12 of 60)
+[heavy] waiting (try 13 of 60)
+[heavy] waiting (try 14 of 60)
+[heavy] waiting (try 15 of 60)
+[heavy] waiting (try 16 of 60)
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-t/apps/web
+
+ ❯ |component| src/pages/site/auth/authPages.component.test.tsx (14 tests | 1 failed) 23137ms
+   ❯ the sign-in page (7)
+     × lands a user with no dashboard home, through RequireGuest, when no page asked for the sign-in 5129ms
+stderr | src/features/spaces/components/editor/SpaceEditor.component.test.tsx > leaving the editor > asks first while a section has unsaved changes, naming it; Stay, which has the focus, keeps the page
+A component suspended inside an `act` scope, but the `act` call was not awaited. When testing React components that depend on asynchronous data, you must await the result:
+
+await act(() => ...)
+
+ ❯ |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx (31 tests | 1 failed) 51928ms
+   ❯ leaving the editor (2)
+     × asks first while a section has unsaved changes, naming it; Stay, which has the focus, keeps the page 5440ms
+ ❯ |component| src/pages/dashboard/admin/UsersPage.component.test.tsx (10 tests | 1 failed) 24254ms
+   ❯ UsersPage (10)
+     × opens the link dialog from a row’s menu, and returns the focus to the menu 5583ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 2 failed) 81750ms
+   ❯ entering a space (3)
+     × moves to another space from the switcher, listing its role’s pages and remembering it 6538ms
+   ❯ the admin's add-space page (1)
+     × offers the public catalogue’s areas, and opens the new space’s editor once it is added 5166ms
+stderr | src/features/directory/components/near/LocationStatus.component.test.tsx > LocationStatus > shows the privacy line while locating and in use, never once the location was refused or imprecise
+The current testing environment is not configured to support act(...)
+The current testing environment is not configured to support act(...)
+The current testing environment is not configured to support act(...)
+The current testing environment is not configured to support act(...)
+The current testing environment is not configured to support act(...)
+The current testing environment is not configured to support act(...)
+The current testing environment is not configured to support act(...)
+
+stderr | src/features/directory/components/near/LocationStatus.component.test.tsx > LocationStatus > shows the privacy line while locating and in use, never once the location was refused or imprecise
+The current testing environment is not configured to support act(...)
+
+ ❯ |component| src/features/directory/components/near/LocationStatus.component.test.tsx (5 tests | 1 failed) 12786ms
+   ❯ LocationStatus (5)
+     × shows the privacy line while locating and in use, never once the location was refused or imprecise 5295ms
+Not implemented: navigation to another Document
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > entering a space > moves to another space from the switcher, listing its role’s pages and remembering it
+AssertionError: expected [ 'Overview', 'Front desk', …(10) ] to deeply equal [ 'Front desk', 'Customers', …(2) ]
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head>[39m
+    [36m<title>[39m
+      [0mOverview · Masaha[0m
+    [36m</title>[39m
+  [36m</head>[39m
+  [36m<body[39m
+    [33mstyle[39m=[32m""[39m
+  [36m>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+        [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+          [33mhref[39m=[32m"#main"[39m
+        [36m>[39m
+          [0mSkip to content[0m
+        [36m</a>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Space dashboard"[39m
+          [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+          [33mdata-mode[39m=[32m"desktop"[39m
+          [33mdata-slot[39m=[32m"sidebar"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"shrink-0 p-2 md:hidden"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-auto w-full justify-start gap-3 px-2 py-2 text-start"[39m
+              [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+              [33mdata-state[39m=[32m"closed"[39m
+              [33mid[39m=[32m"radix-_r_ev_"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+                [33mdata-size[39m=[32m"sm"[39m
+                [33mdata-slot[39m=[32m"avatar"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                  [33mdata-slot[39m=[32m"avatar-fallback"[39m
+                [36m>[39m
+                  [0mS[0m
+                [36m</span>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"truncate text-label"[39m
+                [36m>[39m
+                  [36m<bdi>[39m
+                    [0mSara · Owner[0m
+                  [36m</bdi>[39m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+                [36m>[39m
+                  [36m<bdi[39m
+                    [33mdir[39m=[32m"ltr"[39m
+                  [36m>[39m
+                    [0msara@example.com[0m
+                  [36m</bdi>[39m
+                [36m</span>[39m
+              [36m</span>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-chevrons-up-down"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m7 15 5 5 5-5"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m7 9 5-5 5 5"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"shrink-0 p-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"menu"[39m
+              [33maria-label[39m=[32m"Switch space: ⁨Focus Hub⁩"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-auto w-full justify-start gap-3 p-1.5"[39m
+              [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+              [33mdata-state[39m=[32m"closed"[39m
+              [33mid[39m=[32m"radix-_r_fj_"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+              [36m>[39m
+                [0mF[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+                [33mdata-slot[39m=[32m"sidebar-text"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"truncate text-label"[39m
+                [36m>[39m
+          ...
+
+- Expected
++ Received
+
+  [
++   "Overview",
+    "Front desk",
+    "Customers",
+-   "My payments today",
++   "Payments",
++   "Finance & reports",
++   "Packages & prices",
++   "Space profile",
+    "Announcements",
++   "Data reports",
++   "Staff",
++   "Audit log",
++   "Settings",
+  ]
+
+ ❯ src/pages/dashboard/routes.component.test.tsx:522:48
+    520|     });
+    521|     await waitFor(async () => {
+    522|       expect(await pagesIn('Space dashboard')).toEqual(RECEPTION_PAGES…
+       |                                                ^
+    523|     });
+    524|     expect(window.localStorage.getItem('masaha.lastSpace.1')).toBe('3'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's add-space page > offers the public catalogue’s areas, and opens the new space’s editor once it is added
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:744:3
+    742|   }
+    743|
+    744|   it('offers the public catalogue’s areas, and opens the new space’s e…
+       |   ^
+    745|     const user = userEvent.setup();
+    746|     signIn({ role: 'ADMIN' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > lands a user with no dashboard home, through RequireGuest, when no page asked for the sign-in
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/site/auth/authPages.component.test.tsx:138:3
+    136|   });
+    137|
+    138|   it('lands a user with no dashboard home, through RequireGuest, when …
+       |   ^
+    139|     fakeTransport(() => ok(aSession()));
+    140|     const router = renderSite('/login');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  |component| src/pages/dashboard/admin/UsersPage.component.test.tsx > UsersPage > opens the link dialog from a row’s menu, and returns the focus to the menu
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/dashboard/admin/UsersPage.component.test.tsx:136:3
+    134|
+    135| describe('UsersPage', () => {
+    136|   it('opens the link dialog from a row’s menu, and returns the focus t…
+       |   ^
+    137|     renderPage();
+    138|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  |component| src/features/directory/components/near/LocationStatus.component.test.tsx > LocationStatus > shows the privacy line while locating and in use, never once the location was refused or imprecise
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/directory/components/near/LocationStatus.component.test.tsx:87:3
+     85|
+     86| describe('LocationStatus', () => {
+     87|   it('shows the privacy line while locating and in use, never once the…
+       |   ^
+     88|     const device = fakeGeolocation();
+     89|     const user = userEvent.setup();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx > leaving the editor > asks first while a section has unsaved changes, naming it; Stay, which has the focus, keeps the page
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/spaces/components/editor/SpaceEditor.component.test.tsx:735:3
+    733|
+    734| describe('leaving the editor', () => {
+    735|   it('asks first while a section has unsaved changes, naming it; Stay,…
+       |   ^
+    736|     const user = userEvent.setup();
+    737|     const { router } = renderEditor();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  5 failed | 303 passed (308)
+      Tests  6 failed | 1780 passed (1786)
+   Start at  09:53:56
+   Duration  767.45s (environment 33%, import 32%, tests 21%, setup 11%, transform 3%)
+
+Environment  |component| jsdom was created 308 times · 1454.13s total, 33% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-t\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-t\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component

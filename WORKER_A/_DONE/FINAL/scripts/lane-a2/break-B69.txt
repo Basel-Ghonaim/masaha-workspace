@@ -1,0 +1,47 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/customers.api.test.ts (10 tests | 1 failed | 9 skipped) 1079ms
+   ❯ the customers list (10)
+     × a subscription sold from a month's price is filtered MONTH, a custom one CUSTOM, a package's PACKAGE 678ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 skipped (10)
+   Start at  18:00:00
+   Duration  13.47s (transform 55%, import 25%, tests 15%, setup 5%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/customers.api.test.ts > the customers list > a subscription sold from a month's price is filtered MONTH, a custom one CUSTOM, a package's PACKAGE
+AssertionError: expected { id: 5, customerId: 6, …(21) } to match object { publishedPeriod: 'MONTH' }
+(26 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "publishedPeriod": "MONTH",
++   "publishedPeriod": null,
+  }
+
+ ❯ src/modules/desk/customers.api.test.ts:250:69
+    248|       .send({ published: { period: 'MONTH', audience: 'GENERAL', name:…
+    249|     expect(sold.status).toBe(201);
+    250|     expect((dataOf(sold) as { subscription: object }).subscription).to…
+       |                                                                     ^
+    251|       publishedPeriod: 'MONTH',
+    252|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

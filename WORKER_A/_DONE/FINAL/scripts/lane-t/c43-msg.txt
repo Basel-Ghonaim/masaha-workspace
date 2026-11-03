@@ -1,0 +1,11 @@
+test(web): load the lazy shells before waiting
+
+A route test's first wait for a lazy shell or page also paid its
+module graph's first transform, which on a busy machine outlasted the
+3 s findBy (findings 55 and 87): the site shell's first test took
+3.8 s cold.
+
+Each of the six route test files now loads the modules its tests open
+in a beforeAll with a 60 s timeout, through warm(...) in src/test;
+app/, which may not import a page's file, warms the routes '/' matches
+through routeLoaders. No test's own wait or timeout is raised.

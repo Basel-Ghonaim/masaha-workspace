@@ -1,0 +1,8 @@
+feat(payments): name the space's other owners
+
+The ledger's staff filter named the owner signed in and the reception
+accounts, never the space's other owners (finding 166). The managed
+space read already answers its active owners to the owner (EC10), so
+spaces exports useSpaceOwners over that one read, and the page names
+the owner signed in, then the other owners, «{name} · صاحب المساحة»,
+then reception, in ledgerPeople's order. No API change.

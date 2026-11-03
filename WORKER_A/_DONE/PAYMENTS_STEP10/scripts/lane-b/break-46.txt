@@ -1,0 +1,36 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts (3 tests | 1 failed) 30ms
+   ❯ the data reports repository (3)
+     × sends the owner’s decision to the report’s own path, its body as given 13ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  12:09:37
+   Duration  1.52s (import 59%, transform 38%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > sends the owner’s decision to the report’s own path, its body as given
+AssertionError: expected [ Array(1) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
+-   "patch /manage/spaces/7/data-reports/41",
++   "post /manage/spaces/7/data-reports/41",
+  ]
+
+ ❯ src/features/data-reports/repository/dataReportsRepository.unit.test.ts:59:34
+     57|       createDataReportsRepository().decideSpace(7, 41, { status: 'DISM…
+     58|     ).resolves.toEqual(decided);
+     59|     expect(requests.map(lineOf)).toEqual(['patch /manage/spaces/7/data…
+       |                                  ^
+     60|     expect(JSON.parse(String(requests[0]?.data))).toEqual({ status: 'D…
+     61|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

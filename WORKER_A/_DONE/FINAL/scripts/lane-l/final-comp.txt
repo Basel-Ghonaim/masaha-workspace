@@ -1,0 +1,613 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/pages/site/routes.component.test.tsx (13 tests | 1 failed) 15950ms
+   ❯ the site's routes (13)
+     × shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search 5149ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (62 tests | 4 failed | 6 skipped) 61700ms
+   ❯ the dashboard's guards (8)
+     × refuses reception the owner’s payments with the 403 inside the shell 3176ms
+     × shows reception its own payments today 3045ms
+     × refuses the owner reception’s payments today with the 403 3059ms
+   ❯ the admin's lookups page (5)
+     × opens the amenities’ tab from the address 3025ms
+Not implemented: navigation to another Document
+ ❯ |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx (3 tests | 2 failed) 3494ms
+   ❯ MyReportsList (3)
+     × folds a long message to two lines with «Show more», a short one with none, each in its own direction; axe-clean 377ms
+     × names a space that left as text, with no link 3039ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:185:3
+    183|   // Reception lands on the desk, which loads lazily: its first transf…
+    184|   // seconds, so it is done before the tests, as the pages' own sectio…
+    185|   beforeAll(async () => {
+       |   ^
+    186|     await import('./space/desk/DeskPage');
+    187|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/site/routes.component.test.tsx:206:5
+    204|     [1440, 'from 768 px a breadcrumb back to the Directory with its la…
+    205|     [390, 'below it a back link'],
+    206|   ])('shows a space’s page titled by its name; at %i, %s', async (widt…
+       |     ^
+    207|     stubScreenWidth(width);
+    208|     fakeTransport((request) =>
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:168:30
+    166| /** The heading named `name` in the main landmark, where a status stat…
+    167| async function stateInMain(name: string) {
+    168|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    169| }
+    170|
+ ❯ src/pages/dashboard/routes.component.test.tsx:264:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today
+TestingLibraryElementError: Unable to find role="banner"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ topBarTitle src/pages/dashboard/routes.component.test.tsx:163:30
+    161|  */
+    162| async function topBarTitle(name: string) {
+    163|   return within(await screen.findByRole('banner')).findByRole('heading…
+       |                              ^
+    164| }
+    165|
+ ❯ src/pages/dashboard/routes.component.test.tsx:272:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses the owner reception’s payments today with the 403
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:168:30
+    166| /** The heading named `name` in the main landmark, where a status stat…
+    167| async function stateInMain(name: string) {
+    168|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    169| }
+    170|
+ ❯ src/pages/dashboard/routes.component.test.tsx:279:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the amenities’ tab from the address
+TestingLibraryElementError: Unable to find role="tab" and name "Amenities"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:472:25
+    470|     openLookups('?tab=amenities');
+    471|
+    472|     expect(await screen.findByRole('tab', { name: 'Amenities' })).toHa…
+       |                         ^
+    473|       'aria-selected',
+    474|       'true',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx > MyReportsList > folds a long message to two lines with «Show more», a short one with none, each in its own direction; axe-clean
+AssertionError: expected [ <li><div …(2)>…(2)</div></li>, …(5) ] to have a length of 2 but got 6
+
+- Expected
++ Received
+
+- 2
++ 6
+
+ ❯ src/features/data-reports/components/mine/MyReportsList.component.test.tsx:68:19
+     66|     const region = await screen.findByRole('region', { name: 'Reports'…
+     67|     const cards = await within(region).findAllByRole('listitem');
+     68|     expect(cards).toHaveLength(2);
+       |                   ^
+     69|     const [long, short] = cards as [HTMLElement, HTMLElement];
+     70|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx > MyReportsList > names a space that left as text, with no link
+TestingLibraryElementError: Found multiple elements with the role "listitem"
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<li>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-muted-foreground"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0mOld Hub[0m
+            [36m</span>[39m
+          [36m</span>[39m
+        [36m</h2>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"block"[39m
+        [36m>[39m
+          [0mOpening hours · Sent 21 October[0m
+        [36m</span>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"block"[39m
+        [36m>[39m
+          [0mThis space is no longer listed in the directory[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"col-start-2 row-span-2 row-start-1 self-start justify-self-end"[39m
+        [33mdata-slot[39m=[32m"card-action"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+        [36m>[39m
+          [0mIn review[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col items-start gap-1"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm break-words"[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mid[39m=[32m"_r_4_-41"[39m
+        [36m>[39m
+          [0mThe space opens at 9, not 8.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</li>[39m
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mdata-slot[39m=[32m"pagination-item"[39m
+[36m>[39m
+  [36m<a[39m
+    [33maria-disabled[39m=[32m"true"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 pointer-coarse:h-(--control-height) gap-1 px-2 max-md:h-(--control-height) max-md:border-(--card-border) max-md:bg-card max-md:px-3 aria-disabled:pointer-events-none aria-disabled:opacity-50"[39m
+    [33mdata-slot[39m=[32m"pagination-previous"[39m
+    [33mrole[39m=[32m"link"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-chevron-left"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m15 18-6-6 6-6"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [0mPrevious[0m
+  [36m</a>[39m
+[36m</li>[39m
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mdata-slot[39m=[32m"pagination-item"[39m
+[36m>[39m
+  [36m<a[39m
+    [33maria-current[39m=[32m"page"[39m
+    [33maria-label[39m=[32m"Page 1"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-8 px-0 pointer-coarse:size-(--control-height) bg-background"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"pagination-link"[39m
+    [33mhref[39m=[32m"/me/reports"[39m
+  [36m>[39m
+    [0m1[0m
+  [36m</a>[39m
+[36m</li>[39m
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"text-center text-body-sm text-muted-foreground md:hidden"[39m
+  [33mdata-slot[39m=[32m"pagination-summary"[39m
+[36m>[39m
+  [0mPage 1 of 1[0m
+[36m</li>[39m
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mdata-slot[39m=[32m"pagination-item"[39m
+[36m>[39m
+  [36m<a[39m
+    [33maria-disabled[39m=[32m"true"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 pointer-coarse:h-(--control-height) gap-1 px-2 max-md:h-(--control-height) max-md:border-(--card-border) max-md:bg-card max-md:px-3 aria-disabled:pointer-events-none aria-disabled:opacity-50"[39m
+    [33mdata-slot[39m=[32m"pagination-next"[39m
+    [33mrole[39m=[32m"link"[39m
+  [36m>[39m
+    [0mNext[0m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-chevron-right"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m9 18 6-6-6-6"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</a>[39m
+[36m</li>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Reports"[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Filter reports"[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [33mdata-slot[39m=[32m"toggle-group"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mrole[39m=[32m"radiogroup"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"true"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"on"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mAll[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mIn review[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mReviewed[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0m1 report[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<li>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreg...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Reports"[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Filter reports"[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [33mdata-slot[39m=[32m"toggle-group"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mrole[39m=[32m"radiogroup"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"true"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"on"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mAll[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mIn review[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"false"[39m
+            [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"toggle-group-item"[39m
+            [33mdata-state[39m=[32m"off"[39m
+            [33mrole[39m=[32m"radio"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+            [0mReviewed[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<p[39m
+          [33maria-live[39m=[32m"polite"[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0m1 report[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<li>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreg...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/data-reports/components/mine/MyReportsList.component.test.tsx:105:38
+    103|     );
+    104|
+    105|     const card = within(await screen.findByRole('listitem'));
+       |                                      ^
+    106|     expect(card.getByRole('heading', { level: 2, name: 'Old Hub' })).t…
+    107|     expect(card.queryByRole('link')).not.toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  3 failed | 304 passed (307)
+      Tests  7 failed | 1758 passed | 6 skipped (1771)
+   Start at  17:28:00
+   Duration  560.46s (environment 32%, import 32%, tests 22%, setup 10%, transform 4%)
+
+Environment  |component| jsdom was created 307 times · 1023.82s total, 32% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component
+exit 1

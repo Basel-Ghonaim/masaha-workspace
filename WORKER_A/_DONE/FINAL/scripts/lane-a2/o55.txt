@@ -1,0 +1,2 @@
+          if (done.stalled === true) logger.error({ job: job.name, failed: done.failed }, 'job stalled');
+          ran.push({ name: job.name, done });

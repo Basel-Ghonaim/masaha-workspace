@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx (7 tests | 1 failed) 6317ms
+   ❯ SubscriptionSheet (7)
+     × prefills a usage-based custom rate from the published price, and says how it is charged 1268ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  11:05:51
+   Duration  22.53s (tests 29%, transform 28%, import 24%, environment 15%, setup 4%)
+
+  Transform  |component| transforming modules took 6.20s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx > SubscriptionSheet > prefills a usage-based custom rate from the published price, and says how it is charged
+Error: [2mexpect([22m[31melement[39m[2m).toHaveValue([22m[32m5[39m[2m)[22m
+
+Expected the element to have value:
+[32m  5[39m
+Received:
+[31m[39m
+ ❯ src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx:170:18
+    168|     await user.click(within(sheet).getByRole('radio', { name: 'Per hou…
+    169|     const rate = within(sheet).getByRole('textbox', { name: 'Rate (₪)'…
+    170|     expect(rate).toHaveValue('5');
+       |                  ^
+    171|     expect(rate).toHaveAccessibleDescription('From the published price…
+    172|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/sheet

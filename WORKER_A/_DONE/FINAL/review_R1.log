@@ -1,0 +1,671 @@
+● Auto selected GPT-5.6 Luna because it was the best choice out of the models available in your
+  plan.
+
+● Read 5_REVIEW_PROMPT_R1.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\5_REVIEW_PROMPT_R1.md
+  └ L1:end (33 lines read)
+
+● Read 5_REVIEW_PROMPT_COMMON.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\5_REVIEW_PROMPT_COMMON.md
+  └ L1:end (83 lines read)
+
+● Inspect repository state and recent commits (shell)
+  │ git status --short; git log --oneline --all --decorate -20
+  └ 20 lines…
+
+● Check pull request CI status (shell)
+  │ gh pr checks 132
+  └ 11 lines…
+
+● Read 4_REPORT_LEAD.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\4_REPORT_LEAD.md
+  └ L1:260 (217 lines read)
+
+● Read 2_PLAN.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\2_PLAN.md
+  └ L1:220 (219 lines read)
+
+● Read baseline repository instructions (shell)
+  │ git show origin/main:CLAUDE.md
+  └ 90 lines…
+
+✗ Read screen build document (shell)
+  │ git show a12c0790:docs/frontend/design-system/SCREENS.md | Select-Object -First 260
+  └ fatal: path 'docs/frontend/design-system/SCREENS.md' does not exist in 'a12c0790'
+    Failed with exit code 128
+
+✗ Read design system foundation (shell)
+  │ git show a12c0790:docs/frontend/design-system/foundation.md | Select-Object -Skip 0 -First 260
+  └ Output too large to read at once (22.3 KB). Saved to: C:\Users\basel\AppData\Local\Temp\17935257
+    71656-copilot-tool-output-5640-8c705449-0e25-477e-af7b-5156273b49b9.txt
+    Consider using tools like rg (for searching), head/tail (for viewing start/end), view with
+    view_range (for specific sections), or jq (for JSON) to examine portions of the output.
+
+    Preview (first 500 chars):
+    # Design System — Foundation
+
+    _Also the brief given to Claude Design._
+
+    > **Status:** Active — structure decided ([ADR
+    0005](../../architecture/decisions/0005-design-system-approach.md)); visual values **locked**
+    from the Claude Design direction *1a Sea* (§14 Steps 1–2). The layer is **built** (§14 Step 3):
+    the tokens, the layer base (`tokens/`, `lib/cn.ts`, `icons/`, `DirectionProvider`, the showcase;
+    §3) and every §12 component, with the theme and language toggles. The whole showcase was check
+    Failed with exit code -1
+
+● Read 4_REPORT_LEAD.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\4_REPORT_LEAD.md
+  └ L215:538 (270 lines read)
+
+● Read 2_PLAN.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\2_PLAN.md
+  └ L700:1320 (261 lines read)
+
+● Read 2_PLAN.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\2_PLAN.md
+  └ L2200:2929 (266 lines read)
+
+● Read screens document at head (shell)
+  │ git show a12c0790:docs/design/SCREENS.md | Select-Object -First 260
+  └ 60 lines…
+
+● Read design system exports (shell)
+  │ git show a12c0790:apps/web/src/shared/design-system/public.ts; git show
+  │ a12c0790:apps/web/src/shared/design-system/index.ts
+  └ 272 lines…
+
+● Locate documentation map entries (shell)
+  │ git show a12c0790:docs/README.md | Select-String -Pattern 'SCREENS|overview|findings' -Context
+  │ 1,2
+  └ 43 lines…
+
+● Locate design system sections (shell)
+  │ git show a12c0790:docs/frontend/design-system/foundation.md | Select-String -Pattern '^## 3|^##
+  │ 12|^## 13|^## 14' -Context 0,2
+  └ 15 lines…
+
+● Inspect lists and shared library behavior (shell)
+  │ git grep -n -E "rangeSummary|paginationView|refreshing|toWesternDigits|csvOf|whatsappLink|E\.164
+  │ |wa\.me|preventScrollReset" a12c0790 -- apps/web/src packages/shared/src | Select-Object -First
+  │ 300
+  └ 9 lines…
+
+● Inspect refusal envelope and error code (shell)
+  │ git grep -n -E "details|PUBLISHED_PRICE_CHANGED|toAppError|errorHandler" a12c0790 --
+  │ 'packages/shared/**' 'apps/api/src/**' 'apps/web/src/**' | Select-Object -First 240
+  └ 9 lines…
+
+● Inspect grouped navigation and shell access (shell)
+  │ git grep -n -E "SPACE_NAV|ADMIN_NAV|grouped|SidebarGroup|ACCOUNT_SETTINGS_PATH|SkipLink"
+  │ a12c0790 -- apps/web/src | Select-Object -First 260
+  └ 69 lines…
+
+● Inspect findings closure documents (shell)
+  │ git grep -n -E "Open|Accepted|Resolved|To the deployment|220|221|222|223" a12c0790 --
+  │ docs/architecture/findings/README.md docs/architecture/findings docs/project/overview.md
+  │ docs/v1-mvp.md docs/CHANGES.md | Select-Object -First 300
+  └ 8 lines…
+
+✗ Inspect design system components and token usage (shell)
+  │ git grep -n -E "Meter|BarChart|Heatmap|held|aria-disabled|tone|font-|text-\[|#[0-9A-Fa-f]{3,8}"
+  │ a12c0790 -- apps/web/src/shared/design-system apps/web/src/features apps/web/src/pages |
+  │ Select-Object -First 300
+  └ Output too large to read at once (42.1 KB). Saved to: C:\Users\basel\AppData\Local\Temp\17935257
+    83166-copilot-tool-output-5640-4a81d9d4-5957-4aae-a46c-60409063e47b.txt
+    Consider using tools like rg (for searching), head/tail (for viewing start/end), view with
+    view_range (for specific sections), or jq (for JSON) to examine portions of the output.
+
+    Preview (first 500 chars):
+    a12c0790:apps/web/src/features/announcements/components/actions/AnnouncementMenu.tsx:16: *
+    destructive, which opens the delete's dialog, held by the list so that it stays open whatever
+    the
+    a12c0790:apps/web/src/features/announcements/components/extension/ExtensionAction.tsx:7: *
+    «تمديد الاشتراكات» (outline), which opens the extension's dialog, held by the list so that it
+    stays
+    a12c0790:apps/web/src/features/announcements/components/list/AnnouncementCard.tsx:52:
+    <Badge variant={card.ty
+    Failed with exit code -1
+
+● Inspect build split and public entries (shell)
+  │ git grep -n -E "public\.ts|dashboard-shared|data-table|calendar|leaflet|dashboard" a12c0790 --
+  │ apps/web/vite.config.ts apps/web/scripts apps/web/src/features apps/web/src/shared |
+  │ Select-Object -First 300
+  └ 8 lines…
+
+● Read dashboard navigation definitions (shell)
+  │ git show a12c0790:apps/web/src/pages/dashboard/navigation.ts | Select-Object -First 180
+  └ 103 lines…
+
+● Read build checks and chunk config (shell)
+  │ git show a12c0790:apps/web/scripts/checkBuild.ts; git show a12c0790:apps/web/vite.config.ts
+  └ 408 lines…
+
+✗ Read pagination refresh and scroll behavior (shell)
+  │ git show a12c0790:apps/web/src/shared/lists/components/ListPagination.tsx; git show
+  │ a12c0790:apps/web/src/shared/lists/components/DataTable.tsx; git show
+  │ a12c0790:apps/web/src/features/directory/components/results/DirectoryResults.tsx
+  └ import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
+    PaginationPrevious,
+    PaginationSummary,
+    } from '@shared/design-system';
+    import { Link, useLocation } from 'react-router';
+    import type { PaginationView } from '../types/PaginationView';
+
+    /** An address's search, in one spelling: with or without its `?`, and none at all, compare
+    equal. */
+    function searchKey(search: string) {
+    return new URLSearchParams(search).toString();
+    }
+
+    /**
+    * A paged list's pages, each a link to its own address, so a page opens in a new tab and Back
+    returns to
+    * the page before. A step with no page to go to stays in place, unavailable. The page the
+    address
+    * asks for is marked current at once, before its answer arrives (finding 132), and the answer's
+    * page when the address names none of them. Following a step keeps the scroll where it is: the
+    * pages sit under the list, and the reader stays with it.
+    */
+    export function ListPagination({ pagination }: { pagination: PaginationView }) {
+    const { previous, next } = pagination;
+    const here = searchKey(useLocation().search);
+    const asked = pagination.items.find(
+    (item) => item.kind === 'page' && searchKey(item.search) === here,
+    );
+    const isCurrent = (item: { page: number; current: boolean }) =>
+    asked?.kind === 'page' ? item.page === asked.page : item.current;
+
+    return (
+    <Pagination label={pagination.label}>
+    <PaginationContent>
+    <PaginationItem>
+    {previous.search === null ? (
+    <PaginationPrevious disabled>{previous.label}</PaginationPrevious>
+    ) : (
+    <PaginationPrevious asChild>
+    <Link to={{ search: previous.search }} preventScrollReset>
+    {previous.label}
+    </Link>
+    </PaginationPrevious>
+    )}
+    </PaginationItem>
+    {pagination.items.map((item) =>
+    item.kind === 'gap' ? (
+    <PaginationItem key={item.key}>
+    <PaginationEllipsis label={pagination.more} />
+    </PaginationItem>
+    ) : (
+    <PaginationItem key={item.page}>
+    <PaginationLink asChild isActive={isCurrent(item)}>
+    <Link to={{ search: item.search }} preventScrollReset aria-label={item.label}>
+    {item.page}
+    </Link>
+    </PaginationLink>
+    </PaginationItem>
+    ),
+    )}
+    <PaginationSummary>{pagination.summary}</PaginationSummary>
+    <PaginationItem>
+    {next.search === null ? (
+    <PaginationNext disabled>{next.label}</PaginationNext>
+    ) : (
+    <PaginationNext asChild>
+    <Link to={{ search: next.search }} preventScrollReset>
+    {next.label}
+    </Link>
+    </PaginationNext>
+    )}
+    </PaginationItem>
+    </PaginationContent>
+    </Pagination>
+    );
+    }
+    fatal: path 'apps/web/src/shared/lists/components/DataTable.tsx' does not exist in 'a12c0790'
+    fatal: path 'apps/web/src/features/directory/components/results/DirectoryResults.tsx' does not
+    exist in 'a12c0790'
+    Failed with exit code 128
+
+● Read dashboard shell navigation (shell)
+  │ git show a12c0790:apps/web/src/pages/dashboard/shell/DashboardNavigation.tsx; git show
+  │ a12c0790:apps/web/src/pages/dashboard/shell/SpaceLayout.tsx; git show
+  │ a12c0790:apps/web/src/pages/dashboard/shell/AdminLayout.tsx
+  └ 179 lines…
+
+● Read CSV WhatsApp digit helpers (shell)
+  │ git show a12c0790:apps/web/src/shared/lib/csv/csvOf.ts; git show
+  │ a12c0790:apps/web/src/shared/lib/phone/whatsappLink.ts; git show
+  │ a12c0790:apps/web/src/shared/lib/numbers/westernDigits.ts
+  └ 44 lines…
+
+● Read chart and meter implementations (shell)
+  │ git show a12c0790:apps/web/src/shared/design-system/components/data/BarChart/BarChart.tsx; git
+  │ show a12c0790:apps/web/src/shared/design-system/components/data/Heatmap/Heatmap.tsx; git show
+  │ a12c0790:apps/web/src/shared/design-system/components/display/Meter/Meter.tsx
+  └ 307 lines…
+
+● Inspect contract and error details paths (shell)
+  │ git grep -n "PUBLISHED_PRICE_CHANGED\|details" a12c0790 -- packages/shared/src
+  │ apps/api/src/shared/errors apps/web/src/shared/errors docs/api/api-contract.md | Select-Object
+  │ -First 220
+  └ 25 lines…
+
+● Locate list component paths (shell)
+  │ git ls-tree -r --name-only a12c0790 apps/web/src/shared/lists apps/web/src/features/directory |
+  │ Select-String -Pattern 'DataTable|DirectoryResults|Pagination|Refreshing'
+  └ 6 lines…
+
+● Find list helper implementations (shell)
+  │ git grep -n "rangeSummary\|paginationView\|Refreshing" a12c0790 -- apps/web/src/shared/lists
+  │ apps/web/src/features | Select-Object -First 240
+  └ 59 lines…
+
+● Inspect paged list behavior (shell)
+  │ git show a12c0790:apps/web/src/features/announcements/hooks/list/useAnnouncementsList.ts |
+  │ Select-Object -First 220; git show a12c0790:apps/web/src/shared/lists/types/PaginationView.ts
+  └ 197 lines…
+
+● Inspect list component files (shell)
+  │ git show a12c0790:apps/web/src/features/announcements/components/list/AnnouncementsList.tsx
+  │ 2>$null; git ls-tree -r --name-only a12c0790 apps/web/src/features/announcements/components |
+  │ Select-Object -First 80
+  └ 231 lines…
+
+● Find helper usages and tests (shell)
+  │ git grep -n "whatsappLink" a12c0790 -- apps/web/src; git grep -n "csvOf" a12c0790 --
+  │ apps/web/src; git grep -n "toWesternDigits" a12c0790 -- apps/web/src
+  └ 39 lines…
+
+● Read finding 212 status and resolution (shell)
+  │ git show a12c0790:docs/architecture/findings/212-*.md
+  └ 8 lines…
+
+● Read finding 204 status and resolution (shell)
+  │ git show a12c0790:docs/architecture/findings/204-*.md
+  └ 8 lines…
+
+● Read findings index statuses (shell)
+  │ git show a12c0790:docs/architecture/findings/README.md | Select-String -Pattern
+  │ '204|212|Open|Accepted|Resolved' -Context 1,1
+  └ 17 lines…
+
+✗ Check closing documents claims (shell)
+  │ git show a12c0790:docs/project/overview.md | Select-String -Pattern 'Built|screen|32|v1'
+  │ -Context 1,2 | Select-Object -First 120; git show a12c0790:docs/v1-mvp.md | Select-String
+  │ -Pattern 'Built|screen|32' -Context 1,2 | Select-Object -First 100
+  └ > **Status:** Active · **Last Updated:** 2026-10-29 · **Owner:** Basel Ghoneim
+    > > **Authority:** What Masaha is, what is built today, what v1 is committed to, and what is
+    explicitly not in v1. It
+    names scope; it does not specify behaviour.
+
+    ## What Masaha is
+
+    > ## Built
+
+    This section lists a capability only once it is merged and working. Each line links the
+    capability's document, which
+    says what it does.
+    - [Occupancy](../features/occupancy.md): on the API, a space's private capacity, set by its
+    owner, and its state now
+    for its staff: who is present, the count and the live status, with the manual override its staff
+    set and clear.
+    > - [Finance](../features/finance.md): on the API, a space's income for a month and its windows,
+    the staff's
+    collections, who owes and who is in credit with the totals, who paid in a month, and the
+    occupancy statistics — the
+    owner's alone; on the dashboard, the owner's «المالية والتقارير»: a month's income, who owes,
+    with the WhatsApp
+    reminder, and who paid, each exported as a CSV built in the browser, and the occupancy.
+    - [Overview](../features/overview.md): on the API, the owner's overview, a work queue of counts
+    with no amount, and
+    the admin's, the platform's tiles and the spaces with incomplete data; on the dashboard, «نظرة
+    عامة», the owner's
+    landing and the admin's.
+
+    > ## Committed scope — v1
+
+    ### Roles
+    - Directory of spaces: the list **or** the map, one at a time, the list by default; search and
+    filters (area, price,
+    student prices, open on Friday, verified, available now); sort, including nearest to me.
+    > - Near me: the device's location, rounded on the device and sent in a header only to sort by
+    distance, never stored
+    or logged (the owner's change, 2026-10-13: it was never sent), with an area or a pin on the map
+    as fallbacks ([the
+    rule](../frontend/design-system/foundation.md#13-screens-to-design-32), under *Directory*;
+    [security ›
+    Location](../backend/security.md#location)). Home shows the nearest spaces when a location is in
+    use, otherwise the
+    spaces available now.
+    - Space page: photos, prices (display only), amenities, hours, contact, announcements, live
+    status — available, full
+    or closed now, never a seat count (verified spaces) — and "last updated" per fact.
+    - Verified / unverified spaces: every space is listed whether or not its owner has joined.
+
+    > ## Not in v1
+
+    > Do not build these, even partially. The data model leaves room for some of them (see [ADR
+    0002](../architecture/decisions/0002-authorization-model.md) and
+    [data-model.md](../architecture/data-model.md)), but
+    no code for them exists in v1.
+
+    - Online payment. Printed invoices or receipts.
+    fatal: path 'docs/v1-mvp.md' does not exist in 'a12c0790'
+    Failed with exit code 128
+
+● Locate finding files (shell)
+  │ git ls-tree -r --name-only a12c0790 docs/architecture/findings | Select-String -Pattern
+  │ '\\204-|\\212-'
+  └ No Content
+
+● Read product overview document (shell)
+  │ git show a12c0790:docs/project/overview.md | Select-Object -First 240
+  └ 93 lines…
+
+● Locate closing documents (shell)
+  │ git ls-tree -r --name-only a12c0790 docs | Select-String -Pattern 'mvp|overview|SCREENS|CHANGES'
+  └ 16 lines…
+
+● Locate exact finding filenames (shell)
+  │ git ls-tree -r --name-only a12c0790 docs/architecture/findings | Select-String '204|212'
+  └ 2 lines…
+
+● Read finding 204 (shell)
+  │ git show a12c0790:docs/architecture/findings/204-a-csv-built-in-the-browser-keeps-a-value-that-r
+  │ eads-as-a-formula.md
+  └ 7 lines…
+
+● Read finding 212 (shell)
+  │ git show a12c0790:docs/architecture/findings/212-an-owner-on-a-phone-cannot-reach-the-written-of
+  │ f-visits.md
+  └ 7 lines…
+
+● Read design changes document (shell)
+  │ git show a12c0790:docs/design/CHANGES.md | Select-Object -First 240
+  └ 13 lines…
+
+● Read foundation screens section (shell)
+  │ git show a12c0790:docs/frontend/design-system/foundation.md | Select-Object -Skip 280 -First 180
+  └ 180 lines…
+
+✗ Check UI classes outside design-system (shell)
+  │ git grep -n "className=\"[^\"]*\(bg-\|text-\|font-\|border-\|rounded-\|shadow-\)" a12c0790 --
+  │ apps/web/src -- '*.tsx' | Select-Object -First 250
+  └ Permission denied because no interactive user response was available. Retry in an interactive
+    session so the user can approve it, or try an alternative that does not require this permission.
+  Approval check
+    └ ✗ Denied, no one to approve
+
+● Inspect held menu and large input (shell)
+  │ git show
+  │ a12c0790:apps/web/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx; git
+  │ show a12c0790:apps/web/src/shared/design-system/components/fields/Input/Input.tsx
+  └ 320 lines…
+
+● Inspect directory pagination scroll timing (shell)
+  │ git show a12c0790:apps/web/src/features/directory/components/list/DirectoryResults.tsx; git show
+  │ a12c0790:apps/web/src/features/directory/hooks/list/useDirectoryList.ts | Select-Object -Skip
+  │ 180 -First 80
+  └ 112 lines…
+
+✗ Inspect list summaries and pagination (shell)
+  │ git show a12c0790:apps/web/src/shared/lists/services/rangeSummary.ts; git show
+  │ a12c0790:apps/web/src/shared/lists/services/paginationView.ts; git show
+  │ a12c0790:apps/web/src/shared/lists/components/Refreshing.tsx 2>$null
+  └ import type { PaginationMeta } from '@masaha/shared/core';
+    import { isolate } from '@shared/localisation';
+
+    /** The words a list's range is said in: the range ("1–20") and the total, each already
+    isolated. */
+    type RangeWords = {
+    range: (values: { range: string; total: string }) => string;
+    };
+
+    /**
+    * Which records a page of a list shows, of how many: "Showing 1–20 of 312". The range and the
+    * total are each isolated, so they read left to right in either language. None for an empty
+    list.
+    */
+    export function rangeSummary(
+    meta: Pick<PaginationMeta, 'currentPage' | 'limit' | 'totalRecords'>,
+    words: RangeWords,
+    ): string | null {
+    if (meta.totalRecords < 1) return null;
+    const from = (meta.currentPage - 1) * meta.limit + 1;
+    const to = Math.min(meta.currentPage * meta.limit, meta.totalRecords);
+    return words.range({
+    range: isolate(`${String(from)}–${String(to)}`),
+    total: isolate(String(meta.totalRecords)),
+    });
+    }
+    import type { PaginationView } from '../types/PaginationView';
+    import { pageItems } from './pageItems';
+
+    /** The words a list's pages are said in. */
+    type PaginationWords = {
+    label: string;
+    more: string;
+    previous: string;
+    next: string;
+    page: (values: { page: number }) => string;
+    summary: (values: { page: number; total: number }) => string;
+    };
+
+    /**
+    * A paged list's pages, page `current` of `total`, each a link to the address `searchOf` gives
+    it;
+    * none for a list of no page. A list of one page keeps its steps, Previous and Next unavailable
+    * (P6), unless it shows them `onlyPastOne` page (the announcements, DI-26).
+    */
+    export function paginationView({
+    current,
+    total,
+    words,
+    searchOf,
+    onlyPastOne = false,
+    }: {
+    current: number;
+    total: number;
+    words: PaginationWords;
+    searchOf: (page: number) => string;
+    onlyPastOne?: boolean;
+    }): PaginationView | null {
+    if (total < 1 || (onlyPastOne && total === 1)) return null;
+    return {
+    label: words.label,
+    more: words.more,
+    summary: words.summary({ page: current, total }),
+    previous: { label: words.previous, search: current > 1 ? searchOf(current - 1) : null },
+    next: { label: words.next, search: current < total ? searchOf(current + 1) : null },
+    items: pageItems(current, total).map((item) =>
+    typeof item === 'number'
+    ? {
+    kind: 'page' as const,
+    page: item,
+    label: words.page({ page: item }),
+    search: searchOf(item),
+    current: item === current,
+    }
+    : { kind: 'gap' as const, key: item },
+    ),
+    };
+    }
+    Failed with exit code 128
+
+● Inspect public entry imports (shell)
+  │ git grep -n -E "@features/(data-reports|announcements|platform-settings)" a12c0790 --
+  │ apps/web/src/pages/site apps/web/src/features | Select-Object -First 200
+  └ 6 lines…
+
+● Check owner overview for money (shell)
+  │ git grep -n -E "amount|agorot|ILS|₪|price" a12c0790 -- apps/web/src/features/overview
+  │ apps/web/src/pages/dashboard/space/overview | Select-Object -First 240
+  └ 25 lines…
+
+● Inspect skip link and rail labels (shell)
+  │ git show a12c0790:apps/web/src/pages/dashboard/shell/DashboardLayout.tsx; git show
+  │ a12c0790:apps/web/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx |
+  │ Select-Object -Skip 130 -First 100
+  └ 194 lines…
+
+● Inspect error envelope validation (shell)
+  │ git show a12c0790:packages/shared/src/core/envelope.ts; git show
+  │ a12c0790:apps/web/src/shared/errors/toAppError.ts | Select-Object -First 180; git show
+  │ a12c0790:apps/api/src/shared/errors/errorHandler.ts
+  └ 273 lines…
+
+● Inspect written-off navigation reachability (shell)
+  │ git show a12c0790:apps/web/src/features/desk/components/uncollected/UncollectedCard.tsx 2>$null;
+  │ git ls-tree -r --name-only a12c0790 apps/web/src/features/desk/components | Select-String
+  │ 'uncollect|written|desk' | Select-Object -First 100
+  └ 288 lines…
+
+● Read public entry exports (shell)
+  │ git show a12c0790:apps/web/src/features/data-reports/public.ts; git show
+  │ a12c0790:apps/web/src/features/announcements/public.ts; git show
+  │ a12c0790:apps/web/src/features/platform-settings/public.ts
+  └ 13 lines…
+
+● Read findings index boundaries (shell)
+  │ git show a12c0790:docs/architecture/findings/README.md | Select-Object -First 80; git show
+  │ a12c0790:docs/architecture/findings/README.md | Select-Object -Last 80
+  └ 160 lines…
+
+● Verify every screen document claims (shell)
+  │ git grep -n -E "screen 9|screen 12|screen 19|screen 25|screen 31|screen 32|Built so far|32
+  │ screens|every screen" a12c0790 -- docs | Select-Object -First 240
+  └ 30 lines…
+
+● Read frontend architecture build claims (shell)
+  │ git show a12c0790:docs/frontend/architecture.md | Select-String -Pattern 'Built so
+  │ far|dashboard|public.ts' -Context 1,3
+  └ 11 lines…
+
+✗ Read v1 build status section (shell)
+  │ git show a12c0790:docs/plans/v1-mvp.md | Select-Object -Skip 25 -First 45
+  └ This is the **build map**: the direction the build follows, not a contract. It changes as the
+    project learns, through a PR like any document.
+
+    Each step names its goal and points to what supports it:
+    - its screens, as numbered in [SCREENS.md](../design/SCREENS.md);
+    - the decisions and the owning documents it builds on;
+    - the findings it closes;
+    - the deferred decisions it settles, from [foundation.md ›
+    A-3](foundation.md#a-3--cross-cutting-decisions--docscross-cutting).
+
+    **How** a step is built is decided in that step's own plan. A step is finished only when it is
+    complete: table → API → screen → tests. Steps follow this order; two run side by side only when
+    neither needs the other ([ordering notes](#ordering-notes)).
+
+    ### 1. Foundation: sign-in, session and shells
+
+    **Goal:** a user signs in and lands in the right shell for their role, in Arabic or English,
+    light or dark, locally and at the public address.
+    - **Screens:**
+    - [public site](../design/SCREENS.md#public-site-8): 5 Sign in, 6 Register, 7 Forgot / reset
+    password, 8 404 / error / offline;
+    - [my account](../design/SCREENS.md#my-account-3): 9 Profile & settings; its forced password
+    change belongs to F-5.
+    - **Supported by:** the contracts of F-5, F-6 and F-7 in the [foundation
+    plan](foundation.md#5-work-items).
+    - **Settles:** the reset-email provider (F-5).
+    - **Built:** the site's and the dashboard's shells (#30, #39); screens 5 and 6 (#35), with
+    Google (#42), 7 (#40), 8, and the forced password change (#38); screen 9, «إعدادات حسابي»: the
+    profile, the preferences and the ways of signing in (2026-10-29, #132).
+
+    ### 2. Lookups and the admin's spaces
+
+    **Goal:** the admin keeps the lookup lists and enters the surveyed spaces, so the directory
+    starts with real data.
+    - **Screens:** [admin](../design/SCREENS.md#admin-8): 26 Spaces, 30 Lookups.
+    - **Supported by:**
+    - [ADR 0007](../architecture/decisions/0007-soft-delete.md) (soft delete) and [ADR
+    0009](../architecture/decisions/0009-space-scoped-reception-role.md) (access to a space);
+    - conventions §9: [new-space defaults](../backend/conventions.md#new-space-defaults) and
+    [composed reads](../backend/conventions.md#composed-reads) (the admin's spaces list).
+    - **Closes:**
+    - [finding 10](../architecture/findings/10-the-seeded-amenity-icon-keys-have-no-icons-in-the-des
+    ign-system-yet.md): the amenity icons, which the admin's amenity form offers;
+    - [finding 11](../architecture/findings/11-nested-writes-in-an-interactive-transaction-trigger-a
+    -pg-deprecation-warning.md): the first nested write, the admin's space creation.
+    - **Settles:** the map: the admin places a space's pin.
+    - **Built:** screen 30, the lookups (#43, #49), and screen 26, the spaces: the list (#50), the
+    add page with its pin (#57), the editor (#74, #79) with its gallery (#85), and the deleted
+    spaces (#67, #84), finished with the retired amenities and the lookups' positions (2026-10-29,
+    #132).
+
+    ### 3. Public directory
+
+    **Goal:** anyone finds a space, in the list or on the map, near them or by filter, and sees its
+    page and how to contact Masaha.
+    - **Screens:** [public site](../design/SCREENS.md#public-site-8): 1 Home, 2 Directory, 3 Space
+    details, 4 About / Contact.
+    - **Supported by:**
+    - [ADR 0008](../architecture/decisions/0008-live-status-not-counts.md) (live status);
+    - conventions §9: [occupancy](../backend/conventions.md#occupancy-the-spaces-state-now) and
+    [composed reads](../backend/conventions.md#composed-reads);
+    - [frontend architecture §6](../frontend/architecture.md#6-map) (the map) and [foundation
+    §13](../frontend/design-system/foundation.md#13-screens-to-design-32) (near me, under
+    *Directory*).
+    - **Settles:** live-status delivery and caching.
+    - **Built:** screen 2, the directory: the list (#101), the filters (#103) and the map (#105);
+    screen 3, a space's page (#107, #108); screens 1 and 4, Home and About (#111); each finished,
+    and About's contact read from the platform's settings (2026-10-29, #132).
+
+    ### 4. Owners and users
+    Failed with exit code -1
+
+✗ Read REPORT.md
+  │ scripts\lane-l\REPORT.md
+  └ Path does not exist
+
+● Verify Refreshing component export (shell)
+  │ git show
+  │ a12c0790:apps/web/src/shared/design-system/components/feedback/Refreshing/Refreshing.tsx; git
+  │ show a12c0790:apps/web/src/shared/design-system/components/feedback/Refreshing/index.ts
+  └ 25 lines…
+
+● Verify catalogue error entries (shell)
+  │ git show a12c0790:apps/web/src/shared/copy/shape.ts | Select-String -Pattern
+  │ 'PUBLISHED_PRICE_CHANGED|details' -Context 1,2; git show
+  │ a12c0790:apps/web/src/shared/copy/english/errors.ts 2>$null; git show
+  │ a12c0790:apps/web/src/shared/copy/arabic/errors.ts 2>$null
+  └ 179 lines…
+
+● Check pull request head before report (shell)
+  │ gh pr view 132 --json headRefOid
+  └ 1 line…
+
+/ Search (glob)
+  │ "**/lane-l/REPORT.md" in C:\dev\masaha\workspace\WORKER_A
+  └ 1 file found
+
+● Read REPORT.md
+  │ C:\dev\masaha\workspace\WORKER_A\FINAL\scripts\lane-l\REPORT.md
+  └ L1:220 (83 lines read)
+
+I found no verified defect in the assigned commit range. The two open findings recorded by this PR (204 and 212) remain explicitly documented as open owner/deployment follow-ups, not hidden omissions; I’m writing the required checklist report with those outside-range notes.
+
+● Edit
+  └ Create C:\dev\masaha\workspace\WORKER_A\FINAL\6_REVIEW_R1.md
+
+● Edit
+  └ Edit C:\dev\masaha\workspace\WORKER_A\FINAL\6_REVIEW_R1.md
+
+Review completed and written to:
+
+`C:\dev\masaha\workspace\WORKER_A\FINAL\6_REVIEW_R1.md`
+
+**Verdict:** mergeable. No verified defects found in the assigned range. CI was green and the PR head remained `a12c0790`.
+
+
+
+Changes    +123 -1
+AI Credits 6.84 (2m 7s)
+Tokens     ↑ 1.8m (1.7m cached, 121.2k written) • ↓ 9.4k (3.0k reasoning)
+Resume     copilot --resume=6cccd4d3-119e-408a-8f0d-2d26264f836d

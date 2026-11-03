@@ -1,0 +1,53 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/components/list/AnnouncementsList.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx (4 tests | 2 failed) 543ms
+   ❯ AnnouncementsList (4)
+     × names its tabs, counts each as a badge, and draws each card by its type alone; axe-clean at 1440 235ms
+     × names its tabs, counts each as a badge, and draws each card by its type alone; axe-clean at 390 127ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  12:00:29
+   Duration  6.53s (transform 33%, import 31%, environment 22%, tests 9%, setup 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx > AnnouncementsList > names its tabs, counts each as a badge, and draws each card by its type alone; axe-clean at 1440
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx > AnnouncementsList > names its tabs, counts each as a badge, and draws each card by its type alone; axe-clean at 390
+AssertionError: expected <span data-slot="badge" …(2)></span> to be null
+
+- Expected:
+null
+
++ Received:
+<span
+  class="inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"
+  data-slot="badge"
+  data-variant="success"
+>
+  Active
+</span>
+
+ ❯ src/features/announcements/components/list/AnnouncementsList.component.test.tsx:84:72
+     82|       ).toHaveAttribute('data-variant', 'neutral');
+     83|       for (const card of cards) {
+     84|         expect(within(card).queryByText(/^(Active|Scheduled|Ended)$/))…
+       |                                                                        ^
+     85|         expect(card.querySelectorAll('[data-variant]')).toHaveLength(1…
+     86|       }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/components/list/AnnouncementsList.component.test.tsx

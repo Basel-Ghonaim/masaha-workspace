@@ -1,0 +1,6 @@
+docs: record finding 206
+
+A production build of the integrated branch fails check:build on
+seven showcase fixture strings that a library in the build also
+writes (date-fns' month names, the currency code). Lane T does not
+own the fixtures, so it records the defect.

@@ -1,0 +1,8 @@
+feat(space-links): land the spaces the admin keeps
+
+The spaces list read `?status=editable` from the address, as the
+server does, but its status filter offered four choices, so the
+overview's «عرض الكل» landed on a list whose filter showed nothing
+and could not be cleared from it (finding 158). With one schema of
+statuses in the shared package (C1.9), the list now offers all five
+(D6.4, DI30): «تعدّلها الإدارة» / "Kept by the admin".

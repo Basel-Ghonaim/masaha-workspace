@@ -1,0 +1,48 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/subscriptions/checkIns.api.test.ts (5 tests | 1 failed) 3574ms
+   ❯ the space's check-ins (5)
+     × the plan is an index range on the space's check-in times, not a sequential scan 1048ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  17:04:21
+   Duration  13.84s (transform 42%, tests 38%, import 17%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/subscriptions/checkIns.api.test.ts > the space's check-ins > the plan is an index range on the space's check-in times, not a sequential scan
+AssertionError: expected 'Limit  (cost=205.08..205.13 rows=20 w…' to match /Index Scan.* using check_ins_space_id…/
+
+- Expected:
+/Index Scan.* using check_ins_space_id_checked_in_at_idx/
+
++ Received:
+"Limit  (cost=205.08..205.13 rows=20 width=12)
+  ->  Sort  (cost=205.08..205.14 rows=25 width=12)
+        Sort Key: checked_in_at DESC, id DESC
+        ->  Seq Scan on check_ins  (cost=0.00..204.50 rows=25 width=12)
+              Filter: ((space_id = 1) AND (((checked_in_at AT TIME ZONE 'Asia/Gaza'::text))::date >= '2025-03-03'::date) AND (((checked_in_at AT TIME ZONE 'Asia/Gaza'::text))::date <= '2025-03-05'::date))"
+
+ ❯ src/modules/subscriptions/checkIns.api.test.ts:164:18
+    162|       ORDER BY checked_in_at DESC, id DESC LIMIT 20`;
+    163|     const text = plan.map((row) => row['QUERY PLAN']).join('\n');
+    164|     expect(text).toMatch(/Index Scan.* using check_ins_space_id_checke…
+       |                  ^
+    165|     expect(text).toMatch(/Index Cond: .*checked_in_at >= .*checked_in_…
+    166|     expect(text).not.toMatch(/Seq Scan/);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

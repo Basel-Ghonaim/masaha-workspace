@@ -1,0 +1,984 @@
+diff --git a/apps/web/src/features/data-reports/components/admin/AdminReportsList.component.test.tsx b/apps/web/src/features/data-reports/components/admin/AdminReportsList.component.test.tsx
+index abc05f85..8c03784d 100644
+--- a/apps/web/src/features/data-reports/components/admin/AdminReportsList.component.test.tsx
++++ b/apps/web/src/features/data-reports/components/admin/AdminReportsList.component.test.tsx
+@@ -1,13 +1,13 @@
+ import { createQueryClient } from '@shared/api';
+ import { Field, Input } from '@shared/design-system';
+ import { QueryClientProvider } from '@tanstack/react-query';
+-import { render, screen, within } from '@testing-library/react';
++import { render, screen, waitFor, within } from '@testing-library/react';
+ import userEvent from '@testing-library/user-event';
+ import { createMemoryRouter, RouterProvider } from 'react-router';
+ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+ import { axe } from 'vitest-axe';
+ import { adminReport, reportsPage } from '../../../../test/dataReport';
+-import { fakeTransport, restoreTransport } from '../../../../test/fakeTransport';
++import { fakeTransport, refused, restoreTransport } from '../../../../test/fakeTransport';
+ import { stubScreenWidth } from '../../../../test/screenWidth';
+ import { startPreferences } from '../../../../test/startPreferences';
+ import type { AdminSpaceFilterSlot } from '../../types/AdminSpaceFilterSlot';
+@@ -21,8 +21,11 @@ const spaceFilter: AdminSpaceFilterSlot = ({ label, value }) => (
+ );
+ 
+ /** The admin's list at `/reports` with `search`, each space's editor at `/spaces/:id`. */
+-function renderList(search = '') {
+-  fakeTransport(() => reportsPage([adminReport()]));
++function renderList(
++  search = '',
++  answer: Parameters<typeof fakeTransport>[0] = () => reportsPage([adminReport()]),
++) {
++  fakeTransport(answer);
+   const router = createMemoryRouter(
+     [
+       {
+@@ -112,4 +115,65 @@ describe('AdminReportsList', () => {
+     expect(within(sheet).getByRole('button', { name: 'Show 1 report' })).toBeVisible();
+     expect(await axe(baseElement)).toHaveNoViolations();
+   });
++
++  it('shows a report decided elsewhere with its decision, read from «All», never the stale «New»', async () => {
++    stubScreenWidth(1440);
++    const user = userEvent.setup();
++    const elsewhere = adminReport({
++      status: 'RESOLVED',
++      decision: {
++        status: 'RESOLVED',
++        at: '2026-10-27T09:00:00.000Z',
++        note: null,
++        repliedBy: 'MASAHA',
++      },
++    });
++    let refusedOnce = false;
++    renderList('?status=open', (request) => {
++      if (request.method === 'patch') {
++        refusedOnce = true;
++        return refused(409, { type: 'conflict', code: 'REPORT_ALREADY_DECIDED' });
++      }
++      const status = (request.params as { status?: string }).status;
++      if (status === 'OPEN') return reportsPage(refusedOnce ? [] : [adminReport()]);
++      return reportsPage([refusedOnce ? elsewhere : adminReport()]);
++    });
++
++    await user.click(await screen.findByRole('button', { name: 'Open' }));
++    const sheet = await screen.findByRole('dialog');
++    await user.click(within(sheet).getByRole('button', { name: 'Corrected' }));
++    expect(await within(sheet).findByRole('alert')).toBeInTheDocument();
++    expect(await within(sheet).findByText('Corrected')).toBeVisible();
++    expect(within(sheet).getByText('No reply')).toBeVisible();
++    expect(within(sheet).queryByText('New')).toBeNull();
++  });
++
++  it('hands the focus to the next tag once one is removed', async () => {
++    stubScreenWidth(1440);
++    const user = userEvent.setup();
++    renderList('?space=7&field=HOURS');
++
++    await screen.findByText('The space opens at 9, not 8.');
++    await user.click(screen.getByRole('button', { name: 'Remove the space filter' }));
++    await waitFor(() => {
++      expect(screen.getByRole('button', { name: 'Remove the field filter' })).toHaveFocus();
++    });
++  });
++
++  it('hands the focus to «Clear filters» when the last tag goes, and to the count once they are cleared', async () => {
++    stubScreenWidth(1440);
++    const user = userEvent.setup();
++    renderList('?space=7&field=HOURS');
++
++    await screen.findByText('The space opens at 9, not 8.');
++    await user.click(screen.getByRole('button', { name: 'Remove the field filter' }));
++    await waitFor(() => {
++      expect(screen.getByRole('button', { name: 'Clear filters' })).toHaveFocus();
++    });
++
++    await user.click(screen.getByRole('button', { name: 'Clear filters' }));
++    await waitFor(() => {
++      expect(screen.getByText('1 report')).toHaveFocus();
++    });
++  });
+ });
+diff --git a/apps/web/src/features/data-reports/components/admin/AdminReportsList.tsx b/apps/web/src/features/data-reports/components/admin/AdminReportsList.tsx
+index 85b46128..452192fe 100644
+--- a/apps/web/src/features/data-reports/components/admin/AdminReportsList.tsx
++++ b/apps/web/src/features/data-reports/components/admin/AdminReportsList.tsx
+@@ -120,7 +120,7 @@ export function AdminReportsList({
+       >
+         <StatusChips chips={list.chips} />
+         <AdminReportFilters filters={list.filters} spaceFilter={spaceFilter} />
+-        <FilterTags tags={list.tags} clear={list.clear} />
++        <FilterTags tags={list.tags} clear={list.clear} onEmptied={leave} />
+         <p
+           ref={countRef}
+           tabIndex={-1}
+diff --git a/apps/web/src/features/data-reports/components/admin/FilterTags.tsx b/apps/web/src/features/data-reports/components/admin/FilterTags.tsx
+index e90f0676..0cae019d 100644
+--- a/apps/web/src/features/data-reports/components/admin/FilterTags.tsx
++++ b/apps/web/src/features/data-reports/components/admin/FilterTags.tsx
+@@ -1,27 +1,62 @@
+ import { Button, FilterTag } from '@shared/design-system';
++import { useLayoutEffect, useRef } from 'react';
+ import type { AdminReportsView } from '../../hooks/admin/useAdminReports';
+ 
+ /**
+  * The filters in force, at every width (DI-40, finding 8): the space and the field as removable tags,
+- * and «مسح الفلاتر» beside them. Nothing while none applies.
++ * and «مسح الفلاتر» beside them. Nothing while none applies. A tag removed, or «مسح الفلاتر» pressed,
++ * leaves under the focus: the next tag's remove button takes it, else «مسح الفلاتر», else
++ * `onEmptied` (the count).
+  */
+ export function FilterTags({
+   tags,
+   clear,
++  onEmptied,
+ }: {
+   tags: AdminReportsView['tags'];
+   clear: AdminReportsView['clear'];
++  onEmptied: () => void;
+ }) {
++  const box = useRef<HTMLDivElement | null>(null);
++  /** The place of the tag removed (`tags.length` for «مسح الفلاتر»), until the next drawing. */
++  const removed = useRef<number | null>(null);
++
++  // After the address has changed: the button now at the removed one's place, else the clear, else
++  // the count.
++  useLayoutEffect(() => {
++    const at = removed.current;
++    if (at === null) return;
++    removed.current = null;
++    const buttons = [...(box.current?.querySelectorAll<HTMLElement>('button') ?? [])];
++    const next = buttons[Math.min(at, buttons.length - 1)];
++    if (next === undefined) onEmptied();
++    else next.focus();
++  });
++
+   if (tags.length === 0) return null;
+   return (
+-    <div className="flex flex-wrap items-center gap-2">
+-      {tags.map((tag) => (
+-        <FilterTag key={tag.key} removeLabel={tag.removeLabel} onRemove={tag.remove}>
++    <div ref={box} className="flex flex-wrap items-center gap-2">
++      {tags.map((tag, index) => (
++        <FilterTag
++          key={tag.key}
++          removeLabel={tag.removeLabel}
++          onRemove={() => {
++            removed.current = index;
++            tag.remove();
++          }}
++        >
+           {tag.label}
+         </FilterTag>
+       ))}
+       {clear !== null && (
+-        <Button variant="link" size="sm" onClick={clear.run}>
++        <Button
++          variant="link"
++          size="sm"
++          onClick={() => {
++            removed.current = tags.length;
++            clear.run();
++          }}
++        >
+           {clear.label}
+         </Button>
+       )}
+diff --git a/apps/web/src/features/data-reports/components/space/SpaceReportsList.component.test.tsx b/apps/web/src/features/data-reports/components/space/SpaceReportsList.component.test.tsx
+index c47ebe75..59b4c7b4 100644
+--- a/apps/web/src/features/data-reports/components/space/SpaceReportsList.component.test.tsx
++++ b/apps/web/src/features/data-reports/components/space/SpaceReportsList.component.test.tsx
+@@ -10,7 +10,7 @@ import { axe } from 'vitest-axe';
+ import { reportsPage, spaceReport } from '../../../../test/dataReport';
+ import type { FakeAnswer } from '../../../../test/fakeAdapter';
+ import { findToast } from '../../../../test/findToast';
+-import { fakeTransport, ok, restoreTransport } from '../../../../test/fakeTransport';
++import { fakeTransport, ok, refused, restoreTransport } from '../../../../test/fakeTransport';
+ import { stubScreenWidth } from '../../../../test/screenWidth';
+ import { startPreferences } from '../../../../test/startPreferences';
+ import { SpaceReportsList } from './SpaceReportsList';
+@@ -153,6 +153,56 @@ describe('SpaceReportsList', () => {
+     expect(await screen.findByText('Corrected')).toBeVisible();
+   });
+ 
++  describe('a report decided elsewhere, met under «New»', () => {
++    const ELSEWHERE: SpaceReport = spaceReport({
++      status: 'DISMISSED',
++      decision: {
++        status: 'DISMISSED',
++        at: '2026-10-27T09:00:00.000Z',
++        note: 'Our hours are right',
++        repliedBy: 'SPACE',
++      },
++    });
++
++    /** Under «New», the decision refused as already made; the first page of «All» then `all`. */
++    async function decideElsewhere(all: () => SpaceReport[]) {
++      stubScreenWidth(1440);
++      const user = userEvent.setup();
++      let refusedOnce = false;
++      renderList((request) => {
++        if (request.method === 'patch') {
++          refusedOnce = true;
++          return refused(409, { type: 'conflict', code: 'REPORT_ALREADY_DECIDED' });
++        }
++        const status = (request.params as { status?: string }).status;
++        if (status === 'OPEN') return reportsPage(refusedOnce ? [] : [spaceReport()]);
++        return reportsPage(refusedOnce ? all() : [spaceReport()]);
++      }, '?status=open');
++
++      await user.click(await screen.findByRole('button', { name: 'Open' }));
++      const sheet = await screen.findByRole('dialog', { name: 'Report about Opening hours' });
++      await user.click(within(sheet).getByRole('button', { name: 'Corrected' }));
++      expect(await within(sheet).findByRole('alert')).toBeInTheDocument();
++      return sheet;
++    }
++
++    it('shows its decision, read from «All», never the stale «New»', async () => {
++      const sheet = await decideElsewhere(() => [ELSEWHERE]);
++
++      expect(await within(sheet).findByText('Not accepted')).toBeVisible();
++      expect(within(sheet).getByText(/Our hours are right/)).toBeVisible();
++      expect(within(sheet).queryByText('New')).toBeNull();
++      expect(within(sheet).queryByRole('button', { name: 'Corrected' })).toBeNull();
++    });
++
++    it('says it was reviewed when the first page of «All» does not hold it, never the stale «New»', async () => {
++      const sheet = await decideElsewhere(() => []);
++
++      expect(await within(sheet).findByText('Reviewed')).toBeVisible();
++      expect(within(sheet).queryByText('New')).toBeNull();
++    });
++  });
++
+   it('gives the focus back to «Open» when the sheet is closed', async () => {
+     stubScreenWidth(1440);
+     const user = userEvent.setup();
+diff --git a/apps/web/src/features/data-reports/hooks/admin/useAdminReports.ts b/apps/web/src/features/data-reports/hooks/admin/useAdminReports.ts
+index 5d802456..1991d98e 100644
+--- a/apps/web/src/features/data-reports/hooks/admin/useAdminReports.ts
++++ b/apps/web/src/features/data-reports/hooks/admin/useAdminReports.ts
+@@ -13,6 +13,7 @@ import { isolate, useLanguage } from '@shared/localisation';
+ import { keepPreviousData, useQuery } from '@tanstack/react-query';
+ import { useState } from 'react';
+ import { createDataReportsRepository } from '../../repository/dataReportsRepository';
++import { adminReportsParamsOf, adminReportsQueryOf } from '../../services/adminReportsQueryOf';
+ import { REPORT_CHIPS, type ReportChip } from '../../services/reportsQueryOf';
+ import { fieldLabel, messageView, reportDay, statusView } from '../../services/reportView';
+ import type { AdminReportRowView } from '../../types/AdminReportRowView';
+@@ -96,8 +97,27 @@ export function useAdminReports({
+   const shownSpace = reports.find((report) => report.space.id === spaceId)?.space;
+   const chosenName =
+     spaceId === undefined || shownSpace === undefined ? null : spaceNameOf(shownSpace, english);
++  // The report opened, gone from the page shown (decided elsewhere, under «جديدة»): the first page of
++  // «الكل», with the same space and field, holds it — the chip's own key and cache.
++  const left =
++    opened !== null &&
++    answer !== undefined &&
++    !result.isPlaceholderData &&
++    !reports.some((report) => report.id === opened.id);
++  const allFirst = adminReportsQueryOf(
++    adminReportsParamsOf({ ...filters.filters, chip: 'all', page: 1 }),
++  ).query;
++  const all = useQuery<Page<AdminReport[]>, AppError>({
++    queryKey: dataReportsKeys.admin(allFirst),
++    queryFn: () => repository.adminReports(allFirst),
++    enabled: left,
++  });
+   const latest =
+-    opened === null ? null : (reports.find((report) => report.id === opened.id) ?? opened);
++    opened === null
++      ? null
++      : (reports.find((report) => report.id === opened.id) ??
++        all.data?.data.find((report) => report.id === opened.id) ??
++        opened);
+   const sheet: Extract<DecideTarget, { audience: 'admin' }> | null =
+     latest === null ? null : { audience: 'admin', report: latest };
+   const total = answer?.meta.totalRecords ?? 0;
+diff --git a/apps/web/src/features/data-reports/hooks/decide/useDecideSheet.ts b/apps/web/src/features/data-reports/hooks/decide/useDecideSheet.ts
+index af61aad8..79a1e98a 100644
+--- a/apps/web/src/features/data-reports/hooks/decide/useDecideSheet.ts
++++ b/apps/web/src/features/data-reports/hooks/decide/useDecideSheet.ts
+@@ -112,7 +112,11 @@ export function useDecideSheet({
+       who: target.audience === 'admin' ? isolate(target.report.reporter.name) : words.visitor,
+       day,
+     }),
+-    status: statusView(report.status, words.statuses, 'staff'),
++    // Decided elsewhere and not read back yet: «تمت المراجعة», never the stale «جديد».
++    status:
++      refusal?.code === 'REPORT_ALREADY_DECIDED' && report.status === 'OPEN'
++        ? { label: words.chips.decided, tone: 'neutral' as const }
++        : statusView(report.status, words.statuses, 'staff'),
+     facts: { label: sheet.report, message: messageView(report.message, words) },
+     readOnly: verified
+       ? {
+diff --git a/apps/web/src/features/data-reports/hooks/intent/reportIntent.ts b/apps/web/src/features/data-reports/hooks/intent/reportIntent.ts
+index 5cb62255..5de8fc74 100644
+--- a/apps/web/src/features/data-reports/hooks/intent/reportIntent.ts
++++ b/apps/web/src/features/data-reports/hooks/intent/reportIntent.ts
+@@ -1,28 +1,45 @@
++import { onGuestLeaving } from '@shared/routing';
+ import { useStore } from 'zustand';
+ import { createStore } from 'zustand/vanilla';
+ 
++/** How long a held report waits for its sign-in: the round trip it serves, no more. */
++export const HOLD_MS = 15 * 60 * 1000;
++
+ // A guest's report waiting for their sign-in (S14): in memory only, never in the address, so no link
+ // can open the dialog by itself; module-level, as the directory's near-me store, so it outlives the
+-// space's page while the guest signs in. A reload, or a recovery by email, loses it (finding 168).
++// space's page while the guest signs in. A reload, or a recovery by email, loses it (finding 168). It
++// is bound to its round trip: let go after `HOLD_MS`, or by the site's shell once the guest lands on
++// another page, so a later visit signed in does not open the dialog by itself.
+ const store = createStore<{ held: string | null }>()(() => ({ held: null }));
++let expiry: ReturnType<typeof setTimeout> | undefined;
++
++function forget(): void {
++  clearTimeout(expiry);
++  expiry = undefined;
++  store.setState({ held: null });
++}
+ 
+ /** Holds the report a guest pressed on the space `slug`, until they come back signed in. */
+ export function holdReport(slug: string): void {
++  forget();
+   store.setState({ held: slug });
++  expiry = setTimeout(forget, HOLD_MS);
+ }
+ 
+ /** Whether a report is held for `slug`: true once, the intent then cleared; another slug's is kept. */
+ export function takeReport(slug: string): boolean {
+   if (store.getState().held !== slug) return false;
+-  store.setState({ held: null });
++  forget();
+   return true;
+ }
+ 
+-/** Lets go of a held report: the guest closed the sign-in without going on. */
++/** Lets go of a held report: the guest closed the sign-in, or went elsewhere, without going on. */
+ export function dropReport(): void {
+-  store.setState({ held: null });
++  forget();
+ }
+ 
++onGuestLeaving(dropReport);
++
+ /** The space whose report is held, if any; the component renders again when it changes. */
+ export function useHeldReport(): string | null {
+   return useStore(store, (state) => state.held);
+diff --git a/apps/web/src/features/data-reports/hooks/intent/reportIntent.unit.test.ts b/apps/web/src/features/data-reports/hooks/intent/reportIntent.unit.test.ts
+index d338fe4e..435347fb 100644
+--- a/apps/web/src/features/data-reports/hooks/intent/reportIntent.unit.test.ts
++++ b/apps/web/src/features/data-reports/hooks/intent/reportIntent.unit.test.ts
+@@ -1,5 +1,5 @@
+-import { afterEach, describe, expect, it } from 'vitest';
+-import { dropReport, holdReport, takeReport } from './reportIntent';
++import { afterEach, describe, expect, it, vi } from 'vitest';
++import { dropReport, HOLD_MS, holdReport, takeReport } from './reportIntent';
+ 
+ afterEach(() => {
+   dropReport();
+@@ -27,4 +27,20 @@ describe('the report a guest pressed', () => {
+ 
+     expect(takeReport('masaha-hub')).toBe(false);
+   });
++
++  it('lets go of it once its round trip is over: 15 minutes after it was held', () => {
++    vi.useFakeTimers();
++    try {
++      expect(HOLD_MS).toBe(15 * 60 * 1000);
++      holdReport('masaha-hub');
++      vi.advanceTimersByTime(HOLD_MS - 1);
++      expect(takeReport('masaha-hub')).toBe(true);
++
++      holdReport('masaha-hub');
++      vi.advanceTimersByTime(HOLD_MS);
++      expect(takeReport('masaha-hub')).toBe(false);
++    } finally {
++      vi.useRealTimers();
++    }
++  });
+ });
+diff --git a/apps/web/src/features/data-reports/hooks/space/useSpaceReports.ts b/apps/web/src/features/data-reports/hooks/space/useSpaceReports.ts
+index 0789d6b4..1a3ef1d2 100644
+--- a/apps/web/src/features/data-reports/hooks/space/useSpaceReports.ts
++++ b/apps/web/src/features/data-reports/hooks/space/useSpaceReports.ts
+@@ -8,7 +8,12 @@ import { useLanguage } from '@shared/localisation';
+ import { keepPreviousData, useQuery } from '@tanstack/react-query';
+ import { useState } from 'react';
+ import { createDataReportsRepository } from '../../repository/dataReportsRepository';
+-import { REPORT_CHIPS, type ReportChip } from '../../services/reportsQueryOf';
++import {
++  REPORT_CHIPS,
++  reportsParamsOf,
++  reportsQueryOf,
++  type ReportChip,
++} from '../../services/reportsQueryOf';
+ import { fieldLabel, messageView, reportDay, statusView } from '../../services/reportView';
+ import type { DecideTarget } from '../../types/DecideTarget';
+ import type { ReportRowView } from '../../types/ReportRowView';
+@@ -17,6 +22,9 @@ import { useSpaceReportsFilters } from './useSpaceReportsFilters';
+ 
+ const repository = createDataReportsRepository();
+ 
++/** The first page of «الكل», as its chip reads it: the same key, the same cache. */
++const ALL_FIRST = reportsQueryOf(reportsParamsOf({ chip: 'all', page: 1 })).query;
++
+ /**
+  * «بلاغات البيانات», the owner's (screen 23), ready to render: the space's reports 20 a page, newest
+  * first, by «الكل · جديدة · تمت المراجعة» (DI-31) — the chip and the page in the address (S8). Each
+@@ -25,7 +33,8 @@ const repository = createDataReportsRepository();
+  * loading, failed (the reference and a retry), failed again over the rows shown, empty, and a chip
+  * that matches nothing (with «عرض الكل», DI-42); while another page or chip loads the rows shown
+  * stay, the list marked busy. The report opened is the decision sheet's, read from the latest list
+- * while it is on it, so a decision made elsewhere shows there too.
++ * while it is on it, so a decision made elsewhere shows there too; gone from the page while the sheet
++ * is open — decided elsewhere, met under «جديدة» — it is read from the first page of «الكل».
+  */
+ export function useSpaceReports(spaceId: number) {
+   const copy = useCopy();
+@@ -71,8 +80,23 @@ export function useSpaceReports(spaceId: number) {
+     };
+   });
+   const { chip } = filters.filters;
++  // The report opened, gone from the page shown (decided elsewhere, under «جديدة»): «الكل» holds it.
++  const left =
++    opened !== null &&
++    answer !== undefined &&
++    !result.isPlaceholderData &&
++    !reports.some((report) => report.id === opened.id);
++  const all = useQuery<Page<SpaceReport[]>, AppError>({
++    queryKey: dataReportsKeys.space(spaceId, ALL_FIRST),
++    queryFn: () => repository.spaceReports(spaceId, ALL_FIRST),
++    enabled: left,
++  });
+   const latest =
+-    opened === null ? null : (reports.find((report) => report.id === opened.id) ?? opened);
++    opened === null
++      ? null
++      : (reports.find((report) => report.id === opened.id) ??
++        all.data?.data.find((report) => report.id === opened.id) ??
++        opened);
+   const sheet: DecideTarget | null =
+     latest === null ? null : { audience: 'owner', spaceId, report: latest };
+ 
+diff --git a/apps/web/src/features/favorites/components/FavoriteButton.component.test.tsx b/apps/web/src/features/favorites/components/FavoriteButton.component.test.tsx
+index a9fca651..3007293d 100644
+--- a/apps/web/src/features/favorites/components/FavoriteButton.component.test.tsx
++++ b/apps/web/src/features/favorites/components/FavoriteButton.component.test.tsx
+@@ -45,10 +45,10 @@ describe('FavoriteButton', () => {
+     expect(await axe(container)).toHaveNoViolations();
+   });
+ 
+-  it('is pressed, its heart filled, while the space is saved', () => {
++  it('keeps its one name and is pressed, its heart filled, while the space is saved (a toggle)', () => {
+     renderHeart(true);
+ 
+-    const heart = screen.getByRole('button', { name: heard('Remove مساحة هب from favourites') });
++    const heart = screen.getByRole('button', { name: heard('Save مساحة هب to favourites') });
+     expect(heart).toHaveAttribute('aria-pressed', 'true');
+     expect(heart.querySelector('svg')).toHaveClass('fill-current', 'text-primary');
+   });
+diff --git a/apps/web/src/features/favorites/components/RemoveFavorite.component.test.tsx b/apps/web/src/features/favorites/components/RemoveFavorite.component.test.tsx
+index ba326bab..dd95ecb7 100644
+--- a/apps/web/src/features/favorites/components/RemoveFavorite.component.test.tsx
++++ b/apps/web/src/features/favorites/components/RemoveFavorite.component.test.tsx
+@@ -32,7 +32,7 @@ afterEach(() => {
+ });
+ 
+ describe('RemoveFavorite', () => {
+-  it('removes a space that left, once, and says so with «Undo», which saves it again; axe-clean', async () => {
++  it('removes a space that left, once, and says it cannot be saved again while out of the directory, with no «Undo»; axe-clean', async () => {
+     const first = deferred<FakeAnswer>();
+     const requests = fakeTransport((request) =>
+       request.method === 'delete' ? first.promise : { status: 204 },
+@@ -56,16 +56,14 @@ describe('RemoveFavorite', () => {
+       first.resolve({ status: 204 });
+       await first.promise;
+     });
+-    const line = await findToast('Removed from favourites');
++    // The API refuses to save a space out of the directory (404): no undo is offered.
++    const line = await findToast(
++      heard(
++        'Old Hub removed from favourites. It can’t be saved again while it’s out of the directory.',
++      ),
++    );
+     expect(remove).toHaveFocus();
+-    act(() => {
+-      within(line.closest('li') ?? document.body)
+-        .getByRole('button', { name: 'Undo' })
+-        .click();
+-    });
+-
+-    await waitFor(() => {
+-      expect(requests.map(lineOf)).toEqual(['delete /me/favorites/9', 'post /me/favorites/9']);
+-    });
++    expect(within(line.closest('li') ?? document.body).queryByRole('button')).toBeNull();
++    expect(requests.map(lineOf)).toEqual(['delete /me/favorites/9']);
+   });
+ });
+diff --git a/apps/web/src/features/favorites/components/RemoveFavorite.tsx b/apps/web/src/features/favorites/components/RemoveFavorite.tsx
+index ea69f6fc..4fe48425 100644
+--- a/apps/web/src/features/favorites/components/RemoveFavorite.tsx
++++ b/apps/web/src/features/favorites/components/RemoveFavorite.tsx
+@@ -9,12 +9,12 @@ const NO_SIGN_IN = () => undefined;
+ 
+ /**
+  * «إزالة» of a saved space that left the directory (C7): named «إزالة {name} من المفضّلة», sent once,
+- * said with «تراجع», which saves it again (DI-49); held until the favourites are read again, when its
+- * row leaves. `manage` leads to the favourites, from a full list's refusal of the undo.
++ * said with no «تراجع» — the API saves no space out of the directory (404), so an undo could never
++ * work (DI-58, the owner's word); held until the favourites are read again, when its row leaves.
+  */
+ export function RemoveFavorite({ space, manage }: { space: HeartSpace; manage: () => void }) {
+   const words = useCopy().favorites;
+-  const heart = useFavoriteToggle({ space, saved: true, signIn: NO_SIGN_IN, manage });
++  const heart = useFavoriteToggle({ space, saved: true, signIn: NO_SIGN_IN, manage, say: 'left' });
+ 
+   return (
+     <Button
+diff --git a/apps/web/src/features/favorites/components/toast/favoriteToasts.tsx b/apps/web/src/features/favorites/components/toast/favoriteToasts.tsx
+index 47af2613..be6589b4 100644
+--- a/apps/web/src/features/favorites/components/toast/favoriteToasts.tsx
++++ b/apps/web/src/features/favorites/components/toast/favoriteToasts.tsx
+@@ -25,6 +25,14 @@ export function toastFavoriteChanged(save: boolean, name: SpaceNameView, undo: (
+   });
+ }
+ 
++/**
++ * Says a space that left the directory was removed from the favourites, with no «تراجع»: the API
++ * saves no space out of the directory, so an undo could never work (DI-58, the owner's word).
++ */
++export function toastRemovedLeft(name: SpaceNameView) {
++  toast.success(currentCopy().favorites.removedLeft({ name: isolate(name.text) }));
++}
++
+ /** Says a guest's favourite was saved once they came back signed in (DI-61). */
+ export function toastSavedOnReturn(name: SpaceNameView) {
+   toast.success(currentCopy().favorites.savedOnReturn({ name: isolate(name.text) }));
+diff --git a/apps/web/src/features/favorites/hooks/favoriteWrite.ts b/apps/web/src/features/favorites/hooks/favoriteWrite.ts
+index 66ff8340..e0e04e6e 100644
+--- a/apps/web/src/features/favorites/hooks/favoriteWrite.ts
++++ b/apps/web/src/features/favorites/hooks/favoriteWrite.ts
+@@ -4,14 +4,18 @@ import type { QueryClient } from '@tanstack/react-query';
+ import {
+   toastFavoriteChanged,
+   toastFavoriteFailed,
++  toastRemovedLeft,
+   toastSavedOnReturn,
+ } from '../components/toast/favoriteToasts';
+ import { createFavoritesRepository } from '../repository/favoritesRepository';
+ 
+ const repository = createFavoritesRepository();
+ 
+-/** How a write is said once it is done: with «تراجع», as a guest's return, or not at all (an undo). */
+-export type FavoriteWriteSay = 'undoable' | 'returned' | 'quiet';
++/**
++ * How a write is said once it is done: with «تراجع», as a guest's return, as the removal of a space
++ * that left the directory (no «تراجع»: it cannot be saved meanwhile), or not at all (an undo).
++ */
++export type FavoriteWriteSay = 'undoable' | 'returned' | 'left' | 'quiet';
+ 
+ /**
+  * Saves or removes a favourite, once: no key, never re-sent by itself (S4). Done, it is said and the
+@@ -61,6 +65,8 @@ export async function writeFavorite({
+     });
+   } else if (say === 'returned') {
+     toastSavedOnReturn(space.name);
++  } else if (say === 'left') {
++    toastRemovedLeft(space.name);
+   }
+   // A read of the scope still on its way began before this write (on a guest's return, the hearts'
+   // first): an invalidation joins a first read rather than restarting it, so it is cancelled first
+diff --git a/apps/web/src/features/favorites/hooks/intent/favoriteIntent.ts b/apps/web/src/features/favorites/hooks/intent/favoriteIntent.ts
+index 969872ee..cd5ca1a7 100644
+--- a/apps/web/src/features/favorites/hooks/intent/favoriteIntent.ts
++++ b/apps/web/src/features/favorites/hooks/intent/favoriteIntent.ts
+@@ -1,26 +1,43 @@
+ import type { SpaceNameView } from '@shared/lib';
++import { onGuestLeaving } from '@shared/routing';
+ 
+ /** A favourite a guest pressed: the space, and its name as the card or the page showed it. */
+ export type HeldFavorite = { spaceId: number; name: SpaceNameView };
+ 
++/** How long a held favourite waits for its sign-in: the round trip it serves, no more. */
++export const HOLD_MS = 15 * 60 * 1000;
++
+ // A guest's favourite waiting for their sign-in (S14): in memory only, never in the address, so no
+ // link can save a space by itself; module-level, as the directory's near-me store, so it outlives the
+-// page while the guest signs in. A reload, or a recovery by email, loses it (finding 168).
++// page while the guest signs in. A reload, or a recovery by email, loses it (finding 168). It is
++// bound to its round trip: let go after `HOLD_MS`, or by the site's shell once the guest lands on
++// another page, so a later sign-in in the tab, maybe someone else's, saves nothing.
+ let held: HeldFavorite | null = null;
++let expiry: ReturnType<typeof setTimeout> | undefined;
++
++function forget(): void {
++  held = null;
++  clearTimeout(expiry);
++  expiry = undefined;
++}
+ 
+-/** Holds the favourite a guest pressed, until they come back signed in. */
++/** Holds the favourite a guest pressed, until they come back signed in or `HOLD_MS` has passed. */
+ export function holdFavorite(favorite: HeldFavorite): void {
++  forget();
+   held = favorite;
++  expiry = setTimeout(forget, HOLD_MS);
+ }
+ 
+ /** The favourite held, once: it is cleared as it is taken. */
+ export function takeFavorite(): HeldFavorite | null {
+   const taken = held;
+-  held = null;
++  forget();
+   return taken;
+ }
+ 
+-/** Lets go of a held favourite: the guest closed the sign-in without going on. */
++/** Lets go of a held favourite: the guest closed the sign-in, or went elsewhere, without going on. */
+ export function dropFavorite(): void {
+-  held = null;
++  forget();
+ }
++
++onGuestLeaving(dropFavorite);
+diff --git a/apps/web/src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts b/apps/web/src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts
+index f92580d8..07febb80 100644
+--- a/apps/web/src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts
++++ b/apps/web/src/features/favorites/hooks/intent/favoriteIntent.unit.test.ts
+@@ -1,5 +1,5 @@
+-import { afterEach, describe, expect, it } from 'vitest';
+-import { dropFavorite, holdFavorite, takeFavorite } from './favoriteIntent';
++import { afterEach, describe, expect, it, vi } from 'vitest';
++import { dropFavorite, HOLD_MS, holdFavorite, takeFavorite } from './favoriteIntent';
+ 
+ afterEach(() => {
+   dropFavorite();
+@@ -20,4 +20,22 @@ describe('the favourite a guest pressed', () => {
+ 
+     expect(takeFavorite()).toBeNull();
+   });
++
++  it('lets go of it once its round trip is over: 15 minutes after it was held', () => {
++    vi.useFakeTimers();
++    try {
++      expect(HOLD_MS).toBe(15 * 60 * 1000);
++      holdFavorite({ spaceId: 7, name: { text: 'Masaha Hub' } });
++      vi.advanceTimersByTime(HOLD_MS - 1);
++      holdFavorite({ spaceId: 8, name: { text: 'Old Hub' } });
++      vi.advanceTimersByTime(HOLD_MS - 1);
++      expect(takeFavorite()).toEqual({ spaceId: 8, name: { text: 'Old Hub' } });
++
++      holdFavorite({ spaceId: 7, name: { text: 'Masaha Hub' } });
++      vi.advanceTimersByTime(HOLD_MS);
++      expect(takeFavorite()).toBeNull();
++    } finally {
++      vi.useRealTimers();
++    }
++  });
+ });
+diff --git a/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx b/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx
+index b676a8e6..f933ae49 100644
+--- a/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx
++++ b/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx
+@@ -71,7 +71,7 @@ afterEach(() => {
+ });
+ 
+ describe('useFavoriteToggle', () => {
+-  it('is pressed at once, held until the favourites are read again, and named by what it does', async () => {
++  it('is pressed at once, held until the favourites are read again, and keeps its one name', async () => {
+     const answer = deferred<FakeAnswer>();
+     const { result, requests, invalidate, rerender } = renderHeart(() => answer.promise);
+ 
+@@ -82,7 +82,8 @@ describe('useFavoriteToggle', () => {
+     });
+ 
+     expect(result.current.pressed).toBe(true);
+-    expect(seen(result.current.label)).toBe('Remove Masaha Hub from favourites');
++    // A toggle keeps its name; `aria-pressed` says the state (WAI-ARIA's button pattern).
++    expect(seen(result.current.label)).toBe('Save Masaha Hub to favourites');
+     await waitFor(() => {
+       expect(requests.map(lineOf)).toEqual(['post /me/favorites/7']);
+     });
+diff --git a/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts b/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts
+index 84c51247..9cadf67d 100644
+--- a/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts
++++ b/apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts
+@@ -4,7 +4,7 @@ import { useSession } from '@shared/session';
+ import { useQueryClient } from '@tanstack/react-query';
+ import { useRef, useState } from 'react';
+ import type { FavoriteSignIn, HeartSpace } from '../../types/FavoriteSpace';
+-import { writeFavorite } from '../favoriteWrite';
++import { writeFavorite, type FavoriteWriteSay } from '../favoriteWrite';
+ import { dropFavorite, holdFavorite } from '../intent/favoriteIntent';
+ 
+ /**
+@@ -20,11 +20,14 @@ export function useFavoriteToggle({
+   saved,
+   signIn,
+   manage,
++  say = 'undoable',
+ }: {
+   space: HeartSpace;
+   saved: boolean;
+   signIn: FavoriteSignIn;
+   manage: () => void;
++  /** How the write is said: with «تراجع», or, for a space that left the directory, without. */
++  say?: Extract<FavoriteWriteSay, 'undoable' | 'left'>;
+ }) {
+   const words = useCopy().favorites;
+   const client = useQueryClient();
+@@ -38,7 +41,9 @@ export function useFavoriteToggle({
+ 
+   return {
+     pressed,
+-    label: pressed ? words.remove({ name }) : words.save({ name }),
++    // One name, whatever its state: `aria-pressed` says whether it is saved (WAI-ARIA's toggle
++    // button; #129's review).
++    label: words.save({ name }),
+     busy: held !== null,
+     run: () => {
+       if (session !== 'authenticated') {
+@@ -54,7 +59,7 @@ export function useFavoriteToggle({
+       void writeFavorite({
+         save,
+         space,
+-        say: 'undoable',
++        say,
+         client,
+         manage,
+         settled: () => {
+diff --git a/apps/web/src/pages/site/public/space/SpacePage.component.test.tsx b/apps/web/src/pages/site/public/space/SpacePage.component.test.tsx
+index 0024fd4b..24108785 100644
+--- a/apps/web/src/pages/site/public/space/SpacePage.component.test.tsx
++++ b/apps/web/src/pages/site/public/space/SpacePage.component.test.tsx
+@@ -17,15 +17,17 @@ import { siteRoutes } from '../../routes';
+ /** «Noor Hub»'s page in the site's shell, the server answering its reads, `change` its space's. */
+ async function renderSpacePage(change: Parameters<typeof publicSpace>[0] = {}) {
+   const requests = fakeTransport((request) =>
+-    request.url === '/lookups'
+-      ? ok({ governorates: [], areas: [], amenities: [] })
+-      : request.url?.endsWith('/occupancy')
+-        ? ok({ status: null })
+-        : request.url === '/me/favorites'
+-          ? ok([])
+-          : request.method === 'post'
+-            ? { status: 204 }
+-            : ok(publicSpace(change)),
++    request.url === '/spaces'
++      ? ok([], 200)
++      : request.url === '/lookups'
++        ? ok({ governorates: [], areas: [], amenities: [] })
++        : request.url?.endsWith('/occupancy')
++          ? ok({ status: null })
++          : request.url === '/me/favorites'
++            ? ok([])
++            : request.method === 'post'
++              ? { status: 204 }
++              : ok(publicSpace(change)),
+   );
+   const router = createMemoryRouter(
+     [
+@@ -244,11 +246,56 @@ describe('a space’s page', () => {
+       establishSession(aSession(), { source: 'signIn' });
+     });
+     // The prompt stays open here (the guest signed in without leaving), so the page is hidden under it.
+-    const heart = await screen.findByRole(
+-      'button',
+-      { name: /^Remove .Noor Hub. from favourites$/, hidden: true },
++    const heart = screen.getByRole('button', {
++      name: /^Save .Noor Hub. to favourites$/,
++      hidden: true,
++    });
++    await waitFor(
++      () => {
++        expect(heart).toHaveAttribute('aria-pressed', 'true');
++      },
+       { timeout: 4000 },
+     );
+-    expect(heart).toHaveAttribute('aria-pressed', 'true');
++  });
++
++  describe('a guest who leaves for another page', () => {
++    it('lets the held favourite go: a later sign-in in the tab saves nothing', async () => {
++      stubScreenWidth(1440);
++      await becomeGuest();
++      const { router, requests } = await renderSpacePage();
++
++      await userEvent.click(
++        screen.getByRole('button', { name: /^Save .Noor Hub. to favourites$/ }),
++      );
++      await screen.findByRole('dialog', { name: 'Sign in to save spaces to your favourites' });
++      // Not through the prompt's links: the guest goes elsewhere on the site.
++      await act(() => router.navigate('/spaces'));
++      await screen.findByRole('heading', { level: 1, name: 'Workspaces' });
++
++      act(() => {
++        establishSession(aSession(), { source: 'signIn' });
++      });
++      await act(() => new Promise((resolve) => setTimeout(resolve, 100)));
++      expect(requests.filter(({ method }) => method === 'post')).toHaveLength(0);
++    });
++
++    it('lets the held report go: back on the page signed in, its dialog does not open', async () => {
++      stubScreenWidth(1440);
++      await becomeGuest();
++      const { router } = await renderSpacePage();
++
++      await userEvent.click(screen.getByRole('button', { name: 'Report wrong information' }));
++      await screen.findByRole('dialog', { name: 'Sign in to report information' });
++      await act(() => router.navigate('/spaces'));
++      await screen.findByRole('heading', { level: 1, name: 'Workspaces' });
++
++      act(() => {
++        establishSession(aSession(), { source: 'signIn' });
++      });
++      await act(() => router.navigate('/spaces/noor-hub'));
++      await screen.findByRole('heading', { level: 1, name: 'Noor Hub' });
++      await act(() => new Promise((resolve) => setTimeout(resolve, 100)));
++      expect(screen.queryByRole('dialog')).toBeNull();
++    });
+   });
+ });
+diff --git a/apps/web/src/pages/site/shell/SiteLayout.tsx b/apps/web/src/pages/site/shell/SiteLayout.tsx
+index 085b0ca2..fee56fcf 100644
+--- a/apps/web/src/pages/site/shell/SiteLayout.tsx
++++ b/apps/web/src/pages/site/shell/SiteLayout.tsx
+@@ -6,16 +6,19 @@ import type { SiteOutletContext } from './footerRoom';
+ import { SiteFooter } from './SiteFooter';
+ import { SiteHeader } from './SiteHeader';
+ import { SkipLink } from './SkipLink';
++import { useGuestIntents } from './useGuestIntents';
+ import { useMainFocus } from './useMainFocus';
+ 
+ /**
+  * The site's shell: the skip link, the full header and the footer around the page, whose `main`
+  * takes the focus when another page opens. A page with a bar fixed at its foot reserves the
+  * footer's room under it (`useFooterRoom`). A guest's favourite, held while they signed in, is saved
+- * once they are back (`ResumeFavorite`), whatever page they land on.
++ * once they are back (`ResumeFavorite`), whatever page they land on; a guest's held favourite and
++ * report are let go once they land on another page of the site (`useGuestIntents`).
+  */
+ export function SiteLayout() {
+   useMainFocus();
++  useGuestIntents();
+   const navigate = useNavigate();
+   const [footerRoom, reserveFooterRoom] = useState(false);
+   const context: SiteOutletContext = { reserveFooterRoom };
+diff --git a/apps/web/src/shared/copy/arabic/favorites.ts b/apps/web/src/shared/copy/arabic/favorites.ts
+index e87d1c26..e21a3c9d 100644
+--- a/apps/web/src/shared/copy/arabic/favorites.ts
++++ b/apps/web/src/shared/copy/arabic/favorites.ts
+@@ -6,6 +6,8 @@ export const FAVORITES = {
+   remove: ({ name }: { name: string }) => `إزالة ${name} من المفضّلة`,
+   added: 'أُضيفت إلى المفضّلة',
+   removed: 'أُزيلت من المفضّلة',
++  removedLeft: ({ name }: { name: string }) =>
++    `أُزيلت ${name} من المفضّلة. لا يمكن حفظها من جديد ما دامت خارج الدليل.`,
+   undo: 'تراجع',
+   saveFailed: ({ name }: { name: string }) => `تعذّر حفظ ${name} في المفضّلة`,
+   removeFailed: ({ name }: { name: string }) => `تعذّرت إزالة ${name} من المفضّلة`,
+diff --git a/apps/web/src/shared/copy/english/favorites.ts b/apps/web/src/shared/copy/english/favorites.ts
+index 238d69b9..222b798b 100644
+--- a/apps/web/src/shared/copy/english/favorites.ts
++++ b/apps/web/src/shared/copy/english/favorites.ts
+@@ -11,6 +11,9 @@ export const FAVORITES = {
+   /** The toasts, the space named under them, with «تراجع». */
+   added: 'Added to favourites',
+   removed: 'Removed from favourites',
++  /** «إزالة» of a space that left the directory: no undo, since it cannot be saved meanwhile. */
++  removedLeft: ({ name }: { name: string }) =>
++    `${name} removed from favourites. It can’t be saved again while it’s out of the directory.`,
+   undo: 'Undo',
+   saveFailed: ({ name }: { name: string }) => `We couldn’t save ${name} to your favourites`,
+   removeFailed: ({ name }: { name: string }) => `We couldn’t remove ${name} from your favourites`,
+diff --git a/apps/web/src/shared/routing/index.ts b/apps/web/src/shared/routing/index.ts
+index ec6cc089..4dbe1bd9 100644
+--- a/apps/web/src/shared/routing/index.ts
++++ b/apps/web/src/shared/routing/index.ts
+@@ -8,6 +8,7 @@ export {
+ export { classifyRouteError, type RouteErrorKind } from './states/classifyRouteError';
+ export { DocumentTitle } from './title/DocumentTitle';
+ export { ForbiddenState } from './states/ForbiddenState';
++export { noteSitePage, onGuestLeaving } from './guest/guestLeaving';
+ export { hasDashboard } from './landing/hasDashboard';
+ export { landingPath } from './landing/landingPath';
+ export { rememberSpace } from './landing/lastSpace';
+diff --git a/docs/features/data-reports.md b/docs/features/data-reports.md
+index a0b3b156..f68391c8 100644
+--- a/docs/features/data-reports.md
++++ b/docs/features/data-reports.md
+@@ -91,7 +91,7 @@
+ - **A refusal keeps the dialog open with every value** (DI-46): the failure is an alert above the footer; a 429 counts down; no answer says a retry is safe, since a repeat answers the open report. 2026-10-28, #129.
+ - **The toast says where the reply lands, or that one is already open** (DI-47, DI-48), with «عرض بلاغاتي». *Why:* the repository reads the answer's status — 201 a new report, 200 the open one (S15) — so the user is never told a second report was filed. 2026-10-28, #129.
+ - **A report is sent once, with no key** (S4): a repeat answers the open report, so a lost answer is retried from the dialog. 2026-10-28, #129.
+-- **A guest's report waits in memory, never in the address** (S14, DI-60, DI-61): the press holds the space's slug and the page asks them to sign in with the reason; the held report opens the dialog once they are back signed in, and is let go if they close the sign-in. *Why:* a link carrying the intent would let a crafted link act for a signed-in user. *Cost:* a reload, or a recovery by email, loses it ([finding 168](../architecture/findings/168-a-guests-intent-does-not-survive-a-password-recovery.md)). 2026-10-28, #129.
++- **A guest's report waits in memory, never in the address** (S14, DI-60, DI-61): the press holds the space's slug and the page asks them to sign in with the reason; the held report opens the dialog once they are back signed in, and is let go if they close the sign-in, after 15 minutes, or once the guest lands on another page of the site (the shell reports each page it shows: `noteSitePage`), so a later visit signed in opens nothing by itself (#129's review). *Why:* a link carrying the intent would let a crafted link act for a signed-in user. *Cost:* a reload, or a recovery by email, loses it ([finding 168](../architecture/findings/168-a-guests-intent-does-not-survive-a-password-recovery.md)). 2026-10-28, #129.
+ - **The reply is labelled by who replied** (DI-56): `repliedBy` `SPACE` «ردّ إدارة المساحة», `MASAHA` «ردّ فريقنا» — "our team", never «فريق مساحة», which reads as the space's. A space that left is named as text with its line (C7). 2026-10-28, #129.
+ 
+ ## Code map
+diff --git a/docs/features/directory.md b/docs/features/directory.md
+index b503c8e9..f2dd24bf 100644
+--- a/docs/features/directory.md
++++ b/docs/features/directory.md
+@@ -131,7 +131,7 @@ The page shows its announcements: a running closure's notice at its top, the oth
+ - **The map's failure line points to the list, and past 1,000 pins the map says so and asks within its view** (design issues 19, 20). 2026-10-21, #105.
+ - **A location can be set by hand at the map's centre, rounded and kept as the device's is; «رجوع» restores the one before** (U7 as built). *Why:* a denied or imprecise location still leaves a way to sort by distance, with the same privacy. 2026-10-22, #105.
+ - **«المفضّلة» is the directory's screen, its cards the directory's** (S1, A3 not taken): the favourites are read from this capability's route and drawn as its cards; `favorites` sets the heart and «إزالة» in its slots. Near me is the Directory's, in memory, never in the address (S8). 2026-10-28, #129.
+-- **A space that left is a muted card with its name, its line and «إزالة» with «تراجع»** (C7, DI-58); **the focus after «إزالة» goes to the next row, else the first heart, else the count** (DI-52). 2026-10-28, #129.
++- **A space that left is a muted card with its name, its line and «إزالة», with no «تراجع»** (C7, DI-58: the API saves no space out of the directory, so the undo is not offered — the owner's decision on #129's review); **the focus after «إزالة» goes to the next row, else the first heart, else the count** (DI-52). 2026-10-28, #129.
+ - **The hearts read the saved spaces from the user's favourites, the directory's own read** (S13): the ids of the whole list, newest saved first, under the session's scope, read only with a session; a favourite saved or removed reads the scope again. *Why:* `GET /me/favorites` is the only read that knows a favourite, and it is this capability's. 2026-10-28, #129.
+ - **A space's page has one order at every width; from 1024 px the status and the contacts move to an aside** (U8). *Why:* a page read the same way on every screen; the aside keeps the contacts in view beside long sections. 2026-10-22, #107.
+ - **Prices go per audience, the students' under «للطلاب», and by shift only when a price names one** (U9 as built; design issues 29, 31). *Why:* the general price is what most visitors pay; a shift's tab exists only where it has prices; the grid's last row never leaves an orphan cell. 2026-10-22, #107.
+diff --git a/docs/features/favorites.md b/docs/features/favorites.md
+index cbff083f..e77bb3be 100644
+--- a/docs/features/favorites.md
++++ b/docs/features/favorites.md
+@@ -30,9 +30,9 @@
+ 
+ **Remove.** The caller's row of that space deleted, if there is one, 204 either way: a space that left the directory is removed all the same.
+ 
+-**The heart on the web** (`FavoriteButton`, set by the site's Directory, Home and space pages in the directory's slots: over a card's cover, beside the card's link and never inside it, and beside the page's name). A toggle, the layer's icon button (44 × 44 on a coarse pointer), named by what it does — «حفظ {name} في المفضّلة» or «إزالة {name} من المفضّلة» — and pressed (`aria-pressed`, the heart filled) while the space is saved; whether it is saved is the directory's favourites, read once per signed-in visit. Pressed by a signed-in user, it flips at once and holds while its write is pending; the save or the removal is sent once, with no key. Done, the toast says «أُضيفت إلى المفضّلة» or «أُزيلت من المفضّلة» with the space's name under it and «تراجع», which sends the inverse once; the user's scope is read again, and the favourites then say the truth. Failed, the heart goes back and the toast says «تعذّر حفظ {name} في المفضّلة» or «تعذّرت إزالة {name} من المفضّلة» with «إعادة المحاولة»; a full list says `FAVORITES_LIMIT_REACHED`'s line with «إدارة المفضّلة», and a space gone «لم تعد هذه المساحة في الدليل.». A guest's press holds the favourite in memory and the page asks them to sign in, «سجّل الدخول لحفظ المساحات في المفضّلة», with «إنشاء حساب» and «تسجيل الدخول», each carrying the page as the one to return to; once they are back signed in, the site's shell saves it once and says «حُفظت {name} في المفضّلة» (a failure with «إعادة المحاولة»). Closing the sign-in lets the held favourite go.
++**The heart on the web** (`FavoriteButton`, set by the site's Directory, Home and space pages in the directory's slots: over a card's cover, beside the card's link and never inside it, and beside the page's name). A toggle, the layer's icon button (44 × 44 on a coarse pointer), with one name, «حفظ {name} في المفضّلة», and pressed (`aria-pressed`, the heart filled) while the space is saved — a toggle keeps its name and its state says the rest (WAI-ARIA's button pattern; a departure from §9's two names, #129's review); whether it is saved is the directory's favourites, read once per signed-in visit. Pressed by a signed-in user, it flips at once and holds while its write is pending; the save or the removal is sent once, with no key. Done, the toast says «أُضيفت إلى المفضّلة» or «أُزيلت من المفضّلة» with the space's name under it and «تراجع», which sends the inverse once; the user's scope is read again, and the favourites then say the truth. Failed, the heart goes back and the toast says «تعذّر حفظ {name} في المفضّلة» or «تعذّرت إزالة {name} من المفضّلة» with «إعادة المحاولة»; a full list says `FAVORITES_LIMIT_REACHED`'s line with «إدارة المفضّلة», and a space gone «لم تعد هذه المساحة في الدليل.». A guest's press holds the favourite in memory and the page asks them to sign in, «سجّل الدخول لحفظ المساحات في المفضّلة», with «إنشاء حساب» and «تسجيل الدخول», each carrying the page as the one to return to; once they are back signed in, the site's shell saves it once and says «حُفظت {name} في المفضّلة» (a failure with «إعادة المحاولة»). Closing the sign-in lets the held favourite go, and so do 15 minutes or the guest landing on another page of the site.
+ 
+-**«إزالة» on the web** (`RemoveFavorite`, set by the account's «المفضّلة» on each space that left the directory). Named «إزالة {name} من المفضّلة», it removes the space once and says «أُزيلت من المفضّلة» with the name and «تراجع», which saves it again; it holds, not disabled, while it is sent, so the focus stays on it until its row leaves.
++**«إزالة» on the web** (`RemoveFavorite`, set by the account's «المفضّلة» on each space that left the directory). Named «إزالة {name} من المفضّلة», it removes the space once and says «أُزيلت {name} من المفضّلة. لا يمكن حفظها من جديد ما دامت خارج الدليل.», with no «تراجع»: the API saves no space out of the directory (404), so an undo could never work (DI-58, the owner's word, #129's review; [finding 187](../architecture/findings/187-a-favourite-just-removed-cannot-be-saved-again-for-an-undo.md)); it holds, not disabled, while it is sent, so the focus stays on it until its row leaves.
+ 
+ **The list** (`directory`). The user's rows, newest saved first, then the higher space id first (at most 200); the public listing's cards of those it lists, with their live statuses, nearest first when the point is sent; the rest named by `spaces`, soft-deleted ones included, `listed: false`, after the listed ones when ordered by distance. A space restored or shown again is listed again: the row is kept.
+ 
+@@ -53,7 +53,7 @@
+ - **One way for every heart: «تراجع» in the toast, a failure said with «إعادة المحاولة»** (DI-49). *Why:* the page's heart assumed success and skipped the undo; a heart pressed by mistake is undone where it is said. The undo runs outside the heart, so it still works once the heart has left the page. 2026-10-28, #129.
+ - **«المفضّلة», with the shadda, everywhere** (DI-50). 2026-10-28, #129.
+ - **The heart is the layer's icon button: 44 × 44 on a coarse pointer** (DI-51). 2026-10-28, #129.
+-- **A guest's favourite waits in memory, never in the address, and is saved on return by the site's shell** (S14, DI-61): a link carrying it would let a crafted link save a space for a signed-in user; closing the sign-in lets it go. *Cost:* a reload, or a recovery by email, loses it ([finding 168](../architecture/findings/168-a-guests-intent-does-not-survive-a-password-recovery.md)). 2026-10-28, #129.
++- **A guest's favourite waits in memory, never in the address, and is saved on return by the site's shell** (S14, DI-61): a link carrying it would let a crafted link save a space for a signed-in user; closing the sign-in lets it go, and so do 15 minutes or the guest landing on another page of the site (the shell reports each page it shows: `noteSitePage`), so a later sign-in in the tab, maybe someone else's, saves nothing (#129's review). *Cost:* a reload, or a recovery by email, loses it ([finding 168](../architecture/findings/168-a-guests-intent-does-not-survive-a-password-recovery.md)). 2026-10-28, #129.
+ - **Sent once, with no key** (S4): a save or a removal is idempotent by design, and a lost answer is retried from its toast. 2026-10-28, #129.
+ 
+ ## Code map
+@@ -65,6 +65,7 @@
+ ## Open findings
+ 
+ - [168. A guest's intent does not survive a password recovery](../architecture/findings/168-a-guests-intent-does-not-survive-a-password-recovery.md) — the favourite held for a guest is lost by a reload or a recovery by email.
++- [187. A favourite just removed cannot be saved again for an undo](../architecture/findings/187-a-favourite-just-removed-cannot-be-saved-again-for-an-undo.md) — «إزالة» of a space that left offers no «تراجع».
+ 
+ ## History
+ 
+@@ -76,4 +77,4 @@
+ ### Web history
+ 
+ - 2026-10-28, #129 — the heart on the site's cards and beside a space's name: optimistic, «تراجع» and «إعادة المحاولة» in its toasts; a guest asked to sign in, the favourite held in memory and saved on return.
+-- 2026-10-28, #129 — «إزالة» of a space that left, in the account's «المفضّلة», with «تراجع».
++- 2026-10-28, #129 — «إزالة» of a space that left, in the account's «المفضّلة», said with no «تراجع» (it cannot be saved meanwhile).
+diff --git a/docs/project/overview.md b/docs/project/overview.md
+index 796c8b01..ceb4891e 100644
+--- a/docs/project/overview.md
++++ b/docs/project/overview.md
+@@ -28,7 +28,7 @@ This section lists a capability only once it is merged and working. Each line li
+ - [Payments](../features/payments.md): on the API, a visit's and a subscription's payment, recorded once per key; the owner's void, with a reason; the payments list, the owner's by Gaza days, staff, method, kind and void with its totals, and reception's own of today; the uncollected visits; on the dashboard, the owner's ledger with its filters and totals, and the void from it and from a subscription's statement, and reception's «دفعاتي اليوم».
+ - [Announcements](../features/announcements.md): on the API, a space's announcements, posted, edited, ended, started and deleted by its staff; the managed list with each closure's extension state and its summary; a space's page's running and upcoming announcements; the closure warning at check-in; after a closure, the owner's extension of the subscriptions it covered, previewed first, once per closure; on the dashboard, the owner's and reception's «الإعلانات»: the announcements by state, with their counts, posted and edited in a sheet with the preview of the space's page, ended (with an undo), started and deleted, and the owner's extension of a closure's subscriptions by the days typed, once; on the site, a space's page's running closure at its top and its other announcements after its status.
+ - [Favourites](../features/favorites.md): on the API, a signed-in user's favourite spaces, saved and removed, at most 200, read whole as the directory's cards, nearest first when the device's location is sent; on the site, the heart on the cards and on a space's page, and the account's «المفضّلة».
+-- [Data reports](../features/data-reports.md): on the API, a signed-in user's report of a listed space's wrong information and their own reports with the replies; the owner's and the admin's lists and decisions, the reporter anonymous to the owner; on the dashboard, the owner's and the admin's «بلاغات البيانات» with the decision sheet, the admin's filtered by status, space and field; on the site, a signed-in user's «بلاغاتي» with the replies.
++- [Data reports](../features/data-reports.md): on the API, a signed-in user's report of a listed space's wrong information and their own reports with the replies; the owner's and the admin's lists and decisions, the reporter anonymous to the owner; on the dashboard, the owner's and the admin's «بلاغات البيانات» with the decision sheet, the admin's filtered by status, space and field; on the site, the report of wrong information from a space's page and a signed-in user's «بلاغاتي» with the replies.
+ - [Audit](../features/audit.md): on the API, the owner's audit log of the space, the admin shown as Masaha, and the admin's log of the platform's events only; paged, the last 30 days or all, searched by target and filtered by actor and action.
+ - [Occupancy](../features/occupancy.md): on the API, a space's private capacity, set by its owner, and its state now for its staff: who is present, the count and the live status, with the manual override its staff set and clear.
+ 

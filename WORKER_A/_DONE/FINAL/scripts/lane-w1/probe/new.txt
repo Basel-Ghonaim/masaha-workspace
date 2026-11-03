@@ -1,0 +1,6 @@
+  beforeAll(async () => {
+    await import('./space/desk/DeskPage');
+    await import('./space/overview/OverviewPage');
+  });
+
+  it('lists the owner

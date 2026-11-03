@@ -1,0 +1,7 @@
+fix(staff): reach the held item by the keyboard
+
+«كلمة مرور مؤقتة جديدة» was a disabled menu item, which Radix skips,
+so its reason was never reached by the arrow keys. It is now the
+layer's held item: in the keyboard's path, marked aria-disabled and
+read with its reason. The list's row buttons already come from
+shared/lists' useRowTriggers.

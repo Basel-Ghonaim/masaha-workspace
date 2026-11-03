@@ -1,0 +1,16 @@
+feat(lib): build a CSV and a WhatsApp link
+
+Finance exports three lists with no export route (the owner's
+decision 5), and three places fill the debt reminder and send it on
+WhatsApp: the settings' preview, finance and the customer's file.
+
+- shared/lib gains csvOf (RFC 4180: a value with a quote, a comma, CR
+  or LF quoted, its quotes doubled, lines apart by CRLF, a UTF-8 byte
+  order mark first so Excel reads Arabic), downloadFile (a text/csv
+  Blob saved through a link, its address let go) and whatsappLink
+  (wa.me with the number's digits and the text encoded).
+- The shared reminder rule gains fillReminder: every placeholder,
+  every time it appears, in one pass, so a value is put in as it is.
+  The settings' preview now calls it.
+
+architecture §1 and space-settings.md say where each lives.

@@ -1,0 +1,150 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx src/pages/site/routes.component.test.tsx src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx src/features/payments/components/ledger/PaymentsLedger.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/web
+
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (4 tests | 1 failed) 10433ms
+   ❯ PaymentsLedger (4)
+     × applies a period once its second day is chosen, the earlier first; a new click starts afresh 5321ms
+ ❯ |component| src/pages/site/routes.component.test.tsx (13 tests | 3 failed) 24631ms
+   ❯ the site's routes (13)
+     × shows the Directory under its title 3028ms
+     × shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search 3014ms
+     × shows a space’s page titled by its name; at 390, below it a back link 5012ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (62 tests | 1 failed | 6 skipped) 50928ms
+   ❯ the dashboard's guards (8)
+     × refuses reception the owner’s payments with the 403 inside the shell 3133ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:185:3
+    183|   // Reception lands on the desk, which loads lazily: its first transf…
+    184|   // seconds, so it is done before the tests, as the pages' own sectio…
+    185|   beforeAll(async () => {
+       |   ^
+    186|     await import('./space/desk/DeskPage');
+    187|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:168:30
+    166| /** The heading named `name` in the main landmark, where a status stat…
+    167| async function stateInMain(name: string) {
+    168|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    169| }
+    170|
+ ❯ src/pages/dashboard/routes.component.test.tsx:264:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows the Directory under its title
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ pageTitle src/pages/site/routes.component.test.tsx:108:30
+    106| /** The page's title, inside the shell's main landmark. */
+    107| async function pageTitle() {
+    108|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    109| }
+    110|
+ ❯ src/pages/site/routes.component.test.tsx:196:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search
+TestingLibraryElementError: Unable to find role="searchbox"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/routes.component.test.tsx:238:18
+    236|       </Wrapper>,
+    237|     );
+    238|     await screen.findByRole('searchbox');
+       |                  ^
+    239|     await router.navigate('/spaces/noor-hub');
+    240|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 390, below it a back link
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/site/routes.component.test.tsx:206:5
+    204|     [1440, 'from 768 px a breadcrumb back to the Directory with its la…
+    205|     [390, 'below it a back link'],
+    206|   ])('shows a space’s page titled by its name; at %i, %s', async (widt…
+       |     ^
+    207|     stubScreenWidth(width);
+    208|     fakeTransport((request) =>
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > applies a period once its second day is chosen, the earlier first; a new click starts afresh
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:133:3
+    131|   });
+    132|
+    133|   it('applies a period once its second day is chosen, the earlier firs…
+       |   ^
+    134|     stubScreenWidth(1440);
+    135|     vi.useFakeTimers({ shouldAdvanceTime: true, toFake: ['Date'] });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  3 failed | 1 passed (4)
+      Tests  5 failed | 71 passed | 6 skipped (82)
+   Start at  15:39:53
+   Duration  65.63s (tests 60%, import 15%, environment 13%, transform 8%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx src/pages/site/routes.component.test.tsx src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx src/features/payments/components/ledger/PaymentsLedger.component.test.tsx

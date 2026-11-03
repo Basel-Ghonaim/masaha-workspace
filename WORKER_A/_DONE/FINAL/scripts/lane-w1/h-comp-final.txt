@@ -1,0 +1,498 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+stderr | src/pages/dashboard/routes.component.test.tsx > the owner's staff > shows the owner the staff page under its title, its list read from the managed route
+RangeError: Invalid time value
+    at addedText (C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/services/addedText.ts:16:6)
+    at C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/hooks/list/useStaffList.ts:43:12
+    at Array.map (<anonymous>)
+    at useStaffList (C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/hooks/list/useStaffList.ts:38:24)
+    at StaffList (C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/components/StaffList.tsx:75:16)
+    at Object.react_stack_bottom_frame (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:28571:20)
+    at renderWithHooks (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:8030:22)
+    at updateFunctionComponent (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:10569:19)
+    at beginWork (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:12205:18)
+    at runWithFiberInDEV (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:1048:13) {
+  [stack]: [Getter/Setter],
+  [message]: 'Invalid time value'
+}
+
+The above error occurred in the <StaffList> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, RenderErrorBoundary.
+
+React Router caught the following error during render RangeError: Invalid time value
+    at addedText (C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/services/addedText.ts:16:6)
+    at C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/hooks/list/useStaffList.ts:43:12
+    at Array.map (<anonymous>)
+    at useStaffList (C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/hooks/list/useStaffList.ts:38:24)
+    at StaffList (C:/dev/masaha/app-lane-w1/apps/web/src/features/staff/components/StaffList.tsx:75:16)
+    at Object.react_stack_bottom_frame (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:28571:20)
+    at renderWithHooks (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:8030:22)
+    at updateFunctionComponent (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:10569:19)
+    at beginWork (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:12205:18)
+    at runWithFiberInDEV (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:1048:13)
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 5 failed | 12 skipped) 77389ms
+   ❯ the dashboard's guards (8)
+     × refuses reception the owner’s payments with the 403 inside the shell 3195ms
+     × shows reception its own payments today 3026ms
+   ❯ the admin's lookups page (5)
+     × opens the amenities’ tab from the address 3019ms
+   ❯ the admin's add-space page (1)
+     × offers the public catalogue’s areas, and opens the new space’s editor once it is added 5101ms
+   ❯ the owner's staff (2)
+     × shows the owner the staff page under its title, its list read from the managed route 3518ms
+ ❯ |component| src/features/finance/components/IncomeTab.component.test.tsx (4 tests | 1 failed) 11718ms
+   ❯ Finance › Income (4)
+     × shows the three tiles, the two charts and the collections table; axe-clean 6018ms
+Not implemented: navigation to another Document
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (4 tests | 1 failed) 10306ms
+   ❯ PaymentsLedger (4)
+     × applies a period once its second day is chosen, the earlier first; a new click starts afresh 5073ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:230:3
+    228|   // Reception lands on the desk, which loads lazily: its first transf…
+    229|   // seconds, so it is done before the tests, as the pages' own sectio…
+    230|   beforeAll(async () => {
+       |   ^
+    231|     await import('./space/desk/DeskPage');
+    232|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:213:30
+    211| /** The heading named `name` in the main landmark, where a status stat…
+    212| async function stateInMain(name: string) {
+    213|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    214| }
+    215|
+ ❯ src/pages/dashboard/routes.component.test.tsx:385:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today
+TestingLibraryElementError: Unable to find role="banner"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ topBarTitle src/pages/dashboard/routes.component.test.tsx:208:30
+    206|  */
+    207| async function topBarTitle(name: string) {
+    208|   return within(await screen.findByRole('banner')).findByRole('heading…
+       |                              ^
+    209| }
+    210|
+ ❯ src/pages/dashboard/routes.component.test.tsx:393:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the amenities’ tab from the address
+TestingLibraryElementError: Unable to find role="tab" and name "Amenities"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:617:25
+    615|     openLookups('?tab=amenities');
+    616|
+    617|     expect(await screen.findByRole('tab', { name: 'Amenities' })).toHa…
+       |                         ^
+    618|       'aria-selected',
+    619|       'true',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's add-space page > offers the public catalogue’s areas, and opens the new space’s editor once it is added
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:736:3
+    734|   }
+    735|
+    736|   it('offers the public catalogue’s areas, and opens the new space’s e…
+       |   ^
+    737|     const user = userEvent.setup();
+    738|     signIn({ role: 'ADMIN' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > shows the owner the staff page under its title, its list read from the managed route
+TestingLibraryElementError: Unable to find an element with the text: rahaf@example.com. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Space dashboard"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2 md:hidden"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"menu"[39m
+            [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-auto w-full justify-start gap-3 px-2 py-2 text-start"[39m
+            [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mid[39m=[32m"radix-_r_11p_"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+              [33mdata-size[39m=[32m"sm"[39m
+              [33mdata-slot[39m=[32m"avatar"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                [33mdata-slot[39m=[32m"avatar-fallback"[39m
+              [36m>[39m
+                [0mS[0m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [36m<bdi>[39m
+                  [0mSara · Owner[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [36m<bdi[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0msara@example.com[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-chevrons-up-down"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 15 5 5 5-5"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 9 5-5 5 5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-3 p-1.5"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+            [36m>[39m
+              [0mF[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+              [33mdata-slot[39m=[32m"sidebar-text"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [0mFocus Hub[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mAn-Nasr[0m
+              [36m</span>[39m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Space dashboard"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2 md:hidden"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"menu"[39m
+            [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-auto w-full justify-start gap-3 px-2 py-2 text-start"[39m
+            [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mid[39m=[32m"radix-_r_11p_"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+              [33mdata-size[39m=[32m"sm"[39m
+              [33mdata-slot[39m=[32m"avatar"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                [33mdata-slot[39m=[32m"avatar-fallback"[39m
+              [36m>[39m
+                [0mS[0m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [36m<bdi>[39m
+                  [0mSara · Owner[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [36m<bdi[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0msara@example.com[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-chevrons-up-down"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 15 5 5 5-5"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 9 5-5 5 5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center gap-3 p-1.5"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+            [36m>[39m
+              [0mF[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col text-start"[39m
+              [33mdata-slot[39m=[32m"sidebar-text"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [0mFocus Hub[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [0mAn-Nasr[0m
+              [36m</span>[39m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:1168:25
+    1166|     renderDashboard('/dashboard/spaces/7/staff');
+    1167|
+    1168|     await topBarTitle('Staff');
+       |                         ^
+    1169|     expect(await screen.findByText('rahaf@example.com')).toBeInTheDocu…
+    1170|     expect(screen.getByRole('button', { name: 'Add staff member' })).t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  |component| src/features/finance/components/IncomeTab.component.test.tsx > Finance › Income > shows the three tiles, the two charts and the collections table; axe-clean
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/finance/components/IncomeTab.component.test.tsx:103:3
+    101|
+    102| describe('Finance › Income', () => {
+    103|   it('shows the three tiles, the two charts and the collections table;…
+       |   ^
+    104|     const { container, requests } = renderFinance(() => ok(aReport()));
+    105|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > applies a period once its second day is chosen, the earlier first; a new click starts afresh
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:133:3
+    131|   });
+    132|
+    133|   it('applies a period once its second day is chosen, the earlier firs…
+       |   ^
+    134|     stubScreenWidth(1440);
+    135|     vi.useFakeTimers({ shouldAdvanceTime: true, toFake: ['Date'] });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  3 failed | 316 passed (319)
+      Tests  7 failed | 1809 passed | 12 skipped (1828)
+   Start at  09:36:52
+   Duration  839.86s (import 33%, environment 32%, tests 20%, setup 10%, transform 5%)
+
+Environment  |component| jsdom was created 319 times · 1554.04s total, 32% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component
+exit 1

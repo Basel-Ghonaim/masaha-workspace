@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/customer-actions
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx (3 tests | 1 failed) 2890ms
+   ❯ a customer’s state actions (3)
+     × a present customer’s menu offers «Check out», an owing one «Receive {amount}» on the oldest item 1468ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  13:15:55
+   Duration  15.57s (transform 35%, import 25%, tests 19%, environment 16%, setup 5%)
+
+  Transform  |component| transforming modules took 5.26s · 35% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > a present customer’s menu offers «Check out», an owing one «Receive {amount}» on the oldest item
+AssertionError: expected '' to match /^Oldest item: Visit of /
+
+- Expected:
+/^Oldest item: Visit of /
+
++ Received:
+""
+
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:148:42
+    146|     await user.click(receive);
+    147|     const dialog = await screen.findByRole('dialog');
+    148|     expect(plain(descriptionOf(dialog))).toMatch(/^Oldest item: Visit …
+       |                                          ^
+    149|   });
+    150|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/customer-actions

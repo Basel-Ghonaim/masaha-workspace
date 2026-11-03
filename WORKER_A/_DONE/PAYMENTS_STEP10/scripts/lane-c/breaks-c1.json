@@ -1,0 +1,37 @@
+[
+ {
+  "id": "60",
+  "file": "apps/web/src/features/data-reports/hooks/mine/useMyReports.ts",
+  "old": "link: report.space.listed ? spaceLink(report.space.slug) : null,",
+  "new": "link: spaceLink(report.space.slug),",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/hooks/mine"
+ },
+ {
+  "id": "61",
+  "file": "apps/web/src/features/data-reports/hooks/space/useSpaceReportsFilters.ts",
+  "old": "write({ chip, page: 1 });",
+  "new": "write({ chip, page: filters.page });",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/hooks/mine"
+ },
+ {
+  "id": "62",
+  "file": "apps/web/src/features/data-reports/hooks/mine/useMyReports.ts",
+  "old": "Array.from(report.message).length > FOLDED_FROM",
+  "new": "Array.from(report.message).length >= 0",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/components/mine"
+ },
+ {
+  "id": "63",
+  "file": "apps/web/src/pages/site/account/AccountLayout.tsx",
+  "old": "aria-current={current ? 'page' : undefined}",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/pages/site/account"
+ },
+ {
+  "id": "64",
+  "file": "apps/web/src/features/users/hooks/useAccount.ts",
+  "old": "links: readonly AccountMenuLink[] = []",
+  "new": "links: readonly AccountMenuLink[] = [{ key: 'reports', to: '/me/reports' }]",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/users/components/CompactAccountMenu.component.test.tsx"
+ }
+]

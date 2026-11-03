@@ -1,0 +1,63 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/occupancy/glance.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/occupancy/glance.api.test.ts (1 test | 1 failed) 1163ms
+   ❯ the space's state at a glance (1)
+     × glance answers the present visits and members, the capacity and the status, no names 601ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  12:38:45
+   Duration  22.00s (transform 66%, import 23%, tests 8%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/occupancy/glance.api.test.ts > the space's state at a glance > glance answers the present visits and members, the capacity and the status, no names
+AssertionError: expected { capacity: 3, status: 'FULL', …(1) } to deeply equal { capacity: 3, status: 'FULL', …(1) }
+
+- Expected
++ Received
+
+  {
+    "capacity": 3,
+    "present": {
+-     "members": 1,
++     "members": 2,
+      "total": 3,
+      "visits": 2,
+    },
+    "status": "FULL",
+  }
+
+ ❯ src/modules/occupancy/glance.api.test.ts:115:20
+    113|
+    114|     const glance = await occupancy.glance(await loaded());
+    115|     expect(glance).toEqual({
+       |                    ^
+    116|       capacity: 3,
+    117|       status: 'FULL',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/occupancy/glance.api.test.ts

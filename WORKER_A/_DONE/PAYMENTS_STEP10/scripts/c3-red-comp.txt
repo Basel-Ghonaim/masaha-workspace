@@ -1,0 +1,114 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx (0 test)
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (0 test)
+ ❯ |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx (0 test)
+ ❯ |component| src/features/staff/hooks/people/useStaffPeople.component.test.tsx (0 test)
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (55 tests | 52 skipped) 3639ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's payments
+Error: Failed to resolve import "./components/ledger/PaymentsLedger" from "src/features/payments/index.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/payments/index.ts:1:53
+  1  |  export { PaymentsLedger } from "./components/ledger/PaymentsLedger";
+     |                                  ^
+  2  |  
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx [ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx ]
+Error: Failed to resolve import "./PaymentsLedger" from "src/features/payments/components/ledger/PaymentsLedger.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:14:53
+  10 |  import { stubScreenWidth } from "../../../../test/screenWidth";
+  11 |  import { startPreferences } from "../../../../test/startPreferences";
+  12 |  import { PaymentsLedger } from "./PaymentsLedger";
+     |                                  ^
+  13 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/payments/components/ledger/PaymentsLedger.component.test....
+  14 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx [ src/features/payments/hooks/ledger/useLedger.component.test.tsx ]
+Error: Failed to resolve import "./useLedger" from "src/features/payments/hooks/ledger/useLedger.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/payments/hooks/ledger/useLedger.component.test.tsx:12:26
+  7  |  import { paymentRow, paymentsPage, paymentTotals } from "../../../../test/paymentRow";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { useLedger } from "./useLedger";
+     |                             ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/payments/hooks/ledger/useLedger.component.test.tsx";
+  11 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |component| src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx [ src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx ]
+Error: Failed to resolve import "./useLedgerFilters" from "src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx:6:33
+  3  |  import { beforeEach, describe, expect, it } from "vitest";
+  4  |  import { startPreferences } from "../../../../test/startPreferences";
+  5  |  import { useLedgerFilters } from "./useLedgerFilters";
+     |                                    ^
+  6  |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx";
+  7  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |component| src/features/staff/hooks/people/useStaffPeople.component.test.tsx [ src/features/staff/hooks/people/useStaffPeople.component.test.tsx ]
+Error: Failed to resolve import "./useStaffPeople" from "src/features/staff/hooks/people/useStaffPeople.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/staff/hooks/people/useStaffPeople.component.test.tsx:10:31
+  6  |  import { startPreferences } from "../../../../test/startPreferences";
+  7  |  import { useStaffList } from "../list/useStaffList";
+  8  |  import { useStaffPeople } from "./useStaffPeople";
+     |                                  ^
+  9  |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/staff/hooks/people/useStaffPeople.component.test.tsx";
+  10 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  5 failed (5)
+      Tests  3 passed | 52 skipped (55)
+   Start at  14:36:35
+   Duration  14.60s (environment 43%, import 21%, tests 14%, setup 12%, transform 9%)
+

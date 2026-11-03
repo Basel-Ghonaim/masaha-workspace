@@ -1,0 +1,38 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+ ❯ src/audit/requests.unit.test.ts (2 tests | 1 failed) 15ms
+   ❯ the admin's audit query (1)
+     × the admin's actor is a person's id only 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/audit/requests.unit.test.ts > the admin's audit query > the admin's actor is a person's id only
+AssertionError: expected null to deeply equal { actor: [ 'invalid_format' ] }
+
+- Expected:
+{
+  "actor": [
+    "invalid_format",
+  ],
+}
+
++ Received:
+null
+
+ ❯ src/audit/requests.unit.test.ts:66:93
+     64|     });
+     65|     const result = platformAuditQuerySchema.safeParse({ actor: 'MASAHA…
+     66|     expect(result.success ? null : toFieldErrors(result.error.issues, …
+       |                                                                                             ^
+     67|       {
+     68|         actor: ['invalid_format'],
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  14:21:59
+   Duration  530ms (import 52%, transform 41%, tests 5%, worker 2%)
+

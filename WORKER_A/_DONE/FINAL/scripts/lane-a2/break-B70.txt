@@ -1,0 +1,40 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/packages/shared
+
+ ❯ src/desk/requests.unit.test.ts (12 tests | 1 failed) 42ms
+   ❯ the customers list's query (3)
+     × the customers query takes WEEK and MONTH, the published periods 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  18:00:16
+   Duration  929ms (transform 54%, import 39%, tests 6%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/desk/requests.unit.test.ts > the customers list's query > the customers query takes WEEK and MONTH, the published periods
+ZodError: [
+  {
+    "code": "invalid_value",
+    "values": [
+      "PACKAGE",
+      "CUSTOM",
+      "NONE"
+    ],
+    "path": [
+      "kind"
+    ],
+    "message": "Invalid option: expected one of \"PACKAGE\"|\"CUSTOM\"|\"NONE\""
+  }
+]
+ ❯ src/desk/requests.unit.test.ts:190:33
+    188|
+    189|   it('the customers query takes WEEK and MONTH, the published periods'…
+    190|     expect(customersQuerySchema.parse({ kind: 'WEEK' })).toMatchObject…
+       |                                 ^
+    191|     expect(customersQuerySchema.parse({ kind: 'MONTH' })).toMatchObjec…
+    192|     expect(errorsOfQuery({ kind: 'DAY' })).toEqual({ kind: ['invalid_c…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

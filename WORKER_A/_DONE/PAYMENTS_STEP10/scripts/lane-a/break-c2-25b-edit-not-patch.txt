@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/announcements/repository/announcementsRepository.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |unit| src/features/announcements/repository/announcementsRepository.unit.test.ts (5 tests | 1 failed) 22ms
+   ❯ the announcements repository (5)
+     × edits with a PATCH of what changed, and no key 8ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:20:03
+   Duration  1.03s (import 57%, transform 40%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/announcements/repository/announcementsRepository.unit.test.ts > the announcements repository > edits with a PATCH of what changed, and no key
+AssertionError: expected [ Array(1) ] to deeply equal [ Array(1) ]
+
+- Expected
++ Received
+
+  [
+-   "patch /manage/spaces/7/announcements/5",
++   "put /manage/spaces/7/announcements/5",
+  ]
+
+ ❯ src/features/announcements/repository/announcementsRepository.unit.test.ts:81:34
+     79|
+     80|     await createAnnouncementsRepository().edit(7, 5, { textEn: null, e…
+     81|     expect(requests.map(lineOf)).toEqual(['patch /manage/spaces/7/anno…
+       |                                  ^
+     82|     expect(JSON.parse(String(requests[0]?.data))).toEqual({ textEn: nu…
+     83|     expect(requests[0]?.headers.get('Idempotency-Key')).toBeUndefined(…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/announcements/repository/announcementsRepository.unit.test.ts

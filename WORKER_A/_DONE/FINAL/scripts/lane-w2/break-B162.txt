@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/platform-settings/components/admin
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx (6 tests | 1 failed) 5159ms
+   ❯ PlatformSettingsCards (6)
+     × the rounding minutes field shows only for «تقريب لأعلى…» 344ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  15:36:39
+   Duration  18.31s (tests 29%, transform 25%, import 23%, environment 17%, setup 5%)
+
+  Transform  |component| transforming modules took 4.51s · 25% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx > PlatformSettingsCards > the rounding minutes field shows only for «تقريب لأعلى…»
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <input
+  autocomplete="off"
+  class="h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"
+  data-slot="input"
+  dir="ltr"
+  id="_r_1u_-control"
+  inputmode="numeric"
+  name="visitRoundingMinutes"
+/> instead[39m
+ ❯ src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx:187:86
+    185|     const defaults = card('Defaults for new spaces');
+    186|     await within(defaults).findByRole('radio', { name: 'To the nearest…
+    187|     expect(within(defaults).queryByRole('textbox', { name: 'After (min…
+       |                                                                                      ^
+    188|     await user.click(within(defaults).getByRole('radio', { name: 'Roun…
+    189|     const minutes = within(defaults).getByRole('textbox', { name: 'Aft…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/platform-settings/components/admin

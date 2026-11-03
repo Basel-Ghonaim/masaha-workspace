@@ -1,0 +1,11 @@
+feat(visits): list a space's written-off visits
+
+The desk's «لن تُحصَّل» view offers a written-off visit's undo, but no
+route listed the space's written-off visits (finding 164).
+
+GET /manage/spaces/:spaceId/written-off-visits is the owner's
+(visits.writeOff; reception refused before the query): a page of the
+visits written off, the latest first, each with who wrote it off by
+name, what was paid on it (voids left out) and the rest written off.
+The ledger pages them, as it pages the uncollected visits: the paid
+sums read payments, which visits, a level below, cannot.

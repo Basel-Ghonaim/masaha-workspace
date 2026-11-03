@@ -1,0 +1,34 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+ ❯ |unit| src/modules/audit/auditPeriod.unit.test.ts (1 test | 1 failed) 8ms
+   ❯ the audit logs' period (1)
+     × the last 30 days start at the Gaza midnight 29 days before today, across a daylight-saving change; all time has no start 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/audit/auditPeriod.unit.test.ts > the audit logs' period > the last 30 days start at the Gaza midnight 29 days before today, across a daylight-saving change; all time has no start
+AssertionError: expected undefined to be '2026-10-11T21:00:00.000Z' // Object.is equality
+
+- Expected:
+"2026-10-11T21:00:00.000Z"
+
++ Received:
+undefined
+
+ ❯ src/modules/audit/auditPeriod.unit.test.ts:12:7
+     10|     expect(
+     11|       auditPeriodStart('LAST_30_DAYS', new Date('2026-11-10T10:00:00+0…
+     12|     ).toBe('2026-10-11T21:00:00.000Z');
+       |       ^
+     13|     // Just after Gaza's midnight, today is already the 11th.
+     14|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  14:10:39
+   Duration  328ms (transform 50%, import 27%, worker 11%, tests 11%)
+

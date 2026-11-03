@@ -1,0 +1,6 @@
+docs: record finding 204
+
+csvOf writes a value as RFC 4180 says and nothing more, so a value
+starting with =, +, - or @ (a name or a note typed at the desk) opens
+in a spreadsheet as a formula. The plan's design names RFC 4180 only;
+whether the exports neutralise such a value is the owner's call.

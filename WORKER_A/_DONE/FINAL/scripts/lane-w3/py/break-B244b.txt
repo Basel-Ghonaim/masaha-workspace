@@ -1,0 +1,54 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/payments/hooks/ledger
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx (7 tests | 1 failed) 949ms
+   ❯ useLedger (7)
+     × names the space’s other owners after the owner signed in, each «· owner», before reception 87ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 10 passed (11)
+   Start at  14:13:16
+   Duration  9.66s (transform 32%, environment 31%, import 23%, setup 8%, tests 6%)
+
+  Transform  |component| transforming modules took 5.53s · 32% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx > useLedger > names the space’s other owners after the owner signed in, each «· owner», before reception
+AssertionError: expected [ 'All staff', 'Ahmad (you)', …(2) ] to deeply equal [ 'All staff', 'Ahmad (you)', …(2) ]
+
+- Expected
++ Received
+
+  [
+    "All staff",
+    "Ahmad (you)",
+-   "Mona · owner",
++   "Mona",
+    "Laila",
+  ]
+
+ ❯ src/features/payments/hooks/ledger/useLedger.component.test.tsx:193:76
+    191|     });
+    192|
+    193|     expect(result.current.toolbar.staff.options.map(({ label }) => lab…
+       |                                                                            ^
+    194|       'All staff',
+    195|       'Ahmad (you)',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/payments/hooks/ledger

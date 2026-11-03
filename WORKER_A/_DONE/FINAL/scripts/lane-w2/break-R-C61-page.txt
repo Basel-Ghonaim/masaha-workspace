@@ -1,0 +1,493 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/space/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/pages/dashboard/space/audit/AuditPage.component.test.tsx (1 test | 1 failed) 968ms
+   ❯ AuditPage (the owner’s) (1)
+     × names the space from the user’s spaces and links each target to its page 965ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  15:22:27
+   Duration  14.03s (transform 46%, environment 20%, import 20%, tests 7%, setup 6%)
+
+  Transform  |component| transforming modules took 6.27s · 46% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/audit/AuditPage.component.test.tsx > AuditPage (the owner’s) > names the space from the user’s spaces and links each target to its page
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "بلاغ"
+
+Here are the accessible roles:
+
+  rowgroup:
+
+  Name "":
+  [36m<thead[39m
+    [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  row:
+
+  Name "الوقت المنفّذ الإجراء الهدف التفاصيل":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  columnheader:
+
+  Name "الوقت":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "المنفّذ":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "الإجراء":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "الهدف":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  Name "التفاصيل":
+  [36m<th[39m
+    [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+    [33mcolspan[39m=[32m"1"[39m
+    [33mdata-slot[39m=[32m"table-head"[39m
+  [36m/>[39m
+
+  --------------------------------------------------rowgroup:
+
+  Name "":
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0 transition-opacity data-refreshing:opacity-(--refreshing)"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  row:
+
+  Name "21 أكتوبر 2026 · 12:05 Huda Saleh تعديل زبون Omar Nasser":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "21 أكتوبر 2026 · 12:05 Huda Saleh بلاغ تمّت مراجعته بلاغ":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  Name "21 أكتوبر 2026 · 12:05 Huda Saleh تسجيل دفعة دفعة‏40 ₪ · نقدًا ‏40 ₪ · نقدًا":
+  [36m<tr[39m
+    [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+    [33mdata-slot[39m=[32m"table-row"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  cell:
+
+  Name "21 أكتوبر 2026 · 12:05":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Huda Saleh":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "تعديل زبون":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Omar Nasser":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "21 أكتوبر 2026 · 12:05":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Huda Saleh":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "بلاغ تمّت مراجعته":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "بلاغ":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "21 أكتوبر 2026 · 12:05":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "Huda Saleh":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "تسجيل دفعة":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "دفعة‏40 ₪ · نقدًا":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  Name "‏40 ₪ · نقدًا":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Omar Nasser":
+  [36m<a[39m
+    [33mclass[39m=[32m"text-label text-foreground underline underline-offset-4"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dashboard/spaces/7/customers/31"[39m
+  [36m/>[39m
+
+  Name "دفعة":
+  [36m<a[39m
+    [33mclass[39m=[32m"text-label text-foreground underline underline-offset-4"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/dashboard/spaces/7/payments"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<table[39m
+  [33maria-label[39m=[32m"سجل التدقيق"[39m
+  [33mclass[39m=[32m"w-full caption-bottom text-body-sm"[39m
+  [33mdata-slot[39m=[32m"table"[39m
+[36m>[39m
+  [36m<thead[39m
+    [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mالوقت[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mالمنفّذ[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mالإجراء[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mالهدف[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mالتفاصيل[0m
+      [36m</th>[39m
+    [36m</tr>[39m
+  [36m</thead>[39m
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0 transition-opacity data-refreshing:opacity-(--refreshing)"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"whitespace-nowrap"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m21 أكتوبر 2026 · 12:05[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<bdi>[39m
+          [0mHuda Saleh[0m
+        [36m</bdi>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mتعديل زبون[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-label text-foreground underline underline-offset-4"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dashboard/spaces/7/customers/31"[39m
+          [36m>[39m
+            [36m<bdi>[39m
+              [0mOmar Nasser[0m
+            [36m</bdi>[39m
+          [36m</a>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-body-sm break-words"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m/>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"whitespace-nowrap"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m21 أكتوبر 2026 · 12:05[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<bdi>[39m
+          [0mHuda Saleh[0m
+        [36m</bdi>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mبلاغ تمّت مراجعته[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-label"[39m
+          [36m>[39m
+            [0mبلاغ[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-body-sm break-words"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m/>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"whitespace-nowrap"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m21 أكتوبر 2026 · 12:05[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<bdi>[39m
+          [0mHuda Saleh[0m
+        [36m</bdi>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mتسجيل دفعة[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-label text-foreground underline underline-offset-4"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/dashboard/spaces/7/payments"[39m
+          [36m>[39m
+            [0mدفعة[0m
+          [36m</a>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-body-sm break-words text-muted-foreground lg:hidden"[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0m‏40 ₪ · نقدًا[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-body-sm break-words"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0m‏40 ₪ · نقدًا[0m
+        [36m</span>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+  [36m</tbody>[39m
+[36m</table>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/dashboard/space/audit/AuditPage.component.test.tsx:70:26
+     68|       '/dashboard/spaces/7/customers/31',
+     69|     );
+     70|     expect(within(table).getByRole('link', { name: 'بلاغ' })).toHaveAt…
+       |                          ^
+     71|       'href',
+     72|       '/dashboard/spaces/7/reports?open=41',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/space/audit

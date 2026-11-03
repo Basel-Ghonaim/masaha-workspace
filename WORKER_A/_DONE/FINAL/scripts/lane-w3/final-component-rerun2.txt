@@ -1,0 +1,50 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/site/account/AccountLayout
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/pages/site/account/AccountLayout.component.test.tsx (3 tests | 1 failed) 5949ms
+   ❯ AccountLayout (3)
+     × opens «Favourites» signed in, under the same navigation; axe-clean 3011ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > opens «Favourites» signed in, under the same navigation; axe-clean
+TestingLibraryElementError: Unable to find role="navigation" and name "My account"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/account/AccountLayout.component.test.tsx:89:37
+     87|     const { container } = renderSiteAt('/me/favorites');
+     88|
+     89|     const navigation = await screen.findByRole('navigation', { name: '…
+       |                                     ^
+     90|     expect(within(navigation).getByRole('link', { name: 'Favourites' }…
+     91|       'aria-current',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  14:29:48
+   Duration  15.77s (tests 39%, transform 23%, import 20%, environment 14%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/site/account/AccountLayout

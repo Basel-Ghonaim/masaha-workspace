@@ -1,0 +1,48 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/shared/lib/time/dayText.unit.test.ts (2 tests | 2 failed) 40ms
+   ❯ dayText (2)
+     × says a Gaza date as its day and its month, in Western digits in both languages 35ms
+     × keeps the date’s own day, whatever the browser’s zone 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/lib/time/dayText.unit.test.ts > dayText > says a Gaza date as its day and its month, in Western digits in both languages
+AssertionError: expected '20 October' to be '21 October' // Object.is equality
+
+Expected: "21 October"
+Received: "20 October"
+
+ ❯ src/shared/lib/time/dayText.unit.test.ts:6:41
+      4| describe('dayText', () => {
+      5|   it('says a Gaza date as its day and its month, in Western digits in …
+      6|     expect(dayText('2026-10-21', 'en')).toBe('21 October');
+       |                                         ^
+      7|     expect(dayText('2026-10-21', 'ar')).toBe('21 أكتوبر');
+      8|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/shared/lib/time/dayText.unit.test.ts > dayText > keeps the date’s own day, whatever the browser’s zone
+AssertionError: expected '31 December' to be '1 January' // Object.is equality
+
+Expected: "1 January"
+Received: "31 December"
+
+ ❯ src/shared/lib/time/dayText.unit.test.ts:11:41
+      9|
+     10|   it('keeps the date’s own day, whatever the browser’s zone', () => {
+     11|     expect(dayText('2026-01-01', 'en')).toBe('1 January');
+       |                                         ^
+     12|   });
+     13| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  16:53:53
+   Duration  453ms (transform 40%, tests 32%, import 21%, worker 6%)
+

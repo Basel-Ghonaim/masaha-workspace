@@ -1,0 +1,10 @@
+fix(design-system): start a range on each click
+
+react-day-picker 10 ends a range on its first click: with no
+resetOnSelect, a click on no range gives from and to the same day, and
+a click on a whole one extends it. The layer's comment said otherwise,
+and the ledger's period met it in #127's review (finding 173).
+
+The range Calendar now sets resetOnSelect, which a caller may still set:
+the first click leaves to empty, the second ends the range, a third
+starts afresh.

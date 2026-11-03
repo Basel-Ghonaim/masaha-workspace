@@ -1,0 +1,43 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/fields/Input
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/fields/Input/Input.component.test.tsx (7 tests | 1 failed) 484ms
+   ❯ Input (7)
+     × is the large control at size lg, and the standard one by default 27ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  16:55:41
+   Duration  7.53s (environment 42%, import 36%, setup 10%, tests 7%, transform 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/fields/Input/Input.component.test.tsx > Input > is the large control at size lg, and the standard one by default
+Error: [2mexpect([22m[31melement[39m[2m).toHaveClass([22m[32m[32m"h-(--control-height-lg)"[32m[39m[2m)[22m
+
+Expected the element to have class:
+[32m  h-(--control-height-lg)[39m
+Received:
+[31m  h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50[39m
+ ❯ src/shared/design-system/components/fields/Input/Input.component.test.tsx:38:43
+     36|       screen.getByRole('textbox', { name }).closest('[data-slot="input…
+     37|
+     38|     expect(boxOf('Search the customers')).toHaveClass('h-(--control-he…
+       |                                           ^
+     39|     expect(boxOf('Search the customers')).not.toHaveClass('h-(--contro…
+     40|     expect(boxOf('Note')).toHaveClass('h-(--control-height)');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/fields/Input

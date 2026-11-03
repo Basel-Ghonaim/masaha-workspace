@@ -1,0 +1,315 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/hooks/report/useReportDialog.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+stderr | src/features/data-reports/hooks/report/useReportDialog.component.test.tsx > useReportDialog > says our team reviews an unverified space’s report, and that a repeat is already open
+Select is changing from uncontrolled to controlled. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.
+
+ ❯ |component| src/features/data-reports/hooks/report/useReportDialog.component.test.tsx (7 tests | 1 failed) 7847ms
+   ❯ useReportDialog (7)
+     × says our team reviews an unverified space’s report, and that a repeat is already open 3467ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/report/useReportDialog.component.test.tsx > useReportDialog > says our team reviews an unverified space’s report, and that a repeat is already open
+TestingLibraryElementError: Unable to find an element with the text: You already reported this, and it is still in review.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<ol[39m
+        [33mdata-sonner-theme[39m=[32m"light"[39m
+        [33mdata-sonner-toaster[39m=[32m"true"[39m
+        [33mdata-x-position[39m=[32m"right"[39m
+        [33mdata-y-position[39m=[32m"bottom"[39m
+        [33mdir[39m=[32m"ltr"[39m
+        [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-info bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"true"[39m
+          [33mdata-index[39m=[32m"0"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"info"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 2; --offset: 0px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-info"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<circle[39m
+                [33mcx[39m=[32m"12"[39m
+                [33mcy[39m=[32m"12"[39m
+                [33mr[39m=[32m"10"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 16v-4"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M12 8h.01"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+            [33mdata-content[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-label"[39m
+              [33mdata-title[39m=[32m""[39m
+            [36m>[39m
+              [0mWe sent your report to our team. You’ll find the reply in “My reports”.[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex h-8 shrink-0 items-center rounded-(--radius-control) bg-primary px-3 text-label text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+            [33mdata-action[39m=[32m"true"[39m
+            [33mdata-button[39m=[32m"true"[39m
+          [36m>[39m
+            [0mView my reports[0m
+          [36m</button>[39m
+        [36m</li>[39m
+        [36m<li[39m
+          [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-dismissible[39m=[32m"true"[39m
+          [33mdata-expanded[39m=[32m"false"[39m
+          [33mdata-front[39m=[32m"false"[39m
+          [33mdata-index[39m=[32m"1"[39m
+          [33mdata-mounted[39m=[32m"true"[39m
+          [33mdata-promise[39m=[32m"false"[39m
+          [33mdata-removed[39m=[32m"false"[39m
+          [33mdata-sonner-toast[39m=[32m""[39m
+          [33mdata-styled[39m=[32m"false"[39m
+          [33mdata-swipe-out[39m=[32m"false"[39m
+          [33mdata-swiped[39m=[32m"false"[39m
+          [33mdata-swiping[39m=[32m"false"[39m
+          [33mdata-type[39m=[32m"success"[39m
+          [33mdata-visible[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mstyle[39m=[32m"--index: 1; --toasts-before: 1; --z-index: 1; --offset: 14px; --initial-height: 0px;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+            [33mdata-icon[39m=[32m""[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+      ...
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<ol[39m
+          [33mdata-sonner-theme[39m=[32m"light"[39m
+          [33mdata-sonner-toaster[39m=[32m"true"[39m
+          [33mdata-x-position[39m=[32m"right"[39m
+          [33mdata-y-position[39m=[32m"bottom"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mstyle[39m=[32m"--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-info bg-info-subtle text-info-subtle-foreground"[39m
+            [33mdata-dismissible[39m=[32m"true"[39m
+            [33mdata-expanded[39m=[32m"false"[39m
+            [33mdata-front[39m=[32m"true"[39m
+            [33mdata-index[39m=[32m"0"[39m
+            [33mdata-mounted[39m=[32m"true"[39m
+            [33mdata-promise[39m=[32m"false"[39m
+            [33mdata-removed[39m=[32m"false"[39m
+            [33mdata-sonner-toast[39m=[32m""[39m
+            [33mdata-styled[39m=[32m"false"[39m
+            [33mdata-swipe-out[39m=[32m"false"[39m
+            [33mdata-swiped[39m=[32m"false"[39m
+            [33mdata-swiping[39m=[32m"false"[39m
+            [33mdata-type[39m=[32m"info"[39m
+            [33mdata-visible[39m=[32m"true"[39m
+            [33mdata-x-position[39m=[32m"right"[39m
+            [33mdata-y-position[39m=[32m"bottom"[39m
+            [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 2; --offset: 0px; --initial-height: 0px;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+              [33mdata-icon[39m=[32m""[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-info"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"12"[39m
+                  [33mcy[39m=[32m"12"[39m
+                  [33mr[39m=[32m"10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 16v-4"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M12 8h.01"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+              [33mdata-content[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"text-label"[39m
+                [33mdata-title[39m=[32m""[39m
+              [36m>[39m
+                [0mWe sent your report to our team. You’ll find the reply in “My reports”.[0m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex h-8 shrink-0 items-center rounded-(--radius-control) bg-primary px-3 text-label text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+              [33mdata-action[39m=[32m"true"[39m
+              [33mdata-button[39m=[32m"true"[39m
+            [36m>[39m
+              [0mView my reports[0m
+            [36m</button>[39m
+          [36m</li>[39m
+          [36m<li[39m
+            [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"[39m
+            [33mdata-dismissible[39m=[32m"true"[39m
+            [33mdata-expanded[39m=[32m"false"[39m
+            [33mdata-front[39m=[32m"false"[39m
+            [33mdata-index[39m=[32m"1"[39m
+            [33mdata-mounted[39m=[32m"true"[39m
+            [33mdata-promise[39m=[32m"false"[39m
+            [33mdata-removed[39m=[32m"false"[39m
+            [33mdata-sonner-toast[39m=[32m""[39m
+            [33mdata-styled[39m=[32m"false"[39m
+            [33mdata-swipe-out[39m=[32m"false"[39m
+            [33mdata-swiped[39m=[32m"false"[39m
+            [33mdata-swiping[39m=[32m"false"[39m
+            [33mdata-type[39m=[32m"success"[39m
+            [33mdata-visible[39m=[32m"true"[39m
+            [33mdata-x-position[39m=[32m"right"[39m
+            [33mdata-y-position[39m=[32m"bottom"[39m
+            [33mstyle[39m=[32m"--index: 1; --toasts-before: 1; --z-index: 1; --offset: 14px; --initial-height: 0px;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"mt-0.5 flex shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+              [33mdata-icon[39m=[32m""[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-circle-...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/data-reports/hooks/report/useReportDialog.component.test.tsx:192:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  12:55:42
+   Duration  13.64s (tests 59%, transform 16%, environment 13%, import 10%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/hooks/report/useReportDialog.component.test.tsx

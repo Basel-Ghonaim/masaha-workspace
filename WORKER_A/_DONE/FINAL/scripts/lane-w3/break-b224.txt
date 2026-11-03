@@ -1,0 +1,59 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/endNote.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |unit| src/features/desk/services/endNote.unit.test.ts (2 tests | 2 failed) 32ms
+   ❯ endNote (2)
+     × words a total and an end, a total alone, and neither 25ms
+     × says nothing for an end with no total, and reads digits typed in Arabic 4ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  11:05:11
+   Duration  1.74s (transform 52%, import 43%, tests 3%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/endNote.unit.test.ts > endNote > words a total and an end, a total alone, and neither
+AssertionError: expected 'No end date · it stays active until i…' to be 'No end date · ends once 12 days are u…' // Object.is equality
+
+Expected: "No end date · ends once 12 days are used"
+Received: "No end date · it stays active until it is ended"
+
+ ❯ src/features/desk/services/endNote.unit.test.ts:19:82
+     17|       'No end date · it stays active until it is ended',
+     18|     );
+     19|     expect(endNote({ endsOn: '', totalDays: '12', totalHours: '' }, WO…
+       |                                                                                  ^
+     20|       'No end date · ends once 12 days are used',
+     21|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/features/desk/services/endNote.unit.test.ts > endNote > says nothing for an end with no total, and reads digits typed in Arabic
+AssertionError: expected 'No end date · it stays active until i…' to be 'No end date · ends once 12 days are u…' // Object.is equality
+
+Expected: "No end date · ends once 12 days are used"
+Received: "No end date · it stays active until it is ended"
+
+ ❯ src/features/desk/services/endNote.unit.test.ts:32:82
+     30|   it('says nothing for an end with no total, and reads digits typed in…
+     31|     expect(endNote({ endsOn: '2026-11-30', totalDays: '', totalHours: …
+     32|     expect(endNote({ endsOn: '', totalDays: '١٢', totalHours: '' }, WO…
+       |                                                                                  ^
+     33|       'No end date · ends once 12 days are used',
+     34|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/endNote.unit.test.ts

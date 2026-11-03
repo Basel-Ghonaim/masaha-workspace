@@ -1,0 +1,10 @@
+fix(customers): match a phone under either code
+
+A whole phone typed at the desk matched a phone stored under the other
+country code by its national digits with the trunk 0 at its end. That
+worked only because 970 ends in 0: 0591234567 never found a stored
++972591234567 (finding 126).
+
+The search now matches the national digits without the trunk 0, nine
+at least, at the end of the stored digits, so +970 and +972 find each
+other both ways.

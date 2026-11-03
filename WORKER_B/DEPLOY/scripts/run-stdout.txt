@@ -1,0 +1,92 @@
+shot ar-390/home
+· ar-390 ok / home
+shot ar-390/directory
+· ar-390 ok /spaces directory
+shot ar-390/directory-map
+shot ar-390/space-gallery
+· ar-390 ok /spaces/noor-hub space gallery
+shot ar-390/sign-in-with-Google-button
+· ar-390 ok /login sign-in with Google button
+shot ar-390/register
+· ar-390 ok /register register
+· ar-390 reload ok /spaces 200
+· ar-390 reload ok /spaces/noor-hub 200
+· ar-390 reload ok /login 200
+· ar-390 reload ok /about 200
+· ar-390 reload ok /no-such-page 200
+shot ar-390/admin-add-space-map
+· ar-390 reload ok /dashboard/admin/spaces/new 200
+· photo upload held and failed before sending: POST /api/v1/admin/spaces/10/photos
+shot ar-390/admin-photo-picked-space-10
+· ar-390 photo picked on space 10
+· ar-390 csp violations 0 console errors 1
+shot ar-1440/home
+· ar-1440 ok / home
+shot ar-1440/directory
+· ar-1440 ok /spaces directory
+shot ar-1440/directory-map
+shot ar-1440/space-gallery
+· ar-1440 ok /spaces/noor-hub space gallery
+shot ar-1440/sign-in-with-Google-button
+· ar-1440 ok /login sign-in with Google button
+shot ar-1440/register
+· ar-1440 ok /register register
+· ar-1440 reload ok /spaces 200
+· ar-1440 reload ok /spaces/noor-hub 200
+· ar-1440 reload ok /login 200
+· ar-1440 reload ok /about 200
+· ar-1440 reload ok /no-such-page 200
+shot ar-1440/admin-add-space-map
+· ar-1440 reload ok /dashboard/admin/spaces/new 200
+· photo upload held and failed before sending: POST /api/v1/admin/spaces/10/photos
+shot ar-1440/admin-photo-picked-space-10
+· ar-1440 photo picked on space 10
+· ar-1440 csp violations 0 console errors 1
+shot en-390/home
+· en-390 ok / home
+shot en-390/directory
+· en-390 ok /spaces directory
+shot en-390/directory-map
+shot en-390/space-gallery
+· en-390 ok /spaces/noor-hub space gallery
+shot en-390/sign-in-with-Google-button
+· en-390 ok /login sign-in with Google button
+shot en-390/register
+· en-390 ok /register register
+· en-390 reload ok /spaces 200
+· en-390 reload ok /spaces/noor-hub 200
+· en-390 reload ok /login 200
+· en-390 reload ok /about 200
+· en-390 reload ok /no-such-page 200
+shot en-390/admin-add-space-map
+· en-390 reload ok /dashboard/admin/spaces/new 200
+· photo upload held and failed before sending: POST /api/v1/admin/spaces/10/photos
+shot en-390/admin-photo-picked-space-10
+· en-390 photo picked on space 10
+· en-390 csp violations 0 console errors 1
+shot en-1440/home
+· en-1440 ok / home
+shot en-1440/directory
+· en-1440 ok /spaces directory
+shot en-1440/directory-map
+shot en-1440/space-gallery
+· en-1440 ok /spaces/noor-hub space gallery
+shot en-1440/sign-in-with-Google-button
+· en-1440 ok /login sign-in with Google button
+shot en-1440/register
+· en-1440 ok /register register
+· en-1440 reload ok /spaces 200
+· en-1440 reload ok /spaces/noor-hub 200
+· en-1440 reload ok /login 200
+· en-1440 reload ok /about 200
+· en-1440 reload ok /no-such-page 200
+shot en-1440/admin-add-space-map
+· en-1440 reload ok /dashboard/admin/spaces/new 200
+· photo upload held and failed before sending: POST /api/v1/admin/spaces/10/photos
+shot en-1440/admin-photo-picked-space-10
+· en-1440 photo picked on space 10
+· en-1440 csp violations 0 console errors 1
+· TOTAL pages 28 reloads ok 24 bad 0
+· CSP violations 0 []
+· console errors 4 ["ar-390 network: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector http://localhost:5321/api/v1/admin/spaces/10/photos","ar-1440 network: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector http://localhost:5321/api/v1/admin/spaces/10/photos","en-390 network: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector http://localhost:5321/api/v1/admin/spaces/10/photos","en-1440 network: Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector http://localhost:5321/api/v1/admin/spaces/10/photos"]
+· checks ["ar-390 directory map tiles loaded","ar-390 Google button iframe drawn","ar-390 admin add-space map tiles loaded","photo POST stopped before sending","ar-1440 directory map tiles loaded","ar-1440 Google button iframe drawn","ar-1440 admin add-space map tiles loaded","photo POST stopped before sending","en-390 directory map tiles loaded","en-390 Google button iframe drawn","en-390 admin add-space map tiles loaded","photo POST stopped before sending","en-1440 directory map tiles loaded","en-1440 Google button iframe drawn","en-1440 admin add-space map tiles loaded","photo POST stopped before sending"]

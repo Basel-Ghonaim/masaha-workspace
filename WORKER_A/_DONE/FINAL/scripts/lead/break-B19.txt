@@ -1,0 +1,42 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/app/pageTitles.unit.test.ts (4 tests | 2 failed) 31ms
+   ❯ the pages’ titles (4)
+     × give every page of the site and the dashboard a title in ar 17ms
+     × give every page of the site and the dashboard a title in en 3ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  17:42:07
+   Duration  7.21s (transform 60%, import 40%)
+
+  Transform  |unit| transforming modules took 4.03s · 60% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/app/pageTitles.unit.test.ts > the pages’ titles > give every page of the site and the dashboard a title in ar
+ FAIL  |unit| src/app/pageTitles.unit.test.ts > the pages’ titles > give every page of the site and the dashboard a title in en
+AssertionError: expected [ '/me' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "/me",
++ ]
+
+ ❯ src/app/pageTitles.unit.test.ts:44:24
+     42|         .map(name);
+     43|
+     44|       expect(untitled).toEqual([]);
+       |                        ^
+     45|     },
+     46|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+

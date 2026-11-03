@@ -1,0 +1,54 @@
+@@@ apps/web/src/shared/copy/english/auth.ts
+<<<
+    description:
+      'Sign in to follow your favourite spaces and the reports you’ve sent about wrong information.',
+===
+    description:
+      'Sign in to save your favourite spaces and follow your reports, or to run your space.',
+>>>
+<<<
+    browseWithoutAccount: 'Browse spaces without an account',
+  },
+===
+    /** The toast once signed in with a password; a held action's own toast takes its place. */
+    welcomeBack: 'Welcome back',
+  },
+  /** The sign-in and register cards' way back: to the space or page `next` names, else home. */
+  wayBack: {
+    toSpace: ({ space }: { space: string }) => `Back to ${space}`,
+    previous: 'Back to the previous page',
+    home: 'Back to home',
+  },
+>>>
+<<<
+    enterEmailAgain: 'Enter your email again',
+===
+    enterEmailAgain: 'Enter your email again',
+    /** Under the resend, on the link sent: the empty form again, for another address. */
+    useAnotherEmail: 'Use another email',
+>>>
+@@@ apps/web/src/shared/copy/arabic/auth.ts
+<<<
+    description:
+      'سجّل الدخول لمتابعة مساحاتك المفضّلة والبلاغات التي أرسلتها عن المعلومات الخاطئة.',
+===
+    description: 'سجّل الدخول لحفظ مساحاتك المفضّلة ومتابعة بلاغاتك، أو لإدارة مساحتك.',
+>>>
+<<<
+    browseWithoutAccount: 'تصفّح المساحات بدون حساب',
+  },
+===
+    welcomeBack: 'أهلًا بعودتك',
+  },
+  wayBack: {
+    toSpace: ({ space }: { space: string }) => `العودة إلى ${space}`,
+    previous: 'العودة إلى الصفحة السابقة',
+    home: 'العودة إلى الرئيسية',
+  },
+>>>
+<<<
+    enterEmailAgain: 'أدخل بريدك الإلكتروني من جديد',
+===
+    enterEmailAgain: 'أدخل بريدك الإلكتروني من جديد',
+    useAnotherEmail: 'استخدم بريدًا آخر',
+>>>

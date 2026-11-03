@@ -1,0 +1,41 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx (12 tests | 1 failed) 2417ms
+   ❯ useDecideSheet (12)
+     × shows the admin a verified space’s report read-only, with a link to the space 57ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  12:34:22
+   Duration  8.54s (tests 29%, transform 26%, environment 20%, import 19%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > shows the admin a verified space’s report read-only, with a link to the space
+AssertionError: expected <textarea …(6)></textarea> to be null
+
+- Expected:
+null
+
++ Received:
+<textarea
+  aria-describedby="_r_19_-helper"
+  class="field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"
+  data-slot="textarea"
+  dir="auto"
+  id="_r_19_-control"
+  name="note"
+/>
+
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:321:50
+    319|     );
+    320|     expect(within(sheet).queryByRole('link', { name: 'Edit the field' …
+    321|     expect(within(sheet).queryByRole('textbox')).toBeNull();
+       |                                                  ^
+    322|     expect(within(sheet).queryByRole('button', { name: 'Corrected' }))…
+    323|     expect(within(sheet).queryByRole('button', { name: 'Not accepted' …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

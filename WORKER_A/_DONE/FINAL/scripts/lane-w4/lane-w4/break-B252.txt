@@ -1,0 +1,286 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/users/components/settings
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx (10 tests | 1 failed) 7274ms
+   ❯ MyAccountSettings (10)
+     × a failed language save puts the choice back with a retry 3306ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  11:07:40
+   Duration  21.56s (tests 35%, transform 23%, import 22%, environment 15%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx > MyAccountSettings > a failed language save puts the choice back with a retry
+TestingLibraryElementError: Unable to find an element with the text: Couldn’t save the language. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-6"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+        [33mdata-slot[39m=[32m"card"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-header"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-heading-3"[39m
+            [33mdata-slot[39m=[32m"card-title"[39m
+          [36m>[39m
+            [36m<h2>[39m
+              [0mالملف الشخصي[0m
+            [36m</h2>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-content"[39m
+        [36m>[39m
+          [36m<form[39m
+            [33mclass[39m=[32m"flex flex-col gap-4"[39m
+            [33mnovalidate[39m=[32m""[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground"[39m
+                  [33mfor[39m=[32m"_r_r_-control"[39m
+                  [33mid[39m=[32m"_r_r_-label"[39m
+                [36m>[39m
+                  [0mالاسم[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+                [33mdata-size[39m=[32m"md"[39m
+                [33mdata-slot[39m=[32m"input-group"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mautocomplete[39m=[32m"name"[39m
+                  [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+                  [33mdata-slot[39m=[32m"input"[39m
+                  [33mid[39m=[32m"_r_r_-control"[39m
+                  [33mname[39m=[32m"name"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-label"[39m
+              [36m>[39m
+                [0mالبريد الإلكتروني[0m
+              [36m</p>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-body"[39m
+                [33mdir[39m=[32m"ltr"[39m
+              [36m>[39m
+                [0msara@example.com[0m
+              [36m</p>[39m
+              [36m<p[39m
+                [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [36m>[39m
+                [0mتسجّل الدخول بهذا البريد[0m
+              [36m</p>[39m
+            [36m</div>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) self-start"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"submit"[39m
+            [36m>[39m
+              [0mحفظ[0m
+            [36m</button>[39m
+          [36m</form>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+        [33mdata-slot[39m=[32m"card"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+          [33mdata-slot[39m=[32m"card-header"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-heading-3"[39m
+            [33mdata-slot[39m=[32m"card-title"[39m
+          [36m>[39m
+            [36m<h2>[39m
+              [0mالتفضيلات[0m
+            [36m</h2>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+            [33mdata-slot[39m=[32m"card-description"[39m
+          [36m>[39m
+            [0mتُطبَّق فورًا.[0m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"px-(--card-padding) flex flex-col gap-6"[39m
+          [33mdata-slot[39m=[32m"card-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"fl...
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"rtl"[39m
+  [33mlang[39m=[32m"ar"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+          [33mdata-slot[39m=[32m"card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mdata-slot[39m=[32m"card-title"[39m
+            [36m>[39m
+              [36m<h2>[39m
+                [0mالملف الشخصي[0m
+              [36m</h2>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-content"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"flex flex-col gap-4"[39m
+              [33mnovalidate[39m=[32m""[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+                [33mdata-slot[39m=[32m"field"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+                [36m>[39m
+                  [36m<label[39m
+                    [33mclass[39m=[32m"text-label text-foreground"[39m
+                    [33mfor[39m=[32m"_r_r_-control"[39m
+                    [33mid[39m=[32m"_r_r_-label"[39m
+                  [36m>[39m
+                    [0mالاسم[0m
+                  [36m</label>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+                  [33mdata-size[39m=[32m"md"[39m
+                  [33mdata-slot[39m=[32m"input-group"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mautocomplete[39m=[32m"name"[39m
+                    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+                    [33mdata-slot[39m=[32m"input"[39m
+                    [33mid[39m=[32m"_r_r_-control"[39m
+                    [33mname[39m=[32m"name"[39m
+                  [36m/>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-label"[39m
+                [36m>[39m
+                  [0mالبريد الإلكتروني[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-body"[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0msara@example.com[0m
+                [36m</p>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+                [36m>[39m
+                  [0mتسجّل الدخول بهذا البريد[0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) self-start"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"submit"[39m
+              [36m>[39m
+                [0mحفظ[0m
+              [36m</button>[39m
+            [36m</form>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+          [33mdata-slot[39m=[32m"card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mdata-slot[39m=[32m"card-title"[39m
+            [36m>[39m
+              [36m<h2>[39m
+                [0mالتفضيلات[0m
+              [36m</h2>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [33mdata-slot[39m=[32m"card-description"[39m
+            [36m>[39m
+              [0mتُطبَّق فورًا.[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+         ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/users/components/settings/MyAccountSettings.component.test.tsx:126:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/users/components/settings

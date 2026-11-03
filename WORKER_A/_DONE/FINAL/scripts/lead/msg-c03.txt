@@ -1,0 +1,15 @@
+feat(web): group the dashboard's navigation
+
+The owner's and the admin's sidebars were one flat list (finding 165).
+Each navigation item now names its task: the owner's pages fall under
+«اليوم», «المال», «المساحة» and «الفريق والإعدادات», the admin's under
+«المساحات» and «المنصة», the overview first and ungrouped. Each group
+is a named group for assistive technology; on the rail its name is
+read, not shown, and a line divides the groups (the layer's rule).
+Reception's four pages stay one list (P3).
+
+The owner's audit log gets its place, under «الفريق والإعدادات»
+(O13, finding 14), and the admin's settings are named «إعدادات
+المنصة» (AD-029), their address unchanged. The data reports' item
+counts what waits — the owner's open reports, the reports the admin
+handles — read once on mount and on focus, drawn only above zero.

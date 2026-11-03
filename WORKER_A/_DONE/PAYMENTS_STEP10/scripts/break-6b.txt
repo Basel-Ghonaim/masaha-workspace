@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/components/void/VoidDialog.component.test.tsx (1 test | 1 failed) 158ms
+   ❯ VoidDialog (1)
+     × is an alertdialog named by its title, the reason focused first, the action destructive, a failure an alert; axe-clean 156ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/void/VoidDialog.component.test.tsx > VoidDialog > is an alertdialog named by its title, the reason focused first, the action destructive, a failure an alert; axe-clean
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<textarea
+  aria-required="true"
+  class="field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"
+  data-slot="textarea"
+  id="_r_3_-control"
+  name="reason"
+/>[39m
+Received element with focus:
+  [31m<button
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"
+  data-slot="alert-dialog-cancel"
+  type="button"
+>
+  Back
+</button>[39m
+ ❯ src/features/desk/components/void/VoidDialog.component.test.tsx:40:61
+     38|     const dialog = await screen.findByRole('alertdialog', { name: 'Voi…
+     39|     expect(dialog).toHaveAccessibleDescription(/Transfer\. It stays vi…
+     40|     expect(screen.getByRole('textbox', { name: 'Reason' })).toHaveFocu…
+       |                                                             ^
+     41|     expect(screen.getByRole('button', { name: 'Void payment' })).toHav…
+     42|     expect(screen.getByRole('button', { name: 'Back' })).toBeVisible();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  15:13:02
+   Duration  9.53s (import 58%, transform 21%, environment 15%, setup 4%, tests 2%)
+

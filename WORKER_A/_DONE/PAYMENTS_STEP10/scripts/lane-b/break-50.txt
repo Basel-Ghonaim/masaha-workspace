@@ -1,0 +1,792 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx (9 tests | 4 failed) 10965ms
+   ❯ useDecideSheet (9)
+     × focuses a blank «Not accepted» reply with its line, and sends nothing 383ms
+     × sends «Corrected» with no reply as its status alone, once, and says where the report went 3204ms
+     × words a 403 as the space no longer open, and reads the user’s spaces again 3075ms
+     × words a report gone, and reads the list and the user’s spaces again 3100ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 5 passed (9)
+   Start at  12:10:14
+   Duration  16.15s (tests 69%, transform 12%, environment 9%, import 8%, setup 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > focuses a blank «Not accepted» reply with its line, and sends nothing
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAccessibleDescription()[22m
+
+Expected element to have accessible description:
+[32m  StringContaining "Write the reason; it’s what the reporter will read."[39m
+Received:
+[31m  This is too short. Shown to the person who reported it. Required for “Not accepted”, optional for “Corrected”.[39m
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:96:21
+     94|       expect(reply()).toHaveFocus();
+     95|     });
+     96|     expect(reply()).toHaveAccessibleDescription(
+       |                     ^
+     97|       expect.stringContaining('Write the reason; it’s what the reporte…
+     98|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > sends «Corrected» with no reply as its status alone, once, and says where the report went
+AssertionError: expected [] to have a length of 1 but got +0
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-slot[39m=[32m"sheet-overlay"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33maria-describedby[39m=[32m"radix-_r_6_"[39m
+      [33maria-labelledby[39m=[32m"radix-_r_5_"[39m
+      [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+      [33mdata-side[39m=[32m"end"[39m
+      [33mdata-slot[39m=[32m"sheet-content"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mid[39m=[32m"radix-_r_4_"[39m
+      [33mrole[39m=[32m"dialog"[39m
+      [33mstyle[39m=[32m"pointer-events: auto;"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+        [33mdata-slot[39m=[32m"sheet-header"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"sheet-title"[39m
+          [33mid[39m=[32m"radix-_r_5_"[39m
+        [36m>[39m
+          [0mReport about Opening hours[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+            [33mdata-slot[39m=[32m"sheet-description"[39m
+            [33mid[39m=[32m"radix-_r_6_"[39m
+          [36m>[39m
+            [0mA visitor · 21 October[0m
+          [36m</p>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+            [33mdata-slot[39m=[32m"badge"[39m
+            [33mdata-variant[39m=[32m"info"[39m
+          [36m>[39m
+            [0mNew[0m
+          [36m</span>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+          [33mdata-slot[39m=[32m"sheet-body"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [0mThe report[0m
+            [36m</span>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+              [33mdir[39m=[32m"auto"[39m
+            [36m>[39m
+              [0mThe space opens at 9, not 8.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/dashboard/spaces/7/profile#hours"[39m
+          [36m>[39m
+            [0mEdit the field[0m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M5 12h14"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m12 5 7 7-7 7"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</a>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_7_-con...
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:119:24
+    117|     await user.click(screen.getByRole('button', { name: 'Not accepted'…
+    118|     await waitFor(() => {
+    119|       expect(requests).toHaveLength(1);
+       |                        ^
+    120|     });
+    121|     expect(requests[0]?.method).toBe('patch');
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words a 403 as the space no longer open, and reads the user’s spaces again
+TestingLibraryElementError: Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"sheet-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-describedby[39m=[32m"radix-_r_o_"[39m
+    [33maria-labelledby[39m=[32m"radix-_r_n_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_m_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"sheet-title"[39m
+        [33mid[39m=[32m"radix-_r_n_"[39m
+      [36m>[39m
+        [0mReport about Opening hours[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"sheet-description"[39m
+          [33mid[39m=[32m"radix-_r_o_"[39m
+        [36m>[39m
+          [0mA visitor · 21 October[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+        [36m>[39m
+          [0mNew[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+        [33mdata-slot[39m=[32m"sheet-body"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mThe report[0m
+          [36m</span>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mThe space opens at 9, not 8.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mhref[39m=[32m"/dashboard/spaces/7/profile#hours"[39m
+        [36m>[39m
+          [0mEdit the field[0m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M5 12h14"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m12 5 7 7-7 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</a>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_p_-control"[39m
+              [33mid[39m=[32m"_r_p_-label"[39m
+            [36m>[39m
+              [0mReply from the space[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_p_-error _r_p_-helper"[39m
+            [33maria-invalid[39m=[32m"true"[39m
+            [33mclass[39m=[32m"field-sizing-content min-h-24 w-full ...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"sheet-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-describedby[39m=[32m"radix-_r_o_"[39m
+    [33maria-labelledby[39m=[32m"radix-_r_n_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_m_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"sheet-title"[39m
+        [33mid[39m=[32m"radix-_r_n_"[39m
+      [36m>[39m
+        [0mReport about Opening hours[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"sheet-description"[39m
+          [33mid[39m=[32m"radix-_r_o_"[39m
+        [36m>[39m
+          [0mA visitor · 21 October[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+        [36m>[39m
+          [0mNew[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+        [33mdata-slot[39m=[32m"sheet-body"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mThe report[0m
+          [36m</span>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mThe space opens at 9, not 8.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mhref[39m=[32m"/dashboard/spaces/7/profile#hours"[39m
+        [36m>[39m
+          [0mEdit the field[0m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M5 12h14"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m12 5 7 7-7 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</a>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_p_-control"[39m
+              [33mid[39m=[32m"_r_p_-label"[39m
+            [36m>[39m
+              [0mReply from the space[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_p_-error _r_p_-helper"[39m
+            [33maria-invalid[39m=[32m"true"[39m
+            [33mclass[39m=[32m"field-sizing-content min-h-24 w-full ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:213:25
+    211|     await user.click(screen.getByRole('button', { name: 'Corrected' })…
+    212|
+    213|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                         ^
+    214|       'This is no longer open to you at this space.',
+    215|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words a report gone, and reads the list and the user’s spaces again
+TestingLibraryElementError: Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"sheet-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-describedby[39m=[32m"radix-_r_s_"[39m
+    [33maria-labelledby[39m=[32m"radix-_r_r_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_q_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"sheet-title"[39m
+        [33mid[39m=[32m"radix-_r_r_"[39m
+      [36m>[39m
+        [0mReport about Opening hours[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"sheet-description"[39m
+          [33mid[39m=[32m"radix-_r_s_"[39m
+        [36m>[39m
+          [0mA visitor · 21 October[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+        [36m>[39m
+          [0mNew[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+        [33mdata-slot[39m=[32m"sheet-body"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mThe report[0m
+          [36m</span>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mThe space opens at 9, not 8.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mhref[39m=[32m"/dashboard/spaces/7/profile#hours"[39m
+        [36m>[39m
+          [0mEdit the field[0m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M5 12h14"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m12 5 7 7-7 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</a>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_t_-control"[39m
+              [33mid[39m=[32m"_r_t_-label"[39m
+            [36m>[39m
+              [0mReply from the space[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_t_-error _r_t_-helper"[39m
+            [33maria-invalid[39m=[32m"true"[39m
+            [33mclass[39m=[32m"field-sizing-content min-h-24 w-full ...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"sheet-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-describedby[39m=[32m"radix-_r_s_"[39m
+    [33maria-labelledby[39m=[32m"radix-_r_r_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_q_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"sheet-title"[39m
+        [33mid[39m=[32m"radix-_r_r_"[39m
+      [36m>[39m
+        [0mReport about Opening hours[0m
+      [36m</h2>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+          [33mdata-slot[39m=[32m"sheet-description"[39m
+          [33mid[39m=[32m"radix-_r_s_"[39m
+        [36m>[39m
+          [0mA visitor · 21 October[0m
+        [36m</p>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+        [36m>[39m
+          [0mNew[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+        [33mdata-slot[39m=[32m"sheet-body"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mThe report[0m
+          [36m</span>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0mThe space opens at 9, not 8.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mhref[39m=[32m"/dashboard/spaces/7/profile#hours"[39m
+        [36m>[39m
+          [0mEdit the field[0m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M5 12h14"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m12 5 7 7-7 7"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</a>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_t_-control"[39m
+              [33mid[39m=[32m"_r_t_-label"[39m
+            [36m>[39m
+              [0mReply from the space[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<textarea[39m
+            [33maria-describedby[39m=[32m"_r_t_-error _r_t_-helper"[39m
+            [33maria-invalid[39m=[32m"true"[39m
+            [33mclass[39m=[32m"field-sizing-content min-h-24 w-full ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:227:25
+    225|     await user.click(screen.getByRole('button', { name: 'Corrected' })…
+    226|
+    227|     expect(await screen.findByRole('alert')).toHaveTextContent('This r…
+       |                         ^
+    228|     expect(keysOf(invalidated)).toEqual([['space', 7, 'dataReports'], …
+    229|     expect(screen.queryByRole('button', { name: 'Corrected' })).toBeNu…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+

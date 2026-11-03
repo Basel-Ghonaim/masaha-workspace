@@ -1,0 +1,21 @@
+feat(audit): show a space's audit log
+
+The owner's audit log had a route and a title but no screen (finding
+14). O13 defines it as the admin's audit page scoped to the space, so
+one feature, `audit`, draws both logs (D6.1, DI1); this commit builds
+it with the owner's page.
+
+- The log's address is its state: the target's search, the period
+  (the last 30 days or all time, DI17), the actor and one group of
+  actions, sent as their list (at most 30), and the page.
+- Each entry: the Gaza date with its year and the time, the actor (a
+  person by name, «فريق مساحة» for the admin, «النظام» for a job), the
+  action's words, red for a destructive act, the target with a link
+  where the page gives one, and the details only where the stored
+  values say something (DI18), each field read as its writer stores
+  it (EC12).
+- The actor filter shows only while the period has more than one
+  actor; the filters sit in a sheet below 768 px (P5).
+- The owner's page names the space from the switcher's read and links
+  a customer, the space, a package, an announcement, a payment and a
+  report to their pages.

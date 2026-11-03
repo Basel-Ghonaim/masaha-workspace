@@ -1,0 +1,289 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/lookups/components/amenities/AmenityChecklist.component.test.tsx src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx (9 tests | 2 failed) 939ms
+   ❯ useAmenityChecklist (9)
+     × offers an owner the public catalogue’s amenities, then a retired linked one, named and marked 200ms
+     × marks for the admin a retired amenity from the admin’s own list, whatever the read names 89ms
+ ❯ |component| src/features/lookups/components/amenities/AmenityChecklist.component.test.tsx (6 tests | 1 failed) 4547ms
+   ❯ AmenityChecklist (6)
+     × the owner’s checklist names a retired amenity, marked, and drops it when unticked 3027ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/lookups/components/amenities/AmenityChecklist.component.test.tsx > AmenityChecklist > the owner’s checklist names a retired amenity, marked, and drops it when unticked
+TestingLibraryElementError: Unable to find role="checkbox" and name "Generator No longer on the platform’s list"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"The list's amenities"[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mrole[39m=[32m"group"[39m
+    [36m>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"grid gap-2 md:grid-cols-2"[39m
+      [36m>[39m
+        [36m<li>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex items-start gap-3"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex h-(--control-height) shrink-0 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-checked[39m=[32m"true"[39m
+                [33mclass[39m=[32m"peer relative flex size-4.5 shrink-0 items-center justify-center rounded-sm border border-input bg-transparent text-primary-foreground transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+                [33mdata-slot[39m=[32m"checkbox"[39m
+                [33mdata-state[39m=[32m"checked"[39m
+                [33mid[39m=[32m"_r_6_-control"[39m
+                [33mrole[39m=[32m"checkbox"[39m
+                [33mtype[39m=[32m"button"[39m
+                [33mvalue[39m=[32m"on"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"grid place-content-center text-current"[39m
+                  [33mdata-slot[39m=[32m"checkbox-indicator"[39m
+                  [33mdata-state[39m=[32m"checked"[39m
+                  [33mstyle[39m=[32m"pointer-events: none;"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-check size-3.5"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground flex min-h-(--control-height) items-center"[39m
+                  [33mfor[39m=[32m"_r_6_-control"[39m
+                  [33mid[39m=[32m"_r_6_-label"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"inline-flex flex-wrap items-center gap-2"[39m
+                  [36m>[39m
+                    [0mInternet[0m
+                  [36m</span>[39m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [0mOne amenity no longer on the platform’s list stays linked to the space.[0m
+      [36m</p>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33maria-label[39m=[32m"The list's amenities"[39m
+      [33mclass[39m=[32m"flex flex-col gap-2"[39m
+      [33mrole[39m=[32m"group"[39m
+    [36m>[39m
+      [36m<ul[39m
+        [33mclass[39m=[32m"grid gap-2 md:grid-cols-2"[39m
+      [36m>[39m
+        [36m<li>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex items-start gap-3"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex h-(--control-height) shrink-0 items-center"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-checked[39m=[32m"true"[39m
+                [33mclass[39m=[32m"peer relative flex size-4.5 shrink-0 items-center justify-center rounded-sm border border-input bg-transparent text-primary-foreground transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+                [33mdata-slot[39m=[32m"checkbox"[39m
+                [33mdata-state[39m=[32m"checked"[39m
+                [33mid[39m=[32m"_r_6_-control"[39m
+                [33mrole[39m=[32m"checkbox"[39m
+                [33mtype[39m=[32m"button"[39m
+                [33mvalue[39m=[32m"on"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"grid place-content-center text-current"[39m
+                  [33mdata-slot[39m=[32m"checkbox-indicator"[39m
+                  [33mdata-state[39m=[32m"checked"[39m
+                  [33mstyle[39m=[32m"pointer-events: none;"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-check size-3.5"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground flex min-h-(--control-height) items-center"[39m
+                  [33mfor[39m=[32m"_r_6_-control"[39m
+                  [33mid[39m=[32m"_r_6_-label"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"inline-flex flex-wrap items-center gap-2"[39m
+                  [36m>[39m
+                    [0mInternet[0m
+                  [36m</span>[39m
+                [36m</label>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</li>[39m
+      [36m</ul>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [0mOne amenity no longer on the platform’s list stays linked to the space.[0m
+      [36m</p>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/lookups/components/amenities/AmenityChecklist.component.test.tsx:118:36
+    116|     );
+    117|
+    118|     const generator = await screen.findByRole('checkbox', {
+       |                                    ^
+    119|       name: 'Generator No longer on the platform’s list',
+    120|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx > useAmenityChecklist > offers an owner the public catalogue’s amenities, then a retired linked one, named and marked
+AssertionError: expected [ …(2) ] to deeply equal [ [ 1, 'إنترنت', false, null ], …(2) ]
+
+- Expected
++ Received
+
+  [
+    [
+      1,
+      "إنترنت",
+      false,
+-     null,
++     undefined,
+    ],
+    [
+      3,
+      "طاقة شمسية",
+      true,
+-     null,
+-   ],
+-   [
+-     2,
+-     "مولّد",
+-     true,
+-     "لم يعد في قائمة المنصة",
++     undefined,
+    ],
+  ]
+
+ ❯ src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx:80:7
+     78|     expect(
+     79|       result.current.items.map(({ id, name, checked, mark }) => [id, n…
+     80|     ).toEqual([
+       |       ^
+     81|       [1, 'إنترنت', false, null],
+     82|       [3, 'طاقة شمسية', true, null],
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx > useAmenityChecklist > marks for the admin a retired amenity from the admin’s own list, whatever the read names
+AssertionError: expected [ [ 1, undefined ], …(2) ] to deeply equal [ Array(3) ]
+
+- Expected
++ Received
+
+  [
+    [
+      1,
+-     null,
++     undefined,
+    ],
+    [
+      2,
+-     "Inactive",
++     undefined,
+    ],
+    [
+      3,
+-     null,
++     undefined,
+    ],
+  ]
+
+ ❯ src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx:130:68
+    128|       expect(result.current.status).toBe('ready');
+    129|     });
+    130|     expect(result.current.items.map(({ id, mark }) => [id, mark])).toE…
+       |                                                                    ^
+    131|       [1, null],
+    132|       [2, 'Inactive'],
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  3 failed | 12 passed (15)
+   Start at  12:00:24
+   Duration  20.84s (import 30%, environment 26%, transform 20%, tests 15%, setup 9%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/lookups/components/amenities/AmenityChecklist.component.test.tsx src/features/lookups/hooks/amenities/useAmenityChecklist.component.test.tsx

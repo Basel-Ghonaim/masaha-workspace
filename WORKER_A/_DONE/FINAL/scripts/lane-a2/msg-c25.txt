@@ -1,0 +1,11 @@
+feat(jobs): reclaim the files no photo holds
+
+A photo's files are stored before its row and removed after its row
+is deleted, so a crash, a timed-out upload or a failed removal leaves
+files no row names, and nothing reclaimed them (finding 63).
+
+The storage port lists the files under a prefix with their dates: the
+local disk by walking its folder, Cloudinary by its Admin API, page by
+page. A timed job, photos.reclaimOrphans, acts in Gaza's 03:00 hour
+only: it removes each photo file no row holds and older than an hour,
+at most 200 a run, each logged [storage:reclaimed].

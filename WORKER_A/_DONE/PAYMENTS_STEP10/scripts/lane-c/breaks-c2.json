@@ -1,0 +1,65 @@
+[
+ {
+  "id": "59",
+  "file": "apps/web/src/features/data-reports/repository/dataReportsRepository.ts",
+  "old": "repeated: response.status === 200",
+  "new": "repeated: false",
+  "cmd": "npm run test:unit -w @masaha/web -- src/features/data-reports/repository"
+ },
+ {
+  "id": "66",
+  "file": "apps/web/src/features/data-reports/hooks/report/useReportAction.ts",
+  "old": "        if (signedIn) {\n          setOpened(true);\n          return;\n        }",
+  "new": "        setOpened(true);\n        if (signedIn) return;",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/hooks/report/useReportAction.component.test.tsx"
+ },
+ {
+  "id": "67",
+  "file": "apps/web/src/features/data-reports/hooks/report/useReportDialog.ts",
+  "old": "    schema: createReportSchema,",
+  "new": "    schema: createReportSchema.refine(({ message }) => message !== undefined, {\n      path: ['message'],\n      params: { code: 'required' },\n    }),",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/hooks/report/useReportDialog.component.test.tsx"
+ },
+ {
+  "id": "68",
+  "file": "apps/web/src/features/data-reports/components/toast/toastReported.tsx",
+  "old": "const line = repeated ? words.repeated : verified ? words.sentSpace : words.sentTeam;",
+  "new": "const line = verified ? words.sentSpace : words.sentTeam;",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/hooks/report/useReportDialog.component.test.tsx"
+ },
+ {
+  "id": "69",
+  "file": "apps/web/src/features/data-reports/components/report/ReportDialog.tsx",
+  "old": "{dialog.failure !== null && <FormFailure view={dialog.failure} />}",
+  "new": "{dialog.failure !== null && <p>{dialog.failure.title}</p>}",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/components/report"
+ },
+ {
+  "id": "70",
+  "file": "apps/web/src/pages/site/public/SignInPrompt.tsx",
+  "old": "const next = `?${new URLSearchParams({ next: `${pathname}${search}` }).toString()}`;",
+  "new": "const next = pathname === search ? pathname : '';",
+  "cmd": "npm run test:component -w @masaha/web -- src/pages/site/public/SignInPrompt.component.test.tsx"
+ },
+ {
+  "id": "c2-drop",
+  "file": "apps/web/src/pages/site/public/space/SpacePage.tsx",
+  "old": "          prompt?.cancel();\n",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/pages/site/public/space"
+ },
+ {
+  "id": "65",
+  "file": "apps/web/src/features/data-reports/hooks/intent/reportIntent.ts",
+  "old": "  if (store.getState().held !== slug) return false;\n  store.setState({ held: null });\n  return true;",
+  "new": "  return store.getState().held === slug;",
+  "cmd": "npm run test:unit -w @masaha/web -- src/features/data-reports/hooks/intent"
+ },
+ {
+  "id": "65b",
+  "file": "apps/web/src/features/data-reports/hooks/intent/reportIntent.ts",
+  "old": "  if (store.getState().held !== slug) return false;\n  store.setState({ held: null });\n  return true;",
+  "new": "  return store.getState().held === slug;",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/hooks/report/useReportAction.component.test.tsx"
+ }
+]

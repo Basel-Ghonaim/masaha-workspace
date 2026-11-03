@@ -1,0 +1,139 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/overview/adminOverview.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/overview/adminOverview.api.test.ts (9 tests | 5 failed) 2712ms
+   ❯ the admin's overview (9)
+     × the admin reads the tiles: verified, unverified, hidden, no owner, stale or missing, open reports split, new users of the last 30 Gaza days 412ms
+     × the tiles equal the admin’s lists 315ms
+     × completeness: the first five unverified spaces with a group stale or missing, hidden ones included, each with its groups and days; the total 259ms
+     × a saved threshold changes both overviews at once 348ms
+     × nothing of a space’s operations in the body 293ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > the admin reads the tiles: verified, unverified, hidden, no owner, stale or missing, open reports split, new users of the last 30 Gaza days
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ overviewOf src/modules/overview/adminOverview.api.test.ts:94:27
+     92| async function overviewOf(): Promise<AdminOverview> {
+     93|   const response = await adminRequest(app, admin, 'get', '/overview');
+     94|   expect(response.status).toBe(200);
+       |                           ^
+     95|   return dataOf(response) as AdminOverview;
+     96| }
+ ❯ src/modules/overview/adminOverview.api.test.ts:143:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > the tiles equal the admin’s lists
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ overviewOf src/modules/overview/adminOverview.api.test.ts:94:27
+     92| async function overviewOf(): Promise<AdminOverview> {
+     93|   const response = await adminRequest(app, admin, 'get', '/overview');
+     94|   expect(response.status).toBe(200);
+       |                           ^
+     95|   return dataOf(response) as AdminOverview;
+     96| }
+ ❯ src/modules/overview/adminOverview.api.test.ts:159:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > completeness: the first five unverified spaces with a group stale or missing, hidden ones included, each with its groups and days; the total
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ overviewOf src/modules/overview/adminOverview.api.test.ts:94:27
+     92| async function overviewOf(): Promise<AdminOverview> {
+     93|   const response = await adminRequest(app, admin, 'get', '/overview');
+     94|   expect(response.status).toBe(200);
+       |                           ^
+     95|   return dataOf(response) as AdminOverview;
+     96| }
+ ❯ src/modules/overview/adminOverview.api.test.ts:195:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > a saved threshold changes both overviews at once
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ overviewOf src/modules/overview/adminOverview.api.test.ts:94:27
+     92| async function overviewOf(): Promise<AdminOverview> {
+     93|   const response = await adminRequest(app, admin, 'get', '/overview');
+     94|   expect(response.status).toBe(200);
+       |                           ^
+     95|   return dataOf(response) as AdminOverview;
+     96| }
+ ❯ src/modules/overview/adminOverview.api.test.ts:222:20
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > nothing of a space’s operations in the body
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/overview/adminOverview.api.test.ts:251:29
+    249|
+    250|     const response = await adminRequest(app, admin, 'get', '/overview'…
+    251|     expect(response.status).toBe(200);
+       |                             ^
+    252|     expect(JSON.stringify(response.body)).not.toMatch(
+    253|       /present|customer|capacity|visit|subscription|payment|agorot/i,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 4 passed (9)
+   Start at  13:10:29
+   Duration  11.13s (transform 42%, tests 38%, import 17%, setup 2%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/overview/adminOverview.api.test.ts

@@ -1,0 +1,9 @@
+feat(subscriptions): name who recorded and voided
+
+A statement's payments, and a customer's unpaid visits', carried who
+recorded and who voided each payment as ids only, and reception has no
+staff route to name them (finding 162).
+
+ItemPayment now carries recordedBy and voided.by, each with the
+account's id and name (a link of any state), read in one more query.
+recordedById stays; voided.byId is replaced by voided.by.

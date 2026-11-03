@@ -1,0 +1,21 @@
+I reviewed the finance range of #131 (the three finance commits). My verdict: it's mergeable after a fix round. CI was green, and the head stayed at `c41a5397` (CLEAN) for the whole review.
+
+**Findings:**
+- **R2-F1 (should-fix, plus finding 193 for you to decide):** in Finance › debts, the "owed" and "uncollected" totals can count the same money twice.
+  - **How:** a walk-in's visit is closed by the auto check-out, then recorded as a customer's debt («تسجيل دينًا»). By the desk's existing rule it stays in the uncollected list, and it also counts in that customer's debt.
+  - **Why it matters:** the contract says the uncollected visits are "counted apart", so a reader or the coming finance screen could add the two figures and show twice the amount owed. No test covers this case.
+  - **Fix round:** correct the contract, `finance.md` and the shared type's comment, and add a test that pins the overlap.
+  - **Your decision (193):** whether finance's uncollected figure should leave out visits that have a customer. That would break the overview's "equal to the desk's list" rule.
+- **R2-F2 (nit):** `finance.md` says income reads 45 windows; the code reads 46.
+- **R2-F3 (nit):** `todayWindow` in `windows.ts` is used only by its unit test; the service builds today's window another way.
+
+**Checked and fine:**
+- **Income:** voided payments are left out, and the subscriptions/visits split is exact, because the database requires each payment to have exactly one item. Each window runs from Gaza midnight to the next, and a payment allocated at renewal is counted once, when it was collected.
+- **Snapshot:** income and debts each read every figure inside one snapshot, with no read outside it.
+- **Debts:** archived customers are kept, and the totals equal the sum of the pages.
+- **Payers and occupancy:** both follow the plan's rules.
+- **Authorization:** only the owner can read finance; reception gets 403 before the query is read, and strangers and the admin get 404.
+
+I judged all of lane F's decisions sound or acceptable, and wrote out each test and break against the plan. The break results, the cost timings and the real run I saw only in the reports; the rules forbid running them.
+
+The report is at `C:\dev\masaha\workspace\WORKER_B\BACKEND_FINAL\6_REVIEW_R2_CLAUDE_CODE.md`.

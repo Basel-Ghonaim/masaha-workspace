@@ -1,0 +1,96 @@
+<<<OLD
+import { termsLine } from '../../services/termsLine';
+===
+import { termsLine } from '../../services/termsLine';
+import type { UncollectedItem } from '../../types/UncollectedItem';
+>>>
+<<<OLD
+ * catalogue's) filled with what they owe, their first name and `spaceName` (D8.2).
+ */
+export function useCustomerFile(
+  spaceId: number,
+  customerId: number,
+  { spaceName }: { spaceName: string },
+) {
+===
+ * catalogue's) filled with what they owe, their first name and `spaceName` (D8.2). The owner's
+ * unpaid visit offers «لن يُحصَّل…» in its «⋯», the desk's write-off (D8.6).
+ */
+export function useCustomerFile(
+  spaceId: number,
+  customerId: number,
+  { spaceName, owner }: { spaceName: string; owner: boolean },
+) {
+>>>
+<<<OLD
+  const [payOpening, setPayOpening] = useState(0);
+===
+  const [payOpening, setPayOpening] = useState(0);
+  // The owner's write-off of an unpaid visit: closed, or the visit it is of.
+  const [writeOff, setWriteOff] = useState<UncollectedItem | null>(null);
+>>>
+<<<OLD
+            here: file.present === null ? null : words.here,
+===
+            here:
+              file.present === null
+                ? null
+                : words.hereSince({ time: isolate(timeOf(file.present.since)) }),
+>>>
+<<<OLD
+            title: words.unpaid.title,
+            rows: file.unpaidVisits.map(({ visit, balanceAgorot, payments }) => {
+===
+            title: words.unpaid.title,
+            description: words.unpaid.counts,
+            rows: file.unpaidVisits.map((unpaidVisit) => {
+              const { visit, balanceAgorot, payments } = unpaidVisit;
+>>>
+<<<OLD
+                debt: null,
+                more: null,
+===
+                debt: null,
+                // The write-off is of a priced visit's rest, the owner's (S5: the server decides).
+                more:
+                  owner && balanceAgorot !== null
+                    ? {
+                        label: copy.desk.uncollected.more({
+                          name: isolate(`${file.customer.name} · ${when.day}`),
+                        }),
+                        writeOff: {
+                          label: copy.desk.uncollected.writeOff,
+                          run: () => {
+                            setWriteOff({
+                              uncollected: unpaidVisit,
+                              name: file.customer.name,
+                              day: when.day,
+                            });
+                          },
+                        },
+                      }
+                    : null,
+>>>
+<<<OLD
+          ? { title: words.subscriptions.none, text: words.subscriptions.onlyVisits }
+===
+          ? {
+              title: words.subscriptions.none,
+              // Only visits: said only while none of them is left unpaid (G15.5).
+              text: file.unpaidVisits.length === 0 ? words.subscriptions.onlyVisits : null,
+            }
+>>>
+<<<OLD
+    closePay: () => {
+      setPay(null);
+    },
+===
+    closePay: () => {
+      setPay(null);
+    },
+    /** The owner's write-off, while it is open: the visit it is of. */
+    writeOff,
+    closeWriteOff: () => {
+      setWriteOff(null);
+    },
+>>>

@@ -1,0 +1,8 @@
+fix(staff): keep sessions held by another link
+
+Deactivating a reception link ended every session of the person, so an
+owner could end another space's owner's sessions at will, by making
+them reception and deactivating it (finding 92). The sessions now end
+only when no other active link of the person remains; this space closes
+to them at once anyway, since the space boundary reads the links on
+every request.

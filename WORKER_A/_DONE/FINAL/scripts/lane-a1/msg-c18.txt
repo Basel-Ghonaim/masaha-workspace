@@ -1,0 +1,8 @@
+feat(space-links): find an account by exact email
+
+The admin's add-owner sheet looks up the account an email has through
+the users list's q, a search by part of the name or the email, so a
+right email could read as not found among many matches (finding 89).
+GET /admin/users takes email, validated as at registration, and keeps
+the one account whose stored email is exactly it, alone or with the
+other filters. The web's half is its own commit.

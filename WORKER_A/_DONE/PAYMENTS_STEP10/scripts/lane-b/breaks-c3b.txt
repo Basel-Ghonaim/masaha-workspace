@@ -1,0 +1,32 @@
+55c: RED exit 1 — ['× takes off the space and the field together with «Clear filters», the chip kept 3025ms', 'FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx > useAdminReports > takes off the space and the field together with «Clear filters», the chip kept']
+git status after restore:
+ M src/features/data-reports/components/decide/DecideSheet.tsx
+ M src/features/data-reports/components/space/SpaceReportsList.tsx
+ M src/features/data-reports/hooks/decide/useDecideReport.ts
+ M src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx
+ M src/features/data-reports/hooks/decide/useDecideSheet.ts
+ M src/features/data-reports/hooks/queryKeys.ts
+ M src/features/data-reports/index.ts
+ M src/features/data-reports/repository/dataReportsRepository.ts
+ M src/features/data-reports/repository/dataReportsRepository.unit.test.ts
+ M src/features/data-reports/types/DecideTarget.ts
+ M src/features/space-links/index.ts
+ M src/pages/dashboard/routes.component.test.tsx
+ M src/pages/dashboard/routes.tsx
+ M src/pages/dashboard/space/reports/DataReportsPage.tsx
+ M src/shared/copy/arabic/dataReports.ts
+ M src/shared/copy/arabic/spaceLinks.ts
+ M src/shared/copy/english/dataReports.ts
+ M src/shared/copy/english/spaceLinks.ts
+ M src/test/dataReport.ts
+?? src/features/data-reports/components/ReportListParts.tsx
+?? src/features/data-reports/components/admin/
+?? src/features/data-reports/hooks/admin/
+?? src/features/data-reports/services/adminReportsQueryOf.ts
+?? src/features/data-reports/services/adminReportsQueryOf.unit.test.ts
+?? src/features/data-reports/types/AdminReportRowView.ts
+?? src/features/data-reports/types/AdminSpaceFilterSlot.ts
+?? src/features/space-links/components/admin-filter/
+?? src/pages/dashboard/admin/DataReportsPage.tsx
+?? src/pages/dashboard/fieldSections.ts
+

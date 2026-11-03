@@ -1,0 +1,46 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx (5 tests | 1 failed) 3471ms
+   ❯ useSpaceReports (5)
+     × is empty with its line under «All», and matches nothing under a chip, with «Show all» 3024ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:10:03
+   Duration  8.80s (tests 41%, transform 23%, environment 17%, import 14%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx > useSpaceReports > is empty with its line under «All», and matches nothing under a chip, with «Show all»
+AssertionError: expected 'empty' to be 'noMatch' // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div />[39m
+  [36m</body>[39m
+[36m</html>[39m...
+
+Expected: "noMatch"
+Received: "empty"
+
+ ❯ src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx:94:36
+     92|
+     93|     await waitFor(() => {
+     94|       expect(result.current.state).toBe('noMatch');
+       |                                    ^
+     95|     });
+     96|     expect(requests[0]?.params).toEqual({ status: 'OPEN', page: 1, lim…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

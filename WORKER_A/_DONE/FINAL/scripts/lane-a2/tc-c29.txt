@@ -1,0 +1,31 @@
+[heavy] waiting (try 1 of 60)
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+
+src/features/desk/components/statement/Statement.component.test.tsx(41,45): error TS2353: Object literal may only specify known properties, and 'byId' does not exist in type '{ at: string; by: { id: number; name: string; }; reason: string; }'.
+src/features/desk/components/statement/Statement.component.test.tsx(109,56): error TS2322: Type '{ at: string; byId: number; reason: string; } | null' is not assignable to type '{ at: string; by: { id: number; name: string; }; reason: string; } | null'.
+  Object literal may only specify known properties, and 'byId' does not exist in type '{ at: string; by: { id: number; name: string; }; reason: string; }'.
+src/features/desk/hooks/statement/useStatement.component.test.tsx(52,5): error TS2322: Type '{ id: number; receivedAt: string; amountAgorot: number; method: "CASH"; note: null; recordedById: number; voided: null; }' is not assignable to type 'ItemPayment'.
+  Property 'recordedBy' is missing in type '{ id: number; receivedAt: string; amountAgorot: number; method: "CASH"; note: null; recordedById: number; voided: null; }' but required in type '{ recordedBy: { id: number; name: string; }; voided: { at: string; by: { id: number; name: string; }; reason: string; } | null; }'.
+src/features/desk/hooks/statement/useStatement.component.test.tsx(58,45): error TS2353: Object literal may only specify known properties, and 'byId' does not exist in type '{ at: string; by: { id: number; name: string; }; reason: string; }'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path C:\dev\masaha\app-lane-a2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc -b
+exit 2

@@ -1,0 +1,233 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/components/space/SpaceReportsList.component.test.tsx (4 tests | 1 failed) 4164ms
+   ❯ SpaceReportsList (4)
+     × decides a new report: it leaves «New», the toast says where it went, the focus on the count 3454ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:12:46
+   Duration  11.08s (tests 38%, import 22%, transform 21%, environment 15%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/space/SpaceReportsList.component.test.tsx > SpaceReportsList > decides a new report: it leaves «New», the toast says where it went, the focus on the count
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<p
+  aria-live="polite"
+  class="text-body-sm text-muted-foreground outline-none"
+  tabindex="-1"
+>
+  0 reports
+</p>[39m
+Received element with focus:
+  [31m<body
+  style=""
+>
+  <div>
+    <div
+      class="flex flex-col gap-4"
+    >
+      <p
+        class="text-body-sm text-muted-foreground"
+      >
+        Visitors’ reports about wrong information on the space page.
+      </p>
+      <section
+        aria-label="Data reports"
+        class="flex flex-col gap-3"
+      >
+        <div
+          class="flex flex-wrap items-center justify-between gap-3"
+        >
+          <div … />
+          <p … />
+        </div>
+        <div
+          class="overflow-hidden rounded-lg border border-(--card-border) bg-card text-card-foreground shadow-raised"
+          data-layout="table"
+          data-slot="data-table"
+        >
+          <div … />
+          <div … />
+        </div>
+      </section>
+    </div>
+    <section
+      aria-atomic="false"
+      aria-label="Notifications"
+      aria-live="polite"
+      aria-relevant="additions text"
+      data-react-aria-top-layer="true"
+      tabindex="-1"
+    >
+      <ol
+        data-sonner-theme="light"
+        data-sonner-toaster="true"
+        data-x-position="right"
+        data-y-position="bottom"
+        dir="ltr"
+        style="--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"
+        tabindex="-1"
+      >
+        <li
+          class="relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"
+          data-dismissible="true"
+          data-expanded="false"
+          data-front="true"
+          data-index="0"
+          data-mounted="true"
+          data-promise="false"
+          data-removed="false"
+          data-sonner-toast=""
+          data-styled="false"
+          data-swipe-out="false"
+          data-swiped="false"
+          data-swiping="false"
+          data-type="success"
+          data-visible="true"
+          data-x-position="right"
+          data-y-position="bottom"
+          style="--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"
+          tabindex="0"
+        >
+          <div … />
+          <div … />
+          <button … />
+        </li>
+      </ol>
+    </section>
+  </div>
+</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mstyle[39m=[32m""[39m
+  [36m>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mVisitors’ reports about wrong information on the space page.[0m
+        [36m</p>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Data reports"[39m
+          [33mclass[39m=[32m"flex flex-col gap-3"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33maria-label[39m=[32m"Filter by status"[39m
+              [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+              [33mdata-slot[39m=[32m"toggle-group"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mrole[39m=[32m"radiogroup"[39m
+              [33mstyle[39m=[32m"outline: none;"[39m
+              [33mtabindex[39m=[32m"0"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-checked[39m=[32m"false"[39m
+                [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+                [33mdata-radix-collection-item[39m=[32m""[39m
+                [33mdata-slot[39m=[32m"toggle-group-item"[39m
+                [33mdata-state[39m=[32m"off"[39m
+                [33mrole[39m=[32m"radio"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mAll[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-checked[39m=[32m"true"[39m
+                [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+                [33mdata-radix-collection-item[39m=[32m""[39m
+                [33mdata-slot[39m=[32m"toggle-group-item"[39m
+                [33mdata-state[39m=[32m"on"[39m
+                [33mrole[39m=[32m"radio"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mNew[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-checked[39m=[32m"false"[39m
+                [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+                [33mdata-radix-collection-item[39m=[32m""[39m
+                [33mdata-slot[39m=[32m"toggle-group-item"[39m
+                [33mdata-state[39m=[32m"off"[39m
+                [33mrole[39m=[32m"radio"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth...
+ ❯ src/features/data-reports/components/space/SpaceReportsList.component.test.tsx:141:45
+    139|     expect(await screen.findByText('No reports match the filters')).to…
+    140|     await waitFor(() => {
+    141|       expect(screen.getByText('0 reports')).toHaveFocus();
+       |                                             ^
+    142|     });
+    143|     expect(requests.filter(({ method }) => method === 'patch')).toHave…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

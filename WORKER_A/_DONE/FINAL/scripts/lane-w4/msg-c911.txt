@@ -1,0 +1,6 @@
+fix(directory): wait for near me once permitted
+
+Near me's 15 s counted the time spent reading the browser's prompt.
+Where the Permissions API answers, they start at once when granted,
+once the prompt is granted while it asks, and a denial ends the ask at
+once; without the API, from the press as before (finding 136).

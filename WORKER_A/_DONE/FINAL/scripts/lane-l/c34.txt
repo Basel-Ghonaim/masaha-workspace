@@ -1,0 +1,9 @@
+feat(design-system): size a large input
+
+The front desk's search is the page's main field and the design draws
+it large (G13.16), but the layer's Input had one height. Input gains
+size="lg": a component token control-height-lg, 48px and 52px on
+touch, with the value text at the control's size as before. The
+native size attribute is left out of the props, which no caller used.
+
+The foundation names the token and the size; the showcase shows it.

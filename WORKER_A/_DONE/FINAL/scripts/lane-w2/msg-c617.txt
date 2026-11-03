@@ -1,0 +1,10 @@
+fix(admin): reach a held user action by keyboard
+
+The users page's row menu drew a held action, such as the role change
+of a person with links or the link for an admin, as a disabled item,
+which Radix's menu skips with the arrow keys and typeahead: a keyboard
+user never reached the reason (finding 105, the admin's side). Its
+MenuActionItem now uses the layer's `held` (C3.3, D6.15): the item
+stays in the roving focus, aria-disabled, its reason read, and choosing
+it does nothing. The page's row triggers already come from
+shared/lists (C3.9).

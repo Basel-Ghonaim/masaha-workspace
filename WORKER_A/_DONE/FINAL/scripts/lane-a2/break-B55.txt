@@ -1,0 +1,49 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+ ❯ |unit| src/shared/jobs/jobs.unit.test.ts (3 tests | 1 failed) 20ms
+   ❯ createJobs (3)
+     × a run with one stalled job still runs the others, and is stalled, logged by name 7ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  17:07:47
+   Duration  435ms (import 48%, transform 33%, tests 13%, worker 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/jobs/jobs.unit.test.ts > createJobs > a run with one stalled job still runs the others, and is stalled, logged by name
+AssertionError: expected { …(4) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+@@ -7,16 +7,9 @@
+          "stalled": true,
+          "stays": 0,
+        },
+        "name": "stalls",
+      },
+-     {
+-       "done": {
+-         "failed": 0,
+-         "stays": 2,
+-       },
+-       "name": "runs",
+-     },
+    ],
+    "ranAt": "2026-10-18T16:00:00.000Z",
+    "stalled": true,
+  }
+
+ ❯ src/shared/jobs/jobs.unit.test.ts:70:30
+     68|     });
+     69|
+     70|     expect(await jobs.run()).toEqual({
+       |                              ^
+     71|       ranAt: '2026-10-18T16:00:00.000Z',
+     72|       jobs: [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

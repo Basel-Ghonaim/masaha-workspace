@@ -1,0 +1,22 @@
+I've reviewed my range of #132 (21 commits: the front desk, customers and payments). My verdict: **mergeable after a fix round** — no blockers, four should-fixes, two nits. CI is green and the head stayed at `a12c0790` throughout. The report is at `C:\dev\masaha\workspace\WORKER_A\FINAL\6_REVIEW_R5.md`; everything was read from commit objects, nothing run or fetched. No new finding numbers were used; all six go to a fix round.
+
+**Should-fix:**
+1. **The written-off visits can't be reached on a phone or tablet when nothing is uncollected.** The card that holds the «لن تُحصَّل» toggle is hidden below 1280 px when empty, so the undo disappears with it. The lane recorded this as finding 212 and left it open. That leaves a gap on screen 13 and conflicts with "the Open list holds exactly the deployment's six". Fold the fix into `001c2501` and drop 212's record.
+2. **A customer checked in as their visit (finding 160) is shown as not present.** The page only knows present customers through subscription check-ins, and the API's present-visit answer has no customer id. So the search card shows «غير حاضر» and offers «حضور» for someone who is here. Their name in the present list also doesn't link to their file. The fix needs that answer to carry the id; that part is in another reviewer's commit (`9f801981`).
+3. **«أقدم بند» on the file's «استلام {amount}» isn't the oldest item.** It always picks visits before subscriptions. The server and Finance order by date across both. So the file can name yesterday's visit as oldest right after Finance named an older subscription.
+4. **The customers list's «⋯» inserts its state actions at the top after the menu opens (plausible, depends on timing).** «خروج» can land under a tap meant for «ملف الزبون» and check a subscriber out in one tap.
+
+**Nits:**
+- Every «تراجع» button in the written-off list has the same accessible name.
+- With no saved template, the WhatsApp reminder's default text follows the staff member's language while the space name is always Arabic.
+
+**Checked and correct:**
+- **Price sent (171):** the sheet sends the amount it showed. A 409 keeps it open and re-reads the prices; nothing is charged silently or retried by itself. Pressing again reuses the same key, which is safe because a refusal stores nothing.
+- **Write-off undo:** owner only, no key, sent once, both lists refreshed.
+- **Corrections:** name, dates and limits for both roles; the price section for the owner only, as the routes allow.
+- **WhatsApp link:** E.164 digits and the filled template only.
+- **Who recorded and voided, and the ledger's other owners (162, 166):** both shown.
+
+All planned tests T200–T244 are present. T208 never submits again after the price is re-read, so it wouldn't catch a stale amount being resent.
+
+**Not checked:** the screens at 390 / 768 / 1440, in dark and in both languages. I couldn't run anything, and the lead's real run didn't perform the desk's write cases.

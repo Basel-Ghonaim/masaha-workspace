@@ -1,0 +1,6 @@
+[{"label": "B183", "file": "apps/web/src/features/space-links/hooks/add-owner/useAddOwnerForm.ts",
+  "old": "  const open = opened || params.get('sheet') === 'add';", "new": "  const open = opened;",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/space-links/components/add-owner"},
+ {"label": "B184", "file": "apps/web/src/features/space-links/components/add-owner/AddOwner.tsx",
+  "old": "                    <Link to={form.suspended.link.to} className=\"underline underline-offset-4\">\n                      {form.suspended.link.label}\n                    </Link>", "new": "                    <span>{form.suspended.link.label}</span>",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/space-links/components/add-owner"}]

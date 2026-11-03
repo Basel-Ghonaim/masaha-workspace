@@ -1,0 +1,15 @@
+docs: record every screen of v1 as built
+
+Every step of the build map now ends Built, naming the screens it
+built and the PRs that built them, and the planned API surface names
+every route as built against the contract (D10.2).
+
+The overview's Built names each capability's screens: Finance, the
+overviews, both audit logs, the platform's settings, one's own
+account settings, the desk's log and written-off visits, the
+customers' actions, reminder and subscription corrections. Foundation
+13 names the owner's log inside screen 31 (O13, DI1), screen 24's
+account card and screen 9's ways of signing in; SCREENS.md maps the
+owner's audit to screen 31 (D10.3); architecture 2 names every page
+(D10.5). The users document no longer says its settings page is
+not built.

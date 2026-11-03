@@ -1,0 +1,527 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/hooks/mine src/features/data-reports/components/mine src/pages/site/account src/features/users/components/AccountMenu.component.test.tsx src/features/users/components/AccountMenuSection.component.test.tsx src/features/users/components/CompactAccountMenu.component.test.tsx src/features/users/hooks/useAccount.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/mine/useMyReports.component.test.tsx (0 test)
+ ❯ |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx (0 test)
+ ❯ |component| src/features/users/components/AccountMenuSection.component.test.tsx (5 tests | 1 failed) 564ms
+   ❯ AccountMenuSection (5)
+     × links the account’s pages it is given 94ms
+ ❯ |component| src/features/users/hooks/useAccount.component.test.tsx (4 tests | 1 failed) 60ms
+   ❯ useAccount (4)
+     × words the account’s links it is given, in order, and has none by default 17ms
+ ❯ |component| src/features/users/components/AccountMenu.component.test.tsx (6 tests | 1 failed) 1316ms
+   ❯ AccountMenu (6)
+     × links the account’s pages it is given, before the dashboard 177ms
+ ❯ |component| src/pages/site/account/AccountLayout.component.test.tsx (2 tests | 2 failed) 6095ms
+   ❯ AccountLayout (2)
+     × names its navigation «My account» and marks the page open as current; axe-clean 3062ms
+     × sends a guest to sign-in, carrying the page asked for 3030ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx [ src/features/data-reports/components/mine/MyReportsList.component.test.tsx ]
+Error: Failed to resolve import "./MyReportsList" from "src/features/data-reports/components/mine/MyReportsList.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-c/apps/web/src/features/data-reports/components/mine/MyReportsList.component.test.tsx:11:30
+  9  |  import { fakeTransport, restoreTransport } from "../../../../test/fakeTransport";
+  10 |  import { startPreferences } from "../../../../test/startPreferences";
+  11 |  import { MyReportsList } from "./MyReportsList";
+     |                                 ^
+  12 |  var _jsxFileName = "C:/dev/masaha/app-lane-c/apps/web/src/features/data-reports/components/mine/MyReportsList.compone...
+  13 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/mine/useMyReports.component.test.tsx [ src/features/data-reports/hooks/mine/useMyReports.component.test.tsx ]
+Error: Failed to resolve import "./useMyReports" from "src/features/data-reports/hooks/mine/useMyReports.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-c/apps/web/src/features/data-reports/hooks/mine/useMyReports.component.test.tsx:10:29
+  7  |  import { fakeTransport, refused, restoreTransport } from "../../../../test/fakeTransport";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { useMyReports } from "./useMyReports";
+     |                                ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app-lane-c/apps/web/src/features/data-reports/hooks/mine/useMyReports.component.tes...
+  11 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/AccountMenu.component.test.tsx > AccountMenu > links the account’s pages it is given, before the dashboard
+AssertionError: expected [ 'Dashboard', 'Sign out' ] to deeply equal [ 'My reports', 'Dashboard', …(1) ]
+
+- Expected
++ Received
+
+  [
+-   "My reports",
+    "Dashboard",
+    "Sign out",
+  ]
+
+ ❯ src/features/users/components/AccountMenu.component.test.tsx:82:51
+     80|
+     81|     const items = within(await screen.findByRole('menu')).getAllByRole…
+     82|     expect(items.map((item) => item.textContent)).toEqual(['My reports…
+       |                                                   ^
+     83|     expect(items[0]).toHaveAttribute('href', '/me/reports');
+     84|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  |component| src/features/users/components/AccountMenuSection.component.test.tsx > AccountMenuSection > links the account’s pages it is given
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "My reports"
+
+Here are the accessible roles:
+
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"px-3 pb-2 text-label"[39m
+  [36m/>[39m
+
+  --------------------------------------------------button:
+
+  Name "Sign out":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-label[39m=[32m"Account"[39m
+  [33mclass[39m=[32m"flex flex-col gap-1 border-t border-border pt-4"[39m
+  [33mrole[39m=[32m"group"[39m
+[36m>[39m
+  [36m<p[39m
+    [33mclass[39m=[32m"px-3 pb-2 text-label"[39m
+  [36m>[39m
+    [36m<bdi>[39m
+      [0mSara Ahmad[0m
+    [36m</bdi>[39m
+  [36m</p>[39m
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-log-out"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m16 17 5-5-5-5"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M21 12H9"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [0mSign out[0m
+  [36m</button>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/users/components/AccountMenuSection.component.test.tsx:55:20
+     53|     const section = within(screen.getByRole('group', { name: 'Account'…
+     54|
+     55|     expect(section.getByRole('link', { name: 'My reports' })).toHaveAt…
+       |                    ^
+     56|   });
+     57|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+ FAIL  |component| src/features/users/hooks/useAccount.component.test.tsx > useAccount > words the account’s links it is given, in order, and has none by default
+AssertionError: expected undefined to deeply equal [ { key: 'reports', …(2) } ]
+
+- Expected:
+[
+  {
+    "key": "reports",
+    "label": "My reports",
+    "to": "/me/reports",
+  },
+]
+
++ Received:
+undefined
+
+ ❯ src/features/users/hooks/useAccount.component.test.tsx:44:34
+     42|     const { result } = renderHook(() => useAccount(USER, links));
+     43|
+     44|     expect(result.current.links).toEqual([
+       |                                  ^
+     45|       { key: 'reports', to: '/me/reports', label: 'My reports' },
+     46|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/7]⎯
+
+ FAIL  |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > names its navigation «My account» and marks the page open as current; axe-clean
+TestingLibraryElementError: Unable to find role="navigation" and name "My account"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"mx-auto flex h-14 max-w-7xl items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"dialog"[39m
+            [33maria-label[39m=[32m"Menu"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+            [33mdata-slot[39m=[32m"sheet-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-menu"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 5h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 12h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 19h16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Main navigation"[39m
+            [33mclass[39m=[32m"ms-6 hidden items-center gap-1 md:flex"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [0mHome[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/spaces"[39m
+            [36m>[39m
+              [0mSpaces[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/about"[39m
+            [36m>[39m
+              [0mAbout Masaha[0m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"[39m
+          ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"mx-auto flex h-14 max-w-7xl items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"dialog"[39m
+            [33maria-label[39m=[32m"Menu"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+            [33mdata-slot[39m=[32m"sheet-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-menu"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 5h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 12h16"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"M4 19h16"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<nav[39m
+            [33maria-label[39m=[32m"Main navigation"[39m
+            [33mclass[39m=[32m"ms-6 hidden items-center gap-1 md:flex"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [0mHome[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/spaces"[39m
+            [36m>[39m
+              [0mSpaces[0m
+            [36m</a>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/about"[39m
+            [36m>[39m
+              [0mAbout Masaha[0m
+            [36m</a>[39m
+          [36m</nav>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"[39m
+          ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/account/AccountLayout.component.test.tsx:43:37
+     41|     const { container } = renderSiteAt('/me/reports');
+     42|
+     43|     const navigation = await screen.findByRole('navigation', { name: '…
+       |                                     ^
+     44|     const current = within(navigation).getByRole('link', { name: 'My r…
+     45|     expect(current).toHaveAttribute('aria-current', 'page');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/7]⎯
+
+ FAIL  |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > sends a guest to sign-in, carrying the page asked for
+AssertionError: expected '/me/reports' to be '/login' // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+          [33mhref[39m=[32m"#main"[39m
+        [36m>[39m
+          [0mSkip to content[0m
+        [36m</a>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"border-b border-border bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"mx-auto flex h-14 max-w-7xl items-center gap-2 px-4 md:px-8"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-expanded[39m=[32m"false"[39m
+              [33maria-haspopup[39m=[32m"dialog"[39m
+              [33maria-label[39m=[32m"Menu"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+              [33mdata-slot[39m=[32m"sheet-trigger"[39m
+              [33mdata-state[39m=[32m"closed"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-menu"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M4 5h16"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M4 12h16"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M4 19h16"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [0mMasaha[0m
+            [36m</a>[39m
+            [36m<nav[39m
+              [33maria-label[39m=[32m"Main navigation"[39m
+              [33mclass[39m=[32m"ms-6 hidden items-center gap-1 md:flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mhref[39m=[32m"/"[39m
+              [36m>[39m
+                [0mHome[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mhref[39m=[32m"/spaces"[39m
+              [36m>[39m
+                [0mSpaces[0m
+              [36m</a>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mhref[39m=[32m"/about"[39m
+              [36m>[39m
+                [0mAbout Masaha[0m
+              [36m</a>[39m
+            [36m</nav>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled...
+
+Expected: "/login"
+Received: "/me/reports"
+
+ ❯ src/pages/site/account/AccountLayout.component.test.tsx:59:46
+     57|
+     58|     await waitFor(() => {
+     59|       expect(router.state.location.pathname).toBe('/login');
+       |                                              ^
+     60|     });
+     61|     expect(new URLSearchParams(router.state.location.search).get('next…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/7]⎯
+
+
+ Test Files  6 failed | 1 passed (7)
+      Tests  5 failed | 18 passed (23)
+   Start at  12:31:08
+   Duration  15.00s (environment 35%, import 22%, tests 17%, transform 16%, setup 10%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/hooks/mine src/features/data-reports/components/mine src/pages/site/account src/features/users/components/AccountMenu.component.test.tsx src/features/users/components/AccountMenuSection.component.test.tsx src/features/users/components/CompactAccountMenu.component.test.tsx src/features/users/hooks/useAccount.component.test.tsx

@@ -1,0 +1,11 @@
+feat(desk): say more of who is there and of plans
+
+The desk's design reads «زيارة · طالب» for a student's visit present,
+and a customer card's «هذا الأسبوع 3 من 3», but the present list did
+not say a visit's audience, nor the customers list a current
+subscription's limits and attendance.
+
+A visit present carries its audience; a customer row's current
+subscription carries its totalDays, daysPerWeek, hoursPerDay,
+totalHours and progress, which the list already computes. The web's
+typed fixtures gain the fields.

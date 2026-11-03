@@ -1,0 +1,9 @@
+src/pages/site/account/MyReportsPage.tsx reaches data-table's chunk (_data-table-C_xrQMKU.js).
+src/pages/site/public/space/SpacePage.tsx reaches calendar's chunk (_calendar-BTfeUoSX.js).
+src/pages/site/public/space/SpacePage.tsx reaches calendar's chunk (_calendar-DrU4Sdyk.js).
+src/pages/site/public/space/SpacePage.tsx reaches data-table's chunk (_data-table-C_xrQMKU.js).
+No showcase code in 75 build files (1010 strings checked).
+No dashboard code in the site's first download.
+No data-table or leaflet or calendar, nor Leaflet's stylesheet, in the site's first download.
+
+A site page draws none of the heavy libraries (data-table, leaflet, calendar), so its chunk must not reach theirs through its static imports (finding 180): look for a site page importing a capability's index.ts where the capability has a public.ts entry, or a public entry exporting what the dashboard draws.

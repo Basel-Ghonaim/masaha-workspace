@@ -1,0 +1,7 @@
+fix(site): retry the route and give the 403 a way
+
+For the general error, 'Try again' runs the route again in place, the
+address replaced and marked as retried; a failure there says the error
+is still there. Offline it still reloads (G8.1). The bare 403 of the
+admin's area for another role says the design's sentence with 'Home'
+and 'Contact us'; a 403 inside a shell keeps none (G8.2, DI21).

@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx (7 tests | 1 failed) 6197ms
+   ❯ SubscriptionSheet (7)
+     × asks its dates with the layer’s date pickers, says a package’s end, and marks the desk’s packages private 463ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  11:04:45
+   Duration  21.92s (transform 33%, tests 29%, import 23%, environment 12%, setup 3%)
+
+  Transform  |component| transforming modules took 7.07s · 33% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx > SubscriptionSheet > asks its dates with the layer’s date pickers, says a package’s end, and marks the desk’s packages private
+AssertionError: expected <input aria-label="x" …(1)></input> to be null
+
+- Expected:
+null
+
++ Received:
+<input
+  aria-label="x"
+  type="date"
+/>
+
+ ❯ src/features/desk/components/sheet/SubscriptionSheet.component.test.tsx:100:55
+     98|     expect(option).toHaveTextContent('Private');
+     99|     expect(within(sheet).getByText('For the desk only — never shown to…
+    100|     expect(sheet.querySelector('input[type="date"]')).toBeNull();
+       |                                                       ^
+    101|     expect(within(sheet).getByRole('button', { name: /^From / })).toHa…
+    102|       'aria-haspopup',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/sheet

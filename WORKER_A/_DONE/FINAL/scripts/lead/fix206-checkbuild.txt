@@ -1,0 +1,12 @@
+
+> check:build
+> npm run check:build -w @masaha/web
+
+
+> @masaha/web@0.0.0 check:build
+> node scripts/checkBuild.ts
+
+No showcase code in 72 build files (1070 strings checked).
+No dashboard code in the site's first download, and no chunk the dashboard imports imports it back.
+No data-table or leaflet or calendar, nor Leaflet's stylesheet, in the site's first download.
+No site page reaches data-table or leaflet or calendar through its static imports.

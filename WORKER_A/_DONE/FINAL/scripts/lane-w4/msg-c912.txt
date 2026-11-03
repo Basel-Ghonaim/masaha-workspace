@@ -1,0 +1,5 @@
+fix(directory): hide area counts past the pins
+
+Home counts each area from the map's pins, which stop at a ceiling.
+Past it the counts fall short, so the area cards and 'All areas' name
+their places without counts (finding 137).

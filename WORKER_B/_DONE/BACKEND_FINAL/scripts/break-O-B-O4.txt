@@ -1,0 +1,90 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/overview/ownerOverview.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/overview/ownerOverview.api.test.ts (6 tests | 2 failed) 4950ms
+   ❯ the owner's overview (6)
+     × the owner reads the work queue: groups missing and stale with their days, open reports, uncollected and unpriced visits, closures awaiting, capacity unset, customers owing 1024ms
+     × no amount anywhere: the body holds no Agorot key 635ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  12:47:25
+   Duration  18.13s (tests 42%, transform 39%, import 17%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/overview/ownerOverview.api.test.ts > the owner's overview > the owner reads the work queue: groups missing and stale with their days, open reports, uncollected and unpriced visits, closures awaiting, capacity unset, customers owing
+AssertionError: expected { groups: { …(2) }, …(7) } to deeply equal { groups: { …(2) }, …(6) }
+
+- Expected
++ Received
+
+@@ -1,6 +1,16 @@
+  {
++   "balances": {
++     "credit": {
++       "agorot": 0,
++       "customers": 0,
++     },
++     "owed": {
++       "agorot": 50000,
++       "customers": 2,
++     },
++   },
+    "capacitySet": false,
+    "closuresAwaitingExtension": 1,
+    "customersOwing": 2,
+    "groups": {
+      "missing": [
+
+ ❯ src/modules/overview/ownerOverview.api.test.ts:224:49
+    222|     await seedQueue();
+    223|
+    224|     expect((await overviewOf(owner)).attention).toEqual({
+       |                                                 ^
+    225|       groups: { missing: ['amenities'], stale: [{ group: 'hours', days…
+    226|       openReports: 2,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/overview/ownerOverview.api.test.ts > the owner's overview > no amount anywhere: the body holds no Agorot key
+AssertionError: expected '{"success":true,"data":{"attention":{…' not to match /agorot/i
+
+- Expected:
+/agorot/i
+
++ Received:
+"{\"success\":true,\"data\":{\"attention\":{\"groups\":{\"missing\":[\"amenities\"],\"stale\":[{\"group\":\"hours\",\"days\":81}]},\"openReports\":2,\"uncollectedVisits\":3,\"unpricedVisits\":2,\"closuresAwaitingExtension\":1,\"capacitySet\":false,\"customersOwing\":2,\"balances\":{\"owed\":{\"agorot\":50000,\"customers\":2},\"credit\":{\"agorot\":0,\"customers\":0}}},\"presentNow\":{\"visits\":0,\"members\":0,\"total\":0,\"capacity\":null,\"status\":null},\"endingSoon\":{\"total\":0,\"first\":[]},\"announcements\":{\"running\":2,\"types\":[\"GENERAL\",\"OFFER\"]},\"at\":\"2026-10-21T07:00:00.000Z\"}}"
+
+ ❯ src/modules/overview/ownerOverview.api.test.ts:256:47
+    254|     const response = await read(owner);
+    255|     expect(response.status).toBe(200);
+    256|     expect(JSON.stringify(response.body)).not.toMatch(/agorot/i);
+       |                                               ^
+    257|   });
+    258|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/overview/ownerOverview.api.test.ts

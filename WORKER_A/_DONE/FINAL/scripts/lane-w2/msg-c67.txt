@@ -1,0 +1,15 @@
+fix(space-links): read the email's account exactly
+
+After EMAIL_HAS_ACCOUNT the add sheet looked the email up with the
+users list's search, which ranks longer emails that hold it too: a
+right email past the first page read as no account, and a failed read
+was worded the same, «تحقّق من البريد» for three causes (finding 89).
+The sheet now reads `GET /admin/users?email=` (C1.8), one account by
+its exact email (D6.5):
+
+- found: its account shown before the upgrade, as before;
+- none: «لا حساب بهذا البريد تمامًا الآن، فلا يُرقّى أحد — تحقّق منه.»;
+- a failed read: «تعذّر التحقق من هذا البريد الآن.» with «إعادة
+  المحاولة», a refetch.
+
+The old line accountUnconfirmed is gone.

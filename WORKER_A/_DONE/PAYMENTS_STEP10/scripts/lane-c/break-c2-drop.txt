@@ -1,0 +1,227 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/site/public/space
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/pages/site/public/space/SpacePage.component.test.tsx (3 tests | 1 failed) 7701ms
+   ❯ a space’s page (3)
+     × lets the report go when the guest closes the sign-in 818ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/public/space/SpacePage.component.test.tsx > a space’s page > lets the report go when the guest closes the sign-in
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <div
+  aria-describedby="radix-_r_1k_"
+  aria-labelledby="radix-_r_1j_"
+  class="fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"
+  data-slot="dialog-content"
+  data-state="open"
+  id="radix-_r_1i_"
+  role="dialog"
+  style="pointer-events: auto;"
+  tabindex="-1"
+>
+  <div
+    class="flex flex-col gap-2"
+    data-slot="dialog-header"
+  >
+    <h2
+      class="text-heading-3"
+      data-slot="dialog-title"
+      id="radix-_r_1j_"
+    >
+      Report wrong information
+    </h2>
+    <p
+      class="text-body text-muted-foreground"
+      data-slot="dialog-description"
+      id="radix-_r_1k_"
+    >
+      Your report on ⁨Noor Hub⁩ goes to the space’s management; you’ll find their reply in “My reports”.
+    </p>
+  </div>
+  <form
+    class="flex flex-col gap-4"
+    novalidate=""
+  >
+    <div
+      class="group/field flex flex-col gap-1.5"
+      data-slot="field"
+    >
+      <div
+        class="flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"
+      >
+        <label
+          class="text-label text-foreground"
+          for="_r_1l_-control"
+          id="_r_1l_-label"
+        >
+          What’s wrong?
+        </label>
+      </div>
+      <button
+        aria-autocomplete="none"
+        aria-expanded="false"
+        aria-required="true"
+        class="flex h-(--control-height) w-full items-center justify-between gap-2 rounded-(--radius-control) border border-input bg-background ps-3 pe-2 text-(length:--control-text-size) leading-(--type-body-line-height) whitespace-nowrap text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-placeholder:text-muted-foreground *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+        data-placeholder=""
+        data-slot="select-trigger"
+        data-state="closed"
+        dir="ltr"
+        id="_r_1l_-control"
+        role="combobox"
+        type="button"
+      >
+        <span
+          data-slot="select-value"
+          style="pointer-events: none;"
+        >
+          Choose
+        </span>
+        <svg
+          aria-hidden="true"
+          class="lucide lucide-chevron-down text-muted-foreground"
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m6 9 6 6 6-6"
+          />
+        </svg>
+      </button>
+      <select
+        aria-hidden="true"
+        style="position: absolute; border: 0px; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; word-wrap: normal;"
+        tabindex="-1"
+      >
+        <option
+          selected=""
+          value=""
+        />
+        <option
+          value="PRICES"
+        >
+          Prices
+        </option>
+        <option
+          value="HOURS"
+        >
+          Opening hours
+        </option>
+        <option
+          value="CONTACT"
+        >
+          Contact
+        </option>
+        <option
+          value="LOCATION"
+        >
+          Location
+        </option>
+        <option
+          value="AMENITIES"
+        >
+          Amenities
+        </option>
+        <option
+          value="OTHER"
+        >
+          Other
+        </option>
+      </select>
+    </div>
+    <div
+      class="group/field flex flex-col gap-1.5"
+      data-slot="field"
+    >
+      <div
+        class="flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"
+      >
+        <label
+          class="text-label text-foreground"
+          for="_r_1n_-control"
+          id="_r_1n_-label"
+        >
+          Details
+        </label>
+      </div>
+      <textarea
+        aria-describedby="_r_1n_-helper"
+        aria-required="false"
+        class="field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"
+        data-slot="textarea"
+        dir="auto"
+        id="_r_1n_-control"
+        name="message"
+      />
+      <p
+        class="text-caption text-muted-foreground group-data-disabled/field:opacity-50"
+        id="_r_1n_-helper"
+      >
+        <span
+          class="block"
+        >
+          Optional
+        </span>
+        <span
+          class="block"
+        >
+          For example: the monthly price is now ₪320
+        </span>
+      </p>
+    </div>
+    <div
+      class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"
+      data-slot="dialog-footer"
+    >
+      <button
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"
+        data-slot="dialog-close"
+        type="button"
+      >
+        Back
+      </button>
+      <button
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"
+        data-slot="button"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</div> instead[39m
+ ❯ src/pages/site/public/space/SpacePage.component.test.tsx:119:46
+    117|     });
+    118|     // The page renders again with the session; no dialog opens by its…
+    119|     expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+       |                                              ^
+    120|     expect(screen.getByRole('button', { name: 'Report wrong informatio…
+    121|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  12:57:09
+   Duration  17.61s (tests 45%, transform 21%, environment 16%, import 14%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/site/public/space

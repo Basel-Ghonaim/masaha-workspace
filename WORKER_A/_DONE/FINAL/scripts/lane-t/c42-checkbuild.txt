@@ -1,0 +1,27 @@
+
+> check:build
+> npm run check:build -w @masaha/web
+
+
+> @masaha/web@0.0.0 check:build
+> node scripts/checkBuild.ts
+
+dist/assets/calendar-BylvQqgL.js  يوليو
+dist/assets/calendar-BylvQqgL.js  أغسطس
+dist/assets/calendar-BylvQqgL.js  سبتمبر
+dist/assets/calendar-BylvQqgL.js  Jul
+dist/assets/calendar-BylvQqgL.js  Aug
+dist/assets/calendar-BylvQqgL.js  Oct
+dist/assets/priceText-BZ-_TPtG.js  ILS
+
+7 showcase string(s) in the build. The showcase must stay development-only. If a fixture string only matches unrelated text, reword the fixture.
+No dashboard code in the site's first download, and no chunk the dashboard imports imports it back.
+No data-table or leaflet or calendar, nor Leaflet's stylesheet, in the site's first download.
+No site page reaches data-table or leaflet or calendar through its static imports.
+npm error Lifecycle script `check:build` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-t\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-t\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c node scripts/checkBuild.ts

@@ -1,0 +1,110 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 1 failed) 45321ms
+   ❯ the dashboard's navigation (12)
+     × lists the owner’s twelve pages, the overview marked as the page shown 3092ms
+ ❯ |component| src/features/lookups/hooks/area/useAreaFilter.component.test.tsx (3 tests | 1 failed) 488ms
+   ❯ useAreaFilter (3)
+     × offers the public catalogue’s areas under their governorates, none chosen, a governorate with no area left out, never asking for the admin’s lists 152ms
+Not implemented: navigation to another Document
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the owner’s twelve pages, the overview marked as the page shown
+TestingLibraryElementError: Unable to find role="navigation" and name "Space dashboard"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ pagesIn src/pages/dashboard/routes.component.test.tsx:157:28
+    155| /** The names of the pages a sidebar lists, in order, across its group…
+    156| async function pagesIn(navigation: string) {
+    157|   const nav = await screen.findByRole('navigation', { name: navigation…
+       |                            ^
+    158|   return within(nav)
+    159|     .getAllByRole('list')
+ ❯ src/pages/dashboard/routes.component.test.tsx:209:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/lookups/hooks/area/useAreaFilter.component.test.tsx > useAreaFilter > offers the public catalogue’s areas under their governorates, none chosen, a governorate with no area left out, never asking for the admin’s lists
+AssertionError: expected [ …(2) ] to deeply equal [ …(2) ]
+
+- Expected
++ Received
+
+@@ -1,18 +1,20 @@
+  [
+    {
+      "heading": "غزة",
+      "items": [
+        {
++         "held": false,
+          "keywords": [
+            "الرمال",
+            "Al-Rimal",
+          ],
+          "text": "الرمال",
+          "value": "11",
+        },
+        {
++         "held": false,
+          "keywords": [
+            "النصر",
+            "An-Nasr",
+          ],
+          "text": "النصر",
+@@ -23,10 +25,11 @@
+    },
+    {
+      "heading": "خان يونس",
+      "items": [
+        {
++         "held": false,
+          "keywords": [
+            "المواصي",
+            "Al-Mawasi",
+          ],
+          "text": "المواصي",
+
+ ❯ src/features/lookups/hooks/area/useAreaFilter.component.test.tsx:60:35
+     58|     expect(result.current.summary).toBe('كل المناطق');
+     59|     expect(result.current.failure).toBeNull();
+     60|     expect(result.current.groups).toEqual([
+       |                                   ^
+     61|       {
+     62|         key: 2,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 312 passed (314)
+      Tests  2 failed | 1855 passed (1857)
+   Start at  11:39:00
+   Duration  502.27s (environment 36%, import 31%, tests 20%, setup 10%, transform 3%)
+
+Environment  |component| jsdom was created 314 times · 1017.01s total, 36% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component
+exit 1

@@ -1,0 +1,477 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/lookups src/pages/dashboard/routes.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/lookups/components/sheet/AmenitySheet.component.test.tsx (8 tests | 1 failed) 15409ms
+   ❯ the amenity’s sheet (8)
+     × the edit sheet has no active switch 2068ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 3 failed | 12 skipped) 71236ms
+   ❯ the dashboard's guards (8)
+     × refuses reception the owner’s payments with the 403 inside the shell 3147ms
+     × shows reception its own payments today 3029ms
+   ❯ the admin's add-space page (1)
+     × offers the public catalogue’s areas, and opens the new space’s editor once it is added 5495ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:201:3
+    199|   // Reception lands on the desk, which loads lazily: its first transf…
+    200|   // seconds, so it is done before the tests, as the pages' own sectio…
+    201|   beforeAll(async () => {
+       |   ^
+    202|     await import('./space/desk/DeskPage');
+    203|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:184:30
+    182| /** The heading named `name` in the main landmark, where a status stat…
+    183| async function stateInMain(name: string) {
+    184|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    185| }
+    186|
+ ❯ src/pages/dashboard/routes.component.test.tsx:356:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today
+TestingLibraryElementError: Unable to find role="banner"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ topBarTitle src/pages/dashboard/routes.component.test.tsx:179:30
+    177|  */
+    178| async function topBarTitle(name: string) {
+    179|   return within(await screen.findByRole('banner')).findByRole('heading…
+       |                              ^
+    180| }
+    181|
+ ❯ src/pages/dashboard/routes.component.test.tsx:364:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's add-space page > offers the public catalogue’s areas, and opens the new space’s editor once it is added
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:713:3
+    711|   }
+    712|
+    713|   it('offers the public catalogue’s areas, and opens the new space’s e…
+       |   ^
+    714|     const user = userEvent.setup();
+    715|     signIn({ role: 'ADMIN' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |component| src/features/lookups/components/sheet/AmenitySheet.component.test.tsx > the amenity’s sheet > the edit sheet has no active switch
+TestingLibraryElementError: Unable to find an accessible element with the role "switch" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Here are the accessible roles:
+
+  dialog:
+
+  Name "Edit amenity":
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_2j_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_2i_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Edit amenity":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-heading-3"[39m
+    [33mdata-slot[39m=[32m"sheet-title"[39m
+    [33mid[39m=[32m"radix-_r_2j_"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Name in Arabic":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mdir[39m=[32m"rtl"[39m
+    [33mid[39m=[32m"_r_2l_-control"[39m
+    [33mlang[39m=[32m"ar"[39m
+    [33mname[39m=[32m"nameAr"[39m
+  [36m/>[39m
+
+  Name "Name in English":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mid[39m=[32m"_r_2m_-control"[39m
+    [33mlang[39m=[32m"en"[39m
+    [33mname[39m=[32m"nameEn"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radiogroup:
+
+  Name "Icon":
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"_r_2n_-label"[39m
+    [33maria-required[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/radio-group gap-1 grid grid-cols-2 gap-x-6"[39m
+    [33mdata-slot[39m=[32m"radio-group"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mid[39m=[32m"_r_2n_-control"[39m
+    [33mrole[39m=[32m"radiogroup"[39m
+    [33mstyle[39m=[32m"outline: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "Wi-Fi":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_2o_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"wifi"[39m
+  [36m/>[39m
+
+  Name "Lightning":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_2q_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"zap"[39m
+  [36m/>[39m
+
+  Name "Sun":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mid[39m=[32m"_r_2s_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"sun"[39m
+  [36m/>[39m
+
+  Name "Power plug":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_2u_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"plug-zap"[39m
+  [36m/>[39m
+
+  Name "Coffee cup":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_30_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"coffee"[39m
+  [36m/>[39m
+
+  Name "People":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_32_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"users"[39m
+  [36m/>[39m
+
+  Name "Presentation board":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_34_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"presentation"[39m
+  [36m/>[39m
+
+  Name "Graduation cap":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_36_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"graduation-cap"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Save":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  Name "Close":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+  [36m>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Amenities"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+        [33mdata-slot[39m=[32m"card"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"@container/card-header auto-rows-min gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding) flex flex-wrap items-center gap-x-4 gap-y-2"[39m
+          [33mdata-slot[39m=[32m"card-header"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-heading-3 min-w-0 grow basis-60"[39m
+            [33mdata-slot[39m=[32m"card-title"[39m
+          [36m>[39m
+            [36m<h2>[39m
+              [0mAmenities[0m
+            [36m</h2>[39m
+          [36m</div>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"dialog"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+            [33mdata-slot[39m=[32m"sheet-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mAdd amenity[0m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"px-(--card-padding) flex flex-col gap-4"[39m
+          [33mdata-slot[39m=[32m"card-content"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"divide-y divide-border rounded-md border border-border"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex min-w-0 grow flex-wrap items-center gap-x-2"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-sun"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<circle[39m
+                    [33mcx[39m=[32m"12"[39m
+                    [33mcy[39m=[32m"12"[39m
+                    [33mr[39m=[32m"4"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M12 2v2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M12 20v2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m4.93 4.93 1.41 1.41"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m17.66 17.66 1.41 1.41"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M2 12h2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M20 12h2"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m6.34 17.66-1.41 1.41"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m19.07 4.93-1.41 1.41"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [36m<span[39m
+                  [33mdir[39m=[32m"auto"[39m
+                  [33mlang[39m=[32m"en"[39m
+                [36m>[39m
+                  [0mInternet[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                  [33mdir[39m=[32m"auto"[39m
+                  [33mlang[39m=[32m"ar"[39m
+                [36m>[39m
+                  [0mإنترنت[0m
+                [36m</span>[39m
+              [36m</span>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-label[39m=[32m"Move up: ⁨Internet⁩ — 1 of 1"[39m
+                  [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+                  [33mdata-slot[39m=[32m"button"[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                ...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/sheet/AmenitySheet.component.test.tsx:107:19
+    105|     expect(within(sheet).queryByRole('switch')).not.toBeInTheDocument(…
+    106|     // The row keeps its switch: the one control of whether it is offe…
+    107|     expect(screen.getByRole('switch', { name: heard('Active: Internet'…
+       |                   ^
+    108|   });
+    109|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  2 failed | 26 passed (28)
+      Tests  4 failed | 199 passed | 12 skipped (215)
+   Start at  10:56:25
+   Duration  93.36s (import 29%, environment 28%, tests 27%, setup 9%, transform 7%)
+
+Environment  |component| jsdom was created 28 times · 140.42s total, 28% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/lookups src/pages/dashboard/routes.component.test.tsx
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/lookups
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+
+ Test Files  2 passed (2)
+      Tests  19 passed (19)
+   Start at  10:58:05
+   Duration  4.05s (transform 54%, import 42%, tests 3%, worker 1%)
+

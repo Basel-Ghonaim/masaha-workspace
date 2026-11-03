@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx -t posts with one key
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx (8 tests | 1 failed | 7 skipped) 858ms
+   ❯ useAnnouncementSheet (8)
+     × posts with one key, kept across the transport’s re-sends and «Try again» after no answer 856ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  12:18:21
+   Duration  10.48s (import 50%, transform 22%, environment 15%, tests 8%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx > useAnnouncementSheet > posts with one key, kept across the transport’s re-sends and «Try again» after no answer
+AssertionError: expected Set{ …(2) } to deeply equal Set{ '966c0a7b-0057-4316-a2cf-6928b6…' }
+
+- Expected
++ Received
+
+  Set {
+    "966c0a7b-0057-4316-a2cf-6928b661d043",
++   "c64192f0-5cd6-4a6a-a29b-e8acc1bb99b2",
+  }
+
+ ❯ src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx:112:42
+    110|     await findToast('Announcement published');
+    111|     expect(onClose).toHaveBeenCalled();
+    112|     expect(new Set(requests.map(keyOf))).toEqual(new Set([first]));
+       |                                          ^
+    113|     // Started now: no start is sent; the end is today's 18:00, the sh…
+    114|     expect(bodyOf(requests.at(-1))).toMatchObject({ type: 'GENERAL', t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx -t ^^^"posts^^^ with^^^ one^^^ key^^^"

@@ -1,0 +1,10 @@
+feat(spaces): name the retired amenities held
+
+A space keeps a retired amenity's link until a save leaves it out, but
+its reads gave only the ids, so the owner's checklist could not show
+the retired ones it holds (finding 99).
+
+AdminSpace (the admin's and the managed reads, and every fact save's
+answer) carries retiredAmenities: those of amenityIds the platform
+retired, with their names and icon, in the platform's order, named by
+lookups in the read's own transaction.

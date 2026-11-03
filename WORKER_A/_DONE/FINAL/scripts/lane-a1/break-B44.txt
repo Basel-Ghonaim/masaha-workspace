@@ -1,0 +1,55 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/auth/sessionLock.api.test.ts -t expires between the check
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a1_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/auth/sessionLock.api.test.ts (9 tests | 1 failed | 8 skipped) 2464ms
+   ❯ the session lock (9)
+     × a temporary password that expires between the check and the lock is refused at confirm 1671ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 skipped (9)
+   Start at  17:35:20
+   Duration  19.70s (transform 56%, import 21%, tests 21%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/auth/sessionLock.api.test.ts > the session lock > a temporary password that expires between the check and the lock is refused at confirm
+AssertionError: expected 200 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 200
+
+ ❯ src/modules/auth/sessionLock.api.test.ts:106:29
+    104|     );
+    105|
+    106|     expect(response.status).toBe(403);
+       |                             ^
+    107|     expect(response.body).toMatchObject({ error: { code: 'TEMPORARY_PA…
+    108|     expect(await prisma.refreshToken.count({ where: { userId: id } }))…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/auth/sessionLock.api.test.ts -t ^^^"expires^^^ between^^^ the^^^ check^^^"

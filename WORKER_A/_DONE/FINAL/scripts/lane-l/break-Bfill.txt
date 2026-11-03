@@ -1,0 +1,42 @@
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run src/space-settings
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/packages/shared
+
+ ❯ src/space-settings/reminderTemplate.unit.test.ts (4 tests | 1 failed) 29ms
+   ❯ fillReminder (2)
+     × fills every placeholder, each time it appears, and leaves the rest of the text as it is 12ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 7 passed (8)
+   Start at  17:23:05
+   Duration  981ms (import 59%, transform 34%, tests 5%, worker 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/space-settings/reminderTemplate.unit.test.ts > fillReminder > fills every placeholder, each time it appears, and leaves the rest of the text as it is
+AssertionError: expected 'رهف، عليك 45 ₪ في {المساحة}. رهف: 45 …' to be 'رهف، عليك 45 ₪ في مساحة التركيز. رهف:…' // Object.is equality
+
+Expected: "رهف، عليك 45 ₪ في مساحة التركيز. رهف: 45 ₪ { {مجهول}"
+Received: "رهف، عليك 45 ₪ في {المساحة}. رهف: 45 ₪ { {مجهول}"
+
+ ❯ src/space-settings/reminderTemplate.unit.test.ts:49:7
+     47|         space: 'مساحة التركيز',
+     48|       }),
+     49|     ).toBe('رهف، عليك 45 ₪ في مساحة التركيز. رهف: 45 ₪ { {مجهول}');
+       |       ^
+     50|   });
+     51|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\packages\shared
+npm error workspace @masaha/shared@0.0.0
+npm error location C:\dev\masaha\app-lane-l\packages\shared
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run src/space-settings

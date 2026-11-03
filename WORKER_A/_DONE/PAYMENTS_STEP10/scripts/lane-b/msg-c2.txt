@@ -1,0 +1,13 @@
+feat(data-reports): decide a space's reports
+
+Screen 23 (O12): the owner's «بلاغات البيانات» lists the space's reports
+by «الكل · جديدة · تمت المراجعة» (the chip and the page in the address),
+the reporter a visitor and the day only, never the time (finding 150).
+One decision sheet decides each: «تم التصحيح» with an optional reply,
+«لم يُعتمد» with a required one, focused when missing; sent once with
+no key, REPORT_ALREADY_DECIDED, a 404 and a 403 each worded; a decided
+report read-only. The toast says the report went to «تمت المراجعة».
+
+The feature is any page group, its repository, keys, index and copy
+section shaped so the admin's and the user's parts are added beside
+the owner's.

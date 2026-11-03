@@ -1,0 +1,15 @@
+shot 1-statement-owner-ar-light-1440
+· statement the «⋯» labels: [
+  'إجراءات الدفعة: ‏60 ₪ · سارة خالد',
+  'إجراءات الدفعة: ‏5 ₪ · سارة خالد',
+  'إجراءات الدفعة: ‏1 ₪ · سارة خالد'
+]
+· statement menu: إجراءات الدفعة: ‏1 ₪ · سارة خالد → إلغاء الدفعة…
+· statement focus on opening: TEXTAREA 
+· statement dialog: إلغاء الدفعة؟ | ‏1 ₪ · سارة خالد · اليوم · نقدًا. تبقى ظاهرة مشطوبة مع السبب واسمك، ولا تُحسب في الدخل ولا في التسليم. لا يمكن التراجع. | السبب | رجوع | إلغاء الدفعة
+shot 1-void-statement-dialog-owner-ar-light-1440
+· statement toast: success: أُلغيت دفعة ‏1 ₪ · سارة خالد | لا تُحسب في الدخل ولا في التسليم.
+· statement focus after: H4 الدفعات
+shot 1-void-statement-done-owner-ar-light-1440
+shot 1-statement-after-owner-ar-light-1440
+·    2026-10-27T13:13:54.655Z POST /api/v1/manage/spaces/7/payments/17/void 200 Idempotency-Key: none body: {"reason":"دفعة تجربة"}

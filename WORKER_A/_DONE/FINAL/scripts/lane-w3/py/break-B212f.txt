@@ -1,0 +1,57 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/search
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/search/DeskSearch.component.test.tsx (3 tests | 1 failed) 2261ms
+   ❯ DeskSearch (3)
+     × is named and controls its results; its groups are h2, its cards h3; its count is polite; axe-clean 874ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  12:37:33
+   Duration  14.14s (transform 33%, import 26%, environment 19%, tests 16%, setup 5%)
+
+  Transform  |component| transforming modules took 4.59s · 33% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/search/DeskSearch.component.test.tsx > DeskSearch > is named and controls its results; its groups are h2, its cards h3; its count is polite; axe-clean
+TestingLibraryElementError: Unable to find an accessible element with the role "link"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<h3>[39m
+  [36m<span[39m
+    [33mdir[39m=[32m"auto"[39m
+  [36m>[39m
+    [0mSamir Odeh[0m
+  [36m</span>[39m
+[36m</h3>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/desk/components/search/DeskSearch.component.test.tsx:128:77
+    126|     // A card's name leads to the customer's file (G13.5).
+    127|     expect(
+    128|       within(screen.getByRole('heading', { level: 3, name: 'Samir Odeh…
+       |                                                                             ^
+    129|     ).toHaveAttribute('href', `/file/${String(SAMIR.id)}`);
+    130|     // Sara is present: she is in the first group, not a card.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/search

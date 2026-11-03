@@ -1,0 +1,174 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/admin/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/pages/dashboard/admin/audit/AuditPage.component.test.tsx (3 tests | 1 failed) 6030ms
+   ❯ AuditPage (the admin’s) (3)
+     × the filters are in the address and survive a reload 4488ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  15:21:15
+   Duration  21.91s (tests 28%, transform 27%, import 24%, environment 17%, setup 4%)
+
+  Transform  |component| transforming modules took 5.74s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/admin/audit/AuditPage.component.test.tsx > AuditPage (the admin’s) > the filters are in the address and survive a reload
+AssertionError: expected '' to be '?q=Rimal&period=all&type=lookups' // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mstyle[39m=[32m""[39m
+  [36m>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mPlatform events only. Space operations events (customers and payments) are seen only by the space owner.[0m
+        [36m</p>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Audit log"[39m
+          [33mclass[39m=[32m"flex flex-col gap-3"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid items-start gap-3 md:grid-cols-2 xl:grid-cols-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground"[39m
+                  [33mfor[39m=[32m"_r_s_-control"[39m
+                  [33mid[39m=[32m"_r_s_-label"[39m
+                [36m>[39m
+                  [0mSearch the target[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+                [33mdata-size[39m=[32m"md"[39m
+                [33mdata-slot[39m=[32m"input-group"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"flex shrink-0 text-muted-foreground [&_svg:not([class*='size-'])]:size-4"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-search"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"m21 21-4.34-4.34"[39m
+                    [36m/>[39m
+                    [36m<circle[39m
+                      [33mcx[39m=[32m"11"[39m
+                      [33mcy[39m=[32m"11"[39m
+                      [33mr[39m=[32m"8"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+                [36m<input[39m
+                  [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+                  [33mdata-slot[39m=[32m"input"[39m
+                  [33mid[39m=[32m"_r_s_-control"[39m
+                  [33mmaxlength[39m=[32m"80"[39m
+                  [33mplaceholder[39m=[32m"A space, a person, a lookup…"[39m
+                  [33mtype[39m=[32m"search"[39m
+                  [33mvalue[39m=[32m"Rimal"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"grid items-start gap-3 md:grid-cols-3"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+              [36m>[39m
+                [36m<label[39m
+                  [33mclass[39m=[32m"text-label text-foreground"[39m
+                  [33mfor[39m=[32m"_r_t_-control"[39m
+                  [33mid[39m=[32m"_r_t_-label"[39m
+                [36m>[39m
+                  [0mPeriod[0m
+                [36m</label>[39m
+              [36m</div>[39m
+              [36m<button[39m
+                [33maria-autocomplete[39m=[32m"none"[39m
+                [33maria-expanded[39m=[32m"false"[39m
+                [33mclass[39m=[32m"flex h-(--control-height) w-full items-center justify-between gap-2 rounded-(--radius-control) border border-input bg-background ps-3 pe-2 text-(length:--control-text-size) leading-(--type-body-line-height) whitespace-nowrap text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-placeholder:text-muted-foreground *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+                [33mdata-slot[39m=[32m"select-trigger"[39m
+                [33mdata-state[39m=[32m"closed"[39m
+                [33mdir[39m=[32m"ltr"[39m
+                [33mid[39m=[32m"_r_t_-control"[39m
+                [33mrole[39m=[32m"combobox"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mdata-slot[39m=[32m"select-value"[39m
+                  [33mstyle[39m=[32m"pointer-events: none;"[39m
+                [36m>[39m
+                  [0mLast 30 days[0m
+                [36m</span>[39m
+                [36m<svg[39m
+            ...
+
+- Expected
++ Received
+
+- ?q=Rimal&period=all&type=lookups
+
+ ❯ src/pages/dashboard/admin/audit/AuditPage.component.test.tsx:120:50
+    118|     await user.type(screen.getByRole('searchbox', { name: 'Search the …
+    119|     await waitFor(() => {
+    120|       expect(first.router.state.location.search).toBe('?q=Rimal&period…
+       |                                                  ^
+    121|     });
+    122|     const address = first.router.state.location.search;
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/admin/audit

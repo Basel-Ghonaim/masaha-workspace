@@ -1,0 +1,66 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/data-reports
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |unit| src/features/data-reports/services/adminReportsQueryOf.unit.test.ts (0 test)
+ ❯ |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts (5 tests | 2 failed) 27ms
+   ❯ the data reports repository (5)
+     × reads a page of every space’s reports, the admin’s query as its parameters 5ms
+     × sends the admin’s decision to the report’s own path, its body as given 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/services/adminReportsQueryOf.unit.test.ts [ src/features/data-reports/services/adminReportsQueryOf.unit.test.ts ]
+Error: Cannot find module './adminReportsQueryOf' imported from C:/dev/masaha/app-lane-b/apps/web/src/features/data-reports/services/adminReportsQueryOf.unit.test.ts
+ ❯ src/features/data-reports/services/adminReportsQueryOf.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { adminReportsParamsOf, adminReportsQueryOf } from './adminRepo…
+       | ^
+      3|
+      4| const read = (search: string) => adminReportsQueryOf(new URLSearchPara…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > reads a page of every space’s reports, the admin’s query as its parameters
+TypeError: createDataReportsRepository(...).adminReports is not a function
+ ❯ src/features/data-reports/repository/dataReportsRepository.unit.test.ts:76:48
+     74|     };
+     75|
+     76|     await expect(createDataReportsRepository().adminReports(query)).re…
+       |                                                ^
+     77|       data: [adminReport()],
+     78|       meta: META,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > sends the admin’s decision to the report’s own path, its body as given
+TypeError: createDataReportsRepository(...).decideAdmin is not a function
+ ❯ src/features/data-reports/repository/dataReportsRepository.unit.test.ts:89:37
+     87|
+     88|     await expect(
+     89|       createDataReportsRepository().decideAdmin(41, { status: 'RESOLVE…
+       |                                     ^
+     90|     ).resolves.toEqual(decided);
+     91|     expect(requests.map(lineOf)).toEqual(['patch /admin/data-reports/4…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed | 2 passed (4)
+      Tests  2 failed | 12 passed (14)
+   Start at  12:33:27
+   Duration  1.65s (transform 49%, import 47%, tests 2%, worker 2%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-b\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-b\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/data-reports

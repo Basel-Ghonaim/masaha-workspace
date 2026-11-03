@@ -1,0 +1,42 @@
+PASS health db up
+     settings before: contactEmail:5f12a8245d92659efc68a0bdfedda9a2 contactWhatsapp:4cad20b31d4ab6fa89354f5ee1648e40 newSpaceDefaults:4decb388cbbf96c9d565c55b4851c58f priceStalenessDays:34173cb38f07f89ddbebc2ac9128303f stalenessDays:072b030ba126b2f4b2374f342be9ed44
+     audit entries before: 56
+PASS admin reads the new-space defaults 200 -
+PASS admin reads the thresholds ({"stalenessDays":60,"priceStalenessDays":30}) 200 -
+PASS admin reads the contact (email set, whatsapp set) 200 -
+PASS PUT new-space-defaults with the same values writes nothing 200 -
+PASS PUT staleness with the same values writes nothing 200 -
+PASS PUT contact with the same values writes nothing 200 -
+PASS admin saves the contact: normalised, answered as saved 200 -
+PASS …audited on the admin's log, no entity id, only what changed 200 -
+PASS GET /settings/public (anonymous) answers the saved contact, cached 5 minutes 200 -
+PASS admin puts the contact back 200 -
+PASS the admin's log shows platformSettings.contactEdited (3 in all) 200 -
+PASS a threshold applies at once: stale groups [] → ["profile","hours","prices","amenities","contacts"] 200 -
+PASS …audited platformSettings.stalenessEdited, only what changed 200 -
+PASS admin puts the thresholds back; the stale groups as before 200 -
+PASS admin saves the defaults; audited with only the switch 200 -
+PASS admin puts the defaults back 200 -
+NOT PERFORMED a new space after a default changed: §12.6 names no space creation; proven by T3 (adminSettings.api.test.ts, B6 red).
+PASS a guest GET /admin/settings/new-space-defaults 401 -
+PASS a guest PUT /admin/settings/new-space-defaults 401 -
+PASS a guest GET /admin/settings/staleness 401 -
+PASS a guest PUT /admin/settings/staleness 401 -
+PASS a guest GET /admin/settings/contact 401 -
+PASS a guest PUT /admin/settings/contact 401 -
+PASS a user (the reception account, role USER) GET /admin/settings/new-space-defaults 403 -
+PASS a user (the reception account, role USER) PUT /admin/settings/new-space-defaults 403 -
+PASS a user (the reception account, role USER) GET /admin/settings/staleness 403 -
+PASS a user (the reception account, role USER) PUT /admin/settings/staleness 403 -
+PASS a user (the reception account, role USER) GET /admin/settings/contact 403 -
+PASS a user (the reception account, role USER) PUT /admin/settings/contact 403 -
+PASS an owner GET /admin/settings/new-space-defaults 403 -
+PASS an owner PUT /admin/settings/new-space-defaults 403 -
+PASS an owner GET /admin/settings/staleness 403 -
+PASS an owner PUT /admin/settings/staleness 403 -
+PASS an owner GET /admin/settings/contact 403 -
+PASS an owner PUT /admin/settings/contact 403 -
+     settings after: contactEmail:5f12a8245d92659efc68a0bdfedda9a2 contactWhatsapp:4cad20b31d4ab6fa89354f5ee1648e40 newSpaceDefaults:4decb388cbbf96c9d565c55b4851c58f priceStalenessDays:34173cb38f07f89ddbebc2ac9128303f stalenessDays:072b030ba126b2f4b2374f342be9ed44
+     audit entries after: 62 (+6: contact ×2, staleness ×2, defaults ×2)
+     writes: contact → test · contact → original · staleness → 1/1 · staleness → original · defaults → autoCheckoutAtClosing flipped · defaults → original
+ALL PASS

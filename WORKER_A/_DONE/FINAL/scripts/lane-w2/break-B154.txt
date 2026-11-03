@@ -1,0 +1,78 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/audit/components/AuditLog.component.test.tsx (8 tests | 1 failed) 4835ms
+   ❯ AuditLog (the owner’s) (8)
+     × hides the actor filter for a period of one actor 303ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  15:16:37
+   Duration  19.60s (transform 28%, import 26%, tests 25%, environment 16%, setup 4%)
+
+  Transform  |component| transforming modules took 5.32s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/audit/components/AuditLog.component.test.tsx > AuditLog (the owner’s) > hides the actor filter for a period of one actor
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <button
+  aria-autocomplete="none"
+  aria-expanded="false"
+  class="flex h-(--control-height) w-full items-center justify-between gap-2 rounded-(--radius-control) border border-input bg-background ps-3 pe-2 text-(length:--control-text-size) leading-(--type-body-line-height) whitespace-nowrap text-foreground transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-placeholder:text-muted-foreground *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+  data-slot="select-trigger"
+  data-state="closed"
+  dir="ltr"
+  id="_r_30_-control"
+  role="combobox"
+  type="button"
+>
+  <span
+    data-slot="select-value"
+    style="pointer-events: none;"
+  >
+    All
+  </span>
+  <svg
+    aria-hidden="true"
+    class="lucide lucide-chevron-down text-muted-foreground"
+    fill="none"
+    height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="m6 9 6 6 6-6"
+    />
+  </svg>
+</button> instead[39m
+ ❯ src/features/audit/components/AuditLog.component.test.tsx:144:67
+    142|     await screen.findByText('Events: 1');
+    143|     expect(screen.getByRole('combobox', { name: 'Action type' })).toBe…
+    144|     expect(screen.queryByRole('combobox', { name: 'Actor' })).not.toBe…
+       |                                                                   ^
+    145|   });
+    146|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/audit

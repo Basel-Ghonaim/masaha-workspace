@@ -1,0 +1,11 @@
+feat(design-system): add a removable filter tag
+
+Finding 8: the stress test's applied-filter tag had no component. The
+admin's data reports are the one list whose filters arrive from outside
+the page (a link with ?space=) and hide in a sheet on a phone, so the
+filters in force show as removable tags at every width (decision 4).
+
+FilterTag is a display component: the caller's label and a ghost
+remove button named by a prop (the layer has no words), a pill on the
+secondary pair, its button the control height on touch. Foundation
+§12 gains its row; the showcase its section; finding 8 is resolved.

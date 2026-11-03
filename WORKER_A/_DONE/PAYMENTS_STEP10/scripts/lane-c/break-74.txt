@@ -1,0 +1,65 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/favorites/hooks/toggle
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx (6 tests | 2 failed) 520ms
+   ❯ useFavoriteToggle (6)
+     × puts the heart back when the save fails, says so with «Try again», and re-sends nothing by itself 63ms
+     × words a full list with «Manage favourites», and a space gone from the directory 44ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx > useFavoriteToggle > puts the heart back when the save fails, says so with «Try again», and re-sends nothing by itself
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx:144:38
+    142|       });
+    143|       const failed = await toastWith(/^We couldn’t save .Masaha Hub. t…
+    144|       expect(result.current.pressed).toBe(false);
+       |                                      ^
+    145|       expect(requests).toHaveLength(1);
+    146|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx > useFavoriteToggle > words a full list with «Manage favourites», and a space gone from the directory
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx:174:36
+    172|     });
+    173|     expect(manage).toHaveBeenCalledTimes(1);
+    174|     expect(result.current.pressed).toBe(false);
+       |                                    ^
+    175|
+    176|     answer = refused(404, { type: 'not_found' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  13:19:49
+   Duration  5.26s (transform 34%, environment 28%, import 21%, tests 10%, setup 7%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/favorites/hooks/toggle

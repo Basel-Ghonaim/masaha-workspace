@@ -1,0 +1,49 @@
+<<<OLD
+import type {
+  CheckInSubscriberRequest,
+  DeskCheckIn,
+  SubscriptionState,
+} from '@masaha/shared/subscriptions';
+===
+import type {
+  CheckInSubscriberRequest,
+  CorrectPriceRequest,
+  CorrectSubscriptionRequest,
+  DeskCheckIn,
+  SubscriptionState,
+} from '@masaha/shared/subscriptions';
+>>>
+<<<OLD
+  endSubscription(spaceId: number, subscriptionId: number): Promise<SubscriptionState>;
+  /**
+===
+  endSubscription(spaceId: number, subscriptionId: number): Promise<SubscriptionState>;
+  /** Corrects a subscription's name, dates and limits: only the fields sent change (163). */
+  correctSubscription(
+    spaceId: number,
+    subscriptionId: number,
+    body: CorrectSubscriptionRequest,
+  ): Promise<SubscriptionState>;
+  /** The owner's correction of a subscription's billing and price, with why (163). */
+  correctPrice(
+    spaceId: number,
+    subscriptionId: number,
+    body: CorrectPriceRequest,
+  ): Promise<SubscriptionState>;
+  /**
+>>>
+<<<OLD
+      api.post<SubscriptionState>(`${space(spaceId)}/subscriptions/${String(subscriptionId)}/end`),
+===
+      api.post<SubscriptionState>(`${space(spaceId)}/subscriptions/${String(subscriptionId)}/end`),
+    correctSubscription: (spaceId, subscriptionId, body) =>
+      api.patch<SubscriptionState>(
+        `${space(spaceId)}/subscriptions/${String(subscriptionId)}`,
+        body,
+      ),
+    correctPrice: (spaceId, subscriptionId, body) =>
+      api.put<SubscriptionState>(
+        `${space(spaceId)}/subscriptions/${String(subscriptionId)}/price`,
+        body,
+      ),
+>>>

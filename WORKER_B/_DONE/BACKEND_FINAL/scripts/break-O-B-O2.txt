@@ -1,0 +1,42 @@
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run src/core/gazaTime.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/packages/shared
+
+ ❯ src/core/gazaTime.unit.test.ts (7 tests | 1 failed) 34ms
+   ❯ lastDaysSince (1)
+     × lastDaysSince: the Gaza midnight 29 days before today, across a daylight-saving change 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  13:04:16
+   Duration  369ms (transform 40%, tests 28%, import 26%, worker 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/core/gazaTime.unit.test.ts > lastDaysSince > lastDaysSince: the Gaza midnight 29 days before today, across a daylight-saving change
+AssertionError: expected '2026-10-11T08:00:00.000Z' to be '2026-10-11T21:00:00.000Z' // Object.is equality
+
+Expected: "2026-10-11T21:00:00.000Z"
+Received: "2026-10-11T08:00:00.000Z"
+
+ ❯ src/core/gazaTime.unit.test.ts:92:84
+     90|   it('lastDaysSince: the Gaza midnight 29 days before today, across a …
+     91|     // Today 2026-11-10, in winter; 2026-10-12 was in summer: its midn…
+     92|     expect(lastDaysSince(new Date('2026-11-10T10:00:00+02:00'), 30).to…
+       |                                                                                    ^
+     93|       '2026-10-11T21:00:00.000Z',
+     94|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\packages\shared
+npm error workspace @masaha/shared@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\packages\shared
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run src/core/gazaTime.unit.test.ts

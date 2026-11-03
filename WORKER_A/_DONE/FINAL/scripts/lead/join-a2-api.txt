@@ -1,0 +1,142 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/auth/password.api.test.ts (48 tests | 1 failed) 53121ms
+   ❯ POST /auth/password/reset (12)
+     × leaves a recovery bound to no link reading sent after the reset, as for an unknown address 1818ms
+ ❯ |api| src/shared/jobs/jobs.api.test.ts (7 tests | 1 failed) 3573ms
+   ❯ the jobs endpoint (7)
+     × a run whose failures fill the batch answers 500, the job named stalled in the log, the others still run 367ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/auth/password.api.test.ts > POST /auth/password/reset > leaves a recovery bound to no link reading sent after the reset, as for an unknown address
+AssertionError: expected { success: true, data: { …(4) } } to deeply equal { success: true, data: { …(4) } }
+
+- Expected
++ Received
+
+  {
+    "data": {
+      "canResend": true,
+      "email": "s•••@example.com",
+-     "resendInSeconds": 60,
++     "resendInSeconds": 59,
+      "step": "sent",
+    },
+    "success": true,
+  }
+
+ ❯ src/modules/auth/password.api.test.ts:631:42
+    629|     expect((await reset(owner)).status).toBe(204);
+    630|
+    631|     expect((await position(known)).body).toEqual({ success: true, data…
+       |                                          ^
+    632|     expect((await position(unknown)).body).toEqual({
+    633|       success: true,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/shared/jobs/jobs.api.test.ts > the jobs endpoint > a run whose failures fill the batch answers 500, the job named stalled in the log, the others still run
+AssertionError: expected [ { level: 30, …(10) }, …(4) ] to match object [ { …(4) }, { …(3) }, { …(2) } ]
+
+- Expected
++ Received
+
+  [
+    {
+      "failed": 1,
++     "hostname": "MohammedGhonaim",
+      "job": "visits.autoCheckOut",
++     "level": 30,
++     "ms": 23,
++     "msg": "job ran",
++     "pid": 18648,
++     "remaining": 0,
+      "stalled": true,
++     "time": 1793438050600,
+      "visits": 0,
+    },
+    {
+      "checkIns": 0,
+      "failed": 0,
++     "hostname": "MohammedGhonaim",
+      "job": "subscriptions.autoCheckOut",
++     "level": 30,
++     "ms": 7,
++     "msg": "job ran",
++     "pid": 18648,
++     "remaining": 0,
++     "time": 1793438050607,
++   },
++   {
++     "hostname": "MohammedGhonaim",
++     "job": "sessions.sweepExpired",
++     "level": 30,
++     "ms": 12,
++     "msg": "job ran",
++     "pid": 18648,
++     "recoveries": 0,
++     "refreshTokens": 0,
++     "resetTokens": 0,
++     "time": 1793438050620,
++   },
++   {
++     "counters": 0,
++     "hostname": "MohammedGhonaim",
++     "job": "rateLimits.sweepExpired",
++     "level": 30,
++     "ms": 4,
++     "msg": "job ran",
++     "pid": 18648,
++     "time": 1793438050623,
+    },
+    {
++     "hostname": "MohammedGhonaim",
+      "job": "photos.reclaimOrphans",
++     "level": 30,
++     "ms": 0,
++     "msg": "job ran",
++     "pid": 18648,
+      "skipped": true,
++     "time": 1793438050624,
+    },
+  ]
+
+ ❯ src/shared/jobs/jobs.api.test.ts:205:58
+    203|       { level: 50, job: 'visits.autoCheckOut', failed: 1 },
+    204|     ]);
+    205|     expect(lines.filter(({ msg }) => msg === 'job ran')).toMatchObject…
+       |                                                          ^
+    206|       { job: 'visits.autoCheckOut', visits: 0, failed: 1, stalled: tru…
+    207|       { job: 'subscriptions.autoCheckOut', checkIns: 0, failed: 0 },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 118 passed (120)
+      Tests  2 failed | 1372 passed (1374)
+   Start at  10:52:56
+   Duration  1418.70s (tests 78%, import 17%, setup 3%, transform 2%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a2\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a2\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api

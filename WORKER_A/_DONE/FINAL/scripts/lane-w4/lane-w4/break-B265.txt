@@ -1,0 +1,66 @@
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run src/users/passwordPolicy
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/packages/shared
+
+ ❯ src/users/passwordPolicy.unit.test.ts (22 tests | 2 failed) 34ms
+   ❯ passwordSchema (5)
+     × counts the upper bound in bytes, as bcrypt does 14ms
+   ❯ passwordRules (17)
+     × breaks its fourth rule past 72 bytes in UTF-8, not 72 characters 2ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 20 passed (22)
+   Start at  09:34:20
+   Duration  964ms (import 67%, transform 22%, tests 7%, worker 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/users/passwordPolicy.unit.test.ts > passwordSchema > counts the upper bound in bytes, as bcrypt does
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/users/passwordPolicy.unit.test.ts:25:28
+     23|     const arabic = passwordSchema.safeParse(`${'ب'.repeat(36)}1`);
+     24|
+     25|     expect(arabic.success).toBe(false);
+       |                            ^
+     26|     expect(arabic.error?.issues[0]).toMatchObject({ params: { code: 't…
+     27|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/users/passwordPolicy.unit.test.ts > passwordRules > breaks its fourth rule past 72 bytes in UTF-8, not 72 characters
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/users/passwordPolicy.unit.test.ts:57:41
+     55|     // 36 Arabic letters and a digit: 37 characters, 73 bytes.
+     56|     const arabic = `${'ب'.repeat(36)}1`;
+     57|     expect(passwordRules(arabic).bytes).toBe(false);
+       |                                         ^
+     58|     expect(passwordRules(`${'ب'.repeat(35)}1`).bytes).toBe(true);
+     59|     expect(passwordRules(`${'a'.repeat(71)}1`).bytes).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\packages\shared
+npm error workspace @masaha/shared@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\packages\shared
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run src/users/passwordPolicy

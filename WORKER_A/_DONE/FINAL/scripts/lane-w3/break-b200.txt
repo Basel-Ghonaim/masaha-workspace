@@ -1,0 +1,108 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/desk/services/logRows.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |unit| src/features/desk/services/logRows.unit.test.ts (2 tests | 2 failed) 42ms
+   ❯ logRows (2)
+     × merges visits and check-ins latest first, each in one shape 33ms
+     × orders two stays that came in at once by the later id first 3ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  15:10:48
+   Duration  1.91s (transform 65%, import 18%, tests 11%, worker 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/services/logRows.unit.test.ts > logRows > merges visits and check-ins latest first, each in one shape
+AssertionError: expected [ { key: 'visit-12', …(9) }, …(2) ] to deeply equal [ { key: 'visit-12', …(9) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -10,29 +10,29 @@
+      "student": true,
+      "subscription": null,
+      "writtenOff": true,
+    },
+    {
+-     "checkedInAt": "2026-10-25T07:30:00.000Z",
+-     "checkedOutAt": null,
+-     "checkoutMethod": null,
+-     "customerId": 4,
+-     "key": "check-in-3",
+-     "kind": "CHECK_IN",
+-     "name": "Sara Khalid",
+-     "student": false,
+-     "subscription": "Monthly",
+-     "writtenOff": false,
+-   },
+-   {
+      "checkedInAt": "2026-10-25T06:00:00.000Z",
+      "checkedOutAt": null,
+      "checkoutMethod": null,
+      "customerId": 9,
+      "key": "visit-11",
+      "kind": "VISIT",
+      "name": "Lina Saleh",
+      "student": false,
+      "subscription": null,
++     "writtenOff": false,
++   },
++   {
++     "checkedInAt": "2026-10-25T07:30:00.000Z",
++     "checkedOutAt": null,
++     "checkoutMethod": null,
++     "customerId": 4,
++     "key": "check-in-3",
++     "kind": "CHECK_IN",
++     "name": "Sara Khalid",
++     "student": false,
++     "subscription": "Monthly",
+      "writtenOff": false,
+    },
+  ]
+
+ ❯ src/features/desk/services/logRows.unit.test.ts:33:39
+     31|     ];
+     32|
+     33|     expect(logRows(visits, checkIns)).toEqual([
+       |                                       ^
+     34|       {
+     35|         key: 'visit-12',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/features/desk/services/logRows.unit.test.ts > logRows > orders two stays that came in at once by the later id first
+AssertionError: expected [ 'visit-4', 'check-in-8' ] to deeply equal [ 'check-in-8', 'visit-4' ]
+
+- Expected
++ Received
+
+  [
+-   "check-in-8",
+    "visit-4",
++   "check-in-8",
+  ]
+
+ ❯ src/features/desk/services/logRows.unit.test.ts:79:40
+     77|       [deskCheckIn({ id: 8, checkedInAt: at })],
+     78|     );
+     79|     expect(rows.map((row) => row.key)).toEqual(['check-in-8', 'visit-4…
+       |                                        ^
+     80|   });
+     81| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/desk/services/logRows.unit.test.ts

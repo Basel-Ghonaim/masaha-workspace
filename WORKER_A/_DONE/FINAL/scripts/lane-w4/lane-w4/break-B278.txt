@@ -1,0 +1,56 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/components/DirectoryList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/directory/components/DirectoryList.component.test.tsx (8 tests | 1 failed) 6962ms
+   ❯ DirectoryList (8)
+     × scrolls to the results and focuses them only once the new page has arrived 436ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  09:53:05
+   Duration  20.79s (tests 34%, transform 26%, import 21%, environment 14%, setup 5%)
+
+  Transform  |component| transforming modules took 5.22s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/components/DirectoryList.component.test.tsx > DirectoryList > scrolls to the results and focuses them only once the new page has arrived
+AssertionError: expected "Mock" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st Mock call:
+
+    Array [
+      Object {
+        "block": "start",
+      },
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/features/directory/components/DirectoryList.component.test.tsx:159:26
+    157|
+    158|     expect(screen.getByRole('link', { name: 'مساحة 1' })).toBeInTheDoc…
+    159|     expect(scrolled).not.toHaveBeenCalled();
+       |                          ^
+    160|     expect(heading).not.toHaveFocus();
+    161|     arrive();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/components/DirectoryList

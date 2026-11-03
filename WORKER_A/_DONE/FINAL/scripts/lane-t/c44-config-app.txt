@@ -1,0 +1,38 @@
+name: masaha
+services:
+  postgres:
+    environment:
+      POSTGRES_DB: masaha_dev
+      POSTGRES_PASSWORD: masaha
+      POSTGRES_USER: masaha
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U masaha -d masaha_dev
+      timeout: 5s
+      interval: 2s
+      retries: 15
+    image: postgres:18-alpine
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 5432
+        published: "5433"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: masaha-pgdata
+        target: /var/lib/postgresql
+        volume: {}
+      - type: bind
+        source: C:\dev\masaha\app\docker\postgres\create-test-database.sql
+        target: /docker-entrypoint-initdb.d/create-test-database.sql
+        read_only: true
+        bind: {}
+networks:
+  default:
+    name: masaha_default
+volumes:
+  masaha-pgdata:
+    name: masaha_masaha-pgdata

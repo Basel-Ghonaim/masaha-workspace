@@ -1,0 +1,85 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx -t never offers
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx (7 tests | 1 failed | 6 skipped) 272ms
+   ❯ useAnnouncementActions (7)
+     × never offers «Delete…» on an extended closure, and says why 270ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 skipped (7)
+   Start at  12:32:55
+   Duration  10.93s (import 51%, transform 24%, environment 18%, setup 5%, tests 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx > useAnnouncementActions > never offers «Delete…» on an extended closure, and says why
+AssertionError: expected <button …(9)>…(1)</button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  aria-label="More actions: Temporary closure · 20 October ⁨08:00⁩ – 22 October ⁨18:00⁩"
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"
+  data-card-action=""
+  data-slot="dropdown-menu-trigger"
+  data-state="closed"
+  id="radix-_r_4_"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    class="lucide lucide-ellipsis-vertical lucide-more-vertical"
+    fill="none"
+    height="24"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="2"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="1"
+    />
+    <circle
+      cx="12"
+      cy="5"
+      r="1"
+    />
+    <circle
+      cx="12"
+      cy="19"
+      r="1"
+    />
+  </svg>
+</button>
+
+ ❯ src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx:218:79
+    216|     const [extended, plain] = await cards();
+    217|     if (extended === undefined || plain === undefined) throw new Error…
+    218|     expect(within(extended).queryByRole('button', { name: /^More actio…
+       |                                                                               ^
+    219|     expect(
+    220|       within(extended).getByText(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx -t ^^^"never^^^ offers^^^"

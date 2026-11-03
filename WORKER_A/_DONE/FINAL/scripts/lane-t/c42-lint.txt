@@ -1,0 +1,15 @@
+
+> lint
+> eslint .
+
+
+C:\dev\masaha\app-lane-t\apps\web\src\app\App.component.test.tsx
+  14:20  error  app → page (shell/SiteLayout.tsx) is not allowed. Zones depend one way (app → pages → features → shared), never on a sibling, and only through an index.ts barrel. The design system imports nothing outside itself      boundaries/dependencies
+  15:20  error  app → page (public/home/HomePage.tsx) is not allowed. Zones depend one way (app → pages → features → shared), never on a sibling, and only through an index.ts barrel. The design system imports nothing outside itself  boundaries/dependencies
+
+C:\dev\masaha\app-lane-t\apps\web\src\app\router.component.test.tsx
+  12:20  error  app → page (shell/SiteLayout.tsx) is not allowed. Zones depend one way (app → pages → features → shared), never on a sibling, and only through an index.ts barrel. The design system imports nothing outside itself      boundaries/dependencies
+  13:20  error  app → page (public/home/HomePage.tsx) is not allowed. Zones depend one way (app → pages → features → shared), never on a sibling, and only through an index.ts barrel. The design system imports nothing outside itself  boundaries/dependencies
+
+✖ 4 problems (4 errors, 0 warnings)
+

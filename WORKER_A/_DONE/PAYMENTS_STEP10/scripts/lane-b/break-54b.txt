@@ -1,0 +1,46 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx (4 tests | 1 failed) 420ms
+   ❯ useAdminReports (4)
+     × names the reporter and who handles each report; a verified space’s opens read-only 127ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:34:33
+   Duration  5.63s (transform 37%, environment 26%, import 22%, tests 8%, setup 7%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx > useAdminReports > names the reporter and who handles each report; a verified space’s opens read-only
+AssertionError: expected { key: '42', id: 42, …(9) } to match object { field: 'Prices', …(3) }
+(13 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -1,10 +1,10 @@
+  {
+    "field": "Prices",
+    "handledBy": {
+-     "label": "Owner",
+-     "tone": "neutral",
++     "label": "Admin",
++     "tone": "info",
+    },
+    "open": {
+      "label": "View",
+    },
+    "reporter": "Omar Nasser",
+
+ ❯ src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx:73:22
+     71|     });
+     72|     expect(heard(unverified?.byline)).toBe('Huda Saleh · 21 October');
+     73|     expect(verified).toMatchObject({
+       |                      ^
+     74|       field: 'Prices',
+     75|       reporter: 'Omar Nasser',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

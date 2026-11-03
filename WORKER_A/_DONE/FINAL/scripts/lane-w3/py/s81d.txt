@@ -1,0 +1,24 @@
+<<<OLD
+  DialogContent,
+  DialogFooter,
+===
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+>>>
+<<<OLD
+        aria-describedby={undefined}
+      >
+        <DialogHeader>
+          <DialogTitle dir="auto">{dialog.title}</DialogTitle>
+        </DialogHeader>
+===
+        {...(dialog.description === null && { 'aria-describedby': undefined })}
+      >
+        <DialogHeader>
+          <DialogTitle dir="auto">{dialog.title}</DialogTitle>
+          {dialog.description !== null && (
+            <DialogDescription>{dialog.description}</DialogDescription>
+          )}
+        </DialogHeader>
+>>>

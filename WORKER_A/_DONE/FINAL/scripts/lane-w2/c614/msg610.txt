@@ -1,0 +1,20 @@
+feat(data-reports): open a report beside its field
+
+An owner or the admin reached a report's field from its sheet with no
+trace of the report there, and the list could not be opened on one
+report (G20.1, G21.3, G23.1, G26.7, G28.2). The editor also opened at
+its top: its cards draw only after the space's read, so the address's
+anchor found nothing (finding 184).
+
+- `data-reports` reads one report by its id (C2.14's routes, S5) and
+  exports `ReportNotice` and `useReportNotice`: the report `?report=`
+  names draws above its field's section, «بلاغ مفتوح على {field}»,
+  its words with «زائر» to the owner and the reporter's name to the
+  admin, «تم التصحيح» resolving it in place, and «فتح البلاغ للرد»;
+- `SpaceEditor` takes a page's notice above a section (`noticeFor`);
+  the owner's profile, Packages & prices and the admin's editor set it;
+- each sheet's «تعديل الحقل» carries the report
+  (`?report={id}#{section}`), and both lists open `?open={id}`, read by
+  its id when the page does not show it;
+- the editor lands on the section its hash names once drawn
+  (`useHashLanding`), the cards' headings focusable.

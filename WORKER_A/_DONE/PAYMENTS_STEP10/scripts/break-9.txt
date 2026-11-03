@@ -1,0 +1,59 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/payments/repository/paymentsRepository.unit.test.ts (2 tests | 1 failed) 20ms
+   ❯ the payments repository (2)
+     × reads a page and its totals, the query as its parameters 14ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  14:37:34
+   Duration  1.10s (import 59%, transform 37%, tests 2%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/payments/repository/paymentsRepository.unit.test.ts > the payments repository > reads a page and its totals, the query as its parameters
+AssertionError: expected { data: [ { id: 31 } ] } to deeply equal { Object (data, meta) }
+
+- Expected
++ Received
+
+@@ -2,26 +2,6 @@
+    "data": [
+      {
+        "id": 31,
+      },
+    ],
+-   "meta": {
+-     "currentPage": 2,
+-     "hasNextPage": false,
+-     "hasPreviousPage": true,
+-     "limit": 20,
+-     "totalPages": 2,
+-     "totalRecords": 21,
+-     "totals": {
+-       "byMethod": {
+-         "CASH": 40000,
+-         "TRANSFER": 10000,
+-       },
+-       "count": 20,
+-       "receivedAgorot": 50000,
+-       "voided": {
+-         "amountAgorot": 2500,
+-         "count": 1,
+-       },
+-     },
+-   },
+  }
+
+ ❯ src/features/payments/repository/paymentsRepository.unit.test.ts:54:60
+     52|     };
+     53|
+     54|     await expect(createPaymentsRepository().list(7, query)).resolves.t…
+       |                                                            ^
+     55|       data: [{ id: 31 }],
+     56|       meta: META,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

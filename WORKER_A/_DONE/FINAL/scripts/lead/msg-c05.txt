@@ -1,0 +1,16 @@
+feat(web): give the account its place on a phone
+
+On a phone the dashboard's top bar held the theme and the avatar, and
+the site hid the account in its menu (DI-10, SH-005, P4). Now:
+
+- the dashboard's bar keeps the drawer's trigger and the page below
+  768 px; the drawer opens with the account — the avatar, the name and
+  the role, the email — and its foot holds the language and the theme;
+- the dashboard's account menu names the role beside the name (the
+  role at the space in the URL, or the admin's) and offers «الموقع
+  العام» and «إعدادات حسابي» (`/me`) in place of «لوحة التحكم»; the
+  site's offers «لوحة التحكم» first, then the account's pages, now
+  with «إعدادات حسابي»;
+- the site's header keeps the language at every width and the avatar
+  once signed in (the first name beside it from 768 px); the theme
+  moves into the phone's menu.

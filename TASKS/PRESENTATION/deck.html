@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مساحة — العرض التقديمي</title>
+<style>
+@font-face { font-family: "Plex Arabic"; font-weight: 400; src: url(fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2) format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F, U+060C, U+061B, U+061F; }
+@font-face { font-family: "Plex Arabic"; font-weight: 600; src: url(fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2) format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F, U+060C, U+061B, U+061F; }
+@font-face { font-family: "Plex Arabic"; font-weight: 700; src: url(fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2) format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF, U+200C-200F, U+060C, U+061B, U+061F; }
+@font-face { font-family: "Plex Arabic"; font-weight: 400; src: url(fonts/ibm-plex-sans-arabic-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+20AA; }
+@font-face { font-family: "Plex Arabic"; font-weight: 600; src: url(fonts/ibm-plex-sans-arabic-latin-600-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+20AA; }
+@font-face { font-family: "Plex Arabic"; font-weight: 700; src: url(fonts/ibm-plex-sans-arabic-latin-700-normal.woff2) format("woff2"); unicode-range: U+0000-00FF, U+2000-206F, U+20AA; }
+
+@page { size: 1920px 1080px; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #0c1315; }
+body { font-family: "Plex Arabic", Tahoma, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.slide { width: 1920px; height: 1080px; position: relative; overflow: hidden; padding: 112px 128px 160px; display: flex; flex-direction: column; gap: 48px; page-break-after: always; break-after: page; }
+.slide:last-child { page-break-after: auto; break-after: auto; }
+.light { background: #f4fcfe; color: #182022; }
+.dark { background: #023235; color: #eaf5f7; }
+.teal { background: #02787d; color: #f4fcfe; }
+
+h2 { font-size: 68px; font-weight: 700; line-height: 1.15; color: #023235; }
+.dark h2, .teal h2 { color: #f4fcfe; }
+.eyebrow { font-size: 28px; font-weight: 600; color: #02787d; margin-bottom: -32px; }
+.dark .eyebrow { color: #85d0d4; }
+.teal .eyebrow { color: #d5f4f5; }
+
+.foot { position: absolute; bottom: 60px; left: 128px; right: 128px; display: flex; justify-content: space-between; font-size: 24px; color: #5c6567; }
+.dark .foot { color: #85d0d4; }
+.teal .foot { color: #d5f4f5; }
+.num { direction: ltr; }
+.ltr { direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.card { background: #fbfefe; border: 1px solid #dbe6e9; border-radius: 24px; padding: 40px; display: flex; flex-direction: column; gap: 18px; }
+.teal .card { background: #05494c; border: none; }
+.card h3 { font-size: 40px; font-weight: 700; line-height: 1.25; color: #023235; }
+.teal .card h3 { color: #b3e6e8; }
+.card p { font-size: 31px; line-height: 1.55; color: #2a3234; }
+.teal .card p { color: #eafbfc; }
+.icon { width: 64px; height: 64px; border-radius: 18px; background: #d5f4f5; display: flex; align-items: center; justify-content: center; }
+.icon svg { width: 36px; height: 36px; stroke: #02787d; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.cols { display: grid; grid-template-columns: 2fr 3fr; gap: 32px; }
+.list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.list li { font-size: 31px; line-height: 1.5; position: relative; padding-right: 34px; }
+.list li::before { content: ""; position: absolute; right: 0; top: 18px; width: 14px; height: 14px; border-radius: 50%; background: #15959b; }
+
+.rows { display: flex; flex-direction: column; }
+.row { display: flex; gap: 28px; align-items: baseline; border-top: 1px solid #096165; padding: 26px 0; font-size: 34px; line-height: 1.45; }
+.row b { color: #85d0d4; flex: none; width: 380px; font-weight: 700; }
+
+.tech { display: grid; grid-template-columns: 3fr 2fr; gap: 56px; align-items: start; }
+.stack { display: flex; flex-direction: column; }
+.stack div { font-size: 33px; line-height: 1.45; padding: 26px 0; border-bottom: 1px solid #dbe6e9; display: flex; gap: 20px; }
+.stack div:last-child { border-bottom: none; }
+.stack b { flex: none; width: 150px; color: #02787d; }
+.stats { display: flex; flex-direction: column; gap: 22px; }
+.stat { background: #eafbfc; border-radius: 24px; padding: 26px 36px; }
+.stat .big { font-size: 76px; font-weight: 700; line-height: 1.05; color: #02787d; direction: ltr; text-align: right; }
+.stat .lbl { font-size: 29px; color: #2a3234; }
+
+.bar { position: absolute; right: 0; top: 0; width: 24px; height: 100%; background: #50b3b8; }
+.note { font-size: 31px; line-height: 1.5; color: #096165; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- 1. Cover -->
+<section class="slide dark" style="justify-content:center; gap:36px; padding-top:128px">
+  <div class="bar"></div>
+  <p style="font-size:32px; font-weight:600; color:#85d0d4">مساحة <span class="ltr">(Masaha)</span></p>
+  <h1 style="font-size:180px; font-weight:700; line-height:1.05; color:#f4fcfe">مساحة</h1>
+  <p style="font-size:50px; line-height:1.4; color:#b3e6e8; max-width:1350px">دليل مساحات العمل في قطاع غزة، مع إدارتها من مكان واحد</p>
+  <p style="position:absolute; bottom:96px; right:128px; font-size:30px; color:#85d0d4">باسل غنيم · 3 نوفمبر 2026</p>
+</section>
+
+<!-- 2. Problem -->
+<section class="slide light">
+  <p class="eyebrow">الفكرة</p>
+  <h2>المشكلة</h2>
+  <div class="grid2">
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+      <p>صعب تعرف وين في مساحة عمل قريبة منك، وهل هي <b>فاتحة الآن</b></p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+      <p>المعلومات متفرقة على صفحات التواصل الاجتماعي، وكثير منها قديم: الأسعار، والمواعيد، والمرافق</p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/><path d="M8 9h8M8 13h6"/></svg></div>
+      <p>أصحاب المساحات بيسجلوا الحضور والاشتراكات والدفعات <b>على الورق أو بالإكسل <span class="ltr">(Excel)</span></b></p>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.5"/></svg></div>
+      <p>الديون والاشتراكات المنتهية بتضيع بين الدفاتر</p>
+    </div>
+  </div>
+  <div class="foot"><span>مساحة <span class="ltr">(Masaha)</span></span><span class="num">2 / 8</span></div>
+</section>
+
+<!-- 3. Solution -->
+<section class="slide teal">
+  <p class="eyebrow">الفكرة</p>
+  <h2>الحل</h2>
+  <div class="grid2">
+    <div class="card"><h3>دليل عام</h3><p>لكل مساحات العمل: البحث، والخريطة، والأسعار، والمواعيد، والمرافق، وطرق التواصل</p></div>
+    <div class="card"><h3>حالة حيّة <span class="ltr">(Live Status)</span></h3><p>لكل مساحة: متاحة الآن أو مغلقة</p></div>
+    <div class="card"><h3>لوحة تحكم <span class="ltr">(Dashboard)</span> واحدة</h3><p>لصاحب المساحة وموظف الاستقبال: الحضور، والزبائن، والاشتراكات، والدفعات، والمالية</p></div>
+    <div class="card"><h3>آخر تحديث</h3><p>كل معلومة عليها تاريخ آخر تحديث، عشان الزائر يعرف قديش هي موثوقة</p></div>
+  </div>
+  <div class="foot"><span>مساحة <span class="ltr">(Masaha)</span></span><span class="num">3 / 8</span></div>
+</section>
+
+<!-- 4. Users -->
+<section class="slide light">
+  <p class="eyebrow">المنصة</p>
+  <h2>لمين المنصة؟</h2>
+  <div class="grid4">
+    <div class="card" style="padding:36px">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0"/><path d="M17 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-4-6.3"/></svg></div>
+      <h3>الزائر</h3>
+      <p>طالب، أو مستقل <span class="ltr">(Freelancer)</span>، أو موظف عن بُعد. بيلاقي مساحة قريبة ومناسبة لسعره</p>
+    </div>
+    <div class="card" style="padding:36px">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+      <h3>صاحب المساحة <span class="ltr">(Owner)</span></h3>
+      <p>بيدير مساحته وموظفيه ومالها</p>
+    </div>
+    <div class="card" style="padding:36px">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></div>
+      <h3>موظف الاستقبال <span class="ltr">(Reception)</span></h3>
+      <p>بيسجّل الدخول والخروج والدفعات على المكتب</p>
+    </div>
+    <div class="card" style="padding:36px">
+      <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div>
+      <h3>مدير المنصة <span class="ltr">(Admin)</span></h3>
+      <p>بيضيف المساحات، وبيربطها بأصحابها، وبيتابع البلاغات</p>
+    </div>
+  </div>
+  <p class="note">كل دور بيشوف بس اللي إله، والصلاحيات بتنفحص على السيرفر مش بس بالواجهة</p>
+  <div class="foot"><span>مساحة <span class="ltr">(Masaha)</span></span><span class="num">4 / 8</span></div>
+</section>
+
+<!-- 5. Features -->
+<section class="slide light">
+  <p class="eyebrow">المنصة</p>
+  <h2>أهم الميزات</h2>
+  <div class="cols">
+    <div class="card">
+      <h3 style="color:#02787d">للزائر</h3>
+      <ul class="list">
+        <li>بحث وفلاتر: المنطقة، والسعر، وسعر الطلاب، ومفتوح الجمعة، والمتاح الآن</li>
+        <li>خريطة، و<b>الأقرب لي <span class="ltr">(Near Me)</span></b></li>
+        <li>المفضّلة، والتبليغ عن معلومة غلط</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="color:#02787d">لصاحب المساحة</h3>
+      <ul class="list">
+        <li>مكتب الاستقبال <span class="ltr">(Front Desk)</span>: تسجيل دخول وخروج، وحساب الزيارة تلقائيًا</li>
+        <li>الاشتراكات والباقات، مع حدود الأيام والساعات</li>
+        <li>الدفعات اليدوية (كاش أو تحويل)، والديون، وتذكير عبر واتساب <span class="ltr">(WhatsApp)</span></li>
+        <li>الإعلانات والإغلاقات، وتمديد الاشتراكات بعد الإغلاق</li>
+        <li>المالية والتقارير، والتصدير إلى <span class="ltr">(CSV)</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>مساحة <span class="ltr">(Masaha)</span></span><span class="num">5 / 8</span></div>
+</section>
+
+<!-- 6. Gaza -->
+<section class="slide dark">
+  <p class="eyebrow">البناء</p>
+  <h2>مصمّمة لواقع غزة</h2>
+  <div class="rows">
+    <div class="row"><b>بدون دفع إلكتروني</b><span>الدفع يدوي، كاش أو تحويل، وكل دفعة مسجّلة بسجل ما بينمسح</span></div>
+    <div class="row"><b>الإنترنت ضعيف</b><span>الطلب ما بيتكرر لو انقطع النت وأعدته، فما في دفعة بتنحسب مرتين</span></div>
+    <div class="row"><b>تسجيل خروج تلقائي</b><span>لمن نسي يطلع آخر اليوم</span></div>
+    <div class="row"><b>عربي وإنجليزي</b><span>وفاتح وداكن <span class="ltr">(Light / Dark)</span>، ويشتغل على الجوال والتابلت والكمبيوتر</span></div>
+    <div class="row" style="border-bottom:1px solid #096165"><b>خصوصية الموقع</b><span>موقعك بيُستخدم بس للترتيب، وما بينحفظ</span></div>
+  </div>
+  <div class="foot"><span>مساحة <span class="ltr">(Masaha)</span></span><span class="num">6 / 8</span></div>
+</section>
+
+<!-- 7. Tech -->
+<section class="slide light">
+  <p class="eyebrow">البناء</p>
+  <h2>كيف انبنت؟</h2>
+  <div class="tech">
+    <div class="stack">
+      <div><b>الواجهة</b><span class="ltr">React + TypeScript</span></div>
+      <div><b>الخادم</b><span class="ltr">Express + PostgreSQL + Prisma</span></div>
+      <div><b>النشر</b><span><span class="ltr">Vercel + Neon</span>، والصور على <span class="ltr">Cloudinary</span></span></div>
+      <div><b>الجودة</b><span>فحص تلقائي لكل تعديل <span class="ltr">(CI)</span>، ومراجعة كود <span class="ltr">(Code Review)</span> قبل الدمج</span></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="big">+4000</div><div class="lbl">اختبار تلقائي <span class="ltr">(Automated Tests)</span></div></div>
+      <div class="stat"><div class="big">+120</div><div class="lbl">طلب دمج <span class="ltr">(Pull Request)</span></div></div>
+      <div class="stat"><div class="big">32</div><div class="lbl">شاشة</div></div>
+    </div>
+  </div>
+  <div class="foot"><span>مساحة <span class="ltr">(Masaha)</span></span><span class="num">7 / 8</span></div>
+</section>
+
+<!-- 8. Try it -->
+<section class="slide dark" style="flex-direction:row; align-items:center; justify-content:space-between; gap:96px; padding:128px">
+  <div class="bar"></div>
+  <div style="display:flex; flex-direction:column; gap:40px">
+    <h2 style="font-size:104px">جرّبها الآن</h2>
+    <p class="ltr" style="font-size:52px; font-weight:600; color:#85d0d4">masaha-omega.vercel.app</p>
+    <p style="font-size:42px; color:#b3e6e8">شكرًا، والأسئلة</p>
+  </div>
+  <div style="background:#f4fcfe; border-radius:32px; padding:32px; display:flex; flex-direction:column; align-items:center; gap:18px">
+    <img src="qr.png" alt="رمز QR لرابط موقع مساحة" style="width:440px; height:440px; image-rendering:pixelated">
+    <p style="font-size:26px; color:#023235">امسح الرمز <span class="ltr">(QR Code)</span></p>
+  </div>
+</section>
+
+</body>
+</html>

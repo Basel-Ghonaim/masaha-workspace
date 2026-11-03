@@ -1,0 +1,16 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+
+ Test Files  147 passed (147)
+      Tests  1028 passed (1028)
+   Start at  12:42:43
+   Duration  31.93s (import 71%, transform 19%, tests 9%, worker 2%)
+
+    Isolate  147 workers spawned · ~1.09s startup each (spawn + environment, per file)
+             at least ~13.50s faster with isolate: false — reuses workers across files instead of one per file
+

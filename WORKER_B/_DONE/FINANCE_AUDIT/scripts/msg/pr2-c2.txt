@@ -1,0 +1,7 @@
+feat(platform-settings): answer the public contact
+
+The site shows the platform's contact on About and the owner's line, and
+anyone may read it, so GET /settings/public answers the email and the
+WhatsApp number with no guard, each null while unset. A contact changes
+rarely, so the answer is cached publicly for 5 minutes. A stored value
+that fails its schema is a fault (500), never answered.

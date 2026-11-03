@@ -1,0 +1,323 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/customer-actions
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx (3 tests | 2 failed) 8053ms
+   ❯ a customer’s state actions (3)
+     × a present customer’s menu offers «Check out», an owing one «Receive {amount}» on the oldest item 3804ms
+     × offers «Renew» only while the subscription ends soon or has expired 3769ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  13:14:13
+   Duration  20.86s (tests 39%, transform 26%, import 19%, environment 12%, setup 3%)
+
+  Transform  |component| transforming modules took 5.24s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > a present customer’s menu offers «Check out», an owing one «Receive {amount}» on the oldest item
+TestingLibraryElementError: Unable to find role="menuitem" and name "Check out"
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-label[39m=[32m"More actions: ⁨Sara Khalid⁩"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_l_"[39m
+  [33maria-orientation[39m=[32m"vertical"[39m
+  [33mclass[39m=[32m"z-(--z-dropdown) min-w-40 origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-floating duration-(--duration-short) ease-(--easing-standard) data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 max-h-(--radix-dropdown-menu-content-available-height) overflow-y-auto"[39m
+  [33mdata-align[39m=[32m"end"[39m
+  [33mdata-orientation[39m=[32m"vertical"[39m
+  [33mdata-radix-menu-content[39m=[32m""[39m
+  [33mdata-side[39m=[32m"bottom"[39m
+  [33mdata-slot[39m=[32m"dropdown-menu-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mid[39m=[32m"radix-_r_m_"[39m
+  [33mrole[39m=[32m"menu"[39m
+  [33mstyle[39m=[32m"outline: none; --radix-dropdown-menu-content-transform-origin: var(--radix-popper-transform-origin); --radix-dropdown-menu-content-available-width: var(--radix-popper-available-width); --radix-dropdown-menu-content-available-height: var(--radix-popper-available-height); --radix-dropdown-menu-trigger-width: var(--radix-popper-anchor-width); --radix-dropdown-menu-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<a[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mhref[39m=[32m"/file/4"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mCustomer file[0m
+  [36m</a>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mNew subscription[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mEdit details[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"destructive"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mArchive…[0m
+  [36m</div>[39m
+[36m</div>[39m
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-label[39m=[32m"More actions: ⁨Sara Khalid⁩"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_l_"[39m
+  [33maria-orientation[39m=[32m"vertical"[39m
+  [33mclass[39m=[32m"z-(--z-dropdown) min-w-40 origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-floating duration-(--duration-short) ease-(--easing-standard) data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 max-h-(--radix-dropdown-menu-content-available-height) overflow-y-auto"[39m
+  [33mdata-align[39m=[32m"end"[39m
+  [33mdata-orientation[39m=[32m"vertical"[39m
+  [33mdata-radix-menu-content[39m=[32m""[39m
+  [33mdata-side[39m=[32m"bottom"[39m
+  [33mdata-slot[39m=[32m"dropdown-menu-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mid[39m=[32m"radix-_r_m_"[39m
+  [33mrole[39m=[32m"menu"[39m
+  [33mstyle[39m=[32m"outline: none; --radix-dropdown-menu-content-transform-origin: var(--radix-popper-transform-origin); --radix-dropdown-menu-content-available-width: var(--radix-popper-available-width); --radix-dropdown-menu-content-available-height: var(--radix-popper-available-height); --radix-dropdown-menu-trigger-width: var(--radix-popper-anchor-width); --radix-dropdown-menu-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<a[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mhref[39m=[32m"/file/4"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mCustomer file[0m
+  [36m</a>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mNew subscription[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mEdit details[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"destructive"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mArchive…[0m
+  [36m</div>[39m
+[36m</div>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:131:41
+    129|     await user.click(await screen.findByRole('button', { name: /^More …
+    130|     const sara = await screen.findByRole('menu');
+    131|     const checkOut = await within(sara).findByRole('menuitem', { name:…
+       |                                         ^
+    132|     expect(within(sara).getAllByRole('menuitem')[0]).toBe(checkOut);
+    133|     expect(within(sara).queryByRole('menuitem', { name: 'Check in' }))…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > offers «Renew» only while the subscription ends soon or has expired
+TestingLibraryElementError: Unable to find role="menuitem" and name "Renew"
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-label[39m=[32m"More actions: ⁨Sara Khalid⁩"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_2n_"[39m
+  [33maria-orientation[39m=[32m"vertical"[39m
+  [33mclass[39m=[32m"z-(--z-dropdown) min-w-40 origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-floating duration-(--duration-short) ease-(--easing-standard) data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 max-h-(--radix-dropdown-menu-content-available-height) overflow-y-auto"[39m
+  [33mdata-align[39m=[32m"end"[39m
+  [33mdata-orientation[39m=[32m"vertical"[39m
+  [33mdata-radix-menu-content[39m=[32m""[39m
+  [33mdata-side[39m=[32m"bottom"[39m
+  [33mdata-slot[39m=[32m"dropdown-menu-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mid[39m=[32m"radix-_r_2o_"[39m
+  [33mrole[39m=[32m"menu"[39m
+  [33mstyle[39m=[32m"outline: none; --radix-dropdown-menu-content-transform-origin: var(--radix-popper-transform-origin); --radix-dropdown-menu-content-available-width: var(--radix-popper-available-width); --radix-dropdown-menu-content-available-height: var(--radix-popper-available-height); --radix-dropdown-menu-trigger-width: var(--radix-popper-anchor-width); --radix-dropdown-menu-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<a[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mhref[39m=[32m"/file/4"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mCustomer file[0m
+  [36m</a>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mNew subscription[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mEdit details[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"destructive"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mArchive…[0m
+  [36m</div>[39m
+[36m</div>[39m
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-label[39m=[32m"More actions: ⁨Sara Khalid⁩"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_2n_"[39m
+  [33maria-orientation[39m=[32m"vertical"[39m
+  [33mclass[39m=[32m"z-(--z-dropdown) min-w-40 origin-(--radix-dropdown-menu-content-transform-origin) overflow-hidden rounded-lg border border-border bg-popover p-1 text-popover-foreground shadow-floating duration-(--duration-short) ease-(--easing-standard) data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95 max-h-(--radix-dropdown-menu-content-available-height) overflow-y-auto"[39m
+  [33mdata-align[39m=[32m"end"[39m
+  [33mdata-orientation[39m=[32m"vertical"[39m
+  [33mdata-radix-menu-content[39m=[32m""[39m
+  [33mdata-side[39m=[32m"bottom"[39m
+  [33mdata-slot[39m=[32m"dropdown-menu-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mid[39m=[32m"radix-_r_2o_"[39m
+  [33mrole[39m=[32m"menu"[39m
+  [33mstyle[39m=[32m"outline: none; --radix-dropdown-menu-content-transform-origin: var(--radix-popper-transform-origin); --radix-dropdown-menu-content-available-width: var(--radix-popper-available-width); --radix-dropdown-menu-content-available-height: var(--radix-popper-available-height); --radix-dropdown-menu-trigger-width: var(--radix-popper-anchor-width); --radix-dropdown-menu-trigger-height: var(--radix-popper-anchor-height); pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<a[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mhref[39m=[32m"/file/4"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mCustomer file[0m
+  [36m</a>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mNew subscription[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"default"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mEdit details[0m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-item"[39m
+    [33mdata-variant[39m=[32m"destructive"[39m
+    [33mrole[39m=[32m"menuitem"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [0mArchive…[0m
+  [36m</div>[39m
+[36m</div>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:185:53
+    183|     await user.click(await screen.findByRole('button', { name: /^More …
+    184|     expect(
+    185|       await within(await screen.findByRole('menu')).findByRole('menuit…
+       |                                                     ^
+    186|     ).toBeVisible();
+    187|     await user.keyboard('{Escape}');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/customer-actions

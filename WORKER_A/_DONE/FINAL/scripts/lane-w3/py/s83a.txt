@@ -1,0 +1,7 @@
+<<<OLD
+    voidedReason: ({ reason }: { reason: string }) => `Voided: ${reason}`,
+===
+    voidedReason: ({ reason }: { reason: string }) => `Voided: ${reason}`,
+    /** Who recorded a payment (finding 162); who voided one is the ledger's line. */
+    recordedBy: ({ name }: { name: string }) => `Recorded by ${name}`,
+>>>

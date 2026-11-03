@@ -1,0 +1,14 @@
+feat(platform-settings): read and save its cards
+
+The admin's settings page has three cards, each its own save and error
+(AD-029), so the API answers three resources under /admin/settings: the
+new-space defaults, the staleness thresholds and the platform's contact.
+Each save locks the card's rows by key, writes only what changed and
+audits it with no entity id (a setting has none), so two saves at once
+are one after the other and a save of the same values writes nothing.
+
+The contact joins the typed catalogue as two optional keys, read in the
+form the seed stores (finding 40, resolved). The defaults' schema moves
+to @masaha/shared/space-settings, a space's settings subset, since one
+shared capability cannot import another of its level. The thresholds are
+bounded to 1-365 days. The three save actions join the admin's log.

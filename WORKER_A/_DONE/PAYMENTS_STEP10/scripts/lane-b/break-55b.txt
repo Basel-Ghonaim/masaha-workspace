@@ -1,0 +1,31 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx (4 tests | 1 failed) 419ms
+   ❯ useAdminReports (4)
+     × shows the space and the field in force as removable tags, each removal replacing the address 98ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:35:00
+   Duration  5.64s (transform 38%, environment 25%, import 21%, tests 8%, setup 8%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx > useAdminReports > shows the space and the field in force as removable tags, each removal replacing the address
+AssertionError: expected 'PUSH' to be 'REPLACE' // Object.is equality
+
+Expected: "REPLACE"
+Received: "PUSH"
+
+ ❯ src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx:122:40
+    120|       expect(router.state.location.search).toBe('?status=open&field=HO…
+    121|     });
+    122|     expect(router.state.historyAction).toBe('REPLACE');
+       |                                        ^
+    123|     await waitFor(() => {
+    124|       expect(result.current.tags.map((tag) => tag.key)).toEqual(['fiel…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

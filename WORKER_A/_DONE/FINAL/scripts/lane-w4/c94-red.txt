@@ -1,0 +1,2573 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/site/auth src/features/auth/components/forgot-password src/features/auth/hooks/sign-in
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/auth/hooks/sign-in/useSignIn.component.test.tsx (5 tests | 1 failed) 3476ms
+   ❯ useSignIn (5)
+     × welcomes the account back once the session is held 3125ms
+ ❯ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx (6 tests | 2 failed) 4102ms
+   ❯ the reset password page (6)
+     × offers the way back to sign in until the password is set 479ms
+     × offers the way back to sign in beside a new link when this one can no longer be used 408ms
+ ❯ |component| src/features/auth/components/forgot-password/ForgotPasswordCard.component.test.tsx (8 tests | 2 failed) 7397ms
+   ❯ ForgotPasswordCard (8)
+     × offers another email under the resend at once, which opens the empty form, focused 3048ms
+     × offers another email, and no resend, once the resends are spent 3030ms
+ ❯ |component| src/pages/site/auth/changePasswordPage.component.test.tsx (4 tests | 1 failed) 9453ms
+   ❯ the change password page (4)
+     × lands the user on the page they asked for once the password is saved 3827ms
+ ❯ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx (5 tests | 1 failed) 2019ms
+   ❯ the forgot password page (5)
+     × carries the return page back to sign in 154ms
+ ❯ |component| src/pages/site/auth/authPages.component.test.tsx (19 tests | 8 failed) 30626ms
+   ❯ /login (2)
+     × sends a signed-in user on to the page they came for, under RequireGuest 3052ms
+   ❯ the sign-in page (11)
+     × links to a forgotten password and to a new account, each carrying the return page 150ms
+     × speaks to the people who sign in: the ones who save and report, and the ones who run a space 3025ms
+     × names the way back to the space next points to, from the directory’s cached read 3103ms
+     × goes back to the previous page when the read of the space next points to is not held 3083ms
+     × goes back home without a return page, or with one that would leave the site 3115ms
+   ❯ the register page (4)
+     × offers the way back, as sign-in does 3167ms
+     × links to sign in carrying the return page, and space owners to the about page’s owners 163ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 15 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > /login > sends a signed-in user on to the page they came for, under RequireGuest
+AssertionError: expected '/login?next=%2Fabout' to be '/about' // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+          [33mhref[39m=[32m"#main"[39m
+        [36m>[39m
+          [0mSkip to content[0m
+        [36m</a>[39m
+        [36m<header[39m
+          [33mclass[39m=[32m"border-b border-border bg-background"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex h-14 items-center gap-2 px-4 md:px-8"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mhref[39m=[32m"/"[39m
+            [36m>[39m
+              [0mMasaha[0m
+            [36m</a>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-languages"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m5 8 6 6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M2 5h12"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M7 2h1"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 18h6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [36m<bdi[39m
+                  [33mlang[39m=[32m"ar"[39m
+                [36m>[39m
+                  [0mالعربية[0m
+                [36m</bdi>[39m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Dark theme"[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-moon"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</header>[39m
+        [36m<main[39m
+          [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+          [33mid[39m=[32m"main"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m/>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m...
+
+Expected: "/about"
+Received: "/login?next=%2Fabout"
+
+ ❯ src/pages/site/auth/authPages.component.test.tsx:70:29
+     68|
+     69|     await waitFor(() => {
+     70|       expect(where(router)).toBe('/about');
+       |                             ^
+     71|     });
+     72|   });
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > links to a forgotten password and to a new account, each carrying the return page
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"/forgot-password?next=%2Fabout"[32m[39m[2m) // element.getAttribute("href") === "/forgot-password?next=%2Fabout"[22m
+
+Expected the element to have attribute:
+[32m  href="/forgot-password?next=%2Fabout"[39m
+Received:
+[31m  href="/forgot-password"[39m
+ ❯ src/pages/site/auth/authPages.component.test.tsx:160:73
+    158|     const main = within(await screen.findByRole('main'));
+    159|
+    160|     expect(await main.findByRole('link', { name: 'Forgot password?' })…
+       |                                                                         ^
+    161|       'href',
+    162|       '/forgot-password?next=%2Fabout',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > speaks to the people who sign in: the ones who save and report, and the ones who run a space
+TestingLibraryElementError: Unable to find an element with the text: Sign in to save your favourite spaces and follow your reports, or to run your space.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-14 items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-languages"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m5 8 6 6"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 5h12"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 2h1"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18h6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<bdi[39m
+                [33mlang[39m=[32m"ar"[39m
+              [36m>[39m
+                [0mالعربية[0m
+              [36m</bdi>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"Dark theme"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-moon"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+          [33mdata-slot[39m=[32m"card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mdata-slot[39m=[32m"card-title"[39m
+            [36m>[39m
+              [36m<h1>[39m
+                [0mSign in[0m
+              [36m</h1>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [33mdata-slot[39m=[32m"card-description"[39m
+            [36m>[39m
+              [0mSign in to follow your favourite ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-14 items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-languages"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m5 8 6 6"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 5h12"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 2h1"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18h6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<bdi[39m
+                [33mlang[39m=[32m"ar"[39m
+              [36m>[39m
+                [0mالعربية[0m
+              [36m</bdi>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"Dark theme"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-moon"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+          [33mdata-slot[39m=[32m"card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mdata-slot[39m=[32m"card-title"[39m
+            [36m>[39m
+              [36m<h1>[39m
+                [0mSign in[0m
+              [36m</h1>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [33mdata-slot[39m=[32m"card-description"[39m
+            [36m>[39m
+              [0mSign in to follow your favourite ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/authPages.component.test.tsx:174:20
+    172|
+    173|     expect(
+    174|       await screen.findByText(
+       |                    ^
+    175|         'Sign in to save your favourite spaces and follow your reports…
+    176|       ),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > names the way back to the space next points to, from the directory’s cached read
+TestingLibraryElementError: Unable to find role="link" and name "Back to Noor Hub"
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSign in[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSign in to follow your favourite spaces and the reports you’ve sent about wrong information.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_22_-control"[39m
+              [33mid[39m=[32m"_r_22_-label"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"email"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_22_-control"[39m
+              [33mname[39m=[32m"email"[39m
+              [33mplaceholder[39m=[32m"name@example.com"[39m
+              [33mtype[39m=[32m"email"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_23_-control"[39m
+                [33mid[39m=[32m"_r_23_-label"[39m
+              [36m>[39m
+                [0mPassword[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"current-passwor...
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSign in[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSign in to follow your favourite spaces and the reports you’ve sent about wrong information.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_22_-control"[39m
+              [33mid[39m=[32m"_r_22_-label"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"email"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_22_-control"[39m
+              [33mname[39m=[32m"email"[39m
+              [33mplaceholder[39m=[32m"name@example.com"[39m
+              [33mtype[39m=[32m"email"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_23_-control"[39m
+                [33mid[39m=[32m"_r_23_-label"[39m
+              [36m>[39m
+                [0mPassword[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"current-passwor...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/authPages.component.test.tsx:187:23
+    185|     const main = within(await screen.findByRole('main'));
+    186|
+    187|     expect(await main.findByRole('link', { name: 'Back to Noor Hub' })…
+       |                       ^
+    188|       'href',
+    189|       '/spaces/noor-hub',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > goes back to the previous page when the read of the space next points to is not held
+TestingLibraryElementError: Unable to find role="link" and name "Back to the previous page"
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSign in[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSign in to follow your favourite spaces and the reports you’ve sent about wrong information.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_24_-control"[39m
+              [33mid[39m=[32m"_r_24_-label"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"email"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_24_-control"[39m
+              [33mname[39m=[32m"email"[39m
+              [33mplaceholder[39m=[32m"name@example.com"[39m
+              [33mtype[39m=[32m"email"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_25_-control"[39m
+                [33mid[39m=[32m"_r_25_-label"[39m
+              [36m>[39m
+                [0mPassword[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"current-passwor...
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSign in[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSign in to follow your favourite spaces and the reports you’ve sent about wrong information.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_24_-control"[39m
+              [33mid[39m=[32m"_r_24_-label"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"email"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_24_-control"[39m
+              [33mname[39m=[32m"email"[39m
+              [33mplaceholder[39m=[32m"name@example.com"[39m
+              [33mtype[39m=[32m"email"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_25_-control"[39m
+                [33mid[39m=[32m"_r_25_-label"[39m
+              [36m>[39m
+                [0mPassword[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"current-passwor...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/authPages.component.test.tsx:197:23
+    195|     const main = within(await screen.findByRole('main'));
+    196|
+    197|     expect(await main.findByRole('link', { name: 'Back to the previous…
+       |                       ^
+    198|       'href',
+    199|       '/spaces/noor-hub',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > goes back home without a return page, or with one that would leave the site
+TestingLibraryElementError: Unable to find role="link" and name "Back to home"
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSign in[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSign in to follow your favourite spaces and the reports you’ve sent about wrong information.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_26_-control"[39m
+              [33mid[39m=[32m"_r_26_-label"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"email"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_26_-control"[39m
+              [33mname[39m=[32m"email"[39m
+              [33mplaceholder[39m=[32m"name@example.com"[39m
+              [33mtype[39m=[32m"email"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_27_-control"[39m
+                [33mid[39m=[32m"_r_27_-label"[39m
+              [36m>[39m
+                [0mPassword[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"current-passwor...
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSign in[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSign in to follow your favourite spaces and the reports you’ve sent about wrong information.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_26_-control"[39m
+              [33mid[39m=[32m"_r_26_-label"[39m
+            [36m>[39m
+              [0mEmail[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"email"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_26_-control"[39m
+              [33mname[39m=[32m"email"[39m
+              [33mplaceholder[39m=[32m"name@example.com"[39m
+              [33mtype[39m=[32m"email"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_27_-control"[39m
+                [33mid[39m=[32m"_r_27_-label"[39m
+              [36m>[39m
+                [0mPassword[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"current-passwor...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/authPages.component.test.tsx:207:23
+    205|     const main = within(await screen.findByRole('main'));
+    206|
+    207|     expect(await main.findByRole('link', { name: 'Back to home' })).to…
+       |                       ^
+    208|     expect(main.queryByRole('link', { name: /^Browse spaces/ })).not.t…
+    209|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the register page > offers the way back, as sign-in does
+TestingLibraryElementError: Unable to find role="link" and name "Back to the previous page"
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mCreate account[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSave your favourite spaces and follow the reports you send.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_2g_-control"[39m
+              [33mid[39m=[32m"_r_2g_-label"[39m
+            [36m>[39m
+              [0mName[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"name"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mid[39m=[32m"_r_2g_-control"[39m
+              [33mname[39m=[32m"name"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_2h_-control"[39m
+                [33mid[39m=[32m"_r_2h_-label"[39m
+              [36m>[39m
+                [0mEmail[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"email"[39m
+                [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground f...
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mCreate account[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mSave your favourite spaces and follow the reports you send.[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-busy[39m=[32m"false"[39m
+          [33mclass[39m=[32m"flex min-h-10 justify-center aria-busy:opacity-50"[39m
+        [36m/>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center gap-3 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mor[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch flex-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"separator"[39m
+            [33mrole[39m=[32m"none"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_2g_-control"[39m
+              [33mid[39m=[32m"_r_2g_-label"[39m
+            [36m>[39m
+              [0mName[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"name"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mid[39m=[32m"_r_2g_-control"[39m
+              [33mname[39m=[32m"name"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-1"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_2h_-control"[39m
+                [33mid[39m=[32m"_r_2h_-label"[39m
+              [36m>[39m
+                [0mEmail[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mautocomplete[39m=[32m"email"[39m
+                [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground f...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/authPages.component.test.tsx:232:23
+    230|     const main = within(await screen.findByRole('main'));
+    231|
+    232|     expect(await main.findByRole('link', { name: 'Back to the previous…
+       |                       ^
+    233|       'href',
+    234|       '/about',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/15]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > the register page > links to sign in carrying the return page, and space owners to the about page’s owners
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"/about#owners"[32m[39m[2m) // element.getAttribute("href") === "/about#owners"[22m
+
+Expected the element to have attribute:
+[32m  href="/about#owners"[39m
+Received:
+[31m  href="/about#contact"[39m
+ ❯ src/pages/site/auth/authPages.component.test.tsx:254:60
+    252|       ),
+    253|     ).toBeInTheDocument();
+    254|     expect(main.getByRole('link', { name: 'Contact us' })).toHaveAttri…
+       |                                                            ^
+    255|       'href',
+    256|       '/about#owners',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/15]⎯
+
+ FAIL  |component| src/pages/site/auth/changePasswordPage.component.test.tsx > the change password page > lands the user on the page they asked for once the password is saved
+TestingLibraryElementError: Unable to find role="heading" and name "Workspaces"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-14 items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col items-end gap-1"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-log-out"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m16 17 5-5-5-5"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M21 12H9"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mSign out[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-14 items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col items-end gap-1"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-log-out"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m16 17 5-5-5-5"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M21 12H9"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mSign out[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/changePasswordPage.component.test.tsx:69:20
+     67|
+     68|     expect(
+     69|       await screen.findByRole('heading', { level: 1, name: 'Workspaces…
+       |                    ^
+     70|     ).toBeInTheDocument();
+     71|     expect(where(router)).toBe('/spaces');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/15]⎯
+
+ FAIL  |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > carries the return page back to sign in
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"/login?next=%2Fspaces%2Fnoor-hub"[32m[39m[2m) // element.getAttribute("href") === "/login?next=%2Fspaces%2Fnoor-hub"[22m
+
+Expected the element to have attribute:
+[32m  href="/login?next=%2Fspaces%2Fnoor-hub"[39m
+Received:
+[31m  href="/login"[39m
+ ❯ src/pages/site/auth/forgotPasswordPage.component.test.tsx:79:72
+     77|     const main = within(await screen.findByRole('main'));
+     78|
+     79|     expect(await main.findByRole('link', { name: 'Back to sign in' }))…
+       |                                                                        ^
+     80|       'href',
+     81|       '/login?next=%2Fspaces%2Fnoor-hub',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/15]⎯
+
+ FAIL  |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > offers the way back to sign in until the password is set
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "Back to sign in"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Set a new password":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Show password":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Show password"[39m
+    [33mclass[39m=[32m"relative flex size-8 shrink-0 items-center justify-center rounded-sm text-muted-foreground transition-colors after:absolute after:-inset-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-slot[39m=[32m"input-action"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Save password":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) w-full"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  list:
+
+  Name "Password rules":
+  [36m<ul[39m
+    [33maria-label[39m=[32m"Password rules"[39m
+    [33mclass[39m=[32m"flex flex-col gap-1"[39m
+    [33mid[39m=[32m"_r_6_"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex items-center gap-2 text-caption text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex items-center gap-2 text-caption text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex items-center gap-2 text-caption text-muted-foreground"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+    [33mdata-slot[39m=[32m"card"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-header"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mSet a new password[0m
+        [36m</h1>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [0mFor ⁦s•••@example.com⁩[0m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<form[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mnovalidate[39m=[32m""[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-2"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"text-label text-foreground"[39m
+                [33mfor[39m=[32m"_r_7_-control"[39m
+                [33mid[39m=[32m"_r_7_-label"[39m
+              [36m>[39m
+                [0mNew password[0m
+              [36m</label>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+              [33mdata-size[39m=[32m"md"[39m
+              [33mdata-slot[39m=[32m"input-group"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33maria-describedby[39m=[32m"_r_6_"[39m
+                [33mautocomplete[39m=[32m"new-password"[39m
+                [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+                [33mdata-slot[39m=[32m"input"[39m
+                [33mdir[39m=[32m"ltr"[39m
+                [33mid[39m=[32m"_r_7_-control"[39m
+                [33mname[39m=[32m"password"[39m
+                [33mtype[39m=[32m"password"[39m
+              [36m/>[39m
+              [36m<button[39m
+                [33maria-label[39m=[32m"Show password"[39m
+                [33mclass[39m=[32m"relative flex size-8 shrink-0 items-center justify-center rounded-sm text-muted-foreground transition-colors after:absolute after:-inset-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4"[39m
+                [33mdata-slot[39m=[32m"input-action"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"flex"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-eye"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<path[39m
+                      [33md[39m=[32m"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"[39m
+                    [36m/>[39m
+                    [36m<circle[39m
+                      [33mcx[39m=[32m"12"[39m
+                      [33mcy[39m=[32m"12"[39m
+                      [33mr[39m=[32m"3"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                [36m</span>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<ul[39m
+            [33maria-label[39m=[32m"Password rules"[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mid[39m=[32m"_r_6_"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-circle"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"12"[39m
+                  [33mcy[39m=[32m"12"[39m
+                  [33mr[39m=[32m"10"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mAt least 8 characters[0m
+                [0m [0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"sr-only"[39m
+                [36m>[39m
+                  [0m— not met yet[0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-circle"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"12"[39m
+                  [33mcy[39m=[32m"12"[39m
+                  [33mr[39m=[32m"10"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mAt least one letter[0m
+                [0m [0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"sr-only"[39m
+                [36m>[39m
+                  [0m— not met yet[0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex items-center gap-2 text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-circle"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<circle[39m
+                  [33mcx[39m=[32m"12"[39m
+                  [33mcy[39m=[32m"12"[39m
+                  [33mr[39m=[32m"10"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<span>[39m
+                [0mAt least one number[0m
+                [0m [0m
+                [36m<span[39m
+                  [33mclass[39m=[32m"sr-only"[39m
+                [36m>[39m
+                  [0m— not met yet[0m
+                [36m</span>[39m
+              [36m</span>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</div>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) w-full"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mtype[39m=[32m"submit"[39m
+        [36m>[39m
+          [0mSave password[0m
+        [36m</button>[39m
+      [36m</form>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</main>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/auth/resetPasswordPage.component.test.tsx:93:17
+     91|
+     92|     await main.findByLabelText('New password');
+     93|     expect(main.getByRole('link', { name: 'Back to sign in' })).toHave…
+       |                 ^
+     94|   });
+     95|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/15]⎯
+
+ FAIL  |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > offers the way back to sign in beside a new link when this one can no longer be used
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "Back to sign in"
+
+Here are the accessible roles:
+
+  link:
+
+  Name "Skip to content":
+  [36m<a[39m
+    [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+    [33mhref[39m=[32m"#main"[39m
+  [36m/>[39m
+
+  Name "Masaha":
+  [36m<a[39m
+    [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Request a new link":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) w-full"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/forgot-password"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  banner:
+
+  Name "":
+  [36m<header[39m
+    [33mclass[39m=[32m"border-b border-border bg-background"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "العربية":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Dark theme":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Dark theme"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  main:
+
+  Name "":
+  [36m<main[39m
+    [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+    [33mid[39m=[32m"main"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "The link has expired or was already used":
+  [36m<h1 />[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-dvh flex-col"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"border-b border-border bg-background"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-14 items-center gap-2 px-4 md:px-8"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mhref[39m=[32m"/"[39m
+          [36m>[39m
+            [0mMasaha[0m
+          [36m</a>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"ms-auto flex items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-languages"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m5 8 6 6"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 5h12"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 2h1"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18h6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<bdi[39m
+                [33mlang[39m=[32m"ar"[39m
+              [36m>[39m
+                [0mالعربية[0m
+              [36m</bdi>[39m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-label[39m=[32m"Dark theme"[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-moon"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<main[39m
+        [33mclass[39m=[32m"flex flex-1 flex-col px-4 py-6 outline-none md:items-center md:justify-center md:px-8 md:py-16"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+          [33mdata-slot[39m=[32m"card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mdata-slot[39m=[32m"card-title"[39m
+            [36m>[39m
+              [36m<h1>[39m
+                [0mThe link has expired or was already used[0m
+              [36m</h1>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [33mdata-slot[39m=[32m"card-description"[39m
+            [36m>[39m
+              [0mReset links are valid for one hour and can be used once.[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-content"[39m
+          [36m>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) w-full"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/forgot-password"[39m
+            [36m>[39m
+              [0mRequest a new link[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</main>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/auth/resetPasswordPage.component.test.tsx:102:19
+    100|
+    101|     await screen.findByRole('link', { name: 'Request a new link' });
+    102|     expect(screen.getByRole('link', { name: 'Back to sign in' })).toHa…
+       |                   ^
+    103|   });
+    104| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/15]⎯
+
+ FAIL  |component| src/features/auth/components/forgot-password/ForgotPasswordCard.component.test.tsx > ForgotPasswordCard > offers another email under the resend at once, which opens the empty form, focused
+TestingLibraryElementError: Unable to find role="button" and name "Use another email"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mCheck your email[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body"[39m
+        [36m>[39m
+          [0mIf this email is registered with us, you’ll get a message with a link to set a new password. The link is valid for one hour. Check your spam folder.[0m
+        [36m</p>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mSent to ⁦s•••@example.com⁩[0m
+        [36m</p>[39m
+        [36m<form[39m
+          [33mclass[39m=[32m"flex flex-col gap-4"[39m
+          [33mnovalidate[39m=[32m""[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"submit"[39m
+          [36m>[39m
+            [0mResend in ⁦0:58⁩[0m
+          [36m</button>[39m
+        [36m</form>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center px-(--card-padding) [.border-t]:pt-(--card-padding) flex-col gap-2"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center justify-center gap-1 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mCan’t access your email?[0m
+          [36m<a[39m
+            [33mhref[39m=[32m"/about#contact"[39m
+          [36m>[39m
+            [0mContact us[0m
+          [36m</a>[39m
+        [36m</p>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"/login"[39m
+        [36m>[39m
+          [0mBack to sign in[0m
+        [36m</a>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mCheck your email[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body"[39m
+        [36m>[39m
+          [0mIf this email is registered with us, you’ll get a message with a link to set a new password. The link is valid for one hour. Check your spam folder.[0m
+        [36m</p>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mSent to ⁦s•••@example.com⁩[0m
+        [36m</p>[39m
+        [36m<form[39m
+          [33mclass[39m=[32m"flex flex-col gap-4"[39m
+          [33mnovalidate[39m=[32m""[39m
+        [36m>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mdisabled[39m=[32m""[39m
+            [33mtype[39m=[32m"submit"[39m
+          [36m>[39m
+            [0mResend in ⁦0:58⁩[0m
+          [36m</button>[39m
+        [36m</form>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center px-(--card-padding) [.border-t]:pt-(--card-padding) flex-col gap-2"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center justify-center gap-1 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mCan’t access your email?[0m
+          [36m<a[39m
+            [33mhref[39m=[32m"/about#contact"[39m
+          [36m>[39m
+            [0mContact us[0m
+          [36m</a>[39m
+        [36m</p>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"/login"[39m
+        [36m>[39m
+          [0mBack to sign in[0m
+        [36m</a>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/auth/components/forgot-password/ForgotPasswordCard.component.test.tsx:81:35
+     79|     const user = userEvent.setup();
+     80|
+     81|     await user.click(await screen.findByRole('button', { name: 'Use an…
+       |                                   ^
+     82|
+     83|     const email = await screen.findByLabelText('Email');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/15]⎯
+
+ FAIL  |component| src/features/auth/components/forgot-password/ForgotPasswordCard.component.test.tsx > ForgotPasswordCard > offers another email, and no resend, once the resends are spent
+TestingLibraryElementError: Unable to find role="button" and name "Use another email"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mCheck your email[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body"[39m
+        [36m>[39m
+          [0mIf this email is registered with us, you’ll get a message with a link to set a new password. The link is valid for one hour. Check your spam folder.[0m
+        [36m</p>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mSent to ⁦s•••@example.com⁩[0m
+        [36m</p>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm"[39m
+        [36m>[39m
+          [0mYou’ve asked for the link too many times. Enter your email again to ask for another.[0m
+        [36m</p>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mEnter your email again[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center px-(--card-padding) [.border-t]:pt-(--card-padding) flex-col gap-2"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center justify-center gap-1 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mCan’t access your email?[0m
+          [36m<a[39m
+            [33mhref[39m=[32m"/about#contact"[39m
+          [36m>[39m
+            [0mContact us[0m
+          [36m</a>[39m
+        [36m</p>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"/login"[39m
+        [36m>[39m
+          [0mBack to sign in[0m
+        [36m</a>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg w-full md:max-w-md"[39m
+      [33mdata-slot[39m=[32m"card"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+        [33mdata-slot[39m=[32m"card-header"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-heading-3"[39m
+          [33mdata-slot[39m=[32m"card-title"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mCheck your email[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col px-(--card-padding) gap-4"[39m
+        [33mdata-slot[39m=[32m"card-content"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body"[39m
+        [36m>[39m
+          [0mIf this email is registered with us, you’ll get a message with a link to set a new password. The link is valid for one hour. Check your spam folder.[0m
+        [36m</p>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [36m>[39m
+          [0mSent to ⁦s•••@example.com⁩[0m
+        [36m</p>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm"[39m
+        [36m>[39m
+          [0mYou’ve asked for the link too many times. Enter your email again to ask for another.[0m
+        [36m</p>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mEnter your email again[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center px-(--card-padding) [.border-t]:pt-(--card-padding) flex-col gap-2"[39m
+        [33mdata-slot[39m=[32m"card-footer"[39m
+      [36m>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"flex flex-wrap items-center justify-center gap-1 text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mCan’t access your email?[0m
+          [36m<a[39m
+            [33mhref[39m=[32m"/about#contact"[39m
+          [36m>[39m
+            [0mContact us[0m
+          [36m</a>[39m
+        [36m</p>[39m
+        [36m<a[39m
+          [33mhref[39m=[32m"/login"[39m
+        [36m>[39m
+          [0mBack to sign in[0m
+        [36m</a>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/auth/components/forgot-password/ForgotPasswordCard.component.test.tsx:91:25
+     89|     renderAt(sentPosition({ canResend: false }));
+     90|
+     91|     expect(await screen.findByRole('button', { name: 'Use another emai…
+       |                         ^
+     92|     expect(screen.getByText(/asked for the link too many times/)).toBe…
+     93|     expect(screen.queryByRole('button', { name: /^Resend/ })).not.toBe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/15]⎯
+
+ FAIL  |component| src/features/auth/hooks/sign-in/useSignIn.component.test.tsx > useSignIn > welcomes the account back once the session is held
+TestingLibraryElementError: Unable to find an element with the text: Welcome back. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-atomic[39m=[32m"false"[39m
+        [33maria-label[39m=[32m"Notifications"[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33maria-relevant[39m=[32m"additions text"[39m
+        [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div />[39m
+  [36m</body>[39m
+[36m</html>[39m...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/auth/hooks/sign-in/useSignIn.component.test.tsx:39:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/15]⎯
+
+
+ Test Files  6 failed | 1 passed (7)
+      Tests  15 failed | 38 passed (53)
+   Start at  09:24:42
+   Duration  52.05s (environment 30%, tests 30%, import 18%, transform 13%, setup 8%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/site/auth src/features/auth/components/forgot-password src/features/auth/hooks/sign-in

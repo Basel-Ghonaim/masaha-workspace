@@ -1,0 +1,28 @@
+<<<OLD
+  // The latest subscription, the file's first, is the one a renewal renews (DK-007).
+  const renew = (
+    index: number,
+    subscription: (typeof subscriptions.cards)[number]['subscription'],
+  ) =>
+    index === 0 && header.customer.archivedAt === null
+===
+  // The latest subscription, the file's first, is the one a renewal renews (DK-007), and only
+  // while it ends soon or has expired (D8.1).
+  const renew = (
+    index: number,
+    subscription: (typeof subscriptions.cards)[number]['subscription'],
+  ) =>
+    index === 0 &&
+    header.customer.archivedAt === null &&
+    (subscription.status === 'ENDING_SOON' || subscription.status === 'EXPIRED')
+>>>
+<<<OLD
+            fileLink={null}
+            subscribe={subscribe}
+          />
+===
+            fileLink={null}
+            subscribe={subscribe}
+            state="buttons"
+          />
+>>>

@@ -1,0 +1,59 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/lists
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |unit| src/shared/lists/services/rangeSummary.unit.test.ts (3 tests | 2 failed) 20ms
+   ❯ rangeSummary (3)
+     × says 1–20 of 312 on the first page 15ms
+     × ends the last page at the total 2ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  2 failed | 7 passed (9)
+   Start at  17:03:40
+   Duration  737ms (transform 61%, import 23%, tests 7%, worker 7%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/lists/services/rangeSummary.unit.test.ts > rangeSummary > says 1–20 of 312 on the first page
+AssertionError: expected 'Showing \u20680–20\u2069 of \u2068312…' to be 'Showing \u20681–20\u2069 of \u2068312…' // Object.is equality
+
+Expected: "Showing ⁨1–20⁩ of ⁨312⁩"
+Received: "Showing ⁨0–20⁩ of ⁨312⁩"
+
+ ❯ src/shared/lists/services/rangeSummary.unit.test.ts:11:83
+      9| describe('rangeSummary', () => {
+     10|   it('says 1–20 of 312 on the first page', () => {
+     11|     expect(rangeSummary({ currentPage: 1, limit: 20, totalRecords: 312…
+       |                                                                                   ^
+     12|       `Showing ${isolate('1–20')} of ${isolate('312')}`,
+     13|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/shared/lists/services/rangeSummary.unit.test.ts > rangeSummary > ends the last page at the total
+AssertionError: expected 'Showing \u2068300–312\u2069 of \u2068…' to be 'Showing \u2068301–312\u2069 of \u2068…' // Object.is equality
+
+Expected: "Showing ⁨301–312⁩ of ⁨312⁩"
+Received: "Showing ⁨300–312⁩ of ⁨312⁩"
+
+ ❯ src/shared/lists/services/rangeSummary.unit.test.ts:17:84
+     15|
+     16|   it('ends the last page at the total', () => {
+     17|     expect(rangeSummary({ currentPage: 16, limit: 20, totalRecords: 31…
+       |                                                                                    ^
+     18|       `Showing ${isolate('301–312')} of ${isolate('312')}`,
+     19|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/lists

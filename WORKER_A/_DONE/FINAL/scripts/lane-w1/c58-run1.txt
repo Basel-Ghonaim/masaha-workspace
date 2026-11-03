@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/packages src/pages/dashboard/space/PackagesPage
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/packages/hooks/list/usePackagesSection.component.test.tsx (7 tests | 1 failed) 1415ms
+   ❯ usePackagesSection (7)
+     × lists the packages in order, a paused one marked «موقوفة», each switch and edit named by its package 156ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/packages/hooks/list/usePackagesSection.component.test.tsx > usePackagesSection > lists the packages in order, a paused one marked «موقوفة», each switch and edit named by its package
+AssertionError: expected 'Morning: متاحة في المكتب' to be 'Morning: متاحة' // Object.is equality
+
+Expected: "Morning: متاحة"
+Received: "Morning: متاحة في المكتب"
+
+ ❯ src/features/packages/hooks/list/usePackagesSection.component.test.tsx:114:50
+    112|     ]);
+    113|     expect(rows[0]?.summary).toBe('صالحة 30 يومًا · 10 أيام · صباحي');
+    114|     expect(heard(rows[1]?.available.name ?? '')).toBe('Morning: متاحة'…
+       |                                                  ^
+    115|     expect(heard(rows[1]?.edit.name ?? '')).toBe('تعديل Morning');
+    116|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 4 passed (5)
+      Tests  1 failed | 22 passed (23)
+   Start at  15:45:32
+   Duration  14.43s (environment 32%, import 26%, transform 24%, tests 9%, setup 9%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/packages src/pages/dashboard/space/PackagesPage

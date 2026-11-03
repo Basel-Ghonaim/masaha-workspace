@@ -1,0 +1,51 @@
+<<<OLD
+ * one chosen at a time — and the count the filters keep, said politely as it changes.
+ */
+export function CustomersFilters({
+  toolbar,
+  count,
+}: {
+  toolbar: Toolbar;
+  /** The count the filters keep, once the list has loaded. */
+  count: string | undefined;
+}) {
+===
+ * one chosen at a time — the count the filters keep, said politely as it changes, and «زبون جديد»
+ * at the row's end (P1 amended).
+ */
+export function CustomersFilters({
+  toolbar,
+  count,
+  add,
+}: {
+  toolbar: Toolbar;
+  /** The count the filters keep, once the list has loaded. */
+  count: string | undefined;
+  /** «زبون جديد»: the page's subscription sheet for a new customer. */
+  add: { label: string; run: (from: HTMLElement) => void };
+}) {
+>>>
+<<<OLD
+        {count !== undefined && (
+          <p className="text-body-sm text-muted-foreground" aria-live="polite">
+            {count}
+          </p>
+        )}
+      </div>
+===
+        {count !== undefined && (
+          <p className="text-body-sm text-muted-foreground" aria-live="polite">
+            {count}
+          </p>
+        )}
+        <Button
+          size="sm"
+          className="ms-auto"
+          onClick={(event) => {
+            add.run(event.currentTarget);
+          }}
+        >
+          {add.label}
+        </Button>
+      </div>
+>>>

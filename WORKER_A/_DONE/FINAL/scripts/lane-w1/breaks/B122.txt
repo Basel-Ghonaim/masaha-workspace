@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/finance/services
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |unit| src/features/finance/services/monthChange.unit.test.ts (2 tests | 1 failed) 24ms
+   ❯ monthChange (2)
+     × says nothing when the month before had no income 13ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:28:39
+   Duration  1.53s (import 47%, transform 46%, tests 4%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/finance/services/monthChange.unit.test.ts > monthChange > says nothing when the month before had no income
+AssertionError: expected '+Infinity%' to be null
+
+- Expected:
+null
+
++ Received:
+"+Infinity%"
+
+ ❯ src/features/finance/services/monthChange.unit.test.ts:11:35
+      9|
+     10|   it('says nothing when the month before had no income', () => {
+     11|     expect(monthChange(5_000, 0)).toBeNull();
+       |                                   ^
+     12|   });
+     13| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/finance/services

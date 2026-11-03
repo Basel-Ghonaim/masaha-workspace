@@ -1,0 +1,19 @@
+I've reviewed both ranges, R1 and R4 (40 commits), and the report is in `C:\dev\masaha\workspace\WORKER_A\FINAL\6_REVIEW_R14_CLAUDE.md`. Checks were green and the head stayed at `a12c0790` (CLEAN) for the whole review. I ran nothing, as the brief says: the findings come from reading the code, plus one from a screenshot of the earlier run. No blocker; my verdict is **mergeable after a fix round**.
+
+Findings, most severe first (all should-fix except the last):
+- **R14-F1, the "next page loading" sign (finding 132):** the faded rows reach only 2 of the paged lists, the audit log and the desk's log. The Directory, customers, the ledger, the admin lists and the report lists never fade. Finding 132's *Resolution* line says every list does, which is false.
+- **R14-F2, «الأقرب إليّ» can spin for ever:** if the browser's location prompt is dismissed without a choice (Firefox allows this), nothing ever ends the wait. Pressing the button again is ignored until the page is reloaded.
+- **R14-F3, a guest's saved action can land in someone else's account:** on a shared computer, guest A presses the heart and closes the tab. Within 15 minutes, anyone who opens a new tab and goes from Home to sign-in gets A's favourite saved to their own account. The brief asked that this be impossible.
+- **R14-F4, the map view at 390 px:** the search row pushes the filters button off the edge of the screen. I saw this in the earlier run's screenshot `shots\tour-agent2\guest_spaces-view-map-en-390.png`.
+- **R14-F5, «اختر منطقتك» from the favourites at 1024 px and up:** the filters get the focus, then the shell's focus rule moves it to `main`. The test for this renders the Directory without the shell, so it can't catch it.
+- **R14-F6, screen 9's "send a link to set a password":** after sending there is no resend and no masked address. A 429 just shows a toast with no wait time. The prototype and the plan (D9.2) both have the resend block with its countdown.
+- **R14-F7, CSV formula cells:** the finance exports keep a value like `=HYPERLINK(...)` as a live formula when opened in Excel. It's recorded as finding 204 and left open; the fix is one line and a test.
+- **R14-F8, two closing documents are wrong:** finding 55's *Resolution* claims the CI timing is recorded in the PR report, and it isn't. `spaces.md` still says "Reception's web screens remain planned" (lines 4 and 20).
+- **R14-F9 (nit, uncertain):** the CSV download revokes its link straight after the click, which may make the download fail in some browsers. I'm not sure it does in current Safari or Firefox; it goes to finding 220 if it isn't folded in.
+
+Outside my range, one line each:
+- **Finding 212:** it leaves a known gap open on the desk (screen 13), on a PR whose mission is "complete, no gap".
+- **R14-F1's other lists:** most of the lists missing the fade belong to the R2, R3 and R5 reviewers.
+
+Not covered by any run:
+- **Signed-in site pages:** there are no screenshots of screens 9, 10 and 11, the space page or the phone drawer, because the tour had no signed-in user. Their dark mode and 390/768 widths have not been seen.

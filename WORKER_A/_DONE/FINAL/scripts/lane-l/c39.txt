@@ -1,0 +1,10 @@
+refactor(lists): share the row menus' triggers
+
+The owner's staff list carried a copy of the admin's users page's
+useRowTriggers, since a feature may not import a page's hook (finding
+104). The hook moves to shared/lists, its words now any record's row,
+and both lists import it from there; the page's copy and the staff's
+useMenuTriggers are deleted. Its test proves the focus returns to the
+row's button after the row is drawn again, and that a row gone reads
+no button. space-links.md's code map and architecture §1 say where it
+lives.

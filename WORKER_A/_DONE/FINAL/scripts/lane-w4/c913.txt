@@ -1,0 +1,190 @@
+@@@ apps/web/src/shared/copy/english/directory.ts
+<<<
+      failed: 'We couldn’t read the status just now',
+    },
+===
+      failed: 'We couldn’t read the status just now',
+      /** In place of «live», once a refresh failed and the status shown is past 3 minutes old. */
+      updated: ({ minutes }: { minutes: number }) =>
+        englishPlural(minutes, {
+          one: `Updated ${String(minutes)} minute ago`,
+          other: `Updated ${String(minutes)} minutes ago`,
+        }),
+    },
+    /** Today's line while a closure announced by the space runs. */
+    closedToday: 'Temporarily closed today',
+>>>
+@@@ apps/web/src/shared/copy/arabic/directory.ts
+<<<
+      failed: 'تعذّر قراءة الحالة الآن',
+    },
+===
+      failed: 'تعذّر قراءة الحالة الآن',
+      updated: ({ minutes }: { minutes: number }) =>
+        arabicPlural(minutes, {
+          zero: 'آخر تحديث الآن',
+          one: 'آخر تحديث قبل دقيقة واحدة',
+          two: 'آخر تحديث قبل دقيقتين',
+          few: `آخر تحديث قبل ${String(minutes)} دقائق`,
+          many: `آخر تحديث قبل ${String(minutes)} دقيقة`,
+          other: `آخر تحديث قبل ${String(minutes)} دقيقة`,
+        }),
+    },
+    closedToday: 'مغلقة مؤقتًا اليوم',
+>>>
+@@@ apps/web/src/features/directory/types/SpacePageView.ts
+<<<
+    point: Location;
+    mapLabel: string;
+===
+    point: Location;
+    /** The visitor's point while near me holds one, drawn on the map beside the place. */
+    user: { point: Location; label: string } | null;
+    mapLabel: string;
+>>>
+@@@ apps/web/src/shared/map/types/PlaceMapProps.ts
+<<<
+  /** The line shown when the map cannot load, its tiles or its code. */
+  failed: string;
+===
+  /** The line shown when the map cannot load, its tiles or its code. */
+  failed: string;
+  /** The visitor's point, a picture named by its label, the map then showing both; or none. */
+  user?: { point: MapPoint; label: string } | null;
+>>>
+@@@ apps/web/src/features/directory/components/page/Section.tsx
+<<<
+ * what else it says, then «قد يكون تغيّر» while stale), and its body.
+ */
+export function Section({
+  title,
+  meta,
+  children,
+}: {
+  title: string;
+  meta: SectionMeta | null;
+  children: ReactNode;
+}) {
+  const id = useId();
+  return (
+    <section aria-labelledby={id} className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
+        <h2 id={id} className="text-heading-2">
+          {title}
+        </h2>
+===
+ * what else it says, then «قد يكون تغيّر» while stale), its own action at the heading's end when
+ * it has one, and its body.
+ */
+export function Section({
+  title,
+  meta,
+  action,
+  children,
+}: {
+  title: string;
+  meta: SectionMeta | null;
+  action?: ReactNode;
+  children: ReactNode;
+}) {
+  const id = useId();
+  return (
+    <section aria-labelledby={id} className="flex flex-col gap-4">
+      <div className="flex flex-col gap-1">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h2 id={id} className="text-heading-2">
+            {title}
+          </h2>
+          {action}
+        </div>
+>>>
+@@@ apps/web/src/features/directory/components/page/LocationSection.tsx
+<<<
+ * «الموقع»: the space on a map, its pin a picture (PU-026), the address and the landmark, and
+ * «الاتجاهات» to the visitor's maps in a new tab.
+ */
+export function LocationSection({ location }: { location: SpacePageView['location'] }) {
+  return (
+    <Section title={location.title} meta={null}>
+      <PlaceMap point={location.point} label={location.mapLabel} failed={location.failed} />
+===
+ * «الموقع»: the space on a map, its pin a picture (PU-026), with the visitor's point while near me
+ * holds one; the address and the landmark; and «الاتجاهات», the section's own action, to the
+ * visitor's maps in a new tab.
+ */
+export function LocationSection({ location }: { location: SpacePageView['location'] }) {
+  return (
+    <Section
+      title={location.title}
+      meta={null}
+      action={
+        <Button asChild variant="outline" size="sm">
+          <a href={location.directions.href} target="_blank" rel="noopener">
+            {location.directions.label}
+          </a>
+        </Button>
+      }
+    >
+      <PlaceMap
+        point={location.point}
+        user={location.user}
+        label={location.mapLabel}
+        failed={location.failed}
+      />
+>>>
+<<<
+      </div>
+      <Button asChild variant="outline" size="sm" className="self-start">
+        <a href={location.directions.href} target="_blank" rel="noopener">
+          {location.directions.label}
+        </a>
+      </Button>
+    </Section>
+===
+      </div>
+    </Section>
+>>>
+@@@ apps/web/src/features/directory/components/page/Gallery.tsx
+<<<
+import { useRef } from 'react';
+===
+import { useId, useRef } from 'react';
+>>>
+<<<
+  const tiles = useRef<(HTMLButtonElement | null)[]>([]);
+  if (gallery.tiles.length === 0) return null;
+===
+  const tiles = useRef<(HTMLButtonElement | null)[]>([]);
+  const pillId = useId();
+  if (gallery.tiles.length === 0) return null;
+>>>
+<<<
+            aria-label={tile.view.label}
+===
+            aria-label={tile.view.label}
+            // On a phone the first tile stands alone: it is described by the pill that counts them.
+            aria-describedby={index === 0 && gallery.more !== null ? pillId : undefined}
+>>>
+<<<
+              <span className="absolute bottom-3 end-3 rounded-full bg-background/90 px-3 py-1 text-body-sm">
+===
+              <span
+                id={pillId}
+                className="absolute bottom-3 end-3 rounded-full bg-background/90 px-3 py-1 text-body-sm"
+              >
+>>>
+@@@ apps/web/src/features/directory/components/page/SpaceDetails.tsx
+<<<
+  const panelShown = panel.today !== null || panel.distance !== null;
+===
+>>>
+<<<
+        {!view.wide && panelShown && <StatusPanel panel={panel} />}
+===
+        {!view.wide && <StatusPanel panel={panel} />}
+>>>
+<<<
+      {view.wide && (panelShown || contacts !== null) && (
+===
+      {view.wide && (
+>>>

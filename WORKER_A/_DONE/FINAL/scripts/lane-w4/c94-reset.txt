@@ -1,0 +1,43 @@
+@@@ apps/web/src/features/auth/components/reset-password/ResetPasswordCard.tsx
+<<<
+import { Card, CardContent, CircleCheckIcon } from '@shared/design-system';
+===
+import { Card, CardContent, CardFooter, CircleCheckIcon } from '@shared/design-system';
+>>>
+<<<
+  /** To sign in, once the password is set. */
+  signInLink: ReactNode;
+};
+===
+  /** To sign in, once the password is set. */
+  signInLink: ReactNode;
+  /** Back to sign in, at the card's foot, until the password is set (C4). */
+  backLink: ReactNode;
+};
+>>>
+<<<
+ * browser, the link no longer valid, or the password set, and the way on from each.
+ */
+export function ResetPasswordCard({ requestLinkLink, signInLink }: ResetPasswordCardProps) {
+===
+ * browser, the link no longer valid, or the password set, and the way on from each; the way back to
+ * sign in at its foot, except once the password is set, when signing in is the way on.
+ */
+export function ResetPasswordCard({
+  requestLinkLink,
+  signInLink,
+  backLink,
+}: ResetPasswordCardProps) {
+>>>
+<<<
+          <CardContent>{signInLink}</CardContent>
+        </>
+      )}
+    </Card>
+===
+          <CardContent>{signInLink}</CardContent>
+        </>
+      )}
+      {view.kind !== 'done' && <CardFooter className="justify-center">{backLink}</CardFooter>}
+    </Card>
+>>>

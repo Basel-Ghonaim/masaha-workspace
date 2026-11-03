@@ -1,0 +1,37 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx -t twelve
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 69 skipped) 10021ms
+
+ Test Files  1 failed (1)
+      Tests  69 skipped (69)
+   Start at  15:02:01
+   Duration  22.95s (tests 45%, transform 23%, import 16%, environment 12%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:201:3
+    199|   // Reception lands on the desk, which loads lazily: its first transf…
+    200|   // seconds, so it is done before the tests, as the pages' own sectio…
+    201|   beforeAll(async () => {
+       |   ^
+    202|     await import('./space/desk/DeskPage');
+    203|     await import('./space/overview/OverviewPage');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx -t twelve

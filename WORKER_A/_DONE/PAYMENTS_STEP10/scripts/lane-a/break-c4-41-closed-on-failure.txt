@@ -1,0 +1,72 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx -t keeps a failure in the dialog
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx (8 tests | 1 failed | 7 skipped) 3541ms
+   ❯ useExtensionDialog (8)
+     × keeps a failure in the dialog with the days typed; one extended meanwhile is worded and read again 3539ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  12:51:13
+   Duration  20.18s (import 47%, transform 21%, tests 18%, environment 11%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx > useExtensionDialog > keeps a failure in the dialog with the days typed; one extended meanwhile is worded and read again
+TestingLibraryElementError: Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx:195:25
+    193|     await user.type(days, '5');
+    194|     await user.click(screen.getByRole('button', { name: 'Extend 4 subs…
+    195|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                         ^
+    196|       'This announcement has not started yet.',
+    197|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx -t ^^^"keeps^^^ a^^^ failure^^^ in^^^ the^^^ dialog^^^"

@@ -1,0 +1,178 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/platform-settings/components/admin
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx (6 tests | 1 failed) 6370ms
+   ❯ PlatformSettingsCards (6)
+     × «تغييرات غير محفوظة» and «تجاهل التغييرات» while a card differs 376ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  15:37:00
+   Duration  21.55s (tests 30%, transform 26%, import 22%, environment 17%, setup 5%)
+
+  Transform  |component| transforming modules took 5.49s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx > PlatformSettingsCards > «تغييرات غير محفوظة» and «تجاهل التغييرات» while a card differs
+TestingLibraryElementError: Unable to find an element with the text: تغييرات غير محفوظة. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+  [33mid[39m=[32m"defaults"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"card-title"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mالإعدادات الافتراضية للمساحات الجديدة[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [33mdata-slot[39m=[32m"card-description"[39m
+    [36m>[39m
+      [0mيغيّرها كل مالك لاحقًا من إعدادات مساحته.[0m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"contents"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"px-(--card-padding) flex flex-col gap-5"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex items-start gap-3"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) shrink-0 items-center"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"true"[39m
+            [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input"[39m
+            [33mdata-slot[39m=[32m"switch"[39m
+            [33mdata-state[39m=[32m"checked"[39m
+            [33mid[39m=[32m"_r_24_-control"[39m
+            [33mrole[39m=[32m"switch"[39m
+            [33mtype[39m=[32m"button"[39m
+            [33mvalue[39m=[32m"on"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+              [33mdata-slot[39m=[32m"switch-thumb"[39m
+              [33mdata-state[39m=[32m"checked"[39m
+            [36m/>[39m
+          [36m</button>[39m
+          [36m<input[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mchecked[39m=[32m""[39m
+            [33mstyle[39m=[32m"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"checkbox"[39m
+            [33mvalue[39m=[32m"on"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground flex min-h-(--control-height) items-center"[39m
+              [33mfor[39m=[32m"_r_24_-control"[39m
+              [33mid[39m=[32m"_r_24_-label"[39m
+            [36m>[39m
+              [0mتسجيل خروج تلقائي عند الإغلاق[0m
+            [36m</label>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_25_-control"[39m
+            [33mid[39m=[32m"_r_25_-label"[39m
+          [36m>[39m
+            [0mتقريب الزيارات[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-labelledby[39m=[32m"_r_25_-label"[39m
+          [33maria-required[39m=[32m"false"[39m
+          [33mclass[39m=[32m"group/radio-group flex flex-col gap-4"[39m
+          [33mdata-slot[39m=[32m"radio-group"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mid[39m=[32m"_r_25_-control"[39m
+          [33mrole[39m=[32m"radiogroup"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-2"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"group/field flex items-start gap-3"[39m
+              [33mdata-slot[39m=[32m"field"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex h-(--control-height) shrink-0 items-center"[39m
+              [36m>[39m
+                [36m<button[39m
+                  [33maria-checked[39m=[32m"false"[39m
+                  [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+                  [33mdata-radix-collection-item[39m=[32m""[39m
+                  [33mdata-slot[39m=[32m"radio-group-item"[39m
+                  [33mdata-state[39m=[32m"unchecked"[39m
+                  [33mid[39m=[32m"_r_26_-control"[39m
+                  [33mrole[39m=[32m"radio"[39m
+                  [33mtabindex[39m=[32m"-1"[39m
+                  [33mtype[39m=[32m"button"[39m
+                  [33mvalue[39m=[32m"UP_AFTER_MINUTES"[39m
+                [36m/>[39m
+                [36m<input[39m
+                  [33maria-hidden[39m...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx:218:29
+    216|     await user.click(cap);
+    217|
+    218|     expect(within(defaults).getByText('تغييرات غير محفوظة')).toBeInThe…
+       |                             ^
+    219|     expect(card('حداثة البيانات').textContent).not.toContain('تغييرات …
+    220|     await user.click(within(defaults).getByRole('button', { name: 'تجا…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/platform-settings/components/admin

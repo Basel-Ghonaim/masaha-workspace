@@ -1,0 +1,59 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/audit/components/AuditLog.component.test.tsx (8 tests | 1 failed) 4597ms
+   ❯ AuditLog (the owner’s) (8)
+     × a void, a staff deactivation, an extension and a photo removal are red; the rest neutral 392ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  15:16:59
+   Duration  19.00s (import 28%, transform 27%, tests 25%, environment 16%, setup 5%)
+
+  Transform  |component| transforming modules took 4.97s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/audit/components/AuditLog.component.test.tsx > AuditLog (the owner’s) > a void, a staff deactivation, an extension and a photo removal are red; the rest neutral
+AssertionError: expected [ 'neutral', 'neutral', …(4) ] to deeply equal [ 'destructive', 'destructive', …(4) ]
+
+- Expected
++ Received
+
+  [
+-   "destructive",
+-   "destructive",
+-   "destructive",
+-   "destructive",
++   "neutral",
++   "neutral",
++   "neutral",
++   "neutral",
+    "neutral",
+    "neutral",
+  ]
+
+ ❯ src/features/audit/components/AuditLog.component.test.tsx:167:20
+    165|       .slice(1)
+    166|       .map((row) => within(row).getAllByRole('cell')[2]?.firstElementC…
+    167|     expect(badges).toEqual(['destructive', 'destructive', 'destructive…
+       |                    ^
+    168|   });
+    169|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/audit

@@ -1,0 +1,72 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/customer-actions
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx (3 tests | 2 failed) 1819ms
+   ❯ a customer’s state actions (3)
+     × the file’s header holds the state’s buttons, the first primary, then «⋯»; axe-clean 129ms
+     × offers «Renew» only while the subscription ends soon or has expired 204ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  13:14:37
+   Duration  14.63s (transform 37%, import 27%, environment 18%, tests 13%, setup 5%)
+
+  Transform  |component| transforming modules took 5.33s · 37% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > the file’s header holds the state’s buttons, the first primary, then «⋯»; axe-clean
+AssertionError: expected [ 'More actions: Sara Khalid' ] to deeply equal [ 'Check in Sara Khalid', …(2) ]
+
+- Expected
++ Received
+
+  [
+-   "Check in Sara Khalid",
+-   "Receive ₪15",
+    "More actions: Sara Khalid",
+  ]
+
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:157:7
+    155|     expect(
+    156|       buttons.map((button) => plain(button.getAttribute('aria-label') …
+    157|     ).toEqual(['Check in Sara Khalid', 'Receive ₪15', 'More actions: S…
+       |       ^
+    158|     expect(buttons[0]).toHaveClass('bg-primary');
+    159|     expect(buttons[1]).not.toHaveClass('bg-primary');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > offers «Renew» only while the subscription ends soon or has expired
+AssertionError: expected [ <button …(2)></button> ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:174:22
+    172|     const renewals = screen.getAllByRole('button', { name: 'Renew' });
+    173|     // The header's and the latest card's.
+    174|     expect(renewals).toHaveLength(2);
+       |                      ^
+    175|     await user.click(renewals[0] as HTMLElement);
+    176|     expect(ending.subscribe).toHaveBeenCalledWith(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/customer-actions

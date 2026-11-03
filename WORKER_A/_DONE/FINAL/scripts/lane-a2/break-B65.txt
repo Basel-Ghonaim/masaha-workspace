@@ -1,0 +1,64 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/subscribe.api.test.ts (17 tests | 2 failed | 9 skipped) 7730ms
+   ❯ subscribing a customer (17)
+     × a published week or month price is copied as fixed terms with no limits, 7 or 30 days, even by reception 663ms
+     × an equal amount, or none, subscribes as before 808ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed | 9 skipped (17)
+   Start at  17:29:54
+   Duration  23.40s (tests 48%, transform 35%, import 14%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a published week or month price is copied as fixed terms with no limits, 7 or 30 days, even by reception
+AssertionError: expected 409 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 409
+
+ ❯ src/modules/desk/subscribe.api.test.ts:184:26
+    182|       published: { period: 'MONTH', audience: 'GENERAL', name: 'شهري' …
+    183|     });
+    184|     expect(month.status).toBe(201);
+       |                          ^
+    185|     expect((dataOf(month) as { subscription: object }).subscription).t…
+    186|       packageId: null,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > an equal amount, or none, subscribes as before
+AssertionError: expected 409 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 409
+
+ ❯ src/modules/desk/subscribe.api.test.ts:319:25
+    317|       startsOn: '2026-11-20',
+    318|     });
+    319|     expect(none.status).toBe(201);
+       |                         ^
+    320|     expect(await storedSubscriptions()).toHaveLength(2);
+    321|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

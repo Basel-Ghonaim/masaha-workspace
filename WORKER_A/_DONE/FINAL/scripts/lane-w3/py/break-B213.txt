@@ -1,0 +1,100 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/occupancy/components/PresentList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/occupancy/components/PresentList.component.test.tsx (6 tests | 1 failed) 3061ms
+   ❯ PresentList (6)
+     × says a student’s visit «Visit · student» 169ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  12:35:18
+   Duration  21.53s (import 30%, transform 28%, environment 21%, tests 15%, setup 6%)
+
+  Transform  |component| transforming modules took 5.85s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/occupancy/components/PresentList.component.test.tsx > PresentList > says a student’s visit «Visit · student»
+TestingLibraryElementError: Unable to find an element with the text: Visit · student. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"rounded-lg border border-(--card-border) bg-card p-3 text-card-foreground shadow-raised transition-opacity data-refreshing:opacity-(--refreshing)"[39m
+  [33mdata-slot[39m=[32m"data-table-card"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex items-start justify-between gap-3"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mLayla[0m
+        [36m</span>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mVisit[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [36m>[39m
+        [0mSince 12:00[0m
+        [0m · [0m
+        [0m2929h 35m[0m
+      [36m</span>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [36m>[39m
+        [0mSet at check-out[0m
+      [36m</span>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mdata-present-action[39m=[32m"VISIT-13"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Check out Layla"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck out[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</li>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/occupancy/components/PresentList.component.test.tsx:139:26
+    137|     const list = await screen.findByRole('list', { name: 'People prese…
+    138|     const layla = (await within(list).findByText('Layla')).closest('li…
+    139|     expect(within(layla).getByText('Visit · student')).toBeVisible();
+       |                          ^
+    140|     const omar = within(list).getByText('Omar').closest('li') as HTMLE…
+    141|     expect(within(omar).getByText('Visit')).toBeVisible();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/occupancy/components/PresentList

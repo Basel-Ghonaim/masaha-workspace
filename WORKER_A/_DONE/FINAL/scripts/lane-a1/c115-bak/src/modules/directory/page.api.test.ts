@@ -1,0 +1,296 @@
+import { randomUUID } from 'node:crypto';
+
+import request from 'supertest';
+import { beforeEach, describe, expect, it } from 'vitest';
+
+import { createTestApp } from '../../../test/app.ts';
+import { whileHeld } from '../../../test/locks.ts';
+import { resetDatabase } from '../../../test/reset-database.ts';
+import {
+  addPhotos,
+  addPrice,
+  createArea,
+  createPublicSpace,
+  photoUrl,
+  seedSettings,
+  setWeek,
+  signInOwnerOf,
+} from '../../../test/spaces.ts';
+import { prisma } from '../../db/index.ts';
+
+const NOW = new Date('2026-10-13T09:00:00.000Z');
+const app = createTestApp({ clock: () => NOW });
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+/** A date `days` before now. */
+const daysAgo = (days: number) => new Date(NOW.getTime() - days * DAY_MS);
+
+let areaId: number;
+
+beforeEach(async () => {
+  await resetDatabase(prisma);
+  await seedSettings();
+  ({ id: areaId } = await createArea({ nameAr: 'الرمال', nameEn: 'Al-Rimal' }));
+});
+
+function page(slug: string) {
+  return request(app).get(`/api/v1/spaces/${slug}`);
+}
+
+/** A platform amenity, active unless told otherwise, placed at `sortOrder`. */
+function amenity(key: string, sortOrder: number, isActive = true) {
+  return prisma.amenity.create({
+    data: { key, nameAr: `ميزة ${key}`, nameEn: key, icon: 'wifi', sortOrder, isActive },
+  });
+}
+
+describe('GET /spaces/:slug', () => {
+  it('answers a listed space’s public page whole, with no capacity, count or live status', async () => {
+    const space = await createPublicSpace(areaId, 'Focus Hub', {
+      nameAr: 'فوكس هب',
+      descriptionAr: 'مساحة هادئة',
+      landmarkAr: 'قرب الجامعة',
+      lat: 31.521,
+      lng: 34.452,
+      profileUpdatedAt: daysAgo(70),
+      hoursUpdatedAt: NOW,
+      pricesUpdatedAt: NOW,
+      amenitiesUpdatedAt: NOW,
+    });
+    await setWeek(
+      space.id,
+      Array.from({ length: 7 }, () => [480, 1080] as [number, number]),
+    );
+    const shift = await prisma.spaceShift.create({
+      data: { spaceId: space.id, nameAr: 'صباحية', startsMinute: 480, endsMinute: 780 },
+    });
+    await prisma.spacePrice.create({
+      data: { spaceId: space.id, period: 'HOUR', amountAgorot: 500, shiftId: shift.id },
+    });
+    await addPrice(space.id, 'MONTH', 15000, 'STUDENT');
+    const second = await amenity('power', 2);
+    const first = await amenity('internet', 1);
+    const retired = await amenity('printer', 0, false);
+    await prisma.spaceAmenity.createMany({
+      data: [second, first, retired].map(({ id }) => ({ spaceId: space.id, amenityId: id })),
+    });
+    await prisma.spaceOwnAmenity.create({
+      data: { spaceId: space.id, nameAr: 'قاعة تدريب', sortOrder: 0 },
+    });
+    await prisma.spaceContact.create({
+      data: { spaceId: space.id, type: 'WHATSAPP', value: '+970599123456' },
+    });
+    await prisma.spaceOccupancy.create({ data: { spaceId: space.id, capacity: 40 } });
+    await addPhotos(space.id, ['cover', 'second']);
+
+    const response = await page('focus-hub');
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual({
+      success: true,
+      data: {
+        id: space.id,
+        slug: 'focus-hub',
+        nameEn: 'Focus Hub',
+        nameAr: 'فوكس هب',
+        descriptionAr: 'مساحة هادئة',
+        descriptionEn: null,
+        area: { id: areaId, nameAr: 'الرمال', nameEn: 'Al-Rimal' },
+        addressAr: 'شارع الشهداء',
+        addressEn: null,
+        landmarkAr: 'قرب الجامعة',
+        landmarkEn: null,
+        location: { lat: 31.521, lng: 34.452 },
+        isVerified: false,
+        hours: {
+          days: Array.from({ length: 7 }, () => ({ opensMinute: 480, closesMinute: 1080 })),
+          shifts: [
+            { id: shift.id, nameAr: 'صباحية', nameEn: null, startsMinute: 480, endsMinute: 780 },
+          ],
+        },
+        prices: [
+          {
+            period: 'HOUR',
+            audience: 'GENERAL',
+            shiftId: shift.id,
+            labelAr: null,
+            labelEn: null,
+            amountAgorot: 500,
+          },
+          {
+            period: 'MONTH',
+            audience: 'STUDENT',
+            shiftId: null,
+            labelAr: null,
+            labelEn: null,
+            amountAgorot: 15000,
+          },
+        ],
+        amenities: [
+          { nameAr: 'ميزة internet', nameEn: 'internet', icon: 'wifi' },
+          { nameAr: 'ميزة power', nameEn: 'power', icon: 'wifi' },
+          { nameAr: 'قاعة تدريب', nameEn: null, icon: null },
+        ],
+        contacts: [{ type: 'WHATSAPP', value: '+970599123456' }],
+        updatedAt: {
+          profile: daysAgo(70).toISOString(),
+          hours: NOW.toISOString(),
+          prices: NOW.toISOString(),
+          amenities: NOW.toISOString(),
+          contacts: null,
+        },
+        staleGroups: ['profile'],
+        photos: [
+          { card: photoUrl('cover', 'card'), page: photoUrl('cover', 'page') },
+          { card: photoUrl('second', 'card'), page: photoUrl('second', 'page') },
+        ],
+        announcements: [],
+      },
+    });
+    expect(response.headers['cache-control']).toBe('public, max-age=30');
+  });
+
+  it('hides an unverified space’s stale prices, and shows a verified space’s with their stale mark', async () => {
+    const unverified = await createPublicSpace(areaId, 'Unverified', {
+      pricesUpdatedAt: daysAgo(31),
+    });
+    await addPrice(unverified.id, 'DAY', 2000);
+    const verified = await createPublicSpace(areaId, 'Verified', {
+      pricesUpdatedAt: daysAgo(31),
+    });
+    await addPrice(verified.id, 'DAY', 2000);
+    await signInOwnerOf(verified.id);
+
+    const hidden = await page('unverified');
+    const shown = await page('verified');
+
+    expect(hidden.body).toMatchObject({
+      data: { isVerified: false, prices: null, staleGroups: ['prices'] },
+    });
+    expect(shown.body).toMatchObject({
+      data: { isVerified: true, prices: [{ amountAgorot: 2000 }], staleGroups: ['prices'] },
+    });
+  });
+
+  it('carries no photo for a space without one: the page shows a caption', async () => {
+    await createPublicSpace(areaId, 'Bare');
+
+    const response = await page('bare');
+
+    expect(response.body).toMatchObject({ data: { photos: [] } });
+  });
+
+  it('decides verified on the links as they are under the space’s lock, with the facts it shows', async () => {
+    const space = await createPublicSpace(areaId, 'Verified', { pricesUpdatedAt: daysAgo(31) });
+    await addPrice(space.id, 'DAY', 2000);
+    const owner = await signInOwnerOf(space.id);
+
+    // The owner is unlinked while the page waits for the space's lock, as a link change holds it.
+    const answer = await whileHeld(
+      (tx) => tx.$queryRaw`SELECT id FROM spaces WHERE id = ${space.id} FOR NO KEY UPDATE`,
+      () => page('verified'),
+      (tx) =>
+        tx.spaceManager.update({
+          where: { spaceId_userId: { spaceId: space.id, userId: owner.id } },
+          data: { deactivatedAt: NOW },
+        }),
+    );
+
+    expect(answer.body).toMatchObject({ data: { isVerified: false, prices: null } });
+  });
+
+  it('the page carries the running and upcoming announcements by start then id, each with its start and end; never an ended or deleted one', async () => {
+    const space = await createPublicSpace(areaId, 'Announcing');
+    const other = await createPublicSpace(areaId, 'Elsewhere');
+    const post = (data: object) =>
+      prisma.announcement.create({
+        data: {
+          spaceId: space.id,
+          type: 'GENERAL',
+          textAr: 'إعلان',
+          startsAt: daysAgo(1),
+          idempotencyKey: randomUUID(),
+          ...data,
+        },
+      });
+    const upcoming = await post({ type: 'EVENT', startsAt: daysAgo(-2), textEn: 'A talk' });
+    const runningB = await post({ type: 'CLOSURE', endsAt: daysAgo(-1) });
+    const runningA = await post({ type: 'OFFER', startsAt: daysAgo(3) });
+    const runningC = await post({});
+    // Never shown: ended (its end now), deleted, and another space's.
+    await post({ startsAt: daysAgo(2), endsAt: NOW });
+    await post({ deletedAt: daysAgo(0.5) });
+    await post({ spaceId: other.id });
+
+    const response = await page('announcing');
+
+    expect(response.status).toBe(200);
+    expect((response.body as { data: { announcements: unknown } }).data.announcements).toEqual([
+      {
+        id: runningA.id,
+        type: 'OFFER',
+        textAr: 'إعلان',
+        textEn: null,
+        startsAt: daysAgo(3).toISOString(),
+        endsAt: null,
+      },
+      {
+        id: runningB.id,
+        type: 'CLOSURE',
+        textAr: 'إعلان',
+        textEn: null,
+        startsAt: daysAgo(1).toISOString(),
+        endsAt: daysAgo(-1).toISOString(),
+      },
+      expect.objectContaining({ id: runningC.id }) as unknown,
+      {
+        id: upcoming.id,
+        type: 'EVENT',
+        textAr: 'إعلان',
+        textEn: 'A talk',
+        startsAt: daysAgo(-2).toISOString(),
+        endsAt: null,
+      },
+    ]);
+  });
+
+  it('at most 20', async () => {
+    const space = await createPublicSpace(areaId, 'Busy');
+    await prisma.announcement.createMany({
+      data: Array.from({ length: 21 }, (_, i) => ({
+        spaceId: space.id,
+        type: 'EVENT' as const,
+        textAr: `فعالية ${String(i + 1)}`,
+        startsAt: daysAgo(-(i + 1)),
+        idempotencyKey: randomUUID(),
+      })),
+    });
+
+    const response = await page('busy');
+
+    const { announcements } = (response.body as { data: { announcements: { textAr: string }[] } })
+      .data;
+    expect(announcements).toHaveLength(20);
+    expect(announcements.at(-1)?.textAr).toBe('فعالية 20');
+  });
+
+  it.each([
+    ['an unknown slug', 'nowhere'],
+    ['a hidden space', 'hidden'],
+    ['a deleted space', 'deleted'],
+    ['a space in a hidden area', 'in-a-hidden-area'],
+    ['a space in a hidden governorate', 'in-a-hidden-governorate'],
+  ])('answers not_found for %s', async (_case, slug) => {
+    await createPublicSpace(areaId, 'Hidden', { isHidden: true });
+    await createPublicSpace(areaId, 'Deleted', { deletedAt: NOW });
+    const { id: hiddenArea } = await createArea({ areaActive: false });
+    await createPublicSpace(hiddenArea, 'In a hidden area');
+    const { id: hiddenGovernorate } = await createArea({ governorateActive: false });
+    await createPublicSpace(hiddenGovernorate, 'In a hidden governorate');
+
+    const response = await page(slug);
+
+    expect(response.status).toBe(404);
+    expect(response.body).toMatchObject({ error: { type: 'not_found' } });
+  });
+});

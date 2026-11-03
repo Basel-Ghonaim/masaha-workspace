@@ -1,0 +1,80 @@
+announcements/announcements.api.test.ts :: posting an announcement > a retry with the same key answers the first, 201; two at once with one key make one | on= None count= 2 pids= 2
+      ('transactionid', None, False)
+      ('tuple', 'spaces', False)
+      ('tuple', 'spaces', True)
+announcements/announcements.api.test.ts :: posting an announcement > a reception link ended while the post waits on the space's lock is refused 403, writing nothing | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+auth/idle.api.test.ts :: reception's idle session > a request's renewal racing a rotation leaves the new session active | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'refresh_tokens', True)
+auth/sessionLock.api.test.ts :: the session lock > keeps a login whose password was checked before a reset from opening a session | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > a temporary password that expires between the check and the lock is refused at confirm | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > keeps a refresh waiting on a revocation from renewing the session | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > signs a session opened while a role change held the lock under the version it left | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > leaves no live token when a logout and a refresh of one session race | on= None count= 1 pids= 2
+      ('transactionid', None, False)
+      ('tuple', 'users', False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > never lets a password change overwrite a reset that landed meanwhile | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > keeps a link check waiting on a password change from binding the link it ended | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > keeps a reset waiting on a password change from using the link it ended | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'users', True)
+auth/sessionLock.api.test.ts :: the session lock > answers RESET_TOKEN_INVALID, not a 500, when the link ends while the check binds it | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'password_recoveries', True)
+data-reports/adminReports.api.test.ts :: the admin's reports > an owner linked while the admin's decision waits makes it 403 | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+data-reports/adminReports.api.test.ts :: the admin's reports > the owner and the admin at once: the second sees a decided report | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+data-reports/create.api.test.ts :: POST /spaces/:slug/reports > two identical reports at once make one | on= None count= 2 pids= 2
+      ('transactionid', None, False)
+      ('tuple', 'users', False)
+      ('tuple', 'users', True)
+data-reports/spaceReports.api.test.ts :: the owner's reports > an owner unlinked while the decision waits is refused 403 | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+customers/customers.api.test.ts :: creating a customer > two requests with one key at once make one customer | on= None count= 2 pids= 2
+      ('transactionid', None, False)
+      ('tuple', 'spaces', False)
+      ('tuple', 'spaces', True)
+customers/customers.api.test.ts :: creating a customer > a reception link ended while the create waits on the space's lock is refused 403, writing nothing | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+directory/page.api.test.ts :: GET /spaces/:slug > decides verified on the links as they are under the space’s lock, with the facts it shows | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+desk/archive.api.test.ts :: archiving a customer > an owner whose link ended while the archive waited on the space's lock is refused 403 | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+desk/checkIn.api.test.ts :: checking a visitor in > two requests with one key at once make one visit | on= None count= 2 pids= 2
+      ('transactionid', None, False)
+      ('tuple', 'spaces', False)
+      ('tuple', 'spaces', True)
+desk/checkIn.api.test.ts :: checking a visitor in > a reception link deactivated while the check-in waits on the space's lock refuses it with 403 | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+desk/checkOut.api.test.ts :: checking a visit out > two check-outs of one visit at once record one payment; the other is refused, its cash unrecorded | on= None count= 2 pids= 2
+      ('transactionid', None, False)
+      ('tuple', 'spaces', False)
+      ('tuple', 'spaces', True)
+desk/checkOut.api.test.ts :: checking a visit out > a reception link deactivated while the check-out waits on the space's lock refuses it with 403 | on= None count= 1 pids= 1
+      ('transactionid', None, False)
+      ('tuple', 'spaces', True)
+desk/customerFile.api.test.ts :: the customer's file > reads one snapshot: a check-in and a payment committed while it waits leave its sums agreeing | on= None count= 1 pids= 1
+      ('relation', 'visits', False)

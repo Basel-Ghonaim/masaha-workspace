@@ -1,0 +1,10 @@
+feat(web): route the screens still to come
+
+Every screen the lanes build gets its route now, so no lane edits the
+route tables, the navigation or the copy's indexes: the owner's
+overview, finance and audit log, the admin's overview, audit log and
+platform settings, each a stub page that shows its title until its
+lane fills it; and «إعدادات حسابي» at /me, in the account's layout,
+signed-in only, listed after «بلاغاتي» in the account's navigation and
+menu. The copy registers its three new sections, empty: overview,
+finance and audit.

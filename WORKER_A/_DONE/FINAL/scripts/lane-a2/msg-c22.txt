@@ -1,0 +1,7 @@
+test(db): pin Gaza's transitions in PostgreSQL
+
+Gaza's dates are read by two zone databases: Node's, through the shared
+calendar, and PostgreSQL's, in every AT TIME ZONE of the money and the
+attendance (finding 120). A test finds each 2026 change of Gaza's
+offset with Node's zone data and asserts that PostgreSQL reads the same
+Gaza date and minute an hour before, at and an hour after it.

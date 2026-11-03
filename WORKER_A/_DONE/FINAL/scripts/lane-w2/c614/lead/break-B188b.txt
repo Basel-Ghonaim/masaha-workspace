@@ -1,0 +1,55 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/spaces/hooks/amenities
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/spaces/hooks/amenities/useAmenitiesSection.component.test.tsx (12 tests | 1 failed) 847ms
+   ❯ useAmenitiesSection (12)
+     × hands the checklist the retired amenities the space holds, named by its read 115ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  12:07:07
+   Duration  10.36s (transform 39%, environment 25%, import 20%, tests 8%, setup 7%)
+
+  Transform  |component| transforming modules took 3.88s · 39% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/spaces/hooks/amenities/useAmenitiesSection.component.test.tsx > useAmenitiesSection > hands the checklist the retired amenities the space holds, named by its read
+AssertionError: expected [] to deeply equal [ { id: 3, …(2) } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "id": 3,
+-     "nameAr": "طاقة شمسية",
+-     "nameEn": "Solar power",
+-   },
+- ]
++ []
+
+ ❯ src/features/spaces/hooks/amenities/useAmenitiesSection.component.test.tsx:107:46
+    105|     });
+    106|
+    107|     expect(result.current.checklist.retired).toEqual([
+       |                                              ^
+    108|       { id: 3, nameAr: 'طاقة شمسية', nameEn: 'Solar power' },
+    109|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/spaces/hooks/amenities

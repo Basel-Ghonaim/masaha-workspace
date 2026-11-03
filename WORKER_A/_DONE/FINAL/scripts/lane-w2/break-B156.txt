@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/admin/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/pages/dashboard/admin/audit/AuditPage.component.test.tsx (3 tests | 1 failed) 6062ms
+   ❯ AuditPage (the admin’s) (3)
+     × the admin’s log names the entry’s space under the target; axe-clean 1357ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  15:20:18
+   Duration  22.49s (transform 32%, tests 28%, import 24%, environment 13%, setup 4%)
+
+  Transform  |component| transforming modules took 6.99s · 32% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/admin/audit/AuditPage.component.test.tsx > AuditPage (the admin’s) > the admin’s log names the entry’s space under the target; axe-clean
+AssertionError: expected 'Sara Odeh' to be 'Sara Odehat \u2068Focus Hub\u2069' // Object.is equality
+
+Expected: "Sara Odehat ⁨Focus Hub⁩"
+Received: "Sara Odeh"
+
+ ❯ src/pages/dashboard/admin/audit/AuditPage.component.test.tsx:69:32
+     67|     const [, person, space] = within(table).getAllByRole('row');
+     68|     const target = within(person as HTMLElement).getAllByRole('cell')[…
+     69|     expect(target.textContent).toBe('Sara Odehat ⁨Focus Hub⁩');
+       |                                ^
+     70|     expect(within(target).getByRole('link', { name: 'Sara Odeh' })).to…
+     71|       'href',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/admin/audit

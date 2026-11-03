@@ -1,0 +1,18 @@
+
+> lint
+> eslint .
+
+
+C:\dev\masaha\app-lane-w4\apps\web\src\features\data-reports\components\mine\MyReportsList.component.test.tsx
+  122:29  error  Unnecessary optional chain on a non-nullish value  @typescript-eslint/no-unnecessary-condition
+
+C:\dev\masaha\app-lane-w4\apps\web\src\features\directory\hooks\home\useHomeSpaces.component.test.tsx
+  95:22  error  Unsafe member access .sort on an `any` value  @typescript-eslint/no-unsafe-member-access
+
+C:\dev\masaha\app-lane-w4\apps\web\src\pages\site\public\about\AboutPage.component.test.tsx
+  52:38  error  Unnecessary conditional, expected left-hand side of `??` operator to be possibly null or undefined  @typescript-eslint/no-unnecessary-condition
+  61:28  error  Unnecessary optional chain on a non-nullish value                                                   @typescript-eslint/no-unnecessary-condition
+
+✖ 4 problems (4 errors, 0 warnings)
+
+lint exit 1

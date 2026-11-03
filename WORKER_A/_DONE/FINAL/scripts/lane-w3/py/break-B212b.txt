@@ -1,0 +1,544 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/occupancy/components/PresentList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/occupancy/components/PresentList.component.test.tsx (6 tests | 1 failed) 5422ms
+   ❯ PresentList (6)
+     × links a subscriber’s name to their file, names their plan, and shows the time alone 3104ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  12:35:44
+   Duration  22.72s (import 28%, transform 25%, tests 24%, environment 17%, setup 5%)
+
+  Transform  |component| transforming modules took 5.61s · 25% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/occupancy/components/PresentList.component.test.tsx > PresentList > links a subscriber’s name to their file, names their plan, and shows the time alone
+TestingLibraryElementError: Unable to find role="link" and name "Sara"
+
+Ignored nodes: comments, script, style
+[36m<table[39m
+  [33maria-label[39m=[32m"People present"[39m
+  [33mclass[39m=[32m"w-full caption-bottom text-body-sm"[39m
+  [33mdata-slot[39m=[32m"table"[39m
+[36m>[39m
+  [36m<thead[39m
+    [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mName[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mType[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mSince[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mDuration[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mUsage[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"sr-only"[39m
+        [36m>[39m
+          [0mActions[0m
+        [36m</span>[39m
+      [36m</th>[39m
+    [36m</tr>[39m
+  [36m</thead>[39m
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0 transition-opacity data-refreshing:opacity-(--refreshing)"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mOmar[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mVisit[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m10:00[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m2931h 36m[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m⁨₪5⁩ so far[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mdata-present-action[39m=[32m"VISIT-12"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check out Omar"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck out[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mSara[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-accent text-accent-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"primary"[39m
+        [36m>[39m
+          [0m10 days[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m11:30[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m2930h 6m[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m/>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mdata-present-action[39m=[32m"CHECK_IN-3"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check out Sara"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck out[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mLayla[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mVisit[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m12:00[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m2929h 36m[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0mSet at check-out[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mdata-present-action[39m=[32m"VISIT-13"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check out Layla"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck out[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+  [36m</tbody>[39m
+[36m</table>[39m
+
+Ignored nodes: comments, script, style
+[36m<table[39m
+  [33maria-label[39m=[32m"People present"[39m
+  [33mclass[39m=[32m"w-full caption-bottom text-body-sm"[39m
+  [33mdata-slot[39m=[32m"table"[39m
+[36m>[39m
+  [36m<thead[39m
+    [33mclass[39m=[32m"bg-muted [&_tr]:hover:bg-muted"[39m
+    [33mdata-slot[39m=[32m"table-header"[39m
+  [36m>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mName[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mType[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mSince[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mDuration[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [0mUsage[0m
+      [36m</th>[39m
+      [36m<th[39m
+        [33mclass[39m=[32m"h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mcolspan[39m=[32m"1"[39m
+        [33mdata-slot[39m=[32m"table-head"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"sr-only"[39m
+        [36m>[39m
+          [0mActions[0m
+        [36m</span>[39m
+      [36m</th>[39m
+    [36m</tr>[39m
+  [36m</thead>[39m
+  [36m<tbody[39m
+    [33mclass[39m=[32m"[&_tr:last-child]:border-0 transition-opacity data-refreshing:opacity-(--refreshing)"[39m
+    [33mdata-slot[39m=[32m"table-body"[39m
+  [36m>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mOmar[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mVisit[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m10:00[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m2931h 36m[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m⁨₪5⁩ so far[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mdata-present-action[39m=[32m"VISIT-12"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check out Omar"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck out[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mSara[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-accent text-accent-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"primary"[39m
+        [36m>[39m
+          [0m10 days[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m11:30[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m2930h 6m[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m/>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mdata-present-action[39m=[32m"CHECK_IN-3"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check out Sara"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck out[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+    [36m<tr[39m
+      [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+      [33mdata-slot[39m=[32m"table-row"[39m
+    [36m>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mLayla[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"neutral"[39m
+        [36m>[39m
+          [0mVisit[0m
+        [36m</span>[39m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m12:00[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0m2929h 36m[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [0mSet at check-out[0m
+      [36m</td>[39m
+      [36m<td[39m
+        [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+        [33mdata-slot[39m=[32m"table-cell"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mdata-present-action[39m=[32m"VISIT-13"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-label[39m=[32m"Check out Layla"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mCheck out[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</td>[39m
+    [36m</tr>[39m
+  [36m</tbody>[39m
+[36m</table>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/occupancy/components/PresentList.component.test.tsx:108:32
+    106|
+    107|     const table = await screen.findByRole('table', { name: 'People pre…
+    108|     expect(await within(table).findByRole('link', { name: 'Sara' })).t…
+       |                                ^
+    109|       'href',
+    110|       '/file/4',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/occupancy/components/PresentList

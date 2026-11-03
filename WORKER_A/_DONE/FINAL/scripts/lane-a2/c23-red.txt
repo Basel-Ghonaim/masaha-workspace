@@ -1,0 +1,37 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/subscriptions/checkIns.api.test.ts (5 tests | 1 failed) 8334ms
+   ❯ the space's check-ins (5)
+     × the plan is an index range on the space's check-in times, not a sequential scan 4495ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/subscriptions/checkIns.api.test.ts > the space's check-ins > the plan is an index range on the space's check-in times, not a sequential scan
+TypeError: checkInsOnDays is not a function
+ ❯ src/modules/subscriptions/checkIns.api.test.ts:161:15
+    159|     const plan = await prisma.$queryRaw<{ 'QUERY PLAN': string }[]>`
+    160|       EXPLAIN SELECT id FROM check_ins
+    161|       WHERE ${checkInsOnDays(spaceId, { from: '2026-01-03', to: '2026-…
+       |               ^
+    162|       ORDER BY checked_in_at DESC, id DESC LIMIT 20`;
+    163|     const text = plan.map((row) => row['QUERY PLAN']).join('\n');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  17:00:31
+   Duration  19.87s (tests 57%, transform 28%, import 13%, setup 2%)
+

@@ -1,0 +1,12 @@
+feat(db): keep a subscription's published period
+
+The customers list's filter names «أسبوعي» and «شهري» (foundation §13
+#14), but a subscription sold from a published price kept no period:
+a custom seven-day one looks the same.
+
+Migration subscription_published_period adds published_period, set to
+WEEK or MONTH by a subscribe from a published price, with a CHECK that
+allows only those two and never with a package. SubscriptionState
+answers publishedPeriod; the customers query's kind takes WEEK and
+MONTH, and CUSTOM narrows to neither a package nor a published price.
+The web's kind filter gets the two choices' words, so it stays typed.

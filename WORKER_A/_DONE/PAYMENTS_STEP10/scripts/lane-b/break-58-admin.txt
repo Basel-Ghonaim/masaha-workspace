@@ -1,0 +1,295 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (60 tests | 1 failed | 56 skipped) 5547ms
+   ❯ the admin's data reports (2)
+     × shows the admin «Data reports» under its title, every space’s, the reporter named 3091ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed | 56 skipped (60)
+   Start at  12:35:34
+   Duration  11.43s (tests 50%, transform 20%, environment 14%, import 13%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > shows the admin «Data reports» under its title, every space’s, the reporter named
+TestingLibraryElementError: Unable to find role="table" and name "Data reports"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Platform admin"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex shrink-0 items-center gap-3 p-4"[39m
+          [33mdata-slot[39m=[32m"sidebar-header"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+          [36m>[39m
+            [0mM[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-w-0 flex-col"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-label"[39m
+            [36m>[39m
+              [0mMasaha[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [0mPlatform admin[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/admin"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-layout-dashboard"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"12"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"16"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"min-w-0 flex-1 truncate"[39m
+                  [36m>[39m
+                    [0mOverview[0m
+                  [36m</span>[39m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/admin/spaces"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-store"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Platform admin"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex shrink-0 items-center gap-3 p-4"[39m
+          [33mdata-slot[39m=[32m"sidebar-header"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+          [36m>[39m
+            [0mM[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-w-0 flex-col"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-label"[39m
+            [36m>[39m
+              [0mMasaha[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [0mPlatform admin[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/admin"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-layout-dashboard"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                    [33mwidth[39m=[32m"24"[39m
+                    [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                  [36m>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"3"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"9"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"14"[39m
+                      [33my[39m=[32m"12"[39m
+                    [36m/>[39m
+                    [36m<rect[39m
+                      [33mheight[39m=[32m"5"[39m
+                      [33mrx[39m=[32m"1"[39m
+                      [33mwidth[39m=[32m"7"[39m
+                      [33mx[39m=[32m"3"[39m
+                      [33my[39m=[32m"16"[39m
+                    [36m/>[39m
+                  [36m</svg>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"min-w-0 flex-1 truncate"[39m
+                  [36m>[39m
+                    [0mOverview[0m
+                  [36m</span>[39m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"false"[39m
+                  [33mdata-discover[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"sidebar-menu-button"[39m
+                  [33mhref[39m=[32m"/dashboard/admin/spaces"[39m
+                [36m>[39m
+                  [36m<svg[39m
+                    [33maria-hidden[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"lucide lucide-store"[39m
+                    [33mfill[39m=[32m"none"[39m
+                    [33mheight[39m=[32m"24"[39m
+                    [33mstroke[39m=[32m"currentColor"[39m
+                    [33mstroke-linecap[39m=[32m"round"[39m
+                    [33mstroke-linejoin[39m=[32m"round"[39m
+                    [33mstroke-width[39m=[32m"2"[39m
+                    [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:899:32
+    897|
+    898|     await topBarTitle('Data reports');
+    899|     const table = await screen.findByRole('table', { name: 'Data repor…
+       |                                ^
+    900|     expect(await within(table).findByText('Huda Saleh')).toBeVisible();
+    901|     expect(within(table).getByRole('link', { name: 'Focus Hub' })).toH…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

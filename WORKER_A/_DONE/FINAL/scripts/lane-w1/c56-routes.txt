@@ -1,0 +1,67 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx -t staff
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 1 failed | 67 skipped) 21531ms
+   ❯ the owner's staff (2)
+     × shows the owner the staff page under its title, its list read from the managed route 3183ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:879:3
+    877| describe("the space's front desk", () => {
+    878|   // The page loads lazily, as the profile does: its first transform i…
+    879|   beforeAll(async () => {
+       |   ^
+    880|     await import('./space/desk/DeskPage');
+    881|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > shows the owner the staff page under its title, its list read from the managed route
+TestingLibraryElementError: Unable to find role="banner"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ topBarTitle src/pages/dashboard/routes.component.test.tsx:208:30
+    206|  */
+    207| async function topBarTitle(name: string) {
+    208|   return within(await screen.findByRole('banner')).findByRole('heading…
+       |                              ^
+    209| }
+    210|
+ ❯ src/pages/dashboard/routes.component.test.tsx:1168:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 67 skipped (69)
+   Start at  09:49:46
+   Duration  41.44s (tests 53%, transform 19%, environment 12%, import 12%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx -t staff

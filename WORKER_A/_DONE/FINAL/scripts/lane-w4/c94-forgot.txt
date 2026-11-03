@@ -1,0 +1,87 @@
+@@@ apps/web/src/features/auth/components/forgot-password/LinkSent.tsx
+<<<
+/**
+ * The link was asked for: what happens next, the masked address, and another link while the
+ * recovery may ask for one; once it may not, the way to enter the email again.
+ */
+===
+/**
+ * The link was asked for: what happens next, the masked address, another link while the recovery
+ * may ask for one (once it may not, why), and always another email under it (C3).
+ */
+>>>
+<<<
+      {canResend ? (
+        <ResendLinkForm />
+      ) : (
+        <>
+          <p className="text-body-sm">{copy.errors.RESEND_LIMIT_REACHED}</p>
+          <Button variant="outline" className="w-full" onClick={enterEmailAgain}>
+            {copy.auth.forgotPassword.enterEmailAgain}
+          </Button>
+        </>
+      )}
+===
+      {canResend ? (
+        <ResendLinkForm />
+      ) : (
+        <p className="text-body-sm">{copy.errors.RESEND_LIMIT_REACHED}</p>
+      )}
+      <Button variant="outline" className="w-full" onClick={enterEmailAgain}>
+        {copy.auth.forgotPassword.useAnotherEmail}
+      </Button>
+>>>
+@@@ apps/web/src/features/auth/components/forgot-password/ForgotPasswordForm.tsx
+<<<
+ * `useForgotPasswordForm`. Once it is sent, the recovery is at `sent`, and the page shows it.
+ */
+export function ForgotPasswordForm() {
+===
+ * `useForgotPasswordForm`. Once it is sent, the recovery is at `sent`, and the page shows it. Opened
+ * again for another email, the field takes the focus (`focusEmail`).
+ */
+export function ForgotPasswordForm({ focusEmail = false }: { focusEmail?: boolean }) {
+>>>
+<<<
+          placeholder={copy.auth.fields.emailExample}
+===
+          placeholder={copy.auth.fields.emailExample}
+          autoFocus={focusEmail}
+>>>
+@@@ apps/web/src/features/auth/components/forgot-password/ForgotPasswordCard.tsx
+<<<
+import type { ReactNode } from 'react';
+===
+import { useState, type ReactNode } from 'react';
+>>>
+<<<
+  const view = useForgotPasswordFlow();
+===
+  const view = useForgotPasswordFlow();
+  // Whether the reader chose to enter an email again: the form then opens with its field focused.
+  const [focusEmail, setFocusEmail] = useState(false);
+  const enterEmailAgain = (again: () => void) => () => {
+    setFocusEmail(true);
+    again();
+  };
+>>>
+<<<
+            <ForgotPasswordForm />
+===
+            <ForgotPasswordForm focusEmail={focusEmail} />
+>>>
+<<<
+            enterEmailAgain={view.enterEmailAgain}
+          />
+===
+            enterEmailAgain={enterEmailAgain(view.enterEmailAgain)}
+          />
+>>>
+<<<
+          <LinkOpen resetPasswordLink={resetPasswordLink} enterEmailAgain={view.enterEmailAgain} />
+===
+          <LinkOpen
+            resetPasswordLink={resetPasswordLink}
+            enterEmailAgain={enterEmailAgain(view.enterEmailAgain)}
+          />
+>>>

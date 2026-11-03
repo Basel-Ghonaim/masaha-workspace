@@ -1,0 +1,71 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/actions/DropdownMenu
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.component.test.tsx (11 tests | 1 failed) 2104ms
+   ❯ DropdownMenu (11)
+     ❯ a held item (2)
+       × is reached by the arrow keys and typeahead, its reason read 141ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  16:53:50
+   Duration  9.77s (import 32%, environment 32%, tests 22%, setup 10%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.component.test.tsx > DropdownMenu > a held item > is reached by the arrow keys and typeahead, its reason read
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<div
+  aria-disabled="true"
+  class="relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"
+  data-disabled=""
+  data-held=""
+  data-orientation="vertical"
+  data-radix-collection-item=""
+  data-slot="dropdown-menu-item"
+  data-variant="default"
+  role="menuitem"
+  tabindex="-1"
+>
+  Remove from the staff
+  <span>
+    She is signed in at the desk now
+  </span>
+</div>[39m
+Received element with focus:
+  [31m<div
+  class="relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"
+  data-highlighted=""
+  data-orientation="vertical"
+  data-radix-collection-item=""
+  data-slot="dropdown-menu-item"
+  data-variant="default"
+  role="menuitem"
+  tabindex="0"
+>
+  Show her receipts
+</div>[39m
+ ❯ src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.component.test.tsx:176:20
+    174|         name: /^Remove from the staff.*She is signed in at the desk no…
+    175|       });
+    176|       expect(held).toHaveFocus();
+       |                    ^
+    177|       expect(held).toHaveAttribute('aria-disabled', 'true');
+    178|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/actions/DropdownMenu

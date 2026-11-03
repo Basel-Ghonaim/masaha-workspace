@@ -1,0 +1,5 @@
+fix(site): announce a second retry while offline
+
+A second press of 'Try again' while still offline set the same
+words again, which a screen reader does not hear. The line is cleared,
+then said on the next frame, so each press is announced (carried 5).

@@ -1,0 +1,342 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/shell/DashboardLayout.component.test.tsx (5 tests | 1 failed) 3688ms
+   ❯ the dashboard's skip link and focus (2)
+     × moves the focus to main when another page opens, not on the first 3096ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 9 passed (10)
+   Start at  17:13:43
+   Duration  13.18s (transform 30%, environment 24%, tests 21%, import 19%, setup 6%)
+
+  Transform  |component| transforming modules took 5.99s · 30% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/shell/DashboardLayout.component.test.tsx > the dashboard's skip link and focus > moves the focus to main when another page opens, not on the first
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<main
+  class="flex flex-1 flex-col gap-6 px-4 py-6 outline-none md:px-8"
+  id="main"
+  tabindex="-1"
+/>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <div
+      class="flex min-h-svh w-full bg-background text-foreground"
+      data-slot="sidebar-wrapper"
+    >
+      <a
+        class="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"
+        href="#main"
+      >
+        Skip to content
+      </a>
+      <nav
+        aria-label="Space dashboard"
+        class="group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"
+        data-mode="desktop"
+        data-slot="sidebar"
+      >
+        <div
+          class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"
+          data-slot="sidebar-content"
+        />
+        <div
+          class="shrink-0 p-3 flex flex-col items-start gap-2"
+          data-slot="sidebar-footer"
+        >
+          <button
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) md:hidden"
+            data-slot="button"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-languages"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m5 8 6 6"
+              />
+              <path
+                d="m4 14 6-6 2-3"
+              />
+              <path
+                d="M2 5h12"
+              />
+              <path
+                d="M7 2h1"
+              />
+              <path
+                d="m22 22-5-10-5 10"
+              />
+              <path
+                d="M14 18h6"
+              />
+            </svg>
+            <bdi
+              lang="ar"
+            >
+              العربية
+            </bdi>
+          </button>
+        </div>
+      </nav>
+      <div
+        class="flex min-w-0 flex-1 flex-col"
+        data-slot="sidebar-inset"
+      >
+        <header
+          class="sticky top-0 z-sticky flex min-h-14 items-center gap-3 border-b border-border bg-background px-4 py-2 md:px-8"
+        >
+          <div
+            class="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2"
+          />
+          <div
+            class="flex items-center gap-1"
+          >
+            <button
+              class="shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"
+              data-slot="button"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-languages"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m5 8 6 6"
+                />
+                <path
+                  d="m4 14 6-6 2-3"
+                />
+                <path
+                  d="M2 5h12"
+                />
+                <path
+                  d="M7 2h1"
+                />
+                <path
+                  d="m22 22-5-10-5 10"
+                />
+                <path
+                  d="M14 18h6"
+                />
+              </svg>
+              <bdi
+                lang="ar"
+              >
+                العربية
+              </bdi>
+            </button>
+            <button
+              aria-label="Dark theme"
+              class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"
+              data-slot="button"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-moon"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+                />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <main
+          class="flex flex-1 flex-col gap-6 px-4 py-6 outline-none md:px-8"
+          id="main"
+          tabindex="-1"
+        />
+        <div
+          class="fixed inset-x-0 bottom-0 z-sticky border-t border-border bg-background px-4 py-3 md:hidden"
+          data-slot="page-action-bar"
+          hidden=""
+        />
+      </div>
+    </div>
+    <p>
+      No bar
+    </p>
+  </div>
+</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+        [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+      [36m>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+          [33mhref[39m=[32m"#main"[39m
+        [36m>[39m
+          [0mSkip to content[0m
+        [36m</a>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Space dashboard"[39m
+          [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+          [33mdata-mode[39m=[32m"desktop"[39m
+          [33mdata-slot[39m=[32m"sidebar"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+            [33mdata-slot[39m=[32m"sidebar-content"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"shrink-0 p-3 flex flex-col items-start gap-2"[39m
+            [33mdata-slot[39m=[32m"sidebar-footer"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) md:hidden"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-languages"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m5 8 6 6"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M2 5h12"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M7 2h1"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                [36m/>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M14 18h6"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [36m<bdi[39m
+                [33mlang[39m=[32m"ar"[39m
+              [36m>[39m
+                [0mالعربية[0m
+              [36m</bdi>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</nav>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+          [33mdata-slot[39m=[32m"sidebar-inset"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"sticky top-0 z-sticky flex min-h-14 items-center gap-3 border-b border-border bg-background px-4 py-2 md:px-8"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2"[39m
+            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex items-center gap-1"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"[39m
+                [33mdata-slot[39m=[32m"button"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-languages"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m5 8 6 6"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m4 14 6-6 2-3"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M2 5h12"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M7 2h1"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m22 22-5-10-5 10"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"M14 18h6"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [...
+ ❯ src/pages/dashboard/shell/DashboardLayout.component.test.tsx:76:40
+     74|
+     75|     await waitFor(() => {
+     76|       expect(screen.getByRole('main')).toHaveFocus();
+       |                                        ^
+     77|     });
+     78|   });
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

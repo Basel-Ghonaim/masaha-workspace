@@ -1,0 +1,8 @@
+feat(shared): refuse a published price changed
+
+The desk will send the published price it showed when it subscribes a
+customer from it, and the server will refuse when the price changed
+since (the owner's finding 171 (a)). This commit adds the domain code,
+PUBLISHED_PRICE_CHANGED (409), its words in both catalogues, and its
+line in the contract's §6; the subscribe's comparison and the sheet's
+handling come in their own commits.

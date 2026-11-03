@@ -1,0 +1,15 @@
+fix(space-links): finish the owners and users
+
+The owners and users screens had five gaps against their design
+(G27.1–G27.4, G29.1; D6.11):
+
+- the «إجراءات» column header showed; it is read only by assistive
+  technology now, in both lists;
+- the empty owners list offered no way on: «إضافة مالك»;
+- the add sheet opened from its button alone; `?sheet=add` opens it
+  too, taken off the address once it closes, which the empty list and
+  a space editor's «مالك جديد بلا حساب؟» use;
+- ACCOUNT_SUSPENDED in the sheet said only that the account is
+  suspended: «الحساب موقوف — استرجعه أولًا.», the last words a link to
+  the users list searched by the email;
+- «انضم» dropped the year when it was this year; it says it always.

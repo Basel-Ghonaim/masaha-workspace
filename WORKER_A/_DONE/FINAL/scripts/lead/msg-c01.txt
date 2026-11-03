@@ -1,0 +1,8 @@
+feat(shared): carry a refusal's details
+
+A refusal may name the record it is about, so the client can act on
+it without a second, uncertain search (finding 83). The error envelope
+gains an optional `details` ({ userId }); the API's AppError takes it
+as a fifth argument (and AppError.conflict's fourth), the error
+handler writes it, and the web's toAppError keeps it when it has the
+contract's shape. The contract's §2 shows the field.

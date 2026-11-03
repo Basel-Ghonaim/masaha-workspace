@@ -1,0 +1,14 @@
+fix(lookups): keep switches in rows, add positions
+
+The lookups' edit sheets held an Active switch beside the row's own,
+so one fact had two controls and two feedbacks (AD-025): the sheets
+now keep the names, and an amenity's icon, and the switch is the
+row's alone.
+
+A list of more than ten rows took up to ten writes to bring its last
+row to the top (AD-026). The sheet that edits such a row now offers
+its position, 1 to the list's count, Arabic-Indic digits read, and
+saves it after the names through the list's order route, the whole
+order with the row moved (EC21). Each arrow is named with where its
+row stands, and a polite live region in the row says where it went
+once the move lands. Each tab of the page has its own hint.

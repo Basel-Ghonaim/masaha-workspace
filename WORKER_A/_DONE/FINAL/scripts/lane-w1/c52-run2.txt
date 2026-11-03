@@ -1,0 +1,17 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/admin/overview
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  15:13:05
+   Duration  20.23s (transform 41%, environment 25%, import 22%, setup 8%, tests 4%)
+
+  Transform  |component| transforming modules took 7.99s · 41% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

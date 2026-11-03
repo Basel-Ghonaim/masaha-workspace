@@ -1,0 +1,86 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/customerFile.api.test.ts (5 tests | 1 failed) 2539ms
+   ❯ the customer's file (5)
+     × answers the customer, the debt and credit, each subscription with status, progress, due, paid and balance, and the unpaid visits with their payments, voided ones marked 594ms
+ ❯ |api| src/modules/desk/statement.api.test.ts (5 tests | 1 failed) 2273ms
+   ❯ a subscription's statement (5)
+     × answers the status, progress, due, paid, balance, its check-ins with their minutes and its payments, voided ones marked, whole 525ms
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 8 passed (10)
+   Start at  17:38:16
+   Duration  21.25s (transform 38%, tests 35%, import 24%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/customerFile.api.test.ts > the customer's file > answers the customer, the debt and credit, each subscription with status, progress, due, paid and balance, and the unpaid visits with their payments, voided ones marked
+AssertionError: expected { customer: { id: 1, …(3) }, …(5) } to deeply equal { customer: { id: 1, …(3) }, …(5) }
+
+- Expected
++ Received
+
+@@ -70,11 +70,10 @@
+            "recordedById": 1,
+            "voided": {
+              "at": "2026-10-20T09:00:00.000Z",
+              "by": {
+                "id": 2,
+-               "name": "Sara",
+              },
+              "reason": "Counted twice",
+            },
+          },
+        ],
+
+ ❯ src/modules/desk/customerFile.api.test.ts:111:30
+    109|     const response = await file(reception, sara.id);
+    110|     expect(response.status).toBe(200);
+    111|     expect(dataOf(response)).toEqual({
+       |                              ^
+    112|       customer: { id: sara.id, name: 'Sara', phone: '+970599000205', a…
+    113|       debtAgorot: 20_000 + 1_500,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/desk/statement.api.test.ts > a subscription's statement > answers the status, progress, due, paid, balance, its check-ins with their minutes and its payments, voided ones marked, whole
+AssertionError: expected { id: 1, customerId: 1, …(25) } to deeply equal { id: 1, customerId: 1, …(25) }
+
+- Expected
++ Received
+
+@@ -74,11 +74,10 @@
+        "recordedById": 1,
+        "voided": {
+          "at": "2026-10-07T08:00:00.000Z",
+          "by": {
+            "id": 2,
+-           "name": "Sara",
+          },
+          "reason": "Twice",
+        },
+      },
+    ],
+
+ ❯ src/modules/desk/statement.api.test.ts:95:30
+     93|     const response = await statement(reception, exams.id);
+     94|     expect(response.status).toBe(200);
+     95|     expect(dataOf(response)).toEqual({
+       |                              ^
+     96|       id: exams.id,
+     97|       customerId: sara.id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

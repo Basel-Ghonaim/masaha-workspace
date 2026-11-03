@@ -1,0 +1,2548 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/lookups src/pages/dashboard/routes.component.test.tsx -t lookups|Lookups|sheet|Section|use
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/lookups/hooks/list/useGovernorateCard.component.test.tsx (10 tests | 1 failed) 1908ms
+   ❯ useGovernorateCard and useAreaRow (10)
+     × names each control after its row, in the interface’s language 210ms
+ ❯ |component| src/features/lookups/hooks/list/useAmenityRow.component.test.tsx (12 tests | 1 failed) 2136ms
+   ❯ useAmenityRow (12)
+     × names an amenity in Arabic first in the Arabic interface, and its controls after it 112ms
+ ❯ |component| src/features/lookups/components/list/AmenitiesSection.component.test.tsx (15 tests | 2 failed) 5017ms
+   ❯ AmenitiesSection (15)
+     × names its one switch and its arrows after its amenity, with the switch’s words beside it 436ms
+     × shows a failed order above the list 441ms
+ ❯ |component| src/features/lookups/components/list/GovernoratesSection.component.test.tsx (10 tests | 3 failed) 5727ms
+   ❯ GovernoratesSection (10)
+     × names each row’s arrows and switch after it 970ms
+     × keeps the keyboard on the row it moves: the arrow waits focused, then the focus follows the row 803ms
+     × an arrow’s name holds its position; a move is announced 432ms
+ ❯ |component| src/features/lookups/components/sheet/LookupSheet.component.test.tsx (9 tests | 2 failed) 8939ms
+   ❯ the lookups’ sheet (9)
+     × the edit sheet has no active switch 663ms
+     × a list of 11 offers «الترتيب» and moves the row there 1537ms
+ ❯ |component| src/features/lookups/components/sheet/AmenitySheet.component.test.tsx (8 tests | 2 failed) 11097ms
+   ❯ the amenity’s sheet (8)
+     × the edit sheet has no active switch 603ms
+     × a list of 11 offers «الترتيب» and moves the amenity there 1882ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 3 failed | 49 skipped) 31602ms
+   ❯ the dashboard's guards (8)
+     × refuses reception the owner’s payments with the 403 inside the shell 3145ms
+     × refuses the owner reception’s payments today with the 403 3037ms
+   ❯ the admin's lookups page (5)
+     × names its tabs after the page, each tab with its own hint under them 3631ms
+ ❯ |component| src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx (3 tests | 2 failed) 382ms
+   ❯ useEditAmenityForm (3)
+     × starts from the amenity as it stands: its icon chosen, and no switch 153ms
+     × saves its names and icon, never its Active flag, and closes the sheet once the list is fetched again 209ms
+ ❯ |component| src/features/lookups/hooks/edit/useEditAreaForm.component.test.tsx (2 tests | 1 failed) 182ms
+   ❯ useEditAreaForm (2)
+     × saves the area’s names as they stand, and never its Active flag 91ms
+ ❯ |component| src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx (2 tests | 2 failed) 206ms
+   ❯ useEditGovernorateForm (2)
+     × starts from the governorate as it stands, with no switch 97ms
+     × saves its names, never its Active flag, and closes the sheet 104ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:201:3
+    199|   // Reception lands on the desk, which loads lazily: its first transf…
+    200|   // seconds, so it is done before the tests, as the pages' own sectio…
+    201|   beforeAll(async () => {
+       |   ^
+    202|     await import('./space/desk/DeskPage');
+    203|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/20]⎯
+
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 19 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:184:30
+    182| /** The heading named `name` in the main landmark, where a status stat…
+    183| async function stateInMain(name: string) {
+    184|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    185| }
+    186|
+ ❯ src/pages/dashboard/routes.component.test.tsx:356:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/20]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses the owner reception’s payments today with the 403
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:184:30
+    182| /** The heading named `name` in the main landmark, where a status stat…
+    183| async function stateInMain(name: string) {
+    184|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    185| }
+    186|
+ ❯ src/pages/dashboard/routes.component.test.tsx:371:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/20]⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > names its tabs after the page, each tab with its own hint under them
+TestingLibraryElementError: Unable to find an element with the text: An inactive amenity is offered in no form; the spaces that have it keep it. The order here is the order shown.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Platform admin"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2 md:hidden"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"menu"[39m
+            [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-auto w-full justify-start gap-3 px-2 py-2 text-start"[39m
+            [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mid[39m=[32m"radix-_r_75_"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+              [33mdata-size[39m=[32m"sm"[39m
+              [33mdata-slot[39m=[32m"avatar"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                [33mdata-slot[39m=[32m"avatar-fallback"[39m
+              [36m>[39m
+                [0mS[0m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [36m<bdi>[39m
+                  [0mSara · Admin[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [36m<bdi[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0msara@example.com[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-chevrons-up-down"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 15 5 5 5-5"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 9 5-5 5 5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex shrink-0 items-center gap-3 p-4"[39m
+          [33mdata-slot[39m=[32m"sidebar-header"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+          [36m>[39m
+            [0mM[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-w-0 flex-col"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-label"[39m
+            [36m>[39m
+              [0mMasaha[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [0mPlatform admin[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"fal...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-h-svh w-full bg-background text-foreground"[39m
+      [33mdata-slot[39m=[32m"sidebar-wrapper"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<nav[39m
+        [33maria-label[39m=[32m"Platform admin"[39m
+        [33mclass[39m=[32m"group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"[39m
+        [33mdata-mode[39m=[32m"desktop"[39m
+        [33mdata-slot[39m=[32m"sidebar"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 p-2 md:hidden"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-expanded[39m=[32m"false"[39m
+            [33maria-haspopup[39m=[32m"menu"[39m
+            [33maria-label[39m=[32m"Account menu: ⁨Sara⁩"[39m
+            [33mclass[39m=[32m"inline-flex shrink-0 items-center rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-auto w-full justify-start gap-3 px-2 py-2 text-start"[39m
+            [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+            [33mdata-state[39m=[32m"closed"[39m
+            [33mid[39m=[32m"radix-_r_75_"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"group/avatar relative flex size-8 shrink-0 overflow-hidden rounded-full select-none data-[size=lg]:size-10 data-[size=sm]:size-6"[39m
+              [33mdata-size[39m=[32m"sm"[39m
+              [33mdata-slot[39m=[32m"avatar"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex size-full items-center justify-center rounded-full bg-muted text-caption text-muted-foreground group-data-[size=lg]/avatar:text-body-sm"[39m
+                [33mdata-slot[39m=[32m"avatar-fallback"[39m
+              [36m>[39m
+                [0mS[0m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"flex min-w-0 flex-1 flex-col"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-label"[39m
+              [36m>[39m
+                [36m<bdi>[39m
+                  [0mSara · Admin[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+              [36m>[39m
+                [36m<bdi[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0msara@example.com[0m
+                [36m</bdi>[39m
+              [36m</span>[39m
+            [36m</span>[39m
+            [36m<svg[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"lucide lucide-chevrons-up-down"[39m
+              [33mfill[39m=[32m"none"[39m
+              [33mheight[39m=[32m"24"[39m
+              [33mstroke[39m=[32m"currentColor"[39m
+              [33mstroke-linecap[39m=[32m"round"[39m
+              [33mstroke-linejoin[39m=[32m"round"[39m
+              [33mstroke-width[39m=[32m"2"[39m
+              [33mviewBox[39m=[32m"0 0 24 24"[39m
+              [33mwidth[39m=[32m"24"[39m
+              [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+            [36m>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 15 5 5 5-5"[39m
+              [36m/>[39m
+              [36m<path[39m
+                [33md[39m=[32m"m7 9 5-5 5 5"[39m
+              [36m/>[39m
+            [36m</svg>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex shrink-0 items-center gap-3 p-4"[39m
+          [33mdata-slot[39m=[32m"sidebar-header"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"[39m
+          [36m>[39m
+            [0mM[0m
+          [36m</span>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex min-w-0 flex-col"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-label"[39m
+            [36m>[39m
+              [0mMasaha[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"truncate text-caption text-muted-foreground"[39m
+            [36m>[39m
+              [0mPlatform admin[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"[39m
+          [33mdata-slot[39m=[32m"sidebar-content"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-1"[39m
+            [33mdata-slot[39m=[32m"sidebar-group"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"flex flex-col gap-1"[39m
+              [33mdata-slot[39m=[32m"sidebar-menu"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"relative"[39m
+                [33mdata-slot[39m=[32m"sidebar-menu-item"[39m
+              [36m>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-5"[39m
+                  [33mdata-active[39m=[32m"fal...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/routes.component.test.tsx:641:25
+    639|     await userEvent.click(screen.getByRole('tab', { name: 'Amenities' …
+    640|
+    641|     expect(await screen.findByText(amenities)).toBeInTheDocument();
+       |                         ^
+    642|     expect(screen.queryByText(governorates)).not.toBeInTheDocument();
+    643|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/20]⎯
+
+ FAIL  |component| src/features/lookups/components/list/AmenitiesSection.component.test.tsx > AmenitiesSection > names its one switch and its arrows after its amenity, with the switch’s words beside it
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Here are the accessible roles:
+
+  button:
+
+  Name "Move up: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Active: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-label[39m=[32m"Active: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mid[39m=[32m"_r_p_"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"flex min-w-0 grow flex-wrap items-center gap-x-2"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-wifi"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M12 20h.01"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M2 8.82a15 15 0 0 1 20 0"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M5 12.859a10 10 0 0 1 14 0"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M8.5 16.429a5 5 0 0 1 7 0"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [36m<span[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mlang[39m=[32m"en"[39m
+    [36m>[39m
+      [0mInternet[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mlang[39m=[32m"ar"[39m
+    [36m>[39m
+      [0mإنترنت[0m
+    [36m</span>[39m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Move up: ⁨Internet⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mdisabled[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-arrow-up"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"m5 12 7-7 7 7"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M12 19V5"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Move down: ⁨Internet⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M12 5v14"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"m19 12-7 7-7-7"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"flex items-center"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-checked[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Active: ⁨Internet⁩"[39m
+        [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+        [33mdata-slot[39m=[32m"switch"[39m
+        [33mdata-state[39m=[32m"checked"[39m
+        [33mid[39m=[32m"_r_p_"[39m
+        [33mrole[39m=[32m"switch"[39m
+        [33mtype[39m=[32m"button"[39m
+        [33mvalue[39m=[32m"on"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+          [33mdata-slot[39m=[32m"switch-thumb"[39m
+          [33mdata-state[39m=[32m"checked"[39m
+        [36m/>[39m
+      [36m</button>[39m
+      [36m<label[39m
+        [33mclass[39m=[32m"text-label text-foreground"[39m
+        [33mfor[39m=[32m"_r_p_"[39m
+      [36m>[39m
+        [0mActive[0m
+      [36m</label>[39m
+    [36m</span>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33maria-label[39m=[32m"Edit: ⁨Internet⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mEdit[0m
+    [36m</button>[39m
+  [36m</div>[39m
+[36m</li>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/list/AmenitiesSection.component.test.tsx:99:24
+     97|     expect(within(internet).getByText('Active')).toBeVisible();
+     98|     expect(
+     99|       within(internet).getByRole('button', { name: heard('Move up: Int…
+       |                        ^
+    100|     ).toBeDisabled();
+    101|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/20]⎯
+
+ FAIL  |component| src/features/lookups/components/list/AmenitiesSection.component.test.tsx > AmenitiesSection > shows a failed order above the list
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Here are the accessible roles:
+
+  button:
+
+  Name "Move up: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Active: ⁨Internet⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-label[39m=[32m"Active: ⁨Internet⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mid[39m=[32m"_r_25_"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"flex min-w-0 grow flex-wrap items-center gap-x-2"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-wifi"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M12 20h.01"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M2 8.82a15 15 0 0 1 20 0"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M5 12.859a10 10 0 0 1 14 0"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M8.5 16.429a5 5 0 0 1 7 0"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+    [36m<span[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mlang[39m=[32m"en"[39m
+    [36m>[39m
+      [0mInternet[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mlang[39m=[32m"ar"[39m
+    [36m>[39m
+      [0mإنترنت[0m
+    [36m</span>[39m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Move up: ⁨Internet⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mdisabled[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-arrow-up"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"m5 12 7-7 7 7"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M12 19V5"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Move down: ⁨Internet⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M12 5v14"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"m19 12-7 7-7-7"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"flex items-center"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-checked[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Active: ⁨Internet⁩"[39m
+        [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+        [33mdata-slot[39m=[32m"switch"[39m
+        [33mdata-state[39m=[32m"checked"[39m
+        [33mid[39m=[32m"_r_25_"[39m
+        [33mrole[39m=[32m"switch"[39m
+        [33mtype[39m=[32m"button"[39m
+        [33mvalue[39m=[32m"on"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+          [33mdata-slot[39m=[32m"switch-thumb"[39m
+          [33mdata-state[39m=[32m"checked"[39m
+        [36m/>[39m
+      [36m</button>[39m
+      [36m<label[39m
+        [33mclass[39m=[32m"text-label text-foreground"[39m
+        [33mfor[39m=[32m"_r_25_"[39m
+      [36m>[39m
+        [0mActive[0m
+      [36m</label>[39m
+    [36m</span>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33maria-label[39m=[32m"Edit: ⁨Internet⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mEdit[0m
+    [36m</button>[39m
+  [36m</div>[39m
+[36m</li>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/list/AmenitiesSection.component.test.tsx:168:24
+    166|
+    167|     await userEvent.click(
+    168|       within(internet).getByRole('button', { name: heard('Move down: I…
+       |                        ^
+    169|     );
+    170|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/20]⎯
+
+ FAIL  |component| src/features/lookups/components/list/GovernoratesSection.component.test.tsx > GovernoratesSection > names each row’s arrows and switch after it
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Gaza City":
+  [36m<h2[39m
+    [33mdir[39m=[32m"auto"[39m
+    [33mlang[39m=[32m"en"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  none:
+
+  Name "":
+  [36m<div[39m
+    [33mclass[39m=[32m"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-slot[39m=[32m"separator"[39m
+    [33mrole[39m=[32m"none"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Move up: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Shown: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------list:
+
+  Name "":
+  [36m<ul[39m
+    [33mclass[39m=[32m"divide-y divide-border rounded-md border border-border"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Move up: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move up: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Add area":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Shown: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  Name "Shown: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header auto-rows-min gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding) flex flex-wrap items-center gap-x-4 gap-y-2"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-w-0 grow flex-col gap-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3 flex flex-wrap items-center gap-2"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mlang[39m=[32m"en"[39m
+        [36m>[39m
+          [0mGaza City[0m
+        [36m</h2>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground flex flex-wrap items-center gap-2"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mlang[39m=[32m"ar"[39m
+        [36m>[39m
+          [0mمحافظة غزة[0m
+        [36m</span>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch"[39m
+          [33mdata-orientation[39m=[32m"vertical"[39m
+          [33mdata-slot[39m=[32m"separator"[39m
+          [33mrole[39m=[32m"none"[39m
+        [36m/>[39m
+        [36m<span>[39m
+          [0m2 areas[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Move up: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-up"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m5 12 7-7 7 7"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 19V5"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Move down: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 5v14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m19 12-7 7-7-7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-checked[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Shown: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+        [33mdata-slot[39m=[32m"switch"[39m
+        [33mdata-state[39m=[32m"checked"[39m
+        [33mrole[39m=[32m"switch"[39m
+        [33mtype[39m=[32m"button"[39m
+        [33mvalue[39m=[32m"on"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+          [33mdata-slot[39m=[32m"switch-thumb"[39m
+          [33mdata-state[39m=[32m"checked"[39m
+        [36m/>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-haspopup[39m=[32m"dialog"[39m
+        [33maria-label[39m=[32m"Edit: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-cen...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/list/GovernoratesSection.component.test.tsx:93:20
+     91|     const gaza = await cardOf('Gaza City');
+     92|     expect(
+     93|       within(gaza).getByRole('button', { name: heard('Move up: Gaza Ci…
+       |                    ^
+     94|     ).toBeInTheDocument();
+     95|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/20]⎯
+
+ FAIL  |component| src/features/lookups/components/list/GovernoratesSection.component.test.tsx > GovernoratesSection > keeps the keyboard on the row it moves: the arrow waits focused, then the focus follows the row
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Gaza City":
+  [36m<h2[39m
+    [33mdir[39m=[32m"auto"[39m
+    [33mlang[39m=[32m"en"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  none:
+
+  Name "":
+  [36m<div[39m
+    [33mclass[39m=[32m"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch"[39m
+    [33mdata-orientation[39m=[32m"vertical"[39m
+    [33mdata-slot[39m=[32m"separator"[39m
+    [33mrole[39m=[32m"none"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Move up: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Shown: ⁨Gaza City⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Gaza City⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------list:
+
+  Name "":
+  [36m<ul[39m
+    [33mclass[39m=[32m"divide-y divide-border rounded-md border border-border"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<li[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Move up: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move up: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Add area":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Shown: ⁨Al-Rimal⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Al-Rimal⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  Name "Shown: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header auto-rows-min gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding) flex flex-wrap items-center gap-x-4 gap-y-2"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-w-0 grow flex-col gap-1"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-heading-3 flex flex-wrap items-center gap-2"[39m
+        [33mdata-slot[39m=[32m"card-title"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mlang[39m=[32m"en"[39m
+        [36m>[39m
+          [0mGaza City[0m
+        [36m</h2>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground flex flex-wrap items-center gap-2"[39m
+        [33mdata-slot[39m=[32m"card-description"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mlang[39m=[32m"ar"[39m
+        [36m>[39m
+          [0mمحافظة غزة[0m
+        [36m</span>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"shrink-0 bg-border data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px data-[orientation=vertical]:self-stretch"[39m
+          [33mdata-orientation[39m=[32m"vertical"[39m
+          [33mdata-slot[39m=[32m"separator"[39m
+          [33mrole[39m=[32m"none"[39m
+        [36m/>[39m
+        [36m<span>[39m
+          [0m2 areas[0m
+        [36m</span>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Move up: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mdisabled[39m=[32m""[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-up"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m5 12 7-7 7 7"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 19V5"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Move down: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 5v14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m19 12-7 7-7-7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-checked[39m=[32m"true"[39m
+        [33maria-label[39m=[32m"Shown: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+        [33mdata-slot[39m=[32m"switch"[39m
+        [33mdata-state[39m=[32m"checked"[39m
+        [33mrole[39m=[32m"switch"[39m
+        [33mtype[39m=[32m"button"[39m
+        [33mvalue[39m=[32m"on"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+          [33mdata-slot[39m=[32m"switch-thumb"[39m
+          [33mdata-state[39m=[32m"checked"[39m
+        [36m/>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-haspopup[39m=[32m"dialog"[39m
+        [33maria-label[39m=[32m"Edit: ⁨Gaza City⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-cen...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/list/GovernoratesSection.component.test.tsx:128:31
+    126|     renderSection((request) => (request.method === 'get' ? ok(list) : …
+    127|     const gaza = await cardOf('Gaza City');
+    128|     const down = within(gaza).getByRole('button', { name: heard('Move …
+       |                               ^
+    129|
+    130|     down.focus();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/20]⎯
+
+ FAIL  |component| src/features/lookups/components/list/GovernoratesSection.component.test.tsx > GovernoratesSection > an arrow’s name holds its position; a move is announced
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `(name) => name.replace(/[⁦-⁩]/g, "") === expected`
+
+Here are the accessible roles:
+
+  button:
+
+  Name "Move up: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move up: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Move down: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Move down: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mdisabled[39m=[32m""[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Edit: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Shown: ⁨Ash-Shuja’iyya⁩":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33maria-label[39m=[32m"Shown: ⁨Ash-Shuja’iyya⁩"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"flex flex-wrap items-center gap-x-4 gap-y-2 px-3 py-2"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"flex min-w-0 grow flex-wrap items-baseline gap-x-2"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-muted-foreground"[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mlang[39m=[32m"en"[39m
+    [36m>[39m
+      [0mAsh-Shuja’iyya[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [33mdir[39m=[32m"auto"[39m
+      [33mlang[39m=[32m"ar"[39m
+    [36m>[39m
+      [0mالشجاعية[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-warning-subtle text-warning-subtle-foreground"[39m
+      [33mdata-slot[39m=[32m"badge"[39m
+      [33mdata-variant[39m=[32m"warning"[39m
+    [36m>[39m
+      [0mHidden[0m
+    [36m</span>[39m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-wrap items-center gap-1"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Move up: ⁨Ash-Shuja’iyya⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-arrow-up"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"m5 12 7-7 7 7"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M12 19V5"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Move down: ⁨Ash-Shuja’iyya⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mdisabled[39m=[32m""[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-arrow-down"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M12 5v14"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"m19 12-7 7-7-7"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<button[39m
+      [33maria-checked[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Shown: ⁨Ash-Shuja’iyya⁩"[39m
+      [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input mx-2"[39m
+      [33mdata-slot[39m=[32m"switch"[39m
+      [33mdata-state[39m=[32m"unchecked"[39m
+      [33mrole[39m=[32m"switch"[39m
+      [33mtype[39m=[32m"button"[39m
+      [33mvalue[39m=[32m"on"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+        [33mdata-slot[39m=[32m"switch-thumb"[39m
+        [33mdata-state[39m=[32m"unchecked"[39m
+      [36m/>[39m
+    [36m</button>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33maria-label[39m=[32m"Edit: ⁨Ash-Shuja’iyya⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mEdit[0m
+    [36m</button>[39m
+  [36m</div>[39m
+[36m</li>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/list/GovernoratesSection.component.test.tsx:166:25
+    164|     const [rimal, shujaiyya] = within(gaza).getAllByRole('listitem') a…
+    165|     expect(
+    166|       within(shujaiyya).getByRole('button', { name: heard('Move up: As…
+       |                         ^
+    167|     ).toBeInTheDocument();
+    168|     // Nothing is said before a move.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/20]⎯
+
+ FAIL  |component| src/features/lookups/components/sheet/AmenitySheet.component.test.tsx > the amenity’s sheet > the edit sheet has no active switch
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <button
+  aria-checked="true"
+  aria-describedby="_r_3b_-helper"
+  class="peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input"
+  data-slot="switch"
+  data-state="checked"
+  id="_r_3b_-control"
+  role="switch"
+  type="button"
+  value="on"
+>
+  <span
+    class="pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"
+    data-slot="switch-thumb"
+    data-state="checked"
+  />
+</button> instead[39m
+ ❯ src/features/lookups/components/sheet/AmenitySheet.component.test.tsx:105:53
+    103|     expect(within(sheet).getAllByRole('textbox')).toHaveLength(2);
+    104|     expect(within(sheet).getByRole('radiogroup', { name: 'Icon' })).to…
+    105|     expect(within(sheet).queryByRole('switch')).not.toBeInTheDocument(…
+       |                                                     ^
+    106|     // The row keeps its switch: the one control of whether it is offe…
+    107|     expect(screen.getByRole('switch', { name: heard('Active: Internet'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/20]⎯
+
+ FAIL  |component| src/features/lookups/components/sheet/AmenitySheet.component.test.tsx > the amenity’s sheet > a list of 11 offers «الترتيب» and moves the amenity there
+TestingLibraryElementError: Unable to find an accessible element with the role "textbox" and name "Position"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Edit amenity":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-heading-3"[39m
+    [33mdata-slot[39m=[32m"sheet-title"[39m
+    [33mid[39m=[32m"radix-_r_3h_"[39m
+  [36m/>[39m
+
+  --------------------------------------------------textbox:
+
+  Name "Name in Arabic":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mdir[39m=[32m"rtl"[39m
+    [33mid[39m=[32m"_r_4r_-control"[39m
+    [33mlang[39m=[32m"ar"[39m
+    [33mname[39m=[32m"nameAr"[39m
+  [36m/>[39m
+
+  Name "Name in English":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mid[39m=[32m"_r_4s_-control"[39m
+    [33mlang[39m=[32m"en"[39m
+    [33mname[39m=[32m"nameEn"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radiogroup:
+
+  Name "Icon":
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"_r_4t_-label"[39m
+    [33maria-required[39m=[32m"false"[39m
+    [33mclass[39m=[32m"group/radio-group gap-1 grid grid-cols-2 gap-x-6"[39m
+    [33mdata-slot[39m=[32m"radio-group"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mid[39m=[32m"_r_4t_-control"[39m
+    [33mrole[39m=[32m"radiogroup"[39m
+    [33mstyle[39m=[32m"outline: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  radio:
+
+  Name "Wi-Fi":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_4u_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"wifi"[39m
+  [36m/>[39m
+
+  Name "Lightning":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_50_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"zap"[39m
+  [36m/>[39m
+
+  Name "Sun":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mid[39m=[32m"_r_52_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"sun"[39m
+  [36m/>[39m
+
+  Name "Power plug":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_54_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"plug-zap"[39m
+  [36m/>[39m
+
+  Name "Coffee cup":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_56_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"coffee"[39m
+  [36m/>[39m
+
+  Name "People":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_58_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"users"[39m
+  [36m/>[39m
+
+  Name "Presentation board":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_5a_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"presentation"[39m
+  [36m/>[39m
+
+  Name "Graduation cap":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"radio-group-item"[39m
+    [33mdata-state[39m=[32m"unchecked"[39m
+    [33mid[39m=[32m"_r_5c_-control"[39m
+    [33mrole[39m=[32m"radio"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"graduation-cap"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Active":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-describedby[39m=[32m"_r_5e_-helper"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mid[39m=[32m"_r_5e_-control"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+    [33mid[39m=[32m"_r_5e_-helper"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Save":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------button:
+
+  Name "Close":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"radix-_r_3h_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_3g_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_3h_"[39m
+    [36m>[39m
+      [0mEdit amenity[0m
+    [36m</h2>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_4r_-control"[39m
+            [33mid[39m=[32m"_r_4r_-label"[39m
+          [36m>[39m
+            [0mName in Arabic[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-size[39m=[32m"md"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"rtl"[39m
+            [33mid[39m=[32m"_r_4r_-control"[39m
+            [33mlang[39m=[32m"ar"[39m
+            [33mname[39m=[32m"nameAr"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_4s_-control"[39m
+            [33mid[39m=[32m"_r_4s_-label"[39m
+          [36m>[39m
+            [0mName in English[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-size[39m=[32m"md"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_4s_-control"[39m
+            [33mlang[39m=[32m"en"[39m
+            [33mname[39m=[32m"nameEn"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_4t_-control"[39m
+            [33mid[39m=[32m"_r_4t_-label"[39m
+          [36m>[39m
+            [0mIcon[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33maria-labelledby[39m=[32m"_r_4t_-label"[39m
+          [33maria-required[39m=[32m"false"[39m
+          [33mclass[39m=[32m"group/radio-group gap-1 grid grid-cols-2 gap-x-6"[39m
+          [33mdata-slot[39m=[32m"radio-group"[39m
+          [33mdir[39m=[32m"ltr"[39m
+          [33mid[39m=[32m"_r_4t_-control"[39m
+          [33mrole[39m=[32m"radiogroup"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex items-start gap-3"[39m
+            [33mdata-slot[39m=[32m"field"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex ...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/sheet/AmenitySheet.component.test.tsx:134:36
+    132|     await userEvent.click(screen.getByRole('button', { name: heard('Ed…
+    133|     const sheet = await screen.findByRole('dialog', { name: 'Edit amen…
+    134|     const position = within(sheet).getByRole('textbox', { name: 'Posit…
+       |                                    ^
+    135|     expect(position).toHaveValue('1');
+    136|     expect(position).toHaveAccessibleDescription('From 1 to 11');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/20]⎯
+
+ FAIL  |component| src/features/lookups/components/sheet/LookupSheet.component.test.tsx > the lookups’ sheet > the edit sheet has no active switch
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <button
+  aria-checked="true"
+  aria-describedby="_r_11_-helper"
+  class="peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input"
+  data-slot="switch"
+  data-state="checked"
+  id="_r_11_-control"
+  role="switch"
+  type="button"
+  value="on"
+>
+  <span
+    class="pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"
+    data-slot="switch-thumb"
+    data-state="checked"
+  />
+</button> instead[39m
+ ❯ src/features/lookups/components/sheet/LookupSheet.component.test.tsx:84:55
+     82|       const sheet = await screen.findByRole('dialog');
+     83|       expect(within(sheet).getAllByRole('textbox')).toHaveLength(2);
+     84|       expect(within(sheet).queryByRole('switch')).not.toBeInTheDocumen…
+       |                                                       ^
+     85|       expect(within(sheet).queryByText('Hidden: not shown in filters a…
+     86|       await userEvent.click(within(sheet).getByRole('button', { name: …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/20]⎯
+
+ FAIL  |component| src/features/lookups/components/sheet/LookupSheet.component.test.tsx > the lookups’ sheet > a list of 11 offers «الترتيب» and moves the row there
+TestingLibraryElementError: Unable to find an accessible element with the role "textbox" and name "Position"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Edit area":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-heading-3"[39m
+    [33mdata-slot[39m=[32m"sheet-title"[39m
+    [33mid[39m=[32m"radix-_r_2j_"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+    [33mdata-slot[39m=[32m"sheet-description"[39m
+    [33mid[39m=[32m"radix-_r_2k_"[39m
+  [36m/>[39m
+
+  --------------------------------------------------textbox:
+
+  Name "Name in Arabic":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mdir[39m=[32m"rtl"[39m
+    [33mid[39m=[32m"_r_2o_-control"[39m
+    [33mlang[39m=[32m"ar"[39m
+    [33mname[39m=[32m"nameAr"[39m
+  [36m/>[39m
+
+  Name "Name in English":
+  [36m<input[39m
+    [33mautocomplete[39m=[32m"off"[39m
+    [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+    [33mdata-slot[39m=[32m"input"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mid[39m=[32m"_r_2p_-control"[39m
+    [33mlang[39m=[32m"en"[39m
+    [33mname[39m=[32m"nameEn"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  switch:
+
+  Name "Active":
+  [36m<button[39m
+    [33maria-checked[39m=[32m"true"[39m
+    [33maria-describedby[39m=[32m"_r_2q_-helper"[39m
+    [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input"[39m
+    [33mdata-slot[39m=[32m"switch"[39m
+    [33mdata-state[39m=[32m"checked"[39m
+    [33mid[39m=[32m"_r_2q_-control"[39m
+    [33mrole[39m=[32m"switch"[39m
+    [33mtype[39m=[32m"button"[39m
+    [33mvalue[39m=[32m"on"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+    [33mid[39m=[32m"_r_2q_-helper"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Save":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"submit"[39m
+  [36m/>[39m
+
+  --------------------------------------------------button:
+
+  Name "Close":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_2k_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_2j_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_2i_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_2j_"[39m
+    [36m>[39m
+      [0mEdit area[0m
+    [36m</h2>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [33mdata-slot[39m=[32m"sheet-description"[39m
+      [33mid[39m=[32m"radix-_r_2k_"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mdir[39m=[32m"auto"[39m
+        [33mlang[39m=[32m"en"[39m
+      [36m>[39m
+        [0mGaza City[0m
+      [36m</span>[39m
+    [36m</p>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_2o_-control"[39m
+            [33mid[39m=[32m"_r_2o_-label"[39m
+          [36m>[39m
+            [0mName in Arabic[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-size[39m=[32m"md"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"rtl"[39m
+            [33mid[39m=[32m"_r_2o_-control"[39m
+            [33mlang[39m=[32m"ar"[39m
+            [33mname[39m=[32m"nameAr"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_2p_-control"[39m
+            [33mid[39m=[32m"_r_2p_-label"[39m
+          [36m>[39m
+            [0mName in English[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+          [33mdata-size[39m=[32m"md"[39m
+          [33mdata-slot[39m=[32m"input-group"[39m
+        [36m>[39m
+          [36m<input[39m
+            [33mautocomplete[39m=[32m"off"[39m
+            [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+            [33mdata-slot[39m=[32m"input"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_2p_-control"[39m
+            [33mlang[39m=[32m"en"[39m
+            [33mname[39m=[32m"nameEn"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex items-start gap-3"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex h-(--control-height) shrink-0 items-center"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-checked[39m=[32m"true"[39m
+            [33maria-describedby[39m=[32m"_r_2q_-helper"[39m
+            [33mclass[39m=[32m"peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input"[39m
+            [33mdata-slot[39m=[32m"switch"[39m
+            [33mdata-state[39m=[32m"checked"[39m
+            [33mid[39m=[32m"_r_2q_-control"[39m
+            [33mrole[39m=[32m"switch"[39m
+            [33mtype[39m=[32m"button"[39m
+            [33mvalue[39m=[32m"on"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"[39m
+              [33mdata-slot[39m=[32m"switch-thumb"[39m
+              [33mdata-state[39m=[32m"checked"[39m
+            [36m/>[39m
+          [36m</button>[39m
+          [36m<input[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mchecked[39m=[32m""[39m
+            [33mstyle[39m=[32m"position: absolute; pointer-events: none; opacity: 0; margin: 0px; transform: translateX(-100%); width: 0px; height: 0px;"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"checkbox"[39m
+            [33mvalue[39m=[32m"on"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground flex min-h-(--control-height) items-center"[39m
+              [33mfor[39m=[32m"_r_2q_-control"[39m
+              [33mid[39m=[32m"_r_2q_-label"[39m
+            [36m>[39m
+              [0mActive[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+            [33mid[39m=[32m"_r_2q_-helper"[39m
+          [36m>[39m
+            [0mHidden: not shown in filters and forms.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"mt-auto flex flex-col gap-2 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"submit"[39m
+      [36m>[39m
+        [0mSave[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</form>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/lookups/components/sheet/LookupSheet.component.test.tsx:113:36
+    111|     await userEvent.click(screen.getByRole('button', { name: heard('Ed…
+    112|     const sheet = await screen.findByRole('dialog', { name: 'Edit area…
+    113|     const position = within(sheet).getByRole('textbox', { name: 'Posit…
+       |                                    ^
+    114|     expect(position).toHaveValue('11');
+    115|     expect(position).toHaveAccessibleDescription('From 1 to 11');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx > useEditAmenityForm > starts from the amenity as it stands: its icon chosen, and no switch
+AssertionError: expected { field: [Function field], …(8) } to not have property "active"
+
+- Expected:
+undefined
+
++ Received:
+{
+  "checked": true,
+  "disabled": false,
+  "hint": "Inactive: not offered in forms; spaces that have it keep it.",
+  "label": "Active",
+  "toggle": [Function toggle],
+}
+
+ ❯ src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx:49:32
+     47|     ]);
+     48|     expect(result.current).not.toHaveProperty('filter');
+     49|     expect(result.current).not.toHaveProperty('active');
+       |                                ^
+     50|   });
+     51|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx > useEditAmenityForm > saves its names and icon, never its Active flag, and closes the sheet once the list is fetched again
+AssertionError: expected { nameAr: 'إنترنت', …(3) } to deeply equal { nameAr: 'إنترنت', …(2) }
+
+- Expected
++ Received
+
+  {
+    "icon": "coffee",
++   "isActive": true,
+    "nameAr": "إنترنت",
+    "nameEn": "Internet",
+  }
+
+ ❯ src/features/lookups/hooks/edit/useEditAmenityForm.component.test.tsx:86:71
+     84|       expect(lists).toBe(2);
+     85|     });
+     86|     expect(bodyOf(requests.find(({ method }) => method === 'patch'))).…
+       |                                                                       ^
+     87|       nameAr: 'إنترنت',
+     88|       nameEn: 'Internet',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/edit/useEditAreaForm.component.test.tsx > useEditAreaForm > saves the area’s names as they stand, and never its Active flag
+AssertionError: expected { field: [Function field], …(7) } to not have property "active"
+
+- Expected:
+undefined
+
++ Received:
+{
+  "checked": false,
+  "disabled": false,
+  "hint": "Hidden: not shown in filters and forms.",
+  "label": "Active",
+  "toggle": [Function toggle],
+}
+
+ ❯ src/features/lookups/hooks/edit/useEditAreaForm.component.test.tsx:40:32
+     38|       wrapper: queryWrapper(),
+     39|     });
+     40|     expect(result.current).not.toHaveProperty('active');
+       |                                ^
+     41|
+     42|     act(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx > useEditGovernorateForm > starts from the governorate as it stands, with no switch
+AssertionError: expected { field: [Function field], …(7) } to not have property "active"
+
+- Expected:
+undefined
+
++ Received:
+{
+  "checked": false,
+  "disabled": false,
+  "hint": "Hidden: not shown in filters and forms.",
+  "label": "Active",
+  "toggle": [Function toggle],
+}
+
+ ❯ src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx:27:32
+     25|     );
+     26|
+     27|     expect(result.current).not.toHaveProperty('active');
+       |                                ^
+     28|     expect(result.current).not.toHaveProperty('position');
+     29|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx > useEditGovernorateForm > saves its names, never its Active flag, and closes the sheet
+AssertionError: expected { nameAr: 'محافظة رفح', …(2) } to deeply equal { nameAr: 'محافظة رفح', …(1) }
+
+- Expected
++ Received
+
+  {
++   "isActive": false,
+    "nameAr": "محافظة رفح",
+    "nameEn": "Rafah Governorate",
+  }
+
+ ❯ src/features/lookups/hooks/edit/useEditGovernorateForm.component.test.tsx:54:71
+     52|       expect(onSaved).toHaveBeenCalledOnce();
+     53|     });
+     54|     expect(bodyOf(requests.find(({ method }) => method === 'patch'))).…
+       |                                                                       ^
+     55|       nameAr: 'محافظة رفح',
+     56|       nameEn: 'Rafah Governorate',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/list/useAmenityRow.component.test.tsx > useAmenityRow > names an amenity in Arabic first in the Arabic interface, and its controls after it
+AssertionError: expected 'تحريك لأعلى: \u2068إنترنت\u2069' to be 'تحريك لأعلى: \u2068إنترنت\u2069 — 1 م…' // Object.is equality
+
+Expected: "تحريك لأعلى: ⁨إنترنت⁩ — 1 من 3"
+Received: "تحريك لأعلى: ⁨إنترنت⁩"
+
+ ❯ src/features/lookups/hooks/list/useAmenityRow.component.test.tsx:118:41
+    116|     });
+    117|     expect(internet?.controls.shown.label).toBe('نشط: ⁨إنترنت⁩');
+    118|     expect(internet?.controls.up.label).toBe('تحريك لأعلى: ⁨إنترنت⁩ — …
+       |                                         ^
+    119|   });
+    120|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/20]⎯
+
+ FAIL  |component| src/features/lookups/hooks/list/useGovernorateCard.component.test.tsx > useGovernorateCard and useAreaRow > names each control after its row, in the interface’s language
+AssertionError: expected 'تحريك لأعلى: \u2068الرمال\u2069' to be 'تحريك لأعلى: \u2068الرمال\u2069 — 1 م…' // Object.is equality
+
+Expected: "تحريك لأعلى: ⁨الرمال⁩ — 1 من 3"
+Received: "تحريك لأعلى: ⁨الرمال⁩"
+
+ ❯ src/features/lookups/hooks/list/useGovernorateCard.component.test.tsx:114:56
+    112|
+    113|     expect(result.current.areas[0]?.controls.shown.label).toBe('ظاهرة:…
+    114|     expect(result.current.areas[0]?.controls.up.label).toBe('تحريك لأع…
+       |                                                        ^
+    115|     expect(result.current.gaza.controls.down.label).toBe('تحريك لأسفل:…
+    116|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/20]⎯
+
+
+ Test Files  10 failed | 12 passed | 6 skipped (28)
+      Tests  19 failed | 129 passed | 67 skipped (215)
+   Start at  10:48:37
+   Duration  81.69s (environment 35%, import 31%, tests 17%, setup 10%, transform 8%)
+
+Environment  |component| jsdom was created 28 times · 154.90s total, 35% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/lookups src/pages/dashboard/routes.component.test.tsx -t lookups^^^|Lookups^^^|sheet^^^|Section^^^|use

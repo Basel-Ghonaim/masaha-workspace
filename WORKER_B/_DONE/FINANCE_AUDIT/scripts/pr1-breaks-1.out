@@ -1,0 +1,48 @@
+== B-C1 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × a renewal not started moves with the subscription it renews: S ends 12-03, R runs 12-04 → 2027-01-02, one link each, audited with renewalIds 507ms
+      Tests  1 failed | 14 skipped (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal not started moves with the subscription it renews: S ends 12-03, R runs 12-04 → 2027-01-02, one link each, audited with renewalIds
+AssertionError: expected '2026-12-01 → 2026-12-30' to be '2026-12-04 → 2027-01-02' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 14 skipped (15)
+== B-C2 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × a renewal of that renewal moves too; a renewal started (today) or ended early stays; another space's never 558ms
+      Tests  1 failed | 14 skipped (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal of that renewal moves too; a renewal started (today) or ended early stays; another space's never
+AssertionError: expected '2026-11-12 → 2026-12-11' to be '2026-11-10 → 2026-12-09' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 14 skipped (15)
+== B-C3 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × a renewal of that renewal moves too; a renewal started (today) or ended early stays; another space's never 537ms
+      Tests  1 failed | 14 skipped (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal of that renewal moves too; a renewal started (today) or ended early stays; another space's never
+AssertionError: expected '2026-12-31 → 2027-01-29' to be '2027-01-02 → 2027-01-31' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 14 skipped (15)
+== B-C4 (apps/api/src/modules/subscriptions/closures/closures.repository.ts) broken run exit 1
+     × the preview counts what the extension moves, the chain included; the list's extension says the same 416ms
+      Tests  1 failed | 14 skipped (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > the preview counts what the extension moves, the chain included; the list's extension says the same
+AssertionError: expected { firstDay: '2026-11-08', …(4) } to match object { subscriptions: 4, applied: null }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 14 skipped (15)
+== B-C5 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × a renewal sold while the extension waits on the space's lock moves too 1494ms
+      Tests  1 failed | 14 skipped (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the renewal chain (finding 151) > a renewal sold while the extension waits on the space's lock moves too
+AssertionError: expected 500 to be 201 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 14 skipped (15)
+== B-C6 (apps/api/src/modules/subscriptions/closures/closures.service.ts) broken run exit 1
+     × a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure, or another space's, is a conflict 719ms
+      Tests  1 failed | 14 skipped (15)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure, or another space's, is a conflict
+AssertionError: expected 201 to be 409 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 14 skipped (15)

@@ -1,0 +1,12 @@
+test(web): pre-bundle the calendar for jsdom
+
+The component lane reads react-day-picker module by module, date-fns's
+hundreds of files with it: measured alone, its first import took about
+3.3 s of a test file's time. A page that draws the calendar, cold, then
+missed its waits: the routes test's 403 on the owner's payments failed
+locally since #127, and the space page failed its own once it set the
+announcements (finding 87's family).
+
+Its optimizer pre-bundles the library once for the lane: the import
+falls to about 10 ms and those tests pass alone. The build is
+untouched.

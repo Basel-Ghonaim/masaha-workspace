@@ -1,0 +1,41 @@
+== B121 exit 1
+    × lists the current Gaza month and the 23 before it, newest first 83ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ '2026-10', '2026-09', …(23) ] to have a length of 24 but got 25
+    - Expected
+== B122 exit 1
+    × says nothing when the month before had no income 13ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected '+Infinity%' to be null
+    - Expected:
+== B123 exit 1
+    × shows the three tiles, the two charts and the collections table; axe-clean 639ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ 'Today₪45Up to 12:00', …(2) ] to deeply equal [ 'Today₪45Up to 12:00', …(2) ]
+    - Expected
+== B124 exit 1
+    × reads the month chosen into the address, its tile named by it 5030ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    Error: Test timed out in 5000ms.
+== B125 exit 1
+    × writes one row per month, its amounts in shekels with a dot 26ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected '\ufeffMonth,Subscriptions,Visits,Tota…' to be '\ufeffMonth,Subscriptions,Visits,Tota…' // Object.is equality
+    - Expected
+== B126 exit 1
+    × downloads the income CSV and says «File downloaded» 3398ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: File downloaded. This could be because the text is broken up by multiple elements. In this case, you can provide a function for you
+== B127 exit 1
+    × refuses reception with the 403 inside the shell, reading no finance 3635ms
+    Tests  1 failed (1)
+    RangeError: Invalid time value
+    React Router caught the following error during render RangeError: Invalid time value
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find role="heading" and name "You don’t have access to this page"

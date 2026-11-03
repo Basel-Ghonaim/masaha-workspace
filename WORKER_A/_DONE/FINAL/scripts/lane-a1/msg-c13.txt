@@ -1,0 +1,7 @@
+feat(auth): say a Google sign-in made the account
+
+POST /auth/google said when it linked Google to an existing account,
+never when it created one, so the web could not welcome a first Google
+sign-in as it welcomes a registration (finding 32, the owner's). The
+answer, GoogleSession, now carries created: true exactly when this
+sign-in created the account. The web's welcome is its own commit.

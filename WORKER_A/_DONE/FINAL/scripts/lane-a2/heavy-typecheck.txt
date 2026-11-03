@@ -1,0 +1,16 @@
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+

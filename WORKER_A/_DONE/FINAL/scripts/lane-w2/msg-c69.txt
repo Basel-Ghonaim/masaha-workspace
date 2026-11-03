@@ -1,0 +1,16 @@
+fix(space-links): word a link from a fresh read
+
+The link dialog opened from a space's editor said the space becomes
+verified from the editor's own read, so a space another admin linked
+meanwhile was still told "it becomes verified" and toasted as such
+(finding 95). The dialog now reads the space's owners when it opens
+(GET /admin/spaces/:spaceId, read again on every opening), and the
+submit waits for that read (D6.7):
+
+- with no active owner, as before: it becomes verified, «المساحة
+  موثّقة الآن»;
+- with owners: «يُضاف مالكًا آخر لهذه المساحة.», the line before the
+  act says it stays verified, and the toast «أُضيف مالك للمساحة».
+
+The owners' read, the unlink dialog's until now, moves to the hooks'
+root, since two operations share it.

@@ -1,0 +1,58 @@
+[
+ {
+  "id": "72",
+  "file": "apps/web/src/features/favorites/repository/favoritesRepository.ts",
+  "old": "save: (spaceId) => api.post<undefined>(favoritePath(spaceId)),",
+  "new": "save: (spaceId) =>\n      api.post<undefined>(favoritePath(spaceId), undefined, { headers: { 'Idempotency-Key': 'k' } }),",
+  "cmd": "npm run test:unit -w @masaha/web -- src/features/favorites/repository"
+ },
+ {
+  "id": "73",
+  "file": "apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts",
+  "old": "      setHeld(save);\n",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/favorites/hooks/toggle"
+ },
+ {
+  "id": "74",
+  "file": "apps/web/src/features/favorites/hooks/favoriteWrite.ts",
+  "old": "    const error = toAppError(caught);\n    settled?.();\n",
+  "new": "    const error = toAppError(caught);\n",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/favorites/hooks/toggle"
+ },
+ {
+  "id": "75",
+  "file": "apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts",
+  "old": "        signIn('favorite', dropFavorite);\n        return;\n",
+  "new": "        signIn('favorite', dropFavorite);\n",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/favorites/hooks/toggle"
+ },
+ {
+  "id": "76",
+  "file": "apps/web/src/features/favorites/hooks/intent/favoriteIntent.ts",
+  "old": "  const taken = held;\n  held = null;\n  return taken;",
+  "new": "  return held;",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/favorites/hooks/resume"
+ },
+ {
+  "id": "77",
+  "file": "apps/web/src/features/favorites/components/FavoriteButton.tsx",
+  "old": "      aria-pressed={heart.pressed}\n",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/favorites/components"
+ },
+ {
+  "id": "78",
+  "file": "apps/web/src/features/directory/hooks/favorites/useFavoriteIds.ts",
+  "old": "    enabled: signedIn,\n",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/directory/hooks/favorites"
+ },
+ {
+  "id": "79",
+  "file": "apps/web/src/features/directory/components/card/SpaceCard.tsx",
+  "old": "        <SpaceCover cover={card.cover} mark={card.mark} />\n",
+  "new": "        <SpaceCover cover={card.cover} mark={card.mark} />\n        {action}\n",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/directory/components/card"
+ }
+]

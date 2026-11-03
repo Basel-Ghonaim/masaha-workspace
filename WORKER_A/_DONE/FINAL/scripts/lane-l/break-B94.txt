@@ -1,0 +1,50 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/lib/csv
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |unit| src/shared/lib/csv/csvOf.unit.test.ts (2 tests | 1 failed) 16ms
+   ❯ csvOf (2)
+     × quotes commas, quotes and line breaks, and starts with a BOM 12ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  17:22:58
+   Duration  520ms (transform 51%, import 26%, tests 13%, worker 10%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/lib/csv/csvOf.unit.test.ts > csvOf > quotes commas, quotes and line breaks, and starts with a BOM
+AssertionError: expected '\ufeffالاسم,المبلغ,ملاحظة\r\nرهف,45,"…' to be '\ufeffالاسم,المبلغ,ملاحظة\r\nرهف,45,"…' // Object.is equality
+
+- Expected
++ Received
+
+  ﻿الاسم,المبلغ,ملاحظة
+  رهف,45,"دفعة, أولى"
+- "Sara ""S""",120.5,"سطر
++ "Sara "S"",120.5,"سطر
+  ثانٍ"
+  A,0,"with
+CR"
+
+ ❯ src/shared/lib/csv/csvOf.unit.test.ts:15:7
+     13|         ],
+     14|       ),
+     15|     ).toBe(
+       |       ^
+     16|       '﻿' +
+     17|         [
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/lib/csv

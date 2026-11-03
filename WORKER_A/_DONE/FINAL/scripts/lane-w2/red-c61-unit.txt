@@ -1,0 +1,74 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |unit| src/features/audit/services/auditQueryOf.unit.test.ts (0 test)
+ ❯ |unit| src/features/audit/services/actionGroups.unit.test.ts (0 test)
+ ❯ |unit| src/features/audit/services/actionWords.unit.test.ts (0 test)
+ ❯ |unit| src/features/audit/services/detailsOf.unit.test.ts (0 test)
+
+ Test Files  4 failed (4)
+      Tests  no tests
+   Start at  15:14:54
+   Duration  4.52s (worker 95%, environment 5%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/audit/services/actionGroups.unit.test.ts [ src/features/audit/services/actionGroups.unit.test.ts ]
+Error: Cannot find module './actionGroups' imported from C:/dev/masaha/app-lane-w2/apps/web/src/features/audit/services/actionGroups.unit.test.ts
+ ❯ src/features/audit/services/actionGroups.unit.test.ts:4:1
+      2| import { CATALOGUES } from '@shared/copy';
+      3| import { describe, expect, it } from 'vitest';
+      4| import { actionsOf, groupOf, groupsOf } from './actionGroups';
+       | ^
+      5|
+      6| describe('the action groups', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| src/features/audit/services/actionWords.unit.test.ts [ src/features/audit/services/actionWords.unit.test.ts ]
+Error: Cannot find module './actionWords' imported from C:/dev/masaha/app-lane-w2/apps/web/src/features/audit/services/actionWords.unit.test.ts
+ ❯ src/features/audit/services/actionWords.unit.test.ts:4:1
+      2| import { CATALOGUES } from '@shared/copy';
+      3| import { describe, expect, it } from 'vitest';
+      4| import { actionView } from './actionWords';
+       | ^
+      5|
+      6| describe('actionView', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |unit| src/features/audit/services/auditQueryOf.unit.test.ts [ src/features/audit/services/auditQueryOf.unit.test.ts ]
+Error: Cannot find module './actionGroups' imported from C:/dev/masaha/app-lane-w2/apps/web/src/features/audit/services/auditQueryOf.unit.test.ts
+ ❯ src/features/audit/services/auditQueryOf.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { actionsOf } from './actionGroups';
+       | ^
+      3| import { auditParamsOf, auditQueryOf } from './auditQueryOf';
+      4|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |unit| src/features/audit/services/detailsOf.unit.test.ts [ src/features/audit/services/detailsOf.unit.test.ts ]
+Error: Cannot find module './detailsOf' imported from C:/dev/masaha/app-lane-w2/apps/web/src/features/audit/services/detailsOf.unit.test.ts
+ ❯ src/features/audit/services/detailsOf.unit.test.ts:4:1
+      2| import { priceText } from '@shared/lib';
+      3| import { describe, expect, it } from 'vitest';
+      4| import { detailsOf, type DetailsWords } from './detailsOf';
+       | ^
+      5|
+      6| const wordsOf = (language: 'ar' | 'en'): DetailsWords => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/audit

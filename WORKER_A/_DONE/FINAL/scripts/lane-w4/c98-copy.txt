@@ -1,0 +1,39 @@
+@@@ apps/web/src/shared/copy/arabic/site.ts
+<<<
+      text: 'تواصل معنا لإضافة مساحتك، وإدارة ساعاتها وأسعارها، وإظهار حالتها المباشرة.',
+===
+      text: 'تواصل معنا لإضافة مساحتك، وإدارة ساعاتها وأسعارها، وتظهر حالتها المباشرة تلقائيًا من تسجيل الحضور.',
+>>>
+<<<
+      note: '«آخر تحديث» هو آخر مرة تأكّدنا فيها من المعلومة أو حدّثتها المساحة. كلما طالت المدة زاد احتمال أن تكون قد تغيّرت، فنعرض «قد يكون تغيّر» بجانب المعلومة القديمة. إن وجدت معلومة خاطئة، تواصل معنا.',
+===
+      note: '«آخر تحديث» هو آخر مرة تأكّدنا فيها من المعلومة أو حدّثتها المساحة. كلما طالت المدة زاد احتمال أن تكون قد تغيّرت، فنعرض «قد يكون تغيّر» بجانب المعلومة القديمة.',
+      wrong: 'إن وجدت معلومة خاطئة،',
+      wrongLink: 'تواصل معنا',
+      wrongEnd: '.',
+>>>
+<<<
+      text: 'راسلنا إن كان لديك سؤال، أو مشكلة في الموقع الإلكتروني.',
+===
+      text: 'اكتب لنا بسؤال، أو عن بلاغ لم يصلك ردّه، أو عن خطأ في الموقع.',
+>>>
+@@@ apps/web/src/shared/copy/english/site.ts
+<<<
+      text: 'Contact us to add your space, manage its hours and prices, and show its live status.',
+===
+      text: 'Contact us to add your space and manage its hours and prices; its live status shows automatically from the check-ins.',
+>>>
+<<<
+      note: '“Updated” is the last time we confirmed the information or the space updated it. The longer ago, the more likely it has changed, so we show “May have changed” next to old information. If you find wrong information, contact us.',
+===
+      note: '“Updated” is the last time we confirmed the information or the space updated it. The longer ago, the more likely it has changed, so we show “May have changed” next to old information.',
+      /** The note's last sentence, its link to the contact section in the middle (design issue 41). */
+      wrong: 'If you find wrong information,',
+      wrongLink: 'contact us',
+      wrongEnd: '.',
+>>>
+<<<
+      text: 'Message us with a question, or a problem with the website.',
+===
+      text: 'Write to us with a question, about a report that got no reply, or about a mistake on the site.',
+>>>

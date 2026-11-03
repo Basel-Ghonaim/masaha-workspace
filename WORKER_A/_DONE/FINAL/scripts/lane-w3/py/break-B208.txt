@@ -1,0 +1,48 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx (20 tests | 1 failed) 16564ms
+   ❯ useSubscriptionSheet (20)
+     × keeps the sheet open on a changed price, reads the prices again and shows the new amount 622ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 19 passed (20)
+   Start at  12:21:38
+   Duration  27.23s (tests 62%, transform 18%, import 9%, environment 9%, setup 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx > useSubscriptionSheet > keeps the sheet open on a changed price, reads the prices again and shows the new amount
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array []
+
+
+Number of calls: 1
+
+ ❯ src/features/desk/hooks/sheet/useSubscriptionSheet.component.test.tsx:446:25
+    444|     expect(await screen.findByText(/This price changed since the sheet…
+    445|     expect(refreshPrices).toHaveBeenCalledTimes(1);
+    446|     expect(onClose).not.toHaveBeenCalled();
+       |                         ^
+    447|     pricesRead([{ ...STUDENT_MONTH, amountAgorot: 25000 }]);
+    448|     expect(await screen.findByRole('button', { name: /Save and receive…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/sheet/useSubscriptionSheet

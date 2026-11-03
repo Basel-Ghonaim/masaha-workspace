@@ -1,0 +1,48 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/finance/services
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |unit| src/features/finance/services/incomeCsv.unit.test.ts (1 test | 1 failed) 31ms
+   ❯ incomeCsv (1)
+     × writes one row per month, its amounts in shekels with a dot 26ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:29:35
+   Duration  2.44s (import 52%, transform 39%, tests 5%, worker 4%, environment 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/finance/services/incomeCsv.unit.test.ts > incomeCsv > writes one row per month, its amounts in shekels with a dot
+AssertionError: expected '\ufeffMonth,Subscriptions,Visits,Tota…' to be '\ufeffMonth,Subscriptions,Visits,Tota…' // Object.is equality
+
+- Expected
++ Received
+
+  ﻿Month,Subscriptions,Visits,Total
+- 2026-09,1500.00,25.50,1525.50
++ 2026-09,1500.00,25.50,152550
+- 2026-10,0.00,0.05,0.05
++ 2026-10,0.00,0.05,5
+
+ ❯ src/features/finance/services/incomeCsv.unit.test.ts:29:22
+     27|
+     28|     expect(csv.name).toBe('masaha-income-2026-10.csv');
+     29|     expect(csv.text).toBe(
+       |                      ^
+     30|       '﻿Month,Subscriptions,Visits,Total\r\n2026-09,1500.00,25.50,1525…
+     31|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/finance/services

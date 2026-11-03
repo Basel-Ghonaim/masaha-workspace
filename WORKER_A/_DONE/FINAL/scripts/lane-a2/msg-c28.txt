@@ -1,0 +1,10 @@
+feat(subscriptions): refuse a changed price
+
+A subscription from a published price takes the price's amount as the
+server reads it. If the owner changed the price after the desk showed
+it, the customer was sold at an amount nobody saw (finding 171).
+
+The subscribe's published part takes the amount the desk showed,
+amountAgorot. Under the space's lock it is compared with the price
+read: a different one is refused 409 PUBLISHED_PRICE_CHANGED, writing
+nothing; without it, the subscribe is as before.

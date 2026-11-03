@@ -1,0 +1,25 @@
+I've reviewed PR #128 and written the report. CI was green before I started, and the head (`3f8a2184`) didn't move during the review. My verdict is **mergeable after a fix round**: one privacy defect and one wrong document line. I only read the code; nothing was run, as the review prompt requires. So the test results, the 25 breaks and the timing figures come from the worker's report, not from me.
+
+**Findings**
+- **F1 (blocker): the admin's log shows a space's reception staff events.**
+  - **Account creation:** when an owner adds a reception account, the account is created through `users.createWithTemporaryPassword`, which records `user.created` without naming the space. The allowlist lets account events through when they name no space. So the admin's log shows the owner as actor and the person's name and email.
+  - **Email correction:** a reception person who corrects their email at first sign-in writes `user.emailChanged`, also with no space, so the admin sees that too.
+  - **Why it matters:** the approved plan, the contract, conventions §6 and `audit.md` all say this never happens. In fairness, the admin's users list already shows every account's name and email; what leaks is the staff event itself.
+  - **Why the tests missed it:** they insert audit entries directly, so they never go through the real staff and sign-in code.
+  - **Fix:** record the space on both entries, and add one test through the real routes.
+  - **Your call:** the fix touches the `users` and `space-links` modules, which are outside the plan's file list. You decide whether it goes in this PR's fix round (I'd say yes, since it's a privacy rule) or a carried commit.
+- **F2 (should-fix):** `docs/features/audit.md:35` still describes the lateral subquery. The code now uses one join per target type, which was the worker's own change after measuring.
+- **F3 (nit):** the lock decision in `subscriptions.md` was reworded to cover the renewals but still carries only #123's date.
+
+**Carried items 1–4:** all built as you decided. Only renewals that haven't started (start after today in Gaza, not ended early) move, through the whole chain. Start and end both move, in one locked statement ordered by id. The preview's count equals what the extension moves. A key reused from another space's closure gets a 409 that reveals nothing about that space.
+
+**Decisions the worker took without you:** all judged sound.
+- **The join change:** it returns the same answer for every target type, including a deleted target and an entry with no target id. No join multiplies rows.
+- **The timing measurement:** it ran the same SQL the code builds, so it holds. One caveat: the check-ins, subscriptions, packages and announcements tables were empty in the generated data. That adds little cost.
+- **The rewritten renewal test (T-C2):** it still proves that a renewal already started is not moved, at the tightest edge (a renewal starting today).
+
+**Tests and breaks:** all 25 breaks were seen red in the worker's report. One renewal-lock break (B-C5) turned red through a server error rather than through the assertion it targets; it still proves the guard.
+
+As you decided, I didn't report the four slow reads or finding 152.
+
+The report is at `C:\dev\masaha\workspace\WORKER_B\FINANCE_AUDIT\6_REVIEW_PR1_CLAUDE_CODE.md`.

@@ -1,0 +1,8 @@
+[
+  {"label": "B178", "file": "apps/web/src/features/data-reports/services/adminReportsQueryOf.ts",
+   "old": "      ...(handledBy !== undefined && { handledBy }),\n      page: filters.page,", "new": "      page: filters.page,",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/components/admin"},
+  {"label": "B178b", "file": "apps/web/src/features/data-reports/components/decide/DecideSheet.tsx",
+   "old": "            {view.spaceTitle === null ? (", "new": "            {true ? (",
+   "cmd": "npm run test:component -w @masaha/web -- src/features/data-reports/components/admin"}
+]

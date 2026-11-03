@@ -1,0 +1,11 @@
+test(api): aim the race helper at its own wait
+
+waitingOnLock, called without a table, counted any backend of the test
+database waiting on any lock, and its 4 s reach sat under Vitest's 5 s
+default, so a race could pass on another's wait or fail on a slow
+machine though sound (finding 77). It now requires the table its race's
+request waits on (`on`), read from pg_locks: a lock of that table
+awaited, a row's tuple lock held while its first waiter awaits the
+holder, or a unique key's second writer; whileHeld takes it too. Every
+race names its table, as each was seen waiting in one run; the reach
+is 8 s, and each race test's own timeout RACE_TIMEOUT_MS, 20 s.

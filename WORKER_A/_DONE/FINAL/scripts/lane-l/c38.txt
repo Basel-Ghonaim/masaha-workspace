@@ -1,0 +1,11 @@
+refactor(lib): read Arabic-Indic digits once
+
+Five helpers each carried their own copy of the replacement that reads
+Arabic-Indic digits as Western ones (finding 103): the whole numbers,
+a package's counts, the opening hours, an amount and a point typed by
+hand. shared/lib gains toWesternDigits, which every one now calls,
+each keeping its own rule for what follows.
+
+The one reader also takes the extended set a Persian or Urdu keyboard
+types (U+06F0–U+06F9), which none of the five read before; each
+helper's test proves it.

@@ -1,0 +1,109 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/shared/routing/focus/useMainFocus.component.test.tsx (5 tests | 1 failed) 3346ms
+   ❯ the focus on a page change (5)
+     × focuses the section a hash names, also when only the hash changes 3023ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 9 passed (10)
+   Start at  17:14:13
+   Duration  9.43s (transform 32%, tests 21%, environment 21%, import 20%, setup 6%)
+
+  Transform  |component| transforming modules took 5.76s · 32% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/routing/focus/useMainFocus.component.test.tsx > the focus on a page change > focuses the section a hash names, also when only the hash changes
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<h2
+  id="owners"
+  tabindex="-1"
+>
+  For owners
+</h2>[39m
+Received element with focus:
+  [31m<main
+  aria-label="Site"
+  id="main"
+  tabindex="-1"
+>
+  <h1>
+    About
+  </h1>
+  <h2
+    id="owners"
+    tabindex="-1"
+  >
+    For owners
+  </h2>
+  <h2
+    id="contact"
+    tabindex="-1"
+  >
+    Contact us
+  </h2>
+</main>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<a[39m
+        [33mhref[39m=[32m"/elsewhere"[39m
+      [36m>[39m
+        [0mSite header link[0m
+      [36m</a>[39m
+      [36m<main[39m
+        [33maria-label[39m=[32m"Site"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mAbout[0m
+        [36m</h1>[39m
+        [36m<h2[39m
+          [33mid[39m=[32m"owners"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [0mFor owners[0m
+        [36m</h2>[39m
+        [36m<h2[39m
+          [33mid[39m=[32m"contact"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [0mContact us[0m
+        [36m</h2>[39m
+      [36m</main>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m...
+ ❯ src/shared/routing/focus/useMainFocus.component.test.tsx:113:67
+    111|     });
+    112|     await waitFor(() => {
+    113|       expect(screen.getByRole('heading', { name: 'For owners' })).toHa…
+       |                                                                   ^
+    114|     });
+    115|
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

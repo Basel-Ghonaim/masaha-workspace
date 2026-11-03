@@ -1,0 +1,7 @@
+fix(lists): keep the scroll on a page change
+
+A page's links sit under the list, and the app's ScrollRestoration
+sent the reader to the top of the page on each one, so paging a long
+list meant scrolling back down every time (carried item 11, its
+shared/lists part). ListPagination's three links now take
+preventScrollReset. The Directory's own scroll is its unit's.

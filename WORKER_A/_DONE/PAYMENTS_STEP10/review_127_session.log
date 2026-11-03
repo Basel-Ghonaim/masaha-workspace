@@ -1,0 +1,20 @@
+My verdict on #127 is **mergeable after a fix round**. CI is green on head `27bcd1a0`, the head did not move during the review, and GitHub shows it CLEAN. The full review is in `C:\dev\masaha\workspace\WORKER_A\PAYMENTS_STEP10\6_REVIEW_PR1_CLAUDE_CODE.md`.
+
+The money checks came out clean. The void is offered to the owner only, the reason is required and trimmed, and it is sent once with no key. Every figure comes from the server's totals, nothing is summed in the browser, and «دفعاتي اليوم» sends no range and no `recordedById`.
+
+**Findings:**
+- **F1 (should-fix) — the period picker closes on the first click.** In react-day-picker 10, the first click already gives a complete one-day range. `RangeField` applies it and closes, so the owner can't pick a range in one go. With a range already set, a click extends it from its old start instead of starting a new one. No test and no part of the real run ever clicked the calendar: every range was set through the address. The fix is to pass `resetOnSelect` to the calendar and add a test that clicks two days.
+- **F2 (should-fix) — test 11's time-zone case can't fail where the tests run.** Removing `timeZone: 'UTC'` from `periodText` only goes wrong west of UTC. CI runs in UTC and your machine in Gaza time, so both stay green. The executor only saw it fail with `TZ=America/New_York`. The fix is to pin a western zone for the unit lane.
+- **F3 (should-fix) — the statement's «⋯» has no component test.** The plan's file list included its test, but it wasn't touched. Nothing checks the «⋯» itself or the focus moving to the «الدفعات» heading after a void.
+- **F4 (nit) — finding 169 overstates its cause.** It says the build puts every component the barrel serves in the shared chunk, which isn't so. The growth is also split across chunks, not all react-day-picker.
+- **F5 (nit) — the layer's `DateRange` comment is wrong for version 10.** It is outside this PR's files, so I propose recording it as finding 173.
+
+**The executor's decisions D1–D12:** all sound or acceptable. Four I checked in the code or the libraries:
+- **D1:** passing the owner flag through `CustomerFile` keeps the same rule with fewer files.
+- **D3/D5:** handing on the focus when the «⋯» unmounts is needed, and test 7 proves it.
+- **D10:** I confirmed that Radix's alert dialog only focuses «رجوع» when the caller doesn't prevent it, so the reason gets the focus in a real browser too.
+- **D11:** finding 172 matches the write-off dialog's code.
+
+**Finding 169:** recording it instead of fixing it (option c) is sound. The saved measurements add up, but they show sizes only, not which modules moved. The cost is about 23 KB gzipped for every site visitor, so you'll want to decide whether #127 merges with that or waits for the fix. I'd schedule the fix before PR 4 adds the site's own work.
+
+I ran no builds, tests or servers, as the review rules require. The screenshots, the 44 px touch sizes and the gzipped sizes come from the executor's report only.

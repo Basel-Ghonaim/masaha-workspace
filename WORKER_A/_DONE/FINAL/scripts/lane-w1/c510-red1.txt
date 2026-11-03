@@ -1,0 +1,68 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/staff/hooks/reissue
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/staff/hooks/reissue/useReissueDialog.component.test.tsx (7 tests | 1 failed) 3341ms
+   ❯ useReissueDialog (7)
+     × words a refusal inside (2), and reads the list again when it changed 3055ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/staff/hooks/reissue/useReissueDialog.component.test.tsx > useReissueDialog > words a refusal inside (2), and reads the list again when it changed
+AssertionError: expected { kind: 'refused', …(2) } to match object { kind: 'refused', …(1) }
+(1 matching property omitted from actual)
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div />[39m
+  [36m</body>[39m
+[36m</html>[39m...
+
+- Expected
++ Received
+
+  {
+    "kind": "refused",
+-   "message": "This is an admin’s account; no temporary password is issued for it here.",
++   "message": "This account is now an admin’s and doesn’t work at reception.",
+  }
+
+ ❯ src/features/staff/hooks/reissue/useReissueDialog.component.test.tsx:123:40
+    121|
+    122|       await waitFor(() => {
+    123|         expect(result.current.failure).toMatchObject({ kind: 'refused'…
+       |                                        ^
+    124|       });
+    125|       expect(client.getQueryState(staffKeys.list(7))?.isInvalidated).t…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  09:27:10
+   Duration  15.76s (transform 31%, tests 22%, environment 21%, import 19%, setup 7%)
+
+  Transform  |component| transforming modules took 4.74s · 31% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/staff/hooks/reissue

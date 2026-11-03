@@ -1,0 +1,202 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/components/notice
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/data-reports/components/notice/ReportNotice.component.test.tsx (4 tests | 1 failed) 4143ms
+   ❯ ReportNotice (4)
+     × the owner’s notice says «زائر», the admin’s the name 3029ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:29:39
+   Duration  20.00s (import 27%, transform 27%, tests 21%, environment 19%, setup 5%)
+
+  Transform  |component| transforming modules took 5.19s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/notice/ReportNotice.component.test.tsx > ReportNotice > the owner’s notice says «زائر», the admin’s the name
+TestingLibraryElementError: Unable to find an element with the text: “The space opens at 9, not 8.” — زائر، 21 أكتوبر. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Above hours"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-info bg-info-subtle text-info-subtle-foreground scroll-mt-28 outline-none lg:scroll-mt-20"[39m
+        [33mdata-slot[39m=[32m"alert"[39m
+        [33mdata-variant[39m=[32m"info"[39m
+        [33mid[39m=[32m"report"[39m
+        [33mrole[39m=[32m"status"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-info"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"10"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 16v-4"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 8h.01"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+          [33mdata-slot[39m=[32m"alert-title"[39m
+        [36m>[39m
+          [0mبلاغ مفتوح على ساعات العمل[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+          [33mdata-slot[39m=[32m"alert-description"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0m“The space opens at 9, not 8.” — Huda Saleh، 21 أكتوبر[0m
+          [36m</p>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mتم التصحيح[0m
+            [36m</button>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-primary underline-offset-4 hover:underline h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/reports?open=41"[39m
+            [36m>[39m
+              [0mفتح البلاغ للرد[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Above hours"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-info bg-info-subtle text-info-subtle-foreground scroll-mt-28 outline-none lg:scroll-mt-20"[39m
+        [33mdata-slot[39m=[32m"alert"[39m
+        [33mdata-variant[39m=[32m"info"[39m
+        [33mid[39m=[32m"report"[39m
+        [33mrole[39m=[32m"status"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-info"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"10"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 16v-4"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 8h.01"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+          [33mdata-slot[39m=[32m"alert-title"[39m
+        [36m>[39m
+          [0mبلاغ مفتوح على ساعات العمل[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+          [33mdata-slot[39m=[32m"alert-description"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mdir[39m=[32m"auto"[39m
+          [36m>[39m
+            [0m“The space opens at 9, not 8.” — Huda Saleh، 21 أكتوبر[0m
+          [36m</p>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mتم التصحيح[0m
+            [36m</button>[39m
+            [36m<a[39m
+              [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-primary underline-offset-4 hover:underline h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+              [33mdata-discover[39m=[32m"true"[39m
+              [33mdata-slot[39m=[32m"button"[39m
+              [33mhref[39m=[32m"/reports?open=41"[39m
+            [36m>[39m
+              [0mفتح البلاغ للرد[0m
+            [36m</a>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</section>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/data-reports/components/notice/ReportNotice.component.test.tsx:76:20
+     74|     const owner = renderNotice(OWNER, () => ok(spaceReport()));
+     75|     expect(
+     76|       await screen.findByText('“The space opens at 9, not 8.” — زائر، …
+       |                    ^
+     77|     ).toBeInTheDocument();
+     78|     expect(screen.queryByText(/Huda Saleh/)).not.toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/components/notice

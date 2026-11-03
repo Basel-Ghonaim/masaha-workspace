@@ -1,0 +1,125 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/forms/hooks/usePasswordRules
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/shared/forms/hooks/usePasswordRules.component.test.tsx (4 tests | 4 failed) 102ms
+   ❯ usePasswordRules (4)
+     × ticks each rule as the value comes to meet it 70ms
+     × shows «Too long — shorten it» only while the password passes 72 bytes, as failed 10ms
+     × marks the rules not met as failed once the form was sent with them 9ms
+     × words each rule, its state read aloud, and the list 10ms
+
+ Test Files  1 failed (1)
+      Tests  4 failed (4)
+   Start at  09:34:24
+   Duration  10.59s (transform 36%, environment 33%, import 19%, setup 10%, tests 1%)
+
+  Transform  |component| transforming modules took 3.59s · 36% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/forms/hooks/usePasswordRules.component.test.tsx > usePasswordRules > ticks each rule as the value comes to meet it
+AssertionError: expected [ 'pending', 'pending', …(2) ] to deeply equal [ 'pending', 'pending', 'pending' ]
+
+- Expected
++ Received
+
+  [
+    "pending",
+    "pending",
+    "pending",
++   "met",
+  ]
+
+ ❯ src/shared/forms/hooks/usePasswordRules.component.test.tsx:22:24
+     20| describe('usePasswordRules', () => {
+     21|   it('ticks each rule as the value comes to meet it', () => {
+     22|     expect(states('')).toEqual(['pending', 'pending', 'pending']);
+       |                        ^
+     23|     expect(states('gaza')).toEqual(['pending', 'met', 'pending']);
+     24|     expect(states('gaza202')).toEqual(['pending', 'met', 'met']);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/shared/forms/hooks/usePasswordRules.component.test.tsx > usePasswordRules > shows «Too long — shorten it» only while the password passes 72 bytes, as failed
+AssertionError: expected [ Array(4) ] to deeply equal [ 'minLength', 'letter', 'digit' ]
+
+- Expected
++ Received
+
+  [
+    "minLength",
+    "letter",
+    "digit",
++   "bytes",
+  ]
+
+ ❯ src/shared/forms/hooks/usePasswordRules.component.test.tsx:30:57
+     28|   it('shows «Too long — shorten it» only while the password passes 72 …
+     29|     const { result: short } = renderHook(() => usePasswordRules('gaza2…
+     30|     expect(short.current.rules.map(({ rule }) => rule)).toEqual(['minL…
+       |                                                         ^
+     31|
+     32|     const long = `${'ب'.repeat(36)}1`;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/shared/forms/hooks/usePasswordRules.component.test.tsx > usePasswordRules > marks the rules not met as failed once the form was sent with them
+AssertionError: expected [ 'met', 'met', 'failed', 'met' ] to deeply equal [ 'met', 'met', 'failed' ]
+
+- Expected
++ Received
+
+  [
+    "met",
+    "met",
+    "failed",
++   "met",
+  ]
+
+ ❯ src/shared/forms/hooks/usePasswordRules.component.test.tsx:44:38
+     42|
+     43|   it('marks the rules not met as failed once the form was sent with th…
+     44|     expect(states('gazagaza', true)).toEqual(['met', 'met', 'failed']);
+       |                                      ^
+     45|   });
+     46|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |component| src/shared/forms/hooks/usePasswordRules.component.test.tsx > usePasswordRules > words each rule, its state read aloud, and the list
+AssertionError: expected [ …(4) ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+    "At least 8 characters — not met yet",
+    "At least one letter — met",
+    "At least one number — not met yet",
++   "Too long — shorten it — met",
+  ]
+
+ ❯ src/shared/forms/hooks/usePasswordRules.component.test.tsx:51:81
+     49|
+     50|     expect(result.current.label).toBe('Password rules');
+     51|     expect(result.current.rules.map(({ text, status }) => `${text} ${s…
+       |                                                                                 ^
+     52|       'At least 8 characters — not met yet',
+     53|       'At least one letter — met',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/forms/hooks/usePasswordRules

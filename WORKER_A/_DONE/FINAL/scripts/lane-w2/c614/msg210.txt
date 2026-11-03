@@ -1,0 +1,6 @@
+docs: record finding 210
+
+A change of the hash alone in the space editor focuses the named card,
+a div that takes no focus, so its in-page navigation moves no focus.
+Found while building the editor's first landing (D6.8); the shell's
+hook is not this lane's to change.

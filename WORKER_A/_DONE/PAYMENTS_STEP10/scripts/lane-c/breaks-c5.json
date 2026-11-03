@@ -1,0 +1,23 @@
+[
+ {
+  "id": "80",
+  "file": "apps/web/src/features/directory/hooks/favorites/useFavoritesView.ts",
+  "old": "    favorite.listed\n      ? []\n      : [",
+  "new": "    favorite.listed || favorite.savedAt !== ''\n      ? []\n      : [",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx"
+ },
+ {
+  "id": "81",
+  "file": "apps/web/src/features/directory/hooks/favorites/useUnlistedFocus.ts",
+  "old": "    target?.focus();\n",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/directory/components/favorites"
+ },
+ {
+  "id": "c5-clear",
+  "file": "apps/web/src/features/directory/hooks/near/useNearMe.ts",
+  "old": "      client.removeQueries({\n        queryKey: ['me', 'favorites'],\n        predicate: (query) => isNearFavorites(query.queryKey),\n      });\n",
+  "new": "",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx"
+ }
+]

@@ -1,0 +1,330 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/space-links/components/add-owner
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx (10 tests | 3 failed) 19679ms
+   ❯ AddOwner (10)
+     × shows whose account the email is before the upgrade is confirmed, and sends it once confirmed 2092ms
+     × an exact email is found even beyond the first page 2355ms
+     × a failed read says so and retries 4891ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx > AddOwner > shows whose account the email is before the upgrade is confirmed, and sends it once confirmed
+AssertionError: expected [ { q: 'rima@example.com' } ] to deeply equal [ { email: 'rima@example.com' } ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "email": "rima@example.com",
++     "q": "rima@example.com",
+    },
+  ]
+
+ ❯ src/features/space-links/components/add-owner/AddOwner.component.test.tsx:254:61
+    252|     const upgrade = await screen.findByRole('button', { name: 'Upgrade…
+    253|     const users = requests.filter((request) => request.url === '/admin…
+    254|     expect(users.map((request): unknown => request.params)).toEqual([
+       |                                                             ^
+    255|       { email: 'rima@example.com' },
+    256|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx > AddOwner > an exact email is found even beyond the first page
+AssertionError: expected [ { q: 'rima@example.com' } ] to deeply equal [ { email: 'rima@example.com' } ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "email": "rima@example.com",
++     "q": "rima@example.com",
+    },
+  ]
+
+ ❯ src/features/space-links/components/add-owner/AddOwner.component.test.tsx:341:7
+    339|         .filter((request) => request.url === '/admin/users')
+    340|         .map((request): unknown => request.params),
+    341|     ).toEqual([{ email: 'rima@example.com' }]);
+       |       ^
+    342|   });
+    343|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx > AddOwner > a failed read says so and retries
+TestingLibraryElementError: Unable to find an element with the text: Couldn’t check this email right now.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-controls[39m=[32m"radix-_r_34_"[39m
+      [33maria-expanded[39m=[32m"true"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mAdd owner[0m
+    [36m</button>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"sheet-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-describedby[39m=[32m"radix-_r_36_"[39m
+    [33maria-labelledby[39m=[32m"radix-_r_35_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_34_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"sheet-title"[39m
+        [33mid[39m=[32m"radix-_r_35_"[39m
+      [36m>[39m
+        [0mAdd owner[0m
+      [36m</h2>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_36_"[39m
+      [36m>[39m
+        [0mLinked to one space; link more afterwards.[0m
+      [36m</p>[39m
+    [36m</div>[39m
+    [36m<form[39m
+      [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+      [33mnovalidate[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4"[39m
+        [33mdata-slot[39m=[32m"sheet-body"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_37_-control"[39m
+              [33mid[39m=[32m"_r_37_-label"[39m
+            [36m>[39m
+              [0mName[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mid[39m=[32m"_r_37_-control"[39m
+              [33mname[39m=[32m"name"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_38_-control"[39m
+              [33mid[39m=[32m"_r_38_-label"[39m
+            [36m>[39m
+              [0mEmail address[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-controls[39m=[32m"radix-_r_34_"[39m
+      [33maria-expanded[39m=[32m"true"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"open"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mAdd owner[0m
+    [36m</button>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"fixed inset-0 z-(--z-overlay) bg-(--overlay-scrim) duration-(--duration-short) ease-(--easing-standard) data-open:animate-in data-open:fade-in-0 data-closed:animate-out data-closed:fade-out-0"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"sheet-overlay"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [36m/>[39m
+  [36m<div[39m
+    [33maria-describedby[39m=[32m"radix-_r_36_"[39m
+    [33maria-labelledby[39m=[32m"radix-_r_35_"[39m
+    [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+    [33mdata-side[39m=[32m"end"[39m
+    [33mdata-slot[39m=[32m"sheet-content"[39m
+    [33mdata-state[39m=[32m"open"[39m
+    [33mid[39m=[32m"radix-_r_34_"[39m
+    [33mrole[39m=[32m"dialog"[39m
+    [33mstyle[39m=[32m"pointer-events: auto;"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+      [33mdata-slot[39m=[32m"sheet-header"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+        [33mdata-slot[39m=[32m"sheet-title"[39m
+        [33mid[39m=[32m"radix-_r_35_"[39m
+      [36m>[39m
+        [0mAdd owner[0m
+      [36m</h2>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_36_"[39m
+      [36m>[39m
+        [0mLinked to one space; link more afterwards.[0m
+      [36m</p>[39m
+    [36m</div>[39m
+    [36m<form[39m
+      [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+      [33mnovalidate[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4"[39m
+        [33mdata-slot[39m=[32m"sheet-body"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_37_-control"[39m
+              [33mid[39m=[32m"_r_37_-label"[39m
+            [36m>[39m
+              [0mName[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mid[39m=[32m"_r_37_-control"[39m
+              [33mname[39m=[32m"name"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_38_-control"[39m
+              [33mid[39m=[32m"_r_38_-label"[39m
+            [36m>[39m
+              [0mEmail address[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/space-links/components/add-owner/AddOwner.component.test.tsx:357:25
+    355|     await userEvent.click(screen.getByRole('button', { name: 'Create a…
+    356|
+    357|     expect(await screen.findByText('Couldn’t check this email right no…
+       |                         ^
+    358|     expect(screen.getByRole('button', { name: 'Create account and link…
+    359|     await userEvent.click(screen.getByRole('button', { name: 'Try agai…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 7 passed (10)
+   Start at  09:39:03
+   Duration  41.95s (tests 48%, transform 20%, import 18%, environment 12%, setup 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/space-links/components/add-owner

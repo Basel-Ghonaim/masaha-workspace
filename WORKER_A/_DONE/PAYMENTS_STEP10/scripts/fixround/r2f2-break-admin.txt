@@ -1,0 +1,392 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/components/admin/AdminReportsList.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx (4 tests | 1 failed) 4348ms
+   ❯ AdminReportsList (4)
+     × shows a report decided elsewhere with its decision, read from «All», never the stale «New» 3324ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  17:13:25
+   Duration  11.64s (tests 38%, transform 23%, import 20%, environment 13%, setup 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx > AdminReportsList > shows a report decided elsewhere with its decision, read from «All», never the stale «New»
+TestingLibraryElementError: Unable to find an element with the text: Corrected. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_1p_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_1o_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_1n_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_1o_"[39m
+    [36m>[39m
+      [0mReport about Opening hours[0m
+    [36m</h2>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_1p_"[39m
+      [36m>[39m
+        [0m⁨Huda Saleh⁩ · 21 October[0m
+      [36m</p>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"neutral"[39m
+      [36m>[39m
+        [0mReviewed[0m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe report[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mThe space opens at 9, not 8.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/spaces/7"[39m
+      [36m>[39m
+        [0mEdit the field[0m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M5 12h14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m12 5 7 7-7 7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-destructive bg-destructive-subtle text-destructive-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"alert"[39m
+        [33mdata-variant[39m=[32m"destructive"[39m
+        [33mrole[39m=[32m"alert"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-circle-alert lucide-alert-circle"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"10"[39m
+          [36m/>[39m
+          [36m<line[39m
+            [33mx1[39m=[32m"12"[39m
+            [33mx2[39m=[32m"12"[39m
+            [33my1[39m=[32m"8"[39m
+            [33my2[39m=[32m"12"[39m
+          [36m/>[39m
+          [36m<line[39m
+            [33mx1[39m=[32m"12"[39m
+            [33mx2[39m=[32m"12.01"[39m
+            [33my1[39m=[32m"16"[39m
+            [33my2[39m=[32m"16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+          [33mdata-slot[39m=[32m"alert-title"[39m
+        [36m>[39m
+          [0mWe couldn’t save the decision[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+          [33mdata-slot[39m=[32m"alert-description"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mThis report was already decided.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</div>[39m
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_1p_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_1o_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_1n_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_1o_"[39m
+    [36m>[39m
+      [0mReport about Opening hours[0m
+    [36m</h2>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_1p_"[39m
+      [36m>[39m
+        [0m⁨Huda Saleh⁩ · 21 October[0m
+      [36m</p>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"neutral"[39m
+      [36m>[39m
+        [0mReviewed[0m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe report[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mThe space opens at 9, not 8.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/spaces/7"[39m
+      [36m>[39m
+        [0mEdit the field[0m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M5 12h14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m12 5 7 7-7 7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-destructive bg-destructive-subtle text-destructive-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"alert"[39m
+        [33mdata-variant[39m=[32m"destructive"[39m
+        [33mrole[39m=[32m"alert"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-circle-alert lucide-alert-circle"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"10"[39m
+          [36m/>[39m
+          [36m<line[39m
+            [33mx1[39m=[32m"12"[39m
+            [33mx2[39m=[32m"12"[39m
+            [33my1[39m=[32m"8"[39m
+            [33my2[39m=[32m"12"[39m
+          [36m/>[39m
+          [36m<line[39m
+            [33mx1[39m=[32m"12"[39m
+            [33mx2[39m=[32m"12.01"[39m
+            [33my1[39m=[32m"16"[39m
+            [33my2[39m=[32m"16"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+          [33mdata-slot[39m=[32m"alert-title"[39m
+        [36m>[39m
+          [0mWe couldn’t save the decision[0m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+          [33mdata-slot[39m=[32m"alert-description"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mThis report was already decided.[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</div>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/data-reports/components/admin/AdminReportsList.component.test.tsx:146:32
+    144|     await user.click(within(sheet).getByRole('button', { name: 'Correc…
+    145|     expect(await within(sheet).findByRole('alert')).toBeInTheDocument(…
+    146|     expect(await within(sheet).findByText('Corrected')).toBeVisible();
+       |                                ^
+    147|     expect(within(sheet).getByText('No reply')).toBeVisible();
+    148|     expect(within(sheet).queryByText('New')).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/components/admin/AdminReportsList.component.test.tsx

@@ -1,0 +1,273 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/uncollected
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/uncollected/UncollectedCard.component.test.tsx (3 tests | 1 failed) 2855ms
+   ❯ UncollectedCard (3)
+     × leads a customer’s visit to their file, and marks the collection’s note optional 322ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  12:36:38
+   Duration  20.13s (transform 32%, import 29%, environment 19%, tests 15%, setup 5%)
+
+  Transform  |component| transforming modules took 6.32s · 32% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/uncollected/UncollectedCard.component.test.tsx > UncollectedCard > leads a customer’s visit to their file, and marks the collection’s note optional
+TestingLibraryElementError: Unable to find an element with the text: Optional. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"radix-_r_12_"[39m
+  [33mclass[39m=[32m"fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"[39m
+  [33mdata-slot[39m=[32m"dialog-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_11_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-2"[39m
+    [33mdata-slot[39m=[32m"dialog-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"dialog-title"[39m
+      [33mid[39m=[32m"radix-_r_12_"[39m
+    [36m>[39m
+      [0mCollect a visit · ⁨Huda Saleh⁩[0m
+    [36m</h2>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33maria-labelledby[39m=[32m"_r_14_"[39m
+      [33mclass[39m=[32m"flex flex-col gap-3 rounded-lg bg-muted p-3"[39m
+      [33mrole[39m=[32m"group"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"sr-only"[39m
+        [33mid[39m=[32m"_r_14_"[39m
+      [36m>[39m
+        [0mPayment[0m
+      [36m</span>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"flex items-baseline justify-between gap-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+        [36m>[39m
+          [0mDue[0m
+        [36m</span>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-heading-2"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0m⁨₪25⁩[0m
+        [36m</span>[39m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-3 md:grid md:grid-cols-2 md:items-start"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_16_-control"[39m
+              [33mid[39m=[32m"_r_16_-label"[39m
+            [36m>[39m
+              [0mReceived now (₪)[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33maria-describedby[39m=[32m"_r_15_"[39m
+              [33mautocomplete[39m=[32m"off"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_16_-control"[39m
+              [33minputmode[39m=[32m"decimal"[39m
+              [33mvalue[39m=[32m"25"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"sr-only"[39m
+          [33mid[39m=[32m"_r_15_"[39m
+        [36m>[39m
+          [0mFilled with the amount due; change it if they pay another amount.[0m
+        [36m</span>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_17_-control"[39m
+              [33mid[39m=[32m"_r_17_-label"[39m
+            [36m>[39m
+              [0mMethod[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"_r_17_-label"[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+            [33mdata-slot[39m=[32m"toggle-group"[39m
+            [33mdir[39m=[32m"ltr"[39m
+            [33mid[39m=[32m"_r_17_-control"[39m
+            [33mrole[39m=[32m"radiogroup"[39m
+            [33mstyle[39m=[32m"outline: none;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-checked[39m=[32m"true"[39m
+              [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"toggle-group-item"[39m
+              [33mdata-state[39m=[32m"on"[39m
+              [33mrole[39m=[32m"radio"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mCash[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-checked[39m=[32m"false"[39m
+              [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"toggle-group-item"[39m
+              [33mdata-state[39m=[32m"off"[39m
+              [33mrole[39m=[32m"radio"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [36m<svg[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"lucide lucide-check hidden group-data-on/chip:block"[39m
+                [33mfill[39m=[32m"none"[39m
+                [33mheight[39m=[32m"24"[39m
+                [33mstroke[39m=[32m"currentColor"[39m
+                [33mstroke-linecap[39m=[32m"round"[39m
+                [33mstroke-linejoin[39m=[32m"round"[39m
+                [33mstroke-width[39m=[32m"2"[39m
+                [33mviewBox[39m=[32m"0 0 24 24"[39m
+                [33mwidth[39m=[32m"24"[39m
+                [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+              [36m>[39m
+                [36m<path[39m
+                  [33md[39m=[32m"M20 6 9 17l-5-5"[39m
+                [36m/>[39m
+              [36m</svg>[39m
+              [0mTransfer[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33mclass[39m=[32m"text-body-sm"[39m
+      [36m>[39m
+        [0mPaid in full.[0m
+      [36m</p>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+      [33mdata-slot[39m=[32m"field"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+      [36m>[39m
+        [36m<label[39m
+          [33mclass[39m=[32m"text-label text-foreground"[39m
+          [33mfor[39m=[32m"_r_1a_-control"[39m
+          [33mid[39m=[32m"_r_1a_-label"[39m
+        [36m>[39m
+          [0mNote[0m
+        [36m</label>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<textarea[39m
+        [33mclass[39m=[32m"field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"[39m
+        [33mdata-slot[39m=[32m"textarea"[39m
+        [33mid[39m=[32m"_r_1a_-control"[39m
+        [33mname[39m=[32m"note"[39m
+      [36m/>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"[39m
+      [33mdata-slot[39m=[32m"dialog-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"submit"[39m
+      [36m>[39m
+        [0mRecord ⁨₪25⁩[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</form>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/desk/components/uncollected/UncollectedCard.component.test.tsx:106:27
+    104|     await user.click(collect as HTMLElement);
+    105|     const dialog = await screen.findByRole('dialog');
+    106|     expect(within(dialog).getByText('Optional')).toBeVisible();
+       |                           ^
+    107|   });
+    108| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/uncollected

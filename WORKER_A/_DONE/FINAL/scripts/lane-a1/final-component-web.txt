@@ -1,0 +1,109 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/web
+
+ ❯ |component| src/pages/site/routes.component.test.tsx (13 tests | 1 failed) 16722ms
+   ❯ the site's routes (13)
+     × shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search 5292ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (62 tests | 1 failed) 64797ms
+   ❯ the dashboard's navigation (6)
+     × lists the owner’s eleven pages, the overview marked as the page shown 3167ms
+Not implemented: navigation to another Document
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (4 tests | 1 failed) 13569ms
+   ❯ PaymentsLedger (4)
+     × applies a period once its second day is chosen, the earlier first; a new click starts afresh 5300ms
+ ❯ |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx (3 tests | 2 failed) 7525ms
+   ❯ AnnouncementSheet (3)
+     × focuses the checked type first, says a closure’s line, and previews the space’s page; axe-clean 5212ms
+     × previews any other type as the page’s item, with its type 478ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the owner’s eleven pages, the overview marked as the page shown
+TestingLibraryElementError: Unable to find role="navigation" and name "Space dashboard"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ pagesIn src/pages/dashboard/routes.component.test.tsx:149:28
+    147| /** The names of the pages a sidebar lists, in order: its first list (…
+    148| async function pagesIn(navigation: string) {
+    149|   const nav = await screen.findByRole('navigation', { name: navigation…
+       |                            ^
+    150|   const [pages] = within(nav).getAllByRole('list');
+    151|   return pages
+ ❯ src/pages/dashboard/routes.component.test.tsx:193:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/site/routes.component.test.tsx:206:5
+    204|     [1440, 'from 768 px a breadcrumb back to the Directory with its la…
+    205|     [390, 'below it a back link'],
+    206|   ])('shows a space’s page titled by its name; at %i, %s', async (widt…
+       |     ^
+    207|     stubScreenWidth(width);
+    208|     fakeTransport((request) =>
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx > AnnouncementSheet > focuses the checked type first, says a closure’s line, and previews the space’s page; axe-clean
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx:42:3
+     40|
+     41| describe('AnnouncementSheet', () => {
+     42|   it('focuses the checked type first, says a closure’s line, and previ…
+       |   ^
+     43|     stubScreenWidth(390);
+     44|     renderSheet({ mode: 'new', type: 'CLOSURE' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx > AnnouncementSheet > previews any other type as the page’s item, with its type
+Unknown Error: Axe is already running. Use `await axe.run()` to wait for the previous run to finish before starting a new run.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > applies a period once its second day is chosen, the earlier first; a new click starts afresh
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:133:3
+    131|   });
+    132|
+    133|   it('applies a period once its second day is chosen, the earlier firs…
+       |   ^
+    134|     stubScreenWidth(1440);
+    135|     vi.useFakeTimers({ shouldAdvanceTime: true, toFake: ['Date'] });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  4 failed | 296 passed (300)
+      Tests  5 failed | 1739 passed (1744)
+   Start at  15:03:18
+   Duration  772.60s (environment 35%, import 31%, tests 21%, setup 11%, transform 2%)
+
+Environment  |component| jsdom was created 300 times · 1544.39s total, 35% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component

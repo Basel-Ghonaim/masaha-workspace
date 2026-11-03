@@ -1,0 +1,25 @@
+9: RED exit 1 — ['× reads a page and its totals, the query as its parameters 14ms', 'FAIL  |unit| src/features/payments/repository/paymentsRepository.unit.test.ts > the payments repository > reads a page and its totals, the query as its parameters']
+10: RED exit 1 — ['× drops half a range, an inverted one and one of 93 days, and keeps 92 8ms', 'FAIL  |unit| src/features/payments/services/ledgerQueryOf.unit.test.ts > ledgerQueryOf > drops half a range, an inverted one and one of 93 days, and keeps 92']
+11: RED exit 1 — ['× says one day with its year 28ms', '× says a range in a month, across months and across years 3ms', '× keeps each date’s own day, whatever the browser’s zone 1ms']
+12: RED exit 1 — ['× marks a voided one with its badge and who voided it and why 7ms', 'FAIL  |unit| src/features/payments/services/paymentRowView.unit.test.ts > paymentRowView > marks a voided one with its badge and who voided it and why']
+13: RED exit 1 — ['× clears the range, the staff member, the method, the kind and «Show voided» together 9ms', 'FAIL  |component| src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx > useLedgerFilters > clears the range, the staff member, the method, the kind and «Show voided» together']
+14: RED exit 1 — ['× says the server’s totals, its period first, never a sum of the rows; a voided one is never received 114ms', 'FAIL  |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx > useLedger > says the server’s totals, its period first, never a sum of the rows; a voided one is never received']
+15: RED exit 1 — ['× is empty today with no filter, and no match with «Clear filters» under one 3141ms', 'FAIL  |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx > useLedger > is empty today with no filter, and no match with «Clear filters» under one']
+16: RED exit 1 — ['× offers all, the owner «(you)» first, the reception accounts, a deactivated one marked; one chosen sends `recordedById` 122ms', 'FAIL  |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx > useLedger > offers all, the owner «(you)» first, the reception accounts, a deactivated one marked; one chosen sends `recordedById`']
+17: RED exit 1 — ['× draws five columns and the filters in a row from 768 px; axe-clean at 1440 446ms', 'FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > draws five columns and the filters in a row from 768 px; axe-clean at 1440']
+18: RED exit 1 — ['× gives the focus to the next row’s action when the focused row leaves, else to the totals line 3380ms', 'FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > gives the focus to the next row’s action when the focused row leaves, else to the totals line']
+19: RED exit 1 — ['× names the reception accounts, a deactivated one marked, from the staff list’s one request 100ms', 'FAIL  |component| src/features/staff/hooks/people/useStaffPeople.component.test.tsx > useStaffPeople > names the reception accounts, a deactivated one marked, from the staff list’s one request']
+20a: RED exit 1 — ['× shows the owner the ledger under «Payments», each customer a link to their file 4476ms', "FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows the owner the ledger under «Payments», each customer a link to their file"]
+git status after restore:
+ M src/features/staff/index.ts
+ M src/pages/dashboard/routes.component.test.tsx
+ M src/pages/dashboard/routes.tsx
+ M src/shared/copy/arabic/index.ts
+ M src/shared/copy/english/index.ts
+?? src/features/payments/
+?? src/features/staff/hooks/people/
+?? src/pages/dashboard/space/payments/
+?? src/shared/copy/arabic/payments.ts
+?? src/shared/copy/english/payments.ts
+?? src/test/paymentRow.ts
+

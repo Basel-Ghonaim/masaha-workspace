@@ -1,0 +1,5 @@
+          if (await occupancy.isPresent(space.id, customerId, tx)) {
+            throw AppError.conflict('MEMBER_ALREADY_CHECKED_IN');
+          }
+        }
+        const visit

@@ -1,0 +1,161 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/overview/components/owner
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx (9 tests | 1 failed) 5233ms
+   ❯ OwnerOverview (9)
+     × says a stale group’s days with the right plural (2 → «قبل يومين») 254ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  15:07:16
+   Duration  32.36s (import 31%, transform 29%, environment 17%, tests 17%, setup 7%)
+
+  Transform  |component| transforming modules took 8.99s · 29% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx > OwnerOverview > says a stale group’s days with the right plural (2 → «قبل يومين»)
+TestingLibraryElementError: Unable to find an element with the text: آخر تحديث قبل يومين. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"_r_6_"[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+  [33mrole[39m=[32m"region"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"card-title"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mid[39m=[32m"_r_6_"[39m
+      [36m>[39m
+        [0mيحتاج انتباهك[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-3 px-(--card-padding)"[39m
+    [33mdata-slot[39m=[32m"card-content"[39m
+  [36m>[39m
+    [36m<ul[39m
+      [33mclass[39m=[32m"flex flex-col divide-y"[39m
+    [36m>[39m
+      [36m<li[39m
+        [33mclass[39m=[32m"flex flex-col gap-2 py-3 first:pt-0 last:pb-0 md:flex-row md:items-center md:justify-between md:gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-label"[39m
+          [36m>[39m
+            [0mساعات العمل[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-warning-subtle text-warning-subtle-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"warning"[39m
+            [36m>[39m
+              [0mلم تُضف بعد[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mلم يُحفظ هذا القسم بعد، فلا يراه الزوار.[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) self-start md:self-center"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mhref[39m=[32m"/profile#hours"[39m
+        [36m>[39m
+          [0mمراجعة[0m
+        [36m</a>[39m
+      [36m</li>[39m
+      [36m<li[39m
+        [33mclass[39m=[32m"flex flex-col gap-2 py-3 first:pt-0 last:pb-0 md:flex-row md:items-center md:justify-between md:gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-label"[39m
+          [36m>[39m
+            [0mالأسعار[0m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-warning-subtle text-warning-subtle-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"warning"[39m
+            [36m>[39m
+              [0mقديمة[0m
+            [36m</span>[39m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mآخر تحديث قبل 2 يوم[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) self-start md:self-center"[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mhref[39m=[32m"/packages#prices"[39m
+        [36m>[39m
+          [0mمراجعة[0m
+        [36m</a>[39m
+      [36m</li>[39m
+      [36m<li[39m
+        [33mclass[39m=[32m"flex flex-col gap-2 py-3 first:pt-0 last:pb-0 md:flex-row md:items-center md:justify-between md:gap-4"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"flex flex-wrap items-center gap-2 text-label"[39m
+          [36m>[39m
+            [0m3 بلاغات جديدة[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+          [36m>[39m
+            [0mمن زوار، عن معلومات في صفحة المساحة[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) self-start md:self-cent...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/overview/components/owner/OwnerOverview.component.test.tsx:144:25
+    142|
+    143|     const card = await screen.findByRole('region', { name: 'يحتاج انتب…
+    144|     expect(within(card).getByText('آخر تحديث قبل يومين')).toBeInTheDoc…
+       |                         ^
+    145|   });
+    146|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/overview/components/owner

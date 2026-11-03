@@ -1,0 +1,183 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/components/card
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/directory/components/card/SpaceCard.component.test.tsx (2 tests | 1 failed) 151ms
+   ❯ SpaceCard (2)
+     × stands its action beside the card’s link, never inside it: one link, one button; axe-clean 117ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/components/card/SpaceCard.component.test.tsx > SpaceCard > stands its action beside the card’s link, never inside it: one link, one button; axe-clean
+TestingLibraryElementError: Found multiple elements with the role "button" and name "Save Masaha Hub"
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33mtype[39m=[32m"button"[39m
+[36m>[39m
+  [0mSave Masaha Hub[0m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33mtype[39m=[32m"button"[39m
+[36m>[39m
+  [0mSave Masaha Hub[0m
+[36m</button>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"relative h-full"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33maria-describedby[39m=[32m"_r_1_-area _r_1_-status _r_1_-verified _r_1_-today"[39m
+        [33maria-labelledby[39m=[32m"_r_0_"[39m
+        [33mclass[39m=[32m"block h-full rounded-lg text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mhref[39m=[32m"/spaces/masaha-hub"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-(--card-padding) rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg h-full overflow-hidden pt-0 hover:bg-accent"[39m
+          [33mdata-slot[39m=[32m"card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"relative flex aspect-2/1 w-full items-center justify-center overflow-hidden bg-muted md:aspect-video"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33maria-hidden[39m=[32m"true"[39m
+              [33mclass[39m=[32m"flex size-16 items-center justify-center rounded-xl bg-primary text-heading-1 text-primary-foreground"[39m
+            [36m>[39m
+              [0mM[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<button[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mSave Masaha Hub[0m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+            [33mdata-slot[39m=[32m"card-header"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-heading-3"[39m
+              [33mdata-slot[39m=[32m"card-title"[39m
+            [36m>[39m
+              [36m<h3[39m
+                [33mid[39m=[32m"_r_0_"[39m
+              [36m>[39m
+                [36m<span>[39m
+                  [0mMasaha Hub[0m
+                [36m</span>[39m
+              [36m</h3>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [33mdata-slot[39m=[32m"card-description"[39m
+              [33mid[39m=[32m"_r_1_-area"[39m
+            [36m>[39m
+              [0mAl-Rimal[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"px-(--card-padding) flex flex-col gap-2"[39m
+            [33mdata-slot[39m=[32m"card-content"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+                [33mdata-slot[39m=[32m"badge"[39m
+                [33mdata-variant[39m=[32m"success"[39m
+                [33mid[39m=[32m"_r_1_-status"[39m
+              [36m>[39m
+                [0mAvailable[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"flex items-center gap-1 text-body-sm text-primary"[39m
+                [33mid[39m=[32m"_r_1_-verified"[39m
+              [36m>[39m
+                [36m<svg[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33mclass[39m=[32m"lucide lucide-circle-check lucide-check-circle-2 size-4"[39m
+                  [33mfill[39m=[32m"none"[39m
+                  [33mheight[39m=[32m"24"[39m
+                  [33mstroke[39m=[32m"currentColor"[39m
+                  [33mstroke-linecap[39m=[32m"round"[39m
+                  [33mstroke-linejoin[39m=[32m"round"[39m
+                  [33mstroke-width[39m=[32m"2"[39m
+                  [33mviewBox[39m=[32m"0 0 24 24"[39m
+                  [33mwidth[39m=[32m"24"[39m
+                  [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                [36m>[39m
+                  [36m<circle[39m
+                    [33mcx[39m=[32m"12"[39m
+                    [33mcy[39m=[32m"12"[39m
+                    [33mr[39m=[32m"10"[39m
+                  [36m/>[39m
+                  [36m<path[39m
+                    [33md[39m=[32m"m16 9-5.5 5.5L8 12"[39m
+                  [36m/>[39m
+                [36m</svg>[39m
+                [0mVerified[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+              [33mid[39m=[32m"_r_1_-today"[39m
+            [36m>[39m
+              [0mOpen today 08:00–22:00[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"absolute end-3 top-3"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mSave Masaha Hub[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError ../../node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError ../../node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/directory/components/card/SpaceCard.component.test.tsx:41:27
+     39|
+     40|     const link = screen.getByRole('link', { name: 'Masaha Hub' });
+     41|     const button = screen.getByRole('button', { name: 'Save Masaha Hub…
+       |                           ^
+     42|     expect(screen.getAllByRole('link')).toHaveLength(1);
+     43|     expect(link).not.toContainElement(button);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  13:20:23
+   Duration  4.92s (environment 30%, import 30%, transform 29%, setup 8%, tests 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/components/card

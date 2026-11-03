@@ -1,0 +1,53 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/file
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/file/CustomerFile.component.test.tsx (5 tests | 1 failed) 2037ms
+   ❯ CustomerFile (5)
+     × says «Here since {time}», info, while present; «only visits» with its icon only with no unpaid visit 61ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  14:02:39
+   Duration  14.04s (transform 38%, import 26%, environment 17%, tests 15%, setup 5%)
+
+  Transform  |component| transforming modules took 5.17s · 38% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/file/CustomerFile.component.test.tsx > CustomerFile > says «Here since {time}», info, while present; «only visits» with its icon only with no unpaid visit
+AssertionError: expected <p …(1)></p> to be null
+
+- Expected:
+null
+
++ Received:
+<p
+  class="max-w-sm text-body-sm text-muted-foreground"
+>
+  This customer only comes for visits.
+</p>
+
+ ❯ src/features/desk/components/file/CustomerFile.component.test.tsx:273:72
+    271|     expect(here).toHaveAttribute('data-variant', 'info');
+    272|     // It has unpaid visits: it does not come for visits alone, as far…
+    273|     expect(screen.queryByText('This customer only comes for visits.'))…
+       |                                                                        ^
+    274|     first.unmount();
+    275|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/file

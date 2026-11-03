@@ -1,0 +1,194 @@
+@@@ apps/web/src/shared/copy/english/status.ts
+<<<
+    description: 'This page isn’t available to your account.',
+  },
+===
+    description: 'This page isn’t available to your account.',
+    /** The bare 403's line before its ways on («Home», «Contact us»), outside any shell. */
+    mistake: 'If you think this is a mistake, contact us.',
+  },
+>>>
+<<<
+  stillOffline: 'Still no connection.',
+===
+  stillOffline: 'Still no connection.',
+  /** Said under the buttons when the general error comes back after a retry. */
+  stillFailing: 'The error is still there. Try again in a little while.',
+>>>
+@@@ apps/web/src/shared/copy/arabic/status.ts
+<<<
+    description: 'هذه الصفحة غير متاحة لحسابك.',
+  },
+===
+    description: 'هذه الصفحة غير متاحة لحسابك.',
+    mistake: 'إن كنت تظن أن هذا خطأ، تواصل معنا.',
+  },
+>>>
+<<<
+  stillOffline: 'ما زال الاتصال مفقودًا.',
+===
+  stillOffline: 'ما زال الاتصال مفقودًا.',
+  stillFailing: 'ما زال الخطأ قائمًا. حاول بعد قليل.',
+>>>
+@@@ apps/web/src/shared/routing/states/RetryState.tsx
+<<<
+export function RetryState({
+  kind,
+  onRetry,
+  children,
+}: {
+  kind: 'offline' | 'error';
+  onRetry: () => void;
+  children?: ReactNode;
+}) {
+===
+export function RetryState({
+  kind,
+  onRetry,
+  again = false,
+  children,
+}: {
+  kind: 'offline' | 'error';
+  onRetry: () => void;
+  /** The general error came back after a retry: «ما زال الخطأ قائمًا. حاول بعد قليل.» */
+  again?: boolean;
+  children?: ReactNode;
+}) {
+>>>
+<<<
+        {stillOffline ? copy.status.stillOffline : null}
+===
+        {stillOffline ? copy.status.stillOffline : again ? copy.status.stillFailing : null}
+>>>
+@@@ apps/web/src/shared/routing/states/RouteErrorState.tsx
+<<<
+import type { ReactNode } from 'react';
+import { useRouteError } from 'react-router';
+import { classifyRouteError } from './classifyRouteError';
+import { reloadPage } from './reloadPage';
+import { RetryState } from './RetryState';
+
+/**
+ * A route's error boundary: offline when the page's code could not arrive or the connection is
+ * gone, the general error otherwise. "Try again" reloads the page; offline, so does the connection
+ * coming back. `children` are the shell's other ways on, after "Try again".
+ */
+export function RouteErrorState({ children }: { children?: ReactNode }) {
+  return (
+    <RetryState kind={classifyRouteError(useRouteError(), navigator.onLine)} onRetry={reloadPage}>
+      {children}
+    </RetryState>
+  );
+}
+===
+import type { ReactNode } from 'react';
+import { useLocation, useRevalidator, useRouteError } from 'react-router';
+import { classifyRouteError } from './classifyRouteError';
+import { reloadPage } from './reloadPage';
+import { RetryState } from './RetryState';
+
+// The page a retry of the general error ran again (its location's key): the boundary is mounted
+// anew when the error comes back, so what it remembers lives outside it.
+let retried: string | null = null;
+
+/**
+ * A route's error boundary: offline when the page's code could not arrive or the connection is
+ * gone, the general error otherwise. Offline, "Try again" reloads the page (a failed lazy load is
+ * kept by the router, so only a fresh page fetches the code again), and so does the connection
+ * coming back; for the general error it runs the route again in place, and a second failure in a
+ * row says «ما زال الخطأ قائمًا. حاول بعد قليل.» (G8.1). `children` are the shell's other ways on,
+ * after "Try again".
+ */
+export function RouteErrorState({ children }: { children?: ReactNode }) {
+  const kind = classifyRouteError(useRouteError(), navigator.onLine);
+  const { key } = useLocation();
+  const revalidator = useRevalidator();
+  const again = kind === 'error' && retried === key;
+
+  return (
+    <RetryState
+      kind={kind}
+      again={again}
+      onRetry={
+        kind === 'offline'
+          ? reloadPage
+          : () => {
+              retried = key;
+              void revalidator.revalidate();
+            }
+      }
+    >
+      {children}
+    </RetryState>
+  );
+}
+>>>
+@@@ apps/web/src/shared/routing/states/ForbiddenState.tsx
+<<<
+import { useCopy } from '@shared/copy';
+import { EmptyState, LockIcon } from '@shared/design-system';
+import type { ReactNode } from 'react';
+import { StatusPage } from './StatusPage';
+
+/**
+ * A signed-in user on a page their account may not open: a clear 403, never a silent redirect
+ * (docs/frontend/architecture.md §2). Each domain may give its own way on, as `children`.
+ */
+export function ForbiddenState({ children }: { children?: ReactNode }) {
+  const copy = useCopy();
+===
+import { useCopy } from '@shared/copy';
+import { Button, EmptyState, LockIcon } from '@shared/design-system';
+import type { ReactNode } from 'react';
+import { Link } from 'react-router';
+import { StatusPage } from './StatusPage';
+
+// The site's home and About's contact section: where the bare 403 leads, outside any shell.
+const HOME_PATH = '/';
+const CONTACT_PATH = '/about#contact';
+
+/**
+ * A signed-in user on a page their account may not open: a clear 403, never a silent redirect
+ * (docs/frontend/architecture.md §2). Each domain may give its own way on, as `children`. Outside
+ * any shell (`bare`, the admin's area to another role), it says «إن كنت تظن أن هذا خطأ، تواصل معنا.»
+ * with «الرئيسية» and «تواصل معنا» (DI21); inside one, its navigation is the way on.
+ */
+export function ForbiddenState({ bare = false, children }: { bare?: boolean; children?: ReactNode }) {
+  const copy = useCopy();
+>>>
+<<<
+        description={copy.status.forbidden.description}
+      >
+        {children}
+      </EmptyState>
+===
+        description={copy.status.forbidden.description}
+      >
+        {bare && (
+          <>
+            <p className="text-body-sm text-muted-foreground">{copy.status.forbidden.mistake}</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button asChild>
+                <Link to={HOME_PATH}>{copy.site.links.home}</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link to={CONTACT_PATH}>{copy.site.contact}</Link>
+              </Button>
+            </div>
+          </>
+        )}
+        {children}
+      </EmptyState>
+>>>
+@@@ apps/web/src/shared/routing/guards/RequireRole.tsx
+<<<
+ * signed-in user with another role sees the 403 state. The server still refuses what this hides.
+===
+ * signed-in user with another role sees the 403 state, outside any shell, with its ways on. The
+ * server still refuses what this hides.
+>>>
+<<<
+    return roles.includes(session.user.role) ? children : <ForbiddenState />;
+===
+    return roles.includes(session.user.role) ? children : <ForbiddenState bare />;
+>>>

@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/subscriptions/closures/extension.api.test.ts (15 tests | 1 failed | 14 skipped) 965ms
+   ❯ the extension (8)
+     × a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure, or another space's, is a conflict 651ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/subscriptions/closures/extension.api.test.ts > the extension > a retry with the same key answers the first, 201, moving nothing twice; another key is CLOSURE_ALREADY_EXTENDED; a key that extended another closure, or another space's, is a conflict
+AssertionError: expected 201 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 201
+
+ ❯ src/modules/subscriptions/closures/extension.api.test.ts:323:28
+    321|     const otherOwner = await signInOwnerOf(otherSpaceId);
+    322|     const crossed = await extend(otherOwner, id, { days: 4 }, key, oth…
+    323|     expect(crossed.status).toBe(409);
+       |                            ^
+    324|     expect(errorOf(crossed)).toMatchObject({ type: 'conflict' });
+    325|     expect(errorOf(crossed).code).toBeUndefined();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 skipped (15)
+   Start at  13:55:48
+   Duration  8.72s (transform 50%, import 30%, tests 18%, setup 3%)
+

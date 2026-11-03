@@ -1,0 +1,77 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+Not implemented: navigation to another Document
+ ❯ |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx (3 tests | 1 failed) 8591ms
+   ❯ AnnouncementSheet (3)
+     × focuses the checked type first, says a closure’s line, and previews the space’s page; axe-clean 5346ms
+ ❯ |component| src/features/space-settings/components/SpaceSettingsCards.component.test.tsx (3 tests | 1 failed) 6389ms
+   ❯ SpaceSettingsCards (3)
+     × titles each card, marks one changed as unsaved with its discard, and has no axe violations 5078ms
+ ❯ |component| src/pages/site/account/AccountLayout.component.test.tsx (3 tests | 1 failed) 9728ms
+   ❯ AccountLayout (3)
+     × names its navigation «My account» and marks the page open as current; axe-clean 5318ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-settings/components/SpaceSettingsCards.component.test.tsx > SpaceSettingsCards > titles each card, marks one changed as unsaved with its discard, and has no axe violations
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/space-settings/components/SpaceSettingsCards.component.test.tsx:62:3
+     60|
+     61| describe('SpaceSettingsCards', () => {
+     62|   it('titles each card, marks one changed as unsaved with its discard,…
+       |   ^
+     63|     const { user } = renderCards(() => ok(SETTINGS));
+     64|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > names its navigation «My account» and marks the page open as current; axe-clean
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/pages/site/account/AccountLayout.component.test.tsx:45:3
+     43|
+     44| describe('AccountLayout', () => {
+     45|   it('names its navigation «My account» and marks the page open as cur…
+       |   ^
+     46|     establishSession(aSession(), { source: 'signIn' });
+     47|     const { container } = renderSiteAt('/me/reports');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx > AnnouncementSheet > focuses the checked type first, says a closure’s line, and previews the space’s page; axe-clean
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx:42:3
+     40|
+     41| describe('AnnouncementSheet', () => {
+     42|   it('focuses the checked type first, says a closure’s line, and previ…
+       |   ^
+     43|     stubScreenWidth(390);
+     44|     renderSheet({ mode: 'new', type: 'CLOSURE' });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  3 failed | 325 passed (328)
+      Tests  3 failed | 1877 passed (1880)
+   Start at  14:15:58
+   Duration  646.19s (environment 34%, import 32%, tests 20%, setup 10%, transform 3%)
+
+Environment  |component| jsdom was created 328 times · 1265.27s total, 34% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component
+exit 1

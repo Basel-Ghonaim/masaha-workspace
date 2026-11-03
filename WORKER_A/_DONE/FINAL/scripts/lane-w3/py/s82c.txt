@@ -1,0 +1,48 @@
+<<<OLD
+import { useCopy } from '@shared/copy';
+import { useRefusalView } from '@shared/forms';
+import { clockOf, dayText, dayWord, priceText } from '@shared/lib';
+===
+import { fillReminder } from '@masaha/shared/space-settings';
+import { useCopy } from '@shared/copy';
+import { useRefusalView } from '@shared/forms';
+import { clockOf, dayText, dayWord, priceText, whatsappLink } from '@shared/lib';
+>>>
+<<<OLD
+ * payment dialog at a time, opened on the item the control named.
+ */
+export function useCustomerFile(spaceId: number, customerId: number) {
+===
+ * payment dialog at a time, opened on the item the control named. While they owe and have a phone,
+ * «تذكير على واتساب» — a link to WhatsApp with the space's reminder (`reminderTemplate`, else the
+ * catalogue's) filled with what they owe, their first name and `spaceName` (D8.2).
+ */
+export function useCustomerFile(
+  spaceId: number,
+  customerId: number,
+  { spaceName }: { spaceName: string },
+) {
+>>>
+<<<OLD
+            archived: file.customer.archivedAt === null ? null : words.archived,
+          },
+===
+            archived: file.customer.archivedAt === null ? null : words.archived,
+            reminder:
+              file.debtAgorot > 0 && file.customer.phone !== null
+                ? {
+                    label: words.reminder.label,
+                    caption: words.reminder.caption,
+                    href: whatsappLink(
+                      file.customer.phone,
+                      fillReminder(file.reminderTemplate ?? copy.spaceSettings.reminder.defaultText, {
+                        // The customer is greeted by their first name.
+                        name: file.customer.name.trim().split(/\s+/u)[0] ?? file.customer.name,
+                        amount: priceText(file.debtAgorot, language),
+                        space: spaceName,
+                      }),
+                    ),
+                  }
+                : null,
+          },
+>>>

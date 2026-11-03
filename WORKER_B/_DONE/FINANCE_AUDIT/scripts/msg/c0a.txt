@@ -1,0 +1,15 @@
+fix(subscriptions): move unstarted renewals too
+
+A closure's extension moved only the ends of the subscriptions it covered.
+A renewal starts the day after the end it renews, so a renewal sold
+before the extension was overrun by the moved end and the customer's
+compensated days ran beside it (finding 151, #123's review).
+
+The owner chose option A: the extension also moves each covered
+subscription's renewal chain that has not started, start and end, by the
+same days. The chain is read by one recursive query beside the covered
+fragment and locked with the covered rows in one statement by id, under
+the space's lock. Each renewal is linked to the extension, the preview
+counts it, and the audit entry names the renewals apart (renewalIds).
+
+Finding 151 is written and resolved here.

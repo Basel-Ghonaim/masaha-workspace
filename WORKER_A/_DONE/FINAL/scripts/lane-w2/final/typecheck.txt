@@ -1,0 +1,27 @@
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+src/db/subscriptions.api.test.ts(299,49): error TS2353: Object literal may only specify known properties, and 'publishedPeriod' does not exist in type 'Partial<SubscriptionUncheckedCreateInput>'.
+src/db/subscriptions.api.test.ts(302,49): error TS2353: Object literal may only specify known properties, and 'publishedPeriod' does not exist in type 'Partial<SubscriptionUncheckedCreateInput>'.
+src/db/subscriptions.api.test.ts(306,61): error TS2353: Object literal may only specify known properties, and 'publishedPeriod' does not exist in type 'Partial<SubscriptionUncheckedCreateInput>'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path C:\dev\masaha\app-lane-w2\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+

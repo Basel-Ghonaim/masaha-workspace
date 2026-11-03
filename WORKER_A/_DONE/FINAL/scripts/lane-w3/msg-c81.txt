@@ -1,0 +1,11 @@
+feat(desk): offer a customer's actions by state
+
+A customer's row in the list and their file's header offered only the
+«⋯» (G14.2, G15.1, G15.7; DK-013). Their actions by their state now
+come first: present, «خروج»; else on a running subscription, «حضور»;
+owing, «استلام {amount}» on the oldest owing item, the payment dialog
+naming it (DI32: a payment pays one item); ending soon or expired,
+«تجديد». The list's row knows neither presence nor what each item
+owes, so its «⋯» reads the customer's file once it opens; the file's
+header draws them as buttons, the first primary. The file's cards
+offer «تجديد» only while the latest ends soon or has expired.

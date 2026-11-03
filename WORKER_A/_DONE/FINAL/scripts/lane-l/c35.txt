@@ -1,0 +1,15 @@
+feat(lists): show a list's range and its steps
+
+The design's lists say which records a page shows under the table
+(«عرض 1–20 من 312», GX.1), and a short list keeps its page steps with
+Previous and Next unavailable (P6). shared/lists gains rangeSummary,
+from a page's meta and the forms' new listRange words, the range and
+the total each isolated so they read left to right in Arabic too; the
+lists pass it to their DataTable's summary in their own commits.
+
+paginationView now answers a view for a list of one page. The
+announcements keep their steps only past one page (DI-26) by passing
+onlyPastOne. The directory's and the admin's spaces lists' tests said
+a single page has no steps; they now prove its steps unavailable, and
+two tests that counted a list's items (the admin's spaces, my reports)
+count its cards, not the page steps under them.

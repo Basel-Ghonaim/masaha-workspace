@@ -1,0 +1,15 @@
+feat(web): skip to the content in every shell
+
+Only the site's shell had a skip link and moved the focus on a page
+change (finding 130). The skip link and the focus rule move to
+shared/routing, and every shell uses them: the site's, the focus
+shell and the dashboard's (the link before the sidebar), each `main`
+`id="main"` and focusable.
+
+The rule: the document's first page keeps the focus where the browser
+leaves it, however it arrived — a guard's replace on load included,
+told apart from a person's by no press or key since the history began;
+after it, every change of path focuses `main`, Back and Forward
+included; a hash that names an element on the page focuses it, also
+when only the hash changes (the owner's carried item 1: «/about#owners»
+lands on its section); the search alone moves nothing.

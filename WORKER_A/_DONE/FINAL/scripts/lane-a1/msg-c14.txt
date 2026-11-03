@@ -1,0 +1,11 @@
+feat(auth): free an expired account's address
+
+An address held by an account whose temporary password expired unused
+stayed locked out until the admin acted (finding 91). Registering it,
+or a first Google sign-in at it, now replaces that account, in the new
+account's transaction, only when it never acted (no audit entry as its
+actor, no favourite, no data report) and holds no active owner link
+(S1): its reception link ends by the system, its sessions end, it is
+suspended, its address becomes replaced-{id}@replaced.invalid, and
+user.replaced is audited. auth orchestrates; whether a person acted is
+the audit reader's, a level above, passed in as a port.

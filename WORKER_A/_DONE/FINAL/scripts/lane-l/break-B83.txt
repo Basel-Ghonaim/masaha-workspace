@@ -1,0 +1,58 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/data/BarChart src/shared/design-system/components/data/Heatmap
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/data/BarChart/BarChart.component.test.tsx (4 tests | 1 failed) 445ms
+   ❯ BarChart (4)
+     × draws a legend only for more than one series 40ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 6 passed (7)
+   Start at  16:50:15
+   Duration  6.03s (environment 50%, import 26%, setup 14%, tests 8%, transform 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/data/BarChart/BarChart.component.test.tsx > BarChart > draws a legend only for more than one series
+AssertionError: expected <ul …(3)><li …(1)>…(1)</li></ul> to be null
+
+- Expected:
+null
+
++ Received:
+<ul
+  aria-hidden="true"
+  class="flex flex-wrap gap-4"
+  data-slot="bar-chart-legend"
+>
+  <li
+    class="flex items-center gap-2 text-caption text-muted-foreground"
+  >
+    <span
+      class="size-3 shrink-0 rounded-sm bg-chart-1"
+    />
+    Visits
+  </li>
+</ul>
+
+ ❯ src/shared/design-system/components/data/BarChart/BarChart.component.test.tsx:50:71
+     48|       />,
+     49|     );
+     50|     expect(container.querySelector('[data-slot="bar-chart-legend"]')).…
+       |                                                                       ^
+     51|   });
+     52|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/data/BarChart src/shared/design-system/components/data/Heatmap

@@ -1,0 +1,38 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/data-reports/repository
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts (4 tests | 1 failed) 17ms
+   ❯ the data reports repository (4)
+     × reads a page of the user’s own reports, the query as its parameters 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > reads a page of the user’s own reports, the query as its parameters
+TypeError: createDataReportsRepository(...).myReports is not a function
+ ❯ src/features/data-reports/repository/dataReportsRepository.unit.test.ts:70:48
+     68|     const query = { status: 'DECIDED' as const, page: 2, limit: 20 };
+     69|
+     70|     await expect(createDataReportsRepository().myReports(query)).resol…
+       |                                                ^
+     71|       data: [myReport()],
+     72|       meta: META,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:31:05
+   Duration  1.05s (import 56%, transform 41%, tests 2%, worker 1%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/data-reports/repository

@@ -1,0 +1,209 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/space-links/components/add-owner src/features/space-links/components/owners-list
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/space-links/components/owners-list/OwnersList.component.test.tsx (6 tests | 1 failed) 4891ms
+   ❯ OwnersList, from 1024 px (5)
+     × offers «Add owner» when there is no owner yet, the actions header read only 292ms
+ ❯ |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx (13 tests | 2 failed) 29027ms
+   ❯ AddOwner (13)
+     × ?sheet=add opens the add sheet, and closing it takes the address off 3037ms
+     × ACCOUNT_SUSPENDED links the users page searched by the email 5036ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx > AddOwner > ?sheet=add opens the add sheet, and closing it takes the address off
+TestingLibraryElementError: Unable to find role="dialog" and name "Add owner"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mAdd owner[0m
+    [36m</button>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [0mAdd owner[0m
+    [36m</button>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/space-links/components/add-owner/AddOwner.component.test.tsx:430:25
+    428|     const { router } = renderSheet({}, '/owners?sheet=add');
+    429|
+    430|     expect(await screen.findByRole('dialog', { name: 'Add owner' })).t…
+       |                         ^
+    431|     await userEvent.click(screen.getByRole('button', { name: 'Close' }…
+    432|     await waitFor(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/space-links/components/add-owner/AddOwner.component.test.tsx > AddOwner > ACCOUNT_SUSPENDED links the users page searched by the email
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/space-links/components/add-owner/AddOwner.component.test.tsx:438:3
+    436|   });
+    437|
+    438|   it('ACCOUNT_SUSPENDED links the users page searched by the email', a…
+       |   ^
+    439|     const { router } = renderSheet({
+    440|       add: () => refused(409, { type: 'conflict', code: 'ACCOUNT_SUSPE…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/space-links/components/owners-list/OwnersList.component.test.tsx > OwnersList, from 1024 px > offers «Add owner» when there is no owner yet, the actions header read only
+Error: [2mexpect([22m[31mreceived[39m[2m).toHaveClass()[22m
+
+[31mreceived[39m value must be an HTMLElement or an SVGElement.
+Received has type:  Null
+Received has value: [31mnull[39m
+ ❯ src/features/space-links/components/owners-list/OwnersList.component.test.tsx:178:85
+    176|
+    177|     expect(await screen.findByText('No space owners yet')).toBeInTheDo…
+    178|     expect(screen.getByRole('columnheader', { name: 'Actions' }).first…
+       |                                                                                     ^
+    179|       'sr-only',
+    180|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  3 failed | 16 passed (19)
+   Start at  10:00:14
+   Duration  50.54s (tests 45%, import 21%, transform 15%, environment 14%, setup 5%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/space-links/components/add-owner src/features/space-links/components/owners-list
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/space-links/services/userRowView
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |unit| src/features/space-links/services/userRowView.unit.test.ts (7 tests | 3 failed) 89ms
+   ❯ userRowView (7)
+     × words the role, how the account signs in, and when it joined: a user with a password 27ms
+     × words the role, how the account signs in, and when it joined: an owner with Google only 4ms
+     × words the role, how the account signs in, and when it joined: an admin with both 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/space-links/services/userRowView.unit.test.ts > userRowView > words the role, how the account signs in, and when it joined: a user with a password
+AssertionError: expected { id: 5, row: { id: 5, …(8) }, …(9) } to match object { role: 'User', …(2) }
+(19 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "joined": "1 Sept 2026",
++   "joined": "1 Sept",
+    "role": "User",
+    "signIn": "Password",
+  }
+
+ ❯ src/features/space-links/services/userRowView.unit.test.ts:57:41
+     55|       const row: AdminUserRow = { ...RIMA, ...facts, signIn: { ...fact…
+     56|
+     57|       expect(userRowView(row, english)).toMatchObject({
+       |                                         ^
+     58|         role: roleEn,
+     59|         signIn: signInEn,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |unit| src/features/space-links/services/userRowView.unit.test.ts > userRowView > words the role, how the account signs in, and when it joined: an owner with Google only
+AssertionError: expected { id: 5, row: { id: 5, …(8) }, …(9) } to match object { role: 'Owner', …(2) }
+(19 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "joined": "1 Sept 2026",
++   "joined": "1 Sept",
+    "role": "Owner",
+    "signIn": "Google",
+  }
+
+ ❯ src/features/space-links/services/userRowView.unit.test.ts:57:41
+     55|       const row: AdminUserRow = { ...RIMA, ...facts, signIn: { ...fact…
+     56|
+     57|       expect(userRowView(row, english)).toMatchObject({
+       |                                         ^
+     58|         role: roleEn,
+     59|         signIn: signInEn,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |unit| src/features/space-links/services/userRowView.unit.test.ts > userRowView > words the role, how the account signs in, and when it joined: an admin with both
+AssertionError: expected { id: 5, row: { id: 5, …(8) }, …(9) } to match object { role: 'Admin', …(2) }
+(19 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "joined": "1 Sept 2026",
++   "joined": "1 Sept",
+    "role": "Admin",
+    "signIn": "Password and Google",
+  }
+
+ ❯ src/features/space-links/services/userRowView.unit.test.ts:57:41
+     55|       const row: AdminUserRow = { ...RIMA, ...facts, signIn: { ...fact…
+     56|
+     57|       expect(userRowView(row, english)).toMatchObject({
+       |                                         ^
+     58|         role: roleEn,
+     59|         signIn: signInEn,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 4 passed (7)
+   Start at  10:01:09
+   Duration  2.66s (transform 81%, import 13%, tests 4%, worker 1%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/space-links/services/userRowView

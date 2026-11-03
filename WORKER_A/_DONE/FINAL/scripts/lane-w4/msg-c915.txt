@@ -1,0 +1,8 @@
+fix(favorites): show the list's line once ready
+
+The count, 'Nearest to me' and the location line showed while
+loading, after a failure and with nothing saved: they show only once
+the list holds a space. The empty state is a card with the primary
+'Browse spaces', which takes the focus when the last space that left
+goes. 'Choose your area' opens the Directory with its filters open
+(?filters=open), which then leaves the address (G10.1-G10.3, DI22).

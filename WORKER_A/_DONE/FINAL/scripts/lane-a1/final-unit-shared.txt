@@ -1,0 +1,16 @@
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/packages/shared
+
+
+ Test Files  28 passed (28)
+      Tests  272 passed (272)
+   Start at  15:02:07
+   Duration  4.82s (import 67%, transform 25%, tests 6%, worker 2%)
+
+    Isolate  28 workers spawned · ~742ms startup each (spawn + environment, per file)
+             at least ~1.15s faster with isolate: false — reuses workers across files instead of one per file
+

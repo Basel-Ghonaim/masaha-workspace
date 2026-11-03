@@ -1,0 +1,65 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/payments/services/periodText.unit.test.ts (4 tests | 3 failed) 36ms
+   ❯ periodText (4)
+     × says one day with its year 28ms
+     × says a range in a month, across months and across years 3ms
+     × keeps each date’s own day, whatever the browser’s zone 1ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  08:37:40
+   Duration  356ms (transform 39%, tests 34%, import 19%, worker 7%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/payments/services/periodText.unit.test.ts > periodText > says one day with its year
+AssertionError: expected '19 October 2026' to be '20 October 2026' // Object.is equality
+
+Expected: "20 October 2026"
+Received: "19 October 2026"
+
+ ❯ src/features/payments/services/periodText.unit.test.ts:16:86
+     14|
+     15|   it('says one day with its year', () => {
+     16|     expect(periodText({ from: '2026-10-20', to: '2026-10-20' }, 'en', …
+       |                                                                                      ^
+     17|       '20 October 2026',
+     18|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |unit| src/features/payments/services/periodText.unit.test.ts > periodText > says a range in a month, across months and across years
+AssertionError: expected '30 سبتمبر – 20 أكتوبر 2026' to be '1–21 أكتوبر 2026' // Object.is equality
+
+Expected: "1–21 أكتوبر 2026"
+Received: "30 سبتمبر – 20 أكتوبر 2026"
+
+ ❯ src/features/payments/services/periodText.unit.test.ts:25:86
+     23|
+     24|   it('says a range in a month, across months and across years', () => {
+     25|     expect(periodText({ from: '2026-10-01', to: '2026-10-21' }, 'ar', …
+       |                                                                                      ^
+     26|       '1–21 أكتوبر 2026',
+     27|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |unit| src/features/payments/services/periodText.unit.test.ts > periodText > keeps each date’s own day, whatever the browser’s zone
+AssertionError: expected '31 December 2025' to be '1 January 2026' // Object.is equality
+
+Expected: "1 January 2026"
+Received: "31 December 2025"
+
+ ❯ src/features/payments/services/periodText.unit.test.ts:38:86
+     36|   it('keeps each date’s own day, whatever the browser’s zone', () => {
+     37|     // The first of a month read in a zone west of UTC would be the la…
+     38|     expect(periodText({ from: '2026-01-01', to: '2026-01-01' }, 'en', …
+       |                                                                                      ^
+     39|       '1 January 2026',
+     40|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

@@ -1,0 +1,17 @@
+PASS health db up
+PASS owner reads the space's log (13 entries, SQL 13) 200 -
+PASS reception is refused 403 -
+PASS the directory owner on the demo space is not_found 404 -
+PASS admin reads the platform's events (17; every action on the list; off-list: none) 200 -
+     the admin's rows 17, SQL by the same list 17
+PASS admin sets space 1 hidden true 204 -
+PASS admin sets space 1 hidden false 204 -
+PASS admin sets space 10 hidden true 204 -
+PASS admin sets space 10 hidden false 204 -
+     the admin's new rows: [{"action":"space.unhidden","target":"Tuffah Place","space":10},{"action":"space.hidden","target":"Tuffah Place","space":10},{"action":"space.unhidden","target":"Demo Space","space":1},{"action":"space.hidden","target":"Demo Space","space":1}]
+PASS the admin's log shows the four, with names 200 -
+FAIL the owner's log shows the demo space's two, the actor MASAHA with no id or name 200 -
+PASS q=Demo Space finds them (2 entries) 200 -
+NOT PERFORMED the carried extension of a renewal chain: the demo space has no closure left unextended (its one closure, id 2, was extended by #123's run) and no renewal that starts after today; creating them through the app is a write the run may not make. Proven by T-C1–T-C4 (extension.api.test.ts).
+     writes: 1:true 1:false 10:true 10:false
+1 FAILED

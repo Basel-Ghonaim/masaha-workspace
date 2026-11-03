@@ -1,0 +1,53 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/data-reports
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |unit| src/features/data-reports/hooks/intent/reportIntent.unit.test.ts (0 test)
+ ❯ |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts (5 tests | 1 failed) 39ms
+   ❯ the data reports repository (5)
+     × sends a report to the space’s path: a 201 is a new one, a 200 a repeat 8ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/hooks/intent/reportIntent.unit.test.ts [ src/features/data-reports/hooks/intent/reportIntent.unit.test.ts ]
+Error: Cannot find module './reportIntent' imported from C:/dev/masaha/app-lane-c/apps/web/src/features/data-reports/hooks/intent/reportIntent.unit.test.ts
+ ❯ src/features/data-reports/hooks/intent/reportIntent.unit.test.ts:2:1
+      1| import { afterEach, describe, expect, it } from 'vitest';
+      2| import { dropReport, holdReport, takeReport } from './reportIntent';
+       | ^
+      3|
+      4| afterEach(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > sends a report to the space’s path: a 201 is a new one, a 200 a repeat
+TypeError: repository.report is not a function
+ ❯ src/features/data-reports/repository/dataReportsRepository.unit.test.ts:84:18
+     82|
+     83|     await expect(
+     84|       repository.report('masaha-hub', { field: 'OTHER', message: 'Clos…
+       |                  ^
+     85|     ).resolves.toEqual({ report: myReport(), repeated: false });
+     86|     status = 200;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 2 passed (4)
+      Tests  1 failed | 13 passed (14)
+   Start at  12:54:34
+   Duration  2.05s (transform 49%, import 47%, tests 2%, worker 1%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/data-reports

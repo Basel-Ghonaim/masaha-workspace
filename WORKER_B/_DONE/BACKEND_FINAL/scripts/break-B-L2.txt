@@ -1,0 +1,146 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/platform-settings/adminSettings.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/platform-settings/adminSettings.api.test.ts (12 tests | 3 failed) 2865ms
+   ❯ the admin's settings cards (12)
+     × each card saves on its own, answered as saved; audited with only what changed, no entity id; the same values write nothing 245ms
+     × saving a contact stored in another form stores its one form, audited from the stored to the saved 162ms
+     × two saves of one card at once: the second's before is the first's after 201ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 9 passed (12)
+   Start at  12:07:29
+   Duration  10.16s (tests 42%, transform 40%, import 15%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > each card saves on its own, answered as saved; audited with only what changed, no entity id; the same values write nothing
+AssertionError: expected [ { actorId: 1, …(6) }, …(2) ] to deeply equal [ { actorId: 1, …(6) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -2,30 +2,34 @@
+    {
+      "action": "platformSettings.newSpaceDefaultsEdited",
+      "actorId": 1,
+      "after": {
+        "autoCheckoutAtClosing": false,
++       "visitCapAtDayPrice": true,
+        "visitRounding": "PER_MINUTE",
+        "visitRoundingMinutes": null,
+      },
+      "before": {
+-       "autoCheckoutAtClosing": true,
+-       "visitRounding": "UP_AFTER_MINUTES",
+-       "visitRoundingMinutes": 15,
++       "autoCheckoutAtClosing": null,
++       "visitCapAtDayPrice": null,
++       "visitRounding": null,
++       "visitRoundingMinutes": null,
+      },
+      "entityId": null,
+      "entityType": "platformSettings",
+      "spaceId": null,
+    },
+    {
+      "action": "platformSettings.stalenessEdited",
+      "actorId": 1,
+      "after": {
++       "priceStalenessDays": 30,
+        "stalenessDays": 45,
+      },
+      "before": {
+-       "stalenessDays": 60,
++       "priceStalenessDays": null,
++       "stalenessDays": null,
+      },
+      "entityId": null,
+      "entityType": "platformSettings",
+      "spaceId": null,
+    },
+
+ ❯ src/modules/platform-settings/adminSettings.api.test.ts:103:34
+    101|     });
+    102|     const card3 = { actorId: admin.id, entityType: 'platformSettings',…
+    103|     expect(await auditEntries()).toEqual([
+       |                                  ^
+    104|       {
+    105|         ...card3,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > saving a contact stored in another form stores its one form, audited from the stored to the saved
+AssertionError: expected { email: 'Hello@Masaha.PS', …(1) } to deeply equal { email: 'hello@masaha.ps', …(1) }
+
+- Expected
++ Received
+
+  {
+-   "email": "hello@masaha.ps",
+-   "whatsapp": "+970591234567",
++   "email": "Hello@Masaha.PS",
++   "whatsapp": "+972591234567",
+  }
+
+ ❯ src/modules/platform-settings/adminSettings.api.test.ts:173:27
+    171|
+    172|     expect(saved.status).toBe(200);
+    173|     expect(dataOf(saved)).toEqual({ email: 'hello@masaha.ps', whatsapp…
+       |                           ^
+    174|     expect(await stored()).toMatchObject({
+    175|       contactEmail: 'hello@masaha.ps',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > two saves of one card at once: the second's before is the first's after
+AssertionError: expected [ { actorId: 1, …(6) } ] to match object [ { …(3) } ]
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -3,9 +3,9 @@
+      "action": "platformSettings.stalenessEdited",
+      "after": {
+        "stalenessDays": 45,
+      },
+      "before": {
+-       "stalenessDays": 50,
++       "stalenessDays": null,
+      },
+    },
+  ]
+
+ ❯ src/modules/platform-settings/adminSettings.api.test.ts:260:34
+    258|     expect(second.status).toBe(200);
+    259|     expect((await stored()).stalenessDays).toBe(45);
+    260|     expect(await auditEntries()).toMatchObject([
+       |                                  ^
+    261|       {
+    262|         action: 'platformSettings.stalenessEdited',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/platform-settings/adminSettings.api.test.ts

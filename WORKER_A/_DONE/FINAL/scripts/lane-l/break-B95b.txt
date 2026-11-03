@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/lists
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/lists/components/ListPagination.component.test.tsx (6 tests | 1 failed) 1136ms
+   ❯ ListPagination (6)
+     ❯ on a page with the app’s scroll restoration (2)
+       × keeps the scroll where it is when Next is followed 137ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  17:13:56
+   Duration  10.58s (import 33%, environment 28%, transform 19%, tests 11%, setup 9%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/lists/components/ListPagination.component.test.tsx > ListPagination > on a page with the app’s scroll restoration > keeps the scroll where it is when Next is followed
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      0,
+      0,
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/shared/lists/components/ListPagination.component.test.tsx:111:30
+    109|
+    110|         expect(router.state.location.search).toBe('?page=2');
+    111|         expect(scrollTo).not.toHaveBeenCalled();
+       |                              ^
+    112|       },
+    113|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/lists

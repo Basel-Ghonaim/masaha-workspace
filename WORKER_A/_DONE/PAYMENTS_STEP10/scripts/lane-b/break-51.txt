@@ -1,0 +1,253 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx (9 tests | 3 failed) 2107ms
+   ❯ useDecideSheet (9)
+     × words REPORT_ALREADY_DECIDED, reads the list again and takes no decision then 263ms
+     × shows a decided report read-only: its decision and its reply, or «No reply», no buttons 38ms
+     × words a report gone, and reads the list and the user’s spaces again 123ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 6 passed (9)
+   Start at  12:10:33
+   Duration  9.63s (transform 29%, tests 23%, import 22%, environment 21%, setup 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words REPORT_ALREADY_DECIDED, reads the list again and takes no decision then
+AssertionError: expected <button data-slot="button" …(2)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  class="inline-flex items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) flex-1"
+  data-slot="button"
+  type="button"
+>
+  Corrected
+</button>
+
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:168:65
+    166|     expect(await screen.findByRole('alert')).toHaveTextContent('This r…
+    167|     expect(keysOf(invalidated)).toEqual([['space', 7, 'dataReports']]);
+    168|     expect(screen.queryByRole('button', { name: 'Corrected' })).toBeNu…
+       |                                                                 ^
+    169|     expect(screen.queryByRole('button', { name: 'Not accepted' })).toB…
+    170|     expect(screen.queryByRole('textbox')).toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > shows a decided report read-only: its decision and its reply, or «No reply», no buttons
+TestingLibraryElementError: Found multiple elements with the text: Not accepted
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<span[39m
+  [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+  [33mdata-slot[39m=[32m"badge"[39m
+  [33mdata-variant[39m=[32m"neutral"[39m
+[36m>[39m
+  [0mNot accepted[0m
+[36m</span>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) flex-1"[39m
+  [33mdata-slot[39m=[32m"button"[39m
+  [33mtype[39m=[32m"button"[39m
+[36m>[39m
+  [0mNot accepted[0m
+[36m</button>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_i_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_h_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_g_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_h_"[39m
+    [36m>[39m
+      [0mReport about Opening hours[0m
+    [36m</h2>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_i_"[39m
+      [36m>[39m
+        [0mA visitor · 21 October[0m
+      [36m</p>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"neutral"[39m
+      [36m>[39m
+        [0mNot accepted[0m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe report[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mThe space opens at 9, not 8.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/dashboard/spaces/7/profile#hours"[39m
+      [36m>[39m
+        [0mEdit the field[0m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M5 12h14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m12 5 7 7-7 7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-info bg-info-subtle text-info-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"alert"[39m
+        [33mdata-variant[39m=[32m"info"[39m
+        [33mrole[39m=[32m"status"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-info"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"10"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 16v-4"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 8h.01"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+          [33mdata-slot[39m=[32m"alert-description"[39m
+        [36m>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"text-label"[39m
+          [36m>[39m
+            [0mDecision[0m
+          [36m</p>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"break-words whitespace-pre-line"[39m
+          [36m>[39m
+            [0mReply: ⁨The hours are right⁩[0m
+          [36m</p>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getElementError ../../node_modules/@testing-library/dom/dist/query-helpers.js:20:35
+ ❯ getMultipleElementsFoundError ../../node_modules/@testing-library/dom/dist/query-helpers.js:23:10
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:189:26
+    187|     const sheet = await screen.findByRole('dialog');
+    188|
+    189|     expect(within(sheet).getByText('Not accepted')).toBeVisible();
+       |                          ^
+    190|     expect(within(sheet).getByText('Decision')).toBeVisible();
+    191|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words a report gone, and reads the list and the user’s spaces again
+AssertionError: expected <button data-slot="button" …(2)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  class="inline-flex items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) flex-1"
+  data-slot="button"
+  type="button"
+>
+  Corrected
+</button>
+
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:229:65
+    227|     expect(await screen.findByRole('alert')).toHaveTextContent('This r…
+    228|     expect(keysOf(invalidated)).toEqual([['space', 7, 'dataReports'], …
+    229|     expect(screen.queryByRole('button', { name: 'Corrected' })).toBeNu…
+       |                                                                 ^
+    230|   });
+    231|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+

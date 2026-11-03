@@ -1,0 +1,63 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/overview/adminOverview.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/overview/adminOverview.api.test.ts (9 tests | 1 failed) 4499ms
+   ❯ the admin's overview (9)
+     × a saved threshold changes both overviews at once 597ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  13:13:27
+   Duration  16.74s (tests 41%, transform 40%, import 16%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/overview/adminOverview.api.test.ts > the admin's overview > a saved threshold changes both overviews at once
+AssertionError: expected { missing: [], stale: [ { …(2) } ] } to deeply equal { missing: [], stale: [] }
+
+- Expected
++ Received
+
+  {
+    "missing": [],
+-   "stale": [],
++   "stale": [
++     {
++       "days": 70,
++       "group": "hours",
++     },
++   ],
+  }
+
+ ❯ src/modules/overview/adminOverview.api.test.ts:231:35
+    229|     expect(saved.status).toBe(200);
+    230|
+    231|     expect(await ownerOverview()).toEqual({ missing: [], stale: [] });
+       |                                   ^
+    232|     const after = await overviewOf();
+    233|     expect([after.spaces.staleOrMissing, after.completeness.total]).to…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/overview/adminOverview.api.test.ts

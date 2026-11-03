@@ -1,0 +1,14 @@
+feat(spaces): show a photo's upload as a bar
+
+An uploading photo's tile was the layer's spinner with its percentage
+beside it, since the layer had no progress component (finding 73),
+and the design's gallery line still said JPG or PNG up to 5 MB, limits
+the contract no longer has (finding 74). With the layer's Meter (C3.1),
+D6.14:
+
+- an uploading tile is a progress bar, named «جارٍ رفع الصورة {n}» by
+  its place in the gallery, its value read «{p}٪», the percentage its
+  caption; a file still being prepared keeps the spinner;
+- the prototype's gallery line reads «حتى 10 صور · JPEG أو PNG أو WebP
+  · حتى 4 ميغابايت للصورة», its chooser and refusals the same, with
+  CHANGES.md's row.

@@ -1,0 +1,12 @@
+fix(subscriptions): refuse a key of another space
+
+The extension's key is unique on its own, so findByKey finds an extension
+of any space, and the retry compared only the closure. Another space's
+owner, on their own URL with this closure's id and its key, was answered
+201 with this space's extension: its days, its count and its applier
+(#123's review, item 2).
+
+findByKey now reads the closure's space, and a retry answers conflict
+when the space or the closure differs, before anything is answered. A
+conflict, not not_found: it is what a key reused on another closure of
+the same space answers, so the key tells nothing of another space.

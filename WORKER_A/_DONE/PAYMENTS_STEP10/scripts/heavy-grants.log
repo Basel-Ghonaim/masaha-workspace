@@ -1,0 +1,218 @@
+2026-10-28 09:39:32  lead    GRANT  slot-1 free 6105016 KB  node -e "console.log('hi')"  (cwd C:\dev\masaha\app)
+2026-10-28 09:39:33  lead    END    slot-1 exit 0 after 0 s, free 6073076 KB  node -e "console.log('hi')"
+2026-10-28 09:43:27  lead    GRANT  slot-1 free 6772756 KB  npm run build  (cwd C:\dev\masaha\app)
+2026-10-28 09:43:40  lead    END    slot-1 exit 0 after 13 s, free 6730636 KB  npm run build
+2026-10-28 09:45:51  lane-c  GRANT  slot-1 free 6478764 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 09:47:39  lane-c  END    slot-1 exit 0 after 107 s, free 6614096 KB  npm run lint
+2026-10-28 09:47:44  lane-c  GRANT  slot-1 free 6135412 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 09:48:06  lane-b  GRANT  slot-2 free 5849680 KB  npm run lint  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 09:48:18  lane-c  END    slot-1 exit 0 after 34 s, free 5820936 KB  npm run typecheck
+2026-10-28 09:49:53  lane-b  END    slot-2 exit 1 after 106 s, free 6607356 KB  npm run lint
+2026-10-28 09:49:54  lane-b  GRANT  slot-1 free 6617992 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 09:50:23  lane-b  END    slot-1 exit 0 after 29 s, free 6633872 KB  npm run typecheck
+2026-10-28 09:50:49  lane-b  GRANT  slot-1 free 6624712 KB  npm run lint  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 09:52:29  lane-b  END    slot-1 exit 0 after 99 s, free 6626220 KB  npm run lint
+2026-10-28 09:52:29  lane-b  GRANT  slot-1 free 6625400 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 09:53:03  lane-b  END    slot-1 exit 0 after 33 s, free 6625420 KB  npm run typecheck
+2026-10-28 09:57:08  lane-a  GRANT  slot-1 free 6753840 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 09:58:48  lane-a  END    slot-1 exit 0 after 99 s, free 6779424 KB  npm run lint
+2026-10-28 09:58:52  lane-a  GRANT  slot-1 free 6767336 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 09:59:21  lane-a  END    slot-1 exit 0 after 29 s, free 6775252 KB  npm run typecheck
+2026-10-28 10:12:02  lane-a  GRANT  slot-1 free 6970548 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:13:49  lane-a  END    slot-1 exit 1 after 106 s, free 7249952 KB  npm run lint
+2026-10-28 10:13:49  lane-a  GRANT  slot-1 free 7236544 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:14:20  lane-a  END    slot-1 exit 2 after 30 s, free 7191924 KB  npm run typecheck
+2026-10-28 10:14:22  lane-b  GRANT  slot-1 free 7177136 KB  npm run lint  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:14:59  lane-a  GRANT  slot-2 free 5053624 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:15:33  lane-a  END    slot-2 exit 0 after 34 s, free 4262292 KB  npm run typecheck
+2026-10-28 10:15:34  lane-a  GRANT  slot-2 free 4235976 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:16:21  lane-b  END    slot-1 exit 1 after 118 s, free 5344764 KB  npm run lint
+2026-10-28 10:16:23  lane-b  GRANT  slot-1 free 5334488 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:17:04  lane-b  END    slot-1 exit 0 after 41 s, free 4375832 KB  npm run typecheck
+2026-10-28 10:17:41  lane-a  END    slot-2 exit 0 after 127 s, free 7428392 KB  npm run lint
+2026-10-28 10:18:51  lane-b  GRANT  slot-1 free 7373344 KB  npm run lint  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:20:49  lane-b  END    slot-1 exit 0 after 118 s, free 7431024 KB  npm run lint
+2026-10-28 10:20:50  lane-b  GRANT  slot-1 free 7442976 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:21:20  lane-b  END    slot-1 exit 0 after 29 s, free 7431660 KB  npm run typecheck
+2026-10-28 10:26:28  lane-a  GRANT  slot-1 free 7346696 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:26:57  lane-a  END    slot-1 exit 2 after 29 s, free 7370848 KB  npm run typecheck
+2026-10-28 10:26:58  lane-a  GRANT  slot-1 free 7344420 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:28:44  lane-a  END    slot-1 exit 0 after 106 s, free 7438272 KB  npm run lint
+2026-10-28 10:28:52  lane-a  GRANT  slot-1 free 7382780 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:29:24  lane-a  END    slot-1 exit 0 after 32 s, free 7332188 KB  npm run typecheck
+2026-10-28 10:29:30  lane-a  GRANT  slot-1 free 6960756 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:31:39  lane-a  END    slot-1 exit 0 after 127 s, free 5770488 KB  npm run lint
+2026-10-28 10:35:58  lane-c  GRANT  slot-1 free 7000424 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 10:37:52  lane-c  END    slot-1 exit 0 after 113 s, free 6605348 KB  npm run lint
+2026-10-28 10:37:52  lane-c  GRANT  slot-1 free 6595220 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 10:38:53  lane-c  END    slot-1 exit 0 after 60 s, free 6475960 KB  npm run typecheck
+2026-10-28 10:39:10  lane-b  GRANT  slot-1 free 7314556 KB  npm run lint  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:41:17  lane-a  GRANT  slot-2 free 5097876 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:41:48  lane-b  END    slot-1 exit 0 after 157 s, free 7223312 KB  npm run lint
+2026-10-28 10:41:48  lane-b  GRANT  slot-1 free 7192928 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:41:52  lane-a  END    slot-2 exit 2 after 35 s, free 7736352 KB  npm run typecheck
+2026-10-28 10:41:53  lane-a  GRANT  slot-2 free 7992440 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:42:24  lane-b  END    slot-1 exit 0 after 35 s, free 6489800 KB  npm run typecheck
+2026-10-28 10:42:41  lane-b  GRANT  slot-1 free 6074548 KB  npm run test:unit -w @masaha/web  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:42:54  lane-c  WAIT   both slots taken (try 1)  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 10:43:16  lane-b  END    slot-1 exit 0 after 35 s, free 5649996 KB  npm run test:unit -w @masaha/web
+2026-10-28 10:43:21  lane-b  GRANT  slot-1 free 5397464 KB  npm run test:component -w @masaha/web  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 10:44:54  lane-c  WAIT   both slots taken (try 2)  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 10:45:09  lane-a  END    slot-2 exit 0 after 195 s, free 6759104 KB  npm run lint
+2026-10-28 10:45:17  lane-a  GRANT  slot-2 free 6926652 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:46:25  lane-a  END    slot-2 exit 0 after 68 s, free 6933516 KB  npm run typecheck
+2026-10-28 10:46:27  lane-a  GRANT  slot-2 free 6745588 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:46:54  lane-c  WAIT   both slots taken (try 3)  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 10:48:54  lane-c  WAIT   both slots taken (try 4)  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 10:49:56  lane-b  END    slot-1 exit 1 after 394 s, free 4839224 KB  npm run test:component -w @masaha/web
+2026-10-28 10:50:12  lane-a  END    slot-2 exit 0 after 225 s, free 7696568 KB  npm run lint
+2026-10-28 10:50:55  lane-c  GRANT  slot-1 free 7594736 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 10:51:16  lane-c  END    slot-1 exit 0 after 21 s, free 7014044 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 10:53:30  lane-a  GRANT  slot-1 free 7189892 KB  npm run lint  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:55:34  lane-a  END    slot-1 exit 0 after 124 s, free 7792668 KB  npm run lint
+2026-10-28 10:55:35  lane-a  GRANT  slot-1 free 7797104 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:56:07  lane-a  END    slot-1 exit 0 after 31 s, free 7695600 KB  npm run typecheck
+2026-10-28 10:56:07  lane-a  GRANT  slot-1 free 7703420 KB  npm run test:unit -w @masaha/web  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:56:37  lane-a  END    slot-1 exit 0 after 29 s, free 7838216 KB  npm run test:unit -w @masaha/web
+2026-10-28 10:56:38  lane-a  GRANT  slot-1 free 7799680 KB  npm run test:component -w @masaha/web  (cwd C:\dev\masaha\app-lane-a)
+2026-10-28 10:58:47  lane-c  GRANT  slot-2 free 6579776 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:02:53  lane-c  END    slot-2 exit 1 after 245 s, free 7274736 KB  npm run lint
+2026-10-28 11:02:54  lane-c  GRANT  slot-2 free 6952696 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:03:36  lane-a  END    slot-1 exit 1 after 417 s, free 7313092 KB  npm run test:component -w @masaha/web
+2026-10-28 11:03:47  lane-c  END    slot-2 exit 0 after 51 s, free 8099192 KB  npm run typecheck
+2026-10-28 11:05:28  lane-c  GRANT  slot-1 free 8103852 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:06:19  lead    GRANT  slot-2 free 5591440 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 11:06:53  lead    END    slot-2 exit 0 after 33 s, free 5026180 KB  npm run typecheck
+2026-10-28 11:06:54  lead    GRANT  slot-2 free 5014192 KB  npm run lint  (cwd C:\dev\masaha\app-lane-b)
+2026-10-28 11:07:20  lane-c  END    slot-1 exit 0 after 112 s, free 6487020 KB  npm run lint
+2026-10-28 11:07:21  lane-c  GRANT  slot-1 free 6463020 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:08:10  lane-c  END    slot-1 exit 0 after 49 s, free 5413160 KB  npm run typecheck
+2026-10-28 11:09:03  lead    END    slot-2 exit 0 after 129 s, free 8063028 KB  npm run lint
+2026-10-28 11:12:27  lane-c  GRANT  slot-1 free 8323284 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:12:43  lane-c  END    slot-1 exit 0 after 16 s, free 8393712 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 11:22:41  lane-c  GRANT  slot-1 free 8330344 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:24:22  lane-c  END    slot-1 exit 1 after 101 s, free 8342900 KB  npm run lint
+2026-10-28 11:24:23  lane-c  GRANT  slot-1 free 8332312 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:24:52  lane-c  END    slot-1 exit 0 after 29 s, free 8327160 KB  npm run typecheck
+2026-10-28 11:25:09  lane-c  GRANT  slot-1 free 8326132 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:26:48  lane-c  END    slot-1 exit 0 after 99 s, free 8333564 KB  npm run lint
+2026-10-28 11:29:30  lane-c  GRANT  slot-1 free 8330728 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:29:46  lane-c  END    slot-1 exit 2 after 16 s, free 8337740 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 11:29:52  lane-c  GRANT  slot-1 free 8328576 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:30:09  lane-c  END    slot-1 exit 0 after 16 s, free 8320040 KB  npx tsc -p apps/web/tsconfig.app.json --noEmit
+2026-10-28 11:36:19  lane-c  GRANT  slot-1 free 8311988 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:38:00  lane-c  END    slot-1 exit 0 after 100 s, free 8325644 KB  npm run lint
+2026-10-28 11:38:01  lane-c  GRANT  slot-1 free 8337260 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:38:30  lane-c  END    slot-1 exit 0 after 29 s, free 8350348 KB  npm run typecheck
+2026-10-28 11:39:36  lane-c  GRANT  slot-1 free 8303460 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:41:16  lane-c  END    slot-1 exit 0 after 99 s, free 8311600 KB  npm run lint
+2026-10-28 11:41:17  lane-c  GRANT  slot-1 free 8307940 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:41:46  lane-c  END    slot-1 exit 0 after 28 s, free 8299428 KB  npm run typecheck
+2026-10-28 11:41:51  lane-c  GRANT  slot-1 free 8283312 KB  npm run test:unit -w @masaha/web  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:42:18  lane-c  END    slot-1 exit 0 after 27 s, free 8263848 KB  npm run test:unit -w @masaha/web
+2026-10-28 11:42:22  lane-c  GRANT  slot-1 free 8250576 KB  npm run test:component -w @masaha/web  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:48:25  lane-c  END    slot-1 exit 1 after 362 s, free 8280788 KB  npm run test:component -w @masaha/web
+2026-10-28 11:53:50  lead    GRANT  slot-1 free 8193656 KB  npm run typecheck  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:54:20  lead    END    slot-1 exit 0 after 29 s, free 8230668 KB  npm run typecheck
+2026-10-28 11:54:20  lead    GRANT  slot-1 free 8226528 KB  npm run lint  (cwd C:\dev\masaha\app-lane-c)
+2026-10-28 11:56:03  lead    END    slot-1 exit 0 after 102 s, free 8247844 KB  npm run lint
+2026-10-28 12:05:06  lead    GRANT  slot-1 free 8370496 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 12:05:36  lead    END    slot-1 exit 0 after 30 s, free 8377040 KB  npm run typecheck
+2026-10-28 12:05:37  lead    GRANT  slot-1 free 8371336 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 12:07:25  lead    END    slot-1 exit 1 after 107 s, free 8375432 KB  npm run lint
+2026-10-28 12:08:32  lead    GRANT  slot-1 free 8373668 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 12:10:17  lead    END    slot-1 exit 0 after 105 s, free 8362080 KB  npm run lint
+2026-10-28 12:11:25  lead    GRANT  slot-1 free 8353924 KB  npm run test:api  (cwd C:\dev\masaha\app)
+2026-10-28 12:11:32  lead    GRANT  slot-2 free 7864212 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 12:13:36  lead    END    slot-2 exit 0 after 123 s, free 7657076 KB  npm run lint
+2026-10-28 12:13:37  lead    GRANT  slot-2 free 7641488 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 12:14:26  lead    END    slot-2 exit 0 after 49 s, free 7478548 KB  npm run typecheck
+2026-10-28 12:14:27  lead    GRANT  slot-2 free 7469408 KB  npm run test:unit  (cwd C:\dev\masaha\app)
+2026-10-28 12:15:40  lead    END    slot-2 exit 0 after 72 s, free 5541472 KB  npm run test:unit
+2026-10-28 12:15:46  lead    GRANT  slot-2 free 5724788 KB  npm run test:component  (cwd C:\dev\masaha\app)
+2026-10-28 12:24:28  lead    END    slot-2 exit 1 after 521 s, free 4758960 KB  npm run test:component
+2026-10-28 12:25:42  lead    GRANT  slot-2 free 4626676 KB  npm run build  (cwd C:\dev\masaha\app)
+2026-10-28 12:26:07  lead    END    slot-2 exit 0 after 24 s, free 4450992 KB  npm run build
+2026-10-28 12:27:47  lead    END    slot-1 exit 0 after 981 s, free 6517524 KB  npm run test:api
+2026-10-28 12:32:25  lead    GRANT  slot-1 free 4950968 KB  npm run test:component  (cwd C:\dev\masaha\app)
+2026-10-28 12:40:46  lead    END    slot-1 exit 1 after 500 s, free 5277076 KB  npm run test:component
+2026-10-28 12:53:13  lead    GRANT  slot-1 free 6816344 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 12:53:45  lead    END    slot-1 exit 0 after 31 s, free 6804860 KB  npm run typecheck
+2026-10-28 12:54:08  lead    GRANT  slot-1 free 6732036 KB  npm run test:api  (cwd C:\dev\masaha\app)
+2026-10-28 12:54:15  lead    GRANT  slot-2 free 6322648 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 12:56:31  lead    END    slot-2 exit 0 after 135 s, free 6127504 KB  npm run lint
+2026-10-28 12:56:32  lead    GRANT  slot-2 free 6108916 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 12:57:06  lead    END    slot-2 exit 0 after 34 s, free 5992520 KB  npm run typecheck
+2026-10-28 12:57:07  lead    GRANT  slot-2 free 5989976 KB  npm run test:unit  (cwd C:\dev\masaha\app)
+2026-10-28 12:58:00  lead    END    slot-2 exit 0 after 52 s, free 5929252 KB  npm run test:unit
+2026-10-28 12:58:05  lead    GRANT  slot-2 free 5976692 KB  npm run test:component  (cwd C:\dev\masaha\app)
+2026-10-28 13:05:32  lead    END    slot-2 exit 1 after 446 s, free 5853752 KB  npm run test:component
+2026-10-28 13:07:26  lead    GRANT  slot-2 free 5748680 KB  npm run build  (cwd C:\dev\masaha\app)
+2026-10-28 13:07:40  lead    END    slot-2 exit 0 after 14 s, free 5868552 KB  npm run build
+2026-10-28 13:08:54  lead    END    slot-1 exit 0 after 885 s, free 6063248 KB  npm run test:api
+2026-10-28 13:22:40  lead    GRANT  slot-1 free 5500948 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 13:24:30  lead    END    slot-1 exit 0 after 109 s, free 5546520 KB  npm run lint
+2026-10-28 13:24:31  lead    GRANT  slot-1 free 5537768 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 13:25:01  lead    END    slot-1 exit 0 after 30 s, free 5533192 KB  npm run typecheck
+2026-10-28 13:45:23  lead    GRANT  slot-1 free 5190884 KB  npm run test:component  (cwd C:\dev\masaha\app)
+2026-10-28 13:52:03  lead    END    slot-1 exit 0 after 400 s, free 5817620 KB  npm run test:component
+2026-10-28 13:52:04  lead    GRANT  slot-1 free 5838772 KB  npm run test:unit -w @masaha/web  (cwd C:\dev\masaha\app)
+2026-10-28 13:52:35  lead    END    slot-1 exit 0 after 31 s, free 5805180 KB  npm run test:unit -w @masaha/web
+2026-10-28 13:52:47  lead    GRANT  slot-1 free 5760000 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 13:54:37  lead    END    slot-1 exit 0 after 110 s, free 6088128 KB  npm run lint
+2026-10-28 13:54:38  lead    GRANT  slot-1 free 6100444 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 13:55:08  lead    END    slot-1 exit 0 after 30 s, free 6104416 KB  npm run typecheck
+2026-10-28 13:55:09  lead    GRANT  slot-1 free 6099452 KB  npm run build  (cwd C:\dev\masaha\app)
+2026-10-28 13:55:22  lead    END    slot-1 exit 0 after 12 s, free 6069252 KB  npm run build
+2026-10-28 14:44:30  lead    GRANT  slot-1 free 4742104 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 14:45:10  lead    END    slot-1 exit 0 after 40 s, free 4733080 KB  npm run typecheck
+2026-10-28 14:45:11  lead    GRANT  slot-1 free 4690100 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 14:47:21  lead    END    slot-1 exit 0 after 130 s, free 5290980 KB  npm run lint
+2026-10-28 14:53:24  lead    GRANT  slot-1 free 4842540 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 14:54:00  lead    END    slot-1 exit 0 after 36 s, free 5062260 KB  npm run typecheck
+2026-10-28 14:54:33  lead    GRANT  slot-1 free 5120760 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 14:57:18  lead    END    slot-1 exit 0 after 164 s, free 4006692 KB  npm run lint
+2026-10-28 15:01:59  lead    WAIT   memory 3487080 KB < 4 GB (try 1)  npm run typecheck
+2026-10-28 15:03:59  lead    WAIT   memory 3922360 KB < 4 GB (try 2)  npm run typecheck
+2026-10-28 15:06:00  lead    WAIT   memory 3904500 KB < 4 GB (try 3)  npm run typecheck
+2026-10-28 15:08:00  lead    WAIT   memory 3866544 KB < 4 GB (try 4)  npm run typecheck
+2026-10-28 15:10:01  lead    WAIT   memory 3657456 KB < 4 GB (try 5)  npm run typecheck
+2026-10-28 15:12:01  lead    WAIT   memory 3612392 KB < 4 GB (try 6)  npm run typecheck
+2026-10-28 15:14:02  lead    WAIT   memory 2923024 KB < 4 GB (try 7)  npm run typecheck
+2026-10-28 15:16:03  lead    WAIT   memory 3388652 KB < 4 GB (try 8)  npm run typecheck
+2026-10-28 15:18:03  lead    WAIT   memory 3024820 KB < 4 GB (try 9)  npm run typecheck
+2026-10-28 15:20:04  lead    WAIT   memory 3347784 KB < 4 GB (try 10)  npm run typecheck
+2026-10-28 15:22:05  lead    WAIT   memory 2619548 KB < 4 GB (try 11)  npm run typecheck
+2026-10-28 15:24:06  lead    WAIT   memory 3020812 KB < 4 GB (try 12)  npm run typecheck
+2026-10-28 15:26:07  lead    WAIT   memory 2968608 KB < 4 GB (try 13)  npm run typecheck
+2026-10-28 15:28:07  lead    WAIT   memory 3774352 KB < 4 GB (try 14)  npm run typecheck
+2026-10-28 15:30:08  lead    WAIT   memory 3399388 KB < 4 GB (try 15)  npm run typecheck
+2026-10-28 15:32:08  lead    WAIT   memory 3659272 KB < 4 GB (try 16)  npm run typecheck
+2026-10-28 15:34:09  lead    WAIT   memory 2715660 KB < 4 GB (try 17)  npm run typecheck
+2026-10-28 15:36:10  lead    WAIT   memory 3889500 KB < 4 GB (try 18)  npm run typecheck
+2026-10-28 15:38:10  lead    WAIT   memory 3867036 KB < 4 GB (try 19)  npm run typecheck
+2026-10-28 15:40:11  lead    GRANT  slot-1 free 4412852 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 15:40:50  lead    KILLED by the harness (system memory critically low, 696,336 KB free); slot-1 released by hand  npm run typecheck
+2026-10-28 15:45:49  lead    GRANT  slot-1 free 6257712 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-28 15:47:12  lead    END    slot-1 exit 0 after 82 s, free 5563372 KB  npm run typecheck
+2026-10-28 15:47:19  lead    GRANT  slot-1 free 5206796 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 15:51:43  lead    END    slot-1 exit 1 after 263 s, free 7508840 KB  npm run lint
+2026-10-28 15:52:31  lead    GRANT  slot-1 free 7552812 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-28 15:54:40  lead    END    slot-1 exit 0 after 129 s, free 7467212 KB  npm run lint
+2026-10-29 08:32:22  lead    WAIT   memory 3194788 KB < 4 GB (try 1)  npm run lint
+2026-10-29 08:34:23  lead    WAIT   memory 3587584 KB < 4 GB (try 2)  npm run lint
+2026-10-29 08:36:23  lead    WAIT   memory 3499856 KB < 4 GB (try 3)  npm run lint
+2026-10-29 08:38:24  lead    WAIT   memory 3594788 KB < 4 GB (try 4)  npm run lint
+2026-10-29 08:40:25  lead    WAIT   memory 3225472 KB < 4 GB (try 5)  npm run lint
+2026-10-29 08:42:25  lead    WAIT   memory 2595188 KB < 4 GB (try 6)  npm run lint
+2026-10-29 08:44:26  lead    WAIT   memory 2150692 KB < 4 GB (try 7)  npm run lint
+2026-10-29 08:46:26  lead    WAIT   memory 1419232 KB < 4 GB (try 8)  npm run lint
+2026-10-29 08:48:27  lead    WAIT   memory 3876256 KB < 4 GB (try 9)  npm run lint
+2026-10-29 08:50:28  lead    GRANT  slot-1 free 4289048 KB  npm run lint  (cwd C:\dev\masaha\app)
+2026-10-29 08:52:52  lead    END    slot-1 exit 0 after 143 s, free 4902272 KB  npm run lint
+2026-10-29 08:52:54  lead    GRANT  slot-1 free 4878120 KB  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-10-29 08:53:42  lead    END    slot-1 exit 0 after 47 s, free 4907056 KB  npm run typecheck
+2026-10-29 08:53:43  lead    GRANT  slot-1 free 4943992 KB  npm run test:unit -w @masaha/web  (cwd C:\dev\masaha\app)
+2026-10-29 08:54:17  lead    END    slot-1 exit 0 after 34 s, free 5159328 KB  npm run test:unit -w @masaha/web
+2026-10-29 08:54:18  lead    GRANT  slot-1 free 5163412 KB  npm run test:component -w @masaha/web  (cwd C:\dev\masaha\app)
+2026-10-29 09:00:36  lead    END    slot-1 exit 0 after 377 s, free 5655704 KB  npm run test:component -w @masaha/web

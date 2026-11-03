@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/overview/components/admin
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/overview/components/admin/AdminOverview.component.test.tsx (4 tests | 1 failed) 3036ms
+   ❯ AdminOverview (4)
+     × lists five spaces to complete, missing as a warning, and «View all (n)» to editable&stale 335ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:14:51
+   Duration  23.49s (transform 29%, import 29%, environment 23%, tests 13%, setup 6%)
+
+  Transform  |component| transforming modules took 6.54s · 29% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/overview/components/admin/AdminOverview.component.test.tsx > AdminOverview > lists five spaces to complete, missing as a warning, and «View all (n)» to editable&stale
+AssertionError: expected [ <li …(1)>…(2)</li>, …(5) ] to have a length of 5 but got 6
+
+- Expected
++ Received
+
+- 5
++ 6
+
+ ❯ src/features/overview/components/admin/AdminOverview.component.test.tsx:105:18
+    103|     const card = await screen.findByRole('region', { name: 'Data compl…
+    104|     const rows = within(card).getAllByRole('listitem');
+    105|     expect(rows).toHaveLength(5);
+       |                  ^
+    106|     const [first] = rows as [HTMLElement];
+    107|     expect(within(first).getByText('Hidden')).toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/overview/components/admin

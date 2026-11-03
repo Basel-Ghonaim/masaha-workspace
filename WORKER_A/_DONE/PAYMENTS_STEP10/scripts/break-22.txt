@@ -1,0 +1,31 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx (3 tests | 1 failed | 2 skipped) 119ms
+   ❯ useMyPaymentsToday (3)
+     × strikes a voided one with who voided it and why, and counts it in no figure 118ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  14:49:35
+   Duration  8.75s (import 54%, transform 23%, environment 16%, setup 4%, tests 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx > useMyPaymentsToday > strikes a voided one with who voided it and why, and counts it in no figure
+AssertionError: expected '₪1' to be '₪0' // Object.is equality
+
+Expected: "₪0"
+Received: "₪1"
+
+ ❯ src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx:107:57
+    105|     expect(result.current.rows[0]?.voided?.label).toBe('Voided');
+    106|     expect(heard(result.current.rows[0]?.voided?.line)).toBe('Voided b…
+    107|     expect(heard(result.current.figures?.total.amount)).toBe('₪0');
+       |                                                         ^
+    108|     expect(result.current.figures?.total.count).toBe('0 payments');
+    109|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

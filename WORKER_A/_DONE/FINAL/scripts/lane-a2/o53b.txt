@@ -1,0 +1,2 @@
+  return Prisma.sql`space_id = ${spaceId} AND checked_in_at >= ${gazaInstant(from, 0)}
+    AND checked_in_at < ${gazaInstant(addDays(to, 1), 0)}`;

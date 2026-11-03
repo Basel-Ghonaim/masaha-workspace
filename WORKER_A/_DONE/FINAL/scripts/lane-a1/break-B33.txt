@@ -1,0 +1,55 @@
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit src/modules/auth/email/resetEmail.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/api
+
+ ❯ |unit| src/modules/auth/email/resetEmail.unit.test.ts (6 tests | 1 failed) 33ms
+   ❯ resetEmail (5)
+     × the reset email holds the link as text in both parts and languages 20ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  17:09:39
+   Duration  696ms (transform 51%, import 22%, tests 20%, worker 7%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/auth/email/resetEmail.unit.test.ts > resetEmail > the reset email holds the link as text in both parts and languages
+AssertionError: expected 'مرحبًا،\nطلبت تعيين كلمة مرور جديدة ل…' to contain 'إن لم يعمل الزر، انسخ هذا الرابط:\nht…'
+
+- Expected
++ Received
+
+- إن لم يعمل الزر، انسخ هذا الرابط:
+- https://masaha.example/reset-password#token=tok-123_ABC
++ مرحبًا،
++ طلبت تعيين كلمة مرور جديدة لحسابك في مساحة. اضغط الزر لاختيار كلمة المرور الجديدة.
++ الرابط صالح لمدة ساعة. إذا لم تطلب ذلك فتجاهل هذه الرسالة.
++
++ Hi, you asked to set a new password for your Masaha account.
++ If the button doesn’t work, copy this link:
++ https://masaha.example/reset-password#token=tok-123_ABC
++ The link is valid for one hour. If you didn’t ask for this, ignore this email.
++
++ مساحة — دليل مساحات العمل المشتركة في قطاع غزة
+
+ ❯ src/modules/auth/email/resetEmail.unit.test.ts:46:26
+     44|         new RegExp(`${escaped(words)}</p>\\s*<p dir="ltr"[^>]*>${escap…
+     45|       );
+     46|       expect(email.text).toContain(`${words}\n${link}`);
+       |                          ^
+     47|     }
+     48|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/modules/auth/email/resetEmail.unit.test.ts

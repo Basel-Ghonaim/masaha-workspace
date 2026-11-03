@@ -1,0 +1,8 @@
+fix(staff): refuse an admin's account by its code
+
+The owner's re-issue of a temporary password refused an admin's
+account as ACCOUNT_HAS_LINKS, which the web words as an account that
+holds another space (finding 106's first clause). It now checks the
+admin first and answers ACCOUNT_IS_ADMIN, the re-activation's code;
+any other account that is not a USER or holds another link keeps
+ACCOUNT_HAS_LINKS. The web's words are its own commit.

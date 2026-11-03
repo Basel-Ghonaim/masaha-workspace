@@ -1,0 +1,44 @@
+<<<OLD
+ * «استلام» opening the payment on it (`receive`), and `done` runs (the search's: cleared and focused, S10). Pressed again while it is sent, nothing happens.
+ */
+export function useCheckOutSubscriber(
+  spaceId: number,
+  person: Extract<PresentPerson, { kind: 'CHECK_IN' }>,
+===
+ * «استلام» opening the payment on it (`receive`), and `done` runs (the search's: cleared and focused, S10). Pressed again while it is sent, nothing happens.
+ * With no `person` (a customer's actions while they are not here) it does nothing.
+ */
+export function useCheckOutSubscriber(
+  spaceId: number,
+  person: Extract<PresentPerson, { kind: 'CHECK_IN' }> | null,
+>>>
+<<<OLD
+    mutationFn: () => repository.checkOutSubscriber(spaceId, person.id),
+===
+    mutationFn: () => repository.checkOutSubscriber(spaceId, person?.id ?? 0),
+>>>
+<<<OLD
+  const run = () => {
+    if (mutation.isPending) return;
+===
+  const name = person?.name ?? '';
+  const run = () => {
+    if (person === null || mutation.isPending) return;
+>>>
+<<<OLD
+          usageOut(person.name, answer);
+===
+          usageOut(name, answer);
+>>>
+<<<OLD
+        toastSubscriberOut(
+          person.name,
+===
+        toastSubscriberOut(
+          name,
+>>>
+<<<OLD
+    name: copy.desk.checkOut.openName({ name: isolate(person.name) }),
+===
+    name: copy.desk.checkOut.openName({ name: isolate(name) }),
+>>>

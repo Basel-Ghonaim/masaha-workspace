@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/admin/audit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/pages/dashboard/admin/audit/AuditPage.component.test.tsx (3 tests | 1 failed) 4644ms
+   ❯ AuditPage (the admin’s) (3)
+     × a deleted target is marked and not a link 322ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  15:20:45
+   Duration  27.11s (transform 37%, import 25%, tests 18%, environment 16%, setup 5%)
+
+  Transform  |component| transforming modules took 9.67s · 37% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/admin/audit/AuditPage.component.test.tsx > AuditPage (the admin’s) > a deleted target is marked and not a link
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <a
+  class="text-label text-foreground underline underline-offset-4"
+  data-discover="true"
+  href="/dashboard/admin/spaces/7"
+>
+  <bdi>
+    Focus Hub (deleted)
+  </bdi>
+</a> instead[39m
+ ❯ src/pages/dashboard/admin/audit/AuditPage.component.test.tsx:99:51
+     97|     const table = screen.getByRole('table', { name: 'Audit log' });
+     98|     expect(within(table).getByText('Focus Hub (deleted)')).toBeInTheDo…
+     99|     expect(within(table).queryByRole('link')).not.toBeInTheDocument();
+       |                                                   ^
+    100|     expect(
+    101|       within(table).getByText('Space deleted').getAttribute('data-vari…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/admin/audit

@@ -1,0 +1,50 @@
+[heavy] waiting (try 1 of 60)
+[heavy] waiting (try 2 of 60)
+[heavy] waiting (try 3 of 60)
+[heavy] waiting (try 4 of 60)
+[heavy] waiting (try 5 of 60)
+[heavy] waiting (try 6 of 60)
+[heavy] waiting (try 7 of 60)
+[heavy] waiting (try 8 of 60)
+
+> lint
+> eslint .
+
+
+C:\dev\masaha\app-lane-w1\apps\web\src\features\finance\components\DebtsTab.component.test.tsx
+   12:25  error  'ok' is defined but never used                                                                      @typescript-eslint/no-unused-vars
+  104:37  error  Unnecessary conditional, expected left-hand side of `??` operator to be possibly null or undefined  @typescript-eslint/no-unnecessary-condition
+  104:56  error  Unnecessary optional chain on a non-nullish value                                                   @typescript-eslint/no-unnecessary-condition
+  185:23  error  Unsafe member access .limit on an `any` value                                                       @typescript-eslint/no-unsafe-member-access
+  186:46  error  Unsafe member access .page on an `any` value                                                        @typescript-eslint/no-unsafe-member-access
+  186:82  error  Unsafe member access .page on an `any` value                                                        @typescript-eslint/no-unsafe-member-access
+  197:52  error  Unsafe member access .limit on an `any` value                                                       @typescript-eslint/no-unsafe-member-access
+  197:77  error  Unsafe return of a value of type `any`                                                              @typescript-eslint/no-unsafe-return
+  197:87  error  Unsafe member access .page on an `any` value                                                        @typescript-eslint/no-unsafe-member-access
+  204:27  error  Unsafe member access .limit on an `any` value                                                       @typescript-eslint/no-unsafe-member-access
+  205:29  error  Unsafe member access .page on an `any` value                                                        @typescript-eslint/no-unsafe-member-access
+
+C:\dev\masaha\app-lane-w1\apps\web\src\features\finance\components\IncomeTab.component.test.tsx
+  100:37  error  Unnecessary conditional, expected left-hand side of `??` operator to be possibly null or undefined  @typescript-eslint/no-unnecessary-condition
+  100:56  error  Unnecessary optional chain on a non-nullish value                                                   @typescript-eslint/no-unnecessary-condition
+  152:18  error  Unsafe argument of type `any` assigned to a parameter of type `string`                              @typescript-eslint/no-unsafe-argument
+  152:34  error  Unsafe member access .month on an `any` value                                                       @typescript-eslint/no-unsafe-member-access
+
+C:\dev\masaha\app-lane-w1\apps\web\src\features\finance\components\OccupancyTab.component.test.tsx
+  68:37  error  Unnecessary conditional, expected left-hand side of `??` operator to be possibly null or undefined  @typescript-eslint/no-unnecessary-condition
+  68:56  error  Unnecessary optional chain on a non-nullish value                                                   @typescript-eslint/no-unnecessary-condition
+
+C:\dev\masaha\app-lane-w1\apps\web\src\features\finance\hooks\debts\usePayersQuery.ts
+  14:33  error  This is the default value for this type parameter, so it can be omitted  @typescript-eslint/no-unnecessary-type-arguments
+
+C:\dev\masaha\app-lane-w1\apps\web\src\features\finance\repository\financeRepository.ts
+  23:70  error  This is the default value for this type parameter, so it can be omitted  @typescript-eslint/no-unnecessary-type-arguments
+  38:28  error  This is the default value for this type parameter, so it can be omitted  @typescript-eslint/no-unnecessary-type-arguments
+
+C:\dev\masaha\app-lane-w1\apps\web\src\features\overview\components\owner\OwnerOverview.component.test.tsx
+  84:69  error  Unnecessary optional chain on a non-nullish value  @typescript-eslint/no-unnecessary-condition
+
+✖ 21 problems (21 errors, 0 warnings)
+  3 errors and 0 warnings potentially fixable with the `--fix` option.
+
+exit 1

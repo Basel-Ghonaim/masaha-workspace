@@ -1,0 +1,36 @@
+{
+  "modified": [
+    "apps/web/src/features/directory/repository/directoryRepository.ts",
+    "apps/web/src/features/directory/hooks/queryKeys.ts",
+    "apps/web/src/features/directory/types/DirectorySlots.ts",
+    "apps/web/src/features/directory/types/SpacePageView.ts",
+    "apps/web/src/features/directory/hooks/page/useSpacePage.ts",
+    "apps/web/src/features/directory/components/card/SpaceCard.tsx",
+    "apps/web/src/features/directory/components/list/DirectoryResults.tsx",
+    "apps/web/src/features/directory/components/home/HomeSpaces.tsx",
+    "apps/web/src/features/directory/components/page/SpaceHeader.tsx",
+    "apps/web/src/features/directory/components/page/SpaceDetails.tsx",
+    "apps/web/src/features/directory/index.ts",
+    "apps/web/src/pages/site/navigation.ts",
+    "apps/web/src/pages/site/public/space/SpacePage.tsx",
+    "apps/web/src/pages/site/public/directory/DirectoryPage.tsx",
+    "apps/web/src/pages/site/public/home/HomePage.tsx",
+    "apps/web/src/pages/site/shell/SiteLayout.tsx"
+  ],
+  "new": [
+    "apps/web/src/features/favorites/index.ts",
+    "apps/web/src/features/favorites/repository/favoritesRepository.ts",
+    "apps/web/src/features/favorites/hooks/intent/favoriteIntent.ts",
+    "apps/web/src/features/favorites/hooks/favoriteWrite.ts",
+    "apps/web/src/features/favorites/hooks/toggle/useFavoriteToggle.ts",
+    "apps/web/src/features/favorites/hooks/resume/useResumeFavorite.ts",
+    "apps/web/src/features/favorites/components/FavoriteButton.tsx",
+    "apps/web/src/features/favorites/components/ResumeFavorite.tsx",
+    "apps/web/src/features/favorites/components/toast/favoriteToasts.tsx",
+    "apps/web/src/features/favorites/types/FavoriteSpace.ts",
+    "apps/web/src/features/directory/hooks/favorites/useFavoriteIds.ts",
+    "apps/web/src/features/directory/types/FavoritesRequest.ts",
+    "apps/web/src/pages/site/public/useSignInPrompt.tsx",
+    "apps/web/src/pages/site/public/useHeart.tsx"
+  ]
+}

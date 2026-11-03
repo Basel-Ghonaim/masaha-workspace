@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/finance/services
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |unit| src/features/finance/services/reminderText.unit.test.ts (1 test | 1 failed) 18ms
+   ❯ reminderText (1)
+     × fills the reminder with the first name, the amount and the space 15ms
+
+ Test Files  1 failed | 5 passed (6)
+      Tests  1 failed | 6 passed (7)
+   Start at  15:57:48
+   Duration  1.24s (transform 46%, import 46%, tests 5%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/finance/services/reminderText.unit.test.ts > reminderText > fills the reminder with the first name, the amount and the space
+AssertionError: expected 'مرحبًا   Sara Ahmad Odeh ، عليك ₪45 ف…' to be 'مرحبًا Sara، عليك ₪45 في Focus Hub.' // Object.is equality
+
+Expected: "مرحبًا Sara، عليك ₪45 في Focus Hub."
+Received: "مرحبًا   Sara Ahmad Odeh ، عليك ₪45 في Focus Hub."
+
+ ❯ src/features/finance/services/reminderText.unit.test.ts:12:7
+     10|         space: 'Focus Hub',
+     11|       }),
+     12|     ).toBe('مرحبًا Sara، عليك ₪45 في Focus Hub.');
+       |       ^
+     13|   });
+     14| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/finance/services

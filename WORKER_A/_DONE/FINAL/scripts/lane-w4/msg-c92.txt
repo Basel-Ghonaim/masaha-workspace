@@ -1,0 +1,10 @@
+feat(users): edit one's own account
+
+Screen 9, the account's settings at /me, was a stub. It reads GET /me
+and draws three cards: the profile (the name saved with PATCH /me, the
+held session taking it so the account menu shows it at once), the
+preferences (the language applied at once and saved to the account,
+put back with a retry when the save fails; the theme on this device
+only, DI20), and the ways of signing in (Google linked, the password
+change under Change, or a Google-only account's link to set one; C1,
+C2, C6). The session gains accountEdited, as passwordChanged.

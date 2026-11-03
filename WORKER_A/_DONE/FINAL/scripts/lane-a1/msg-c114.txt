@@ -1,0 +1,8 @@
+docs(api): name the owners' type-check code
+
+The add-owner refused a soft-deleted space's id written as a string
+with invalid_format, a code the contract named for no case on the
+owners endpoints (finding 69). The contract now names both answers,
+one per cause: invalid_format for a spaceId that is not a positive
+whole JSON number, before the space is read, and invalid_choice for a
+soft-deleted or unknown space. A test pins both.

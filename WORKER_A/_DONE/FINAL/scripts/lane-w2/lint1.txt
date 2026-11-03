@@ -1,0 +1,12 @@
+
+> lint
+> eslint .
+
+
+C:\dev\masaha\app-lane-w2\apps\web\src\features\audit\components\AuditLog.component.test.tsx
+  136:22  error  Unsafe member access .actor on an `any` value  @typescript-eslint/no-unsafe-member-access
+  137:22  error  Forbidden non-null assertion                   @typescript-eslint/no-non-null-assertion
+
+✖ 2 problems (2 errors, 0 warnings)
+
+exit 1

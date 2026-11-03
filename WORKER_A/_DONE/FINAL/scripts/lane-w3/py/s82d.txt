@@ -1,0 +1,21 @@
+<<<OLD
+  owner,
+  subscribe,
+}: {
+  spaceId: number;
+  customerId: number;
+===
+  owner,
+  subscribe,
+  spaceName,
+}: {
+  spaceId: number;
+  customerId: number;
+  /** The space's name, as its reminder names it. */
+  spaceName: string;
+>>>
+<<<OLD
+  const file = useCustomerFile(spaceId, customerId);
+===
+  const file = useCustomerFile(spaceId, customerId, { spaceName });
+>>>

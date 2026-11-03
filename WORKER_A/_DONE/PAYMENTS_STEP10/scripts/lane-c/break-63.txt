@@ -1,0 +1,43 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/site/account
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/pages/site/account/AccountLayout.component.test.tsx (2 tests | 1 failed) 2034ms
+   ❯ AccountLayout (2)
+     × names its navigation «My account» and marks the page open as current; axe-clean 1250ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > names its navigation «My account» and marks the page open as current; axe-clean
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"aria-current"[32m[39m[2m, [22m[32m[32m"page"[32m[39m[2m) // element.getAttribute("aria-current") === "page"[22m
+
+Expected the element to have attribute:
+[32m  aria-current="page"[39m
+Received:
+[31m  null[39m
+ ❯ src/pages/site/account/AccountLayout.component.test.tsx:45:21
+     43|     const navigation = await screen.findByRole('navigation', { name: '…
+     44|     const current = within(navigation).getByRole('link', { name: 'My r…
+     45|     expect(current).toHaveAttribute('aria-current', 'page');
+       |                     ^
+     46|     expect(current).toHaveAttribute('href', '/me/reports');
+     47|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  12:33:17
+   Duration  8.67s (transform 27%, import 25%, tests 24%, environment 18%, setup 5%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/site/account

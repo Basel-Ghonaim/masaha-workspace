@@ -1,0 +1,237 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/staff/components/StaffList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/staff/components/StaffList.component.test.tsx (6 tests | 1 failed) 3503ms
+   ❯ StaffList (6)
+     × shows «—» when the month’s collections could not be read 499ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  09:25:10
+   Duration  20.64s (transform 28%, import 28%, environment 21%, tests 17%, setup 6%)
+
+  Transform  |component| transforming modules took 5.66s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/staff/components/StaffList.component.test.tsx > StaffList > shows «—» when the month’s collections could not be read
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "—"
+
+Here are the accessible roles:
+
+  cell:
+
+  Name "Rahafrahaf@example.com":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "ActiveHasn’t changed the temporary password yet":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "14 September 2026":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "₪0":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "₪0":
+  [36m<a[39m
+    [33mclass[39m=[32m"underline-offset-4 hover:underline"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdir[39m=[32m"ltr"[39m
+    [33mhref[39m=[32m"/ledger/15"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Actions: ⁨Rahaf⁩":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"menu"[39m
+    [33maria-label[39m=[32m"Actions: ⁨Rahaf⁩"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mid[39m=[32m"radix-_r_q_"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<tr[39m
+  [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+  [33mdata-slot[39m=[32m"table-row"[39m
+[36m>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"text-label"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mRahaf[0m
+        [36m</span>[39m
+      [36m</span>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [0mrahaf@example.com[0m
+        [36m</span>[39m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap gap-1"[39m
+    [36m>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"success"[39m
+      [36m>[39m
+        [0mActive[0m
+      [36m</span>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-warning-subtle text-warning-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"warning"[39m
+      [36m>[39m
+        [0mHasn’t changed the temporary password yet[0m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [0m14 September 2026[0m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<a[39m
+      [33mclass[39m=[32m"underline-offset-4 hover:underline"[39m
+      [33mdata-discover[39m=[32m"true"[39m
+      [33mdir[39m=[32m"ltr"[39m
+      [33mhref[39m=[32m"/ledger/15"[39m
+    [36m>[39m
+      [0m₪0[0m
+    [36m</a>[39m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"menu"[39m
+      [33maria-label[39m=[32m"Actions: ⁨Rahaf⁩"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+      [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mid[39m=[32m"radix-_r_q_"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-ellipsis-vertical lucide-more-vertical"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<circle[39m
+          [33mcx[39m=[32m"12"[39m
+          [33mcy[39m=[32m"12"[39m
+          [33mr[39m=[32m"1"[39m
+        [36m/>[39m
+        [36m<circle[39m
+          [33mcx[39m=[32m"12"[39m
+          [33mcy[39m=[32m"5"[39m
+          [33mr[39m=[32m"1"[39m
+        [36m/>[39m
+        [36m<circle[39m
+          [33mcx[39m=[32m"12"[39m
+          [33mcy[39m=[32m"19"[39m
+          [33mr[39m=[32m"1"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+  [36m</td>[39m
+[36m</tr>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/staff/components/StaffList.component.test.tsx:120:24
+    118|
+    119|     const row = (await screen.findByText('Rahaf')).closest('tr') as HT…
+    120|     expect(within(row).getByRole('link', { name: '—' })).toBeInTheDocu…
+       |                        ^
+    121|     expect(within(row).queryByText('₪0')).toBeNull();
+    122|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/staff/components/StaffList

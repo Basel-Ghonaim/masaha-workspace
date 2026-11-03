@@ -1,0 +1,30 @@
+<<<OLD
+import { payStatus } from '../../services/payStatus';
+===
+import { paymentLines } from '../../services/paymentLines';
+import { payStatus } from '../../services/payStatus';
+>>>
+<<<OLD
+            rows: file.unpaidVisits.map(({ visit, balanceAgorot }) => {
+===
+            rows: file.unpaidVisits.map(({ visit, balanceAgorot, payments }) => {
+>>>
+<<<OLD
+                debt: null,
+                more: null,
+              };
+===
+                debt: null,
+                more: null,
+                /** What was paid on it, each by whom, and a void by whom and why (finding 162). */
+                payments: payments.map((payment) => ({
+                  key: String(payment.id),
+                  amount: price(payment.amountAgorot),
+                  method: copy.desk.money.methods[payment.method],
+                  ...paymentLines(payment, {
+                    recordedBy: copy.desk.statement.recordedBy,
+                    voidedBy: copy.payments.ledger.voided.line,
+                  }),
+                })),
+              };
+>>>

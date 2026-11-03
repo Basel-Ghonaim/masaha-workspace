@@ -1,0 +1,6 @@
+<<<OLD
+    voidedReason: ({ reason }: { reason: string }) => `أُلغيت: ${reason}`,
+===
+    voidedReason: ({ reason }: { reason: string }) => `أُلغيت: ${reason}`,
+    recordedBy: ({ name }: { name: string }) => `سجّلها ${name}`,
+>>>

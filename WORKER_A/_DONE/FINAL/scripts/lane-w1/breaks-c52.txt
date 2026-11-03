@@ -1,0 +1,29 @@
+== B117 exit 1
+    × shows the five tiles, each a link with its helper; axe-clean 770ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ [ …(2) ], [ …(2) ], [ …(2) ], …(1) ] to deeply equal [ [ …(2) ], [ …(2) ], [ …(2) ], …(2) ]
+    - Expected
+== B118 exit 1
+    × lists five spaces to complete, missing as a warning, and «View all (n)» to editable&stale 326ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"data-variant"[32m[39m[2m, [22m[32m[32m"warning"[32m[39m[2m) // element.getAttribute("data-variant") === "warning"
+    Expected the element to have attribute:
+== B118b exit 1
+    × lists five spaces to complete, missing as a warning, and «View all (n)» to editable&stale 335ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ <li …(1)>…(2)</li>, …(5) ] to have a length of 5 but got 6
+    - Expected
+== B119 exit 1
+    × leads «View all» to the spaces the admin edits, stale or missing 605ms
+    Tests  1 failed (1)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"/dashboard/admin/spaces?status=editable&stale=true"[32m[39m[2m) // element.getAttr
+    Expected the element to have attribute:
+== B120 exit 1
+    × shows the privacy note 3052ms
+    Tests  1 failed | 3 passed (4)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: A space’s operating data is private to its management — customers, visits, subscriptions, payments and finance.. This could be beca

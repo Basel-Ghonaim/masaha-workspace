@@ -1,0 +1,37 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/icons/Icon.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/shared/design-system/icons/Icon.component.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/icons/Icon.component.test.tsx [ src/shared/design-system/icons/Icon.component.test.tsx ]
+TypeError: Cannot read properties of undefined (reading 'name')
+ ❯ src/shared/design-system/icons/Icon.component.test.tsx:93:31
+     91|   ScrollTextIcon,
+     92|   HeartIcon,
+     93| ].map((icon) => ({ name: icon.name, icon }));
+       |                               ^
+     94|
+     95| function svgOf(dir: 'ltr' | 'rtl', Glyph: ComponentType<IconProps>, pr…
+ ❯ src/shared/design-system/icons/Icon.component.test.tsx:93:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  11:44:50
+   Duration  2.75s (environment 76%, setup 21%, transform 3%, worker 1%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/icons/Icon.component.test.tsx

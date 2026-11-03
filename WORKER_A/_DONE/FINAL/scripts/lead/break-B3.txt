@@ -1,0 +1,55 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/copy/catalogues.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/shared/copy/catalogues.unit.test.ts (6 tests | 1 failed) 41ms
+   ❯ the catalogues (6)
+     × ar has exactly the lines English has, each of the same kind 28ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  16:35:55
+   Duration  876ms (transform 78%, import 15%, tests 6%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/copy/catalogues.unit.test.ts > the catalogues > ar has exactly the lines English has, each of the same kind
+AssertionError: expected [ …(2061) ] to deeply equal [ …(2062) ]
+
+- Expected
++ Received
+
+@@ -944,11 +944,10 @@
+    "errors.PASSWORD_NOT_SET: string",
+    "errors.PAYMENT_EXCEEDS_DUE: string",
+    "errors.PHONE_TAKEN: string",
+    "errors.PRICE_BELOW_PAID: string",
+    "errors.PRICE_TYPING_NOT_ALLOWED: string",
+-   "errors.PUBLISHED_PRICE_CHANGED: string",
+    "errors.RECEPTION_LINK_ACTIVE: string",
+    "errors.RECOVERY_INVALID: string",
+    "errors.REPORT_ALREADY_DECIDED: string",
+    "errors.RESEND_LIMIT_REACHED: string",
+    "errors.RESET_TOKEN_INVALID: string",
+
+ ❯ src/shared/copy/catalogues.unit.test.ts:36:41
+     34|     '%s has exactly the lines English has, each of the same kind',
+     35|     (_, catalogue) => {
+     36|       expect(linesOf(catalogue).sort()).toEqual(linesOf(english).sort(…
+       |                                         ^
+     37|     },
+     38|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/copy/catalogues.unit.test.ts

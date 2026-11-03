@@ -1,0 +1,14 @@
+feat(space-links): link the owner a refusal names
+
+An email already an owner's was refused ALREADY_OWNER with a line that
+sent the admin to find that owner's row in the list, since the refusal
+named no account (finding 83). It now carries details.userId (C1.7),
+and the add sheet takes the admin there (D6.5):
+
+- under the email, «هذا البريد لمالك مسبقًا.» / "This email is already
+  an owner's.", and the link button «اربطه بالمساحة»;
+- the owner read by that exact email, the sheet closes and the link
+  dialog opens for them, the space the sheet chose already chosen.
+
+The old line refusals.ALREADY_OWNER is gone; with no details, the
+code's own line stands.

@@ -1,0 +1,88 @@
+== B10 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × actor=<the admin's id> finds nothing; actor=MASAHA finds the admin's 473ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > actor=<the admin's id> finds nothing; actor=MASAHA finds the admin's
+AssertionError: expected [ 1 ] to deeply equal []
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B11 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × meta.actors lists the period's actors once each, MASAHA and SYSTEM included 537ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > meta.actors lists the period's actors once each, MASAHA and SYSTEM included
+AssertionError: expected [ …(7) ] to deeply equal [ …(4) ]
+    295|     expect(metaOf(await log(owner)).actors).toEqual(expected);
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B12 (apps/api/src/modules/audit/audit.manage.routes.ts) broken run exit 1
+     × reception is 403 before the query is read; a stranger, another space's owner and the admin not_found 447ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > reception is 403 before the query is read; a stranger, another space's owner and the admin not_found
+AssertionError: expected 422 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B12a (apps/api/src/app.ts) broken run exit 1
+     × reception is 403 before the query is read; a stranger, another space's owner and the admin not_found 373ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > reception is 403 before the query is read; a stranger, another space's owner and the admin not_found
+AssertionError: expected 404 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B13 (apps/api/src/modules/audit/platformEvents.ts) broken run exit 1
+     × the admin reads the platform's events of every space and of none, and never a space's operations, money, people, settings or staff 558ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > the admin reads the platform's events of every space and of none, and never a space's operations, money, people, settings or staff
+AssertionError: expected [ 1, 2, 3, 4, 5, 6, 7 ] to deeply equal [ 1, 2, 3, 4, 5, 6 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B14 (apps/api/src/modules/audit/platformEvents.ts) broken run exit 1
+     × the admin reads the platform's events of every space and of none, and never a space's operations, money, people, settings or staff 615ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > the admin reads the platform's events of every space and of none, and never a space's operations, money, people, settings or staff
+AssertionError: expected [ 1, 2, 3, 4, 5, 6, 15 ] to deeply equal [ 1, 2, 3, 4, 5, 6 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B15 (apps/api/src/modules/audit/platformEvents.ts) broken run exit 1
+     × an account's event that names a space (an owner's staff) is the space's, never the admin's; the admin's own are listed 454ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > an account's event that names a space (an owner's staff) is the space's, never the admin's; the admin's own are listed
+AssertionError: expected [ 1, 2, 3, 4 ] to deeply equal [ 3, 4 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B16 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × q finds a space's entries by its name, a person's by name, an area's by its Arabic name; each entry carries its space, a deleted one marked 470ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > q finds a space's entries by its name, a person's by name, an area's by its Arabic name; each entry carries its space, a deleted one marked
+AssertionError: expected [ 1 ] to deeply equal [ 1, 2 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B17 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × actor narrows to one person; meta.actors the period's persons 474ms
+      Tests  1 failed | 7 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > actor narrows to one person; meta.actors the period's persons
+AssertionError: expected [ 1, 2, 3, 4 ] to deeply equal [ 2 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 7 skipped (8)
+== B18 (apps/api/src/app.ts) broken run exit 1
+     × guest is 401 269ms
+     × USER is 403 288ms
+     × OWNER is 403 266ms
+     × ADMIN with a pending password change is 403 273ms
+      Tests  4 failed | 1 passed | 3 skipped (8)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > guest is 401
+AssertionError: expected 200 to be 401 // Object.is equality
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > USER is 403
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > OWNER is 403
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > ADMIN with a pending password change is 403
+AssertionError: expected 200 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  5 passed | 3 skipped (8)

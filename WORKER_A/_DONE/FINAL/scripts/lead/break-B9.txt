@@ -1,0 +1,288 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/shared/routing/focus/useMainFocus.component.test.tsx (5 tests | 2 failed) 320ms
+   ❯ the focus on a page change (5)
+     × leaves the first page’s focus where it is, also after a guard replaced the page on load 146ms
+     × moves the focus to main on a later page 29ms
+ ❯ |component| src/pages/dashboard/shell/DashboardLayout.component.test.tsx (5 tests | 2 failed) 404ms
+   ❯ the dashboard's skip link and focus (2)
+     × offers «Skip to content» first, before the sidebar, leading to main 172ms
+     × moves the focus to main when another page opens, not on the first 39ms
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 6 passed (10)
+   Start at  17:13:30
+   Duration  9.47s (environment 34%, transform 32%, import 21%, setup 8%, tests 5%)
+
+  Transform  |component| transforming modules took 5.09s · 32% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/shell/DashboardLayout.component.test.tsx > the dashboard's skip link and focus > offers «Skip to content» first, before the sidebar, leading to main
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<a
+  class="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"
+  href="#main"
+>
+  Skip to content
+</a>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <div
+      class="flex min-h-svh w-full bg-background text-foreground"
+      data-slot="sidebar-wrapper"
+    >
+      <a
+        class="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"
+        href="#main"
+      >
+        Skip to content
+      </a>
+      <nav
+        aria-label="Space dashboard"
+        class="group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground w-62"
+        data-mode="desktop"
+        data-slot="sidebar"
+      >
+        <div
+          class="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-3 py-2"
+          data-slot="sidebar-content"
+        />
+        <div
+          class="shrink-0 p-3 flex flex-col items-start gap-2"
+          data-slot="sidebar-footer"
+        >
+          <button
+            class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) md:hidden"
+            data-slot="button"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-languages"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m5 8 6 6"
+              />
+              <path
+                d="m4 14 6-6 2-3"
+              />
+              <path
+                d="M2 5h12"
+              />
+              <path
+                d="M7 2h1"
+              />
+              <path
+                d="m22 22-5-10-5 10"
+              />
+              <path
+                d="M14 18h6"
+              />
+            </svg>
+            <bdi
+              lang="ar"
+            >
+              العربية
+            </bdi>
+          </button>
+        </div>
+      </nav>
+      <div
+        class="flex min-w-0 flex-1 flex-col"
+        data-slot="sidebar-inset"
+      >
+        <header
+          class="sticky top-0 z-sticky flex min-h-14 items-center gap-3 border-b border-border bg-background px-4 py-2 md:px-8"
+        >
+          <div
+            class="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2"
+          />
+          <div
+            class="flex items-center gap-1"
+          >
+            <button
+              class="shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) hidden md:inline-flex"
+              data-slot="button"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-languages"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m5 8 6 6"
+                />
+                <path
+                  d="m4 14 6-6 2-3"
+                />
+                <path
+                  d="M2 5h12"
+                />
+                <path
+                  d="M7 2h1"
+                />
+                <path
+                  d="m22 22-5-10-5 10"
+                />
+                <path
+                  d="M14 18h6"
+                />
+              </svg>
+              <bdi
+                lang="ar"
+              >
+                العربية
+              </bdi>
+            </button>
+            <button
+              aria-label="Dark theme"
+              class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"
+              data-slot="button"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-moon"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+                />
+              </svg>
+            </button>
+          </div>
+        </header>
+        <main
+          class="flex flex-1 flex-col gap-6 px-4 py-6 outline-none md:px-8"
+          id="main"
+          tabindex="-1"
+        >
+          <p>
+            A page
+          </p>
+        </main>
+        <div
+          class="fixed inset-x-0 bottom-0 z-sticky border-t border-border bg-background px-4 py-3 md:hidden"
+          data-slot="page-action-bar"
+          hidden=""
+        />
+      </div>
+    </div>
+    <p>
+      No bar
+    </p>
+  </div>
+</body>[39m
+ ❯ src/pages/dashboard/shell/DashboardLayout.component.test.tsx:60:18
+     58|
+     59|     const skip = screen.getByRole('link', { name: 'Skip to content' });
+     60|     expect(skip).toHaveFocus();
+       |                  ^
+     61|     expect(skip).toHaveAttribute('href', '#main');
+     62|     expect(screen.getByRole('main')).toHaveAttribute('id', 'main');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/pages/dashboard/shell/DashboardLayout.component.test.tsx > the dashboard's skip link and focus > moves the focus to main when another page opens, not on the first
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveFocus()[22m
+
+Received element is focused:
+  [31m<main
+  class="flex flex-1 flex-col gap-6 px-4 py-6 outline-none md:px-8"
+  id="main"
+  tabindex="-1"
+>
+  <p>
+    A page
+  </p>
+</main>[39m
+ ❯ src/pages/dashboard/shell/DashboardLayout.component.test.tsx:69:42
+     67|     const router = renderShell('/plain');
+     68|     await screen.findByText('A page');
+     69|     expect(screen.getByRole('main')).not.toHaveFocus();
+       |                                          ^
+     70|
+     71|     await act(async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/shared/routing/focus/useMainFocus.component.test.tsx > the focus on a page change > leaves the first page’s focus where it is, also after a guard replaced the page on load
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveFocus()[22m
+
+Received element is focused:
+  [31m<main
+  aria-label="Focus"
+  id="main"
+  tabindex="-1"
+>
+  <h1>
+    Sign in
+  </h1>
+</main>[39m
+ ❯ src/shared/routing/focus/useMainFocus.component.test.tsx:71:31
+     69|
+     70|     expect(await screen.findByRole('heading', { name: 'Sign in' })).to…
+     71|     expect(main('Focus')).not.toHaveFocus();
+       |                               ^
+     72|     expect(document.body).toHaveFocus();
+     73|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |component| src/shared/routing/focus/useMainFocus.component.test.tsx > the focus on a page change > moves the focus to main on a later page
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveFocus()[22m
+
+Received element is focused:
+  [31m<main
+  aria-label="Site"
+  id="main"
+  tabindex="-1"
+>
+  <h1>
+    Home
+  </h1>
+</main>[39m
+ ❯ src/shared/routing/focus/useMainFocus.component.test.tsx:77:30
+     75|   it('moves the focus to main on a later page', async () => {
+     76|     const router = renderShells('/');
+     77|     expect(main('Site')).not.toHaveFocus();
+       |                              ^
+     78|
+     79|     await act(async () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+

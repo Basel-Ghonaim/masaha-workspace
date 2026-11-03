@@ -1,0 +1,283 @@
+{
+  "c2": [
+    {
+      "id": "2",
+      "file": "src/features/desk/repository/deskRepository.ts",
+      "edits": [
+        [
+          "api.post<PaymentRow>(`${space(spaceId)}/payments/${String(paymentId)}/void`, body),",
+          "api.post<PaymentRow>(`${space(spaceId)}/payments/${String(paymentId)}/void`, body, withIdempotencyKey('k')),"
+        ]
+      ],
+      "lane": "unit",
+      "test": "src/features/desk/repository/deskRepository.unit.test.ts"
+    },
+    {
+      "id": "3",
+      "file": "src/features/desk/hooks/void/useVoidDialog.ts",
+      "edits": [
+        [
+          "prepare: (values) => ({ reason: values.reason.trim() === '' ? undefined : values.reason }),",
+          "prepare: (values) => ({ reason: values.reason }),"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/desk/hooks/void/useVoidDialog.component.test.tsx -t \"requires a reason\""
+    },
+    {
+      "id": "4",
+      "file": "src/features/desk/repository/deskRepository.ts",
+      "edits": [
+        [
+          "api.post<PaymentRow>(`${space(spaceId)}/payments/${String(paymentId)}/void`, body),",
+          "api.post<PaymentRow>(`${space(spaceId)}/payments/${String(paymentId)}/void`, body, withIdempotencyKey('k')),"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/desk/hooks/void/useVoidDialog.component.test.tsx -t \"retry is safe\""
+    },
+    {
+      "id": "5",
+      "file": "src/features/desk/hooks/void/useVoidDialog.ts",
+      "edits": [
+        [
+          "      ...copy.desk.refusals,\n",
+          ""
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/desk/hooks/void/useVoidDialog.component.test.tsx -t \"403\""
+    },
+    {
+      "id": "6",
+      "file": "src/features/desk/components/void/VoidDialog.tsx",
+      "edits": [
+        [
+          "{dialog.failure !== null && <FormFailure view={dialog.failure} />}",
+          "{dialog.failure !== null && <p>{dialog.failure.message}</p>}"
+        ],
+        [
+          "import { FormFailure } from '@shared/forms';\n",
+          ""
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/desk/components/void/VoidDialog.component.test.tsx"
+    },
+    {
+      "id": "7",
+      "file": "src/features/desk/components/void/VoidDialog.tsx",
+      "edits": [
+        [
+          "        onCloseAutoFocus={(event) => {\n          event.preventDefault();\n          returnFocus();\n        }}\n",
+          ""
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/desk/components/void/VoidPaymentAction.component.test.tsx"
+    },
+    {
+      "id": "8",
+      "file": "src/features/desk/hooks/statement/useStatement.ts",
+      "edits": [
+        [
+          "abilities.void && payment.voided === null",
+          "payment.voided === null"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/desk/hooks/statement/useStatement.component.test.tsx"
+    }
+  ],
+  "c3": [
+    {
+      "id": "9",
+      "file": "src/features/payments/repository/paymentsRepository.ts",
+      "edits": [
+        [
+          "        params: query,\n      }),\n",
+          "        params: query,\n      }).then(({ data }) => ({ data }) as never),\n"
+        ]
+      ],
+      "lane": "unit",
+      "test": "src/features/payments/repository/paymentsRepository.unit.test.ts"
+    },
+    {
+      "id": "10",
+      "file": "src/features/payments/services/ledgerQueryOf.ts",
+      "edits": [
+        [
+          "addDays(from, PAYMENTS_RANGE_MAX_DAYS - 1)",
+          "addDays(from, PAYMENTS_RANGE_MAX_DAYS)"
+        ]
+      ],
+      "lane": "unit",
+      "test": "src/features/payments/services/ledgerQueryOf.unit.test.ts"
+    },
+    {
+      "id": "11",
+      "file": "src/features/payments/services/periodText.ts",
+      "edits": [
+        [
+          "    year: 'numeric',\n    timeZone: 'UTC',\n",
+          "    year: 'numeric',\n"
+        ]
+      ],
+      "lane": "unit",
+      "test": "src/features/payments/services/periodText.unit.test.ts",
+      "env": {
+        "TZ": "America/New_York"
+      }
+    },
+    {
+      "id": "12",
+      "file": "src/features/payments/services/paymentRowView.ts",
+      "edits": [
+        [
+          "              name: isolate(row.voided.by.name),\n",
+          "              name: '',\n"
+        ]
+      ],
+      "lane": "unit",
+      "test": "src/features/payments/services/paymentRowView.unit.test.ts"
+    },
+    {
+      "id": "13",
+      "file": "src/features/payments/hooks/ledger/useLedgerFilters.ts",
+      "edits": [
+        [
+          "      write({ voided: false, page: 1 });",
+          "      write({ voided: false, page: 1, from: current().from, to: current().to });"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx"
+    },
+    {
+      "id": "14",
+      "file": "src/features/payments/hooks/ledger/useLedger.ts",
+      "edits": [
+        [
+          "              received: money(totals.receivedAgorot),",
+          "              received: money(rows.length === 0 ? 0 : (answer?.data ?? []).reduce((sum, row) => sum + row.amountAgorot, 0)),"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/hooks/ledger/useLedger.component.test.tsx -t \"server’s totals\""
+    },
+    {
+      "id": "15",
+      "file": "src/features/payments/hooks/ledger/useLedger.ts",
+      "edits": [
+        [
+          "            : filters.anyApplied\n              ? ('noMatch' as const)\n              : ('emptyToday' as const),",
+          "            : ('emptyToday' as const),"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/hooks/ledger/useLedger.component.test.tsx -t \"empty today\""
+    },
+    {
+      "id": "16",
+      "file": "src/features/payments/hooks/ledger/useLedger.ts",
+      "edits": [
+        [
+          "            .sort((a, b) => Number(b.self) - Number(a.self))\n",
+          "            .sort((a, b) => Number(b.self) - Number(a.self))\n            .filter((person) => person.active)\n"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/hooks/ledger/useLedger.component.test.tsx -t \"deactivated\""
+    },
+    {
+      "id": "17",
+      "file": "src/features/payments/components/ledger/LedgerFilters.tsx",
+      "edits": [
+        [
+          "      {wide ? (",
+          "      {wide && false ? ("
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/components/ledger/PaymentsLedger.component.test.tsx -t \"five columns\""
+    },
+    {
+      "id": "18",
+      "file": "src/features/payments/components/ledger/PaymentsLedger.tsx",
+      "edits": [
+        [
+          "  const { listRef, totalsRef, leave } = useFocusAfterLeave(ledger.rows.map((row) => row.key));\n",
+          "  useFocusAfterLeave(ledger.rows.map((row) => row.key));\n  const listRef = { current: null };\n  const totalsRef = { current: null };\n  const leave = () => undefined;\n"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/components/ledger/PaymentsLedger.component.test.tsx -t \"focused row leaves\""
+    },
+    {
+      "id": "19",
+      "file": "src/features/staff/hooks/people/useStaffPeople.ts",
+      "edits": [
+        [
+          "import { useStaffQuery } from '../list/useStaffQuery';\n",
+          "import { useQuery } from '@tanstack/react-query';\nimport { createStaffRepository } from '../../repository/staffRepository';\n"
+        ],
+        [
+          "  const query = useStaffQuery(spaceId);\n",
+          "  const query = useQuery({ queryKey: ['space', spaceId, 'staffPeople'], queryFn: () => createStaffRepository().list(spaceId) });\n"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/staff/hooks/people/useStaffPeople.component.test.tsx"
+    },
+    {
+      "id": "20a",
+      "file": "src/pages/dashboard/routes.tsx",
+      "edits": [
+        [
+          "  payments: async () => {\n    const { PaymentsPage } = await import('./space/payments/PaymentsPage');\n    return <PaymentsPage />;\n  },\n",
+          ""
+        ]
+      ],
+      "lane": "component",
+      "test": "src/pages/dashboard/routes.component.test.tsx -t \"the ledger under\""
+    }
+  ],
+  "c4": [
+    {
+      "id": "21",
+      "file": "src/features/payments/hooks/mine/useMyPaymentsToday.ts",
+      "edits": [
+        [
+          "const query: PaymentsQuery = { voided: 'INCLUDE', page, limit: 20 };",
+          "const query: PaymentsQuery = { from: gazaClockOf(new Date()).date, to: gazaClockOf(new Date()).date, voided: 'INCLUDE', page, limit: 20 };"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx -t \"never summed\""
+    },
+    {
+      "id": "22",
+      "file": "src/features/payments/hooks/mine/useMyPaymentsToday.ts",
+      "edits": [
+        [
+          "              amount: money(totals.receivedAgorot),",
+          "              amount: money(totals.receivedAgorot + totals.voided.amountAgorot),"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx -t \"voided one\""
+    },
+    {
+      "id": "23",
+      "file": "src/features/payments/components/mine/HandoverFigures.tsx",
+      "edits": [
+        [
+          "              <span className=\"text-label\">{transfer.label}</span>\n              <span className=\"text-caption text-muted-foreground\">{transfer.helper}</span>\n",
+          "              <span className=\"text-label\">{transfer.label}</span>\n"
+        ]
+      ],
+      "lane": "component",
+      "test": "src/features/payments/components/mine/MyPaymentsToday.component.test.tsx -t \"at 390\""
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+build(web): keep dashboard-only code acyclic
+
+What only the dashboard imports besides its own code had no chunk of
+its own, so the bundler put it in a lazy dashboard page's chunk: the
+space settings' page held @masaha/shared's space-settings schemas and
+the announcements' page the capability's dashboard parts. Each of
+those chunks imported the dashboard's chunk, which imported it back
+(finding 27), safe only while every use across them waits inside a
+function.
+
+A dashboard-shared group now takes each module whose every chain of
+static importers ends in dashboard code, none loaded lazily, so it
+never imports the dashboard's chunk back. check:build refuses a chunk
+the dashboard's chunk reaches that imports it back, and holds the new
+chunk out of the site's first download as it holds the dashboard's.

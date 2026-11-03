@@ -1,0 +1,43 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/space-links/components/admin-list
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx (25 tests | 1 failed) 12503ms
+   ❯ AdminSpacesList, from 1024 px (19)
+     × ?status=editable selects «تعدّلها الإدارة», with the stale chip on 278ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 24 passed (25)
+   Start at  09:32:57
+   Duration  27.33s (tests 47%, import 19%, transform 17%, environment 14%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx > AdminSpacesList, from 1024 px > ?status=editable selects «تعدّلها الإدارة», with the stale chip on
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  تعدّلها الإدارة[39m
+Received:
+[31m  كل الحالات[39m
+ ❯ src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx:255:62
+    253|     await screen.findByText('Focus Hub');
+    254|
+    255|     expect(screen.getByRole('combobox', { name: 'الحالة' })).toHaveTex…
+       |                                                              ^
+    256|     expect(requests[0]?.params).toMatchObject({ status: 'editable', st…
+    257|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/space-links/components/admin-list

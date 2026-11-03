@@ -1,0 +1,38 @@
+<<<OLD
+  Card,
+  CardContent,
+===
+  Card,
+  CardAction,
+  CardContent,
+>>>
+<<<OLD
+import { useStatement } from '../../hooks/statement/useStatement';
+===
+import { useStatement } from '../../hooks/statement/useStatement';
+import { CorrectAction } from '../correct/CorrectAction';
+>>>
+<<<OLD
+ * its renewal; the owner (`voids`) may void a payment in its statement (S10). `opened` hears which
+ * control opened the payment.
+ */
+===
+ * its renewal; the owner (`voids`) may void a payment in its statement (S10); its «⋯» holds
+ * «تصحيح الاشتراك» (D8.4), whose price is the owner's too. `opened` hears which control opened the
+ * payment.
+ */
+>>>
+<<<OLD
+        <CardDescription className="flex flex-col gap-1">
+          {card.dates !== null && <span>{card.dates}</span>}
+          <span>{card.terms}</span>
+        </CardDescription>
+===
+        <CardDescription className="flex flex-col gap-1">
+          {card.dates !== null && <span>{card.dates}</span>}
+          <span>{card.terms}</span>
+        </CardDescription>
+        <CardAction>
+          <CorrectAction spaceId={spaceId} subscription={card.subscription} owner={voids} />
+        </CardAction>
+>>>

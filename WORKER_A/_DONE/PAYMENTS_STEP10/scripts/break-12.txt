@@ -1,0 +1,31 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/payments/services/paymentRowView.unit.test.ts (4 tests | 1 failed) 31ms
+   ❯ paymentRowView (4)
+     × marks a voided one with its badge and who voided it and why 7ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  14:37:43
+   Duration  1.21s (transform 69%, import 27%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/payments/services/paymentRowView.unit.test.ts > paymentRowView > marks a voided one with its badge and who voided it and why
+AssertionError: expected 'ألغاها : دفعة تجربة' to be 'ألغاها أحمد الشوا: دفعة تجربة' // Object.is equality
+
+Expected: "ألغاها أحمد الشوا: دفعة تجربة"
+Received: "ألغاها : دفعة تجربة"
+
+ ❯ src/features/payments/services/paymentRowView.unit.test.ts:62:37
+     60|     );
+     61|     expect(row.voided?.label).toBe('ملغاة');
+     62|     expect(heard(row.voided?.line)).toBe('ألغاها أحمد الشوا: دفعة تجرب…
+       |                                     ^
+     63|     expect(row.payment.voided).toBe(true);
+     64|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

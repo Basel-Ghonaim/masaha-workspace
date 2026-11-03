@@ -1,0 +1,58 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/components/list/AnnouncementsList.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx (8 tests | 2 failed) 3476ms
+   ❯ AnnouncementsList (8)
+     ❯ a refusal stays in its dialog while the list is read again (2)
+       × keeps the extension’s CLOSURE_ALREADY_EXTENDED until «Back», though the card now says the closure was extended 584ms
+       × keeps the delete’s CLOSURE_EXTENDED until «Back», though the card no longer offers the delete 655ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed (8)
+   Start at  16:52:19
+   Duration  14.70s (transform 28%, import 25%, tests 24%, environment 18%, setup 5%)
+
+  Transform  |component| transforming modules took 4.04s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx > AnnouncementsList > a refusal stays in its dialog while the list is read again > keeps the extension’s CLOSURE_ALREADY_EXTENDED until «Back», though the card now says the closure was extended
+AssertionError: expected <body style><div>…(1)</div></body> not to be <body style><div>…(1)</div></body> // Object.is equality
+ ❯ focusPlaced src/features/announcements/components/list/AnnouncementsList.component.test.tsx:198:27
+    196|     const focusPlaced = () => {
+    197|       const focused = document.activeElement;
+    198|       expect(focused).not.toBe(document.body);
+       |                           ^
+    199|       expect(
+    200|         focused?.hasAttribute('data-card-action') === true ||
+ ❯ src/features/announcements/components/list/AnnouncementsList.component.test.tsx:228:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx > AnnouncementsList > a refusal stays in its dialog while the list is read again > keeps the delete’s CLOSURE_EXTENDED until «Back», though the card no longer offers the delete
+AssertionError: expected <body style><div>…(1)</div></body> not to be <body style><div>…(1)</div></body> // Object.is equality
+ ❯ focusPlaced src/features/announcements/components/list/AnnouncementsList.component.test.tsx:198:27
+    196|     const focusPlaced = () => {
+    197|       const focused = document.activeElement;
+    198|       expect(focused).not.toBe(document.body);
+       |                           ^
+    199|       expect(
+    200|         focused?.hasAttribute('data-card-action') === true ||
+ ❯ src/features/announcements/components/list/AnnouncementsList.component.test.tsx:253:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/components/list/AnnouncementsList.component.test.tsx

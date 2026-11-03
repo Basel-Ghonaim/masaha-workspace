@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/data-reports/hooks/intent
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |unit| src/features/data-reports/hooks/intent/reportIntent.unit.test.ts (3 tests | 1 failed) 9ms
+   ❯ the report a guest pressed (3)
+     × is held for its space and taken once 7ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/hooks/intent/reportIntent.unit.test.ts > the report a guest pressed > is held for its space and taken once
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/features/data-reports/hooks/intent/reportIntent.unit.test.ts:13:38
+     11|
+     12|     expect(takeReport('masaha-hub')).toBe(true);
+     13|     expect(takeReport('masaha-hub')).toBe(false);
+       |                                      ^
+     14|   });
+     15|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  13:05:10
+   Duration  295ms (transform 51%, import 30%, tests 11%, worker 7%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/data-reports/hooks/intent

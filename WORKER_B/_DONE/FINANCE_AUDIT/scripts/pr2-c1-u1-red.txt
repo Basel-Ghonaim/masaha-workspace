@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/packages/shared
+
+ ❯ src/platform-settings/requests.unit.test.ts (0 test)
+ ❯ src/space-settings/requests.unit.test.ts (4 tests | 1 failed) 14ms
+   ❯ newSpaceDefaultsSchema (1)
+     × takes the four defaults whole, the minutes set exactly for "up after N minutes" 3ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/platform-settings/requests.unit.test.ts [ src/platform-settings/requests.unit.test.ts ]
+Error: Cannot find module './requests.ts' imported from C:/dev/masaha/app-b/packages/shared/src/platform-settings/requests.unit.test.ts
+ ❯ src/platform-settings/requests.unit.test.ts:4:1
+      2|
+      3| import { toFieldErrors } from '../core/index.ts';
+      4| import { platformContactSchema, stalenessSchema } from './requests.ts';
+       | ^
+      5|
+      6| /** The field errors a body fails `schema` with, or null when it passe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/space-settings/requests.unit.test.ts > newSpaceDefaultsSchema > takes the four defaults whole, the minutes set exactly for "up after N minutes"
+TypeError: Cannot read properties of undefined (reading 'safeParse')
+ ❯ defaultsErrors src/space-settings/requests.unit.test.ts:72:43
+     70|   };
+     71|   const defaultsErrors = (body: object) => {
+     72|     const result = newSpaceDefaultsSchema.safeParse(body);
+       |                                           ^
+     73|     return result.success ? null : toFieldErrors(result.error.issues, …
+     74|   };
+ ❯ src/space-settings/requests.unit.test.ts:77:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed | 3 passed (4)
+   Start at  16:15:15
+   Duration  752ms (import 57%, transform 36%, worker 4%, tests 3%)
+

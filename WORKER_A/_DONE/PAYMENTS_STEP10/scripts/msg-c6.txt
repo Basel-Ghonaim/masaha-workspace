@@ -1,0 +1,9 @@
+feat(announcements): show a space's announcements
+
+A space's page carries its running and upcoming announcements since
+#112, but the site drew none, not even a closure in force (finding 131).
+
+The page now shows a running closure as a warning at its top and the
+other announcements after its status, before the prices (U8). The
+closure is not repeated in the section (DI-59): one closure said twice
+reads as two.

@@ -1,0 +1,13 @@
+NL = chr(10)
+FENCE = chr(96) * 3
+BULLET, TYPES = CONTRACT.split(FENCE + 'ts' + NL, 1)
+TYPES = TYPES.split(FENCE, 1)[0]
+edit('docs/api/api-contract.md', [
+    ("never income (the owner's decision 2)." + NL + NL + FENCE + 'ts' + NL + 'IncomeSplit',
+     "never income (the owner's decision 2)." + NL + BULLET.rstrip(NL) + NL + NL + FENCE + 'ts' + NL + 'IncomeSplit'),
+    ('    byMethod: { CASH: number, TRANSFER: number }' + NL + '  }[]' + NL + '}' + NL + FENCE,
+     '    byMethod: { CASH: number, TRANSFER: number }' + NL + '  }[]' + NL + '}' + NL + TYPES + FENCE),
+    ('`not_found` (404).' + NL + NL + '### Announcements (managed)',
+     '`not_found` (404).' + NL + NL + ROUTES + '### Announcements (managed)'),
+])
+

@@ -1,0 +1,17 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/audit/services/actionGroups.unit.test.ts src/features/audit/services/actionWords.unit.test.ts src/features/audit/services/auditQueryOf.unit.test.ts src/features/audit/services/detailsOf.unit.test.ts src/features/lookups/services/moved.unit.test.ts src/features/lookups/services/withPosition.unit.test.ts src/features/platform-settings/services/platformContact.unit.test.ts src/features/space-links/services/userRowView.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+
+ Test Files  8 passed (8)
+      Tests  37 passed (37)
+   Start at  11:54:26
+   Duration  4.28s (transform 66%, import 31%, tests 2%, worker 1%)
+
+  Transform  |unit| transforming modules took 10.39s · 66% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

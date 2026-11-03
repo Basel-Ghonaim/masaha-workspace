@@ -1,0 +1,78 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/components/decide/DecideSheet.component.test.tsx (2 tests | 2 failed) 274ms
+   ❯ DecideSheet (2)
+     × is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 390 px 209ms
+     × is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 1440 px 63ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  12:13:15
+   Duration  7.04s (import 32%, transform 31%, environment 27%, setup 6%, tests 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/decide/DecideSheet.component.test.tsx > DecideSheet > is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 390 px
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<textarea
+  aria-describedby="_r_3_-helper"
+  class="field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"
+  data-slot="textarea"
+  dir="auto"
+  id="_r_3_-control"
+  name="note"
+  tabindex="-1"
+/>[39m
+Received element with focus:
+  [31m<button
+  class="inline-flex items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) flex-1"
+  data-slot="button"
+  type="button"
+>
+  Corrected
+</button>[39m
+ ❯ src/features/data-reports/components/decide/DecideSheet.component.test.tsx:48:77
+     46|       const sheet = await screen.findByRole('dialog', { name: 'Report …
+     47|       expect(sheet).toHaveAccessibleDescription('A visitor · 21 Octobe…
+     48|       expect(screen.getByRole('textbox', { name: 'Reply from the space…
+       |                                                                             ^
+     49|       expect(screen.getByText('The space opens at 9, not 8.')).toBeVis…
+     50|       expect(screen.getByText('New')).toBeVisible();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/data-reports/components/decide/DecideSheet.component.test.tsx > DecideSheet > is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 1440 px
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<textarea
+  aria-describedby="_r_7_-helper"
+  class="field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"
+  data-slot="textarea"
+  dir="auto"
+  id="_r_7_-control"
+  name="note"
+  tabindex="-1"
+/>[39m
+Received element with focus:
+  [31m<button
+  class="inline-flex items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) flex-1"
+  data-slot="button"
+  type="button"
+>
+  Corrected
+</button>[39m
+ ❯ src/features/data-reports/components/decide/DecideSheet.component.test.tsx:48:77
+     46|       const sheet = await screen.findByRole('dialog', { name: 'Report …
+     47|       expect(sheet).toHaveAccessibleDescription('A visitor · 21 Octobe…
+     48|       expect(screen.getByRole('textbox', { name: 'Reply from the space…
+       |                                                                             ^
+     49|       expect(screen.getByText('The space opens at 9, not 8.')).toBeVis…
+     50|       expect(screen.getByText('New')).toBeVisible();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

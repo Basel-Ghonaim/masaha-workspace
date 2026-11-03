@@ -1,0 +1,211 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/finance/components
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/finance/components/IncomeTab.component.test.tsx (4 tests | 1 failed) 8444ms
+   ❯ Finance › Income (4)
+     × downloads the income CSV and says «File downloaded» 3398ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:29:42
+   Duration  29.21s (tests 30%, transform 25%, import 24%, environment 16%, setup 5%)
+
+  Transform  |component| transforming modules took 7.15s · 25% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/finance/components/IncomeTab.component.test.tsx > Finance › Income > downloads the income CSV and says «File downloaded»
+TestingLibraryElementError: Unable to find an element with the text: File downloaded. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mFinance[0m
+      [36m</h1>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+      [36m>[39m
+        [0mExport income (CSV)[0m
+      [36m</button>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-4"[39m
+        [33mdata-orientation[39m=[32m"horizontal"[39m
+        [33mdata-slot[39m=[32m"tabs"[39m
+        [33mdir[39m=[32m"ltr"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Reports"[39m
+            [33maria-orientation[39m=[32m"horizontal"[39m
+            [33mclass[39m=[32m"flex items-center max-w-full gap-2 overflow-x-auto md:w-fit md:gap-0 md:overflow-visible md:rounded-lg md:bg-muted md:p-1"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-list"[39m
+            [33mrole[39m=[32m"tablist"[39m
+            [33mstyle[39m=[32m"outline: none;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_4j_-content-income"[39m
+              [33maria-selected[39m=[32m"true"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"active"[39m
+              [33mid[39m=[32m"radix-_r_4j_-trigger-income"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mIncome[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_4j_-content-debts"[39m
+              [33maria-selected[39m=[32m"false"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"inactive"[39m
+              [33mid[39m=[32m"radix-_r_4j_-trigger-debts"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mDebts[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_4j_-content-occupancy"[39m
+              [33maria-selected[39m=[32m"false"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"inactive"[39m
+              [33mid[39m=[32m"radix-_r_4j_-trigger-occupancy"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mOccupancy[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"group/field flex flex-col gap-1.5 md:w-48"[39m
+            [33mdata-slot[39m=[32m"fi...
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mstyle[39m=[32m""[39m
+  [36m>[39m
+    [36m<div>[39m
+      [36m<main>[39m
+        [36m<h1>[39m
+          [0mFinance[0m
+        [36m</h1>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mExport income (CSV)[0m
+        [36m</button>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-4"[39m
+          [33mdata-orientation[39m=[32m"horizontal"[39m
+          [33mdata-slot[39m=[32m"tabs"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33maria-label[39m=[32m"Reports"[39m
+              [33maria-orientation[39m=[32m"horizontal"[39m
+              [33mclass[39m=[32m"flex items-center max-w-full gap-2 overflow-x-auto md:w-fit md:gap-0 md:overflow-visible md:rounded-lg md:bg-muted md:p-1"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-slot[39m=[32m"tabs-list"[39m
+              [33mrole[39m=[32m"tablist"[39m
+              [33mstyle[39m=[32m"outline: none;"[39m
+              [33mtabindex[39m=[32m"0"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33maria-controls[39m=[32m"radix-_r_4j_-content-income"[39m
+                [33maria-selected[39m=[32m"true"[39m
+                [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+                [33mdata-orientation[39m=[32m"horizontal"[39m
+                [33mdata-radix-collection-item[39m=[32m""[39m
+                [33mdata-slot[39m=[32m"tabs-trigger"[39m
+                [33mdata-state[39m=[32m"active"[39m
+                [33mid[39m=[32m"radix-_r_4j_-trigger-income"[39m
+                [33mrole[39m=[32m"tab"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mIncome[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-controls[39m=[32m"radix-_r_4j_-content-debts"[39m
+                [33maria-selected[39m=[32m"false"[39m
+                [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+                [33mdata-orientation[39m=[32m"horizontal"[39m
+                [33mdata-radix-collection-item[39m=[32m""[39m
+                [33mdata-slot[39m=[32m"tabs-trigger"[39m
+                [33mdata-state[39m=[32m"inactive"[39m
+                [33mid[39m=[32m"radix-_r_4j_-trigger-debts"[39m
+                [33mrole[39m=[32m"tab"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mDebts[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33maria-controls[39m=[32m"radix-_r_4j_-content-occupancy"[39m
+                [33maria-selected[39m=[32m"false"[39m
+                [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+                [33mdata-orientation[39m=[32m"horizontal"[39m
+                [33mdata-radix-collection-item[39m=[32m""[39m
+                [33mdata-slot[39m=[32m"tabs-trigger"[39m
+                [33mdata-state[39m=[32m"inactive"[39m
+                [33mid[39m=[32m"radix-_r_4j_-trigger-occupancy"[39m
+                [33mrole[39m=[32m"tab"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+        ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ findToast src/test/findToast.ts:10:10
+      8|  */
+      9| export function findToast(text: Matcher): Promise<HTMLElement> {
+     10|   return waitFor(() => {
+       |          ^
+     11|     const element = screen.getByText(text);
+     12|     expect(element).toBeVisible();
+ ❯ src/features/finance/components/IncomeTab.component.test.tsx:188:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/finance/components

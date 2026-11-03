@@ -1,0 +1,12 @@
+feat(desk): show a day's log beside who is here
+
+The desk's «السجل» (K8) was owed after finding 161 gave it its reads:
+beside who is present, tabs «الآن» | «السجل». The owner chooses the
+day, today by default and never a later one; reception reads today's
+only, with no picker, as the contract allows (DI23).
+
+The day's visits and subscriber check-ins are each read whole, 50 at a
+time, merged the latest check-in first and paged by 20 in the browser
+with their range (S6, DI24): two paged reads cannot be merged page by
+page, and a day is bounded. Each row names its kind, its times on
+Gaza's clock, the stay and how it ended, and marks a written-off visit.

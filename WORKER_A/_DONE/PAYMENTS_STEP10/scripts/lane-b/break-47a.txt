@@ -1,0 +1,48 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |unit| src/features/data-reports/services/reportView.unit.test.ts (5 tests | 2 failed) 37ms
+   ❯ reportDay (2)
+     × says the Gaza day a report was made, never its time 26ms
+     × adds the year when it is not the current one, on Gaza’s calendar 3ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  12:09:42
+   Duration  1.79s (transform 69%, import 27%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/services/reportView.unit.test.ts > reportDay > says the Gaza day a report was made, never its time
+AssertionError: expected '21 أكتوبر في 12:30 ص' to be '21 أكتوبر' // Object.is equality
+
+Expected: "21 أكتوبر"
+Received: "21 أكتوبر في 12:30 ص"
+
+ ❯ src/features/data-reports/services/reportView.unit.test.ts:53:62
+     51|   it('says the Gaza day a report was made, never its time', () => {
+     52|     // 21:30 UTC on the 20th is 00:30 on the 21st in Gaza (UTC+3 in Oc…
+     53|     expect(reportDay('2026-10-20T21:30:00.000Z', 'ar', NOW)).toBe('21 …
+       |                                                              ^
+     54|     expect(reportDay('2026-10-20T21:30:00.000Z', 'en', NOW)).toBe('21 …
+     55|     // 20:59 UTC on the 20th is still the 20th in Gaza.
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/features/data-reports/services/reportView.unit.test.ts > reportDay > adds the year when it is not the current one, on Gaza’s calendar
+AssertionError: expected '1 January at 00:30' to be '1 January' // Object.is equality
+
+Expected: "1 January"
+Received: "1 January at 00:30"
+
+ ❯ src/features/data-reports/services/reportView.unit.test.ts:61:62
+     59|   it('adds the year when it is not the current one, on Gaza’s calendar…
+     60|     // 22:30 UTC on 31 December 2025 is already 1 January 2026 in Gaza…
+     61|     expect(reportDay('2025-12-31T22:30:00.000Z', 'en', NOW)).toBe('1 J…
+       |                                                              ^
+     62|     expect(reportDay('2025-12-31T20:00:00.000Z', 'en', NOW)).toBe('31 …
+     63|     expect(reportDay('2025-03-04T09:00:00.000Z', 'ar', NOW)).toBe('4 م…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

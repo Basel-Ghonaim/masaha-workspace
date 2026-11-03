@@ -1,0 +1,422 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx (2 tests | 2 failed) 3508ms
+   ❯ DeskPage (2)
+     × puts the uncollected card before who is here, and hides it below xl when empty 3339ms
+     × shows the offline state when who is here and the uncollected get no answer 165ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  15:26:45
+   Duration  23.75s (transform 52%, import 17%, tests 15%, environment 12%, setup 3%)
+
+  Transform  |component| transforming modules took 12.21s · 52% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx > DeskPage > puts the uncollected card before who is here, and hides it below xl when empty
+TestingLibraryElementError: Unable to find role="region" and name "1 visit not collected"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Search"[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+        [33mdata-size[39m=[32m"md"[39m
+        [33mdata-slot[39m=[32m"input-group"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"flex shrink-0 text-muted-foreground [&_svg:not([class*='size-'])]:size-4"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-search"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m21 21-4.34-4.34"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"11"[39m
+              [33mcy[39m=[32m"11"[39m
+              [33mr[39m=[32m"8"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</span>[39m
+        [36m<input[39m
+          [33maria-controls[39m=[32m"_r_0_"[39m
+          [33maria-label[39m=[32m"Search by name or the mobile’s last digits"[39m
+          [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+          [33mdata-slot[39m=[32m"input"[39m
+          [33mplaceholder[39m=[32m"Name or the mobile’s last digits"[39m
+          [33mtype[39m=[32m"search"[39m
+          [33mvalue[39m=[32m""[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground empty:hidden"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6"[39m
+        [33mid[39m=[32m"_r_0_"[39m
+      [36m/>[39m
+    [36m</section>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-6 xl:grid xl:grid-cols-12 xl:items-start"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"xl:col-span-8"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3"[39m
+          [33mdata-orientation[39m=[32m"horizontal"[39m
+          [33mdata-slot[39m=[32m"tabs"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Who is here, and the day"[39m
+            [33maria-orientation[39m=[32m"horizontal"[39m
+            [33mclass[39m=[32m"flex items-center gap-4 border-b border-border"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-list"[39m
+            [33mrole[39m=[32m"tablist"[39m
+            [33mstyle[39m=[32m"outline: none;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_3_-content-now"[39m
+              [33maria-selected[39m=[32m"true"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-10 px-1 text-muted-foreground after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-primary after:opacity-0 hover:text-foreground data-active:text-foreground data-active:after:opacity-100"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"active"[39m
+              [33mid[39m=[32m"radix-_r_3_-trigger-now"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mNow[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_3_-content-log"[39m
+              [33maria-selected[39m=[32m"false"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-10 px-1 text-muted-foreground after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-primary after:opacity-0 hover:text-foreground data-active:text-foreground data-active:after:opacity-100"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"inactive"[39m
+              [33mid[39m=[32m"radix-_r_3_-trigger-log"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mLog[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"radix-_r_3_-trigger-now"[39m
+            [33mclass[39m=[32m"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-content"[39m
+            [33mdata-state[39m=[32m"active"[39m
+            [33mid[39m=[32m"radix-_r_3_-content-now"[39m
+            [33mrole[39m=[32m"tabpanel"[39m
+            [33mstyle[39m=[32m""[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<section[39m
+              [33maria-labelledby[39m=[32m"_r_6_"[39m
+              [33mclass[39m=[32m"flex flex-col gap-3"[39m
+            [36m>[39m
+              [36m<h2[39m
+                [33mclass[39m=[32m"flex items-baseline gap-2 text-heading-3"[39m
+                [33mid[39m=[32m"_r_6_"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+              [36m>[39m
+                [0mPresent now[0m
+                [0m [0m
+                [36m<span[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0m0 / 40[0m
+                [36m</span>[39m
+              [36m</h2>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-col gap-4"[39m
+                [33mdata-layout[39m=[32m"cards"[39m
+                [33mdata-slot[39m=[32m"data-table"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex flex-col items-center gap-2 px-4 py-10 text-center"[39m
+                  [33mdata-slot[39m=[32m"empty-state"[39m
+                [36m>[39m
+                  [36m<h2[39m
+                    [33mclass[39m=[32m"text-heading-3"[39m
+                  [36m>[39m
+                    [0mNo one is here right now[0m
+                  [36m</h2>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"max-w-sm text-body-sm text-muted-foreground"[39m
+                  [36m>[39m
+                    [0mSearch for a customer, or check in a visit for the first arrival.[0m
+                  [36m</p>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</section>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"radix-_r_3_-trigger-log"[39m
+            [33mclass[39m=[32m"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-content"[39m
+            [33mdata-state[39m=[32m"inactive"[39m
+            [33mhidden[39m=[32m""[39m
+            [33mid[39m=[32m"radix-_r_3_-content-log"[39m
+            [33mrole[39m=[32m"tabpanel"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-label[39m=[32m"Search"[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+        [33mdata-size[39m=[32m"md"[39m
+        [33mdata-slot[39m=[32m"input-group"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"flex shrink-0 text-muted-foreground [&_svg:not([class*='size-'])]:size-4"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-search"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<path[39m
+              [33md[39m=[32m"m21 21-4.34-4.34"[39m
+            [36m/>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"11"[39m
+              [33mcy[39m=[32m"11"[39m
+              [33mr[39m=[32m"8"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+        [36m</span>[39m
+        [36m<input[39m
+          [33maria-controls[39m=[32m"_r_0_"[39m
+          [33maria-label[39m=[32m"Search by name or the mobile’s last digits"[39m
+          [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+          [33mdata-slot[39m=[32m"input"[39m
+          [33mplaceholder[39m=[32m"Name or the mobile’s last digits"[39m
+          [33mtype[39m=[32m"search"[39m
+          [33mvalue[39m=[32m""[39m
+        [36m/>[39m
+      [36m</div>[39m
+      [36m<p[39m
+        [33maria-live[39m=[32m"polite"[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground empty:hidden"[39m
+      [36m/>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6"[39m
+        [33mid[39m=[32m"_r_0_"[39m
+      [36m/>[39m
+    [36m</section>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-6 xl:grid xl:grid-cols-12 xl:items-start"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"xl:col-span-8"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex flex-col gap-3"[39m
+          [33mdata-orientation[39m=[32m"horizontal"[39m
+          [33mdata-slot[39m=[32m"tabs"[39m
+          [33mdir[39m=[32m"ltr"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33maria-label[39m=[32m"Who is here, and the day"[39m
+            [33maria-orientation[39m=[32m"horizontal"[39m
+            [33mclass[39m=[32m"flex items-center gap-4 border-b border-border"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-list"[39m
+            [33mrole[39m=[32m"tablist"[39m
+            [33mstyle[39m=[32m"outline: none;"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_3_-content-now"[39m
+              [33maria-selected[39m=[32m"true"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-10 px-1 text-muted-foreground after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-primary after:opacity-0 hover:text-foreground data-active:text-foreground data-active:after:opacity-100"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"active"[39m
+              [33mid[39m=[32m"radix-_r_3_-trigger-now"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mNow[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33maria-controls[39m=[32m"radix-_r_3_-content-log"[39m
+              [33maria-selected[39m=[32m"false"[39m
+              [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-10 px-1 text-muted-foreground after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-primary after:opacity-0 hover:text-foreground data-active:text-foreground data-active:after:opacity-100"[39m
+              [33mdata-orientation[39m=[32m"horizontal"[39m
+              [33mdata-radix-collection-item[39m=[32m""[39m
+              [33mdata-slot[39m=[32m"tabs-trigger"[39m
+              [33mdata-state[39m=[32m"inactive"[39m
+              [33mid[39m=[32m"radix-_r_3_-trigger-log"[39m
+              [33mrole[39m=[32m"tab"[39m
+              [33mtabindex[39m=[32m"-1"[39m
+              [33mtype[39m=[32m"button"[39m
+            [36m>[39m
+              [0mLog[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"radix-_r_3_-trigger-now"[39m
+            [33mclass[39m=[32m"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-content"[39m
+            [33mdata-state[39m=[32m"active"[39m
+            [33mid[39m=[32m"radix-_r_3_-content-now"[39m
+            [33mrole[39m=[32m"tabpanel"[39m
+            [33mstyle[39m=[32m""[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m>[39m
+            [36m<section[39m
+              [33maria-labelledby[39m=[32m"_r_6_"[39m
+              [33mclass[39m=[32m"flex flex-col gap-3"[39m
+            [36m>[39m
+              [36m<h2[39m
+                [33mclass[39m=[32m"flex items-baseline gap-2 text-heading-3"[39m
+                [33mid[39m=[32m"_r_6_"[39m
+                [33mtabindex[39m=[32m"-1"[39m
+              [36m>[39m
+                [0mPresent now[0m
+                [0m [0m
+                [36m<span[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                [36m>[39m
+                  [0m0 / 40[0m
+                [36m</span>[39m
+              [36m</h2>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-col gap-4"[39m
+                [33mdata-layout[39m=[32m"cards"[39m
+                [33mdata-slot[39m=[32m"data-table"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex flex-col items-center gap-2 px-4 py-10 text-center"[39m
+                  [33mdata-slot[39m=[32m"empty-state"[39m
+                [36m>[39m
+                  [36m<h2[39m
+                    [33mclass[39m=[32m"text-heading-3"[39m
+                  [36m>[39m
+                    [0mNo one is here right now[0m
+                  [36m</h2>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"max-w-sm text-body-sm text-muted-foreground"[39m
+                  [36m>[39m
+                    [0mSearch for a customer, or check in a visit for the first arrival.[0m
+                  [36m</p>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</section>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33maria-labelledby[39m=[32m"radix-_r_3_-trigger-log"[39m
+            [33mclass[39m=[32m"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-slot[39m=[32m"tabs-content"[39m
+            [33mdata-state[39m=[32m"inactive"[39m
+            [33mhidden[39m=[32m""[39m
+            [33mid[39m=[32m"radix-_r_3_-content-log"[39m
+            [33mrole[39m=[32m"tabpanel"[39m
+            [33mtabindex[39m=[32m"0"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/space/desk/DeskPage.component.test.tsx:59:38
+     57|   it('puts the uncollected card before who is here, and hides it below…
+     58|     const { unmount } = renderDesk();
+     59|     const uncollected = await screen.findByRole('region', { name: '1 v…
+       |                                      ^
+     60|     const present = await screen.findByRole('heading', { name: /Presen…
+     61|     // The DOM's order is the phone's: search, then uncollected, then …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx > DeskPage > shows the offline state when who is here and the uncollected get no answer
+AssertionError: expected [ <h2 class="text-heading-3"></h2> ] to have a length of 2 but got 1
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ src/pages/dashboard/space/desk/DeskPage.component.test.tsx:85:66
+     83|       await vi.advanceTimersByTimeAsync(3_500);
+     84|     });
+     85|     expect(await screen.findAllByText('No internet connection')).toHav…
+       |                                                                  ^
+     86|     expect(screen.queryByRole('alert')).toBeNull();
+     87|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx

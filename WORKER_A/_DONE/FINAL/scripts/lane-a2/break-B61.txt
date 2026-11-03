@@ -1,0 +1,52 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/checkIn.api.test.ts (15 tests | 1 failed | 13 skipped) 2135ms
+   ❯ checking a visitor in (15)
+     × a visit checked in with customerId is that customer's, audited with it 967ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 13 skipped (15)
+   Start at  17:24:03
+   Duration  12.14s (transform 54%, tests 25%, import 19%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/checkIn.api.test.ts > checking a visitor in > a visit checked in with customerId is that customer's, audited with it
+AssertionError: expected { id: 1, visitorName: 'Sara', …(10) } to match object { visitorName: 'Sara', …(1) }
+(10 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "customer": {
+-     "id": 1,
+-     "name": "Sara",
+-     "phone": "+970599000205",
+-   },
++   "customer": null,
+    "visitorName": "Sara",
+  }
+
+ ❯ src/modules/desk/checkIn.api.test.ts:330:30
+    328|     expect(response.status).toBe(201);
+    329|     const { id } = dataOf(response) as { id: number };
+    330|     expect(dataOf(response)).toMatchObject({
+       |                              ^
+    331|       visitorName: 'Sara',
+    332|       customer: { id: sara.id, name: 'Sara', phone: '+970599000205' },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

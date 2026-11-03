@@ -1,0 +1,9 @@
+feat(finance): show a month's income
+
+Screen 19 replaces its placeholder with finance's tabs and its month,
+both in the address with the defaults left out (DI29), and the income:
+today, the month against the month before, all time, the twelve
+months and the visits' thirty days, and each staff member's
+collections. The income's CSV is built in the browser from the
+figures read (the owner's decision 5) and saved by the owner's own
+download. The debts and the occupancy follow in their own commits.

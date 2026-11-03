@@ -1,0 +1,54 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/finance/components/DebtsTab
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/finance/components/DebtsTab.component.test.tsx (5 tests | 1 failed) 2495ms
+   ❯ Finance › Debts (5)
+     × shows the four tiles, the uncollected one linking to the desk and never added; axe-clean 626ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  15:57:00
+   Duration  14.75s (transform 31%, import 27%, environment 19%, tests 17%, setup 5%)
+
+  Transform  |component| transforming modules took 4.40s · 31% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/finance/components/DebtsTab.component.test.tsx > Finance › Debts > shows the four tiles, the uncollected one linking to the desk and never added; axe-clean
+AssertionError: expected [ Array(4) ] to deeply equal [ Array(4) ]
+
+- Expected
++ Received
+
+  [
+    "Total owed₪1,20014 customers",
+    "Customer credit₪3003 customers paid in advance",
+    "Paid in October 20267 customers",
+-   "Uncollected visits5 visits₪75 · never added to the debts · 2 with no price",
++   "Uncollected visits19 visits₪75 · never added to the debts · 2 with no price",
+  ]
+
+ ❯ src/features/finance/components/DebtsTab.component.test.tsx:143:19
+    141|     await screen.findByRole('region', { name: 'Customers who owe' });
+    142|     const tiles = [...container.querySelectorAll('[data-slot="stat-car…
+    143|     expect(tiles).toEqual([
+       |                   ^
+    144|       'Total owed₪1,20014 customers',
+    145|       'Customer credit₪3003 customers paid in advance',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/finance/components/DebtsTab

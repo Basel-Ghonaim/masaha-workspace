@@ -1,0 +1,20 @@
+<<<OLD
+/** «الكل»: no filter, as a choice's value. */
+const ALL = 'all';
+===
+/** «الكل»: no filter, as a choice's value. */
+const ALL = 'all';
+
+/**
+ * The type filter's kinds in the design's order (foundation §13, screen 14): «شهري», «أسبوعي»,
+ * «باقة», «مخصّص», «بدون اشتراك» (D8.5).
+ */
+const KIND_ORDER = ['MONTH', 'WEEK', 'PACKAGE', 'CUSTOM', 'NONE'] as const satisfies readonly (
+  (typeof CUSTOMER_KINDS)[number]
+)[];
+>>>
+<<<OLD
+          ...CUSTOMER_KINDS.map((value) => ({ value, label: words.kind.options[value] })),
+===
+          ...KIND_ORDER.map((value) => ({ value, label: words.kind.options[value] })),
+>>>

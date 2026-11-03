@@ -1,0 +1,154 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages src/features/users src/shared/routing src/shared/lists src/shared/design-system
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/pages/site/shell/SiteLayout.component.test.tsx (12 tests | 2 failed) 13828ms
+   ❯ the site shell (12)
+     × renders the header, the page in the main landmark, and the footer 3099ms
+     × links the wordmark, the pages and sign-in to their paths 3017ms
+ ❯ |component| src/pages/site/auth/authPages.component.test.tsx (14 tests | 1 failed) 14642ms
+   ❯ /login (2)
+     × shows its page to a guest, in the focus shell: the short header and no footer 3115ms
+ ❯ |component| src/pages/site/routes.component.test.tsx (13 tests | 1 failed) 12192ms
+   ❯ the site's routes (13)
+     × shows the Directory under its title 3031ms
+Not implemented: navigation to another Document
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (69 tests | 12 skipped) 36366ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation
+Error: Hook timed out in 10000ms.
+If this is a long-running hook, pass a timeout value as the last argument or configure it globally with "hookTimeout".
+ ❯ src/pages/dashboard/routes.component.test.tsx:201:3
+    199|   // Reception lands on the desk, which loads lazily: its first transf…
+    200|   // seconds, so it is done before the tests, as the pages' own sectio…
+    201|   beforeAll(async () => {
+       |   ^
+    202|     await import('./space/desk/DeskPage');
+    203|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/routes.component.test.tsx > the site's routes > shows the Directory under its title
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ pageTitle src/pages/site/routes.component.test.tsx:108:30
+    106| /** The page's title, inside the shell's main landmark. */
+    107| async function pageTitle() {
+    108|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    109| }
+    110|
+ ❯ src/pages/site/routes.component.test.tsx:196:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |component| src/pages/site/auth/authPages.component.test.tsx > /login > shows its page to a guest, in the focus shell: the short header and no footer
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/site/auth/authPages.component.test.tsx:54:31
+     52|     renderSite(path);
+     53|
+     54|     const main = await screen.findByRole('main');
+       |                               ^
+     55|     expect(await within(main).findByRole('heading', { level: 1, name: …
+     56|     const header = within(screen.getByRole('banner'));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > renders the header, the page in the main landmark, and the footer
+TestingLibraryElementError: Unable to find role="heading"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ renderSite src/pages/site/shell/SiteLayout.component.test.tsx:27:16
+     25|     </Wrapper>,
+     26|   );
+     27|   await screen.findByRole('heading', { level: 1 });
+       |                ^
+     28|   return router;
+     29| }
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:57:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the wordmark, the pages and sign-in to their paths
+TestingLibraryElementError: Unable to find role="heading"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ renderSite src/pages/site/shell/SiteLayout.component.test.tsx:27:16
+     25|     </Wrapper>,
+     26|   );
+     27|   await screen.findByRole('heading', { level: 1 });
+       |                ^
+     28|   return router;
+     29| }
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:72:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  4 failed | 82 passed (86)
+      Tests  4 failed | 575 passed | 12 skipped (591)
+   Start at  17:52:04
+   Duration  141.37s (environment 35%, import 28%, tests 23%, setup 10%, transform 4%)
+
+Environment  |component| jsdom was created 86 times · 276.45s total, 35% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages src/features/users src/shared/routing src/shared/lists src/shared/design-system

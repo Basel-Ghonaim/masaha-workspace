@@ -1,0 +1,103 @@
+== B1 (packages/shared/src/platform-settings/requests.ts) broken run exit 1
+     × takes each threshold as whole days from 1 to 365, both required 12ms
+      Tests  1 failed | 2 passed (3)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/platform-settings/requests.unit.test.ts > stalenessSchema > takes each threshold as whole days from 1 to 365, both required
+AssertionError: expected { stalenessDays: [ 'out_of_range' ] } to deeply equal { …(2) }
+   restored: sha256 same
+   restored run exit 0: Tests  3 passed (3)
+== B2 (packages/shared/src/space-settings/requests.ts) broken run exit 1
+     × takes the four defaults whole, the minutes set exactly for "up after N minutes" 12ms
+      Tests  1 failed | 3 skipped (4)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/space-settings/requests.unit.test.ts > newSpaceDefaultsSchema > takes the four defaults whole, the minutes set exactly for "up after N minutes"
+AssertionError: expected null to deeply equal { Object (visitRoundingMinutes) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 3 skipped (4)
+== B3 (apps/api/src/modules/platform-settings/settingsChange.ts) broken run exit 1
+     × only the fields that change, each as it was and becomes; nothing when all are equal 17ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/platform-settings/settingsChange.unit.test.ts > settingsChange > only the fields that change, each as it was and becomes; nothing when all are equal
+AssertionError: expected { before: { …(3) }, after: { …(3) } } to deeply equal { …(2) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B4 (apps/api/src/modules/platform-settings/platform-settings.service.ts) broken run exit 1
+     × the admin reads each card: the defaults, the thresholds, the contact null while unset 296ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > the admin reads each card: the defaults, the thresholds, the contact null while unset
+AssertionError: expected 500 to be 200 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B5 (apps/api/src/modules/platform-settings/platform-settings.service.ts) broken run exit 1
+     × each card saves on its own, answered as saved; audited with only what changed, no entity id; the same values write nothing 450ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > each card saves on its own, answered as saved; audited with only what changed, no entity id; the same values write nothing
+AssertionError: expected [ { actorId: 1, …(6) }, …(5) ] to have a length of 3 but got 6
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B6 (apps/api/src/modules/platform-settings/platform-settings.service.ts) broken run exit 1
+     × a saved default is copied into the next space only; an existing space keeps its own 404ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > a saved default is copied into the next space only; an existing space keeps its own
+AssertionError: expected { autoCheckoutAtClosing: true, …(3) } to deeply equal { autoCheckoutAtClosing: false, …(3) }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B7 (apps/api/src/modules/platform-settings/platform-settings.repository.ts) broken run exit 1
+     × two saves of one card at once: the second's before is the first's after 370ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > two saves of one card at once: the second's before is the first's after
+AssertionError: expected [ { actorId: 1, …(6) } ] to match object [ { …(3) } ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B8 (apps/api/src/modules/platform-settings/platform-settings.service.ts) broken run exit 1
+     × two first saves of the contact at once make one row per key, both 200 4405ms
+      Tests  1 failed | 10 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > two first saves of the contact at once make one row per key, both 200
+Error: 1 request(s) never waited on a lock
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 10 skipped (11)
+== B9 (apps/api/src/app.ts) broken run exit 1
+     × a guest is 401 on the six routes 293ms
+     × a USER is 403 on the six routes 214ms
+     × a OWNER is 403 on the six routes 230ms
+     × a ADMIN with a pending password change is 403 on the six routes 229ms
+      Tests  4 failed | 7 skipped (11)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > a guest is 401 on the six routes
+AssertionError: get /settings/new-space-defaults: expected 200 to be 401 // Object.is equality
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > a USER is 403 on the six routes
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > a OWNER is 403 on the six routes
+ FAIL  |api| src/modules/platform-settings/adminSettings.api.test.ts > the admin's settings cards > a ADMIN with a pending password change is 403 on the six routes
+AssertionError: get /settings/new-space-defaults: expected 200 to be 403 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  4 passed | 7 skipped (11)
+== B10 (apps/api/src/modules/platform-settings/platform-settings.controller.ts) broken run exit 1
+     × anyone reads the contact, with Cache-Control public 5 minutes; none set: both null 214ms
+      Tests  1 failed | 1 skipped (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/publicContact.api.test.ts > GET /settings/public > anyone reads the contact, with Cache-Control public 5 minutes; none set: both null
+AssertionError: expected undefined to be 'public, max-age=300' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 1 skipped (2)
+== B11 (apps/api/src/modules/platform-settings/platform-settings.service.ts) broken run exit 1
+     × a stored contact that fails its schema is a 500, never answered 272ms
+      Tests  1 failed | 1 skipped (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/platform-settings/publicContact.api.test.ts > GET /settings/public > a stored contact that fails its schema is a 500, never answered
+AssertionError: expected 200 to be 500 // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 1 skipped (2)
+== B12 (apps/api/src/modules/audit/platformEvents.ts) broken run exit 1
+     × the three settings actions are on the admin's log, the target typed platformSettings with no id 595ms
+      Tests  1 failed | 9 skipped (10)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > the three settings actions are on the admin's log, the target typed platformSettings with no id
+AssertionError: expected [] to deeply equal [ { …(4) }, { …(4) }, { …(4) } ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 9 skipped (10)

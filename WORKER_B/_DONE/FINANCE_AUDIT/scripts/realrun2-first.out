@@ -1,0 +1,10 @@
+PASS health db up
+     settings before: contactEmail:5f12a8245d92659efc68a0bdfedda9a2 contactWhatsapp:42cdf211e86970e5034e9dd27571ed66 newSpaceDefaults:4decb388cbbf96c9d565c55b4851c58f priceStalenessDays:34173cb38f07f89ddbebc2ac9128303f stalenessDays:072b030ba126b2f4b2374f342be9ed44
+     audit entries before: 55
+PASS admin reads the new-space defaults 200 -
+PASS admin reads the thresholds ({"stalenessDays":60,"priceStalenessDays":30}) 200 -
+PASS admin reads the contact (email set, whatsapp set) 200 -
+PASS PUT new-space-defaults with the same values writes nothing 200 -
+PASS PUT staleness with the same values writes nothing 200 -
+FAIL PUT contact with the same values writes nothing 200 -
+FAIL the originals did not round-trip: no write performed

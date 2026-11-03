@@ -1,0 +1,12 @@
+feat(data-reports): list every space's reports
+
+Screen 28 (A7, A8): the admin's «بلاغات البيانات» lists every space's
+reports by status, space and field, every filter in the address and the
+space and the field in force shown as removable tags at every width
+(finding 8's FilterTag), the reporter named and «يعالجه» per row. The
+admin decides an unverified space's report in the same sheet; a verified
+space's opens read-only with a link to the space, its owner deciding it.
+
+space-links gains AdminSpaceFilter, one space searched on the server,
+which the page sets in the list. No handled-by filter: the API has no
+parameter for it (finding 167).

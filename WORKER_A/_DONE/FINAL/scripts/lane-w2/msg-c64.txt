@@ -1,0 +1,16 @@
+feat(platform-settings): read the public contact
+
+The site read the platform's contact from VITE_CONTACT_EMAIL and
+VITE_CONTACT_WHATSAPP, so a contact the admin saves never reached
+About or an unverified space's dialog (G4.1). PlatformContact, the
+capability's public entry, now reads GET /settings/public (D6.3):
+
+- kept 5 minutes, as the server's cache, under the public scope;
+- nothing drawn while it is read (DI31); the channels set, WhatsApp
+  first, each kept only when valid; none set, or a failed read, the
+  caller's line as before;
+- the admin's save of the contact reads it again.
+
+The two variables leave the env example, the env's types and the
+setup document; architecture §3's paragraph says the new seam. The
+site's route tests answer the public contact instead of stubbing env.

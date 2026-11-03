@@ -1,0 +1,9 @@
+feat(desk): correct a subscription from its card
+
+A subscription's corrections had routes and no screen (finding 163).
+Its card's «⋯» in the file now offers «تصحيح الاشتراك» (DI11), held
+with «انتهى الاشتراك مبكرًا» on one ended early (DI13). One end sheet
+(DI12): the name, dates and limits for the staff, the owner's price
+with why. «حفظ التصحيح» sends only the changed fields, the terms
+first, then the price, each its own outcome, so terms saved before a
+refused price are not sent again. Its refusals stay in the sheet.

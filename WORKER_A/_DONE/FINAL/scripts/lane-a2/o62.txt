@@ -1,0 +1,2 @@
+if (customer.archivedAt) throw AppError.conflict('CUSTOMER_ARCHIVED');
+          if (await occupancy.isPresent(space.id, customerId, tx))

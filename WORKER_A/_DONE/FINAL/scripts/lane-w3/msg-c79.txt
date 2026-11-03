@@ -1,0 +1,11 @@
+fix(desk): count a full space and show the rates
+
+The visit dialog read "full" from the live status, which a manual
+«ممتلئ» sets; it is now the count, present at or above the capacity,
+and its alert says the ratio (G13.9). «طالب» is a switch and «الوردية»
+chips one may all deselect, with no «بدون وردية» choice (G13.10).
+
+The check-out's lines name the rate and the amount, the cap with the
+day price, or a day price alone; the amount is always the quote's
+(G13.11, S7). Its description names the kind, and the money block sets
+«المستلم الآن» beside «الطريقة» from 768 px (G13.18).

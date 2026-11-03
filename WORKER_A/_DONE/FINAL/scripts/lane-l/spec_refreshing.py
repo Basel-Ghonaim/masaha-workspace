@@ -1,0 +1,2 @@
+AR={'refreshing':{'title':'قائمة يُحدَّث محتواها','restingCaption':'القائمة كما هي','refreshingCaption':'أثناء تحميل الصفحة التالية: البطاقات باقية، باهتة، والقائمة مشغولة','list':'المساحات','cards':['مساحة التركيز','مساحة النخيل','مساحة الزيتون']}}
+EN={'refreshing':{'title':'A list being refreshed','restingCaption':'The list at rest','refreshingCaption':'While the next page loads: the cards stay, dimmed, and the list is busy','list':'Spaces','cards':['Focus Hub','Palm Hub','Olive Desk']}}

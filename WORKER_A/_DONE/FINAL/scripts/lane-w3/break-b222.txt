@@ -1,0 +1,264 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx (5 tests | 1 failed) 3824ms
+   ❯ DeskPage (5)
+     × keeps a fixed subscriber’s check-out one tap, with its toast 527ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  10:45:56
+   Duration  24.35s (transform 49%, import 17%, tests 16%, environment 15%, setup 4%)
+
+  Transform  |component| transforming modules took 11.63s · 49% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx > DeskPage > keeps a fixed subscriber’s check-out one tap, with its toast
+AssertionError: expected <div role="dialog" …(8)>…(2)</div> to be null
+
+- Expected:
+null
+
++ Received:
+<div
+  aria-describedby="radix-_r_3j_"
+  aria-labelledby="radix-_r_3i_"
+  class="fixed top-1/2 start-1/2 z-(--z-modal) grid w-full grid-cols-1 max-w-[calc(100%-(--spacing(8)))] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-xl border border-(--card-border) bg-popover p-6 text-body text-popover-foreground shadow-overlay duration-(--duration-short) ease-(--easing-standard) outline-none sm:max-w-md rtl:translate-x-1/2 data-open:animate-in data-open:fade-in-0 data-open:zoom-in-95 data-closed:animate-out data-closed:fade-out-0 data-closed:zoom-out-95"
+  data-slot="dialog-content"
+  data-state="open"
+  id="radix-_r_3h_"
+  role="dialog"
+  style="pointer-events: auto;"
+  tabindex="-1"
+>
+  <div
+    class="flex flex-col gap-2"
+    data-slot="dialog-header"
+  >
+    <h2
+      class="text-heading-3"
+      data-slot="dialog-title"
+      id="radix-_r_3i_"
+    >
+      ⁨Sara Khalid⁩ checked out
+    </h2>
+    <p
+      class="text-body text-muted-foreground"
+      data-slot="dialog-description"
+      id="radix-_r_3j_"
+    >
+      Today ⁨2:05⁩ · paid ⁨₪60⁩
+    </p>
+  </div>
+  <form
+    class="flex flex-col gap-4"
+    novalidate=""
+  >
+    <p
+      class="text-body-sm"
+    >
+      Left on ⁨Exams by the hour⁩: ⁨₪40⁩
+    </p>
+    <div
+      aria-labelledby="_r_3k_"
+      class="flex flex-col gap-3 rounded-lg bg-muted p-3"
+      role="group"
+    >
+      <span
+        class="sr-only"
+        id="_r_3k_"
+      >
+        Payment
+      </span>
+      <p
+        class="flex items-baseline justify-between gap-3"
+      >
+        <span
+          class="text-label"
+        >
+          Due
+        </span>
+        <span
+          class="text-heading-2"
+          dir="ltr"
+        >
+          ⁨₪40⁩
+        </span>
+      </p>
+      <div
+        class="flex flex-col gap-3 md:grid md:grid-cols-2 md:items-start"
+      >
+        <div
+          class="group/field flex flex-col gap-1.5"
+          data-slot="field"
+        >
+          <div
+            class="flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"
+          >
+            <label
+              class="text-label text-foreground"
+              for="_r_3m_-control"
+              id="_r_3m_-label"
+            >
+              Received now (₪)
+            </label>
+          </div>
+          <div
+            class="h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"
+            data-size="md"
+            data-slot="input-group"
+          >
+            <input
+              aria-describedby="_r_3l_"
+              autocomplete="off"
+              class="h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"
+              data-slot="input"
+              dir="ltr"
+              id="_r_3m_-control"
+              inputmode="decimal"
+              value="40"
+            />
+          </div>
+        </div>
+        <span
+          class="sr-only"
+          id="_r_3l_"
+        >
+          Filled with the amount due; change it if they pay another amount.
+        </span>
+        <div
+          class="group/field flex flex-col gap-1.5"
+          data-slot="field"
+        >
+          <div
+            class="flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"
+          >
+            <label
+              class="text-label text-foreground"
+              for="_r_3n_-control"
+              id="_r_3n_-label"
+            >
+              Method
+            </label>
+          </div>
+          <div
+            aria-labelledby="_r_3n_-label"
+            class="flex flex-wrap items-center gap-2"
+            data-slot="toggle-group"
+            dir="ltr"
+            id="_r_3n_-control"
+            role="radiogroup"
+            style="outline: none;"
+            tabindex="0"
+          >
+            <button
+              aria-checked="true"
+              class="group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+              data-radix-collection-item=""
+              data-slot="toggle-group-item"
+              data-state="on"
+              role="radio"
+              tabindex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-check hidden group-data-on/chip:block"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path … />
+              </svg>
+              Cash
+            </button>
+            <button
+              aria-checked="false"
+              class="group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+              data-radix-collection-item=""
+              data-slot="toggle-group-item"
+              data-state="off"
+              role="radio"
+              tabindex="-1"
+              type="button"
+            >
+              <svg
+                aria-hidden="true"
+                class="lucide lucide-check hidden group-data-on/chip:block"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path … />
+              </svg>
+              Transfer
+            </button>
+          </div>
+        </div>
+      </div>
+      <p
+        aria-live="polite"
+        class="text-body-sm"
+      >
+        Paid in full.
+      </p>
+    </div>
+    <div
+      class="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end"
+      data-slot="dialog-footer"
+    >
+      <button
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"
+        data-slot="button"
+        type="button"
+      >
+        Later
+      </button>
+      <button
+        class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"
+        data-slot="button"
+        type="submit"
+      >
+        Receive ⁨₪40⁩
+      </button>
+    </div>
+  </form>
+</div>
+
+ ❯ src/pages/dashboard/space/desk/DeskPage.component.test.tsx:182:42
+    180|     await user.click(await screen.findByRole('button', { name: /Check …
+    181|     await findToast((content) => plain(content).startsWith('Sara Khali…
+    182|     expect(screen.queryByRole('dialog')).toBeNull();
+       |                                          ^
+    183|   });
+    184|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx

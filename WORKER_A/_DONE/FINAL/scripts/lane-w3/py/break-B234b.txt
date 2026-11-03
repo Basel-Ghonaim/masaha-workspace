@@ -1,0 +1,107 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/file
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/file/CustomerFile.component.test.tsx (3 tests | 1 failed) 859ms
+   ❯ CustomerFile (3)
+     × heads its sections h2 and its cards h3, under the page’s h1; axe-clean 437ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  13:31:59
+   Duration  13.69s (transform 40%, import 27%, environment 21%, tests 6%, setup 5%)
+
+  Transform  |component| transforming modules took 5.30s · 40% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/file/CustomerFile.component.test.tsx > CustomerFile > heads its sections h2 and its cards h3, under the page’s h1; axe-clean
+TestingLibraryElementError: Unable to find an element with the text: /Recorded by .Mona.$/. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"_r_6_"[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+  [33mrole[39m=[32m"region"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"card-title"[39m
+    [36m>[39m
+      [36m<h2[39m
+        [33mid[39m=[32m"_r_6_"[39m
+      [36m>[39m
+        [0mUnpaid visits[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<ul[39m
+    [33mclass[39m=[32m"flex flex-col divide-y"[39m
+  [36m>[39m
+    [36m<li[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center justify-between gap-3 px-5 py-3"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex min-w-0 flex-col gap-1"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"self-start text-label"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mVisit of 24 Oct[0m
+        [36m</span>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mChecked out by hand · 24 Oct ⁨10:00–17:00⁩[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-label"[39m
+        [36m>[39m
+          [0m⁨₪15⁩[0m
+        [36m</span>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mCollect[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</li>[39m
+  [36m</ul>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:109:15
+ ❯ src/features/desk/components/file/CustomerFile.component.test.tsx:112:27
+    110|     // Each payment on an unpaid visit names who recorded it, and a vo…
+    111|     const unpaid = screen.getByRole('region', { name: 'Unpaid visits' …
+    112|     expect(within(unpaid).getAllByText(/Recorded by .Mona.$/)).toHaveL…
+       |                           ^
+    113|     expect(within(unpaid).getByText(/^Voided by .Ahmad.: Twice$/)).toB…
+    114|     expect(await axe(container)).toHaveNoViolations();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/file

@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/data-reports/repository
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts (5 tests | 1 failed) 21ms
+   ❯ the data reports repository (5)
+     × sends a report to the space’s path: a 201 is a new one, a 200 a repeat 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > sends a report to the space’s path: a 201 is a new one, a 200 a repeat
+AssertionError: expected { report: { id: 41, …(6) }, …(1) } to deeply equal { report: { id: 41, …(6) }, …(1) }
+
+- Expected
++ Received
+
+@@ -1,7 +1,7 @@
+  {
+-   "repeated": true,
++   "repeated": false,
+    "report": {
+      "createdAt": "2026-10-20T21:30:00.000Z",
+      "decision": null,
+      "field": "HOURS",
+      "id": 41,
+
+ ❯ src/features/data-reports/repository/dataReportsRepository.unit.test.ts:87:70
+     85|     ).resolves.toEqual({ report: myReport(), repeated: false });
+     86|     status = 200;
+     87|     await expect(repository.report('masaha-hub', { field: 'HOURS' })).…
+       |                                                                      ^
+     88|       report: myReport(),
+     89|       repeated: true,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:55:08
+   Duration  1.03s (import 57%, transform 39%, tests 3%, worker 1%)
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/data-reports/repository

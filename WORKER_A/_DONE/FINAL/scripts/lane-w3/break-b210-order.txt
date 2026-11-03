@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx (2 tests | 1 failed) 959ms
+   ❯ DeskPage (2)
+     × puts the uncollected card before who is here, and hides it below xl when empty 755ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx > DeskPage > puts the uncollected card before who is here, and hides it below xl when empty
+AssertionError: expected +0 to be truthy
+
+- Expected:
+true
+
++ Received:
+0
+
+ ❯ src/pages/dashboard/space/desk/DeskPage.component.test.tsx:64:7
+     62|     expect(
+     63|       uncollected.compareDocumentPosition(present) & Node.DOCUMENT_POS…
+     64|     ).toBeTruthy();
+       |       ^
+     65|     expect(uncollected).not.toHaveClass('hidden');
+     66|     unmount();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  15:28:21
+   Duration  22.18s (transform 59%, import 18%, environment 14%, tests 4%, setup 4%)
+
+  Transform  |component| transforming modules took 12.73s · 59% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx

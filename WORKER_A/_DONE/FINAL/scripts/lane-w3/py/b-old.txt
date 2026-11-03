@@ -1,0 +1,3 @@
+                : person.owner === true
+                  ? words.staff.owner({ name: person.name })
+                  : person.active

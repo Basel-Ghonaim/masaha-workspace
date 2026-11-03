@@ -1,0 +1,7 @@
+fix(directory): draw the marks as on light tiles
+
+OpenStreetMap's tiles are light in both themes, so in dark the
+hollow and dashed marks read as filled on the map while the legend
+drew them on the dark card. Each mark, on the map and in the legend,
+is drawn on a span that takes the light theme, its tone resolved there
+(finding 135, OD5 (a)).

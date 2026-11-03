@@ -1,0 +1,39 @@
+<<<OLD
+import type { VoidTarget } from '../../types/VoidTarget';
+===
+import { paymentLines } from '../../services/paymentLines';
+import type { VoidTarget } from '../../types/VoidTarget';
+>>>
+<<<OLD
+      rows: (statement?.payments ?? []).map((payment) => ({
+        key: String(payment.id),
+        date: day(payment.receivedAt),
+        amount: isolate(priceText(payment.amountAgorot, language)),
+        method: copy.desk.money.methods[payment.method],
+        voided:
+          payment.voided === null
+            ? null
+            : {
+                label: words.voided,
+                reason: words.voidedReason({ reason: payment.voided.reason }),
+              },
+===
+      rows: (statement?.payments ?? []).map((payment) => {
+        const lines = paymentLines(payment, {
+          recordedBy: words.recordedBy,
+          voidedBy: copy.payments.ledger.voided.line,
+        });
+        return {
+        key: String(payment.id),
+        date: day(payment.receivedAt),
+        amount: isolate(priceText(payment.amountAgorot, language)),
+        method: copy.desk.money.methods[payment.method],
+        recordedBy: lines.recordedBy,
+        voided:
+          lines.voided === null
+            ? null
+            : {
+                label: words.voided,
+                reason: lines.voided,
+              },
+>>>

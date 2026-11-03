@@ -1,0 +1,12 @@
+feat(design-system): reach a held menu item
+
+Radix's menu leaves a disabled item out of its roving focus and its
+typeahead (focusable: !disabled in @radix-ui/react-menu 2.1.24), so a
+row menu's held action, drawn disabled with its reason inside, is
+never reached by the keyboard and its reason never read (finding 105).
+
+DropdownMenuItem gains held: the item is aria-disabled, drawn at 50%
+like a disabled one, and its selection is prevented, but it is not
+disabled, so the arrow keys and typeahead reach it. The staff and
+users menus switch to it in their own commits, which close the
+finding. The foundation's DropdownMenu row says it.

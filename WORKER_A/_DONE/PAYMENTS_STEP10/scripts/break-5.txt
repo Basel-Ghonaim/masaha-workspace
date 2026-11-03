@@ -1,0 +1,32 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx (4 tests | 1 failed | 3 skipped) 525ms
+   ❯ useVoidDialog (4)
+     × words a 403 shown by mistake as no longer open, and reads the user’s spaces again 523ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  14:07:10
+   Duration  9.62s (import 54%, transform 21%, environment 16%, tests 6%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx > useVoidDialog > words a 403 shown by mistake as no longer open, and reads the user’s spaces again
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  The payment wasn’t voided. This is no longer open to you at this space.[39m
+Received:
+[31m  We couldn’t void the paymentThe payment wasn’t voided. You don’t have permission to do this.Reference: ⁦req-1⁩[39m
+ ❯ src/features/desk/hooks/void/useVoidDialog.component.test.tsx:171:46
+    169|     await user.click(screen.getByRole('button', { name: 'Void payment'…
+    170|
+    171|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                                              ^
+    172|       'The payment wasn’t voided. This is no longer open to you at thi…
+    173|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

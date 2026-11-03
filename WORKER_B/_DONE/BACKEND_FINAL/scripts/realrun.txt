@@ -1,0 +1,56 @@
+PASS health db up
+PASS R1 income 200 -
+PASS R1 debts 200 -
+PASS R1 payers 200 -
+PASS R1 occupancy 200 -
+PASS R2 the month's income 46000 = SQL 46000
+PASS R2 debtors 3 = SQL 3 (archived included)
+PASS R2 the 14 days' closed visits by Gaza day (4 visits)
+PASS R3 reception /finance/income 403 -
+PASS R4 admin /finance/income 404 -
+PASS R4 directory owner /finance/income 404 -
+PASS R3 reception /finance/debts 403 -
+PASS R4 admin /finance/debts 404 -
+PASS R4 directory owner /finance/debts 404 -
+PASS R3 reception /finance/payers 403 -
+PASS R4 admin /finance/payers 404 -
+PASS R4 directory owner /finance/payers 404 -
+PASS R3 reception /finance/occupancy 403 -
+PASS R4 admin /finance/occupancy 404 -
+PASS R4 directory owner /finance/occupancy 404 -
+PASS R5 the owner reads the overview 200 -
+PASS R5 uncollected 3
+PASS R5 unpriced 0
+PASS R5 open reports 0
+PASS R5 running announcements 0
+PASS R5 ending soon 2
+PASS R5 customers owing 3 = debts' 3
+PASS R6 reception overview 403 -
+PASS R7 admin overview of a space 404 -
+PASS R7 directory owner overview of the demo space 404 -
+PASS R8 the admin reads the overview 200 -
+PASS R8 spaces verified 14
+PASS R8 spaces unverified 11
+PASS R8 spaces hidden 0
+PASS R8 stale or missing 3
+PASS R8 completeness 1
+PASS R8 open reports 1
+PASS R8 awaiting the admin 0
+PASS R8 awaiting the owners 1
+PASS R8 new users 4 = SQL 4
+PASS R8 nothing of a space's operations
+PASS R9 owner on /admin/overview 403 -
+PASS R9 reception on /admin/overview 403 -
+PASS R10 read the thresholds (A) 200 -
+PASS R10 PUT 1/1 (write 1 of 2) 200 -
+PASS R10 both overviews changed: owner 0→5, admin 3→25
+PASS R10 PUT A back (write 2 of 2) 200 -
+PASS R10 the owner's overview as before
+PASS R11 the public contact as stored 200 -
+PASS R12 GET /me 200 -
+PASS R12 PATCH language → en (write 1 of 2) 200 -
+PASS R12 PATCH language → ar (write 2 of 2) 200 -
+PASS R13 owner visits 2026-10-23..2026-10-29 (3) 200 -
+PASS R13 reception with a range 403 -
+PASS R13 reception today 200 -
+ALL PASS

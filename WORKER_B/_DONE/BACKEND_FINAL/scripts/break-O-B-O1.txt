@@ -1,0 +1,45 @@
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit src/modules/spaces/staleness.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+ ❯ |unit| src/modules/spaces/staleness.unit.test.ts (15 tests | 1 failed) 25ms
+   ❯ staleDays (1)
+     × counts the Gaza days from a group’s date to now, not the UTC days 13ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+   Start at  12:37:06
+   Duration  1.05s (import 48%, transform 47%, tests 4%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/spaces/staleness.unit.test.ts > staleDays > counts the Gaza days from a group’s date to now, not the UTC days
+AssertionError: expected 1 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 1
+
+ ❯ src/modules/spaces/staleness.unit.test.ts:118:7
+    116|     expect(
+    117|       staleDays(new Date('2026-10-01T23:30:00+03:00'), new Date('2026-…
+    118|     ).toBe(2);
+       |       ^
+    119|   });
+    120| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/modules/spaces/staleness.unit.test.ts

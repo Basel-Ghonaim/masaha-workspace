@@ -1,0 +1,1288 @@
+Timing is off.
+psql:<stdin>:5: NOTICE:  truncate cascades to table "refresh_tokens"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "password_reset_tokens"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_amenities"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_hours"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_shifts"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_prices"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_contacts"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_photos"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "subscriptions"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "check_ins"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "announcements"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "data_reports"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "favorites"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "packages"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "payments"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "closure_extensions"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_settings"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_occupancy"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "password_recoveries"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "space_own_amenities"
+psql:<stdin>:5: NOTICE:  truncate cascades to table "subscription_extensions"
+TRUNCATE TABLE
+INSERT 0 1
+INSERT 0 1
+INSERT 0 11
+INSERT 0 15
+INSERT 0 4
+INSERT 0 10
+INSERT 0 500
+INSERT 0 3000
+CREATE TABLE
+INSERT 0 20
+INSERT 0 36000
+INSERT 0 300000
+INSERT 0 1000
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ANALYZE
+ entries | size  
+---------+-------
+  337000 | 70 MB
+(1 row)
+
+### J7 owner page ALL with q
+                                                                                                                                                                                                                               QUERY PLAN                                                                                                                                                                                                                                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=11.67..191.31 rows=20 width=174) (actual time=131.916..131.923 rows=20.00 loops=1)
+   Buffers: shared hit=154784
+   ->  Incremental Sort  (cost=11.67..111275.54 rows=12387 width=174) (actual time=131.914..131.919 rows=20.00 loops=1)
+         Sort Key: a.created_at DESC, a.id DESC
+         Presorted Key: a.created_at
+         Full-sort Groups: 1  Sort Method: quicksort  Average Memory: 27kB  Peak Memory: 27kB
+         Buffers: shared hit=154784
+         ->  Nested Loop Left Join  (cost=2.72..110718.13 rows=12387 width=174) (actual time=6.121..131.842 rows=21.00 loops=1)
+               Join Filter: (a.entity_type = 'announcement'::text)
+               Buffers: shared hit=154784
+               ->  Nested Loop Left Join  (cost=2.57..108473.80 rows=12387 width=303) (actual time=6.074..131.717 rows=21.00 loops=1)
+                     Join Filter: (a.entity_type = 'package'::text)
+                     Filter: (strpos(btrim(regexp_replace(translate(lower(regexp_replace(concat_ws(' '::text, COALESCE(ts.name_en, tu.name, tg.name_en, tar.name_en, tam.name_en, tc.name, tsu.name, tp.name, tv.visitor_name, tvc.name, tcc.name), COALESCE(ts.name_ar, tg.name_ar, tar.name_ar, tam.name_ar)), '[\u064B-\u065F\u0670\u0640]'::text, ''::text, 'g'::text)), 'أإآٱىة'::text, 'اااايه'::text), '\s+'::text, ' '::text, 'g'::text)), 'زبون 42'::text) > 0)
+                     Rows Removed by Filter: 9098
+                     Buffers: shared hit=154742
+                     ->  Nested Loop Left Join  (cost=2.42..100997.80 rows=37160 width=283) (actual time=0.216..101.805 rows=9119.00 loops=1)
+                           Buffers: shared hit=136504
+                           ->  Nested Loop Left Join  (cost=2.13..99970.96 rows=37160 width=275) (actual time=0.190..97.866 rows=9119.00 loops=1)
+                                 Join Filter: (a.entity_type = 'checkIn'::text)
+                                 Buffers: shared hit=136504
+                                 ->  Nested Loop Left Join  (cost=1.98..93238.16 rows=37160 width=271) (actual time=0.177..90.445 rows=9119.00 loops=1)
+                                       Buffers: shared hit=118266
+                                       ->  Nested Loop Left Join  (cost=1.71..82015.81 rows=37160 width=263) (actual time=0.168..86.691 rows=9119.00 loops=1)
+                                             Join Filter: (a.entity_type = 'visit'::text)
+                                             Rows Removed by Join Filter: 1725
+                                             Buffers: shared hit=118266
+                                             ->  Nested Loop Left Join  (cost=1.43..70280.21 rows=37160 width=246) (actual time=0.155..72.742 rows=9119.00 loops=1)
+                                                   Join Filter: (a.entity_type = 'subscription'::text)
+                                                   Buffers: shared hit=94651
+                                                   ->  Nested Loop Left Join  (cost=1.28..63640.31 rows=37160 width=237) (actual time=0.143..65.522 rows=9119.00 loops=1)
+                                                         Join Filter: (a.entity_type = 'customer'::text)
+                                                         Rows Removed by Join Filter: 1121
+                                                         Buffers: shared hit=76413
+                                                         ->  Nested Loop Left Join  (cost=1.01..52363.41 rows=37160 width=225) (actual time=0.131..55.348 rows=9119.00 loops=1)
+                                                               Join Filter: (a.entity_type = 'amenity'::text)
+                                                               Buffers: shared hit=56125
+                                                               ->  Nested Loop Left Join  (cost=0.86..45630.61 rows=37160 width=186) (actual time=0.120..48.413 rows=9119.00 loops=1)
+                                                                     Join Filter: (a.entity_type = 'area'::text)
+                                                                     Rows Removed by Join Filter: 450
+                                                                     Buffers: shared hit=37887
+                                                                     ->  Nested Loop Left Join  (cost=0.71..38800.91 rows=37160 width=167) (actual time=0.109..42.109 rows=9119.00 loops=1)
+                                                                           Join Filter: (a.entity_type = 'governorate'::text)
+                                                                           Rows Removed by Join Filter: 450
+                                                                           Buffers: shared hit=28318
+                                                                           ->  Nested Loop Left Join  (cost=0.56..31971.21 rows=37160 width=150) (actual time=0.095..35.579 rows=9119.00 loops=1)
+                                                                                 Join Filter: (a.entity_type = 'user'::text)
+                                                                                 Rows Removed by Join Filter: 478
+                                                                                 Buffers: shared hit=18749
+                                                                                 ->  Nested Loop Left Join  (cost=0.42..25827.81 rows=37160 width=142) (actual time=0.074..27.466 rows=9119.00 loops=1)
+                                                                                       Join Filter: ((a.entity_type = 'space'::text) AND (ts.id = a.entity_id))
+                                                                                       Rows Removed by Join Filter: 95370
+                                                                                       Buffers: shared hit=9152
+                                                                                       ->  Nested Loop Left Join  (cost=0.42..18673.37 rows=37160 width=112) (actual time=0.055..13.153 rows=9119.00 loops=1)
+                                                                                             Join Filter: (sm.user_id = a.actor_id)
+                                                                                             Rows Removed by Join Filter: 14755
+                                                                                             Buffers: shared hit=9151
+                                                                                             ->  Index Scan Backward using audit_logs_space_id_created_at_idx on audit_logs a  (cost=0.42..16531.54 rows=37160 width=112) (actual time=0.024..7.884 rows=9119.00 loops=1)
+                                                                                                   Index Cond: (space_id = 1)
+                                                                                                   Index Searches: 1
+                                                                                                   Buffers: shared hit=9150
+                                                                                             ->  Materialize  (cost=0.00..1.20 rows=4 width=8) (actual time=0.000..0.000 rows=2.55 loops=9119)
+                                                                                                   Storage: Memory  Maximum Storage: 17kB
+                                                                                                   Buffers: shared hit=1
+                                                                                                   ->  Seq Scan on space_managers sm  (cost=0.00..1.18 rows=4 width=8) (actual time=0.014..0.016 rows=4.00 loops=1)
+                                                                                                         Filter: (space_id = 1)
+                                                                                                         Rows Removed by Filter: 10
+                                                                                                         Buffers: shared hit=1
+                                                                                       ->  Materialize  (cost=0.00..1.17 rows=11 width=34) (actual time=0.000..0.000 rows=10.51 loops=9119)
+                                                                                             Storage: Memory  Maximum Storage: 17kB
+                                                                                             Buffers: shared hit=1
+                                                                                             ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=34) (actual time=0.006..0.008 rows=11.00 loops=1)
+                                                                                                   Buffers: shared hit=1
+                                                                                 ->  Index Scan using users_pkey on users tu  (cost=0.14..0.15 rows=1 width=12) (actual time=0.001..0.001 rows=0.05 loops=9119)
+                                                                                       Index Cond: (id = a.entity_id)
+                                                                                       Index Searches: 9119
+                                                                                       Buffers: shared hit=9597
+                                                                           ->  Index Scan using governorates_pkey on governorates tg  (cost=0.15..0.17 rows=1 width=21) (actual time=0.000..0.000 rows=0.05 loops=9119)
+                                                                                 Index Cond: (id = a.entity_id)
+                                                                                 Index Searches: 9119
+                                                                                 Buffers: shared hit=9569
+                                                                     ->  Index Scan using areas_pkey on areas tar  (cost=0.15..0.17 rows=1 width=23) (actual time=0.000..0.000 rows=0.05 loops=9119)
+                                                                           Index Cond: (id = a.entity_id)
+                                                                           Index Searches: 9119
+                                                                           Buffers: shared hit=9569
+                                                               ->  Index Scan using amenities_pkey on amenities tam  (cost=0.15..0.17 rows=1 width=43) (actual time=0.000..0.000 rows=0.00 loops=9119)
+                                                                     Index Cond: (id = a.entity_id)
+                                                                     Index Searches: 9119
+                                                                     Buffers: shared hit=18238
+                                                         ->  Index Scan using customers_id_space_id_key on customers tc  (cost=0.27..0.29 rows=1 width=16) (actual time=0.001..0.001 rows=0.22 loops=9119)
+                                                               Index Cond: (id = a.entity_id)
+                                                               Index Searches: 9119
+                                                               Buffers: shared hit=20288
+                                                   ->  Index Scan using subscriptions_id_space_id_key on subscriptions tsu  (cost=0.15..0.17 rows=1 width=13) (actual time=0.000..0.000 rows=0.00 loops=9119)
+                                                         Index Cond: (id = a.entity_id)
+                                                         Index Searches: 9119
+                                                         Buffers: shared hit=18238
+                                             ->  Index Scan using visits_id_space_id_key on visits tv  (cost=0.28..0.30 rows=1 width=21) (actual time=0.001..0.001 rows=0.59 loops=9119)
+                                                   Index Cond: (id = a.entity_id)
+                                                   Index Searches: 9119
+                                                   Buffers: shared hit=23615
+                                       ->  Index Scan using customers_id_space_id_key on customers tvc  (cost=0.27..0.30 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=9119)
+                                             Index Cond: (id = tv.customer_id)
+                                             Index Searches: 0
+                                 ->  Index Scan using check_ins_pkey on check_ins tci  (cost=0.15..0.17 rows=1 width=8) (actual time=0.000..0.000 rows=0.00 loops=9119)
+                                       Index Cond: (id = a.entity_id)
+                                       Index Searches: 9119
+                                       Buffers: shared hit=18238
+                           ->  Memoize  (cost=0.28..0.34 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=9119)
+                                 Cache Key: tci.customer_id
+                                 Cache Mode: logical
+                                 Hits: 9118  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                                 ->  Index Scan using customers_id_space_id_key on customers tcc  (cost=0.27..0.33 rows=1 width=16) (actual time=0.012..0.012 rows=0.00 loops=1)
+                                       Index Cond: (id = tci.customer_id)
+                                       Index Searches: 0
+                     ->  Index Scan using packages_id_space_id_key on packages tp  (cost=0.15..0.17 rows=1 width=24) (actual time=0.000..0.000 rows=0.00 loops=9119)
+                           Index Cond: (id = a.entity_id)
+                           Index Searches: 9119
+                           Buffers: shared hit=18238
+               ->  Index Scan using announcements_pkey on announcements tan  (cost=0.15..0.17 rows=1 width=12) (actual time=0.003..0.004 rows=0.00 loops=21)
+                     Index Cond: (id = a.entity_id)
+                     Index Searches: 21
+                     Buffers: shared hit=42
+ Planning:
+   Buffers: shared hit=662 read=20
+ Planning Time: 24.009 ms
+ Execution Time: 132.563 ms
+(126 rows)
+
+### J8 owner count ALL with q
+                                                                                                                                                                                                                         QUERY PLAN                                                                                                                                                                                                                          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Aggregate  (cost=8094.96..8094.97 rows=1 width=4) (actual time=113.174..113.185 rows=1.00 loops=1)
+   Buffers: shared hit=778
+   ->  Hash Left Join  (cost=1359.42..8063.99 rows=12387 width=0) (actual time=26.989..113.169 rows=72.00 loops=1)
+         Hash Cond: (a.entity_id = tp.id)
+         Join Filter: (a.entity_type = 'package'::text)
+         Filter: (strpos(btrim(regexp_replace(translate(lower(regexp_replace(concat_ws(' '::text, COALESCE(ts.name_en, tu.name, tg.name_en, tar.name_en, tam.name_en, tc.name, tsu.name, tp.name, tv.visitor_name, tvc.name, tcc.name), COALESCE(ts.name_ar, tg.name_ar, tar.name_ar, tam.name_ar)), '[\u064B-\u065F\u0670\u0640]'::text, ''::text, 'g'::text)), 'أإآٱىة'::text, 'اااايه'::text), '\s+'::text, ' '::text, 'g'::text)), 'زبون 42'::text) > 0)
+         Rows Removed by Filter: 35928
+         Buffers: shared hit=778
+         ->  Hash Left Join  (cost=1333.22..7940.25 rows=37160 width=174) (actual time=3.161..53.208 rows=36000.00 loops=1)
+               Hash Cond: (a.entity_id = tsu.id)
+               Join Filter: (a.entity_type = 'subscription'::text)
+               Buffers: shared hit=778
+               ->  Hash Left Join  (cost=1312.87..7822.35 rows=37160 width=165) (actual time=3.128..48.445 rows=36000.00 loops=1)
+                     Hash Cond: (a.entity_id = tc.id)
+                     Join Filter: (a.entity_type = 'customer'::text)
+                     Rows Removed by Join Filter: 4425
+                     Buffers: shared hit=778
+                     ->  Hash Left Join  (cost=1296.62..7708.56 rows=37160 width=153) (actual time=2.997..42.346 rows=36000.00 loops=1)
+                           Hash Cond: (a.entity_id = tv.id)
+                           Join Filter: (a.entity_type = 'visit'::text)
+                           Rows Removed by Join Filter: 6750
+                           Buffers: shared hit=773
+                           ->  Hash Left Join  (cost=1162.00..7425.12 rows=37160 width=128) (actual time=1.839..33.624 rows=36000.00 loops=1)
+                                 Hash Cond: (a.entity_id = tci.id)
+                                 Join Filter: (a.entity_type = 'checkIn'::text)
+                                 Buffers: shared hit=725
+                                 ->  Hash Left Join  (cost=1115.37..7236.60 rows=37160 width=116) (actual time=1.816..28.881 rows=36000.00 loops=1)
+                                       Hash Cond: (a.entity_id = tam.id)
+                                       Join Filter: (a.entity_type = 'amenity'::text)
+                                       Buffers: shared hit=725
+                                       ->  Hash Left Join  (cost=1089.17..7112.85 rows=37160 width=77) (actual time=1.788..24.040 rows=36000.00 loops=1)
+                                             Hash Cond: (a.entity_id = tar.id)
+                                             Join Filter: (a.entity_type = 'area'::text)
+                                             Rows Removed by Join Filter: 1812
+                                             Buffers: shared hit=725
+                                             ->  Hash Left Join  (cost=1055.10..6981.23 rows=37160 width=58) (actual time=1.752..19.693 rows=36000.00 loops=1)
+                                                   Hash Cond: (a.entity_id = tg.id)
+                                                   Join Filter: (a.entity_type = 'governorate'::text)
+                                                   Rows Removed by Join Filter: 1812
+                                                   Buffers: shared hit=724
+                                                   ->  Hash Left Join  (cost=1019.00..6847.59 rows=37160 width=41) (actual time=1.726..15.277 rows=36000.00 loops=1)
+                                                         Hash Cond: (a.entity_id = tu.id)
+                                                         Join Filter: (a.entity_type = 'user'::text)
+                                                         Rows Removed by Join Filter: 1952
+                                                         Buffers: shared hit=723
+                                                         ->  Hash Left Join  (cost=1017.66..6748.70 rows=37160 width=33) (actual time=1.700..10.873 rows=36000.00 loops=1)
+                                                               Hash Cond: (a.entity_id = ts.id)
+                                                               Join Filter: (a.entity_type = 'space'::text)
+                                                               Rows Removed by Join Filter: 126
+                                                               Buffers: shared hit=722
+                                                               ->  Bitmap Heap Scan on audit_logs a  (cost=1016.41..6649.91 rows=37160 width=19) (actual time=1.641..5.249 rows=36000.00 loops=1)
+                                                                     Recheck Cond: (space_id = 1)
+                                                                     Heap Blocks: exact=554
+                                                                     Buffers: shared hit=721
+                                                                     ->  Bitmap Index Scan on audit_logs_space_id_created_at_idx  (cost=0.00..1007.12 rows=37160 width=0) (actual time=1.567..1.567 rows=36000.00 loops=1)
+                                                                           Index Cond: (space_id = 1)
+                                                                           Index Searches: 1
+                                                                           Buffers: shared hit=167
+                                                               ->  Hash  (cost=1.11..1.11 rows=11 width=26) (actual time=0.024..0.025 rows=11.00 loops=1)
+                                                                     Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                     Buffers: shared hit=1
+                                                                     ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=26) (actual time=0.010..0.012 rows=11.00 loops=1)
+                                                                           Buffers: shared hit=1
+                                                         ->  Hash  (cost=1.15..1.15 rows=15 width=12) (actual time=0.015..0.016 rows=15.00 loops=1)
+                                                               Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                               Buffers: shared hit=1
+                                                               ->  Seq Scan on users tu  (cost=0.00..1.15 rows=15 width=12) (actual time=0.005..0.007 rows=15.00 loops=1)
+                                                                     Buffers: shared hit=1
+                                                   ->  Hash  (cost=21.60..21.60 rows=1160 width=21) (actual time=0.012..0.013 rows=1.00 loops=1)
+                                                         Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                         Buffers: shared hit=1
+                                                         ->  Seq Scan on governorates tg  (cost=0.00..21.60 rows=1160 width=21) (actual time=0.005..0.006 rows=1.00 loops=1)
+                                                               Buffers: shared hit=1
+                                             ->  Hash  (cost=20.70..20.70 rows=1070 width=23) (actual time=0.015..0.016 rows=1.00 loops=1)
+                                                   Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                   Buffers: shared hit=1
+                                                   ->  Seq Scan on areas tar  (cost=0.00..20.70 rows=1070 width=23) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                                         Buffers: shared hit=1
+                                       ->  Hash  (cost=17.20..17.20 rows=720 width=43) (actual time=0.008..0.008 rows=0.00 loops=1)
+                                             Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                             ->  Seq Scan on amenities tam  (cost=0.00..17.20 rows=720 width=43) (actual time=0.008..0.008 rows=0.00 loops=1)
+                                 ->  Hash  (cost=36.50..36.50 rows=810 width=16) (actual time=0.005..0.007 rows=0.00 loops=1)
+                                       Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                       ->  Hash Left Join  (cost=16.25..36.50 rows=810 width=16) (actual time=0.005..0.006 rows=0.00 loops=1)
+                                             Hash Cond: (tci.customer_id = tcc.id)
+                                             ->  Seq Scan on check_ins tci  (cost=0.00..18.10 rows=810 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                                             ->  Hash  (cost=10.00..10.00 rows=500 width=16) (never executed)
+                                                   ->  Seq Scan on customers tcc  (cost=0.00..10.00 rows=500 width=16) (never executed)
+                           ->  Hash  (cost=97.12..97.12 rows=3000 width=29) (actual time=1.123..1.124 rows=3000.00 loops=1)
+                                 Buckets: 4096  Batches: 1  Memory Usage: 184kB
+                                 Buffers: shared hit=48
+                                 ->  Hash Left Join  (cost=16.25..97.12 rows=3000 width=29) (actual time=0.154..0.665 rows=3000.00 loops=1)
+                                       Hash Cond: (tv.customer_id = tvc.id)
+                                       Buffers: shared hit=48
+                                       ->  Seq Scan on visits tv  (cost=0.00..73.00 rows=3000 width=21) (actual time=0.006..0.183 rows=3000.00 loops=1)
+                                             Buffers: shared hit=43
+                                       ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.129..0.129 rows=500.00 loops=1)
+                                             Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                             Buffers: shared hit=5
+                                             ->  Seq Scan on customers tvc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.014..0.055 rows=500.00 loops=1)
+                                                   Buffers: shared hit=5
+                     ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.114..0.115 rows=500.00 loops=1)
+                           Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                           Buffers: shared hit=5
+                           ->  Seq Scan on customers tc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.006..0.042 rows=500.00 loops=1)
+                                 Buffers: shared hit=5
+               ->  Hash  (cost=14.60..14.60 rows=460 width=13) (actual time=0.003..0.003 rows=0.00 loops=1)
+                     Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                     ->  Seq Scan on subscriptions tsu  (cost=0.00..14.60 rows=460 width=13) (actual time=0.002..0.002 rows=0.00 loops=1)
+         ->  Hash  (cost=17.20..17.20 rows=720 width=24) (actual time=0.005..0.006 rows=0.00 loops=1)
+               Buckets: 1024  Batches: 1  Memory Usage: 8kB
+               ->  Seq Scan on packages tp  (cost=0.00..17.20 rows=720 width=24) (actual time=0.005..0.005 rows=0.00 loops=1)
+ Planning:
+   Buffers: shared hit=65
+ Planning Time: 4.654 ms
+ Execution Time: 113.731 ms
+(116 rows)
+
+### J9 owner actors ALL with q
+                                                                                                                                                                                                                               QUERY PLAN                                                                                                                                                                                                                                
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=8448.43..8448.55 rows=50 width=68) (actual time=144.226..144.238 rows=1.00 loops=1)
+   Buffers: shared hit=780
+   ->  Sort  (cost=8448.43..8450.68 rows=900 width=68) (actual time=144.225..144.236 rows=1.00 loops=1)
+         Sort Key: (CASE WHEN (a.actor_id IS NULL) THEN 'SYSTEM'::text WHEN (sm.user_id IS NULL) THEN 'MASAHA'::text ELSE 'PERSON'::text END), (CASE WHEN (sm.user_id IS NOT NULL) THEN au.name ELSE NULL::text END), (CASE WHEN (sm.user_id IS NOT NULL) THEN a.actor_id ELSE NULL::integer END)
+         Sort Method: quicksort  Memory: 25kB
+         Buffers: shared hit=780
+         ->  HashAggregate  (cost=8409.53..8418.53 rows=900 width=68) (actual time=144.205..144.217 rows=1.00 loops=1)
+               Group Key: CASE WHEN (a.actor_id IS NULL) THEN 'SYSTEM'::text WHEN (sm.user_id IS NULL) THEN 'MASAHA'::text ELSE 'PERSON'::text END, CASE WHEN (sm.user_id IS NOT NULL) THEN a.actor_id ELSE NULL::integer END, CASE WHEN (sm.user_id IS NOT NULL) THEN au.name ELSE NULL::text END
+               Batches: 1  Memory Usage: 49kB
+               Buffers: shared hit=780
+               ->  Hash Left Join  (cost=1361.98..8316.63 rows=12387 width=68) (actual time=37.711..144.169 rows=72.00 loops=1)
+                     Hash Cond: (a.entity_id = tp.id)
+                     Join Filter: (a.entity_type = 'package'::text)
+                     Filter: (strpos(btrim(regexp_replace(translate(lower(regexp_replace(concat_ws(' '::text, COALESCE(ts.name_en, tu.name, tg.name_en, tar.name_en, tam.name_en, tc.name, tsu.name, tp.name, tv.visitor_name, tvc.name, tcc.name), COALESCE(ts.name_ar, tg.name_ar, tar.name_ar, tam.name_ar)), '[\u064B-\u065F\u0670\u0640]'::text, ''::text, 'g'::text)), 'أإآٱىة'::text, 'اااايه'::text), '\s+'::text, ' '::text, 'g'::text)), 'زبون 42'::text) > 0)
+                     Rows Removed by Filter: 35928
+                     Buffers: shared hit=780
+                     ->  Hash Left Join  (cost=1335.78..8192.88 rows=37160 width=190) (actual time=3.175..77.019 rows=36000.00 loops=1)
+                           Hash Cond: (a.entity_id = tsu.id)
+                           Join Filter: (a.entity_type = 'subscription'::text)
+                           Buffers: shared hit=780
+                           ->  Hash Left Join  (cost=1315.43..8074.99 rows=37160 width=181) (actual time=3.154..70.882 rows=36000.00 loops=1)
+                                 Hash Cond: (a.entity_id = tc.id)
+                                 Join Filter: (a.entity_type = 'customer'::text)
+                                 Rows Removed by Join Filter: 4425
+                                 Buffers: shared hit=780
+                                 ->  Hash Left Join  (cost=1299.18..7961.19 rows=37160 width=169) (actual time=3.000..63.189 rows=36000.00 loops=1)
+                                       Hash Cond: (a.entity_id = tv.id)
+                                       Join Filter: (a.entity_type = 'visit'::text)
+                                       Rows Removed by Join Filter: 6750
+                                       Buffers: shared hit=775
+                                       ->  Hash Left Join  (cost=1164.56..7677.75 rows=37160 width=144) (actual time=1.753..52.070 rows=36000.00 loops=1)
+                                             Hash Cond: (a.entity_id = tci.id)
+                                             Join Filter: (a.entity_type = 'checkIn'::text)
+                                             Buffers: shared hit=727
+                                             ->  Hash Left Join  (cost=1117.93..7489.23 rows=37160 width=132) (actual time=1.730..46.385 rows=36000.00 loops=1)
+                                                   Hash Cond: (a.entity_id = tam.id)
+                                                   Join Filter: (a.entity_type = 'amenity'::text)
+                                                   Buffers: shared hit=727
+                                                   ->  Hash Left Join  (cost=1091.73..7365.48 rows=37160 width=93) (actual time=1.710..40.510 rows=36000.00 loops=1)
+                                                         Hash Cond: (a.entity_id = tar.id)
+                                                         Join Filter: (a.entity_type = 'area'::text)
+                                                         Rows Removed by Join Filter: 1812
+                                                         Buffers: shared hit=727
+                                                         ->  Hash Left Join  (cost=1057.66..7233.86 rows=37160 width=74) (actual time=1.678..35.247 rows=36000.00 loops=1)
+                                                               Hash Cond: (a.entity_id = tg.id)
+                                                               Join Filter: (a.entity_type = 'governorate'::text)
+                                                               Rows Removed by Join Filter: 1812
+                                                               Buffers: shared hit=726
+                                                               ->  Hash Left Join  (cost=1021.56..7100.22 rows=37160 width=57) (actual time=1.654..29.984 rows=36000.00 loops=1)
+                                                                     Hash Cond: (a.entity_id = tu.id)
+                                                                     Join Filter: (a.entity_type = 'user'::text)
+                                                                     Rows Removed by Join Filter: 1952
+                                                                     Buffers: shared hit=725
+                                                                     ->  Hash Left Join  (cost=1020.22..7001.34 rows=37160 width=49) (actual time=1.625..24.449 rows=36000.00 loops=1)
+                                                                           Hash Cond: (a.entity_id = ts.id)
+                                                                           Join Filter: (a.entity_type = 'space'::text)
+                                                                           Rows Removed by Join Filter: 126
+                                                                           Buffers: shared hit=724
+                                                                           ->  Hash Left Join  (cost=1018.97..6902.54 rows=37160 width=27) (actual time=1.596..19.337 rows=36000.00 loops=1)
+                                                                                 Hash Cond: (a.actor_id = au.id)
+                                                                                 Buffers: shared hit=723
+                                                                                 ->  Hash Left Join  (cost=1017.64..6776.17 rows=37160 width=19) (actual time=1.555..13.544 rows=36000.00 loops=1)
+                                                                                       Hash Cond: (a.actor_id = sm.user_id)
+                                                                                       Buffers: shared hit=722
+                                                                                       ->  Bitmap Heap Scan on audit_logs a  (cost=1016.41..6649.91 rows=37160 width=19) (actual time=1.488..5.768 rows=36000.00 loops=1)
+                                                                                             Recheck Cond: (space_id = 1)
+                                                                                             Heap Blocks: exact=554
+                                                                                             Buffers: shared hit=721
+                                                                                             ->  Bitmap Index Scan on audit_logs_space_id_created_at_idx  (cost=0.00..1007.12 rows=37160 width=0) (actual time=1.378..1.378 rows=36000.00 loops=1)
+                                                                                                   Index Cond: (space_id = 1)
+                                                                                                   Index Searches: 1
+                                                                                                   Buffers: shared hit=167
+                                                                                       ->  Hash  (cost=1.18..1.18 rows=4 width=8) (actual time=0.029..0.030 rows=4.00 loops=1)
+                                                                                             Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                             Buffers: shared hit=1
+                                                                                             ->  Seq Scan on space_managers sm  (cost=0.00..1.18 rows=4 width=8) (actual time=0.011..0.013 rows=4.00 loops=1)
+                                                                                                   Filter: (space_id = 1)
+                                                                                                   Rows Removed by Filter: 10
+                                                                                                   Buffers: shared hit=1
+                                                                                 ->  Hash  (cost=1.15..1.15 rows=15 width=12) (actual time=0.019..0.020 rows=15.00 loops=1)
+                                                                                       Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                       Buffers: shared hit=1
+                                                                                       ->  Seq Scan on users au  (cost=0.00..1.15 rows=15 width=12) (actual time=0.006..0.008 rows=15.00 loops=1)
+                                                                                             Buffers: shared hit=1
+                                                                           ->  Hash  (cost=1.11..1.11 rows=11 width=26) (actual time=0.013..0.014 rows=11.00 loops=1)
+                                                                                 Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                 Buffers: shared hit=1
+                                                                                 ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=26) (actual time=0.003..0.005 rows=11.00 loops=1)
+                                                                                       Buffers: shared hit=1
+                                                                     ->  Hash  (cost=1.15..1.15 rows=15 width=12) (actual time=0.014..0.015 rows=15.00 loops=1)
+                                                                           Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                           Buffers: shared hit=1
+                                                                           ->  Seq Scan on users tu  (cost=0.00..1.15 rows=15 width=12) (actual time=0.004..0.006 rows=15.00 loops=1)
+                                                                                 Buffers: shared hit=1
+                                                               ->  Hash  (cost=21.60..21.60 rows=1160 width=21) (actual time=0.012..0.012 rows=1.00 loops=1)
+                                                                     Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                                     Buffers: shared hit=1
+                                                                     ->  Seq Scan on governorates tg  (cost=0.00..21.60 rows=1160 width=21) (actual time=0.005..0.005 rows=1.00 loops=1)
+                                                                           Buffers: shared hit=1
+                                                         ->  Hash  (cost=20.70..20.70 rows=1070 width=23) (actual time=0.010..0.011 rows=1.00 loops=1)
+                                                               Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                               Buffers: shared hit=1
+                                                               ->  Seq Scan on areas tar  (cost=0.00..20.70 rows=1070 width=23) (actual time=0.003..0.004 rows=1.00 loops=1)
+                                                                     Buffers: shared hit=1
+                                                   ->  Hash  (cost=17.20..17.20 rows=720 width=43) (actual time=0.004..0.005 rows=0.00 loops=1)
+                                                         Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                                         ->  Seq Scan on amenities tam  (cost=0.00..17.20 rows=720 width=43) (actual time=0.004..0.004 rows=0.00 loops=1)
+                                             ->  Hash  (cost=36.50..36.50 rows=810 width=16) (actual time=0.006..0.007 rows=0.00 loops=1)
+                                                   Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                                   ->  Hash Left Join  (cost=16.25..36.50 rows=810 width=16) (actual time=0.005..0.006 rows=0.00 loops=1)
+                                                         Hash Cond: (tci.customer_id = tcc.id)
+                                                         ->  Seq Scan on check_ins tci  (cost=0.00..18.10 rows=810 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                                                         ->  Hash  (cost=10.00..10.00 rows=500 width=16) (never executed)
+                                                               ->  Seq Scan on customers tcc  (cost=0.00..10.00 rows=500 width=16) (never executed)
+                                       ->  Hash  (cost=97.12..97.12 rows=3000 width=29) (actual time=1.208..1.210 rows=3000.00 loops=1)
+                                             Buckets: 4096  Batches: 1  Memory Usage: 184kB
+                                             Buffers: shared hit=48
+                                             ->  Hash Left Join  (cost=16.25..97.12 rows=3000 width=29) (actual time=0.163..0.727 rows=3000.00 loops=1)
+                                                   Hash Cond: (tv.customer_id = tvc.id)
+                                                   Buffers: shared hit=48
+                                                   ->  Seq Scan on visits tv  (cost=0.00..73.00 rows=3000 width=21) (actual time=0.006..0.200 rows=3000.00 loops=1)
+                                                         Buffers: shared hit=43
+                                                   ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.131..0.132 rows=500.00 loops=1)
+                                                         Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                                         Buffers: shared hit=5
+                                                         ->  Seq Scan on customers tvc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.007..0.050 rows=500.00 loops=1)
+                                                               Buffers: shared hit=5
+                                 ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.132..0.132 rows=500.00 loops=1)
+                                       Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                       Buffers: shared hit=5
+                                       ->  Seq Scan on customers tc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.008..0.050 rows=500.00 loops=1)
+                                             Buffers: shared hit=5
+                           ->  Hash  (cost=14.60..14.60 rows=460 width=13) (actual time=0.004..0.005 rows=0.00 loops=1)
+                                 Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                 ->  Seq Scan on subscriptions tsu  (cost=0.00..14.60 rows=460 width=13) (actual time=0.004..0.004 rows=0.00 loops=1)
+                     ->  Hash  (cost=17.20..17.20 rows=720 width=24) (actual time=0.004..0.005 rows=0.00 loops=1)
+                           Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                           ->  Seq Scan on packages tp  (cost=0.00..17.20 rows=720 width=24) (actual time=0.004..0.004 rows=0.00 loops=1)
+ Planning:
+   Buffers: shared hit=73
+ Planning Time: 9.014 ms
+ Execution Time: 145.038 ms
+(142 rows)
+
+### J1 owner page LAST_30_DAYS
+                                                                                                                                 QUERY PLAN                                                                                                                                  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=7.86..111.17 rows=20 width=174) (actual time=0.511..0.516 rows=20.00 loops=1)
+   Buffers: shared hit=402
+   ->  Incremental Sort  (cost=7.86..15809.25 rows=3059 width=174) (actual time=0.510..0.513 rows=20.00 loops=1)
+         Sort Key: a.created_at DESC, a.id DESC
+         Presorted Key: a.created_at
+         Full-sort Groups: 1  Sort Method: quicksort  Average Memory: 27kB  Peak Memory: 27kB
+         Buffers: shared hit=402
+         ->  Nested Loop Left Join  (cost=2.73..15671.60 rows=3059 width=174) (actual time=0.249..0.488 rows=21.00 loops=1)
+               Join Filter: (a.entity_type = 'announcement'::text)
+               Buffers: shared hit=402
+               ->  Nested Loop Left Join  (cost=2.58..15076.98 rows=3059 width=303) (actual time=0.237..0.462 rows=21.00 loops=1)
+                     Buffers: shared hit=360
+                     ->  Nested Loop Left Join  (cost=2.30..14901.67 rows=3059 width=295) (actual time=0.218..0.434 rows=21.00 loops=1)
+                           Join Filter: (a.entity_type = 'checkIn'::text)
+                           Buffers: shared hit=360
+                           ->  Nested Loop Left Join  (cost=2.15..14307.05 rows=3059 width=291) (actual time=0.208..0.411 rows=21.00 loops=1)
+                                 Buffers: shared hit=318
+                                 ->  Nested Loop Left Join  (cost=1.87..13383.20 rows=3059 width=283) (actual time=0.200..0.395 rows=21.00 loops=1)
+                                       Join Filter: (a.entity_type = 'visit'::text)
+                                       Rows Removed by Join Filter: 3
+                                       Buffers: shared hit=318
+                                       ->  Nested Loop Left Join  (cost=1.59..12218.91 rows=3059 width=266) (actual time=0.189..0.346 rows=21.00 loops=1)
+                                             Join Filter: (a.entity_type = 'package'::text)
+                                             Buffers: shared hit=263
+                                             ->  Nested Loop Left Join  (cost=1.44..11624.29 rows=3059 width=246) (actual time=0.174..0.320 rows=21.00 loops=1)
+                                                   Join Filter: (a.entity_type = 'subscription'::text)
+                                                   Buffers: shared hit=221
+                                                   ->  Nested Loop Left Join  (cost=1.30..11037.32 rows=3059 width=237) (actual time=0.162..0.295 rows=21.00 loops=1)
+                                                         Join Filter: (a.entity_type = 'customer'::text)
+                                                         Rows Removed by Join Filter: 2
+                                                         Buffers: shared hit=179
+                                                         ->  Nested Loop Left Join  (cost=1.02..10075.97 rows=3059 width=225) (actual time=0.151..0.262 rows=21.00 loops=1)
+                                                               Join Filter: (a.entity_type = 'amenity'::text)
+                                                               Buffers: shared hit=134
+                                                               ->  Nested Loop Left Join  (cost=0.88..9481.35 rows=3059 width=186) (actual time=0.141..0.241 rows=21.00 loops=1)
+                                                                     Join Filter: (a.entity_type = 'area'::text)
+                                                                     Rows Removed by Join Filter: 1
+                                                                     Buffers: shared hit=92
+                                                                     ->  Nested Loop Left Join  (cost=0.72..8875.08 rows=3059 width=167) (actual time=0.131..0.218 rows=21.00 loops=1)
+                                                                           Join Filter: (a.entity_type = 'governorate'::text)
+                                                                           Rows Removed by Join Filter: 1
+                                                                           Buffers: shared hit=70
+                                                                           ->  Nested Loop Left Join  (cost=0.57..8268.82 rows=3059 width=150) (actual time=0.116..0.189 rows=21.00 loops=1)
+                                                                                 Join Filter: (a.entity_type = 'user'::text)
+                                                                                 Rows Removed by Join Filter: 1
+                                                                                 Buffers: shared hit=48
+                                                                                 ->  Nested Loop Left Join  (cost=0.43..7752.08 rows=3059 width=142) (actual time=0.082..0.140 rows=21.00 loops=1)
+                                                                                       Join Filter: ((a.entity_type = 'space'::text) AND (ts.id = a.entity_id))
+                                                                                       Rows Removed by Join Filter: 220
+                                                                                       Buffers: shared hit=26
+                                                                                       ->  Nested Loop Left Join  (cost=0.43..7162.09 rows=3059 width=112) (actual time=0.063..0.094 rows=21.00 loops=1)
+                                                                                             Join Filter: (sm.user_id = a.actor_id)
+                                                                                             Rows Removed by Join Filter: 27
+                                                                                             Buffers: shared hit=25
+                                                                                             ->  Index Scan Backward using audit_logs_space_id_created_at_idx on audit_logs a  (cost=0.43..6984.67 rows=3059 width=112) (actual time=0.038..0.057 rows=21.00 loops=1)
+                                                                                                   Index Cond: ((space_id = 1) AND (created_at >= ((date_trunc('day'::text, (now() AT TIME ZONE 'Asia/Gaza'::text)) - '29 days'::interval) AT TIME ZONE 'Asia/Gaza'::text)))
+                                                                                                   Index Searches: 1
+                                                                                                   Buffers: shared hit=24
+                                                                                             ->  Materialize  (cost=0.00..1.20 rows=4 width=8) (actual time=0.001..0.001 rows=2.24 loops=21)
+                                                                                                   Storage: Memory  Maximum Storage: 17kB
+                                                                                                   Buffers: shared hit=1
+                                                                                                   ->  Seq Scan on space_managers sm  (cost=0.00..1.18 rows=4 width=8) (actual time=0.012..0.014 rows=4.00 loops=1)
+                                                                                                         Filter: (space_id = 1)
+                                                                                                         Rows Removed by Filter: 10
+                                                                                                         Buffers: shared hit=1
+                                                                                       ->  Materialize  (cost=0.00..1.17 rows=11 width=34) (actual time=0.001..0.001 rows=10.52 loops=21)
+                                                                                             Storage: Memory  Maximum Storage: 17kB
+                                                                                             Buffers: shared hit=1
+                                                                                             ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=34) (actual time=0.005..0.006 rows=11.00 loops=1)
+                                                                                                   Buffers: shared hit=1
+                                                                                 ->  Index Scan using users_pkey on users tu  (cost=0.14..0.16 rows=1 width=12) (actual time=0.002..0.002 rows=0.05 loops=21)
+                                                                                       Index Cond: (id = a.entity_id)
+                                                                                       Index Searches: 21
+                                                                                       Buffers: shared hit=22
+                                                                           ->  Index Scan using governorates_pkey on governorates tg  (cost=0.15..0.19 rows=1 width=21) (actual time=0.001..0.001 rows=0.05 loops=21)
+                                                                                 Index Cond: (id = a.entity_id)
+                                                                                 Index Searches: 21
+                                                                                 Buffers: shared hit=22
+                                                                     ->  Index Scan using areas_pkey on areas tar  (cost=0.15..0.19 rows=1 width=23) (actual time=0.001..0.001 rows=0.05 loops=21)
+                                                                           Index Cond: (id = a.entity_id)
+                                                                           Index Searches: 21
+                                                                           Buffers: shared hit=22
+                                                               ->  Index Scan using amenities_pkey on amenities tam  (cost=0.15..0.18 rows=1 width=43) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                                     Index Cond: (id = a.entity_id)
+                                                                     Index Searches: 21
+                                                                     Buffers: shared hit=42
+                                                         ->  Index Scan using customers_id_space_id_key on customers tc  (cost=0.27..0.30 rows=1 width=16) (actual time=0.001..0.001 rows=0.14 loops=21)
+                                                               Index Cond: (id = a.entity_id)
+                                                               Index Searches: 21
+                                                               Buffers: shared hit=45
+                                                   ->  Index Scan using subscriptions_id_space_id_key on subscriptions tsu  (cost=0.15..0.18 rows=1 width=13) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                         Index Cond: (id = a.entity_id)
+                                                         Index Searches: 21
+                                                         Buffers: shared hit=42
+                                             ->  Index Scan using packages_id_space_id_key on packages tp  (cost=0.15..0.18 rows=1 width=24) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                   Index Cond: (id = a.entity_id)
+                                                   Index Searches: 21
+                                                   Buffers: shared hit=42
+                                       ->  Index Scan using visits_id_space_id_key on visits tv  (cost=0.28..0.37 rows=1 width=21) (actual time=0.002..0.002 rows=0.62 loops=21)
+                                             Index Cond: (id = a.entity_id)
+                                             Index Searches: 21
+                                             Buffers: shared hit=55
+                                 ->  Index Scan using customers_id_space_id_key on customers tvc  (cost=0.27..0.30 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=21)
+                                       Index Cond: (id = tv.customer_id)
+                                       Index Searches: 0
+                           ->  Index Scan using check_ins_pkey on check_ins tci  (cost=0.15..0.18 rows=1 width=8) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                 Index Cond: (id = a.entity_id)
+                                 Index Searches: 21
+                                 Buffers: shared hit=42
+                     ->  Memoize  (cost=0.28..0.34 rows=1 width=16) (actual time=0.001..0.001 rows=0.00 loops=21)
+                           Cache Key: tci.customer_id
+                           Cache Mode: logical
+                           Hits: 20  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                           ->  Index Scan using customers_id_space_id_key on customers tcc  (cost=0.27..0.33 rows=1 width=16) (actual time=0.007..0.007 rows=0.00 loops=1)
+                                 Index Cond: (id = tci.customer_id)
+                                 Index Searches: 0
+               ->  Index Scan using announcements_pkey on announcements tan  (cost=0.15..0.18 rows=1 width=12) (actual time=0.001..0.001 rows=0.00 loops=21)
+                     Index Cond: (id = a.entity_id)
+                     Index Searches: 21
+                     Buffers: shared hit=42
+ Planning:
+   Buffers: shared hit=75
+ Planning Time: 32.954 ms
+ Execution Time: 0.910 ms
+(124 rows)
+
+### J4 owner page ALL
+                                                                                                                               QUERY PLAN                                                                                                                               
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=5.81..68.31 rows=20 width=174) (actual time=0.545..0.551 rows=20.00 loops=1)
+   Buffers: shared hit=402
+   ->  Incremental Sort  (cost=5.81..116135.60 rows=37160 width=174) (actual time=0.544..0.548 rows=20.00 loops=1)
+         Sort Key: a.created_at DESC, a.id DESC
+         Presorted Key: a.created_at
+         Full-sort Groups: 1  Sort Method: quicksort  Average Memory: 27kB  Peak Memory: 27kB
+         Buffers: shared hit=402
+         ->  Nested Loop Left Join  (cost=2.72..114463.40 rows=37160 width=174) (actual time=0.272..0.517 rows=21.00 loops=1)
+               Join Filter: (a.entity_type = 'announcement'::text)
+               Buffers: shared hit=402
+               ->  Nested Loop Left Join  (cost=2.57..107730.60 rows=37160 width=303) (actual time=0.258..0.488 rows=21.00 loops=1)
+                     Buffers: shared hit=360
+                     ->  Nested Loop Left Join  (cost=2.28..106703.76 rows=37160 width=295) (actual time=0.236..0.458 rows=21.00 loops=1)
+                           Join Filter: (a.entity_type = 'checkIn'::text)
+                           Buffers: shared hit=360
+                           ->  Nested Loop Left Join  (cost=2.13..99970.96 rows=37160 width=291) (actual time=0.224..0.433 rows=21.00 loops=1)
+                                 Buffers: shared hit=318
+                                 ->  Nested Loop Left Join  (cost=1.86..88748.61 rows=37160 width=283) (actual time=0.216..0.417 rows=21.00 loops=1)
+                                       Join Filter: (a.entity_type = 'visit'::text)
+                                       Rows Removed by Join Filter: 3
+                                       Buffers: shared hit=318
+                                       ->  Nested Loop Left Join  (cost=1.58..77013.01 rows=37160 width=266) (actual time=0.204..0.366 rows=21.00 loops=1)
+                                             Join Filter: (a.entity_type = 'package'::text)
+                                             Buffers: shared hit=263
+                                             ->  Nested Loop Left Join  (cost=1.43..70280.21 rows=37160 width=246) (actual time=0.186..0.335 rows=21.00 loops=1)
+                                                   Join Filter: (a.entity_type = 'subscription'::text)
+                                                   Buffers: shared hit=221
+                                                   ->  Nested Loop Left Join  (cost=1.28..63640.31 rows=37160 width=237) (actual time=0.171..0.308 rows=21.00 loops=1)
+                                                         Join Filter: (a.entity_type = 'customer'::text)
+                                                         Rows Removed by Join Filter: 2
+                                                         Buffers: shared hit=179
+                                                         ->  Nested Loop Left Join  (cost=1.01..52363.41 rows=37160 width=225) (actual time=0.159..0.274 rows=21.00 loops=1)
+                                                               Join Filter: (a.entity_type = 'amenity'::text)
+                                                               Buffers: shared hit=134
+                                                               ->  Nested Loop Left Join  (cost=0.86..45630.61 rows=37160 width=186) (actual time=0.150..0.252 rows=21.00 loops=1)
+                                                                     Join Filter: (a.entity_type = 'area'::text)
+                                                                     Rows Removed by Join Filter: 1
+                                                                     Buffers: shared hit=92
+                                                                     ->  Nested Loop Left Join  (cost=0.71..38800.91 rows=37160 width=167) (actual time=0.137..0.226 rows=21.00 loops=1)
+                                                                           Join Filter: (a.entity_type = 'governorate'::text)
+                                                                           Rows Removed by Join Filter: 1
+                                                                           Buffers: shared hit=70
+                                                                           ->  Nested Loop Left Join  (cost=0.56..31971.21 rows=37160 width=150) (actual time=0.126..0.201 rows=21.00 loops=1)
+                                                                                 Join Filter: (a.entity_type = 'user'::text)
+                                                                                 Rows Removed by Join Filter: 1
+                                                                                 Buffers: shared hit=48
+                                                                                 ->  Nested Loop Left Join  (cost=0.42..25827.81 rows=37160 width=142) (actual time=0.107..0.167 rows=21.00 loops=1)
+                                                                                       Join Filter: ((a.entity_type = 'space'::text) AND (ts.id = a.entity_id))
+                                                                                       Rows Removed by Join Filter: 220
+                                                                                       Buffers: shared hit=26
+                                                                                       ->  Nested Loop Left Join  (cost=0.42..18673.37 rows=37160 width=112) (actual time=0.058..0.091 rows=21.00 loops=1)
+                                                                                             Join Filter: (sm.user_id = a.actor_id)
+                                                                                             Rows Removed by Join Filter: 27
+                                                                                             Buffers: shared hit=25
+                                                                                             ->  Index Scan Backward using audit_logs_space_id_created_at_idx on audit_logs a  (cost=0.42..16531.54 rows=37160 width=112) (actual time=0.028..0.049 rows=21.00 loops=1)
+                                                                                                   Index Cond: (space_id = 1)
+                                                                                                   Index Searches: 1
+                                                                                                   Buffers: shared hit=24
+                                                                                             ->  Materialize  (cost=0.00..1.20 rows=4 width=8) (actual time=0.001..0.002 rows=2.24 loops=21)
+                                                                                                   Storage: Memory  Maximum Storage: 17kB
+                                                                                                   Buffers: shared hit=1
+                                                                                                   ->  Seq Scan on space_managers sm  (cost=0.00..1.18 rows=4 width=8) (actual time=0.014..0.016 rows=4.00 loops=1)
+                                                                                                         Filter: (space_id = 1)
+                                                                                                         Rows Removed by Filter: 10
+                                                                                                         Buffers: shared hit=1
+                                                                                       ->  Materialize  (cost=0.00..1.17 rows=11 width=34) (actual time=0.002..0.003 rows=10.52 loops=21)
+                                                                                             Storage: Memory  Maximum Storage: 17kB
+                                                                                             Buffers: shared hit=1
+                                                                                             ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=34) (actual time=0.037..0.038 rows=11.00 loops=1)
+                                                                                                   Buffers: shared hit=1
+                                                                                 ->  Index Scan using users_pkey on users tu  (cost=0.14..0.15 rows=1 width=12) (actual time=0.001..0.001 rows=0.05 loops=21)
+                                                                                       Index Cond: (id = a.entity_id)
+                                                                                       Index Searches: 21
+                                                                                       Buffers: shared hit=22
+                                                                           ->  Index Scan using governorates_pkey on governorates tg  (cost=0.15..0.17 rows=1 width=21) (actual time=0.001..0.001 rows=0.05 loops=21)
+                                                                                 Index Cond: (id = a.entity_id)
+                                                                                 Index Searches: 21
+                                                                                 Buffers: shared hit=22
+                                                                     ->  Index Scan using areas_pkey on areas tar  (cost=0.15..0.17 rows=1 width=23) (actual time=0.001..0.001 rows=0.05 loops=21)
+                                                                           Index Cond: (id = a.entity_id)
+                                                                           Index Searches: 21
+                                                                           Buffers: shared hit=22
+                                                               ->  Index Scan using amenities_pkey on amenities tam  (cost=0.15..0.17 rows=1 width=43) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                                     Index Cond: (id = a.entity_id)
+                                                                     Index Searches: 21
+                                                                     Buffers: shared hit=42
+                                                         ->  Index Scan using customers_id_space_id_key on customers tc  (cost=0.27..0.29 rows=1 width=16) (actual time=0.001..0.001 rows=0.14 loops=21)
+                                                               Index Cond: (id = a.entity_id)
+                                                               Index Searches: 21
+                                                               Buffers: shared hit=45
+                                                   ->  Index Scan using subscriptions_id_space_id_key on subscriptions tsu  (cost=0.15..0.17 rows=1 width=13) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                         Index Cond: (id = a.entity_id)
+                                                         Index Searches: 21
+                                                         Buffers: shared hit=42
+                                             ->  Index Scan using packages_id_space_id_key on packages tp  (cost=0.15..0.17 rows=1 width=24) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                   Index Cond: (id = a.entity_id)
+                                                   Index Searches: 21
+                                                   Buffers: shared hit=42
+                                       ->  Index Scan using visits_id_space_id_key on visits tv  (cost=0.28..0.30 rows=1 width=21) (actual time=0.002..0.002 rows=0.62 loops=21)
+                                             Index Cond: (id = a.entity_id)
+                                             Index Searches: 21
+                                             Buffers: shared hit=55
+                                 ->  Index Scan using customers_id_space_id_key on customers tvc  (cost=0.27..0.30 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=21)
+                                       Index Cond: (id = tv.customer_id)
+                                       Index Searches: 0
+                           ->  Index Scan using check_ins_pkey on check_ins tci  (cost=0.15..0.17 rows=1 width=8) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                 Index Cond: (id = a.entity_id)
+                                 Index Searches: 21
+                                 Buffers: shared hit=42
+                     ->  Memoize  (cost=0.28..0.34 rows=1 width=16) (actual time=0.001..0.001 rows=0.00 loops=21)
+                           Cache Key: tci.customer_id
+                           Cache Mode: logical
+                           Hits: 20  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                           ->  Index Scan using customers_id_space_id_key on customers tcc  (cost=0.27..0.33 rows=1 width=16) (actual time=0.007..0.007 rows=0.00 loops=1)
+                                 Index Cond: (id = tci.customer_id)
+                                 Index Searches: 0
+               ->  Index Scan using announcements_pkey on announcements tan  (cost=0.15..0.17 rows=1 width=12) (actual time=0.001..0.001 rows=0.00 loops=21)
+                     Index Cond: (id = a.entity_id)
+                     Index Searches: 21
+                     Buffers: shared hit=42
+ Planning:
+   Buffers: shared hit=72
+ Planning Time: 19.372 ms
+ Execution Time: 0.993 ms
+(124 rows)
+
+### J4b owner page ALL, page 500
+                                                                                                                    QUERY PLAN                                                                                                                     
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=10525.34..10527.67 rows=20 width=174) (actual time=70.016..79.847 rows=20.00 loops=1)
+   Buffers: shared hit=965
+   ->  Gather Merge  (cost=9363.00..13690.78 rows=37159 width=174) (actual time=66.955..79.546 rows=10000.00 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=965
+         ->  Sort  (cost=8362.98..8401.69 rows=15483 width=174) (actual time=44.852..45.422 rows=3603.33 loops=3)
+               Sort Key: a.created_at DESC, a.id DESC
+               Sort Method: top-N heapsort  Memory: 2897kB
+               Buffers: shared hit=965
+               Worker 0:  Sort Method: quicksort  Memory: 1223kB
+               Worker 1:  Sort Method: quicksort  Memory: 1258kB
+               ->  Hash Left Join  (cost=1383.92..7285.49 rows=15483 width=174) (actual time=3.381..38.195 rows=12000.00 loops=3)
+                     Hash Cond: (a.entity_id = tan.id)
+                     Join Filter: (a.entity_type = 'announcement'::text)
+                     Buffers: shared hit=935
+                     ->  Hash Left Join  (cost=1360.65..7221.57 rows=15483 width=303) (actual time=3.317..34.894 rows=12000.00 loops=3)
+                           Hash Cond: (a.entity_id = tp.id)
+                           Join Filter: (a.entity_type = 'package'::text)
+                           Buffers: shared hit=935
+                           ->  Hash Left Join  (cost=1334.45..7154.72 rows=15483 width=283) (actual time=3.273..32.174 rows=12000.00 loops=3)
+                                 Hash Cond: (a.entity_id = tsu.id)
+                                 Join Filter: (a.entity_type = 'subscription'::text)
+                                 Buffers: shared hit=935
+                                 ->  Hash Left Join  (cost=1314.10..7093.73 rows=15483 width=274) (actual time=3.234..29.690 rows=12000.00 loops=3)
+                                       Hash Cond: (a.entity_id = tc.id)
+                                       Join Filter: (a.entity_type = 'customer'::text)
+                                       Rows Removed by Join Filter: 1475
+                                       Buffers: shared hit=935
+                                       ->  Hash Left Join  (cost=1297.85..7036.84 rows=15483 width=262) (actual time=3.041..26.664 rows=12000.00 loops=3)
+                                             Hash Cond: (a.entity_id = tv.id)
+                                             Join Filter: (a.entity_type = 'visit'::text)
+                                             Rows Removed by Join Filter: 2250
+                                             Buffers: shared hit=920
+                                             ->  Hash Left Join  (cost=1163.22..6840.20 rows=15483 width=237) (actual time=1.255..20.772 rows=12000.00 loops=3)
+                                                   Hash Cond: (a.entity_id = tci.id)
+                                                   Join Filter: (a.entity_type = 'checkIn'::text)
+                                                   Buffers: shared hit=776
+                                                   ->  Hash Left Join  (cost=1116.60..6734.46 rows=15483 width=225) (actual time=1.225..18.295 rows=12000.00 loops=3)
+                                                         Hash Cond: (a.entity_id = tam.id)
+                                                         Join Filter: (a.entity_type = 'amenity'::text)
+                                                         Buffers: shared hit=776
+                                                         ->  Hash Left Join  (cost=1090.40..6667.61 rows=15483 width=186) (actual time=1.195..15.774 rows=12000.00 loops=3)
+                                                               Hash Cond: (a.entity_id = tar.id)
+                                                               Join Filter: (a.entity_type = 'area'::text)
+                                                               Rows Removed by Join Filter: 604
+                                                               Buffers: shared hit=776
+                                                               ->  Hash Left Join  (cost=1056.32..6592.89 rows=15483 width=167) (actual time=1.146..13.402 rows=12000.00 loops=3)
+                                                                     Hash Cond: (a.entity_id = tg.id)
+                                                                     Join Filter: (a.entity_type = 'governorate'::text)
+                                                                     Rows Removed by Join Filter: 604
+                                                                     Buffers: shared hit=773
+                                                                     ->  Hash Left Join  (cost=1020.22..6516.15 rows=15483 width=150) (actual time=1.101..11.028 rows=12000.00 loops=3)
+                                                                           Hash Cond: (a.entity_id = tu.id)
+                                                                           Join Filter: (a.entity_type = 'user'::text)
+                                                                           Rows Removed by Join Filter: 651
+                                                                           Buffers: shared hit=770
+                                                                           ->  Hash Left Join  (cost=1018.88..6474.17 rows=15483 width=142) (actual time=1.053..8.715 rows=12000.00 loops=3)
+                                                                                 Hash Cond: (a.entity_id = ts.id)
+                                                                                 Join Filter: (a.entity_type = 'space'::text)
+                                                                                 Rows Removed by Join Filter: 42
+                                                                                 Buffers: shared hit=767
+                                                                                 ->  Hash Left Join  (cost=1017.64..6432.28 rows=15483 width=112) (actual time=0.975..6.364 rows=12000.00 loops=3)
+                                                                                       Hash Cond: (a.actor_id = sm.user_id)
+                                                                                       Buffers: shared hit=764
+                                                                                       ->  Parallel Bitmap Heap Scan on audit_logs a  (cost=1016.41..6378.95 rows=15483 width=112) (actual time=0.908..2.830 rows=12000.00 loops=3)
+                                                                                             Recheck Cond: (space_id = 1)
+                                                                                             Heap Blocks: exact=329
+                                                                                             Buffers: shared hit=761
+                                                                                             Worker 0:  Heap Blocks: exact=110
+                                                                                             Worker 1:  Heap Blocks: exact=115
+                                                                                             ->  Bitmap Index Scan on audit_logs_space_id_created_at_idx  (cost=0.00..1007.12 rows=37160 width=0) (actual time=1.942..1.942 rows=36000.00 loops=1)
+                                                                                                   Index Cond: (space_id = 1)
+                                                                                                   Index Searches: 1
+                                                                                                   Buffers: shared hit=167
+                                                                                       ->  Hash  (cost=1.18..1.18 rows=4 width=8) (actual time=0.043..0.044 rows=4.00 loops=3)
+                                                                                             Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                             Buffers: shared hit=3
+                                                                                             ->  Seq Scan on space_managers sm  (cost=0.00..1.18 rows=4 width=8) (actual time=0.025..0.027 rows=4.00 loops=3)
+                                                                                                   Filter: (space_id = 1)
+                                                                                                   Rows Removed by Filter: 10
+                                                                                                   Buffers: shared hit=3
+                                                                                 ->  Hash  (cost=1.11..1.11 rows=11 width=34) (actual time=0.043..0.044 rows=11.00 loops=3)
+                                                                                       Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                       Buffers: shared hit=3
+                                                                                       ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=34) (actual time=0.025..0.027 rows=11.00 loops=3)
+                                                                                             Buffers: shared hit=3
+                                                                           ->  Hash  (cost=1.15..1.15 rows=15 width=12) (actual time=0.027..0.028 rows=15.00 loops=3)
+                                                                                 Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                 Buffers: shared hit=3
+                                                                                 ->  Seq Scan on users tu  (cost=0.00..1.15 rows=15 width=12) (actual time=0.012..0.014 rows=15.00 loops=3)
+                                                                                       Buffers: shared hit=3
+                                                                     ->  Hash  (cost=21.60..21.60 rows=1160 width=21) (actual time=0.023..0.024 rows=1.00 loops=3)
+                                                                           Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                                           Buffers: shared hit=3
+                                                                           ->  Seq Scan on governorates tg  (cost=0.00..21.60 rows=1160 width=21) (actual time=0.013..0.014 rows=1.00 loops=3)
+                                                                                 Buffers: shared hit=3
+                                                               ->  Hash  (cost=20.70..20.70 rows=1070 width=23) (actual time=0.024..0.025 rows=1.00 loops=3)
+                                                                     Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                                     Buffers: shared hit=3
+                                                                     ->  Seq Scan on areas tar  (cost=0.00..20.70 rows=1070 width=23) (actual time=0.013..0.013 rows=1.00 loops=3)
+                                                                           Buffers: shared hit=3
+                                                         ->  Hash  (cost=17.20..17.20 rows=720 width=43) (actual time=0.009..0.010 rows=0.00 loops=3)
+                                                               Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                                               ->  Seq Scan on amenities tam  (cost=0.00..17.20 rows=720 width=43) (actual time=0.009..0.009 rows=0.00 loops=3)
+                                                   ->  Hash  (cost=36.50..36.50 rows=810 width=16) (actual time=0.010..0.011 rows=0.00 loops=3)
+                                                         Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                                         ->  Hash Left Join  (cost=16.25..36.50 rows=810 width=16) (actual time=0.009..0.010 rows=0.00 loops=3)
+                                                               Hash Cond: (tci.customer_id = tcc.id)
+                                                               ->  Seq Scan on check_ins tci  (cost=0.00..18.10 rows=810 width=8) (actual time=0.009..0.009 rows=0.00 loops=3)
+                                                               ->  Hash  (cost=10.00..10.00 rows=500 width=16) (never executed)
+                                                                     ->  Seq Scan on customers tcc  (cost=0.00..10.00 rows=500 width=16) (never executed)
+                                             ->  Hash  (cost=97.12..97.12 rows=3000 width=29) (actual time=1.738..1.741 rows=3000.00 loops=3)
+                                                   Buckets: 4096  Batches: 1  Memory Usage: 184kB
+                                                   Buffers: shared hit=144
+                                                   ->  Hash Left Join  (cost=16.25..97.12 rows=3000 width=29) (actual time=0.233..1.043 rows=3000.00 loops=3)
+                                                         Hash Cond: (tv.customer_id = tvc.id)
+                                                         Buffers: shared hit=144
+                                                         ->  Seq Scan on visits tv  (cost=0.00..73.00 rows=3000 width=21) (actual time=0.018..0.314 rows=3000.00 loops=3)
+                                                               Buffers: shared hit=129
+                                                         ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.190..0.191 rows=500.00 loops=3)
+                                                               Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                                               Buffers: shared hit=15
+                                                               ->  Seq Scan on customers tvc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.019..0.086 rows=500.00 loops=3)
+                                                                     Buffers: shared hit=15
+                                       ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.170..0.171 rows=500.00 loops=3)
+                                             Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                             Buffers: shared hit=15
+                                             ->  Seq Scan on customers tc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.010..0.065 rows=500.00 loops=3)
+                                                   Buffers: shared hit=15
+                                 ->  Hash  (cost=14.60..14.60 rows=460 width=13) (actual time=0.016..0.017 rows=0.00 loops=3)
+                                       Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                       ->  Seq Scan on subscriptions tsu  (cost=0.00..14.60 rows=460 width=13) (actual time=0.016..0.016 rows=0.00 loops=3)
+                           ->  Hash  (cost=17.20..17.20 rows=720 width=24) (actual time=0.011..0.011 rows=0.00 loops=3)
+                                 Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                 ->  Seq Scan on packages tp  (cost=0.00..17.20 rows=720 width=24) (actual time=0.010..0.010 rows=0.00 loops=3)
+                     ->  Hash  (cost=15.90..15.90 rows=590 width=12) (actual time=0.014..0.015 rows=0.00 loops=3)
+                           Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                           ->  Seq Scan on announcements tan  (cost=0.00..15.90 rows=590 width=12) (actual time=0.014..0.014 rows=0.00 loops=3)
+ Planning:
+   Buffers: shared hit=72
+ Planning Time: 18.900 ms
+ Execution Time: 80.869 ms
+(143 rows)
+
+### JA1 admin page ALL
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       QUERY PLAN                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=7.85..103.62 rows=20 width=191) (actual time=1.022..1.032 rows=20.00 loops=1)
+   Buffers: shared hit=716
+   ->  Incremental Sort  (cost=7.85..80274.23 rows=16762 width=191) (actual time=1.021..1.028 rows=20.00 loops=1)
+         Sort Key: a.created_at DESC, a.id DESC
+         Presorted Key: a.created_at
+         Full-sort Groups: 1  Sort Method: quicksort  Average Memory: 30kB  Peak Memory: 30kB
+         Buffers: shared hit=716
+         ->  Nested Loop Left Join  (cost=3.09..79519.94 rows=16762 width=191) (actual time=0.416..0.994 rows=21.00 loops=1)
+               Join Filter: (a.entity_type = 'announcement'::text)
+               Buffers: shared hit=716
+               ->  Nested Loop Left Join  (cost=2.94..76458.78 rows=16762 width=317) (actual time=0.376..0.938 rows=21.00 loops=1)
+                     Buffers: shared hit=674
+                     ->  Nested Loop Left Join  (cost=2.66..75941.29 rows=16762 width=309) (actual time=0.353..0.904 rows=21.00 loops=1)
+                           Join Filter: (a.entity_type = 'checkIn'::text)
+                           Buffers: shared hit=674
+                           ->  Nested Loop Left Join  (cost=2.51..72880.13 rows=16762 width=305) (actual time=0.341..0.877 rows=21.00 loops=1)
+                                 Buffers: shared hit=632
+                                 ->  Nested Loop Left Join  (cost=2.24..67817.97 rows=16762 width=297) (actual time=0.332..0.859 rows=21.00 loops=1)
+                                       Join Filter: (a.entity_type = 'visit'::text)
+                                       Rows Removed by Join Filter: 21
+                                       Buffers: shared hit=632
+                                       ->  Nested Loop Left Join  (cost=1.96..62405.75 rows=16762 width=280) (actual time=0.317..0.816 rows=21.00 loops=1)
+                                             Join Filter: (a.entity_type = 'package'::text)
+                                             Buffers: shared hit=569
+                                             ->  Nested Loop Left Join  (cost=1.81..59344.59 rows=16762 width=260) (actual time=0.305..0.790 rows=21.00 loops=1)
+                                                   Join Filter: (a.entity_type = 'subscription'::text)
+                                                   Buffers: shared hit=527
+                                                   ->  Nested Loop Left Join  (cost=1.66..56325.34 rows=16762 width=251) (actual time=0.285..0.753 rows=21.00 loops=1)
+                                                         Join Filter: (a.entity_type = 'customer'::text)
+                                                         Rows Removed by Join Filter: 21
+                                                         Buffers: shared hit=485
+                                                         ->  Nested Loop Left Join  (cost=1.39..51218.83 rows=16762 width=239) (actual time=0.173..0.609 rows=21.00 loops=1)
+                                                               Join Filter: (a.entity_type = 'amenity'::text)
+                                                               Buffers: shared hit=422
+                                                               ->  Nested Loop Left Join  (cost=1.24..48157.67 rows=16762 width=200) (actual time=0.161..0.581 rows=21.00 loops=1)
+                                                                     Join Filter: (a.entity_type = 'area'::text)
+                                                                     Rows Removed by Join Filter: 3
+                                                                     Buffers: shared hit=380
+                                                                     ->  Nested Loop Left Join  (cost=1.08..45050.61 rows=16762 width=181) (actual time=0.146..0.550 rows=21.00 loops=1)
+                                                                           Join Filter: (a.entity_type = 'governorate'::text)
+                                                                           Rows Removed by Join Filter: 3
+                                                                           Buffers: shared hit=356
+                                                                           ->  Nested Loop Left Join  (cost=0.93..41943.54 rows=16762 width=164) (actual time=0.136..0.523 rows=21.00 loops=1)
+                                                                                 Join Filter: (a.entity_type = 'user'::text)
+                                                                                 Rows Removed by Join Filter: 20
+                                                                                 Buffers: shared hit=332
+                                                                                 ->  Nested Loop Left Join  (cost=0.80..39165.81 rows=16762 width=156) (actual time=0.123..0.483 rows=21.00 loops=1)
+                                                                                       Join Filter: ((a.entity_type = 'space'::text) AND (ts.id = a.entity_id))
+                                                                                       Rows Removed by Join Filter: 181
+                                                                                       Buffers: shared hit=290
+                                                                                       ->  Nested Loop Left Join  (cost=0.80..35937.99 rows=16762 width=126) (actual time=0.089..0.419 rows=21.00 loops=1)
+                                                                                             Buffers: shared hit=289
+                                                                                             ->  Nested Loop Left Join  (cost=0.65..35536.10 rows=16762 width=120) (actual time=0.074..0.392 rows=21.00 loops=1)
+                                                                                                   Buffers: shared hit=285
+                                                                                                   ->  Index Scan Backward using audit_logs_created_at_idx on audit_logs a  (cost=0.51..35129.25 rows=16762 width=112) (actual time=0.053..0.357 rows=21.00 loops=1)
+                                                                                                         Filter: ((action = ANY ('{space.created,space.profileEdited,space.hoursEdited,space.pricesEdited,space.amenitiesEdited,space.contactsEdited,space.profileConfirmed,space.hoursConfirmed,space.pricesConfirmed,space.amenitiesConfirmed,space.contactsConfirmed,space.photoAdded,space.photoRemoved,space.photosReordered,space.hidden,space.unhidden,space.deleted,space.restored,space.ownerLinked,space.ownerUnlinked,governorate.added,governorate.edited,governorate.hidden,governorate.restored,area.added,area.edited,area.hidden,area.restored,amenity.added,amenity.edited,amenity.hidden,amenity.restored,dataReport.resolved,dataReport.dismissed}'::text[])) OR ((action = ANY ('{user.created,user.roleChanged,user.suspended,user.unsuspended,user.temporaryPasswordIssued,user.temporaryPasswordHandedOver,user.emailChanged}'::text[])) AND (space_id IS NULL)))
+                                                                                                         Rows Removed by Filter: 259
+                                                                                                         Index Searches: 1
+                                                                                                         Buffers: shared hit=283
+                                                                                                   ->  Memoize  (cost=0.15..0.16 rows=1 width=12) (actual time=0.001..0.001 rows=1.00 loops=21)
+                                                                                                         Cache Key: a.actor_id
+                                                                                                         Cache Mode: logical
+                                                                                                         Hits: 20  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                                                                                                         Buffers: shared hit=2
+                                                                                                         ->  Index Scan using users_pkey on users au  (cost=0.14..0.15 rows=1 width=12) (actual time=0.014..0.014 rows=1.00 loops=1)
+                                                                                                               Index Cond: (id = a.actor_id)
+                                                                                                               Index Searches: 1
+                                                                                                               Buffers: shared hit=2
+                                                                                             ->  Memoize  (cost=0.15..0.16 rows=1 width=10) (actual time=0.001..0.001 rows=0.95 loops=21)
+                                                                                                   Cache Key: a.space_id
+                                                                                                   Cache Mode: logical
+                                                                                                   Hits: 18  Misses: 3  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                                                                                                   Buffers: shared hit=4
+                                                                                                   ->  Index Scan using spaces_pkey on spaces es  (cost=0.14..0.15 rows=1 width=10) (actual time=0.004..0.004 rows=0.67 loops=3)
+                                                                                                         Index Cond: (id = a.space_id)
+                                                                                                         Index Searches: 2
+                                                                                                         Buffers: shared hit=4
+                                                                                       ->  Materialize  (cost=0.00..1.17 rows=11 width=34) (actual time=0.001..0.002 rows=9.57 loops=21)
+                                                                                             Storage: Memory  Maximum Storage: 17kB
+                                                                                             Buffers: shared hit=1
+                                                                                             ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=34) (actual time=0.018..0.020 rows=11.00 loops=1)
+                                                                                                   Buffers: shared hit=1
+                                                                                 ->  Index Scan using users_pkey on users tu  (cost=0.14..0.15 rows=1 width=12) (actual time=0.001..0.001 rows=1.00 loops=21)
+                                                                                       Index Cond: (id = a.entity_id)
+                                                                                       Index Searches: 21
+                                                                                       Buffers: shared hit=42
+                                                                           ->  Index Scan using governorates_pkey on governorates tg  (cost=0.15..0.17 rows=1 width=21) (actual time=0.001..0.001 rows=0.14 loops=21)
+                                                                                 Index Cond: (id = a.entity_id)
+                                                                                 Index Searches: 21
+                                                                                 Buffers: shared hit=24
+                                                                     ->  Index Scan using areas_pkey on areas tar  (cost=0.15..0.17 rows=1 width=23) (actual time=0.001..0.001 rows=0.14 loops=21)
+                                                                           Index Cond: (id = a.entity_id)
+                                                                           Index Searches: 21
+                                                                           Buffers: shared hit=24
+                                                               ->  Index Scan using amenities_pkey on amenities tam  (cost=0.15..0.17 rows=1 width=43) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                                     Index Cond: (id = a.entity_id)
+                                                                     Index Searches: 21
+                                                                     Buffers: shared hit=42
+                                                         ->  Index Scan using customers_id_space_id_key on customers tc  (cost=0.27..0.29 rows=1 width=16) (actual time=0.006..0.006 rows=1.00 loops=21)
+                                                               Index Cond: (id = a.entity_id)
+                                                               Index Searches: 21
+                                                               Buffers: shared hit=63
+                                                   ->  Index Scan using subscriptions_id_space_id_key on subscriptions tsu  (cost=0.15..0.17 rows=1 width=13) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                         Index Cond: (id = a.entity_id)
+                                                         Index Searches: 21
+                                                         Buffers: shared hit=42
+                                             ->  Index Scan using packages_id_space_id_key on packages tp  (cost=0.15..0.17 rows=1 width=24) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                                   Index Cond: (id = a.entity_id)
+                                                   Index Searches: 21
+                                                   Buffers: shared hit=42
+                                       ->  Index Scan using visits_id_space_id_key on visits tv  (cost=0.28..0.31 rows=1 width=21) (actual time=0.001..0.002 rows=1.00 loops=21)
+                                             Index Cond: (id = a.entity_id)
+                                             Index Searches: 21
+                                             Buffers: shared hit=63
+                                 ->  Index Scan using customers_id_space_id_key on customers tvc  (cost=0.27..0.30 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=21)
+                                       Index Cond: (id = tv.customer_id)
+                                       Index Searches: 0
+                           ->  Index Scan using check_ins_pkey on check_ins tci  (cost=0.15..0.17 rows=1 width=8) (actual time=0.001..0.001 rows=0.00 loops=21)
+                                 Index Cond: (id = a.entity_id)
+                                 Index Searches: 21
+                                 Buffers: shared hit=42
+                     ->  Memoize  (cost=0.28..0.34 rows=1 width=16) (actual time=0.001..0.001 rows=0.00 loops=21)
+                           Cache Key: tci.customer_id
+                           Cache Mode: logical
+                           Hits: 20  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                           ->  Index Scan using customers_id_space_id_key on customers tcc  (cost=0.27..0.33 rows=1 width=16) (actual time=0.010..0.010 rows=0.00 loops=1)
+                                 Index Cond: (id = tci.customer_id)
+                                 Index Searches: 0
+               ->  Index Scan using announcements_pkey on announcements tan  (cost=0.15..0.17 rows=1 width=12) (actual time=0.002..0.002 rows=0.00 loops=21)
+                     Index Cond: (id = a.entity_id)
+                     Index Searches: 21
+                     Buffers: shared hit=42
+ Planning:
+   Buffers: shared hit=79
+ Planning Time: 38.182 ms
+ Execution Time: 1.524 ms
+(136 rows)
+
+### JA4 admin page ALL with q
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       QUERY PLAN                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=17.03..296.42 rows=20 width=191) (actual time=580.754..580.761 rows=0.00 loops=1)
+   Buffers: shared hit=663187
+   ->  Incremental Sort  (cost=17.03..78065.76 rows=5587 width=191) (actual time=580.753..580.758 rows=0.00 loops=1)
+         Sort Key: a.created_at DESC, a.id DESC
+         Presorted Key: a.created_at
+         Full-sort Groups: 1  Sort Method: quicksort  Average Memory: 25kB  Peak Memory: 25kB
+         Buffers: shared hit=663187
+         ->  Nested Loop Left Join  (cost=3.09..77814.34 rows=5587 width=191) (actual time=580.735..580.740 rows=0.00 loops=1)
+               Join Filter: (a.entity_type = 'announcement'::text)
+               Buffers: shared hit=663187
+               ->  Nested Loop Left Join  (cost=2.94..76794.02 rows=5587 width=317) (actual time=580.734..580.739 rows=0.00 loops=1)
+                     Join Filter: (a.entity_type = 'package'::text)
+                     Filter: (strpos(btrim(regexp_replace(translate(lower(regexp_replace(concat_ws(' '::text, COALESCE(ts.name_en, tu.name, tg.name_en, tar.name_en, tam.name_en, tc.name, tsu.name, tp.name, tv.visitor_name, tvc.name, tcc.name), COALESCE(ts.name_ar, tg.name_ar, tar.name_ar, tam.name_ar), es.name_en, es.name_ar), '[\u064B-\u065F\u0670\u0640]'::text, ''::text, 'g'::text)), 'أإآٱىة'::text, 'اااايه'::text), '\s+'::text, ' '::text, 'g'::text)), 'hub 7'::text) > 0)
+                     Rows Removed by Filter: 17800
+                     Buffers: shared hit=663187
+                     ->  Nested Loop Left Join  (cost=2.79..73397.62 rows=16762 width=313) (actual time=0.265..493.392 rows=17800.00 loops=1)
+                           Buffers: shared hit=627587
+                           ->  Nested Loop Left Join  (cost=2.51..72880.13 rows=16762 width=305) (actual time=0.246..486.017 rows=17800.00 loops=1)
+                                 Join Filter: (a.entity_type = 'checkIn'::text)
+                                 Buffers: shared hit=627587
+                                 ->  Nested Loop Left Join  (cost=2.36..69818.97 rows=16762 width=301) (actual time=0.236..473.416 rows=17800.00 loops=1)
+                                       Buffers: shared hit=591987
+                                       ->  Nested Loop Left Join  (cost=2.09..64756.81 rows=16762 width=293) (actual time=0.228..466.560 rows=17800.00 loops=1)
+                                             Join Filter: (a.entity_type = 'visit'::text)
+                                             Rows Removed by Join Filter: 17800
+                                             Buffers: shared hit=591987
+                                             ->  Nested Loop Left Join  (cost=1.81..59344.59 rows=16762 width=276) (actual time=0.215..443.188 rows=17800.00 loops=1)
+                                                   Join Filter: (a.entity_type = 'subscription'::text)
+                                                   Buffers: shared hit=538587
+                                                   ->  Nested Loop Left Join  (cost=1.66..56325.34 rows=16762 width=267) (actual time=0.198..430.383 rows=17800.00 loops=1)
+                                                         Join Filter: (a.entity_type = 'customer'::text)
+                                                         Rows Removed by Join Filter: 17800
+                                                         Buffers: shared hit=502987
+                                                         ->  Nested Loop Left Join  (cost=1.39..51218.83 rows=16762 width=255) (actual time=0.183..406.079 rows=17800.00 loops=1)
+                                                               Join Filter: (a.entity_type = 'amenity'::text)
+                                                               Buffers: shared hit=449587
+                                                               ->  Nested Loop Left Join  (cost=1.24..48157.67 rows=16762 width=216) (actual time=0.168..394.223 rows=17800.00 loops=1)
+                                                                     Join Filter: (a.entity_type = 'area'::text)
+                                                                     Rows Removed by Join Filter: 1833
+                                                                     Buffers: shared hit=413987
+                                                                     ->  Nested Loop Left Join  (cost=1.08..45050.61 rows=16762 width=197) (actual time=0.151..382.237 rows=17800.00 loops=1)
+                                                                           Join Filter: (a.entity_type = 'governorate'::text)
+                                                                           Rows Removed by Join Filter: 2333
+                                                                           Buffers: shared hit=393854
+                                                                           ->  Nested Loop Left Join  (cost=0.93..41943.54 rows=16762 width=180) (actual time=0.138..369.666 rows=17800.00 loops=1)
+                                                                                 Join Filter: (a.entity_type = 'user'::text)
+                                                                                 Rows Removed by Join Filter: 17300
+                                                                                 Buffers: shared hit=373721
+                                                                                 ->  Nested Loop Left Join  (cost=0.80..39165.81 rows=16762 width=172) (actual time=0.123..347.294 rows=17800.00 loops=1)
+                                                                                       Join Filter: ((a.entity_type = 'space'::text) AND (ts.id = a.entity_id))
+                                                                                       Rows Removed by Join Filter: 161000
+                                                                                       Buffers: shared hit=338121
+                                                                                       ->  Nested Loop Left Join  (cost=0.80..35937.99 rows=16762 width=142) (actual time=0.086..322.725 rows=17800.00 loops=1)
+                                                                                             Buffers: shared hit=338120
+                                                                                             ->  Nested Loop Left Join  (cost=0.65..35536.10 rows=16762 width=120) (actual time=0.072..316.076 rows=17800.00 loops=1)
+                                                                                                   Buffers: shared hit=338116
+                                                                                                   ->  Index Scan Backward using audit_logs_created_at_idx on audit_logs a  (cost=0.51..35129.25 rows=16762 width=112) (actual time=0.053..307.491 rows=17800.00 loops=1)
+                                                                                                         Filter: ((action = ANY ('{space.created,space.profileEdited,space.hoursEdited,space.pricesEdited,space.amenitiesEdited,space.contactsEdited,space.profileConfirmed,space.hoursConfirmed,space.pricesConfirmed,space.amenitiesConfirmed,space.contactsConfirmed,space.photoAdded,space.photoRemoved,space.photosReordered,space.hidden,space.unhidden,space.deleted,space.restored,space.ownerLinked,space.ownerUnlinked,governorate.added,governorate.edited,governorate.hidden,governorate.restored,area.added,area.edited,area.hidden,area.restored,amenity.added,amenity.edited,amenity.hidden,amenity.restored,dataReport.resolved,dataReport.dismissed}'::text[])) OR ((action = ANY ('{user.created,user.roleChanged,user.suspended,user.unsuspended,user.temporaryPasswordIssued,user.temporaryPasswordHandedOver,user.emailChanged}'::text[])) AND (space_id IS NULL)))
+                                                                                                         Rows Removed by Filter: 319200
+                                                                                                         Index Searches: 1
+                                                                                                         Buffers: shared hit=338114
+                                                                                                   ->  Memoize  (cost=0.15..0.16 rows=1 width=12) (actual time=0.000..0.000 rows=1.00 loops=17800)
+                                                                                                         Cache Key: a.actor_id
+                                                                                                         Cache Mode: logical
+                                                                                                         Hits: 17799  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                                                                                                         Buffers: shared hit=2
+                                                                                                         ->  Index Scan using users_pkey on users au  (cost=0.14..0.15 rows=1 width=12) (actual time=0.014..0.014 rows=1.00 loops=1)
+                                                                                                               Index Cond: (id = a.actor_id)
+                                                                                                               Index Searches: 1
+                                                                                                               Buffers: shared hit=2
+                                                                                             ->  Memoize  (cost=0.15..0.16 rows=1 width=26) (actual time=0.000..0.000 rows=0.94 loops=17800)
+                                                                                                   Cache Key: a.space_id
+                                                                                                   Cache Mode: logical
+                                                                                                   Hits: 17797  Misses: 3  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                                                                                                   Buffers: shared hit=4
+                                                                                                   ->  Index Scan using spaces_pkey on spaces es  (cost=0.14..0.15 rows=1 width=26) (actual time=0.004..0.004 rows=0.67 loops=3)
+                                                                                                         Index Cond: (id = a.space_id)
+                                                                                                         Index Searches: 2
+                                                                                                         Buffers: shared hit=4
+                                                                                       ->  Materialize  (cost=0.00..1.17 rows=11 width=34) (actual time=0.000..0.000 rows=9.99 loops=17800)
+                                                                                             Storage: Memory  Maximum Storage: 17kB
+                                                                                             Buffers: shared hit=1
+                                                                                             ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=34) (actual time=0.014..0.017 rows=11.00 loops=1)
+                                                                                                   Buffers: shared hit=1
+                                                                                 ->  Index Scan using users_pkey on users tu  (cost=0.14..0.15 rows=1 width=12) (actual time=0.001..0.001 rows=1.00 loops=17800)
+                                                                                       Index Cond: (id = a.entity_id)
+                                                                                       Index Searches: 17800
+                                                                                       Buffers: shared hit=35600
+                                                                           ->  Index Scan using governorates_pkey on governorates tg  (cost=0.15..0.17 rows=1 width=21) (actual time=0.000..0.000 rows=0.13 loops=17800)
+                                                                                 Index Cond: (id = a.entity_id)
+                                                                                 Index Searches: 17800
+                                                                                 Buffers: shared hit=20133
+                                                                     ->  Index Scan using areas_pkey on areas tar  (cost=0.15..0.17 rows=1 width=23) (actual time=0.000..0.000 rows=0.13 loops=17800)
+                                                                           Index Cond: (id = a.entity_id)
+                                                                           Index Searches: 17800
+                                                                           Buffers: shared hit=20133
+                                                               ->  Index Scan using amenities_pkey on amenities tam  (cost=0.15..0.17 rows=1 width=43) (actual time=0.000..0.000 rows=0.00 loops=17800)
+                                                                     Index Cond: (id = a.entity_id)
+                                                                     Index Searches: 17800
+                                                                     Buffers: shared hit=35600
+                                                         ->  Index Scan using customers_id_space_id_key on customers tc  (cost=0.27..0.29 rows=1 width=16) (actual time=0.001..0.001 rows=1.00 loops=17800)
+                                                               Index Cond: (id = a.entity_id)
+                                                               Index Searches: 17800
+                                                               Buffers: shared hit=53400
+                                                   ->  Index Scan using subscriptions_id_space_id_key on subscriptions tsu  (cost=0.15..0.17 rows=1 width=13) (actual time=0.000..0.000 rows=0.00 loops=17800)
+                                                         Index Cond: (id = a.entity_id)
+                                                         Index Searches: 17800
+                                                         Buffers: shared hit=35600
+                                             ->  Index Scan using visits_id_space_id_key on visits tv  (cost=0.28..0.31 rows=1 width=21) (actual time=0.001..0.001 rows=1.00 loops=17800)
+                                                   Index Cond: (id = a.entity_id)
+                                                   Index Searches: 17800
+                                                   Buffers: shared hit=53400
+                                       ->  Index Scan using customers_id_space_id_key on customers tvc  (cost=0.27..0.30 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=17800)
+                                             Index Cond: (id = tv.customer_id)
+                                             Index Searches: 0
+                                 ->  Index Scan using check_ins_pkey on check_ins tci  (cost=0.15..0.17 rows=1 width=8) (actual time=0.000..0.000 rows=0.00 loops=17800)
+                                       Index Cond: (id = a.entity_id)
+                                       Index Searches: 17800
+                                       Buffers: shared hit=35600
+                           ->  Memoize  (cost=0.28..0.34 rows=1 width=16) (actual time=0.000..0.000 rows=0.00 loops=17800)
+                                 Cache Key: tci.customer_id
+                                 Cache Mode: logical
+                                 Hits: 17799  Misses: 1  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+                                 ->  Index Scan using customers_id_space_id_key on customers tcc  (cost=0.27..0.33 rows=1 width=16) (actual time=0.007..0.007 rows=0.00 loops=1)
+                                       Index Cond: (id = tci.customer_id)
+                                       Index Searches: 0
+                     ->  Index Scan using packages_id_space_id_key on packages tp  (cost=0.15..0.17 rows=1 width=24) (actual time=0.000..0.000 rows=0.00 loops=17800)
+                           Index Cond: (id = a.entity_id)
+                           Index Searches: 17800
+                           Buffers: shared hit=35600
+               ->  Index Scan using announcements_pkey on announcements tan  (cost=0.15..0.17 rows=1 width=12) (never executed)
+                     Index Cond: (id = a.entity_id)
+                     Index Searches: 0
+ Planning:
+   Buffers: shared hit=76
+ Planning Time: 33.206 ms
+ Execution Time: 581.906 ms
+(137 rows)
+
+### JA5 admin count ALL with q
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                              QUERY PLAN                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Finalize Aggregate  (cost=10080.94..10080.95 rows=1 width=4) (actual time=104.891..113.379 rows=1.00 loops=1)
+   Buffers: shared hit=5343
+   ->  Gather  (cost=10080.73..10080.94 rows=2 width=8) (actual time=104.050..113.371 rows=3.00 loops=1)
+         Workers Planned: 2
+         Workers Launched: 2
+         Buffers: shared hit=5343
+         ->  Partial Aggregate  (cost=9080.73..9080.74 rows=1 width=8) (actual time=76.400..76.411 rows=1.00 loops=3)
+               Buffers: shared hit=5343
+               ->  Hash Left Join  (cost=344.34..9074.91 rows=2328 width=0) (actual time=76.397..76.407 rows=0.00 loops=3)
+                     Hash Cond: (a.entity_id = tp.id)
+                     Join Filter: (a.entity_type = 'package'::text)
+                     Filter: (strpos(btrim(regexp_replace(translate(lower(regexp_replace(concat_ws(' '::text, COALESCE(ts.name_en, tu.name, tg.name_en, tar.name_en, tam.name_en, tc.name, tsu.name, tp.name, tv.visitor_name, tvc.name, tcc.name), COALESCE(ts.name_ar, tg.name_ar, tar.name_ar, tam.name_ar), es.name_en, es.name_ar), '[\u064B-\u065F\u0670\u0640]'::text, ''::text, 'g'::text)), 'أإآٱىة'::text, 'اااايه'::text), '\s+'::text, ' '::text, 'g'::text)), 'hub 7'::text) > 0)
+                     Rows Removed by Filter: 5933
+                     Buffers: shared hit=5343
+                     ->  Hash Left Join  (cost=318.14..9030.37 rows=6984 width=196) (actual time=14.891..50.484 rows=5933.33 loops=3)
+                           Hash Cond: (a.entity_id = tsu.id)
+                           Join Filter: (a.entity_type = 'subscription'::text)
+                           Buffers: shared hit=5343
+                           ->  Hash Left Join  (cost=297.79..8991.69 rows=6984 width=187) (actual time=14.823..49.425 rows=5933.33 loops=3)
+                                 Hash Cond: (a.entity_id = tv.id)
+                                 Join Filter: (a.entity_type = 'visit'::text)
+                                 Rows Removed by Join Filter: 5933
+                                 Buffers: shared hit=5343
+                                 ->  Hash Left Join  (cost=163.17..8829.10 rows=6984 width=162) (actual time=13.076..46.116 rows=5933.33 loops=3)
+                                       Hash Cond: (a.entity_id = tci.id)
+                                       Join Filter: (a.entity_type = 'checkIn'::text)
+                                       Buffers: shared hit=5199
+                                       ->  Hash Left Join  (cost=116.54..8755.81 rows=6984 width=150) (actual time=13.005..45.040 rows=5933.33 loops=3)
+                                             Hash Cond: (a.entity_id = tc.id)
+                                             Join Filter: (a.entity_type = 'customer'::text)
+                                             Rows Removed by Join Filter: 5933
+                                             Buffers: shared hit=5199
+                                             ->  Hash Left Join  (cost=100.29..8721.23 rows=6984 width=138) (actual time=12.798..43.396 rows=5933.33 loops=3)
+                                                   Hash Cond: (a.entity_id = tam.id)
+                                                   Join Filter: (a.entity_type = 'amenity'::text)
+                                                   Buffers: shared hit=5184
+                                                   ->  Hash Left Join  (cost=74.09..8676.70 rows=6984 width=99) (actual time=12.763..42.325 rows=5933.33 loops=3)
+                                                         Hash Cond: (a.entity_id = tar.id)
+                                                         Join Filter: (a.entity_type = 'area'::text)
+                                                         Rows Removed by Join Filter: 611
+                                                         Buffers: shared hit=5184
+                                                         ->  Hash Left Join  (cost=40.02..8624.29 rows=6984 width=80) (actual time=12.717..41.216 rows=5933.33 loops=3)
+                                                               Hash Cond: (a.entity_id = tg.id)
+                                                               Join Filter: (a.entity_type = 'governorate'::text)
+                                                               Rows Removed by Join Filter: 778
+                                                               Buffers: shared hit=5181
+                                                               ->  Hash Left Join  (cost=3.92..8569.85 rows=6984 width=63) (actual time=12.671..40.144 rows=5933.33 loops=3)
+                                                                     Hash Cond: (a.entity_id = tu.id)
+                                                                     Join Filter: (a.entity_type = 'user'::text)
+                                                                     Rows Removed by Join Filter: 5767
+                                                                     Buffers: shared hit=5178
+                                                                     ->  Hash Left Join  (cost=2.58..8550.18 rows=6984 width=55) (actual time=12.613..38.750 rows=5933.33 loops=3)
+                                                                           Hash Cond: (a.entity_id = ts.id)
+                                                                           Join Filter: (a.entity_type = 'space'::text)
+                                                                           Rows Removed by Join Filter: 289
+                                                                           Buffers: shared hit=5175
+                                                                           ->  Hash Left Join  (cost=1.33..8530.60 rows=6984 width=33) (actual time=12.572..37.332 rows=5933.33 loops=3)
+                                                                                 Hash Cond: (a.space_id = es.id)
+                                                                                 Buffers: shared hit=5172
+                                                                                 ->  Parallel Seq Scan on audit_logs a  (cost=0.09..8503.98 rows=6984 width=15) (actual time=12.458..35.985 rows=5933.33 loops=3)
+                                                                                       Filter: ((action = ANY ('{space.created,space.profileEdited,space.hoursEdited,space.pricesEdited,space.amenitiesEdited,space.contactsEdited,space.profileConfirmed,space.hoursConfirmed,space.pricesConfirmed,space.amenitiesConfirmed,space.contactsConfirmed,space.photoAdded,space.photoRemoved,space.photosReordered,space.hidden,space.unhidden,space.deleted,space.restored,space.ownerLinked,space.ownerUnlinked,governorate.added,governorate.edited,governorate.hidden,governorate.restored,area.added,area.edited,area.hidden,area.restored,amenity.added,amenity.edited,amenity.hidden,amenity.restored,dataReport.resolved,dataReport.dismissed}'::text[])) OR ((action = ANY ('{user.created,user.roleChanged,user.suspended,user.unsuspended,user.temporaryPasswordIssued,user.temporaryPasswordHandedOver,user.emailChanged}'::text[])) AND (space_id IS NULL)))
+                                                                                       Rows Removed by Filter: 106400
+                                                                                       Buffers: shared hit=5169
+                                                                                 ->  Hash  (cost=1.11..1.11 rows=11 width=26) (actual time=0.072..0.073 rows=11.00 loops=3)
+                                                                                       Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                       Buffers: shared hit=3
+                                                                                       ->  Seq Scan on spaces es  (cost=0.00..1.11 rows=11 width=26) (actual time=0.045..0.047 rows=11.00 loops=3)
+                                                                                             Buffers: shared hit=3
+                                                                           ->  Hash  (cost=1.11..1.11 rows=11 width=26) (actual time=0.017..0.017 rows=11.00 loops=3)
+                                                                                 Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                                 Buffers: shared hit=3
+                                                                                 ->  Seq Scan on spaces ts  (cost=0.00..1.11 rows=11 width=26) (actual time=0.005..0.007 rows=11.00 loops=3)
+                                                                                       Buffers: shared hit=3
+                                                                     ->  Hash  (cost=1.15..1.15 rows=15 width=12) (actual time=0.028..0.028 rows=15.00 loops=3)
+                                                                           Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                                                                           Buffers: shared hit=3
+                                                                           ->  Seq Scan on users tu  (cost=0.00..1.15 rows=15 width=12) (actual time=0.013..0.015 rows=15.00 loops=3)
+                                                                                 Buffers: shared hit=3
+                                                               ->  Hash  (cost=21.60..21.60 rows=1160 width=21) (actual time=0.023..0.024 rows=1.00 loops=3)
+                                                                     Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                                     Buffers: shared hit=3
+                                                                     ->  Seq Scan on governorates tg  (cost=0.00..21.60 rows=1160 width=21) (actual time=0.014..0.014 rows=1.00 loops=3)
+                                                                           Buffers: shared hit=3
+                                                         ->  Hash  (cost=20.70..20.70 rows=1070 width=23) (actual time=0.019..0.019 rows=1.00 loops=3)
+                                                               Buckets: 2048  Batches: 1  Memory Usage: 17kB
+                                                               Buffers: shared hit=3
+                                                               ->  Seq Scan on areas tar  (cost=0.00..20.70 rows=1070 width=23) (actual time=0.010..0.010 rows=1.00 loops=3)
+                                                                     Buffers: shared hit=3
+                                                   ->  Hash  (cost=17.20..17.20 rows=720 width=43) (actual time=0.013..0.013 rows=0.00 loops=3)
+                                                         Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                                         ->  Seq Scan on amenities tam  (cost=0.00..17.20 rows=720 width=43) (actual time=0.012..0.012 rows=0.00 loops=3)
+                                             ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.180..0.181 rows=500.00 loops=3)
+                                                   Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                                   Buffers: shared hit=15
+                                                   ->  Seq Scan on customers tc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.018..0.080 rows=500.00 loops=3)
+                                                         Buffers: shared hit=15
+                                       ->  Hash  (cost=36.50..36.50 rows=810 width=16) (actual time=0.013..0.014 rows=0.00 loops=3)
+                                             Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                             ->  Hash Left Join  (cost=16.25..36.50 rows=810 width=16) (actual time=0.012..0.013 rows=0.00 loops=3)
+                                                   Hash Cond: (tci.customer_id = tcc.id)
+                                                   ->  Seq Scan on check_ins tci  (cost=0.00..18.10 rows=810 width=8) (actual time=0.012..0.012 rows=0.00 loops=3)
+                                                   ->  Hash  (cost=10.00..10.00 rows=500 width=16) (never executed)
+                                                         ->  Seq Scan on customers tcc  (cost=0.00..10.00 rows=500 width=16) (never executed)
+                                 ->  Hash  (cost=97.12..97.12 rows=3000 width=29) (actual time=1.680..1.681 rows=3000.00 loops=3)
+                                       Buckets: 4096  Batches: 1  Memory Usage: 184kB
+                                       Buffers: shared hit=144
+                                       ->  Hash Left Join  (cost=16.25..97.12 rows=3000 width=29) (actual time=0.202..0.995 rows=3000.00 loops=3)
+                                             Hash Cond: (tv.customer_id = tvc.id)
+                                             Buffers: shared hit=144
+                                             ->  Seq Scan on visits tv  (cost=0.00..73.00 rows=3000 width=21) (actual time=0.012..0.319 rows=3000.00 loops=3)
+                                                   Buffers: shared hit=129
+                                             ->  Hash  (cost=10.00..10.00 rows=500 width=16) (actual time=0.166..0.166 rows=500.00 loops=3)
+                                                   Buckets: 1024  Batches: 1  Memory Usage: 34kB
+                                                   Buffers: shared hit=15
+                                                   ->  Seq Scan on customers tvc  (cost=0.00..10.00 rows=500 width=16) (actual time=0.008..0.062 rows=500.00 loops=3)
+                                                         Buffers: shared hit=15
+                           ->  Hash  (cost=14.60..14.60 rows=460 width=13) (actual time=0.042..0.042 rows=0.00 loops=3)
+                                 Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                                 ->  Seq Scan on subscriptions tsu  (cost=0.00..14.60 rows=460 width=13) (actual time=0.041..0.041 rows=0.00 loops=3)
+                     ->  Hash  (cost=17.20..17.20 rows=720 width=24) (actual time=0.011..0.012 rows=0.00 loops=3)
+                           Buckets: 1024  Batches: 1  Memory Usage: 8kB
+                           ->  Seq Scan on packages tp  (cost=0.00..17.20 rows=720 width=24) (actual time=0.011..0.011 rows=0.00 loops=3)
+ Planning:
+   Buffers: shared hit=69
+ Planning Time: 6.759 ms
+ Execution Time: 113.952 ms
+(126 rows)
+
+psql:<stdin>:106: NOTICE:  truncate cascades to table "refresh_tokens"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "password_reset_tokens"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_amenities"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_hours"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_shifts"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_prices"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_contacts"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_photos"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "subscriptions"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "check_ins"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "announcements"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "data_reports"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "favorites"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "packages"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "payments"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "closure_extensions"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_settings"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_occupancy"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "password_recoveries"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "space_own_amenities"
+psql:<stdin>:106: NOTICE:  truncate cascades to table "subscription_extensions"
+TRUNCATE TABLE

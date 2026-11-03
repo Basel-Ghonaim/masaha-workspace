@@ -1,0 +1,78 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/customer-actions
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx (3 tests | 2 failed) 1760ms
+   ❯ a customer’s state actions (3)
+     × the file’s header holds the state’s buttons, the first primary, then «⋯»; axe-clean 156ms
+     × offers «Renew» only while the subscription ends soon or has expired 114ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  13:15:07
+   Duration  14.02s (transform 38%, import 27%, environment 17%, tests 13%, setup 5%)
+
+  Transform  |component| transforming modules took 5.16s · 38% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > the file’s header holds the state’s buttons, the first primary, then «⋯»; axe-clean
+AssertionError: expected [ 'Check in Sara Khalid', …(3) ] to deeply equal [ 'Check in Sara Khalid', …(2) ]
+
+- Expected
++ Received
+
+  [
+    "Check in Sara Khalid",
+    "Receive ₪15",
++   "Renew",
+    "More actions: Sara Khalid",
+  ]
+
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:157:7
+    155|     expect(
+    156|       buttons.map((button) => plain(button.getAttribute('aria-label') …
+    157|     ).toEqual(['Check in Sara Khalid', 'Receive ₪15', 'More actions: S…
+       |       ^
+    158|     expect(buttons[0]).toHaveClass('bg-primary');
+    159|     expect(buttons[1]).not.toHaveClass('bg-primary');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/components/customer-actions/StateActions.component.test.tsx > a customer’s state actions > offers «Renew» only while the subscription ends soon or has expired
+AssertionError: expected <button data-slot="button" …(1)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"
+  data-slot="button"
+>
+  Renew
+</button>
+
+ ❯ src/features/desk/components/customer-actions/StateActions.component.test.tsx:167:61
+    165|     const active = renderFile(fileWith('ACTIVE'));
+    166|     await headerActions();
+    167|     expect(screen.queryByRole('button', { name: 'Renew' })).toBeNull();
+       |                                                             ^
+    168|     active.unmount();
+    169|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/customer-actions

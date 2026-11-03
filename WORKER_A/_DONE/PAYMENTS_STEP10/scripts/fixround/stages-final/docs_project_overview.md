@@ -1,0 +1,90 @@
+# Project Overview
+
+> **Status:** Active · **Last Updated:** 2026-10-28 · **Owner:** Basel Ghoneim
+> **Authority:** What Masaha is, what is built today, what v1 is committed to, and what is explicitly not in v1. It names scope; it does not specify behaviour.
+
+## What Masaha is
+
+A bilingual (Arabic RTL / English), fully responsive web platform for coworking spaces in the Gaza Strip.
+
+- **Users** (freelancers, students, remote workers) find a space: where it is, what it costs, what it offers, and whether it is available right now.
+- **Space owners and their reception staff** run their space from a dashboard: the front desk, customers, subscriptions, payments, finance, announcements and the space's profile.
+- **The admin** runs the platform: spaces, owner accounts, reports, users, lookup lists.
+
+## Built
+
+This section lists a capability only once it is merged and working. Each line links the capability's document, which says what it does.
+
+- [Auth](../features/auth.md): register, sign in with a password or with Google, stay signed in across reloads, and reset a forgotten password by an email link.
+- [Users](../features/users.md): the account menu, sign-out, and the change of a temporary password before any other page; on the dashboard, the admin's suspension and restore and temporary password for an account, from the users page; on the API, the admin's users list, an owner's account the admin creates with a temporary password, the admin's suspension, role change and temporary password for an account, each handover recorded, and a suspension or a role change that holds from the account's next request.
+- [Space links](../features/space-links.md): the spaces a user works at and the space switcher; the admin's spaces list, with its filters, on the dashboard, the soft-deleted spaces among its statuses, and the admin's owners page, with its search and state filter, and adding, linking and unlinking owners, on the dashboard, and the admin's users page, with its search, role and state filters, linking a person and changing a person's role, on the dashboard; on the API, the users list's reception links, the soft-deleted spaces as a list of their own, and the admin's owners: added (a new account or an upgraded one), linked and unlinked one space at a time, the space verified while it has one; and the owner's reception accounts: created new, listed, deactivated and re-activated, a pending temporary password re-issued; on the dashboard, the owner's staff listed and added, their access removed and given back, a pending password re-issued.
+- [Lookups](../features/lookups.md): the admin's governorates and areas, and amenities; the public catalogue, on the API; on the site, the Directory's area filter and Home's areas.
+- [Directory](../features/directory.md): on the API, the public directory's list, paged and filtered, with a forgiving search and near me; the map's pins; and a space's public page, with its photos and each card's cover; each card's and pin's live status, the available-now filter, and a space's live status alone; on the site, the directory's list: search, filters, sort, pages and near me; and its map: the pins by live state, the chosen space, and one's location set on the map; and a space's page: its prices, hours, amenities, place and contacts, with each group's freshness; and on Home, the spaces available now or the nearest, and the areas with their counts; About, with the statuses' legend and the platform's contact.
+- [Spaces](../features/spaces.md): the admin's: on the API, add, edit the profile and the facts (hours and shifts, prices, amenities with its own beside the platform's, contacts), confirm them, hide, delete and restore, keep its photos (stored through the storage port, re-encoded with no metadata), and the managed-space routes, where active owners read and edit the profile and facts, confirm groups and manage photos, and reception reads the complete space and photos; on the dashboard, add a space with its pin on a map, edit its profile, its hours with the shifts, its prices, its amenities, its contacts and its photos, uploaded and ordered from its own section, on its own page, opened after a creation and from its row, a verified one read-only, naming its owners, and on its spaces list, hide, show, delete with an undo, and restore a deleted space from the «deleted» rows; and the owner's space profile on the dashboard, the same editor on the managed routes, its prices a link to Packages & prices, where the owner edits and confirms them. Reception's web screens remain planned.
+- [Packages](../features/packages.md): on the API, a space's packages, its owner's subscription templates: listed whole to its staff, retired ones included, added and edited by its owner, retired rather than deleted; never public; on the dashboard, the owner's private packages on Packages & prices, each offered or paused by its switch, added and edited in a sheet, a paused one's shift cleared.
+- [Space settings](../features/space-settings.md): on the API, a space's settings read and edited by its owner, reception's hand-typed prices off by default; on the dashboard, the owner's visit pricing, reception and debt reminder settings, and the attendance card with the capacity.
+- [Front desk](../features/desk.md): on the API, checking a visitor in by name and out, with the charge and its payment, the unpaid rest left to a customer by phone, and a price typed by hand with its reason; the auto check-out of open stays at their due time; the unpriced visits the owner prices, and the uncollected visits, collecting a visit's debt or the owner's write-off ([visits](../features/visits.md), [payments](../features/payments.md)); on the dashboard, the desk: who is present, the live status and its override, a visit's check-in and check-out with its payment.
+- [Customers](../features/customers.md): on the API, a space's customers, created and edited by its staff, archived and restored by its owner; the list, paged, searched and filtered by their subscription and payment state, and a customer's file with their subscriptions' status and progress, their debt and their unpaid visits; their subscriptions made from a package or custom, renewed with a payment the server allocates oldest debt first, paid, read as a statement, corrected (the price the owner's) and ended early; subscribers checked in, with the limits' warnings, and out, and the check-ins listed ([subscriptions](../features/subscriptions.md), [payments](../features/payments.md)); on the dashboard, the customers list, a customer's file, and the subscription sheet: a new customer, a new subscription from a published price, a package or custom terms, and a renewal.
+- [Payments](../features/payments.md): on the API, a visit's and a subscription's payment, recorded once per key; the owner's void, with a reason; the payments list, the owner's by Gaza days, staff, method, kind and void with its totals, and reception's own of today; the uncollected visits; on the dashboard, the owner's ledger with its filters and totals, and the void from it and from a subscription's statement, and reception's «دفعاتي اليوم».
+- [Announcements](../features/announcements.md): on the API, a space's announcements, posted, edited, ended, started and deleted by its staff; the managed list with each closure's extension state and its summary; a space's page's running and upcoming announcements; the closure warning at check-in; after a closure, the owner's extension of the subscriptions it covered, previewed first, once per closure; on the dashboard, the owner's and reception's «الإعلانات»: the announcements by state, with their counts, posted and edited in a sheet with the preview of the space's page, ended (with an undo), started and deleted, and the owner's extension of a closure's subscriptions by the days typed, once; on the site, a space's page's running closure at its top and its other announcements after its status.
+- [Favourites](../features/favorites.md): on the API, a signed-in user's favourite spaces, saved and removed, at most 200, read whole as the directory's cards, nearest first when the device's location is sent; on the site, the heart on the cards and on a space's page, and the account's «المفضّلة».
+- [Data reports](../features/data-reports.md): on the API, a signed-in user's report of a listed space's wrong information and their own reports with the replies; the owner's and the admin's lists and decisions, the reporter anonymous to the owner; on the dashboard, the owner's and the admin's «بلاغات البيانات» with the decision sheet, the admin's filtered by status, space and field; on the site, the report of wrong information from a space's page and a signed-in user's «بلاغاتي» with the replies.
+- [Audit](../features/audit.md): on the API, the owner's audit log of the space, the admin shown as Masaha, and the admin's log of the platform's events only; paged, the last 30 days or all, searched by target and filtered by actor and action.
+- [Occupancy](../features/occupancy.md): on the API, a space's private capacity, set by its owner, and its state now for its staff: who is present, the count and the live status, with the manual override its staff set and clear.
+
+## Committed scope — v1
+
+### Roles
+Global roles `USER` · `OWNER` · `ADMIN`. At a space, a user is `OWNER` or `RECEPTION` (front-desk staff added by the owner), and their permissions there come from that role ([ADR 0009](../architecture/decisions/0009-space-scoped-reception-role.md)).
+
+### Accounts
+- Register with name, email and password. Sign in with email and password, or with Google.
+- Password reset by an email link. A user who lost access to their email contacts Masaha on WhatsApp, and the admin issues a temporary password.
+- The rules are owned by [security.md](../backend/security.md).
+
+### Public site
+- Directory of spaces: the list **or** the map, one at a time, the list by default; search and filters (area, price, student prices, open on Friday, verified, available now); sort, including nearest to me.
+- Near me: the device's location, rounded on the device and sent in a header only to sort by distance, never stored or logged (the owner's change, 2026-10-13: it was never sent), with an area or a pin on the map as fallbacks ([the rule](../frontend/design-system/foundation.md#13-screens-to-design-32), under *Directory*; [security › Location](../backend/security.md#location)). Home shows the nearest spaces when a location is in use, otherwise the spaces available now.
+- Space page: photos, prices (display only), amenities, hours, contact, announcements, live status — available, full or closed now, never a seat count (verified spaces) — and "last updated" per fact.
+- Verified / unverified spaces: every space is listed whether or not its owner has joined.
+- "Are you the owner?": contact by email or WhatsApp (no in-app request).
+- Report wrong information; the reporter sees the resolution note. Favourites.
+
+### Dashboard — owner and reception
+Who may do what at a space is decided in [ADR 0009](../architecture/decisions/0009-space-scoped-reception-role.md); the money rules in [ADR 0010](../architecture/decisions/0010-manual-payment-ledger.md); the derived values in [data-model.md](../architecture/data-model.md#derived-values-computed-not-stored).
+
+- Front desk: check in and check out subscribers and visitors; a visit's charge at check-out; auto check-out; uncollected visits; setting the live status by hand for a set time.
+- Customers: everyone on file, filtered by subscription type, status and payment.
+- Subscriptions and packages: any multi-day arrangement, with optional limits and fixed or usage-based billing; packages defined by the owner; custom terms typed at the desk; ending a subscription early.
+- Payments and debts: payments recorded by hand (cash or transfer), partial payments, balances and debts; voiding a payment (owner); each staff member's collections for the day.
+- Finance and statistics (owner): income, debt, debtors and payers with a WhatsApp reminder link, collections per staff member, occupancy; CSV export, the first item to drop if time is short.
+- Staff (owner): reception accounts, added and deactivated by the owner.
+- Space profile (owner; Arabic required, English optional), prices and packages; confirming that a fact group is still correct.
+- Announcements, including a closure notice; after a closure, the owner extends the subscriptions it covered by the days typed.
+- Data reports about the space, resolved with an optional note, or dismissed with a reply. Audit log. Settings.
+
+### Admin dashboard
+- Spaces (add, edit, hide, delete and restore). Owner accounts (create or upgrade, link to spaces).
+- Data reports (resolved with an optional note, or dismissed with a reply). Users (suspend, change role, issue a temporary password). Lookups (areas, amenities) in both languages. Audit log. Platform settings.
+
+### Cross-cutting
+- Arabic and English interface; RTL and LTR.
+- Light and dark themes.
+- Fully responsive: phone, tablet, desktop.
+
+## Not in v1
+
+Do not build these, even partially. The data model leaves room for some of them (see [ADR 0002](../architecture/decisions/0002-authorization-model.md) and [data-model.md](../architecture/data-model.md)), but no code for them exists in v1.
+
+- Online payment. Printed invoices or receipts.
+- Expenses and net profit. A point of sale (drinks).
+- Staff payroll and shift scheduling.
+- Consolidated finance across spaces.
+- Automated notifications by email, SMS or WhatsApp (in-app only). The password-reset email is the only email Masaha sends; a debt reminder is a WhatsApp link that a staff member sends by hand.
+- Phone verification and one-time codes (OTP) by SMS or WhatsApp. Deferred to future work: an SMS to Palestine costs about $0.41 per message and WhatsApp authentication templates are paid; a free, user-initiated WhatsApp recovery flow is the preferred later option.
+- QR-code check-in.
+- In-app claiming of a space by its owner.
+- Seat booking.
+- Reviews and ratings.
+- Unified multi-space subscription, community features, mobile app.
+- AI and machine-learning features.

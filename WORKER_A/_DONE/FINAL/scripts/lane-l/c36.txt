@@ -1,0 +1,16 @@
+feat(lists): mark the page asked while it loads
+
+A tap on a page of a paged list changed nothing on screen until the
+answer came: ListPagination read the shown answer's page, and the
+rows stayed as they were, marked only aria-busy (finding 132). The
+design's quiet sign (DI4) is two parts:
+
+- ListPagination marks the page the address asks for current at once,
+  falling back to the answer's page when the address names none.
+- DataTable takes refreshing, and the layer gains Refreshing for a
+  list that is not a table: the rows or cards shown stay, dimmed by
+  the refreshing token (60%), and the list is marked busy.
+
+Each paged list passes its placeholder state in its own commit. The
+foundation names the wrapper, the prop and the token; the showcase
+shows the wrapper.

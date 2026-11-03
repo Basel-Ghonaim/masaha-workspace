@@ -1,0 +1,23 @@
+46: RED exit 1 — ['× sends the owner’s decision to the report’s own path, its body as given 13ms', 'FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > sends the owner’s decision to the report’s own path, its body as given']
+47a: RED exit 1 — ['× says the Gaza day a report was made, never its time 26ms', '× adds the year when it is not the current one, on Gaza’s calendar 3ms', 'FAIL  |unit| src/features/data-reports/services/reportView.unit.test.ts > reportDay > says the Gaza day a report was made, never its time']
+47b: RED exit 1 — ['× drops a value the server would refuse 14ms', 'FAIL  |unit| src/features/data-reports/services/reportsQueryOf.unit.test.ts > reportsQueryOf > drops a value the server would refuse']
+48: RED exit 1 — ['× says «A visitor» for every report, never a name, and the day only 121ms', 'FAIL  |component| src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx > useSpaceReports > says «A visitor» for every report, never a name, and the day only']
+49: RED exit 1 — ['× is empty with its line under «All», and matches nothing under a chip, with «Show all» 3024ms', 'FAIL  |component| src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx > useSpaceReports > is empty with its line under «All», and matches nothing under a chip, with «Show all»']
+50: RED exit 1 — ['× focuses a blank «Not accepted» reply with its line, and sends nothing 383ms', '× sends «Corrected» with no reply as its status alone, once, and says where the report went 3204ms', '× words a 403 as the space no longer open, and reads the user’s spaces again 3075ms']
+51: RED exit 1 — ['× words REPORT_ALREADY_DECIDED, reads the list again and takes no decision then 263ms', '× shows a decided report read-only: its decision and its reply, or «No reply», no buttons 38ms', '× words a report gone, and reads the list and the user’s spaces again 123ms']
+52: RED exit 1 — ['× is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 390 px 3142ms', '× is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 1440 px 3034ms', 'FAIL  |component| src/features/data-reports/components/decide/DecideSheet.component.test.tsx > DecideSheet > is a dialog named by the field, the reply focused first, «Edit the field» a link; axe-clean at 390 px']
+52-focus: GREEN (not red) exit 0 — []
+53: RED exit 1 — ['× shows a table of five columns from 768 px; axe-clean 217ms', 'FAIL  |component| src/features/data-reports/components/space/SpaceReportsList.component.test.tsx > SpaceReportsList > shows a table of five columns from 768 px; axe-clean']
+53-leave: GREEN (not red) exit 0 — []
+58: RED exit 1 — ['× shows the owner «Data reports» under its title, the reporter a visitor 4450ms', "FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > shows the owner «Data reports» under its title, the reporter a visitor"]
+git status after restore:
+ M src/pages/dashboard/routes.component.test.tsx
+ M src/pages/dashboard/routes.tsx
+ M src/shared/copy/arabic/index.ts
+ M src/shared/copy/english/index.ts
+?? src/features/data-reports/
+?? src/pages/dashboard/space/reports/
+?? src/shared/copy/arabic/dataReports.ts
+?? src/shared/copy/english/dataReports.ts
+?? src/test/dataReport.ts
+

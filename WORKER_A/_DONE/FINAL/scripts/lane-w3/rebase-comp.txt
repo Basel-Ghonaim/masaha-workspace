@@ -1,0 +1,17 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk src/features/occupancy src/pages/dashboard/space/desk
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+
+ Test Files  46 passed (46)
+      Tests  188 passed (188)
+   Start at  11:53:23
+   Duration  131.06s (import 33%, environment 31%, tests 18%, setup 10%, transform 7%)
+
+Environment  |component| jsdom was created 46 times · 226.62s total, 31% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

@@ -1,0 +1,57 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/overview/ownerOverview.api.test.ts -t each count
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-o/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_lane_o_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+{"level":50,"time":1793273957694,"pid":13324,"hostname":"MohammedGhonaim","req":{"id":"103d446a-dc22-4f9a-b3ab-57877cc195fc","method":"GET","url":"/api/v1/manage/spaces/1/finance/debts","query":{},"params":{},"headers":{"authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJtdXN0Q2hhbmdlUGFzc3dvcmQiOmZhbHNlLCJzZXNzaW9uVmVyc2lvbiI6MCwic2lkIjoxLCJzdWIiOiIxIiwiaWF0IjoxNzkzMjczOTU2LCJleHAiOjE3OTMyNzQ4NTZ9.oZDvay--0A2yON41GhzIciMNRZySxObBvVaRCXL-b80","host":"127.0.0.1:55717","accept-encoding":"gzip, deflate","connection":"close"},"remoteAddress":"::ffff:127.0.0.1","remotePort":55718},"err":{"type":"Error","message":"The space 1 has no settings row.","stack":"Error: The space 1 has no settings row.\n    at present (C:/dev/masaha/app-b-lane-o/apps/api/src/modules/space-settings/space-settings.service.ts:36:21)\n    at Object.read (C:/dev/masaha/app-b-lane-o/apps/api/src/modules/space-settings/space-settings.service.ts:48:30)\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Promise.all (index 3)\n    at C:/dev/masaha/app-b-lane-o/apps/api/src/modules/finance/finance.service.ts:155:57\n    at Proxy._transactionWithCallback (C:\\dev\\masaha\\app-b-lane-o\\node_modules\\@prisma\\client\\runtime\\client.js:99:4868)\n    at debts (C:/dev/masaha/app-b-lane-o/apps/api/src/modules/finance/finance.controller.ts:28:37)"},"msg":"Unhandled error"}
+{"level":50,"time":1793273957699,"pid":13324,"hostname":"MohammedGhonaim","req":{"id":"103d446a-dc22-4f9a-b3ab-57877cc195fc","method":"GET","url":"/api/v1/manage/spaces/1/finance/debts","query":{},"params":{},"headers":{"authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJtdXN0Q2hhbmdlUGFzc3dvcmQiOmZhbHNlLCJzZXNzaW9uVmVyc2lvbiI6MCwic2lkIjoxLCJzdWIiOiIxIiwiaWF0IjoxNzkzMjczOTU2LCJleHAiOjE3OTMyNzQ4NTZ9.oZDvay--0A2yON41GhzIciMNRZySxObBvVaRCXL-b80","host":"127.0.0.1:55717","accept-encoding":"gzip, deflate","connection":"close"},"remoteAddress":"::ffff:127.0.0.1","remotePort":55718},"userId":1,"role":"OWNER","spaceId":1,"res":{"statusCode":500,"headers":{"x-request-id":"103d446a-dc22-4f9a-b3ab-57877cc195fc","content-security-policy":"default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests","cross-origin-opener-policy":"same-origin","cross-origin-resource-policy":"same-origin","origin-agent-cluster":"?1","referrer-policy":"no-referrer","strict-transport-security":"max-age=31536000; includeSubDomains","x-content-type-options":"nosniff","x-dns-prefetch-control":"off","x-download-options":"noopen","x-frame-options":"SAMEORIGIN","x-permitted-cross-domain-policies":"none","x-xss-protection":"0","access-control-allow-origin":"http://localhost:5173","vary":"Origin","access-control-allow-credentials":"true","content-type":"application/json; charset=utf-8","content-length":"128","etag":"W/\"80-K0sAcQVCOUOGrFw8ahs4v6VytyU\""}},"err":{"type":"Error","message":"failed with status code 500","stack":"Error: failed with status code 500\n    at onResFinished (C:\\dev\\masaha\\app-b-lane-o\\node_modules\\pino-http\\logger.js:115:39)\n    at ServerResponse.onResponseComplete (C:\\dev\\masaha\\app-b-lane-o\\node_modules\\pino-http\\logger.js:178:14)\n    at ServerResponse.emit (node:events:521:24)\n    at onFinish (node:_http_outgoing:1079:10)\n    at callback (node:internal/streams/writable:764:21)\n    at afterWrite (node:internal/streams/writable:708:5)\n    at afterWriteTick (node:internal/streams/writable:694:10)\n    at processTicksAndRejections (node:internal/process/task_queues:89:21)"},"responseTime":63,"msg":"request errored"}
+ ❯ |api| src/modules/overview/ownerOverview.api.test.ts (6 tests | 1 failed | 5 skipped) 1647ms
+   ❯ the owner's overview (6)
+     × each count equals the list it links to 1238ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/overview/ownerOverview.api.test.ts > the owner's overview > each count equals the list it links to
+AssertionError: expected 500 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 500
+
+ ❯ src/modules/overview/ownerOverview.api.test.ts:223:26
+    221|       .get(spacePath('/finance/debts'))
+    222|       .set('Authorization', owner.authorization);
+    223|     expect(debts.status).toBe(200);
+       |                          ^
+    224|     expect(
+    225|       (debts.body as { meta: { totals: { owed: { customers: number } }…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  13:39:06
+   Duration  11.75s (transform 54%, tests 24%, import 19%, setup 2%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-o\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-o\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/overview/ownerOverview.api.test.ts -t ^^^"each^^^ count^^^"

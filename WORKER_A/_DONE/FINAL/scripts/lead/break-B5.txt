@@ -1,0 +1,37 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (68 tests | 1 failed | 55 skipped) 14737ms
+   ❯ the dashboard's navigation (12)
+     × draws reception’s four pages with no group names 226ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed | 55 skipped (68)
+   Start at  16:45:31
+   Duration  24.22s (tests 62%, transform 15%, environment 11%, import 9%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > draws reception’s four pages with no group names
+AssertionError: expected [ 'Today', 'The space' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "Today",
++   "The space",
++ ]
+
+ ❯ src/pages/dashboard/routes.component.test.tsx:255:47
+    253|
+    254|     expect(await pagesIn('Space dashboard')).toEqual(RECEPTION_PAGES);
+    255|     expect(await groupsIn('Space dashboard')).toEqual([]);
+       |                                               ^
+    256|   });
+    257|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

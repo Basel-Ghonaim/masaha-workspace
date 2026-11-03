@@ -1,0 +1,27 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/desk/repository/deskRepository.unit.test.ts (11 tests | 1 failed) 26ms
+   ❯ the desk repository (11)
+     × voids a payment with its reason, and no key: a second void answers the first (S4) 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/desk/repository/deskRepository.unit.test.ts > the desk repository > voids a payment with its reason, and no key: a second void answers the first (S4)
+TypeError: repository.voidPayment is not a function
+ ❯ src/features/desk/repository/deskRepository.unit.test.ts:303:29
+    301|     const repository = createDeskRepository();
+    302|
+    303|     await expect(repository.voidPayment(7, 31, { reason: 'Recorded twi…
+       |                             ^
+    304|       id: 31,
+    305|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  13:54:45
+   Duration  1.50s (import 61%, transform 36%, tests 2%, worker 1%)
+

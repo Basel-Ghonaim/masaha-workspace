@@ -1,0 +1,10 @@
+docs: correct the extension's key and history
+
+The data model's idempotency convention listed the closure's extension
+under keys unique within their space, while the schema and the same
+document's constraints make its key unique on its own: it has no space
+column. The line now says so and links the constraint (#123's review,
+item 3).
+
+subscriptions.md's API history had #123 above #118; every other line is
+in PR order, so it moves below (#123's review, item 4).

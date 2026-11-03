@@ -1,0 +1,18 @@
+
+> test:component
+> npm run test:component --workspaces --if-present
+
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/web
+
+Not implemented: navigation to another Document
+
+ Test Files  264 passed (264)
+      Tests  1564 passed (1564)
+   Start at  17:40:13
+   Duration  671.86s (import 59%, environment 21%, tests 12%, setup 6%, transform 2%)
+

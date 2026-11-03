@@ -1,0 +1,43 @@
+<<<OLD
+import { UnpaidVisits } from './UnpaidVisits';
+===
+import { WriteOffDialog } from '../write-off/WriteOffDialog';
+import { UnpaidVisits } from './UnpaidVisits';
+>>>
+<<<OLD
+  const file = useCustomerFile(spaceId, customerId, { spaceName });
+===
+  const file = useCustomerFile(spaceId, customerId, { spaceName, owner });
+  const subscriptionsHeading = useRef<HTMLHeadingElement | null>(null);
+>>>
+<<<OLD
+          <EmptyState title={subscriptions.none.title} description={subscriptions.none.text} />
+===
+          <EmptyState
+            icon={subscriptions.none.text === null ? undefined : <UsersIcon />}
+            title={subscriptions.none.title}
+            description={subscriptions.none.text ?? undefined}
+          />
+>>>
+<<<OLD
+        <h2 id={headingId} className="text-heading-3">
+===
+        <h2 ref={subscriptionsHeading} id={headingId} tabIndex={-1} className="text-heading-3">
+>>>
+<<<OLD
+      {file.pay !== null && (
+===
+      {file.writeOff !== null && (
+        <WriteOffDialog
+          spaceId={spaceId}
+          item={file.writeOff}
+          onClose={file.closeWriteOff}
+          // Its row leaves once written off: the focus goes to the subscriptions' heading.
+          returnFocus={() => {
+            if (trigger.current?.isConnected === true) trigger.current.focus();
+            else subscriptionsHeading.current?.focus();
+          }}
+        />
+      )}
+      {file.pay !== null && (
+>>>

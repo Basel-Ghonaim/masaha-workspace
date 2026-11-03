@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx (4 tests | 1 failed) 499ms
+   ❯ useFavoritesView (4)
+     × sorts nearest first while near me holds a point, sent in the header only; clearing it drops that answer 178ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx > useFavoritesView > sorts nearest first while near me holds a point, sent in the header only; clearing it drops that answer
+AssertionError: expected [ …(2) ] to have a length of 1 but got 2
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx:140:79
+    138|       ]);
+    139|     });
+    140|     expect(client.getQueryCache().findAll({ queryKey: ['me', 'favorite…
+       |                                                                               ^
+    141|   });
+    142|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  13:34:42
+   Duration  5.72s (transform 37%, environment 26%, import 20%, tests 9%, setup 8%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx

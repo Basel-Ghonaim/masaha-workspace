@@ -1,0 +1,2 @@
+WHERE (expires_at <= ${now} OR session_ends_at <= ${now}) AND id IN (
+          SELECT id FROM refresh_tokens WHERE expires_at <= ${now} OR session_ends_at <= ${now}

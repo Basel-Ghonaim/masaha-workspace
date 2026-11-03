@@ -1,0 +1,42 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+stderr | src/features/data-reports/hooks/report/useReportDialog.component.test.tsx > useReportDialog > needs details for «Other» only, and sends the field with the details given or none
+Select is changing from uncontrolled to controlled. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.
+
+ ❯ |component| src/features/data-reports/hooks/report/useReportDialog.component.test.tsx (7 tests | 1 failed) 17110ms
+   ❯ useReportDialog (7)
+     × needs details for «Other» only, and sends the field with the details given or none 5073ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/report/useReportDialog.component.test.tsx > useReportDialog > needs details for «Other» only, and sends the field with the details given or none
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/features/data-reports/hooks/report/useReportDialog.component.test.tsx:71:3
+     69|
+     70| describe('useReportDialog', () => {
+     71|   it('needs details for «Other» only, and sends the field with the det…
+       |   ^
+     72|     const { requests } = renderDialog(() => ok(myReport(), 201));
+     73|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 10 passed (11)
+      Tests  1 failed | 57 passed (58)
+   Start at  09:21:58
+   Duration  53.81s (import 29%, environment 28%, tests 21%, transform 14%, setup 8%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports

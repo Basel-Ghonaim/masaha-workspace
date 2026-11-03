@@ -1,0 +1,32 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx (4 tests | 1 failed) 985ms
+   ❯ AdminSpaceFilter (4)
+     × clears the filter with «All spaces», its first choice 99ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:35:26
+   Duration  6.32s (transform 30%, environment 25%, import 21%, tests 16%, setup 7%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx > AdminSpaceFilter > clears the filter with «All spaces», its first choice
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  All spaces[39m
+Received:
+[31m  Nook[39m
+ ❯ src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx:93:24
+     91|     await user.click(screen.getByRole('combobox', { name: 'Space' }));
+     92|     const options = await screen.findAllByRole('option');
+     93|     expect(options[0]).toHaveTextContent('All spaces');
+       |                        ^
+     94|     await user.click(options[0] as HTMLElement);
+     95|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

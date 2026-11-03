@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/data/BarChart src/shared/design-system/components/data/Heatmap
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/data/BarChart/BarChart.component.test.tsx (4 tests | 1 failed) 352ms
+   ❯ BarChart (4)
+     × holds every value of every series in its hidden table 166ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 6 passed (7)
+   Start at  16:50:06
+   Duration  6.02s (environment 48%, import 27%, setup 15%, tests 6%, transform 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/data/BarChart/BarChart.component.test.tsx > BarChart > holds every value of every series in its hidden table
+AssertionError: expected [ 'August 2026120 ILS', …(1) ] to deeply equal [ 'August 2026120 ILS300 ILS', …(1) ]
+
+- Expected
++ Received
+
+  [
+-   "August 2026120 ILS300 ILS",
+-   "September 202690 ILS450 ILS",
++   "August 2026120 ILS",
++   "September 202690 ILS",
+  ]
+
+ ❯ src/shared/design-system/components/data/BarChart/BarChart.component.test.tsx:31:48
+     29|     ).toEqual(['Month', 'Visits', 'Subscriptions']);
+     30|     const rows = within(table).getAllByRole('row').slice(1);
+     31|     expect(rows.map((row) => row.textContent)).toEqual([
+       |                                                ^
+     32|       'August 2026120 ILS300 ILS',
+     33|       'September 202690 ILS450 ILS',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/data/BarChart src/shared/design-system/components/data/Heatmap

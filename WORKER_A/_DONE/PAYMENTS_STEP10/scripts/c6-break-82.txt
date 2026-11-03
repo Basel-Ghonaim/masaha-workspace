@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/announcements/services/runningClosure.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/features/announcements/services/runningClosure.unit.test.ts (5 tests | 1 failed) 9ms
+   ❯ runningClosure (5)
+     × passes over a closure ending at now 5ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  14:03:22
+   Duration  295ms (transform 53%, import 26%, tests 13%, worker 9%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/announcements/services/runningClosure.unit.test.ts > runningClosure > passes over a closure ending at now
+AssertionError: expected { id: 1, type: 'CLOSURE', …(4) } to be null
+
+- Expected:
+null
+
++ Received:
+{
+  "endsAt": "2026-10-28T10:00:00.000Z",
+  "id": 1,
+  "startsAt": "2026-10-28T06:00:00.000Z",
+  "textAr": "مغلق للصيانة",
+  "textEn": null,
+  "type": "CLOSURE",
+}
+
+ ❯ src/features/announcements/services/runningClosure.unit.test.ts:43:72
+     41|
+     42|   it('passes over a closure ending at now', () => {
+     43|     expect(runningClosure([item({ endsAt: NOW.toISOString() })], NOW))…
+       |                                                                        ^
+     44|   });
+     45|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/announcements/services/runningClosure.unit.test.ts

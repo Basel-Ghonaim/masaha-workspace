@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/payments/writtenOff.api.test.ts (2 tests | 1 failed) 1157ms
+   ❯ the space's written-off visits (2)
+     × reception is refused the written-off list before the query; a stranger and the admin not_found 344ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  17:46:07
+   Duration  9.92s (transform 56%, import 22%, tests 20%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/payments/writtenOff.api.test.ts > the space's written-off visits > reception is refused the written-off list before the query; a stranger and the admin not_found
+AssertionError: expected 200 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 200
+
+ ❯ src/modules/payments/writtenOff.api.test.ts:143:29
+    141|   it('reception is refused the written-off list before the query; a st…
+    142|     const response = await list(reception);
+    143|     expect(response.status).toBe(403);
+       |                             ^
+    144|     expect(errorOf(response).type).toBe('forbidden');
+    145|     for (const caller of [stranger, admin]) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

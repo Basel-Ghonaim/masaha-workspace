@@ -1,0 +1,59 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/lib/phone
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |unit| src/shared/lib/phone/whatsappLink.unit.test.ts (2 tests | 2 failed) 20ms
+   ❯ whatsappLink (2)
+     × makes a wa.me link of a phone’s digits with the text encoded 15ms
+     × keeps no plus, space or dash of the number 2ms
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  2 failed | 5 passed (7)
+   Start at  17:23:02
+   Duration  588ms (transform 52%, import 27%, tests 11%, worker 10%, environment 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/lib/phone/whatsappLink.unit.test.ts > whatsappLink > makes a wa.me link of a phone’s digits with the text encoded
+AssertionError: expected 'https://wa.me/+970591234567?text=%D9%…' to be 'https://wa.me/970591234567?text=%D9%8…' // Object.is equality
+
+Expected: "https://wa.me/970591234567?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D8%B1%D9%87%D9%81%D8%8C%20%D8%B9%D9%84%D9%8A%D9%83%2045%20%E2%82%AA%20%26%20%D8%B4%D9%83%D8%B1%D9%8B%D8%A7%3F"
+Received: "https://wa.me/+970591234567?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%20%D8%B1%D9%87%D9%81%D8%8C%20%D8%B9%D9%84%D9%8A%D9%83%2045%20%E2%82%AA%20%26%20%D8%B4%D9%83%D8%B1%D9%8B%D8%A7%3F"
+
+ ❯ src/shared/lib/phone/whatsappLink.unit.test.ts:6:77
+      4| describe('whatsappLink', () => {
+      5|   it('makes a wa.me link of a phone’s digits with the text encoded', (…
+      6|     expect(whatsappLink('+970591234567', 'مرحبًا رهف، عليك 45 ₪ & شكرً…
+       |                                                                             ^
+      7|       `https://wa.me/970591234567?text=${encodeURIComponent('مرحبًا ره…
+      8|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/shared/lib/phone/whatsappLink.unit.test.ts > whatsappLink > keeps no plus, space or dash of the number
+AssertionError: expected 'https://wa.me/+972591234567?text=hi' to be 'https://wa.me/972591234567?text=hi' // Object.is equality
+
+Expected: "https://wa.me/972591234567?text=hi"
+Received: "https://wa.me/+972591234567?text=hi"
+
+ ❯ src/shared/lib/phone/whatsappLink.unit.test.ts:12:52
+     10|
+     11|   it('keeps no plus, space or dash of the number', () => {
+     12|     expect(whatsappLink('+972 59-123 4567', 'hi')).toBe('https://wa.me…
+       |                                                    ^
+     13|   });
+     14| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/lib/phone

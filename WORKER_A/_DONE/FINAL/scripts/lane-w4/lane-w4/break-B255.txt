@@ -1,0 +1,252 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/users/components/settings
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx (10 tests | 2 failed) 4500ms
+   ❯ MyAccountSettings (10)
+     × the password change opens focused, closes once saved, says it signed out the others, and focuses «Change» 1050ms
+     × «Back» closes the change and focuses «Change» 386ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed (10)
+   Start at  11:08:48
+   Duration  19.22s (transform 28%, import 25%, tests 24%, environment 18%, setup 5%)
+
+  Transform  |component| transforming modules took 5.23s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx > MyAccountSettings > the password change opens focused, closes once saved, says it signed out the others, and focuses «Change»
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<button
+  aria-controls="_r_1u_"
+  aria-expanded="false"
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+  data-slot="button"
+>
+  Change
+</button>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <div
+      class="flex flex-col gap-6"
+    >
+      <div
+        class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+          data-slot="card-header"
+        >
+          <div … />
+        </div>
+        <div
+          class="flex flex-col gap-3 px-(--card-padding)"
+          data-slot="card-content"
+        >
+          <form … />
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+          data-slot="card-header"
+        >
+          <div … />
+          <div … />
+        </div>
+        <div
+          class="px-(--card-padding) flex flex-col gap-6"
+          data-slot="card-content"
+        >
+          <div … />
+          <div … />
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+          data-slot="card-header"
+        >
+          <div … />
+          <div … />
+        </div>
+        <div
+          class="px-(--card-padding) flex flex-col gap-4"
+          data-slot="card-content"
+        >
+          <div … />
+        </div>
+      </div>
+    </div>
+    <section
+      aria-atomic="false"
+      aria-label="Notifications"
+      aria-live="polite"
+      aria-relevant="additions text"
+      data-react-aria-top-layer="true"
+      tabindex="-1"
+    >
+      <ol
+        data-sonner-theme="light"
+        data-sonner-toaster="true"
+        data-x-position="right"
+        data-y-position="bottom"
+        dir="ltr"
+        style="--front-toast-height: 0px; --width: 356px; --gap: 14px; z-index: var(--z-toast); --offset-top: 24px; --offset-right: 24px; --offset-bottom: 24px; --offset-left: 24px; --mobile-offset-top: 16px; --mobile-offset-right: 16px; --mobile-offset-bottom: 16px; --mobile-offset-left: 16px;"
+        tabindex="-1"
+      >
+        <li
+          class="relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10 border-success bg-success-subtle text-success-subtle-foreground"
+          data-dismissible="true"
+          data-expanded="false"
+          data-front="true"
+          data-index="0"
+          data-mounted="true"
+          data-promise="false"
+          data-removed="false"
+          data-sonner-toast=""
+          data-styled="false"
+          data-swipe-out="false"
+          data-swiped="false"
+          data-swiping="false"
+          data-type="success"
+          data-visible="true"
+          data-x-position="right"
+          data-y-position="bottom"
+          style="--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"
+          tabindex="0"
+        >
+          <div … />
+          <div … />
+        </li>
+      </ol>
+    </section>
+  </div>
+</body>[39m
+ ❯ src/features/users/components/settings/MyAccountSettings.component.test.tsx:176:60
+    174|     expect(getSession().accessToken).toBe('token-renewed');
+    175|     expect(screen.queryByLabelText('Current password')).not.toBeInTheD…
+    176|     expect(screen.getByRole('button', { name: 'Change' })).toHaveFocus…
+       |                                                            ^
+    177|   });
+    178|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx > MyAccountSettings > «Back» closes the change and focuses «Change»
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<button
+  aria-controls="_r_2a_"
+  aria-expanded="false"
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+  data-slot="button"
+>
+  Change
+</button>[39m
+Received element with focus:
+  [31m<body>
+  <div>
+    <div
+      class="flex flex-col gap-6"
+    >
+      <div
+        class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+          data-slot="card-header"
+        >
+          <div … />
+        </div>
+        <div
+          class="flex flex-col gap-3 px-(--card-padding)"
+          data-slot="card-content"
+        >
+          <form … />
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+          data-slot="card-header"
+        >
+          <div … />
+          <div … />
+        </div>
+        <div
+          class="px-(--card-padding) flex flex-col gap-6"
+          data-slot="card-content"
+        >
+          <div … />
+          <div … />
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"
+        data-slot="card"
+      >
+        <div
+          class="@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"
+          data-slot="card-header"
+        >
+          <div … />
+          <div … />
+        </div>
+        <div
+          class="px-(--card-padding) flex flex-col gap-4"
+          data-slot="card-content"
+        >
+          <div … />
+        </div>
+      </div>
+    </div>
+    <section
+      aria-atomic="false"
+      aria-label="Notifications"
+      aria-live="polite"
+      aria-relevant="additions text"
+      data-react-aria-top-layer="true"
+      tabindex="-1"
+    />
+  </div>
+</body>[39m
+ ❯ src/features/users/components/settings/MyAccountSettings.component.test.tsx:187:60
+    185|
+    186|     expect(screen.queryByLabelText('Current password')).not.toBeInTheD…
+    187|     expect(screen.getByRole('button', { name: 'Change' })).toHaveFocus…
+       |                                                            ^
+    188|   });
+    189|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/users/components/settings

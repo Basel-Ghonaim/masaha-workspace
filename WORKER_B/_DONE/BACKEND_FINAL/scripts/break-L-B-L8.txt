@@ -1,0 +1,97 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/users/me.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-l/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_lane_l_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/users/me.api.test.ts (4 tests | 3 failed) 1180ms
+   ❯ GET /me (1)
+     × a user reads their own account 244ms
+   ❯ PATCH /me (2)
+     × a user edits their name and language; only what changed is audited; no change writes nothing 185ms
+   ❯ /me: the guard (1)
+     × a guest is 401; a suspended account 401; a pending temporary password 403 228ms
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  12:21:16
+   Duration  10.96s (transform 53%, import 24%, tests 20%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/users/me.api.test.ts > GET /me > a user reads their own account
+AssertionError: expected 401 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 401
+
+ ❯ src/modules/users/me.api.test.ts:36:31
+     34|       const response = await readMe(sara.authorization, query);
+     35|
+     36|       expect(response.status).toBe(200);
+       |                               ^
+     37|       expect(dataOf(response)).toEqual({
+     38|         id: sara.id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |api| src/modules/users/me.api.test.ts > PATCH /me > a user edits their name and language; only what changed is audited; no change writes nothing
+AssertionError: expected 401 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 401
+
+ ❯ src/modules/users/me.api.test.ts:62:28
+     60|     const renamed = await editMe(sara.authorization, { name: '  سارة أ…
+     61|
+     62|     expect(renamed.status).toBe(200);
+       |                            ^
+     63|     expect(dataOf(renamed)).toEqual({
+     64|       id: sara.id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |api| src/modules/users/me.api.test.ts > /me: the guard > a guest is 401; a suspended account 401; a pending temporary password 403
+AssertionError: expected 401 to be 403 // Object.is equality
+
+- Expected
++ Received
+
+- 403
++ 401
+
+ ❯ src/modules/users/me.api.test.ts:158:31
+    156|     ]) {
+    157|       const response = await call();
+    158|       expect(response.status).toBe(403);
+       |                               ^
+    159|       expect(errorOf(response).code).toBe('PASSWORD_CHANGE_REQUIRED');
+    160|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-l\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-l\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/users/me.api.test.ts

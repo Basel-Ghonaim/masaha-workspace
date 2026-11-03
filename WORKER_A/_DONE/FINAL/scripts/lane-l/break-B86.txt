@@ -1,0 +1,53 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/actions/DropdownMenu
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-l/apps/web
+
+ ❯ |component| src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.component.test.tsx (11 tests | 1 failed) 2288ms
+   ❯ DropdownMenu (11)
+     ❯ a held item (2)
+       × does nothing when selected 178ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  16:54:03
+   Duration  9.06s (environment 31%, import 29%, tests 26%, setup 10%, transform 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.component.test.tsx > DropdownMenu > a held item > does nothing when selected
+AssertionError: expected "vi.fn()" to not be called at all, but actually been called 1 times
+
+Received:
+
+  1st vi.fn() call:
+
+    Array [
+      CustomEvent {
+        "isTrusted": false,
+      },
+    ]
+
+
+Number of calls: 1
+
+ ❯ src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.component.test.tsx:193:28
+    191|       await userEvent.keyboard('{Enter}');
+    192|
+    193|       expect(onRemove).not.toHaveBeenCalled();
+       |                            ^
+    194|       expect(screen.getByRole('menu')).toBeInTheDocument();
+    195|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-l\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-l\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/actions/DropdownMenu

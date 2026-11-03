@@ -1,0 +1,29 @@
+
+> lint
+> eslint .
+
+
+C:\dev\masaha\app-lane-b\apps\web\src\features\data-reports\components\space\SpaceReportsList.tsx
+  219:9  error  Error: This value cannot be modified
+
+Modifying component props or hook arguments is not allowed. Consider using a local variable instead.
+
+C:\dev\masaha\app-lane-b\apps\web\src\features\data-reports\components\space\SpaceReportsList.tsx:219:9
+  217 |       size="sm"
+  218 |       onClick={(event) => {
+> 219 |         opener.current = event.currentTarget;
+      |         ^^^^^^ `opener` cannot be modified
+  220 |         row.open.run();
+  221 |       }}
+  222 |     >
+
+Hint: If this value is a Ref (value returned by `useRef()`), rename the variable to end in "Ref"  react-hooks/immutability
+
+C:\dev\masaha\app-lane-b\apps\web\src\features\data-reports\hooks\decide\useDecideSheet.component.test.tsx
+  129:19  error  This assertion is unnecessary since it does not change the type of the expression  @typescript-eslint/no-unnecessary-type-assertion
+  131:14  error  This assertion is unnecessary since it does not change the type of the expression  @typescript-eslint/no-unnecessary-type-assertion
+  134:12  error  This assertion is unnecessary since it does not change the type of the expression  @typescript-eslint/no-unnecessary-type-assertion
+
+✖ 4 problems (4 errors, 0 warnings)
+  3 errors and 0 warnings potentially fixable with the `--fix` option.
+

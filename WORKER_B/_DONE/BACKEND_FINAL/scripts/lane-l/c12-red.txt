@@ -1,0 +1,30 @@
+
+- Expected
++ Received
+
+- 200
++ 401
+
+ ❯ src/modules/auth/idle.api.test.ts:257:81
+    255|     // the refresh copies the renewal into the token it issues.
+    256|     const later = at(20 * MINUTE);
+    257|     expect((await refresh({ ...desk, refreshToken: nextToken }, later)…
+       |                                                                                 ^
+    258|     const newest = await prisma.refreshToken.findFirstOrThrow({
+    259|       where: { familyId: desk.sessionId },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  12:14:07
+   Duration  13.88s (tests 60%, transform 26%, import 13%, setup 1%)
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-l\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-l\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/auth/idle.api.test.ts

@@ -1,0 +1,10 @@
+feat(design-system): add a meter
+
+The owner's overview draws its occupancy as a bar, and the space
+gallery shows each photo's upload as one (finding 73). No class outside
+the layer may draw a bar's width, so the layer gains a hand-built
+Meter: a muted track 12px high with a fill from the start side, as a
+meter or a progressbar with its value, its bounds and an optional
+value text, named by its label. No Radix dependency is added.
+
+The foundation's inventory names it, and the showcase shows it.

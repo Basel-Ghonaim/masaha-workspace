@@ -1,0 +1,17 @@
+7: RED exit 1 — ['× names the «⋯» and its menu by the amount and who, and gives the focus back to it after the dialog 3406ms', 'FAIL  |component| src/features/desk/components/void/VoidPaymentAction.component.test.tsx > VoidPaymentAction > names the «⋯» and its menu by the amount and who, and gives the focus back to it after the dialog']
+8: RED exit 1 — ['× offers the owner the void of a payment not voided; reception none, a voided payment none 150ms', 'FAIL  |component| src/features/desk/hooks/statement/useStatement.component.test.tsx > useStatement > offers the owner the void of a payment not voided; reception none, a voided payment none']
+git status after restore:
+ M src/features/desk/components/file/CustomerFile.tsx
+ M src/features/desk/components/file/SubscriptionCard.tsx
+ M src/features/desk/components/statement/Statement.tsx
+ M src/features/desk/components/toast/deskToasts.tsx
+ M src/features/desk/hooks/statement/useStatement.component.test.tsx
+ M src/features/desk/hooks/statement/useStatement.ts
+ M src/features/desk/repository/deskRepository.ts
+ M src/features/desk/repository/deskRepository.unit.test.ts
+ M src/shared/copy/arabic/desk.ts
+ M src/shared/copy/english/desk.ts
+?? src/features/desk/components/void/
+?? src/features/desk/hooks/void/
+?? src/features/desk/types/VoidTarget.ts
+

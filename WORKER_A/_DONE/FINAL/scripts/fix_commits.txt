@@ -1,0 +1,25 @@
+b2b0c503 fix(web): dim every paged list while a page loads
+11640fc7 fix(account): set a password by auth's link sent
+e870fef9 fix(web): run a held action only on its round trip
+427b6973 fix(auth): keep next through the password recovery
+34e442c6 fix(directory): focus the place filter, not main
+2409dfc5 fix(directory): bound near me's unanswered prompt
+22baadc6 fix(directory): keep the map's filters on a phone
+bf316eea docs: record finding 55's CI time; drop stale line
+3c3c0efd fix(web): keep a reminder in one language
+fd489782 fix(desk): name each write-off undo by its visit
+72e297a0 fix(desk): hold the list menu still while it reads
+5a6c0d54 fix(desk): pick the oldest debt across both kinds
+7bb6d9cb test(desk): answer the unpriced read as a page
+a559cfea fix(desk): keep the written-off toggle on a phone
+95e3ddad fix(web): land a report's field link on its notice
+677fb1fd fix(web): let a download's address go after a tick
+be5c6db1 fix(web): write a formula-like CSV value as text
+d569bb3a fix(desk): land the overview's #unpriced link
+716a953f fix(finance): keep counted tiles in Arabic order
+6e708e5a fix(admin): hold, not disable, the owners link
+fbe04292 fix(desk): hold a customer on their visit present
+c15b7b78 fix(payments): sum subscription payments in bigint
+4f25d33c test(auth): give the expiry race its race timeout
+d49d30d0 fix(auth): replace only an account someone created
+5e99323a fix(jobs): stall only on a full batch of failures

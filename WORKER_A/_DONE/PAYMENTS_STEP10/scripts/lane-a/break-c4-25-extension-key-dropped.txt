@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/announcements/repository/announcementsRepository.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |unit| src/features/announcements/repository/announcementsRepository.unit.test.ts (7 tests | 1 failed) 36ms
+   ❯ the announcements repository (7)
+     × reads a closure’s extension, and applies it with its key 10ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  12:50:56
+   Duration  1.72s (import 60%, transform 37%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/announcements/repository/announcementsRepository.unit.test.ts > the announcements repository > reads a closure’s extension, and applies it with its key
+AssertionError: expected undefined to be 'key-2' // Object.is equality
+
+- Expected:
+"key-2"
+
++ Received:
+undefined
+
+ ❯ src/features/announcements/repository/announcementsRepository.unit.test.ts:116:57
+    114|     ]);
+    115|     expect(JSON.parse(String(requests[1]?.data))).toEqual({ days: 3 });
+    116|     expect(requests[1]?.headers.get('Idempotency-Key')).toBe('key-2');
+       |                                                         ^
+    117|   });
+    118|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/announcements/repository/announcementsRepository.unit.test.ts

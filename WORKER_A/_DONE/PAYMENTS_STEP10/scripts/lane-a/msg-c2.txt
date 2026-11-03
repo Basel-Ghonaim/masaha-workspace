@@ -1,0 +1,12 @@
+feat(announcements): post and edit an announcement
+
+O9, and O10's announcement with no end: «إعلان جديد» and a card's
+«تعديل» open the end sheet - the type with its hint, the Arabic and
+English texts, the period on Gaza's clock (S9), a closure's line
+(DI-29) and the preview of the space's page, drawn by the public
+pieces it will set (DI-25).
+
+The post carries one Idempotency-Key per opening, kept across the
+transport's re-sends, a second press and a retry (S4); an edit sends
+only what changed, once, with no key. Every write reads the whole
+space again (S12): a closure changes the space's state now.

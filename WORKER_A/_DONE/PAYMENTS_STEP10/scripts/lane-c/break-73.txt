@@ -1,0 +1,65 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/favorites/hooks/toggle
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx (6 tests | 2 failed) 484ms
+   ❯ useFavoriteToggle (6)
+     × is pressed at once, held until the favourites are read again, and named by what it does 41ms
+     × removes a saved space and says so, with «Undo» 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx > useFavoriteToggle > is pressed at once, held until the favourites are read again, and named by what it does
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx:84:36
+     82|     });
+     83|
+     84|     expect(result.current.pressed).toBe(true);
+       |                                    ^
+     85|     expect(seen(result.current.label)).toBe('Remove Masaha Hub from fa…
+     86|     await waitFor(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx > useFavoriteToggle > removes a saved space and says so, with «Undo»
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx:129:36
+    127|     });
+    128|
+    129|     expect(result.current.pressed).toBe(false);
+       |                                    ^
+    130|     const removed = await toastWith('Removed from favourites');
+    131|     expect(removed.getByRole('button', { name: 'Undo' })).toBeInTheDoc…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  13:19:42
+   Duration  5.22s (transform 35%, environment 28%, import 20%, tests 10%, setup 8%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/favorites/hooks/toggle

@@ -1,0 +1,7 @@
+feat(auth): welcome a first Google sign-in
+
+A Google sign-in that made the account was never welcomed, while a
+registration by email is. The answer now says created (lane A1), and
+the hook welcomes the account by its name, as registration does
+(finding 32). The linked toast, which says more than a line, stays
+until it is closed rather than ten seconds (G5.5, C5).

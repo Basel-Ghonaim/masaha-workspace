@@ -1,0 +1,61 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/subscriptions/checkIns.api.test.ts (5 tests | 2 failed) 10387ms
+   ❯ the space's check-ins (5)
+     × a range's first and last Gaza days are in to their midnights, the minute before and the day after out 690ms
+     × the plan is an index range on the space's check-in times, not a sequential scan 5654ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  17:02:13
+   Duration  26.67s (tests 55%, transform 31%, import 12%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/subscriptions/checkIns.api.test.ts > the space's check-ins > a range's first and last Gaza days are in to their midnights, the minute before and the day after out
+AssertionError: expected [ 4, 3, 2 ] to deeply equal [ 3, 2 ]
+
+- Expected
++ Received
+
+  [
++   4,
+    3,
+    2,
+  ]
+
+ ❯ src/modules/subscriptions/checkIns.api.test.ts:144:27
+    142|
+    143|     const response = await checkIns(owner, '?from=2026-10-18&to=2026-1…
+    144|     expect(ids(response)).toEqual([last.id, first.id]);
+       |                           ^
+    145|   });
+    146|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/subscriptions/checkIns.api.test.ts > the space's check-ins > the plan is an index range on the space's check-in times, not a sequential scan
+Error: Test timed out in 5000ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ src/modules/subscriptions/checkIns.api.test.ts:147:3
+    145|   });
+    146|
+    147|   it("the plan is an index range on the space's check-in times, not a …
+       |   ^
+    148|     // 20,000 stays over 17 months, so the planner weighs a table, not…
+    149|     const { customer, subscription } = await subscriber('Sara');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

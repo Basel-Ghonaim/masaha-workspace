@@ -1,0 +1,46 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx (5 tests | 1 failed) 3435ms
+   ❯ useAdminReports (5)
+     × takes off the space and the field together with «Clear filters», the chip kept 3025ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:35:56
+   Duration  9.24s (tests 38%, transform 25%, environment 16%, import 15%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx > useAdminReports > takes off the space and the field together with «Clear filters», the chip kept
+AssertionError: expected '?status=decided&space=7' to be '?status=decided' // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div />[39m
+  [36m</body>[39m
+[36m</html>[39m...
+
+Expected: "?status=decided"
+Received: "?status=decided&space=7"
+
+ ❯ src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx:152:44
+    150|     });
+    151|     await waitFor(() => {
+    152|       expect(router.state.location.search).toBe('?status=decided');
+       |                                            ^
+    153|     });
+    154|     expect(router.state.historyAction).toBe('REPLACE');
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

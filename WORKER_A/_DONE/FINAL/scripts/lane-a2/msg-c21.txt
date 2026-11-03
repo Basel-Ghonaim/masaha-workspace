@@ -1,0 +1,10 @@
+feat(db): compute a subscription's due in bigint
+
+subscription_usage computed a usage-based subscription's due in
+integer: a per-day subscription at the price's bound overflowed after
+about 215 days, and one such row answered 500 to the space's whole
+customers screen (finding 122).
+
+The migration drops and recreates the function with the due in bigint.
+The sums of debt and credit built on it are bigint too; every reader
+maps them through Number(), exact within the price's bound.

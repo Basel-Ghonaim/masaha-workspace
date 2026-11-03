@@ -1,0 +1,9 @@
+feat(customers): carry the reminder in the file
+
+Reception sends a customer «تذكير على واتساب» from their file, but the
+space's reminder template is read only through the owner's settings
+route.
+
+CustomerFile carries reminderTemplate: the space's, null for the
+catalogue's default, read in the file's snapshot. The tests that read a
+file now give their space its settings row, as every space has.

@@ -1,0 +1,6 @@
+refactor(lib): share the day's words
+
+dayText and dayWord leave the desk's services for shared/lib: the
+payments ledger, the announcements and the data reports are their
+second, third and fourth users (S7). Moved with their unit tests,
+unchanged; the desk's hooks import them from @shared/lib.

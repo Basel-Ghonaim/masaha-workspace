@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/hooks/favorites
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/directory/hooks/favorites/useFavoriteIds.component.test.tsx (2 tests | 1 failed) 162ms
+   ❯ useFavoriteIds (2)
+     × reads nothing for a guest 65ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/hooks/favorites/useFavoriteIds.component.test.tsx > useFavoriteIds > reads nothing for a guest
+AssertionError: expected [ { …(19) } ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ src/features/directory/hooks/favorites/useFavoriteIds.component.test.tsx:66:22
+     64|     await new Promise((resolve) => setTimeout(resolve, 50));
+     65|     expect(result.current).toBeNull();
+     66|     expect(requests).toHaveLength(0);
+       |                      ^
+     67|   });
+     68| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  13:20:16
+   Duration  5.03s (transform 37%, environment 29%, import 22%, setup 8%, tests 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/hooks/favorites

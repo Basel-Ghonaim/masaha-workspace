@@ -1,0 +1,58 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/shared/jobs/jobs.api.test.ts (7 tests | 1 failed) 4072ms
+   ❯ the jobs endpoint (7)
+     × each auto check-out stalls alike: with every closing refused, both are named, 500 504ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  17:09:20
+   Duration  17.14s (transform 41%, tests 39%, import 17%, setup 2%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/shared/jobs/jobs.api.test.ts > the jobs endpoint > each auto check-out stalls alike: with every closing refused, both are named, 500
+AssertionError: expected [ { level: 50, …(6) } ] to match object [ { level: 50, …(2) }, …(1) ]
+
+- Expected
++ Received
+
+  [
+    {
+      "failed": 1,
++     "hostname": "MohammedGhonaim",
+      "job": "visits.autoCheckOut",
+      "level": 50,
+-   },
+-   {
+-     "failed": 1,
+-     "job": "subscriptions.autoCheckOut",
+-     "level": 50,
++     "msg": "job stalled",
++     "pid": 18552,
++     "time": 1793286577935,
+    },
+  ]
+
+ ❯ src/shared/jobs/jobs.api.test.ts:209:62
+    207|       await prisma.$executeRawUnsafe('DROP FUNCTION IF EXISTS refuse_a…
+    208|     }
+    209|     expect(lines.filter(({ msg }) => msg === 'job stalled')).toMatchOb…
+       |                                                              ^
+    210|       { level: 50, job: 'visits.autoCheckOut', failed: 1 },
+    211|       { level: 50, job: 'subscriptions.autoCheckOut', failed: 1 },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

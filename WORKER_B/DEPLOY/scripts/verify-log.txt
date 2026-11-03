@@ -1,0 +1,102 @@
+head f79fdbc0 2026-11-02T09:53:12+02:00
+=== npm ci (free 2.9 GB) 09:53:13
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+--- npm ci exit 0
+=== build shared (free 3.1 GB) 09:55:09
+
+> @masaha/shared@0.0.0 build
+> tsc -p tsconfig.build.json
+
+--- build shared exit 0
+=== format:check (free 3.1 GB) 09:55:13
+
+> format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+--- format:check exit 0
+=== lint (free 3.1 GB) 09:55:47
+
+> lint
+> eslint .
+
+--- lint exit 0
+=== typecheck (free 4 GB) 09:58:09
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+
+--- typecheck exit 0
+=== check:classes (free 4.6 GB) 09:58:47
+
+
+> @masaha/web@0.0.0 check:classes
+> node scripts/checkClasses.ts
+
+No physical direction or arbitrary-value classes in 1918 files.
+--- check:classes exit 0
+=== check:links (free 4.6 GB) 09:58:50
+
+
+> @masaha/api@0.0.0 check:links
+> node scripts/checkLinks.ts
+
+3239 links in 213 documents and 2607 source files all resolve.
+--- check:links exit 0
+=== check:conflicts (free 4.5 GB) 09:58:53
+
+
+> @masaha/api@0.0.0 check:conflicts
+> node scripts/checkConflicts.ts
+
+No conflict markers found.
+--- check:conflicts exit 0
+=== test:unit (free 4.5 GB) 09:58:55
+   Start at  09:59:11
+   Duration  25.37s (import 72%, transform 17%, tests 9%, worker 2%)
+
+    Isolate  186 workers spawned · ~585ms startup each (spawn + environment, per file)
+             at least ~9.30s faster with isolate: false — reuses workers across files instead of one per file
+
+--- test:unit exit 0
+=== test:component (free 4.8 GB) 09:59:38
+   Duration  621.12s (environment 35%, import 31%, tests 22%, setup 10%, transform 3%)
+
+Environment  |component| jsdom was created 340 times · 1219.86s total, 35% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+
+--- test:component exit 0
+=== test:api (free 5.5 GB) 10:10:05
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api
+
+--- test:api exit 1
+=== build (production) (free 4 GB) 10:30:53
+dist/assets/index-D8N68Llv.js                                         239.94 kB │ gzip:  73.14 kB
+dist/assets/jsx-runtime-B2W0nLDT.js                                   266.27 kB │ gzip:  73.21 kB
+dist/assets/design-system-C8bbhZRl.js                                 287.31 kB │ gzip:  83.56 kB
+dist/assets/dashboard-CV1zffdT.js                                     409.68 kB │ gzip: 105.26 kB
+
+[32m✓ built in 9.44s[39m
+--- build (production) exit 0
+=== check:build (free 4.2 GB) 10:31:24
+> node scripts/checkBuild.ts
+
+No showcase code in 73 build files (1063 strings checked).
+No dashboard code in the site's first download, and no chunk the dashboard imports imports it back.
+No data-table or leaflet or calendar, nor Leaflet's stylesheet, in the site's first download.
+No site page reaches data-table or leaflet or calendar through its static imports.
+--- check:build exit 0
+done 2026-11-02T10:31:27+02:00

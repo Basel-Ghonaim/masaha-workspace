@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/packages/components
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/packages/components/PackagesSection.component.test.tsx (7 tests | 1 failed) 3021ms
+   ❯ PackagesSection (7)
+     × announces the terms and the price as they change, never the name typed 802ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/packages/components/PackagesSection.component.test.tsx > PackagesSection > announces the terms and the price as they change, never the name typed
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveTextContent()[22m
+
+Expected element not to have text content:
+[32m  Evenings[39m
+Received:
+[31m  SummaryEveningsvalid 30 days₪150[39m
+ ❯ src/features/packages/components/PackagesSection.component.test.tsx:146:22
+    144|     const live = sheet.querySelector('[aria-live="polite"]');
+    145|     expect(live).toHaveTextContent('₪150');
+    146|     expect(live).not.toHaveTextContent('Evenings');
+       |                      ^
+    147|     expect(within(sheet).getAllByText('Evenings').length).toBeGreaterT…
+    148|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  15:51:28
+   Duration  13.87s (transform 28%, import 26%, tests 22%, environment 18%, setup 5%)
+
+  Transform  |component| transforming modules took 3.83s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/packages/components

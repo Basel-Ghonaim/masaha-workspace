@@ -1,0 +1,489 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/hooks/admin src/features/data-reports/components/admin src/features/data-reports/hooks/decide src/features/space-links/components/admin-filter
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx (0 test)
+ ❯ |component| src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx (0 test)
+ ❯ |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx (0 test)
+ ❯ |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx (12 tests | 3 failed) 2319ms
+   ❯ useDecideSheet (12)
+     × names the reporter to the admin, and sends an unverified space’s decision as the admin’s 34ms
+     × shows the admin a verified space’s report read-only, with a link to the space 32ms
+     × words the admin’s 403 as a space verified meanwhile, and reads the admin’s reports again 78ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx [ src/features/data-reports/components/admin/AdminReportsList.component.test.tsx ]
+Error: Failed to resolve import "./AdminReportsList" from "src/features/data-reports/components/admin/AdminReportsList.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-b/apps/web/src/features/data-reports/components/admin/AdminReportsList.component.test.tsx:14:33
+  11 |  import { stubScreenWidth } from "../../../../test/screenWidth";
+  12 |  import { startPreferences } from "../../../../test/startPreferences";
+  13 |  import { AdminReportsList } from "./AdminReportsList";
+     |                                    ^
+  14 |  var _jsxFileName = "C:/dev/masaha/app-lane-b/apps/web/src/features/data-reports/components/admin/AdminReportsList.com...
+  15 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx [ src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx ]
+Error: Failed to resolve import "./useAdminReports" from "src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-b/apps/web/src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx:10:32
+  7  |  import { fakeTransport, restoreTransport } from "../../../../test/fakeTransport";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { useAdminReports } from "./useAdminReports";
+     |                                   ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app-lane-b/apps/web/src/features/data-reports/hooks/admin/useAdminReports.component...
+  11 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |component| src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx [ src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx ]
+Error: Failed to resolve import "./AdminSpaceFilter" from "src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-b/apps/web/src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx:11:33
+  6  |  import { fakeTransport, restoreTransport } from "../../../../test/fakeTransport";
+  7  |  import { startPreferences } from "../../../../test/startPreferences";
+  8  |  import { AdminSpaceFilter } from "./AdminSpaceFilter";
+     |                                    ^
+  9  |  var _jsxFileName = "C:/dev/masaha/app-lane-b/apps/web/src/features/space-links/components/admin-filter/AdminSpaceFilt...
+  10 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > names the reporter to the admin, and sends an unverified space’s decision as the admin’s
+TestingLibraryElementError: Unable to find an element with the text: (text) => text.replace(/[⁦-⁩]/g, "") === "Huda Saleh · 21 October". This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_14_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_13_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_12_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_13_"[39m
+    [36m>[39m
+      [0mReport about Opening hours[0m
+    [36m</h2>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_14_"[39m
+      [36m>[39m
+        [0mA visitor · 21 October[0m
+      [36m</p>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"info"[39m
+      [36m>[39m
+        [0mNew[0m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe report[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mThe space opens at 9, not 8.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/dashboard/admin/spaces/7#hours"[39m
+      [36m>[39m
+        [0mEdit the field[0m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M5 12h14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m12 5 7 7-7 7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_15_-control"[39m
+            [33mid[39m=[32m"_r_15_-label"[39m
+          [36m>[39m
+            [0mReply from the space[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<textarea[39m
+          [33maria-describedby[39m=[32m"_r_15_-helper"[39m
+          [33mclass[39m=[32m"field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"[39m
+          [33mdata-slot[39m=[32m"textarea"[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mid[39m=[32m"_r_15_-control"[39m
+          [33mname[39m=[32m"note"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+          [33mid[39m=[32m"_r_15_-helper"[39m
+        [36m>[39m
+          [0mShown to the person who reported it. Required for “Not accepted”, optional for “Corrected”.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"mt-auto p-4 flex flex-row gap-2"[39m
+      [33mdata-slot[39m=[32m"sheet-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) flex-1"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCorrected[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) flex-1"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mNot accepted[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:282:21
+    280|     const sheet = await screen.findByRole('dialog', { name: 'Report ab…
+    281|     expect(
+    282|       within(sheet).getByText((text) => text.replace(/[⁦-⁩]/g, '') ===…
+       |                     ^
+    283|     ).toBeVisible();
+    284|     expect(within(sheet).getByRole('link', { name: 'Edit the field' })…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > shows the admin a verified space’s report read-only, with a link to the space
+TestingLibraryElementError: Unable to find an element with the text: Verified space — its owner decides this report. For reference only.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-describedby[39m=[32m"radix-_r_18_"[39m
+  [33maria-labelledby[39m=[32m"radix-_r_17_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 end-0 h-full w-full border-s border-(--card-border) data-open:slide-in-from-end data-closed:slide-out-to-end md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"end"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_16_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_17_"[39m
+    [36m>[39m
+      [0mReport about Opening hours[0m
+    [36m</h2>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+    [36m>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+        [33mdata-slot[39m=[32m"sheet-description"[39m
+        [33mid[39m=[32m"radix-_r_18_"[39m
+      [36m>[39m
+        [0mA visitor · 21 October[0m
+      [36m</p>[39m
+      [36m<span[39m
+        [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"[39m
+        [33mdata-slot[39m=[32m"badge"[39m
+        [33mdata-variant[39m=[32m"info"[39m
+      [36m>[39m
+        [0mNew[0m
+      [36m</span>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex min-h-0 flex-1 flex-col"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4 flex flex-col gap-4 pb-4"[39m
+      [33mdata-slot[39m=[32m"sheet-body"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-1 rounded-lg bg-muted p-3"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+        [36m>[39m
+          [0mThe report[0m
+        [36m</span>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-body-sm break-words whitespace-pre-line"[39m
+          [33mdir[39m=[32m"auto"[39m
+        [36m>[39m
+          [0mThe space opens at 9, not 8.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/dashboard/admin/spaces/3"[39m
+      [36m>[39m
+        [0mEdit the field[0m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-arrow-right"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M5 12h14"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m12 5 7 7-7 7"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</a>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+        [33mdata-slot[39m=[32m"field"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+        [36m>[39m
+          [36m<label[39m
+            [33mclass[39m=[32m"text-label text-foreground"[39m
+            [33mfor[39m=[32m"_r_19_-control"[39m
+            [33mid[39m=[32m"_r_19_-label"[39m
+          [36m>[39m
+            [0mReply from the space[0m
+          [36m</label>[39m
+        [36m</div>[39m
+        [36m<textarea[39m
+          [33maria-describedby[39m=[32m"_r_19_-helper"[39m
+          [33mclass[39m=[32m"field-sizing-content min-h-24 w-full rounded-(--radius-control) border border-input bg-background px-3 py-2 text-(length:--control-text-size) leading-(--type-body-line-height) text-foreground transition-colors placeholder:text-muted-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive"[39m
+          [33mdata-slot[39m=[32m"textarea"[39m
+          [33mdir[39m=[32m"auto"[39m
+          [33mid[39m=[32m"_r_19_-control"[39m
+          [33mname[39m=[32m"note"[39m
+        [36m/>[39m
+        [36m<p[39m
+          [33mclass[39m=[32m"text-caption text-muted-foreground group-data-disabled/field:opacity-50"[39m
+          [33mid[39m=[32m"_r_19_-helper"[39m
+        [36m>[39m
+          [0mShown to the person who reported it. Required for “Not accepted”, optional for “Corrected”.[0m
+        [36m</p>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"mt-auto p-4 flex flex-row gap-2"[39m
+      [33mdata-slot[39m=[32m"sheet-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) flex-1"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCorrected[0m
+      [36m</button>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) flex-1"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mNot accepted[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:312:21
+    310|     const sheet = await screen.findByRole('dialog');
+    311|     expect(
+    312|       within(sheet).getByText(
+       |                     ^
+    313|         'Verified space — its owner decides this report. For reference…
+    314|       ),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words the admin’s 403 as a space verified meanwhile, and reads the admin’s reports again
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  This space is verified: its owner decides this report.[39m
+Received:
+[31m  We couldn’t save the decisionThis is no longer open to you at this space.Reference: ⁦req-1⁩[39m
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:338:46
+    336|     await user.click(screen.getByRole('button', { name: 'Corrected' })…
+    337|
+    338|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                                              ^
+    339|       'This space is verified: its owner decides this report.',
+    340|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯
+
+
+ Test Files  4 failed (4)
+      Tests  3 failed | 9 passed (12)
+   Start at  12:33:31
+   Duration  9.94s (environment 52%, setup 16%, transform 12%, tests 12%, import 8%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-b\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-b\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/hooks/admin src/features/data-reports/components/admin src/features/data-reports/hooks/decide src/features/space-links/components/admin-filter

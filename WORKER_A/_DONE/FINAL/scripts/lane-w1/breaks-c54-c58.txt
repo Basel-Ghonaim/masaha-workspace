@@ -1,0 +1,90 @@
+== B128 exit 1
+    × shows the four tiles, the uncollected one linking to the desk and never added; axe-clean 626ms
+    Tests  1 failed | 4 passed (5)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ Array(4) ] to deeply equal [ Array(4) ]
+    - Expected
+== B129 exit 1
+    × shows the four tiles, the uncollected one linking to the desk and never added; axe-clean 3305ms
+    × shows a debtor’s since, oldest item and amount, and WhatsApp only with a phone 3161ms
+    × lists five who paid in the month, «View all» to the ledger’s range of that month 3140ms
+    × reads every page of who owes before saving the debts’ CSV 3157ms
+    × saves nothing when a page of the export fails, and offers a retry 3155ms
+    Tests  5 failed (5)
+    Error handled by React Router default ErrorBoundary: TypeError: Cannot read properties of null (reading 'replace')
+    Error handled by React Router default ErrorBoundary: TypeError: Cannot read properties of null (reading 'replace')
+== B130 exit 1
+    × fills the reminder with the first name, the amount and the space 15ms
+    Tests  1 failed | 6 passed (7)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected 'مرحبًا   Sara Ahmad Odeh ، عليك ₪45 ف…' to be 'مرحبًا Sara، عليك ₪45 في Focus Hub.' // Object.is equality
+    Expected: "مرحبًا Sara، عليك ₪45 في Focus Hub."
+== B131 exit 1
+    × reads every page of who owes before saving the debts’ CSV 573ms
+    × saves nothing when a page of the export fails, and offers a retry 3450ms
+    Tests  2 failed | 3 passed (5)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ 1 ] to deeply equal [ 1, 2, 3 ]
+    - Expected
+    TestingLibraryElementError: Unable to find an element with the text: Couldn’t export the debts. This could be because the text is broken up by multiple elements. In this case, you can provide a functi
+== B132 exit 1
+    × saves nothing when a page of the export fails, and offers a retry 390ms
+    Tests  1 failed | 4 passed (5)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ 'partial.csv' ] to deeply equal []
+    - Expected
+== B133 exit 1
+    × lists five who paid in the month, «View all» to the ledger’s range of that month 371ms
+    Tests  1 failed | 4 passed (5)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"href"[32m[39m[2m, [22m[32m[32m"/payments?from=2026-10-01&to=2026-10-29"[32m[39m[2m) // element.getAttribute("href
+    Expected the element to have attribute:
+== B134 exit 1
+    × writes 252 minutes as 4:12, and 5 as 0:05 16ms
+    Tests  1 failed (1)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected '4.20' to be '4:12' // Object.is equality
+    Expected: "4:12"
+== B135 exit 1
+    × leaves out of the heatmap the weekdays and hours with no presence 329ms
+    Tests  1 failed | 2 passed (3)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ Array(25) ] to deeply equal [ 'Day', '09', '10', '11' ]
+    - Expected
+== B136 exit 1
+    × shows «—» and its line for the month’s nulls, and the heatmap’s empty state 228ms
+    Tests  1 failed | 2 passed (3)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ …(3) ] to deeply equal [ …(3) ]
+    - Expected
+== B137 exit 1
+    × has a row per weekday, in the language’s week, with its 24 values 54ms
+    Tests  1 failed (1)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected 'Day,00,01,02,03,04,05,06,07,08,09,10,…' to be 'Day,00,01,02,03,04,05,06,07,08,09,10,…' // Object.is equality
+    Expected: "Day,00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23"
+== B141 exit 1
+    × ends with «My account», linking the personal settings; the helpers say where things go 596ms
+    Tests  1 failed (1)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an accessible element with the role "heading" and name "My account"
+== B141b exit 1
+    × ends with «My account», linking the personal settings; the helpers say where things go 3239ms
+    Tests  1 failed (1)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: Whoever is still in is checked out at closing. Unpaid visits show under «Uncollected».. This could be because the text is broken up
+== B142 exit 1
+    × says at its top that the desk sells the week and month prices too 3151ms
+    Tests  1 failed (1)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: Week and month prices are also chosen at the desk when creating a subscription.. This could be because the text is broken up by mul
+== B142b exit 1
+    × says the desk sells the packages, and puts a row’s price at its end beside its switch 210ms
+    Tests  1 failed | 6 passed (7)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: ₪150. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matc
+== B142c exit 1
+    × says the desk sells the packages, and puts a row’s price at its end beside its switch 3071ms
+    Tests  1 failed | 6 passed (7)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: Never shown to visitors · chosen at the desk when creating a subscription. This could be because the text is broken up by multiple 

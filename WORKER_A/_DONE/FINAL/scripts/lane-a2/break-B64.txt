@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+30 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/subscribe.api.test.ts (17 tests | 1 failed | 15 skipped) 2745ms
+   ❯ subscribing a customer (17)
+     × a published amount that differs answers PUBLISHED_PRICE_CHANGED, writing nothing 1126ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed | 15 skipped (17)
+   Start at  17:29:30
+   Duration  19.03s (transform 52%, tests 24%, import 21%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/subscribe.api.test.ts > subscribing a customer > a published amount that differs answers PUBLISHED_PRICE_CHANGED, writing nothing
+AssertionError: expected 201 to be 409 // Object.is equality
+
+- Expected
++ Received
+
+- 409
++ 201
+
+ ❯ src/modules/desk/subscribe.api.test.ts:298:29
+    296|       payment: { amountAgorot: 20_000, method: 'CASH' },
+    297|     });
+    298|     expect(response.status).toBe(409);
+       |                             ^
+    299|     expect(errorOf(response)).toMatchObject({ type: 'conflict', code: …
+    300|     expect(await storedSubscriptions()).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,42 @@
+46-admin: RED exit 1 — ['× reads a page of every space’s reports, the admin’s query as its parameters 10ms', '× sends the admin’s decision to the report’s own path, its body as given 2ms', 'FAIL  |unit| src/features/data-reports/repository/dataReportsRepository.unit.test.ts > the data reports repository > reads a page of every space’s reports, the admin’s query as its parameters']
+47c: RED exit 1 — ['× drops each value the server would refuse 9ms', 'FAIL  |unit| src/features/data-reports/services/adminReportsQueryOf.unit.test.ts > adminReportsQueryOf > drops each value the server would refuse']
+54a: RED exit 1 — ['× shows the admin a verified space’s report read-only, with a link to the space 57ms', 'FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > shows the admin a verified space’s report read-only, with a link to the space']
+54b: RED exit 1 — ['× names the reporter and who handles each report; a verified space’s opens read-only 127ms', 'FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx > useAdminReports > names the reporter and who handles each report; a verified space’s opens read-only']
+51-admin: RED exit 1 — ['× words the admin’s 403 as a space verified meanwhile, and reads the admin’s reports again 95ms', 'FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words the admin’s 403 as a space verified meanwhile, and reads the admin’s reports again']
+55a: RED exit 1 — ['× shows a table of eight columns from 1024 px, the filters in a row; axe-clean 395ms', '× moves the filters into a bottom sheet below 768 px, the tags still shown; axe-clean 123ms', 'FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx > AdminReportsList > shows a table of eight columns from 1024 px, the filters in a row; axe-clean']
+55b: RED exit 1 — ['× shows the space and the field in force as removable tags, each removal replacing the address 98ms', 'FAIL  |component| src/features/data-reports/hooks/admin/useAdminReports.component.test.tsx > useAdminReports > shows the space and the field in force as removable tags, each removal replacing the address']
+55c: GREEN (not red) exit 0 — []
+56: RED exit 1 — ['× keeps a card per report until 1024 px, the filters still in a row at 768 114ms', 'FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx > AdminReportsList > keeps a card per report until 1024 px, the filters still in a row at 768']
+57: RED exit 1 — ['× clears the filter with «All spaces», its first choice 99ms', 'FAIL  |component| src/features/space-links/components/admin-filter/AdminSpaceFilter.component.test.tsx > AdminSpaceFilter > clears the filter with «All spaces», its first choice']
+58-admin: RED exit 1 — ['× shows the admin «Data reports» under its title, every space’s, the reporter named 3091ms', "FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > shows the admin «Data reports» under its title, every space’s, the reporter named"]
+git status after restore:
+ M src/features/data-reports/components/decide/DecideSheet.tsx
+ M src/features/data-reports/components/space/SpaceReportsList.tsx
+ M src/features/data-reports/hooks/decide/useDecideReport.ts
+ M src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx
+ M src/features/data-reports/hooks/decide/useDecideSheet.ts
+ M src/features/data-reports/hooks/queryKeys.ts
+ M src/features/data-reports/index.ts
+ M src/features/data-reports/repository/dataReportsRepository.ts
+ M src/features/data-reports/repository/dataReportsRepository.unit.test.ts
+ M src/features/data-reports/types/DecideTarget.ts
+ M src/features/space-links/index.ts
+ M src/pages/dashboard/routes.component.test.tsx
+ M src/pages/dashboard/routes.tsx
+ M src/pages/dashboard/space/reports/DataReportsPage.tsx
+ M src/shared/copy/arabic/dataReports.ts
+ M src/shared/copy/arabic/spaceLinks.ts
+ M src/shared/copy/english/dataReports.ts
+ M src/shared/copy/english/spaceLinks.ts
+ M src/test/dataReport.ts
+?? src/features/data-reports/components/ReportListParts.tsx
+?? src/features/data-reports/components/admin/
+?? src/features/data-reports/hooks/admin/
+?? src/features/data-reports/services/adminReportsQueryOf.ts
+?? src/features/data-reports/services/adminReportsQueryOf.unit.test.ts
+?? src/features/data-reports/types/AdminReportRowView.ts
+?? src/features/data-reports/types/AdminSpaceFilterSlot.ts
+?? src/features/space-links/components/admin-filter/
+?? src/pages/dashboard/admin/DataReportsPage.tsx
+?? src/pages/dashboard/fieldSections.ts
+

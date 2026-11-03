@@ -1,0 +1,6 @@
+feat(users): say how an account signs in
+
+The account settings' sign-in card names the methods an account uses
+(the design's Google row, «مربوط»), but MyAccount said nothing of them.
+GET and PATCH /me now answer hasPassword and hasGoogle, read as counts
+so no hash is selected.

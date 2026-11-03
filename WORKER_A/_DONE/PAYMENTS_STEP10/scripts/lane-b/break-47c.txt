@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |unit| src/features/data-reports/services/adminReportsQueryOf.unit.test.ts (4 tests | 1 failed) 14ms
+   ❯ adminReportsQueryOf (3)
+     × drops each value the server would refuse 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  12:34:19
+   Duration  682ms (import 53%, transform 43%, tests 3%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/data-reports/services/adminReportsQueryOf.unit.test.ts > adminReportsQueryOf > drops each value the server would refuse
+AssertionError: expected { Object (filters, query) } to deeply equal { …(2) }
+
+- Expected
++ Received
+
+  {
+    "filters": {
+      "chip": "all",
++     "field": "PHOTOS",
+      "page": 1,
+    },
+    "query": {
++     "field": "PHOTOS",
+      "limit": 20,
+      "page": 1,
+    },
+  }
+
+ ❯ src/features/data-reports/services/adminReportsQueryOf.unit.test.ts:22:67
+     20|
+     21|   it('drops each value the server would refuse', () => {
+     22|     expect(read('?status=RESOLVED&field=PHOTOS&space=0&page=-1')).toEq…
+       |                                                                   ^
+     23|       filters: { chip: 'all', page: 1 },
+     24|       query: { page: 1, limit: 20 },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,79 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx (7 tests | 2 failed) 3987ms
+   ❯ useAnnouncementsList (7)
+     × reads the tab and the page from the address, and writes the tab chosen there 86ms
+     × keeps the cards over a failed refresh, and keeps them busy while another tab loads 3172ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 5 passed (7)
+   Start at  12:00:10
+   Duration  9.13s (tests 45%, transform 23%, environment 16%, import 13%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx > useAnnouncementsList > reads the tab and the page from the address, and writes the tab chosen there
+AssertionError: expected '' to be '?state=upcoming' // Object.is equality
+
+- Expected
++ Received
+
+- ?state=upcoming
+
+ ❯ src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx:101:44
+     99|       result.current.list.choose('UPCOMING');
+    100|     });
+    101|     expect(result.current.location.search).toBe('?state=upcoming');
+       |                                            ^
+    102|     await waitFor(() => {
+    103|       expect(requests.filter(({ url }) => url === LIST).at(-1)?.params…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx > useAnnouncementsList > keeps the cards over a failed refresh, and keeps them busy while another tab loads
+AssertionError: expected false to be true // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div />[39m
+  [36m</body>[39m
+[36m</html>[39m...
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx:191:40
+    189|     });
+    190|     await waitFor(() => {
+    191|       expect(result.current.list.busy).toBe(true);
+       |                                        ^
+    192|     });
+    193|     expect(result.current.list.cards).toHaveLength(1);
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx

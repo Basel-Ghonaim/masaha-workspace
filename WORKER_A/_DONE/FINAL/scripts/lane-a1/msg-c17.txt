@@ -1,0 +1,7 @@
+feat(space-links): name the owner in ALREADY_OWNER
+
+The admin's add-owner refused an account that is an owner already with
+ALREADY_OWNER, "link instead", but named no account, so the add sheet
+could not open the link for that owner (finding 83). The refusal now
+carries details.userId, the owner's account, in the envelope's details
+(the lead's C0.1). The web's half is its own commit.

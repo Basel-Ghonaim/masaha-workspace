@@ -1,0 +1,60 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/overview
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx (9 tests | 2 failed) 1916ms
+   ❯ OwnerOverview (9)
+     × lists five ending soon, «Ends tomorrow», and «View all» 119ms
+     × links the announcements’ tile, with the running types 307ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx > OwnerOverview > lists five ending soon, «Ends tomorrow», and «View all»
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  Customer 1Monthly · Ends tomorrowRenew[39m
+Received:
+[31m  Customer 1⁨Monthly⁩ · Ends tomorrowRenew[39m
+ ❯ src/features/overview/components/owner/OwnerOverview.component.test.tsx:196:21
+    194|     const rows = within(card).getAllByRole('listitem');
+    195|     expect(rows).toHaveLength(5);
+    196|     expect(rows[0]).toHaveTextContent('Customer 1Monthly · Ends tomorr…
+       |                     ^
+    197|     expect(rows[1]).toHaveTextContent('Ends in 4 days');
+    198|     expect(rows[2]).toHaveTextContent('Ends today');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/overview/components/owner/OwnerOverview.component.test.tsx > OwnerOverview > links the announcements’ tile, with the running types
+AssertionError: expected 'Active announcements2Temporary closur…' to contain 'Closure, Offer'
+
+Expected: "Closure, Offer"
+Received: "Active announcements2Temporary closure, Offer"
+
+ ❯ src/features/overview/components/owner/OwnerOverview.component.test.tsx:217:53
+    215|     const tile = await screen.findByRole('link', { name: /Active annou…
+    216|     expect(tile).toHaveAttribute('href', '/announcements');
+    217|     expect(tile.textContent?.replace(/[⁦-⁩]/g, '')).toContain('Closure…
+       |                                                     ^
+    218|   });
+    219|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 7 passed (9)
+   Start at  18:08:43
+   Duration  12.82s (import 29%, transform 25%, environment 25%, tests 15%, setup 6%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/overview

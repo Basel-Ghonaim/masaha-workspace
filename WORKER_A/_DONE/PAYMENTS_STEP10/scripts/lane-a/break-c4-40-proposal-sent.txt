@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx -t reads the preview on opening
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx (8 tests | 1 failed | 7 skipped) 509ms
+   ❯ useExtensionDialog (8)
+     × reads the preview on opening, prefills its days, and sends the days typed with one key 507ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  12:50:59
+   Duration  11.05s (import 52%, transform 24%, environment 15%, tests 5%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx > useExtensionDialog > reads the preview on opening, prefills its days, and sends the days typed with one key
+AssertionError: expected { days: 2 } to deeply equal { days: 3 }
+
+- Expected
++ Received
+
+  {
+-   "days": 3,
++   "days": 2,
+  }
+
+ ❯ src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx:145:32
+    143|     expect(onClose).toHaveBeenCalled();
+    144|     expect(posts()).toHaveLength(1);
+    145|     expect(bodyOf(posts()[0])).toEqual({ days: 3 });
+       |                                ^
+    146|     expect(keyOf(posts()[0])).toEqual(expect.any(String));
+    147|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx -t ^^^"reads^^^ the^^^ preview^^^ on^^^ opening^^^"

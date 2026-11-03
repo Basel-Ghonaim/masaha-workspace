@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/users/components/settings
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx (10 tests | 1 failed) 4358ms
+   ❯ MyAccountSettings (10)
+     × the theme offers «Device setting», stored on the device only 234ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  11:08:04
+   Duration  18.58s (transform 27%, import 26%, tests 24%, environment 18%, setup 5%)
+
+  Transform  |component| transforming modules took 4.84s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/settings/MyAccountSettings.component.test.tsx > MyAccountSettings > the theme offers «Device setting», stored on the device only
+AssertionError: expected 'system' to be 'dark' // Object.is equality
+
+Expected: "dark"
+Received: "system"
+
+ ❯ src/features/users/components/settings/MyAccountSettings.component.test.tsx:137:42
+    135|     await user.click(await screen.findByRole('radio', { name: 'Dark' }…
+    136|
+    137|     expect(getPreferences().themeChoice).toBe('dark');
+       |                                          ^
+    138|     expect(screen.getByRole('radio', { name: 'Device setting' })).toBe…
+    139|     expect(requests.map(lineOf)).toEqual(['get /me']);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/users/components/settings

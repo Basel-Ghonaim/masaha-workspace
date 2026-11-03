@@ -1,0 +1,56 @@
+I fixed all nine review findings on #131 and folded each into the commit that wrote its lines. CI passed on the new head `ecda64c7` and GitHub shows it `CLEAN`, so it's ready for review again. I also updated the PR description and the lead report.
+
+```
+Status: READY FOR REVIEW
+PR: #131 · head ecda64c7 · CI green · CLEAN · files 132
+Rebased: no (CLEAN at c41a5397; only the autosquash folds onto origin/main)
+Commits:
+  23f50a4f test(platform-settings): pin a stored contact form (50)
+  5a9a594a fix(seed): store the contact in its one form (44)
+  6174433b docs: resolve finding 97 (24)
+  113c87e3 feat(payments): total a space's balances (40)
+  2714af6f fix(sessions): read a family's latest activity (46)
+  b8958212 feat(users): read and edit one's own account (44)
+  f304280d feat(data-reports): filter by who handles them (46)
+  f565fcaa feat(visits): list a space's visits by day (42)
+  84c2a5dc feat(finance): read a space's income (36)
+  fc960282 feat(finance): read who owes and who paid (41)
+  3a4ba5e8 feat(finance): read a space's occupancy (39)
+  bea15c5b feat(api): count what the owner's overview shows (48)
+  d9730e58 feat(overview): read the owner's overview (41)
+  6d92df4f feat(api): count what the admin's overview shows (48)
+  0e528c5a feat(overview): read the admin's overview (41)
+  ecda64c7 docs: record the API of v1 as built (35)
+Fixes:
+  R1-F1 — folded into f565fcaa (terms's doc comment back on terms)
+  R1-F2 — web sentences back under the desk bullet: 113c87e3 (carried through 84c2a5dc and fc960282); "will count" → "counts": d9730e58
+  R1-F3 — folded into 5a9a594a (.env.example: phone rule, stored in E.164)
+  R2-F1 — contract, DebtsMeta, the new debts.api.test.ts test and finding 193: fc960282; finance.md: 3a4ba5e8; overview.md and finding 193's overview paragraph: d9730e58.
+          The test passed first because the behaviour already existed. A break (uncollectedOf AND v.customer_id IS NULL) turned it red: uncollected visits 0 ≠ 1, owedAgorot 0 ≠ 4000. Green again after restoring from the backup copy.
+  R2-F2 — folded into 3a4ba5e8 (46 windows)
+  R2-F3 — folded into 84c2a5dc (todayWindow removed; the unit case asserts dayWindow of today's date; 6/6 green)
+  R3-F1 — folded into bea15c5b (document only: Prisma's distinct runs in memory)
+  R3-F2 — folded into d9730e58 (conventions §9: "reads closures.summary")
+  R3-F3 — folded into bea15c5b (glance's at is required; the test passes NOW; green)
+Finding 193: recorded, docs/architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md (Open, index line added)
+Ran (free memory 5,060,264 KB before the first test run; 5,296,216 KB before test:api; 5,296,912 KB before test:unit):
+  lint exit 0 · typecheck exit 0
+  test:unit 27/271 + 75/902 + 157/1075 passed
+  test:api 114 files, 1320 tests passed
+  format:check "All matched files use Prettier code style!"
+  check:links "3118 links in 210 documents and 2332 source files all resolve."
+  check:conflicts "No conflict markers found."
+CI on the head: build, check:classes, check:conflicts, check:links, format:check, lint, typecheck, test:unit, test:api (6m37s), test:component (6m55s) all pass; CodeRabbit skipping
+Decisions taken on my own:
+  FR-D1 finance.md's lines folded into the occupancy commit, which rewrote the file whole, not into 71a18c1b
+  FR-D2 the overview's consequence folded into the owner's-overview commit (no overview exists yet at 71a18c1b)
+  FR-D3 R2-F3 fixed by removing todayWindow, not by using it in income
+  FR-D4 "counts" and .env.example folded into the commits that made the old lines false; both lines were written on main
+  FR-D5 R3-F1 fixed in the document, not by enabling nativeDistinct
+  FR-D6 lint and typecheck run once on the whole tree before the fixups, then again on the final head
+  The adjacent-line rebase conflicts (contract ×2, payments.md ×3) were resolved by script. range-diff shows only the intended commits changed.
+Refused commands: none
+Backup branches: backup/backend-final-pre-review-fix (made this round, at c41a5397)
+```
+
+Finding 193 is waiting on the owner's decision: whether finance's uncollected count should leave out visits that already have a customer. The full record is in the new section at the end of `C:\dev\masaha\workspace\WORKER_B\BACKEND_FINAL\4_REPORT_LEAD.md`, with the scripts and outputs in `C:\dev\masaha\workspace\WORKER_B\BACKEND_FINAL\scripts\fix-round\`.

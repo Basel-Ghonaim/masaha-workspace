@@ -1,0 +1,14 @@
+feat(data-reports): filter by who handles them
+
+The API filters the admin's reports by who handles them since #131
+(finding 167), but the screen offered no such filter, and the admin's
+sheet was titled by the field alone, though it serves every space
+(G28.1, G28.4). D6.9, superseding data-reports' DI-39 by the owner's
+mission:
+
+- «يعالجه»'s chips «الكل · الإدارة · المالك», `?handledBy=admin|owner`
+  in the address, sent as ADMIN or OWNER; under the space and the
+  field from 768 px, in the sheet below it; counted, cleared and shown
+  as a removable tag with them;
+- the sheet's title «{space} · {field}», the space's name marked with
+  its language.

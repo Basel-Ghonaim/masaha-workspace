@@ -1,0 +1,48 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/spaces/photos/reclaim.api.test.ts (2 tests | 1 failed) 2216ms
+   ❯ the reclamation of files no photo holds (2)
+     × removes at most 200 files a run, the rest left to the next 1020ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  16:11:24
+   Duration  16.74s (transform 53%, tests 23%, import 21%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/spaces/photos/reclaim.api.test.ts > the reclamation of files no photo holds > removes at most 200 files a run, the rest left to the next
+AssertionError: expected { removed: 202, kept: +0 } to deeply equal { removed: 200, kept: 2 }
+
+- Expected
++ Received
+
+  {
+-   "kept": 2,
+-   "removed": 200,
++   "kept": 0,
++   "removed": 202,
+  }
+
+ ❯ src/modules/spaces/photos/reclaim.api.test.ts:99:47
+     97|     );
+     98|
+     99|     expect(await reclaimAt(gaza('03:30:00'))).toEqual({ removed: 200, …
+       |                                               ^
+    100|     expect(await store.files()).toHaveLength(2);
+    101|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

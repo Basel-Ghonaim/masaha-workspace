@@ -1,0 +1,83 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/platform-settings/components/PlatformContact
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/platform-settings/components/PlatformContact.component.test.tsx (3 tests | 2 failed) 6124ms
+   ❯ PlatformContact (3)
+     × the site’s contact comes from GET /settings/public: WhatsApp first, in a new tab, then the email; axe-clean 3066ms
+     × with only the email set, offers the email alone 3013ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  15:47:45
+   Duration  16.37s (tests 38%, import 21%, transform 21%, environment 16%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/platform-settings/components/PlatformContact.component.test.tsx > PlatformContact > the site’s contact comes from GET /settings/public: WhatsApp first, in a new tab, then the email; axe-clean
+TestingLibraryElementError: Unable to find role="link"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<p>[39m
+      [0mلا توجد وسيلة[0m
+    [36m</p>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<p>[39m
+      [0mلا توجد وسيلة[0m
+    [36m</p>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/platform-settings/components/PlatformContact.component.test.tsx:36:44
+     34|     // Nothing while it is read (DI31): not even the caller's line.
+     35|     expect(screen.queryByText('لا توجد وسيلة')).not.toBeInTheDocument(…
+     36|     const [whatsapp, email] = await screen.findAllByRole('link');
+       |                                            ^
+     37|     expect(requests[0]?.url).toBe('/settings/public');
+     38|     expect(whatsapp).toHaveAccessibleName('واتساب +970599000099');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/platform-settings/components/PlatformContact.component.test.tsx > PlatformContact > with only the email set, offers the email alone
+TestingLibraryElementError: Unable to find role="link" and name "بريد team@example.com"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/platform-settings/components/PlatformContact.component.test.tsx:73:32
+     71|       <PlatformContact layout="column" />,
+     72|     );
+     73|     const email = await screen.findByRole('link', { name: 'بريد team@e…
+       |                                ^
+     74|     expect(email).toHaveAttribute('href', 'mailto:team@example.com');
+     75|     expect(screen.getAllByRole('link')).toHaveLength(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/platform-settings/components/PlatformContact

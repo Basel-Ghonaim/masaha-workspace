@@ -1,0 +1,10 @@
+feat(desk): say a usage subscriber's due at out
+
+A usage-based subscriber's check-out was one tap whose toast said what
+the subscription owed, with no way to take it there and then (G13.4).
+No quote exists for an open check-in and the web never prices, so the
+due is said after the close, from the server's answer (DI10): a dialog
+with today's stay and what was paid, what the subscription still owes,
+and the money block over it, «استلام {amount}» recording it on the
+subscription with its own key, «لاحقًا» leaving it owed. A fixed-price
+subscriber stays one tap with its toast.

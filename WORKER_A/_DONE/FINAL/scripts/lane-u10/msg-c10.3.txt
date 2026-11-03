@@ -1,0 +1,7 @@
+refactor(web): remove the placeholder page
+
+Every navigation item of both branches now has its screen, so no
+route reaches the placeholder (EC22). The routes take each item's
+screen from their map, and an item without one fails the routes'
+build, which the routes test turns red. The architecture document
+and a unit test's sample path no longer name the page (D10.4).

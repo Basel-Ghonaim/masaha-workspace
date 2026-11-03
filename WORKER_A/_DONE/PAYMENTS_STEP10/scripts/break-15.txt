@@ -1,0 +1,47 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx (6 tests | 1 failed | 5 skipped) 3143ms
+   ❯ useLedger (6)
+     × is empty today with no filter, and no match with «Clear filters» under one 3141ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 skipped (6)
+   Start at  14:38:11
+   Duration  13.06s (import 43%, tests 25%, transform 17%, environment 12%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/hooks/ledger/useLedger.component.test.tsx > useLedger > is empty today with no filter, and no match with «Clear filters» under one
+AssertionError: expected 'emptyToday' to be 'noMatch' // Object.is equality
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div />[39m
+    [36m<div />[39m
+  [36m</body>[39m
+[36m</html>[39m...
+
+Expected: "noMatch"
+Received: "emptyToday"
+
+ ❯ src/features/payments/hooks/ledger/useLedger.component.test.tsx:120:45
+    118|     const filtered = renderLedger(() => paymentsPage([], paymentTotals…
+    119|     await waitFor(() => {
+    120|       expect(filtered.result.current.state).toBe('noMatch');
+       |                                             ^
+    121|     });
+    122|     expect(filtered.result.current.empty.title).toBe('No payments matc…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

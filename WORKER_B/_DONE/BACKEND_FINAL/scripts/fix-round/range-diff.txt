@@ -1,0 +1,335 @@
+ 1:  23f50a4f =  1:  23f50a4f test(platform-settings): pin a stored contact form
+ 2:  62d76b81 !  2:  5a9a594a fix(seed): store the contact in its one form
+    @@ Commit message
+         Finding 153 says "a change of form the admin did not ask for" and names
+         the foreign-number case (#130's review, F2); it is resolved.
+     
+    + ## apps/api/.env.example ##
+    +@@ apps/api/.env.example: SEED_ADMIN_PASSWORD=
+    + SEED_ADMIN_NAME=
+    + 
+    + # Optional, for npm run db:seed: the platform's public contact. When empty, the admin sets them
+    +-# later in the platform settings. WhatsApp in E.164, for example +970599000000.
+    ++# later in the platform settings. WhatsApp: a Palestinian or Israeli number, typed in any form the
+    ++# phone rule reads (059…, 00970…), stored in its one E.164 form, for example +970599000000.
+    + SEED_CONTACT_EMAIL=
+    + SEED_CONTACT_WHATSAPP=
+    + 
+    +
+      ## apps/api/src/db/seed/run.ts ##
+     @@
+      import { fileURLToPath } from 'node:url';
+ 3:  66c7b80a =  3:  6174433b docs: resolve finding 97
+ 4:  5f867d86 !  4:  113c87e3 feat(payments): total a space's balances
+    @@ docs/features/payments.md
+      ## Who uses it
+      
+      - **The space's owner**, whose ledger reads every payment, and **reception**, whose «دفعاتي اليوم» reads its own of today, through its own route. On the dashboard, the owner reads «الدفعات» (`/dashboard/spaces/:spaceId/payments`) and reception «دفعاتي اليوم» (`…/my-payments`, 2026-10-27, #127).
+    --- **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count. On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    -+- **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count.
+    -+- **Finance** (the `finance` module) reads the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)). On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    + - **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count. On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    ++- **Finance** (the `finance` module) reads the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)).
+      
+      ## Responsibility boundary
+      
+ 5:  061f7f16 =  5:  2714af6f fix(sessions): read a family's latest activity
+ 6:  cd27ab2b =  6:  b8958212 feat(users): read and edit one's own account
+ 7:  40ef7b9e =  7:  f304280d feat(data-reports): filter by who handles them
+ 8:  6d563549 !  8:  f565fcaa feat(visits): list a space's visits by day
+    @@ apps/api/src/modules/visits/visits.service.ts: function ruleOf(settings: SpaceSe
+      const sameRates = (a: Rates, b: Rates) =>
+        a.hourAgorot === b.hourAgorot && a.dayAgorot === b.dayAgorot;
+     @@ apps/api/src/modules/visits/visits.service.ts: export function createVisitsService({
+    -      * price, and the rates a visit would copy now with no shift and in each shift; the student
+    -      * rates only where the space allows them and they change one (DI-41).
+    -      */
+    +       };
+    +     },
+    + 
+     +    /**
+     +     * A page of the space's visits checked in on a range of Gaza days (today without one), open and
+     +     * closed, the latest checked in first, then by id; and how many. The owner (`payments.read`,
+    @@ apps/api/src/modules/visits/visits.service.ts: export function createVisitsServi
+     +      return { rows: rows.map(toDeskVisit), total };
+     +    },
+     +
+    -     async terms(actor: Actor, space: LoadedSpace): Promise<VisitTerms> {
+    -       const [settings, prices, shifts] = await Promise.all([
+    -         spaceSettings.read(space.id),
+    +     /**
+    +      * The desk's terms for the caller: the rounding and the cap in force, whether they may type a
+    +      * price, and the rates a visit would copy now with no shift and in each shift; the student
+     
+      ## apps/api/src/modules/visits/visitsList.api.test.ts (new) ##
+     @@
+ 9:  a05891e4 !  9:  84c2a5dc feat(finance): read a space's income
+    @@ apps/api/src/modules/finance/windows.ts (new)
+     +  return { from: gazaInstant(date, 0), to: gazaInstant(addDays(date, 1), 0) };
+     +}
+     +
+    -+/** Today in Gaza at `now`. */
+    -+export function todayWindow(now: Date): Window {
+    -+  return dayWindow(gazaClockOf(now).date);
+    -+}
+    -+
+     +/** A Gaza calendar month, `YYYY-MM`, from its first midnight to the next month's. */
+     +export function monthWindow(month: string): Window {
+     +  return { from: gazaInstant(`${month}-01`, 0), to: gazaInstant(`${addMonths(month, 1)}-01`, 0) };
+    @@ apps/api/src/modules/finance/windows.unit.test.ts (new)
+     +  monthError,
+     +  monthsEnding,
+     +  monthWindow,
+    -+  todayWindow,
+     +} from './windows.ts';
+     +
+     +// Finance's windows, each a pair of instants on Gaza's calendar (S1). Gaza is UTC+3 until the
+    @@ apps/api/src/modules/finance/windows.unit.test.ts (new)
+     +    expect(monthError('2026-11', new Date('2026-11-01T00:30:00+02:00'))).toBeNull();
+     +  });
+     +
+    -+  it('today and one day, from Gaza midnight to the next', () => {
+    -+    expect(todayWindow(NOW)).toEqual({
+    ++  it('one day, from Gaza midnight to the next', () => {
+    ++    expect(dayWindow('2026-10-29')).toEqual({
+     +      from: new Date('2026-10-29T00:00:00+02:00'),
+     +      to: new Date('2026-10-30T00:00:00+02:00'),
+     +    });
+    @@ docs/features/payments.md
+      ## Who uses it
+      
+      - **The space's owner**, whose ledger reads every payment, and **reception**, whose «دفعاتي اليوم» reads its own of today, through its own route. On the dashboard, the owner reads «الدفعات» (`/dashboard/spaces/:spaceId/payments`) and reception «دفعاتي اليوم» (`…/my-payments`, 2026-10-27, #127).
+    - - **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count.
+    --- **Finance** (the `finance` module) reads the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)). On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    -+- **Finance** ([finance](finance.md)) reads the income and the collections, the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)). On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    + - **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count. On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    +-- **Finance** (the `finance` module) reads the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)).
+    ++- **Finance** ([finance](finance.md)) reads the income and the collections, the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)).
+      
+      ## Responsibility boundary
+      
+10:  71a18c1b ! 10:  fc960282 feat(finance): read who owes and who paid
+    @@ apps/api/src/modules/finance/debts.api.test.ts (new)
+     +    expect((uncollected.body as { meta: { totalRecords: number } }).meta.totalRecords).toBe(3);
+     +  });
+     +
+    ++  it("an auto-closed visit left to a customer is in that customer's debt and in the uncollected count too, as the desk's list keeps it: the two are never added", async () => {
+    ++    const debtor = await createCustomer(spaceId, { name: 'Debtor', phone: PHONE });
+    ++    // «تسجيل دينًا» sets the visit's customer and leaves it closed by the auto check-out.
+    ++    const left = await closedVisit(debtor.id, 4_000, { auto: true });
+    ++
+    ++    const response = await debts();
+    ++
+    ++    expect(rowsOf(response)).toEqual([
+    ++      {
+    ++        customer: { id: debtor.id, name: 'Debtor', phone: PHONE, archived: false },
+    ++        amountAgorot: 4_000,
+    ++        oldestItem: { kind: 'VISIT', id: left.id, name: 'Omar', since: '2026-10-20' },
+    ++      },
+    ++    ]);
+    ++    expect(metaOf(response).totals).toMatchObject({
+    ++      owed: { agorot: 4_000, customers: 1 },
+    ++      uncollected: { visits: 1, owedAgorot: 4_000, unpriced: 0 },
+    ++    });
+    ++    const uncollected = await request(app)
+    ++      .get(`/api/v1/manage/spaces/${String(spaceId)}/uncollected-visits`)
+    ++      .set('Authorization', owner.authorization);
+    ++    expect((uncollected.body as { meta: { totalRecords: number } }).meta.totalRecords).toBe(1);
+    ++  });
+    ++
+     +  it('the totals agree with every page’s rows, and the reminder template is the space’s, null by default', async () => {
+     +    await seedBalances();
+     +
+    @@ docs/api/api-contract.md: The owner's finance (`finance`, [finance.md](../featur
+      
+      - **The month** (`financeMonthQuery`, `@masaha/shared/finance`): `month`, `YYYY-MM`, a Gaza calendar month (`invalid_format` otherwise), the current one when absent; the current Gaza month and the 23 before it (`FINANCE_MONTHS_BACK`), `out_of_range` on `month` otherwise, never a month ahead. There is no free range of dates (the owner's decision 3).
+      - **Income is cash collected:** the payments not voided, each counted on the Gaza day it was received, a window running from a Gaza midnight to the next, its end left out. A written-off visit's payments count as received; what it forgave counts nowhere, and a debt is never income (the owner's decision 2).
+    -+- **Who owes** is the ledger's one balance rule ([data-model › Front desk and money](../architecture/data-model.md#front-desk-and-money), *Customer debt*), as the customers list's: a written-off visit, a voided payment and an unpriced visit owe nothing; credit on one subscription never offsets another item's debt, so one customer may both owe and be in credit. **An archived customer's debt is kept,** marked `archived` (it is still owed). A walk-in's uncollected visit is no customer's debt: it is counted apart (`uncollected`, the desk's list, [Front desk (managed)](#front-desk-managed)).
+    ++- **Who owes** is the ledger's one balance rule ([data-model › Front desk and money](../architecture/data-model.md#front-desk-and-money), *Customer debt*), as the customers list's: a written-off visit, a voided payment and an unpriced visit owe nothing; credit on one subscription never offsets another item's debt, so one customer may both owe and be in credit. **An archived customer's debt is kept,** marked `archived` (it is still owed). The uncollected visits are counted beside them (`uncollected`), the desk's list ([Front desk (managed)](#front-desk-managed)): a walk-in's uncollected visit is no customer's debt, but an auto-closed visit left to a customer stays on that list, so its rest is also in that customer's debt. The two figures may hold the same agorot and are never added ([finding 193](../architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md)).
+      
+      ```ts
+      IncomeSplit = { subscriptionsAgorot: number, visitsAgorot: number, totalAgorot: number }
+    @@ docs/api/api-contract.md: IncomeReport = {
+      
+      What a space tells its users changes: a closure, an outage, an offer, an event or general news ([data-model › Operations](../architecture/data-model.md#operations)). Its staff post and change them (🧾); a closure running now closes the space's live status ([data-model › Live status](../architecture/data-model.md#derived-values-computed-not-stored)). The endpoints sit under `/manage/spaces/:spaceId` and answer as *Managed spaces* says: without an active `OWNER` or `RECEPTION` link at the live space, `not_found` (404). Each write is refused with `forbidden` (403) before its body is read for whoever may not (`announcements.manage`), and again for an owner or reception whose link ended meanwhile. Built 2026-10-24, #112.
+     
+    + ## docs/architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md (new) ##
+    +@@
+    ++# 193. A visit left to a customer is both a debt and uncollected
+    ++
+    ++**Status:** Open · **Date:** 2026-10-29
+    ++
+    ++**Evidence:** Finance's debts (`GET …/finance/debts`, #131) answer in one `meta.totals` what is owed (`owed`, the ledger's balance rule, `balancesOf`) and the uncollected visits (`uncollected`, the desk's list, `payments`' one rule `uncollectedOf`). The desk's list keeps every visit closed by the auto check-out that still owes, with or without a customer; «تسجيل دينًا» sets the visit's customer and leaves it closed by the auto check-out, so it stays on the list (`desk/debt.api.test.ts`), and its rest is also in that customer's debt. Such a visit's agorot are in both `owed.agorot` and `uncollected.owedAgorot`, and its customer in `owed.customers`: a screen adding the two would show the owner twice what is owed. As built, the contract (*Finance*) and [finance](../../features/finance.md) say the two figures overlap and are never added, and `finance/debts.api.test.ts` pins it (the review of #131, R2-F1). The owner's Q2 speaks of "a walk-in's uncollected visit" only, so it does not say which was meant.
+    ++
+    ++The choice is the owner's: (a) keep it as built, the uncollected count equal to the desk's list; or (b) finance's `uncollected` leaves out the visits that have a customer, so the two figures are disjoint and may be added. (b) cannot change the shared `uncollectedTotals`, since AC-O2 asks that the overview's uncollected count equal the desk's list: finance would read a narrower count of its own, a second rule beside the desk's.
+    ++
+    ++**Resolves when:** the owner chooses: (a) and this finding is *Accepted*; or (b), and finance's `uncollected` leaves out a visit with a customer, its test and documents changed with it.
+    +
+    + ## docs/architecture/findings/README.md ##
+    +@@ docs/architecture/findings/README.md: Each entry: number, title, status (`Open` / `Resolved` / `Accepted`), date, evid
+    + - [180. A site page's chunk reaches the table's and the calendar's libraries](180-a-site-pages-chunk-reaches-the-tables-and-the-calendars-libraries.md)
+    + - [184. A report's «تعديل الحقل» may not scroll to its section](184-a-reports-edit-the-field-link-may-not-scroll-to-its-section.md)
+    + - [187. A favourite just removed cannot be saved again for an undo](187-a-favourite-just-removed-cannot-be-saved-again-for-an-undo.md)
+    ++- [193. A visit left to a customer is both a debt and uncollected](193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md)
+    + 
+    + ## Accepted
+    + 
+    +
+      ## docs/backend/conventions.md ##
+     @@ docs/backend/conventions.md: The [API contract](../api/api-contract.md) owns the paths. The composition root
+      | `occupancy` | L4 | `space_occupancy` | public, manage | The space's state now (§9) |
+    @@ docs/features/payments.md
+     @@
+      
+      - **The space's owner**, whose ledger reads every payment, and **reception**, whose «دفعاتي اليوم» reads its own of today, through its own route. On the dashboard, the owner reads «الدفعات» (`/dashboard/spaces/:spaceId/payments`) and reception «دفعاتي اليوم» (`…/my-payments`, 2026-10-27, #127).
+    - - **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count.
+    --- **Finance** ([finance](finance.md)) reads the income and the collections, the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)). On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    -+- **Finance** ([finance](finance.md)) reads the income and the collections, for its income; the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)). On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    + - **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count. On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    +-- **Finance** ([finance](finance.md)) reads the income and the collections, the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)).
+    ++- **Finance** ([finance](finance.md)) reads the income and the collections, for its income; the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)).
+      
+      ## Responsibility boundary
+      
+    @@ packages/shared/src/finance/responses.ts: export interface IncomeReport {
+     +
+     +/**
+     + * The debts list's `meta`: its pagination, the space's totals — what is owed and in credit, each
+    -+ * with how many customers, and the uncollected visits apart — and its reminder template, `null`
+    -+ * for the catalogue's default.
+    ++ * with how many customers, and the uncollected visits, the desk's list — and its reminder template,
+    ++ * `null` for the catalogue's default. An auto-closed visit left to a customer is in both `owed` and
+    ++ * `uncollected`: the two are never added.
+     + */
+     +export type DebtsMeta = PaginationMeta & {
+     +  totals: {
+11:  53c6a7e3 ! 11:  3a4ba5e8 feat(finance): read a space's occupancy
+    @@ docs/api/api-contract.md
+     @@ docs/api/api-contract.md: The owner's finance (`finance`, [finance.md](../features/finance.md)): read mode
+      - **The month** (`financeMonthQuery`, `@masaha/shared/finance`): `month`, `YYYY-MM`, a Gaza calendar month (`invalid_format` otherwise), the current one when absent; the current Gaza month and the 23 before it (`FINANCE_MONTHS_BACK`), `out_of_range` on `month` otherwise, never a month ahead. There is no free range of dates (the owner's decision 3).
+      - **Income is cash collected:** the payments not voided, each counted on the Gaza day it was received, a window running from a Gaza midnight to the next, its end left out. A written-off visit's payments count as received; what it forgave counts nowhere, and a debt is never income (the owner's decision 2).
+    - - **Who owes** is the ledger's one balance rule ([data-model › Front desk and money](../architecture/data-model.md#front-desk-and-money), *Customer debt*), as the customers list's: a written-off visit, a voided payment and an unpriced visit owe nothing; credit on one subscription never offsets another item's debt, so one customer may both owe and be in credit. **An archived customer's debt is kept,** marked `archived` (it is still owed). A walk-in's uncollected visit is no customer's debt: it is counted apart (`uncollected`, the desk's list, [Front desk (managed)](#front-desk-managed)).
+    + - **Who owes** is the ledger's one balance rule ([data-model › Front desk and money](../architecture/data-model.md#front-desk-and-money), *Customer debt*), as the customers list's: a written-off visit, a voided payment and an unpriced visit owe nothing; credit on one subscription never offsets another item's debt, so one customer may both owe and be in credit. **An archived customer's debt is kept,** marked `archived` (it is still owed). The uncollected visits are counted beside them (`uncollected`), the desk's list ([Front desk (managed)](#front-desk-managed)): a walk-in's uncollected visit is no customer's debt, but an auto-closed visit left to a customer stays on that list, so its rest is also in that customer's debt. The two figures may hold the same agorot and are never added ([finding 193](../architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md)).
+     +- **Occupancy statistics** come from closed stays only — the visits and the subscription check-ins, those closed by the auto check-out included, open ones left out (the owner's decision 7) — each counted on the Gaza day of its check-in ([data-model › Front desk and money](../architecture/data-model.md#front-desk-and-money), *Occupancy statistics*).
+      
+      ```ts
+    @@ docs/features/finance.md
+     -- Answers a month's income, the payments not voided, by the kind of item paid: the month (the current Gaza month by default, at most 23 back), the month before it, today and all time with its first day; the last 12 months and the visits' last 30 days, by Gaza day; and each staff member's collections in the month, by method.
+     -- Answers who owes and who is in credit, by the ledger's one balance rule, the largest first, paged, with their phones, an archived customer kept and marked, and the item still owing made first; the space's totals, the uncollected visits apart, and its reminder template.
+     +- Answers a month's income, the payments not voided, by the kind of item paid: the month (the current Gaza month by default, at most 23 back), the month before, today and all time; the last 12 months and the visits' last 30 days; each staff member's collections in the month, by method.
+    -+- Answers who owes and who is in credit, the largest first, paged, with their phones, an archived customer kept and marked, the item still owing made first; the space's totals, the uncollected visits apart, and its reminder template.
+    ++- Answers who owes and who is in credit, the largest first, paged, with their phones, an archived customer kept and marked, the item still owing made first; the space's totals and the uncollected visits, the desk's list — an auto-closed visit left to a customer is in both, so the two are never added ([finding 193](../architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md)) — and its reminder template.
+      - Answers who paid in a month, each customer with what they paid then, the latest first, paged.
+     +- Answers the occupancy statistics from closed stays: visits and members per day over the 14 days ending today; the average present per Gaza weekday and hour over the 28 days before today; a month's average stay, peak hour and average daily attendance.
+      
+    @@ docs/features/finance.md
+     +**The month.** Absent, the current Gaza month at the service's clock; one after it, or before the 23 months before it, is `validation` (422) `out_of_range` on `month`, before anything is read. The month asked moves the month's figures only: the 12 months, the 30, 14 and 28 days and today always end with now.
+      
+     -**Income.** One call of `payments.incomeIn` with every window at once — the month, the month before, today, all time (both ends open), the 12 months and the 30 days, 45 in all — `firstReceivedAt` and `collectionsIn` of the month, in one snapshot; then the names of who recorded them, after it (a name is no figure). Each window runs from a Gaza midnight to the next one's, from `gazaInstant`, so a payment at 23:30 on a month's last day counts in that month and that day, and no zone is read in the database.
+    -+**Income.** In one snapshot: one `payments.incomeIn` over 45 windows at once (the month, the month before, today, all time with both ends open, the 12 months, the 30 days), `firstReceivedAt`, and the month's `collectionsIn`; the names after it (a name is no figure). Each window runs from a Gaza midnight to the next (`gazaInstant`), so a payment at 23:30 on a month's last day counts in that month and that day.
+    ++**Income.** In one snapshot: one `payments.incomeIn` over 46 windows at once (the month, the month before, today, all time with both ends open, the 12 months, the 30 days), `firstReceivedAt`, and the month's `collectionsIn`; the names after it (a name is no figure). Each window runs from a Gaza midnight to the next (`gazaInstant`), so a payment at 23:30 on a month's last day counts in that month and that day.
+      
+     -**Who owes.** In one snapshot: `payments.balancesPage` (the page, by `state`), `balanceTotals` and `uncollectedTotals`, and the space's settings; then, in the same snapshot, the page's customers' contacts (`archived` from `archivedAt`), its oldest subscriptions' names and its oldest visits as the desk sees them — a visit named by its visitor, else its customer. The item's day is the Gaza day it was made. Every amount comes from the ledger; `finance` adds none.
+     +**Who owes.** In one snapshot: `payments.balancesPage` (by `state`), `balanceTotals`, `uncollectedTotals` and the space's settings; then the page's contacts (`archived`), its oldest subscriptions' names and its oldest visits as the desk sees them (a visitor's name, else the customer's). The item's day is the Gaza day it was made. Every amount is the ledger's.
+12:  447be920 ! 12:  bea15c5b feat(api): count what the owner's overview shows
+    @@ apps/api/src/modules/occupancy/glance.api.test.ts (new)
+     +    const { id: otherSpaceId } = await createSpace('other-space');
+     +    await createVisit(otherSpaceId);
+     +
+    -+    const glance = await occupancy.glance(await loaded());
+    ++    const glance = await occupancy.glance(await loaded(), NOW);
+     +    expect(glance).toEqual({
+     +      capacity: 3,
+     +      status: 'FULL',
+    @@ apps/api/src/modules/occupancy/occupancy.service.ts: export function createOccup
+     +     * by the same rule as `now`, and how many are present, visits and members apart; no one's name.
+     +     * Each source counted, read in parallel with no lock.
+     +     */
+    -+    async glance(space: LoadedSpace, at: Date = clock()): Promise<Glance> {
+    ++    async glance(space: LoadedSpace, at: Date): Promise<Glance> {
+     +      const [state, counts, closed, week] = await Promise.all([
+     +        occupancy.stateOf(space.id),
+     +        present.countsIn(space.id),
+    @@ docs/features/announcements.md
+      
+      **An extended closure.** Once its subscriptions were extended ([`subscriptions`](subscriptions.md)), an edit giving it a new type or start, a later end or no end, and its delete, are refused `CLOSURE_EXTENDED`, writing nothing; its text and an earlier end, end now included, change. The database's trigger refuses them ([data model › Constraints](../architecture/data-model.md#constraints-worth-stating)); this module asks nothing of the extensions.
+      
+    -+**The running types** (`runningTypes`, for the owner's overview): the types of the space's announcements running at the instant asked, not deleted, each once — one `DISTINCT` query on the list's own `RUNNING` condition — in `ANNOUNCEMENT_TYPES`' order (2026-10-29, #131).
+    ++**The running types** (`runningTypes`, for the owner's overview): the types of the space's announcements running at the instant asked, not deleted, each once — one query of the running ones on the list's own `RUNNING` condition, each type kept once (Prisma's `distinct`, applied in memory, not in SQL) — in `ANNOUNCEMENT_TYPES`' order (2026-10-29, #131).
+     +
+      ## Decisions
+      
+13:  a12f928e ! 13:  d9730e58 feat(overview): read the owner's overview
+    @@ docs/api/api-contract.md: AuditMeta = §4's meta & {
+      
+      The timed jobs ([ADR 0014](../architecture/decisions/0014-deployment.md); [conventions §12](../backend/conventions.md#12-environments)): online, an external cron calls this endpoint every 5 minutes; locally, the server runs the same jobs from a timer. It carries no access token, so the general limit counts it by address ([security › Rate limits](../backend/security.md#rate-limits-fixed-window)). Built 2026-10-20, #97.
+     
+    + ## docs/architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md ##
+    +@@
+    + 
+    + **Evidence:** Finance's debts (`GET …/finance/debts`, #131) answer in one `meta.totals` what is owed (`owed`, the ledger's balance rule, `balancesOf`) and the uncollected visits (`uncollected`, the desk's list, `payments`' one rule `uncollectedOf`). The desk's list keeps every visit closed by the auto check-out that still owes, with or without a customer; «تسجيل دينًا» sets the visit's customer and leaves it closed by the auto check-out, so it stays on the list (`desk/debt.api.test.ts`), and its rest is also in that customer's debt. Such a visit's agorot are in both `owed.agorot` and `uncollected.owedAgorot`, and its customer in `owed.customers`: a screen adding the two would show the owner twice what is owed. As built, the contract (*Finance*) and [finance](../../features/finance.md) say the two figures overlap and are never added, and `finance/debts.api.test.ts` pins it (the review of #131, R2-F1). The owner's Q2 speaks of "a walk-in's uncollected visit" only, so it does not say which was meant.
+    + 
+    ++The owner's overview reads the same two figures (`GET …/overview`, #131): `uncollectedVisits` and `customersOwing` both count such a visit, and [overview](../../features/overview.md) says so. Each is a count of its own list, so neither is wrong; they are never added either.
+    ++
+    + The choice is the owner's: (a) keep it as built, the uncollected count equal to the desk's list; or (b) finance's `uncollected` leaves out the visits that have a customer, so the two figures are disjoint and may be added. (b) cannot change the shared `uncollectedTotals`, since AC-O2 asks that the overview's uncollected count equal the desk's list: finance would read a narrower count of its own, a second rule beside the desk's.
+    + 
+    + **Resolves when:** the owner chooses: (a) and this finding is *Accepted*; or (b), and finance's `uncollected` leaves out a visit with a customer, its test and documents changed with it.
+    +
+      ## docs/backend/conventions.md ##
+     @@ docs/backend/conventions.md: The [API contract](../api/api-contract.md) owns the paths. The composition root
+      | `desk` | L5 | — | manage | The front desk's orchestrations and the customers list and file (§9) |
+    @@ docs/backend/conventions.md: The modules that apply them read them: visits and s
+      
+      ### The front desk: `desk`
+      `desk` orchestrates the operations that span the desk's modules, each in one transaction:
+    +@@ docs/backend/conventions.md: A screen that shows or filters by values from several modules is composed by a m
+    +   - `customers` then applies the search and the pagination to those ids (§5), each list one array parameter read as a set, so no list meets PostgreSQL's bound on parameters. 2026-10-21, #102.
+    +   - The file adds each subscription's progress, the payments, the balance and the attendance.
+    + - **A composed read whose sums and lists must agree** (a subscription's statement, a customer's file) **reads one snapshot**: one read-only `REPEATABLE READ` transaction (`readSnapshot`, `db/transaction.ts`), whose `tx` reaches every read. No lock: it waits on no write. 2026-10-25, #118 ([finding 124](../architecture/findings/124-a-statements-sums-and-its-payments-come-from-different-snapshots.md)).
+    +-- **The managed announcements list and its summary** → `subscriptions` (`closures`), the lowest module above `announcements` that owns a closure's extension: `announcements` pages one state and counts them, and `subscriptions` adds each closure's extension, how many it moved and who applied it, and counts the started closures with none. The writes stay `announcements`'. The owner's overview will read `closures.summary`. 2026-10-24, #112.
+    ++- **The managed announcements list and its summary** → `subscriptions` (`closures`), the lowest module above `announcements` that owns a closure's extension: `announcements` pages one state and counts them, and `subscriptions` adds each closure's extension, how many it moved and who applied it, and counts the started closures with none. The writes stay `announcements`'. The owner's overview reads `closures.summary` (2026-10-29, #131). 2026-10-24, #112.
+    + - **The admin's spaces list** (owners and verified status) and **the space owners list** → `space-links` ([how the list is composed](../features/space-links.md#how-it-composes-the-platform)).
+    + - **"Verified" on the write side** ([security › Authorization](security.md#authorization)).
+    +   - `spaces` never imports `space-links` for it. The space middleware resolves the links on the space routes (§8), and `can()` decides.
+     
+      ## docs/backend/security.md ##
+     @@ docs/backend/security.md: The model (roles, space scope, what each role may do) is owned by [ADR 0002](../
+    @@ docs/features/overview.md (new)
+     +
+     +## Behaviour and flows
+     +
+    -+**The owner's overview** (`ownerOverview.ts`). One instant (`at`, the one clock's) for every figure; one `Promise.all` of nine reads, each its owner's: `listing.freshnessOf`, `dataReports.openCountOf`, `payments.uncollectedTotals`, `visits.unpricedCount`, `closures.summary`, `payments.balanceTotals`, `occupancy.glance`, `subscriptions.endingSoon` (five named) and `announcements.runningTypes`. The answer is assembled field by field: of the balances only how many customers owe, an archived one kept; of the uncollected visits only how many; the capacity is set when it is not `null`. Read with no lock and no snapshot: each count equals its list read alone, to within a write between two of the reads.
+    ++**The owner's overview** (`ownerOverview.ts`). One instant (`at`, the one clock's) for every figure; one `Promise.all` of nine reads, each its owner's: `listing.freshnessOf`, `dataReports.openCountOf`, `payments.uncollectedTotals`, `visits.unpricedCount`, `closures.summary`, `payments.balanceTotals`, `occupancy.glance`, `subscriptions.endingSoon` (five named) and `announcements.runningTypes`. The answer is assembled field by field: of the balances only how many customers owe, an archived one kept; of the uncollected visits only how many; the capacity is set when it is not `null`. An auto-closed visit left to a customer is counted in both: an uncollected visit, and its customer among those who owe, as the desk's list and the debts keep it ([finding 193](../architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md)). Read with no lock and no snapshot: each count equals its list read alone, to within a write between two of the reads.
+     +
+     +## Decisions
+     +
+    @@ docs/features/overview.md (new)
+     +
+     +- 2026-10-29, #131 — the owner's overview (`GET /manage/spaces/:spaceId/overview`), with a set-based count added in each owning module.
+     
+    + ## docs/features/payments.md ##
+    +@@
+    + ## Who uses it
+    + 
+    + - **The space's owner**, whose ledger reads every payment, and **reception**, whose «دفعاتي اليوم» reads its own of today, through its own route. On the dashboard, the owner reads «الدفعات» (`/dashboard/spaces/:spaceId/payments`) and reception «دفعاتي اليوم» (`…/my-payments`, 2026-10-27, #127).
+    +-- **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» will count. On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    ++- **The front desk** ([desk](desk.md)), for the space's owner and reception, at a visit's check-out, and for the owner's void of a payment — on the web, from «الدفعات» and from a statement ([desk](desk.md), 2026-10-27, #127); and, through its own route, the uncollected visits, which the owner's «يحتاج انتباهك» counts. On the web, the desk's screen lists the uncollected visits and records a payment on one ([desk](desk.md), 2026-10-25, #117); «استلام دفعة» records a payment on one of a customer's items, a visit or a subscription (2026-10-25, #119).
+    + - **Finance** ([finance](finance.md)) reads the income and the collections, for its income; the balances' page and totals and the uncollected visits' counts for its debts; **the owner's overview** (the `overview` module) reads how many customers owe and how many visits are uncollected, never an amount ([conventions › Composed reads](../backend/conventions.md#composed-reads)).
+    + 
+    + ## Responsibility boundary
+    +
+      ## docs/frontend/design-system/foundation.md ##
+     @@ docs/frontend/design-system/foundation.md: _Also the brief given to Claude Design._
+      
+14:  57fa7992 = 14:  6d92df4f feat(api): count what the admin's overview shows
+15:  74379567 ! 15:  0e528c5a feat(overview): read the admin's overview
+    @@ docs/features/overview.md
+      
+      ## Behaviour and flows
+      
+    - **The owner's overview** (`ownerOverview.ts`). One instant (`at`, the one clock's) for every figure; one `Promise.all` of nine reads, each its owner's: `listing.freshnessOf`, `dataReports.openCountOf`, `payments.uncollectedTotals`, `visits.unpricedCount`, `closures.summary`, `payments.balanceTotals`, `occupancy.glance`, `subscriptions.endingSoon` (five named) and `announcements.runningTypes`. The answer is assembled field by field: of the balances only how many customers owe, an archived one kept; of the uncollected visits only how many; the capacity is set when it is not `null`. Read with no lock and no snapshot: each count equals its list read alone, to within a write between two of the reads.
+    + **The owner's overview** (`ownerOverview.ts`). One instant (`at`, the one clock's) for every figure; one `Promise.all` of nine reads, each its owner's: `listing.freshnessOf`, `dataReports.openCountOf`, `payments.uncollectedTotals`, `visits.unpricedCount`, `closures.summary`, `payments.balanceTotals`, `occupancy.glance`, `subscriptions.endingSoon` (five named) and `announcements.runningTypes`. The answer is assembled field by field: of the balances only how many customers owe, an archived one kept; of the uncollected visits only how many; the capacity is set when it is not `null`. An auto-closed visit left to a customer is counted in both: an uncollected visit, and its customer among those who owe, as the desk's list and the debts keep it ([finding 193](../architecture/findings/193-a-visit-left-to-a-customer-is-both-a-debt-and-uncollected.md)). Read with no lock and no snapshot: each count equals its list read alone, to within a write between two of the reads.
+      
+     +**The admin's overview** (`adminOverview.ts`). One instant; one `Promise.all` of four reads: `adminSpaces.counts` (verified, unverified, hidden, stale or missing, each its list's total), `adminSpaces.staleEditable` (five named), `dataReports.openCounts` and `users.countCreatedSince` from `lastDaysSince(at, 30)` — the Gaza midnight 29 days before today, the audit's own rule. «بلا مالك» is the unverified count: a space is verified exactly when it has an active owner (OD2).
+     +
+16:  c41a5397 = 16:  ecda64c7 docs: record the API of v1 as built

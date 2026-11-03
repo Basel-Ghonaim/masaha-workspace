@@ -1,0 +1,1 @@
+if ((await spaceLinks.ownsASpace(holderId, tx)) || (await hasActed(holderId, tx))) {

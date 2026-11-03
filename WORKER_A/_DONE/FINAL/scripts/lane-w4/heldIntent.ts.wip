@@ -1,0 +1,97 @@
+import { onSessionEnded, onSessionEstablished } from '@shared/session';
+import { STORAGE_KEYS, storage } from '@shared/storage';
+
+/** A guest's held action, kept in the browser's storage so a reset link's new tab can run it. */
+export type HeldIntent = {
+  kind: 'favorite' | 'report';
+  spaceId: number;
+  slug: string;
+  /** The space's name as the card or the page showed it, for the favourite's toast. */
+  name: { text: string; lang?: 'en'; dir?: 'ltr' };
+  /** The page the action was pressed on, which the app returns to once it runs. */
+  path: string;
+  /** When it was held, in milliseconds since the epoch. */
+  at: number;
+};
+
+/** How long a held action waits for its sign-in: the round trip it serves, no more. */
+export const HELD_INTENT_MS = 15 * 60 * 1000;
+
+// The intent a sign-in in this browser confirmed, waiting for its feature to run it: in memory
+// only, taken once. A restore or a refresh never confirms one.
+let confirmed: HeldIntent | null = null;
+
+/** The stored intent, when it is one and within its life; anything else is dropped. */
+function storedIntent(now: number): HeldIntent | null {
+  const raw = storage.read(STORAGE_KEYS.heldIntent);
+  if (raw === null) return null;
+  let intent: HeldIntent | null = null;
+  try {
+    const value: unknown = JSON.parse(raw);
+    intent = isIntent(value) ? value : null;
+  } catch {
+    intent = null;
+  }
+  if (intent === null || now - intent.at > HELD_INTENT_MS || intent.at > now) {
+    storage.remove(STORAGE_KEYS.heldIntent);
+    return null;
+  }
+  return intent;
+}
+
+function isIntent(value: unknown): value is HeldIntent {
+  if (typeof value !== 'object' || value === null) return false;
+  const intent = value as Record<string, unknown>;
+  const name = intent.name as Record<string, unknown> | null | undefined;
+  return (
+    (intent.kind === 'favorite' || intent.kind === 'report') &&
+    typeof intent.spaceId === 'number' &&
+    typeof intent.slug === 'string' &&
+    typeof intent.path === 'string' &&
+    intent.path.startsWith('/') &&
+    !intent.path.startsWith('//') &&
+    typeof intent.at === 'number' &&
+    typeof name === 'object' &&
+    name !== null &&
+    typeof name.text === 'string'
+  );
+}
+
+/**
+ * Keeps a guest's held action in the browser's storage beside the feature's own memory (finding
+ * 168), so a password recovery's new tab can still run it: never in the address.
+ */
+export function holdIntent(intent: Omit<HeldIntent, 'at'>): void {
+  storage.write(STORAGE_KEYS.heldIntent, JSON.stringify({ ...intent, at: Date.now() }));
+}
+
+/** Lets the held action go: it ran, the guest left its page or closed the sign-in, or signed out. */
+export function dropHeldIntent(): void {
+  storage.remove(STORAGE_KEYS.heldIntent);
+  confirmed = null;
+}
+
+/**
+ * The intent of `kind` a sign-in confirmed, once: taken as it is read, and only within its life.
+ * The feature that holds actions of that kind runs it.
+ */
+export function takeConfirmedIntent(kind: HeldIntent['kind']): HeldIntent | null {
+  if (confirmed?.kind !== kind) return null;
+  const taken = confirmed;
+  confirmed = null;
+  return Date.now() - taken.at > HELD_INTENT_MS ? null : taken;
+}
+
+/** The intent a sign-in confirmed, still waiting to run, without taking it: where it leads. */
+export function confirmedIntent(): HeldIntent | null {
+  return confirmed !== null && Date.now() - confirmed.at <= HELD_INTENT_MS ? confirmed : null;
+}
+
+// Only a sign-in in this browser confirms the stored intent (D9.6); a sign-out lets it go.
+onSessionEstablished((_session, { source }) => {
+  if (source !== 'signIn') return;
+  const intent = storedIntent(Date.now());
+  storage.remove(STORAGE_KEYS.heldIntent);
+  confirmed = intent;
+});
+onSessionEnded(dropHeldIntent);

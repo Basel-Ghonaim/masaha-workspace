@@ -1,0 +1,39 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-u10/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx [ src/pages/dashboard/routes.component.test.tsx ]
+Error: The dashboard page "finance" has no screen.
+ ❯ screenOf src/pages/dashboard/routes.tsx:35:33
+     33| function screenOf<Page>(pages: Partial<Record<DashboardPageName, Page>…
+     34|   const page = pages[name];
+     35|   if (page === undefined) throw new Error(`The dashboard page "${name}…
+       |                                 ^
+     36|   return page;
+     37| }
+ ❯ src/pages/dashboard/routes.tsx:210:26
+ ❯ src/pages/dashboard/routes.tsx:209:24
+ ❯ src/pages/dashboard/routes.component.test.tsx:25:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  13:34:46
+   Duration  10.44s (environment 76%, setup 22%, transform 2%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-u10\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-u10\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx

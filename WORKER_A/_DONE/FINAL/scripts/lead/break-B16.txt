@@ -1,0 +1,42 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/users/components/CompactAccountMenu.component.test.tsx (4 tests | 1 failed) 859ms
+   ❯ CompactAccountMenu (4)
+     × offers the public site and the account’s settings, not the way into the dashboard 228ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  17:32:10
+   Duration  12.51s (transform 36%, import 25%, environment 24%, setup 8%, tests 7%)
+
+  Transform  |component| transforming modules took 4.31s · 36% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/CompactAccountMenu.component.test.tsx > CompactAccountMenu > offers the public site and the account’s settings, not the way into the dashboard
+AssertionError: expected [ 'Dashboard', 'Sign out' ] to deeply equal [ 'Public site', …(2) ]
+
+- Expected
++ Received
+
+  [
+-   "Public site",
+-   "Account settings",
++   "Dashboard",
+    "Sign out",
+  ]
+
+ ❯ src/features/users/components/CompactAccountMenu.component.test.tsx:52:51
+     50|
+     51|     const items = within(await screen.findByRole('menu')).getAllByRole…
+     52|     expect(items.map((item) => item.textContent)).toEqual([
+       |                                                   ^
+     53|       'Public site',
+     54|       'Account settings',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

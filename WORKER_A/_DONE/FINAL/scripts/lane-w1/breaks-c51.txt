@@ -1,0 +1,54 @@
+== B110 exit 1
+    × shows no amount anywhere; axe-clean 644ms
+    × shows the meter and the ratio only with a capacity 200ms
+    Tests  2 failed | 7 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected 'OverviewNeeds your attentionOpening h…' not to match /₪|ILS|agorot/i
+    - Expected:
+    TestingLibraryElementError: Unable to find an element with the text: Now: 2 subscribers and 3 visits. This could be because the text is broken up by multiple elements. In this case, you can provide a 
+== B111 exit 1
+    × lists the attention rows in order, each with its link 472ms
+    Tests  1 failed | 8 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ [ …(2) ], [ …(2) ], [ …(2) ], …(5) ] to deeply equal [ [ …(2) ], [ …(2) ], [ …(2) ], …(5) ]
+    - Expected
+== B112 exit 1
+    × says a stale group’s days with the right plural (2 → «قبل يومين») 254ms
+    Tests  1 failed | 8 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: آخر تحديث قبل يومين. This could be because the text is broken up by multiple elements. In this case, you can provide a function for
+== B113 exit 1
+    × says «كل شيء على ما يرام» with nothing to attend 207ms
+    Tests  1 failed | 8 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find an element with the text: All is in order. This could be because the text is broken up by multiple elements. In this case, you can provide a function for you
+== B114 exit 1
+    × shows no meter, and asks for the capacity, without one 206ms
+    Tests  1 failed | 8 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected <div data-slot="meter" …(6)>…(1)</div> to be null
+    - Expected:
+== B115 exit 1
+    × lists five ending soon, «Ends tomorrow», and «View all» 415ms
+    Tests  1 failed | 8 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected [ <li …(1)>…(2)</li>, …(5) ] to have a length of 5 but got 6
+    - Expected
+== B116 exit 1
+    × offers «Try again» on a failure, which reads the overview again 3197ms
+    Tests  1 failed | 8 passed (9)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find role="region" and name "Needs your attention"
+== B116b exit 1
+    × refuses reception with the 403 inside the shell, reading no overview 4021ms
+    Tests  1 failed (1)
+    TypeError: Cannot read properties of undefined (reading 'capacity')
+    React Router caught the following error during render TypeError: Cannot read properties of undefined (reading 'capacity')
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    TestingLibraryElementError: Unable to find role="heading" and name "You don’t have access to this page"
+== Boffline exit 1
+    × says offline in its own words when no answer came back 109ms
+    Tests  1 failed | 1 passed (2)
+    ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+    AssertionError: expected { offline: false, …(6) } to match object { offline: true, …(3) }
+    - Expected

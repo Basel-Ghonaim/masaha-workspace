@@ -1,0 +1,9 @@
+fix(desk): focus the write-off's reason first
+
+An alert dialog gives its first focus to «رجوع», and in a browser a
+field's autoFocus loses to it, so the write-off's reason was not where
+the keyboard was (finding 172). The dialog now places the focus on the
+reason itself, as the void's does, and the field's autoFocus is gone.
+
+Its test drops a field's autoFocus, as a browser does, so only the
+dialog's own placing of the focus can pass.

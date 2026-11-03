@@ -1,0 +1,51 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx -t extended closure’s end now
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx (7 tests | 1 failed | 6 skipped) 334ms
+   ❯ useAnnouncementActions (7)
+     × offers no «Undo» on an extended closure’s end now, whose end may only come earlier 332ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 skipped (7)
+   Start at  12:32:42
+   Duration  11.01s (import 56%, transform 25%, environment 12%, setup 4%, tests 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx > useAnnouncementActions > offers no «Undo» on an extended closure’s end now, whose end may only come earlier
+AssertionError: expected <button data-button="true" …(2)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  class="inline-flex h-8 shrink-0 items-center rounded-(--radius-control) bg-primary px-3 text-label text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+  data-action="true"
+  data-button="true"
+>
+  Undo
+</button>
+
+ ❯ src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx:123:60
+    121|     await user.click(within(card).getByRole('button', { name: 'End now…
+    122|     await findToast('The closure has ended · the status is automatic a…
+    123|     expect(screen.queryByRole('button', { name: 'Undo' })).toBeNull();
+       |                                                            ^
+    124|     expect(screen.getByRole('button', { name: 'Show' })).toBeInTheDocu…
+    125|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/actions/useAnnouncementActions.component.test.tsx -t ^^^"extended^^^ closure’s^^^ end^^^ now^^^"

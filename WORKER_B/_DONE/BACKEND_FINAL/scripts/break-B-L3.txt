@@ -1,0 +1,62 @@
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit src/db/seed/seedEnv.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+ ❯ |unit| src/db/seed/seedEnv.unit.test.ts (3 tests | 2 failed) 14ms
+   ❯ seedEnvSchema (3)
+     × stores the contact normalised: the WhatsApp in its one E.164 form, the email lowercased 10ms
+     × a foreign WhatsApp fails the seed, naming its variable 2ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  12:08:44
+   Duration  556ms (import 49%, transform 45%, tests 4%, worker 2%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/db/seed/seedEnv.unit.test.ts > seedEnvSchema > stores the contact normalised: the WhatsApp in its one E.164 form, the email lowercased
+AssertionError: expected '+972591234567' to be '+970591234567' // Object.is equality
+
+Expected: "+970591234567"
+Received: "+972591234567"
+
+ ❯ src/db/seed/seedEnv.unit.test.ts:20:39
+     18|
+     19|     expect(env.SEED_CONTACT_EMAIL).toBe('hello@masaha.ps');
+     20|     expect(env.SEED_CONTACT_WHATSAPP).toBe('+970591234567');
+       |                                       ^
+     21|   });
+     22|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/db/seed/seedEnv.unit.test.ts > seedEnvSchema > a foreign WhatsApp fails the seed, naming its variable
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/db/seed/seedEnv.unit.test.ts:33:28
+     31|     const parsed = seedEnvSchema.safeParse({ ...valid, SEED_CONTACT_WH…
+     32|
+     33|     expect(parsed.success).toBe(false);
+       |                            ^
+     34|     expect(parsed.error?.issues.map((issue) => issue.path.join('.'))).…
+     35|       'SEED_CONTACT_WHATSAPP',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/db/seed/seedEnv.unit.test.ts

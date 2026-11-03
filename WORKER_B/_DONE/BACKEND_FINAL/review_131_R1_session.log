@@ -1,0 +1,20 @@
+I reviewed my range of #131 (the first 8 commits): it is **mergeable**, with no blocker and no should-fix, and three small nits to fold in if a fix round runs anyway. CI was green, and the head stayed at `c41a5397` (CLEAN) from start to end. The review rules forbade running tests, so whether each test would fail I judged by reading it against the code; the red runs appear only in the lead's report.
+
+**What holds:**
+- **The payments totals (money):** every total uses the one balance rule. Voided payments, written-off visits and unpriced visits count for nothing, and an archived customer's debt is kept. Each figure is one query for the whole space. All three take the caller's transaction, and finance passes its snapshot to each. Each total equals the sum of the list it summarises.
+- **Finding 170:** the family's latest activity is read as the maximum over its tokens, and a refresh carries that value on. The race test really races: it waits until the request is blocked on a lock and checks the race happened. It would fail on either half of the fix.
+- **`/me`:** a user reads and edits only their own name and language, checked by the shared schema. Only what changed is written and audited, and role, email and password cannot be written.
+- **`GET …/visits`:** the owner reads any range up to 92 days. Reception reads today only, and a range from reception is refused with 403, not narrowed. Days are Gaza days, the read is paged and filtered to the space.
+- **Finding 167:** the `handledBy` filter uses the same rule as the admin's decision authority (an active owner link).
+- **The seed (finding 153):** the contact now goes through the shared email and phone rules, and the stored-form round trip is pinned by tests.
+
+**The three nits:**
+1. **R1-F1:** in `apps/api/src/modules/visits/visits.service.ts:247-258`, the new list method was inserted between `terms`'s doc comment and `terms` itself. `terms` lost its comment and the new method has two.
+2. **R1-F2:** in `docs/features/payments.md:22-23`, the desk's web sentences moved under the Finance bullet. The desk bullet also still says the overview "will count" the uncollected visits, which R3's commit has since built.
+3. **R1-F3:** `apps/api/.env.example:33` still says the seed's WhatsApp can be any E.164 number. It must now be a Palestinian or Israeli number.
+
+I judged each decision taken without the owner in my range sound or acceptable. One leaves a gap for worker A: findings 161 and 167 are now Resolved, as the plan said, but each finding's own condition also names a screen (the desk's log tab, the admin's filter). Nothing open tracks those two screens any more.
+
+**One point in R2's range (finance):** `api-contract.md:726` implies a customer's debts and the uncollected visits never overlap. A visit left to a customer counts in both, so a screen adding the two figures would count it twice. This is a likely doc fix for R2.
+
+The report is at `C:\dev\masaha\workspace\WORKER_B\BACKEND_FINAL\6_REVIEW_R1_CLAUDE_CODE.md`; I used none of the finding numbers 190–192.

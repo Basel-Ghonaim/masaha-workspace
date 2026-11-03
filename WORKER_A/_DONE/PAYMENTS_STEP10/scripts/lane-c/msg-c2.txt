@@ -1,0 +1,15 @@
+feat(data-reports): report wrong information
+
+U10 on a space's page: «الإبلاغ عن معلومة غير صحيحة» opens a dialog
+that says who reads the report by the space's verification, asks the
+field group and the details (required for «أخرى» only, DI-44), and
+keeps every value on a refusal, a 429 counted down. It is sent once
+with no key; the repository reads the answer's status (S15), so the
+toast says where the reply lands, or that a report is already open,
+with «عرض بلاغاتي».
+
+A guest's press holds the report in memory only, never in the address
+(S14), and the page asks them to sign in with the reason (C4, DI-60);
+back signed in, the dialog is open. Closing the sign-in lets it go.
+The directory's page gains the report's slot, last in its main column.
+Finding 168 records what a recovery by email loses.

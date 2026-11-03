@@ -1,0 +1,306 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/components/list/AnnouncementsList.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx (8 tests | 2 failed) 2301ms
+   ❯ AnnouncementsList (8)
+     ❯ a refusal stays in its dialog while the list is read again (2)
+       × keeps the extension’s CLOSURE_ALREADY_EXTENDED until «Back», though the card now says the closure was extended 415ms
+       × keeps the delete’s CLOSURE_EXTENDED until «Back», though the card no longer offers the delete 468ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 6 passed (8)
+   Start at  16:51:59
+   Duration  9.60s (transform 29%, import 25%, tests 25%, environment 16%, setup 5%)
+
+  Transform  |component| transforming modules took 2.73s · 29% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx > AnnouncementsList > a refusal stays in its dialog while the list is read again > keeps the extension’s CLOSURE_ALREADY_EXTENDED until «Back», though the card now says the closure was extended
+TestingLibraryElementError: Unable to find an accessible element with the role "alertdialog"
+
+Here are the accessible roles:
+
+  tablist:
+
+  Name "Announcement status":
+  [36m<div[39m
+    [33maria-label[39m=[32m"Announcement status"[39m
+    [33maria-orientation[39m=[32m"horizontal"[39m
+    [33mclass[39m=[32m"flex items-center max-w-full gap-2 overflow-x-auto md:w-fit md:gap-0 md:overflow-visible md:rounded-lg md:bg-muted md:p-1"[39m
+    [33mdata-orientation[39m=[32m"horizontal"[39m
+    [33mdata-slot[39m=[32m"tabs-list"[39m
+    [33mrole[39m=[32m"tablist"[39m
+    [33mstyle[39m=[32m"outline: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  tab:
+
+  Name "Active 2":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"radix-_r_31_-content-RUNNING"[39m
+    [33maria-selected[39m=[32m"true"[39m
+    [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+    [33mdata-orientation[39m=[32m"horizontal"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"tabs-trigger"[39m
+    [33mdata-state[39m=[32m"active"[39m
+    [33mid[39m=[32m"radix-_r_31_-trigger-RUNNING"[39m
+    [33mrole[39m=[32m"tab"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Scheduled 1":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"radix-_r_31_-content-UPCOMING"[39m
+    [33maria-selected[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+    [33mdata-orientation[39m=[32m"horizontal"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"tabs-trigger"[39m
+    [33mdata-state[39m=[32m"inactive"[39m
+    [33mid[39m=[32m"radix-_r_31_-trigger-UPCOMING"[39m
+    [33mrole[39m=[32m"tab"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Ended 7":
+  [36m<button[39m
+    [33maria-controls[39m=[32m"radix-_r_31_-content-ENDED"[39m
+    [33maria-selected[39m=[32m"false"[39m
+    [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+    [33mdata-orientation[39m=[32m"horizontal"[39m
+    [33mdata-radix-collection-item[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"tabs-trigger"[39m
+    [33mdata-state[39m=[32m"inactive"[39m
+    [33mid[39m=[32m"radix-_r_31_-trigger-ENDED"[39m
+    [33mrole[39m=[32m"tab"[39m
+    [33mtabindex[39m=[32m"-1"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "New announcement":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline) ms-auto"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Edit":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-card-action[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "End now":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-card-action[39m=[32m""[39m
+    [33mdata-slot[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  tabpanel:
+
+  Name "Active 2":
+  [36m<div[39m
+    [33maria-labelledby[39m=[32m"radix-_r_31_-trigger-RUNNING"[39m
+    [33mclass[39m=[32m"focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring flex flex-col gap-4"[39m
+    [33mdata-orientation[39m=[32m"horizontal"[39m
+    [33mdata-slot[39m=[32m"tabs-content"[39m
+    [33mdata-state[39m=[32m"active"[39m
+    [33mid[39m=[32m"radix-_r_31_-content-RUNNING"[39m
+    [33mrole[39m=[32m"tabpanel"[39m
+    [33mstyle[39m=[32m""[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  region:
+
+  Name "Announcements":
+  [36m<section[39m
+    [33maria-label[39m=[32m"Announcements"[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  list:
+
+  Name "":
+  [36m<ul[39m
+    [33mclass[39m=[32m"flex flex-col gap-4"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  listitem:
+
+  Name "":
+  [36m<li[39m
+    [33mdata-card-key[39m=[32m"9"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  heading:
+
+  Name "Temporary closure":
+  [36m<h2[39m
+    [33mclass[39m=[32m"flex"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-body whitespace-pre-line"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+  [36m/>[39m
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mstyle[39m=[32m""[39m
+[36m>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4 max-w-4xl"[39m
+      [33mdata-orientation[39m=[32m"horizontal"[39m
+      [33mdata-slot[39m=[32m"tabs"[39m
+      [33mdir[39m=[32m"ltr"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-3"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33maria-label[39m=[32m"Announcement status"[39m
+          [33maria-orientation[39m=[32m"horizontal"[39m
+          [33mclass[39m=[32m"flex items-center max-w-full gap-2 overflow-x-auto md:w-fit md:gap-0 md:overflow-visible md:rounded-lg md:bg-muted md:p-1"[39m
+          [33mdata-orientation[39m=[32m"horizontal"[39m
+          [33mdata-slot[39m=[32m"tabs-list"[39m
+          [33mrole[39m=[32m"tablist"[39m
+          [33mstyle[39m=[32m"outline: none;"[39m
+          [33mtabindex[39m=[32m"0"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-controls[39m=[32m"radix-_r_31_-content-RUNNING"[39m
+            [33maria-selected[39m=[32m"true"[39m
+            [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"tabs-trigger"[39m
+            [33mdata-state[39m=[32m"active"[39m
+            [33mid[39m=[32m"radix-_r_31_-trigger-RUNNING"[39m
+            [33mrole[39m=[32m"tab"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mActive[0m
+            [0m [0m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"neutral"[39m
+            [36m>[39m
+              [0m2[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-controls[39m=[32m"radix-_r_31_-content-UPCOMING"[39m
+            [33maria-selected[39m=[32m"false"[39m
+            [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"tabs-trigger"[39m
+            [33mdata-state[39m=[32m"inactive"[39m
+            [33mid[39m=[32m"radix-_r_31_-trigger-UPCOMING"[39m
+            [33mrole[39m=[32m"tab"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mScheduled[0m
+            [0m [0m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+              [33mdata-slot[39m=[32m"badge"[39m
+              [33mdata-variant[39m=[32m"neutral"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<button[39m
+            [33maria-controls[39m=[32m"radix-_r_31_-content-ENDED"[39m
+            [33maria-selected[39m=[32m"false"[39m
+            [33mclass[39m=[32m"relative inline-flex shrink-0 items-center justify-center gap-1.5 text-label whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*=\"size-\"])]:size-4 h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised"[39m
+            [33mdata-orientation[39m=[32m"horizontal"[39m
+            [33mdata-radix-collection-item[39m=[32m""[39m
+            [33mdata-slot[39m=[32m"tabs-trigger"[39m
+            [33mdata-state[39m=[32m"inactive"[39m
+            [33mid[39m=[32m"radix-_r_31_-trigger-ENDED"[39m
+            [33mrole[39m=[32m"tab"[39m
+            [33mtabindex[39m=[32m"-1"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mEnded[0m
+            [0m [0m
+            [36m<span[39m
+              [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap ...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/announcements/components/list/AnnouncementsList.component.test.tsx:221:21
+    219|       });
+    220|       await act(() => new Promise((resolve) => setTimeout(resolve, 50)…
+    221|       expect(screen.getByRole('alertdialog')).toBe(dialog);
+       |                     ^
+    222|       expect(within(dialog).getByRole('alert')).toBeInTheDocument();
+    223|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx > AnnouncementsList > a refusal stays in its dialog while the list is read again > keeps the delete’s CLOSURE_EXTENDED until «Back», though the card no longer offers the delete
+Error: [2mexpect([22m[31melement[39m[2m).toBeInTheDocument()[22m
+
+[31melement could not be found in the document[39m
+ ❯ src/features/announcements/components/list/AnnouncementsList.component.test.tsx:241:56
+    239|       const dialog = await screen.findByRole('alertdialog');
+    240|       await user.click(within(dialog).getByRole('button', { name: 'Del…
+    241|       expect(await within(dialog).findByRole('alert')).toBeInTheDocume…
+       |                                                        ^
+    242|       await waitFor(() => {
+    243|         expect(readAgain()).toBe(true);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/components/list/AnnouncementsList.component.test.tsx

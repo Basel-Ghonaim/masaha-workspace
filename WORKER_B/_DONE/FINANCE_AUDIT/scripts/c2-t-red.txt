@@ -1,0 +1,86 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/audit/platformAuditLog.api.test.ts (8 tests | 4 failed) 2087ms
+   ❯ the admin's log (8)
+     × the admin reads the platform's events of every space and of none, and never a space's operations, money, people, settings or staff 380ms
+     × an account's event that names a space (an owner's staff) is the space's, never the admin's; the admin's own are listed 223ms
+     × q finds a space's entries by its name, a person's by name, an area's by its Arabic name; each entry carries its space, a deleted one marked 230ms
+     × actor narrows to one person; meta.actors the period's persons 230ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > the admin reads the platform's events of every space and of none, and never a space's operations, money, people, settings or staff
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/audit/platformAuditLog.api.test.ts:110:29
+    108|     const response = await log('?period=ALL');
+    109|
+    110|     expect(response.status).toBe(200);
+       |                             ^
+    111|     expect(sorted(idsOf(response))).toEqual(sorted(platform.map(({ id …
+    112|     expect((response.body as { meta: { totalRecords: number } }).meta.…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > an account's event that names a space (an owner's staff) is the space's, never the admin's; the admin's own are listed
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ idsOf src/modules/audit/platformAuditLog.api.test.ts:63:64
+     61|
+     62| const rowsOf = (response: { body: unknown }) => dataOf(response as nev…
+     63| const idsOf = (response: { body: unknown }) => rowsOf(response).map(({…
+       |                                                                ^
+     64| const sorted = (ids: number[]) => [...ids].sort((a, b) => a - b);
+     65|
+ ❯ src/modules/audit/platformAuditLog.api.test.ts:144:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > q finds a space's entries by its name, a person's by name, an area's by its Arabic name; each entry carries its space, a deleted one marked
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ idsOf src/modules/audit/platformAuditLog.api.test.ts:63:64
+     61|
+     62| const rowsOf = (response: { body: unknown }) => dataOf(response as nev…
+     63| const idsOf = (response: { body: unknown }) => rowsOf(response).map(({…
+       |                                                                ^
+     64| const sorted = (ids: number[]) => [...ids].sort((a, b) => a - b);
+     65|
+ ❯ src/modules/audit/platformAuditLog.api.test.ts:179:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |api| src/modules/audit/platformAuditLog.api.test.ts > the admin's log > actor narrows to one person; meta.actors the period's persons
+TypeError: Cannot read properties of undefined (reading 'map')
+ ❯ idsOf src/modules/audit/platformAuditLog.api.test.ts:63:64
+     61|
+     62| const rowsOf = (response: { body: unknown }) => dataOf(response as nev…
+     63| const idsOf = (response: { body: unknown }) => rowsOf(response).map(({…
+       |                                                                ^
+     64| const sorted = (ids: number[]) => [...ids].sort((a, b) => a - b);
+     65|
+ ❯ src/modules/audit/platformAuditLog.api.test.ts:212:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 4 passed (8)
+   Start at  14:22:42
+   Duration  9.35s (transform 45%, tests 35%, import 18%, setup 2%)
+

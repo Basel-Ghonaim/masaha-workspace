@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/hooks/near/useNearMe
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/directory/hooks/near/useNearMe.component.test.tsx (10 tests | 1 failed) 560ms
+   ❯ useNearMe (10)
+     × while the browser asks for the permission, waits the 15 s only once it is granted 80ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  10:10:54
+   Duration  22.22s (transform 56%, import 21%, environment 16%, setup 4%, tests 3%)
+
+  Transform  |component| transforming modules took 12.22s · 56% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/hooks/near/useNearMe.component.test.tsx > useNearMe > while the browser asks for the permission, waits the 15 s only once it is granted
+AssertionError: expected 'denied' to be 'locating' // Object.is equality
+
+Expected: "locating"
+Received: "denied"
+
+ ❯ src/features/directory/hooks/near/useNearMe.component.test.tsx:190:46
+    188|       await vi.advanceTimersByTimeAsync(60_000);
+    189|     });
+    190|     expect(result.current.near.state.status).toBe('locating');
+       |                                              ^
+    191|
+    192|     act(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/hooks/near/useNearMe

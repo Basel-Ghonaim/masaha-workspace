@@ -1,0 +1,17 @@
+feat(audit): read a space's audit log
+
+The owner reads every entry of the space: its staff's, the timed jobs'
+and the admin's, newest first, paged; filtered by the period (the last
+30 days from the Gaza midnight 29 days back, or all time), the target's
+current name, the actor and the actions, each before the page is cut;
+with the period's actors in meta. Reception is refused before the query
+is read.
+
+The admin is shown as MASAHA, decided by the space's links of any state
+rather than by the role, which can change; the owner's actor filter
+never names an admin. Targets carry their current names, read by the
+audit module as a read model, so the writer stays free of domain
+knowledge.
+
+The shared audit package lists the actions the API writes and the
+entity types, the query and the answers.

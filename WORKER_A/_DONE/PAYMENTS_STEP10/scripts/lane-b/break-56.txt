@@ -1,0 +1,207 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx (3 tests | 1 failed) 991ms
+   ❯ AdminReportsList (3)
+     × keeps a card per report until 1024 px, the filters still in a row at 768 114ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  12:35:16
+   Duration  7.43s (transform 31%, import 30%, environment 20%, tests 14%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/admin/AdminReportsList.component.test.tsx > AdminReportsList > keeps a card per report until 1024 px, the filters still in a row at 768
+AssertionError: expected <table data-slot="table" …(2)>…(2)</table> to be null
+
+- Expected:
+null
+
++ Received:
+<table
+  aria-label="Data reports"
+  class="w-full caption-bottom text-body-sm"
+  data-slot="table"
+>
+  <thead
+    class="bg-muted [&_tr]:hover:bg-muted"
+    data-slot="table-header"
+  >
+    <tr
+      class="border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"
+      data-slot="table-row"
+    >
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Space
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Field
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Report
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Reporter
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Date
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Status
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5"
+        colspan="1"
+        data-slot="table-head"
+      >
+        Handled by
+      </th>
+      <th
+        class="h-8 text-start align-middle text-caption whitespace-nowrap text-muted-foreground px-3 first:ps-5 last:pe-5 w-px"
+        colspan="1"
+        data-slot="table-head"
+      >
+        <span
+          class="sr-only"
+        >
+          Actions
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="[&_tr:last-child]:border-0"
+    data-slot="table-body"
+  >
+    <tr
+      class="border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"
+      data-slot="table-row"
+    >
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <a
+          class="text-label text-foreground underline-offset-4 hover:underline"
+          data-discover="true"
+          href="/spaces/7"
+        >
+          Focus Hub
+        </a>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <span
+          class="text-label"
+        >
+          Opening hours
+        </span>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <p
+          class="line-clamp-2 text-body-sm break-words"
+          dir="auto"
+        >
+          The space opens at 9, not 8.
+        </p>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <span
+          dir="auto"
+        >
+          Huda Saleh
+        </span>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <span
+          class="whitespace-nowrap"
+        >
+          21 October
+        </span>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <span
+          class="inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"
+          data-slot="badge"
+          data-variant="info"
+        >
+          New
+        </span>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"
+        data-slot="table-cell"
+      >
+        <span
+          class="inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-info-subtle text-info-subtle-foreground"
+          data-slot="badge"
+          data-variant="info"
+        >
+          Admin
+        </span>
+      </td>
+      <td
+        class="py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"
+        data-slot="table-cell"
+      >
+        <button
+          class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+          data-slot="button"
+        >
+          Open
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+ ❯ src/features/data-reports/components/admin/AdminReportsList.component.test.tsx:89:41
+     87|
+     88|     await screen.findByText('The space opens at 9, not 8.');
+     89|     expect(screen.queryByRole('table')).toBeNull();
+       |                                         ^
+     90|     const [card] = within(screen.getByRole('list', { name: 'Data repor…
+     91|       'listitem',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

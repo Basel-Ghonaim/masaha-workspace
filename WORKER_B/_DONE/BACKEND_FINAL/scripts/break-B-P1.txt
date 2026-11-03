@@ -1,0 +1,115 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/payments/totals.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b/apps/api
+
+Datasource "db": PostgreSQL database "masaha_b_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/payments/totals.api.test.ts (5 tests | 2 failed) 2284ms
+   ❯ the space's balances, paged and totalled (4)
+     × the balances’ page: largest debt first, paged, the total right; the oldest owing item of each 498ms
+     × who is in credit, largest first, with no oldest item 292ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 3 passed (5)
+   Start at  12:16:24
+   Duration  8.47s (tests 80%, transform 10%, setup 9%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/payments/totals.api.test.ts > the space's balances, paged and totalled > the balances’ page: largest debt first, paged, the total right; the oldest owing item of each
+AssertionError: expected [ { customerId: 1, …(2) }, …(1) ] to deeply equal [ { customerId: 2, …(2) }, …(1) ]
+
+- Expected
++ Received
+
+@@ -1,18 +1,18 @@
+  [
+    {
+-     "amountAgorot": 32000,
+-     "customerId": 2,
++     "amountAgorot": 1000,
++     "customerId": 1,
+      "oldest": {
+-       "createdAt": 2026-10-18T06:00:00.000Z,
+-       "id": 2,
++       "createdAt": 2026-10-29T10:16:31.467Z,
++       "id": 1,
+        "kind": "VISIT",
+      },
+    },
+    {
+-     "amountAgorot": 5000,
+-     "customerId": 3,
++     "amountAgorot": 32000,
++     "customerId": 2,
+      "oldest": {
+        "createdAt": 2026-10-18T06:00:00.000Z,
+        "id": 2,
+        "kind": "VISIT",
+      },
+
+ ❯ src/modules/payments/totals.api.test.ts:90:24
+     88|     const first = await repository.balancesPage(spaceId, 'OWES', NOW, …
+     89|     expect(first.total).toBe(4);
+     90|     expect(first.rows).toEqual([
+       |                        ^
+     91|       {
+     92|         customerId: large.id,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/payments/totals.api.test.ts > the space's balances, paged and totalled > who is in credit, largest first, with no oldest item
+AssertionError: expected { rows: [ { …(3) }, { …(3) } ], …(1) } to deeply equal { rows: [ { …(3) }, { …(3) } ], …(1) }
+
+- Expected
++ Received
+
+  {
+    "rows": [
+      {
+-       "amountAgorot": 4000,
+-       "customerId": 2,
++       "amountAgorot": 1000,
++       "customerId": 1,
+        "oldest": null,
+      },
+      {
+-       "amountAgorot": 1000,
+-       "customerId": 1,
++       "amountAgorot": 4000,
++       "customerId": 2,
+        "oldest": null,
+      },
+    ],
+    "total": 2,
+  }
+
+ ❯ src/modules/payments/totals.api.test.ts:125:90
+    123|     await pay({ subscriptionId: perHour.id }, 4_000);
+    124|
+    125|     expect(await repository.balancesPage(spaceId, 'CREDIT', NOW, { ski…
+       |                                                                                          ^
+    126|       rows: [
+    127|         { customerId: more.id, amountAgorot: 4_000, oldest: null },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/payments/totals.api.test.ts

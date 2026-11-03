@@ -1,0 +1,10 @@
+feat(data-reports): read one report by its id
+
+The report notice opens one report from the address; searching for it
+in the list's first page could miss it (S5).
+
+GET /manage/spaces/:spaceId/data-reports/:reportId answers the owner
+one of the space's reports, as the list shows it and never with its
+reporter (reception refused before the read); GET
+/admin/data-reports/:reportId answers the admin one report. Another
+space's, an unknown one or a deleted space's is not_found.

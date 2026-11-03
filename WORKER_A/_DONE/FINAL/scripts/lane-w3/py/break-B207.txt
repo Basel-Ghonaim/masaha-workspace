@@ -1,0 +1,52 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/subscriber/useSubscriberCheckIn
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx (8 tests | 1 failed) 2201ms
+   ❯ useSubscriberCheckIn (8)
+     × checks one with no subscription in as their visit, by their id and name, its own intent 259ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  12:15:38
+   Duration  12.42s (transform 34%, environment 21%, import 20%, tests 18%, setup 6%)
+
+  Transform  |component| transforming modules took 4.10s · 34% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx > useSubscriberCheckIn > checks one with no subscription in as their visit, by their id and name, its own intent
+AssertionError: expected { visitorName: 'Sara Khalid', …(1) } to deeply equal { visitorName: 'Sara Khalid', …(2) }
+
+- Expected
++ Received
+
+  {
+    "audience": "GENERAL",
+-   "customerId": 4,
+    "visitorName": "Sara Khalid",
+  }
+
+ ❯ src/features/desk/hooks/subscriber/useSubscriberCheckIn.component.test.tsx:160:40
+    158|     await findToast(heard('Sara Khalid checked in'));
+    159|     expect(posts(requests).map(({ url }) => url)).toEqual(['/manage/sp…
+    160|     expect(bodyOf(posts(requests)[0])).toEqual({
+       |                                        ^
+    161|       visitorName: 'Sara Khalid',
+    162|       audience: 'GENERAL',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/subscriber/useSubscriberCheckIn

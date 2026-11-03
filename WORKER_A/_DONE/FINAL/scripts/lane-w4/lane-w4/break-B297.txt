@@ -1,0 +1,54 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/site/public/home/HomePage
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/pages/site/public/home/HomePage.component.test.tsx (2 tests | 1 failed) 5855ms
+   ❯ Home’s near me (2)
+     × «Choose your area» scrolls to the areas and focuses their heading 691ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  10:43:12
+   Duration  16.85s (tests 36%, transform 25%, environment 18%, import 16%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/site/public/home/HomePage.component.test.tsx > Home’s near me > «Choose your area» scrolls to the areas and focuses their heading
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<h2
+  class="text-heading-2 outline-none"
+  id="_r_5_"
+  tabindex="-1"
+>
+  Browse by area
+</h2>[39m
+Received element with focus:
+  [31m<button
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+  data-slot="button"
+>
+  Choose your area
+</button>[39m
+ ❯ src/pages/site/public/home/HomePage.component.test.tsx:84:21
+     82|
+     83|     const heading = screen.getByRole('heading', { level: 2, name: 'Bro…
+     84|     expect(heading).toHaveFocus();
+       |                     ^
+     85|     expect(scrolled.mock.contexts).toContain(heading);
+     86|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/site/public/home/HomePage

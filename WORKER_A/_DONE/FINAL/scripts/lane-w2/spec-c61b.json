@@ -1,0 +1,5 @@
+[
+  {"label": "R-C61-page", "file": "apps/web/src/pages/dashboard/space/audit/AuditPage.tsx",
+   "old": "        case 'dataReport':\n          return `${spacePagePath(spaceId, 'dataReports')}?open=${String(id)}`;\n", "new": "",
+   "cmd": "npm run test:component -w @masaha/web -- src/pages/dashboard/space/audit"}
+]

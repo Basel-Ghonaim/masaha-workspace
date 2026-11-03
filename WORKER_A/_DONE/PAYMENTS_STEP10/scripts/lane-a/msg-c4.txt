@@ -1,0 +1,11 @@
+feat(announcements): extend after a closure
+
+O11 on #123's API (S11, DI-19, DI-20): on a closure that has started
+and is not extended, the owner's «تمديد الاشتراكات» reads the preview
+at each opening - how many subscriptions the extension moves now (those
+the closure covered and, since #128, their renewals not started) and
+the closure's days - then sends the days typed, with one key per
+opening. A failure stays in the dialog with the days kept; a closure
+that covered none offers nothing (S11). Reception reads that the owner
+extends; an extended closure says how many, how many days, by whom,
+when.

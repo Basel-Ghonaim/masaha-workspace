@@ -1,0 +1,1 @@
+  return text.replace(PLACEHOLDER, (token) => valueOf[token] ?? token);

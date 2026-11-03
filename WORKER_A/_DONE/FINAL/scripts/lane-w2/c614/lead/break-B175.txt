@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/pages/dashboard/fieldSections.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |unit| src/pages/dashboard/fieldSections.unit.test.ts (2 tests | 1 failed) 17ms
+   ❯ «تعديل الحقل» carries ?report= (2)
+     × leads the owner to the field’s section, the prices to Packages & prices, «أخرى» to the notice 13ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  12:30:23
+   Duration  6.04s (transform 61%, import 38%)
+
+  Transform  |unit| transforming modules took 3.44s · 61% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/pages/dashboard/fieldSections.unit.test.ts > «تعديل الحقل» carries ?report= > leads the owner to the field’s section, the prices to Packages & prices, «أخرى» to the notice
+AssertionError: expected '/dashboard/spaces/7/profile#hours' to be '/dashboard/spaces/7/profile?report=41…' // Object.is equality
+
+Expected: "/dashboard/spaces/7/profile?report=41#hours"
+Received: "/dashboard/spaces/7/profile#hours"
+
+ ❯ src/pages/dashboard/fieldSections.unit.test.ts:6:44
+      4| describe('«تعديل الحقل» carries ?report=', () => {
+      5|   it('leads the owner to the field’s section, the prices to Packages &…
+      6|     expect(ownerFieldLink(7, 'HOURS', 41)).toBe('/dashboard/spaces/7/p…
+       |                                            ^
+      7|     expect(ownerFieldLink(7, 'LOCATION', 41)).toBe(
+      8|       '/dashboard/spaces/7/profile?report=41#location',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/pages/dashboard/fieldSections.unit.test.ts

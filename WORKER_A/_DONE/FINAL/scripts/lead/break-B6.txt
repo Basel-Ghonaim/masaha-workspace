@@ -1,0 +1,32 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (68 tests | 1 failed | 55 skipped) 14439ms
+   ❯ the dashboard's navigation (12)
+     × keeps the group names for assistive technology only on the rail 137ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 12 passed | 55 skipped (68)
+   Start at  16:45:59
+   Duration  23.81s (tests 62%, transform 15%, environment 10%, import 10%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > keeps the group names for assistive technology only on the rail
+Error: [2mexpect([22m[31melement[39m[2m).toHaveClass([22m[32m[32m"sr-only"[32m[39m[2m)[22m
+
+Expected the element to have class:
+[32m  sr-only[39m
+Received:
+[31m  px-3 text-caption text-muted-foreground[39m
+ ❯ src/pages/dashboard/routes.component.test.tsx:264:36
+    262|
+    263|     const nav = within(await screen.findByRole('navigation', { name: '…
+    264|     expect(nav.getByText('Money')).toHaveClass('sr-only');
+       |                                    ^
+    265|     expect(nav.getByRole('group', { name: 'Money' })).toBeInTheDocumen…
+    266|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

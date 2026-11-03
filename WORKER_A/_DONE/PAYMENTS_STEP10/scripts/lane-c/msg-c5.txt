@@ -1,0 +1,13 @@
+feat(favorites): list a user's favourite spaces
+
+Screen 10 (AC-014, C7, C8): the account's «المفضّلة» lists a signed-in
+user's favourites as the directory's cards, newest saved first, or
+nearest first with «الأقرب إليّ» (the Directory's near me, the point in
+the header only; clearing it drops that answer too), each with its
+heart; the spaces that left follow by their names, each with «إزالة»
+and «تراجع». A removed row hands the focus to the next row, else the
+first heart, else the count (DI-52).
+
+The screen is the directory's (S1); favorites sets the heart and
+«إزالة» in its slots. The account's navigation and the site's account
+menu gain «المفضّلة».

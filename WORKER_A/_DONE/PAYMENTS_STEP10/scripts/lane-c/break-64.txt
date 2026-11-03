@@ -1,0 +1,48 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/users/components/CompactAccountMenu.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/users/components/CompactAccountMenu.component.test.tsx (6 tests | 1 failed) 854ms
+   ❯ CompactAccountMenu (6)
+     × links none of the site’s account pages: the dashboard and sign-out only 143ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/users/components/CompactAccountMenu.component.test.tsx > CompactAccountMenu > links none of the site’s account pages: the dashboard and sign-out only
+AssertionError: expected [ 'My reports', 'Dashboard', …(1) ] to deeply equal [ 'Dashboard', 'Sign out' ]
+
+- Expected
++ Received
+
+  [
++   "My reports",
+    "Dashboard",
+    "Sign out",
+  ]
+
+ ❯ src/features/users/components/CompactAccountMenu.component.test.tsx:59:51
+     57|
+     58|     const items = within(await screen.findByRole('menu')).getAllByRole…
+     59|     expect(items.map((item) => item.textContent)).toEqual(['Dashboard'…
+       |                                                   ^
+     60|   });
+     61|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  12:33:28
+   Duration  8.95s (transform 36%, import 25%, environment 23%, tests 10%, setup 6%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/users/components/CompactAccountMenu.component.test.tsx

@@ -1,0 +1,38 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx (5 tests | 1 failed) 544ms
+   ❯ useSpaceReports (5)
+     × says «A visitor» for every report, never a name, and the day only 121ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  12:09:52
+   Duration  8.62s (transform 33%, environment 29%, import 23%, setup 8%, tests 7%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx > useSpaceReports > says «A visitor» for every report, never a name, and the day only
+AssertionError: expected [ 'A visitor · 21 October', …(2) ] to deeply equal [ 'A visitor · 21 October', …(2) ]
+
+- Expected
++ Received
+
+  [
+    "A visitor · 21 October",
+-   "A visitor · 21 October",
++   "Huda Saleh · 21 October",
+    "A visitor · 21 October",
+  ]
+
+ ❯ src/features/data-reports/hooks/space/useSpaceReports.component.test.tsx:55:43
+     53|     });
+     54|     const { rows } = result.current;
+     55|     expect(rows.map((row) => row.byline)).toEqual([
+       |                                           ^
+     56|       'A visitor · 21 October',
+     57|       'A visitor · 21 October',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

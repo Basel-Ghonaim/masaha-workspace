@@ -1,0 +1,219 @@
+##### npm run test:unit -w @masaha/web -- src/features/announcements (exit 1)
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/announcements
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |unit| src/features/announcements/services/announcementsQueryOf.unit.test.ts (0 test)
+ ❯ |unit| src/features/announcements/services/textOf.unit.test.ts (0 test)
+ ❯ |unit| src/features/announcements/services/typeView.unit.test.ts (0 test)
+ ❯ |unit| src/features/announcements/services/periodText.unit.test.ts (0 test)
+ ❯ |unit| src/features/announcements/repository/announcementsRepository.unit.test.ts (0 test)
+
+ Test Files  5 failed (5)
+      Tests  no tests
+   Start at  12:01:07
+   Duration  1.11s (worker 95%, environment 5%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/announcements/repository/announcementsRepository.unit.test.ts [ src/features/announcements/repository/announcementsRepository.unit.test.ts ]
+Error: Cannot find module './announcementsRepository' imported from C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/repository/announcementsRepository.unit.test.ts
+ ❯ src/features/announcements/repository/announcementsRepository.unit.test.ts:5:1
+      3| import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+      4| import { fakeAdapter, type FakeAnswer } from '../../../test/fakeAdapte…
+      5| import { createAnnouncementsRepository } from './announcementsReposito…
+       | ^
+      6|
+      7| const META = {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |unit| src/features/announcements/services/announcementsQueryOf.unit.test.ts [ src/features/announcements/services/announcementsQueryOf.unit.test.ts ]
+Error: Cannot find module './announcementsQueryOf' imported from C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/services/announcementsQueryOf.unit.test.ts
+ ❯ src/features/announcements/services/announcementsQueryOf.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { announcementsQueryOf, paramsOf } from './announcementsQueryOf…
+       | ^
+      3|
+      4| const read = (search: string) => announcementsQueryOf(new URLSearchPar…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |unit| src/features/announcements/services/periodText.unit.test.ts [ src/features/announcements/services/periodText.unit.test.ts ]
+Error: Cannot find module './periodText' imported from C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/services/periodText.unit.test.ts
+ ❯ src/features/announcements/services/periodText.unit.test.ts:3:1
+      1| import { CATALOGUES } from '@shared/copy';
+      2| import { describe, expect, it } from 'vitest';
+      3| import { periodText } from './periodText';
+       | ^
+      4|
+      5| const EN = CATALOGUES.en.announcements.period;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |unit| src/features/announcements/services/textOf.unit.test.ts [ src/features/announcements/services/textOf.unit.test.ts ]
+Error: Cannot find module './textOf' imported from C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/services/textOf.unit.test.ts
+ ❯ src/features/announcements/services/textOf.unit.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { textOf } from './textOf';
+       | ^
+      3|
+      4| describe('textOf', () => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |unit| src/features/announcements/services/typeView.unit.test.ts [ src/features/announcements/services/typeView.unit.test.ts ]
+Error: Cannot find module './typeView' imported from C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/services/typeView.unit.test.ts
+ ❯ src/features/announcements/services/typeView.unit.test.ts:4:1
+      2| import { CATALOGUES } from '@shared/copy';
+      3| import { describe, expect, it } from 'vitest';
+      4| import { typeView } from './typeView';
+       | ^
+      5|
+      6| const WORDS = CATALOGUES.en.announcements;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/announcements
+##### npm run test:component -w @masaha/web -- src/features/announcements (exit 1)
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/list/useAnnouncementsFilters.component.test.tsx (0 test)
+ ❯ |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx (0 test)
+ ❯ |component| src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx (0 test)
+
+ Test Files  3 failed (3)
+      Tests  no tests
+   Start at  12:01:09
+   Duration  2.54s (environment 77%, setup 21%, transform 1%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx [ src/features/announcements/components/list/AnnouncementsList.component.test.tsx ]
+Error: Failed to resolve import "./AnnouncementsList" from "src/features/announcements/components/list/AnnouncementsList.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/components/list/AnnouncementsList.component.test.tsx:18:34
+  10 |  import { stubScreenWidth } from "../../../../test/screenWidth";
+  11 |  import { startPreferences } from "../../../../test/startPreferences";
+  12 |  import { AnnouncementsList } from "./AnnouncementsList";
+     |                                     ^
+  13 |  var _jsxFileName = "C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/components/list/AnnouncementsList.co...
+  14 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |component| src/features/announcements/hooks/list/useAnnouncementsFilters.component.test.tsx [ src/features/announcements/hooks/list/useAnnouncementsFilters.component.test.tsx ]
+Error: Failed to resolve import "./useAnnouncementsFilters" from "src/features/announcements/hooks/list/useAnnouncementsFilters.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/hooks/list/useAnnouncementsFilters.component.test.tsx:5:40
+  2  |  import { MemoryRouter, useLocation, useNavigate } from "react-router";
+  3  |  import { describe, expect, it } from "vitest";
+  4  |  import { useAnnouncementsFilters } from "./useAnnouncementsFilters";
+     |                                           ^
+  5  |  var _jsxFileName = "C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/hooks/list/useAnnouncementsFilters.c...
+  6  |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |component| src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx [ src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx ]
+Error: Failed to resolve import "./useAnnouncementsList" from "src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/hooks/list/useAnnouncementsList.component.test.tsx:16:37
+  7  |  import { fakeTransport, ok, refused, restoreTransport } from "../../../../test/fakeTransport";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { useAnnouncementsList } from "./useAnnouncementsList";
+     |                                        ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/hooks/list/useAnnouncementsList.comp...
+  11 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements
+##### npm run test:component -w @masaha/web -- src/pages/dashboard/routes.component.test.tsx -t "the space's announcements" (exit 1)
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/routes.component.test.tsx -t the space's announcements
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:01:13
+   Duration  2.10s (environment 77%, setup 21%, transform 2%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx [ src/pages/dashboard/routes.component.test.tsx ]
+Error: Failed to resolve import "./space/announcements/AnnouncementsPage" from "src/pages/dashboard/routes.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/pages/dashboard/routes.component.test.tsx:1259:17
+  1131 |  	// The page loads lazily, as the payments' do: its first transform is done before the test.
+  1132 |  	beforeAll(async () => {
+  1133 |  		await import("./space/announcements/AnnouncementsPage");
+       |                 ^
+  1134 |  	});
+  1135 |  	/** The announcements' reads, answered as the server would, with one running announcement. */
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/routes.component.test.tsx -t ^^^"the^^^ space's^^^ announcements^^^"

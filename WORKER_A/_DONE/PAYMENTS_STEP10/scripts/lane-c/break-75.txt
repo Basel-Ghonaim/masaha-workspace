@@ -1,0 +1,45 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/favorites/hooks/toggle
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx (6 tests | 1 failed) 645ms
+   ❯ useFavoriteToggle (6)
+     × holds a guest’s press, asks the sign-in for a favourite, and sends nothing 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx > useFavoriteToggle > holds a guest’s press, asks the sign-in for a favourite, and sends nothing
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ src/features/favorites/hooks/toggle/useFavoriteToggle.component.test.tsx:194:36
+    192|
+    193|     expect(signIn).toHaveBeenCalledWith('favorite', expect.any(Functio…
+    194|     expect(result.current.pressed).toBe(false);
+       |                                    ^
+    195|     expect(requests).toHaveLength(0);
+    196|     expect(takeFavorite()).toEqual({ spaceId: 7, name: { text: 'Masaha…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  13:19:56
+   Duration  5.34s (transform 32%, environment 27%, import 20%, tests 13%, setup 7%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/favorites/hooks/toggle

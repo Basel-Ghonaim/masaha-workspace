@@ -1,0 +1,15 @@
+feat(design-system): draw bar charts and a heatmap
+
+Finance (screen 19) draws income by month and its busy hours on the
+chart-1…5 roles. No chart library is worth its weight for four charts,
+so the layer gains two hand-built ones in its main entry:
+
+- BarChart: stacked bars at 200px or 120px, a tick under each bar and
+  a legend when there are two series or more.
+- Heatmap: days by hours, each cell primary at one of five steps over
+  muted, with a legend from fewer to more.
+
+Both draw for the eye only; a visually hidden table holds every value,
+so assistive technology reads numbers rather than shapes. The sizes
+and the steps are component tokens, named in the foundation with the
+two inventory rows; the showcase shows both.

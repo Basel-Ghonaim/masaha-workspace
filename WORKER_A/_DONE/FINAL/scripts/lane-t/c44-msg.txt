@@ -1,0 +1,10 @@
+build(db): hold the test database's script inline
+
+The init script was a bind mount relative to the folder that ran
+db:up, so a second folder's db:up saw another configuration and
+recreated the shared container bound to itself (finding 48).
+
+The script is now an inline Compose config, so every folder gives the
+same configuration and the container binds no folder. A container
+made before this is recreated once by the next db:up; its volume and
+data stay.

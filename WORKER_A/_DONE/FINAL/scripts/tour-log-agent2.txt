@@ -1,0 +1,62 @@
+2026-10-31T14:02:25.967Z FAIL guest / missing: Find a workspace  
+2026-10-31T14:02:39.023Z PASS guest /spaces   
+2026-10-31T14:02:52.297Z PASS guest /spaces?view=map   
+2026-10-31T14:03:00.966Z PASS guest /about   
+2026-10-31T14:03:13.926Z PASS guest /login   
+2026-10-31T14:03:22.570Z PASS guest /register   
+2026-10-31T14:03:31.237Z PASS guest /forgot-password   
+2026-10-31T14:03:39.845Z PASS guest /no-such-page   
+2026-10-31T14:03:44.204Z NET guest en 51 API requests, writes: none; 5xx: 0
+2026-10-31T14:04:23.281Z NET guest ar 21 API requests, writes: none; 5xx: 0
+2026-10-31T14:04:23.282Z TOTAL guest pass 7, fail 1
+2026-10-31T14:04:37.485Z FAIL owner /dashboard/spaces/7 missing: Needs your attention | Present now | Subscriptions ending this week  
+2026-10-31T14:04:37.492Z FAIL owner sidebar groups ["اليوم","المال","المساحة","الفريق والإعدادات"]
+2026-10-31T14:04:50.608Z FAIL owner /dashboard/spaces/7/desk missing: Log  
+2026-10-31T14:05:03.909Z FAIL owner /dashboard/spaces/7/customers missing: Customers  
+2026-10-31T14:05:17.462Z FAIL owner /dashboard/spaces/7/payments missing: Payments  
+2026-10-31T14:05:26.415Z FAIL owner /dashboard/spaces/7/finance missing: Income | Debts | Occupancy  
+2026-10-31T14:05:39.523Z FAIL owner /dashboard/spaces/7/finance?tab=debts missing: Total owed | Uncollected visits  
+2026-10-31T14:05:48.228Z FAIL owner /dashboard/spaces/7/finance?tab=occupancy missing: Average stay | Peak hours  
+2026-10-31T14:05:57.024Z FAIL owner /dashboard/spaces/7/packages missing: Available at the desk  
+2026-10-31T14:06:05.781Z FAIL owner /dashboard/spaces/7/profile missing: Space profile  
+2026-10-31T14:06:14.638Z FAIL owner /dashboard/spaces/7/announcements missing: Announcements  
+2026-10-31T14:06:23.320Z FAIL owner /dashboard/spaces/7/reports missing: Data reports  
+2026-10-31T14:06:32.030Z FAIL owner /dashboard/spaces/7/staff missing: Collected this month | Added  
+2026-10-31T14:06:45.203Z FAIL owner /dashboard/spaces/7/audit missing: Audit log | Events:  
+2026-10-31T14:06:58.176Z FAIL owner /dashboard/spaces/7/settings missing: My account | Personal settings  
+2026-10-31T14:07:02.504Z NET owner en 166 API requests, writes: none; 5xx: 0
+2026-10-31T14:08:11.399Z NET owner ar 19 API requests, writes: none; 5xx: 0
+2026-10-31T14:08:11.400Z TOTAL owner pass 0, fail 15
+2026-10-31T14:08:25.072Z FAIL reception /dashboard/spaces/7/desk missing: Front desk  
+2026-10-31T14:08:38.194Z FAIL reception /dashboard/spaces/7/customers missing: Customers  
+2026-10-31T14:08:47.350Z FAIL reception /dashboard/spaces/7/my-payments missing: My payments today  
+2026-10-31T14:08:56.017Z FAIL reception /dashboard/spaces/7/announcements missing: Announcements  
+2026-10-31T14:09:04.670Z FAIL reception /dashboard/spaces/7/finance missing: You don’t have access to this page  
+2026-10-31T14:09:13.307Z FAIL reception /dashboard/spaces/7/audit missing: You don’t have access to this page  
+2026-10-31T14:09:17.675Z NET reception en 56 API requests, writes: none; 5xx: 0
+2026-10-31T14:09:52.995Z NET reception ar 28 API requests, writes: none; 5xx: 0
+2026-10-31T14:09:52.997Z TOTAL reception pass 0, fail 6
+2026-10-31T14:10:05.952Z FAIL admin /dashboard/admin missing: Platform summary | Data completeness | New users  
+2026-10-31T14:10:05.960Z FAIL admin sidebar groups ["المساحات","المنصة"]
+2026-10-31T14:10:19.094Z FAIL admin /dashboard/admin/spaces missing: Spaces  
+2026-10-31T14:10:32.822Z FAIL admin /dashboard/admin/spaces?status=editable&stale=true missing: Kept by the admin  
+2026-10-31T14:10:42.260Z FAIL admin /dashboard/admin/owners missing: Space owners  
+2026-10-31T14:10:51.251Z FAIL admin /dashboard/admin/reports missing: Data reports | Handled by  
+2026-10-31T14:11:00.100Z PASS admin /dashboard/admin/users   
+2026-10-31T14:11:09.234Z FAIL admin /dashboard/admin/lookups missing: Lookups  
+2026-10-31T14:11:17.937Z FAIL admin /dashboard/admin/audit missing: Audit log | Platform events only  
+2026-10-31T14:11:31.325Z FAIL admin /dashboard/admin/settings missing: Platform settings | Platform contact | Data freshness | Defaults for new spaces  
+2026-10-31T14:11:40.111Z NET admin en 80 API requests, writes: none; 5xx: 0
+2026-10-31T14:13:50.911Z FAIL admin /dashboard/admin missing: Platform summary | Data completeness | New users  
+2026-10-31T14:13:50.916Z FAIL admin sidebar groups ["المساحات","المنصة"]
+2026-10-31T14:14:03.853Z FAIL admin /dashboard/admin/spaces missing: Spaces  
+2026-10-31T14:14:16.712Z FAIL admin /dashboard/admin/spaces?status=editable&stale=true missing: Kept by the admin  
+2026-10-31T14:14:25.294Z FAIL admin /dashboard/admin/owners missing: Space owners  
+2026-10-31T14:14:33.865Z FAIL admin /dashboard/admin/reports missing: Data reports | Handled by  
+2026-10-31T14:14:42.416Z FAIL admin /dashboard/admin/users missing: Users  
+2026-10-31T14:14:51.012Z FAIL admin /dashboard/admin/lookups missing: Lookups  
+2026-10-31T14:14:59.580Z FAIL admin /dashboard/admin/audit missing: Audit log | Platform events only  
+2026-10-31T14:15:12.446Z FAIL admin /dashboard/admin/settings missing: Platform settings | Platform contact | Data freshness | Defaults for new spaces  
+2026-10-31T14:15:21.109Z NET admin en 27 API requests, writes: none; 5xx: 0
+2026-10-31T14:16:07.854Z NET admin ar 12 API requests, writes: none; 5xx: 0
+2026-10-31T14:16:07.856Z TOTAL admin pass 0, fail 10

@@ -1,0 +1,33 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx (4 tests | 1 failed) 49ms
+   ❯ useLedgerFilters (4)
+     × clears the range, the staff member, the method, the kind and «Show voided» together 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  14:37:47
+   Duration  9.45s (import 59%, transform 19%, environment 17%, setup 4%, tests 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx > useLedgerFilters > clears the range, the staff member, the method, the kind and «Show voided» together
+AssertionError: expected '?from=2026-10-01&to=2026-10-21' to be '' // Object.is equality
+
+- Expected
++ Received
+
++ ?from=2026-10-01&to=2026-10-21
+
+ ❯ src/features/payments/hooks/ledger/useLedgerFilters.component.test.tsx:80:44
+     78|       result.current.filters.clear();
+     79|     });
+     80|     expect(result.current.location.search).toBe('');
+       |                                            ^
+     81|     expect(result.current.filters.applied).toBe(0);
+     82|     expect(result.current.filters.anyApplied).toBe(false);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

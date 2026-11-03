@@ -1,0 +1,19 @@
+I've reviewed my range of #129 (`2fa45cf8..dc427a54`, 3 commits). The verdict is **mergeable after a fix round**, with no blocker. CI is green on `fcf46637`, and the head did not move while I worked. I ran nothing; I read the commits only.
+
+**Findings:**
+- **R2-F1, should-fix:** `data-reports.md` doesn't list finding 167 under *Open findings*, though the same commit (`dc427a54`) recorded it about this capability. At that commit the section says «None.»; at the head it lists 168 and 180 but still not 167. The fix folds into `dc427a54`.
+- **R2-F2, should-fix:** suppose a decision is refused with `REPORT_ALREADY_DECIDED` while the list is filtered to «جديدة». The re-read list no longer holds the report, so the sheet falls back to the copy it opened with. It still shows «جديد» and no decision, which goes against the plan's S4 («read-only with the decision»). This affects both the owner's and the admin's lists. The existing test renders the sheet on its own, so it never reaches this case.
+- **R2-F3, nit:** removing a filter tag, or pressing «مسح الفلاتر», removes the focused button and nothing receives the focus, so it falls back to the page.
+- **R2-F4, nit (plausible):** «تعديل الحقل» links to `#hours` and similar sections, but the editor never scrolls to a section on arrival. Its cards appear only after the space loads, so the page probably opens at the top. I couldn't confirm this without a browser.
+
+**Privacy:** nothing on the owner's side names or hints at the reporter. I checked the types, rows, sheet, toast, cache keys, address, test fixture and documents. Only the admin's screens show the reporter.
+
+**Lane decisions:** every lane B decision in my range (LB-D1 to LB-D17) is sound or acceptable, as are LEAD-D1 and D2. One small reservation is on LB-D5: the admin's filter count reuses the payments ledger's wording.
+
+**Tests:** all of the plan's tests 45 to 58 are present and would fail if their behaviour broke. Test 51 is weaker on one point, the case behind R2-F2.
+
+**R3's later commits** only add to my range's files (the user's keys, repository calls, exports, copy, fixture and document lines). They change none of the owner's or the admin's code.
+
+I used none of the new finding numbers 184 to 186. R2-F3 and R2-F4 suggest 184 or 185 if the owner wants them recorded rather than fixed.
+
+Report: `C:\dev\masaha\workspace\WORKER_A\PAYMENTS_STEP10\6_REVIEW_LEAD_R2_CLAUDE_CODE.md`

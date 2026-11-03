@@ -1,0 +1,50 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+ ❯ |unit| src/shared/storage/localStorage.unit.test.ts (6 tests | 1 failed) 99ms
+   ❯ the local storage (6)
+     × lists its files under a prefix with their dates, and none under a prefix it never wrote 51ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  17:15:28
+   Duration  1.67s (import 62%, transform 30%, tests 8%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/storage/localStorage.unit.test.ts > the local storage > lists its files under a prefix with their dates, and none under a prefix it never wrote
+AssertionError: expected [ { …(2) }, { …(2) }, { …(2) }, …(1) ] to deeply equal [ { …(2) }, { …(2) }, { …(2) } ]
+
+- Expected
++ Received
+
+@@ -1,12 +1,16 @@
+  [
+    {
+      "createdAt": 2026-10-29T15:15:30.029Z,
+-     "key": "spaces/abc/card.webp",
++     "key": "avatars/xyz/card.webp",
+    },
+    {
+      "createdAt": 2026-10-29T15:15:30.023Z,
++     "key": "spaces/abc/card.webp",
++   },
++   {
++     "createdAt": 2026-10-29T15:15:30.024Z,
+      "key": "spaces/abc/page.webp",
+    },
+    {
+      "createdAt": 2026-10-01T09:00:00.000Z,
+      "key": "spaces/def/card.webp",
+
+ ❯ src/shared/storage/localStorage.unit.test.ts:77:63
+     75|     for await (const entry of storage.list('spaces/')) listed.push(ent…
+     76|
+     77|     expect(listed.sort((a, b) => a.key.localeCompare(b.key))).toEqual([
+       |                                                               ^
+     78|       { key: 'spaces/abc/card.webp', createdAt: expect.any(Date) as Da…
+     79|       { key: 'spaces/abc/page.webp', createdAt: expect.any(Date) as Da…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

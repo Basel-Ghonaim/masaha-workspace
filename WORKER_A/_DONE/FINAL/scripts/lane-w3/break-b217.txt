@@ -1,0 +1,54 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/hooks/check-in
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx (5 tests | 1 failed) 3254ms
+   ❯ useVisitDialog (5)
+     × offers the shifts as chips one may deselect, «Student» a switch, and sends no shift with none 680ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  15:42:25
+   Duration  15.46s (transform 33%, tests 22%, environment 20%, import 19%, setup 6%)
+
+  Transform  |component| transforming modules took 4.90s · 33% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx > useVisitDialog > offers the shifts as chips one may deselect, «Student» a switch, and sends no shift with none
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeChecked()[22m
+
+Received element is checked:
+  [31m<button
+  aria-checked="true"
+  class="group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+  data-radix-collection-item=""
+  data-slot="toggle-group-item"
+  data-state="on"
+  role="radio"
+  tabindex="0"
+  type="button"
+/>[39m
+ ❯ src/features/desk/hooks/check-in/useVisitDialog.component.test.tsx:91:25
+     89|     expect(screen.queryByRole('radio', { name: 'No shift' })).toBeNull…
+     90|     await user.click(morning);
+     91|     expect(morning).not.toBeChecked();
+       |                         ^
+     92|     await user.type(screen.getByRole('textbox', { name: 'Name' }), 'Om…
+     93|     await user.click(screen.getByRole('button', { name: 'Check in' }));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/hooks/check-in

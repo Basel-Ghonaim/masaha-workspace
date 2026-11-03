@@ -1,0 +1,6 @@
+[{"label": "B168", "file": "apps/web/src/features/space-links/hooks/add-owner/useEmailAccount.ts",
+  "old": "  const request = { email: email ?? undefined };", "new": "  const request = { q: email ?? undefined };",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/space-links/components/add-owner"},
+ {"label": "B169", "file": "apps/web/src/features/space-links/hooks/add-owner/useEmailAccount.ts",
+  "old": "  if (query.data === undefined) {\n    return {\n      status: 'failed',", "new": "  if (query.data === undefined) return { status: 'notFound' };\n  if (query.data === undefined) {\n    return {\n      status: 'failed',",
+  "cmd": "npm run test:component -w @masaha/web -- src/features/space-links/components/add-owner"}]

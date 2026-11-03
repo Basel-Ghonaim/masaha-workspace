@@ -1,0 +1,1 @@
+PASSWORD_RULES.filter(({ id, onlyBroken }) => !onlyBroken || !met[id])

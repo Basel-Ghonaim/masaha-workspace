@@ -1,0 +1,39 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx (3 tests | 1 failed | 2 skipped) 118ms
+   ❯ useMyPaymentsToday (3)
+     × says the server’s figures, the cash first, never summed; sends no range nor `recordedById` 117ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 skipped (3)
+   Start at  14:55:19
+   Duration  8.69s (import 54%, transform 23%, environment 17%, setup 4%, tests 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx > useMyPaymentsToday > says the server’s figures, the cash first, never summed; sends no range nor `recordedById`
+AssertionError: expected { from: '2026-10-21', …(4) } to deeply equal { voided: 'INCLUDE', page: 2, …(1) }
+
+- Expected
++ Received
+
+  {
++   "from": "2026-10-21",
+    "limit": 20,
+    "page": 2,
++   "to": "2026-10-21",
+    "voided": "INCLUDE",
+  }
+
+ ❯ src/features/payments/hooks/mine/useMyPaymentsToday.component.test.tsx:69:33
+     67|     );
+     68|     expect(requests.map(({ url }) => url)).toEqual(['/manage/spaces/7/…
+     69|     expect(requests[0]?.params).toEqual({ voided: 'INCLUDE', page: 2, …
+       |                                 ^
+     70|   });
+     71|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

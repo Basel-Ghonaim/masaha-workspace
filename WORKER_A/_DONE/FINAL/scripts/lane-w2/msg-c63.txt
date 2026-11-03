@@ -1,0 +1,17 @@
+feat(platform-settings): edit the settings
+
+Screen 32 was a title only, so the platform's contact, its staleness
+thresholds and the new spaces' defaults could be changed through the
+API alone. The page now holds the three cards AD-029 draws, each the
+API's own resource (D6.2):
+
+- each card read by its own GET, with its own skeleton and its own
+  failure and retry, so one card's failure never touches another's;
+- checked in the browser by its shared schema, sent whole, «حفظ»
+  always enabled (P10); «تغييرات غير محفوظة» and «تجاهل التغييرات»
+  while it differs; a refusal inside the card, the 429 counted down;
+  «حُفظت الإعدادات» once saved;
+- the contact's empty channel sent null; the thresholds whole days
+  from 1 to 365, Arabic-Indic digits read; the rounding minutes shown
+  only for «تقريب لأعلى…», bounded and worded as the owner's pricing
+  card (EC18).

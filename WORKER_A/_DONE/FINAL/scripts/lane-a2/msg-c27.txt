@@ -1,0 +1,11 @@
+feat(visits): check a visit in for its customer
+
+The desk's «تسجيل كزيارة» knows the customer it checks in, but a
+visit's check-in took a name only, so the visit belonged to no one
+until a phone was given at its check-out (finding 160).
+
+The check-in takes customerId. Under the space's lock the desk checks
+the customer is the space's (invalid_choice), not archived
+(CUSTOMER_ARCHIVED) and not present (MEMBER_ALREADY_CHECKED_IN), as a
+subscriber's check-in does; the visit is created with its customer,
+and its audit entry names it.

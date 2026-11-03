@@ -1,0 +1,31 @@
+<<<OLD
+import { CustomerFile, useFileTitle } from '@features/desk';
+===
+import { CustomerFile, useFileTitle } from '@features/desk';
+import { useMySpacesQuery } from '@features/space-links';
+>>>
+<<<OLD
+ * subscription sheet. An id that names no one shows the 404.
+===
+ * subscription sheet; the space's name for the reminder as `space-links` lists it, by its Arabic
+ * name when it has one. An id that names no one shows the 404.
+>>>
+<<<OLD
+  const sheet = useSheetOpener();
+
+===
+  const sheet = useSheetOpener();
+  const space = useMySpacesQuery().data?.find((one) => one.spaceId === spaceId);
+  const spaceName = space === undefined ? '' : (space.nameAr ?? space.nameEn);
+
+>>>
+<<<OLD
+          subscribe={sheet.open}
+        />
+      </div>
+===
+          subscribe={sheet.open}
+          spaceName={spaceName}
+        />
+      </div>
+>>>

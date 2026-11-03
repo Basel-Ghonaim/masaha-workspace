@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/data-reports/adminReports.api.test.ts (6 tests | 1 failed | 4 skipped) 2145ms
+   ❯ one report, the admin's (1)
+     × the admin reads one report by its id, as the list shows it; an unknown one, or a deleted space’s, 404 696ms
+
+ Test Files  1 failed | 4 passed | 4 skipped (9)
+      Tests  1 failed | 9 passed | 57 skipped (67)
+   Start at  15:21:41
+   Duration  49.59s (import 48%, tests 26%, transform 19%, setup 7%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/data-reports/adminReports.api.test.ts > one report, the admin's > the admin reads one report by its id, as the list shows it; an unknown one, or a deleted space’s, 404
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ src/modules/data-reports/adminReports.api.test.ts:67:29
+     65|
+     66|     const response = await adminRequest(app, admin, 'get', `/data-repo…
+     67|     expect(response.status).toBe(200);
+       |                             ^
+     68|     const listed = await adminRequest(app, admin, 'get', '/data-report…
+     69|     expect(dataOf(response)).toEqual((dataOf(listed) as object[])[0]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

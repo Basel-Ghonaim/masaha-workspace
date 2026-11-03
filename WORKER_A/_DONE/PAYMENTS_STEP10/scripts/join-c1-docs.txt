@@ -1,0 +1,15 @@
+##### conflict 0
+OURS NEW > **Authority:** The `data-reports` capability: a signed-in user tells Masaha that one field group of a listed
+OURS NEW > **Scope:** the API module `data-reports` (L3); `@masaha/shared/data-reports`; the web feature `features/data
+THEIRS NEW > **Authority:** The `data-reports` capability: a signed-in user tells Masaha that one field group of a listed
+THEIRS NEW > **Scope:** the API module `data-reports` (L3); `@masaha/shared/data-reports`; the web feature `features/data
+##### conflict 1
+OURS NEW **The admin's reports on the web** (`features/data-reports`, composed by `pages/dashboard/admin/DataReportsPag
+THEIRS NEW **The user's reports on the web** (`features/data-reports`, composed by `pages/site/account/MyReportsPage.tsx`
+##### conflict 2
+OURS NEW - **Web:** `apps/web/src/features/data-reports/`, entry `index.ts` (`SpaceReportsList`, `AdminReportsList`, `A
+THEIRS NEW - **Web:** `apps/web/src/features/data-reports/`, entry `index.ts` (`SpaceReportsList`, `MyReportsList`), read
+##### conflict 3
+OURS NEW - 2026-10-28, #PRNUM — «بلاغات البيانات», the owner's: the space's reports by status, the reporter a visitor a
+THEIRS BASE-SAME - 2026-10-28, #PRNUM — «بلاغات البيانات», the owner's: the space's reports by status, the reporter a visitor a
+THEIRS NEW - 2026-10-28, #PRNUM — «بلاغاتي»: a signed-in user's own reports, the replies labelled by who replied, a space

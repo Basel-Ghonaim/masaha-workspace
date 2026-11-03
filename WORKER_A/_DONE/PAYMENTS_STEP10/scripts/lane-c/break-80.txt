@@ -1,0 +1,76 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx (4 tests | 2 failed) 533ms
+   ❯ useFavoritesView (4)
+     × shows the listed spaces newest saved first as cards, the ones that left after them by name 111ms
+     × sorts nearest first while near me holds a point, sent in the header only; clearing it drops that answer 187ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx > useFavoritesView > shows the listed spaces newest saved first as cards, the ones that left after them by name
+AssertionError: expected [] to deeply equal [ { key: '9', id: 9, …(2) } ]
+
+- Expected
++ Received
+
+- [
+-   {
+-     "id": 9,
+-     "key": "9",
+-     "line": "This space is no longer listed in the directory",
+-     "name": {
+-       "text": "Old Hub",
+-     },
+-   },
+- ]
++ []
+
+ ❯ src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx:94:37
+     92|     expect(result.current.cards.map((card) => card.name.text)).toEqual…
+     93|     expect(result.current.cards.map((card) => card.distance)).toEqual(…
+     94|     expect(result.current.unlisted).toEqual([
+       |                                     ^
+     95|       {
+     96|         key: '9',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx > useFavoritesView > sorts nearest first while near me holds a point, sent in the header only; clearing it drops that answer
+AssertionError: expected [] to deeply equal [ '9' ]
+
+- Expected
++ Received
+
+- [
+-   "9",
+- ]
++ []
+
+ ❯ src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx:127:61
+    125|     expect(result.current.near.button.on).toBe(true);
+    126|     expect(result.current.cards[0]?.distance).toContain('0.7');
+    127|     expect(result.current.unlisted.map((each) => each.key)).toEqual(['…
+       |                                                             ^
+    128|     expect(requests.at(-1)?.params).toEqual({ sort: 'distance' });
+    129|     expect(requests.at(-1)?.headers['Masaha-Near']).toBe('31.521,34.45…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  13:34:23
+   Duration  5.67s (transform 37%, environment 26%, import 20%, tests 10%, setup 7%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/directory/hooks/favorites/useFavoritesView.component.test.tsx

@@ -1,0 +1,21 @@
+head d3fe4f91
+npm-ci exit=0 :: 
+shared-build exit=0 :: 
+migrate-test :: All migrations have been successfully applied.
+format-check exit=1 :: 
+lint exit=0 :: 
+typecheck exit=0 :: 
+check-classes exit=0 :: No physical direction or arbitrary-value classes in 1915 files. 
+check-links exit=0 :: 3198 links in 250 documents and 2599 source files all resolve. 
+check-conflicts exit=0 :: > @masaha/api@0.0.0 check:conflicts No conflict markers found. 
+unit-shared exit=0 ::  Test Files  28 passed (28)       Tests  280 passed (280) 
+unit-api exit=0 ::  Test Files  76 passed (76)       Tests  912 passed (912) 
+unit-web exit=0 ::  Test Files  184 passed (184)       Tests  1172 passed (1172) 
+component exit=0 ::  Test Files  339 passed (339)       Tests  2006 passed (2006) 
+api exit=1 ::     at genericNodeError (node:internal/errors:985:15)     at wrappedFn (node:internal/errors:539:14) 
+build exit=0 :: 
+check-build exit=0 :: 
+design-parse exit=0 :: 
+design-classes exit=0 :: 
+prnum files: 94, non-doc: 0
+DONE

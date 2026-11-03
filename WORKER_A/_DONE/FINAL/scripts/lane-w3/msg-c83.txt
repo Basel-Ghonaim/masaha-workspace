@@ -1,0 +1,8 @@
+feat(desk): name who recorded and voided
+
+The statement named nobody (DI-48, finding 162): no route named the
+staff to reception. The statement and the file now answer
+recordedBy and voided.by, so each payment of a statement, and each
+payment on one of the file's unpaid visits, says «سجّلها {name}», and
+a void «ألغاها {name}: {reason}», the ledger's line. DI-48 is
+superseded, and finding 162 resolved.

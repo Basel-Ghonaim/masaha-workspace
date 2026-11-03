@@ -1,0 +1,87 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/components/public src/pages/site/public/space/SpacePage.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/announcements/components/public/SpaceAnnouncements.component.test.tsx (3 tests | 2 failed) 141ms
+   ❯ SpaceAnnouncements (3)
+     × lists the others by their start, the running closure not repeated, an upcoming closure among them 125ms
+     × draws nothing when only the running closure, or nothing, is left 6ms
+ ❯ |component| src/pages/site/public/space/SpacePage.component.test.tsx (6 tests | 2 failed) 8516ms
+   ❯ a space’s page (6)
+     × keeps U8’s order at 390 px: the closure’s notice first, the announcements after the status and before the prices, the report last 281ms
+     × keeps U8’s order at 1440 px: the closure’s notice first, the announcements after the status and before the prices, the report last 161ms
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  4 failed | 8 passed (12)
+   Start at  14:03:24
+   Duration  14.21s (tests 37%, import 20%, environment 20%, transform 17%, setup 6%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/components/public/SpaceAnnouncements.component.test.tsx > SpaceAnnouncements > lists the others by their start, the running closure not repeated, an upcoming closure among them
+AssertionError: expected [ 'New chairs', …(3) ] to deeply equal [ 'New chairs', 'خصم الطلاب', …(1) ]
+
+- Expected
++ Received
+
+  [
+    "New chairs",
++   "Closed for maintenance",
+    "خصم الطلاب",
+    "Closed for the holiday",
+  ]
+
+ ❯ src/features/announcements/components/public/SpaceAnnouncements.component.test.tsx:54:19
+     52|       .getAllByRole('listitem')
+     53|       .map((row) => row.querySelector('p')?.textContent);
+     54|     expect(texts).toEqual(['New chairs', 'خصم الطلاب', 'Closed for the…
+       |                   ^
+     55|     expect(within(section).queryByText('Closed for maintenance')).not.…
+     56|     expect(within(section).getAllByText('Temporary closure')).toHaveLe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/features/announcements/components/public/SpaceAnnouncements.component.test.tsx > SpaceAnnouncements > draws nothing when only the running closure, or nothing, is left
+Error: [2mexpect([22m[31melement[39m[2m).toBeEmptyDOMElement()[22m
+
+Received:
+  [31m"<section aria-labelledby="_r_2_" class="flex flex-col gap-4"><h2 id="_r_2_" class="text-heading-2">Announcements</h2><ul class="flex flex-col gap-4"><li class="rounded-lg border border-border p-4"><div class="flex min-w-0 flex-col gap-2"><div class="flex flex-wrap items-center gap-2"><span data-slot="badge" data-variant="warning" class="inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&amp;>svg]:pointer-events-none [&amp;>svg]:size-3 bg-warning-subtle text-warning-subtle-foreground">Temporary closure</span><span class="text-caption text-muted-foreground">21 October ⁨08:00⁩–⁨18:00⁩</span></div><p class="text-body break-words whitespace-pre-line">Closed for maintenance</p></div></li></ul></section>"[39m
+ ❯ src/features/announcements/components/public/SpaceAnnouncements.component.test.tsx:70:23
+     68|   it('draws nothing when only the running closure, or nothing, is left…
+     69|     const { container, rerender } = render(<SpaceAnnouncements items={…
+     70|     expect(container).toBeEmptyDOMElement();
+       |                       ^
+     71|
+     72|     rerender(<SpaceAnnouncements items={[]} />);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/pages/site/public/space/SpacePage.component.test.tsx > a space’s page > keeps U8’s order at 390 px: the closure’s notice first, the announcements after the status and before the prices, the report last
+ FAIL  |component| src/pages/site/public/space/SpacePage.component.test.tsx > a space’s page > keeps U8’s order at 1440 px: the closure’s notice first, the announcements after the status and before the prices, the report last
+Error: [2mexpect([22m[31melement[39m[2m).not.toHaveTextContent()[22m
+
+Expected element not to have text content:
+[32m  Closed for maintenance[39m
+Received:
+[31m  AnnouncementsTemporary closureFrom 28 October ⁨13:03⁩ · no endClosed for maintenanceOfferFrom 29 October ⁨14:03⁩ · no endHalf price for students[39m
+ ❯ src/pages/site/public/space/SpacePage.component.test.tsx:116:27
+    114|       const section = screen.getByRole('region', { name: 'Announcement…
+    115|       expect(section).toHaveTextContent('Half price for students');
+    116|       expect(section).not.toHaveTextContent('Closed for maintenance');
+       |                           ^
+    117|       // Below 1024 px the status is a card in the main column; from i…
+    118|       if (width === 390) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/components/public src/pages/site/public/space/SpacePage.component.test.tsx

@@ -1,0 +1,170 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/occupancy/components/PresentList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/occupancy/components/PresentList.component.test.tsx (6 tests | 1 failed) 1878ms
+   ❯ PresentList (6)
+     × links a subscriber’s name to their file, names their plan, and shows the time alone 210ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  12:37:02
+   Duration  15.85s (import 28%, transform 27%, environment 26%, tests 12%, setup 7%)
+
+  Transform  |component| transforming modules took 4.08s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/occupancy/components/PresentList.component.test.tsx > PresentList > links a subscriber’s name to their file, names their plan, and shows the time alone
+TestingLibraryElementError: Unable to find an accessible element with the role "cell" and name "10:00"
+
+Here are the accessible roles:
+
+  cell:
+
+  Name "Omar":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "Visit":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "Since 10:00":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "2931h 37m":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "⁨₪5⁩ so far":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------cell:
+
+  Name "Check out":
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  button:
+
+  Name "Check out Omar":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Check out Omar"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<tr[39m
+  [33mclass[39m=[32m"border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent"[39m
+  [33mdata-slot[39m=[32m"table-row"[39m
+[36m>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"text-label"[39m
+      [33mdir[39m=[32m"auto"[39m
+    [36m>[39m
+      [0mOmar[0m
+    [36m</span>[39m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-secondary text-secondary-foreground"[39m
+      [33mdata-slot[39m=[32m"badge"[39m
+      [33mdata-variant[39m=[32m"neutral"[39m
+    [36m>[39m
+      [0mVisit[0m
+    [36m</span>[39m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [0mSince 10:00[0m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [0m2931h 37m[0m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 hidden lg:table-cell"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [0m⁨₪5⁩ so far[0m
+  [36m</td>[39m
+  [36m<td[39m
+    [33mclass[39m=[32m"py-(--table-row-padding-block) align-middle px-3 first:ps-5 last:pe-5 w-px"[39m
+    [33mdata-slot[39m=[32m"table-cell"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mdata-present-action[39m=[32m"VISIT-12"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-label[39m=[32m"Check out Omar"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [0mCheck out[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</td>[39m
+[36m</tr>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/occupancy/components/PresentList.component.test.tsx:119:25
+    117|     const omar = within(table).getByText('Omar').closest('tr') as HTML…
+    118|     expect(within(omar).getByText('Visit')).toBeVisible();
+    119|     expect(within(omar).getByRole('cell', { name: '10:00' })).toBeVisi…
+       |                         ^
+    120|     // The actions' header is named for a reader alone.
+    121|     expect(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/occupancy/components/PresentList

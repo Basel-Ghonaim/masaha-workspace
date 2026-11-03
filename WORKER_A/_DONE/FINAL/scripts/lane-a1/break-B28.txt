@@ -1,0 +1,85 @@
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api src/modules/auth/replacement.api.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a1/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a1_test", schema "public" at "localhost:5433"
+
+29 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/auth/replacement.api.test.ts (9 tests | 2 failed) 7001ms
+   ❯ an expired pending account replaced by its address holder (9)
+     × the replaced account loses its links and sessions, is suspended, and its email freed 793ms
+     × the replacement is audited user.replaced, and the space’s log shows the link ended by no one 821ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 7 passed (9)
+   Start at  17:06:26
+   Duration  18.27s (tests 51%, transform 35%, import 12%, setup 1%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/auth/replacement.api.test.ts > an expired pending account replaced by its address holder > the replaced account loses its links and sessions, is suspended, and its email freed
+AssertionError: expected { spaceId: 1, userId: 1, …(4) } to match object { deactivatedAt: Any<Date> }
+(5 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "deactivatedAt": Any<Date>,
++   "deactivatedAt": null,
+  }
+
+ ❯ src/modules/auth/replacement.api.test.ts:93:7
+     91|         where: { spaceId_userId: { spaceId, userId: old.id } },
+     92|       }),
+     93|     ).toMatchObject({ deactivatedAt: expect.any(Date) as unknown });
+       |       ^
+     94|   });
+     95|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |api| src/modules/auth/replacement.api.test.ts > an expired pending account replaced by its address holder > the replacement is audited user.replaced, and the space’s log shows the link ended by no one
+AssertionError: expected [] to deeply equal [ ObjectContaining{…} ]
+
+- Expected
++ Received
+
+- [
+-   ObjectContaining {
+-     "action": "space.staffDeactivated",
+-     "actor": {
+-       "kind": "SYSTEM",
+-     },
+-   },
+- ]
++ []
+
+ ❯ src/modules/auth/replacement.api.test.ts:187:74
+    185|       .get(`/api/v1/manage/spaces/${String(spaceId)}/audit-log`)
+    186|       .set('Authorization', owner.authorization);
+    187|     expect(dataOf(log) as { action: string; actor: { kind: string } }[…
+       |                                                                          ^
+    188|       expect.objectContaining({ action: 'space.staffDeactivated', acto…
+    189|     ]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:api` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a1\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-lane-a1\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project api src/modules/auth/replacement.api.test.ts

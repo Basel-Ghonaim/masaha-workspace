@@ -1,0 +1,23 @@
+I've written the R1 review of #129. My verdict for my range is **mergeable after a fix round**: one blocker, one should-fix and two nits. CI was green on `fcf46637`, and the head didn't move during the review. Everything comes from reading the commits; I ran nothing (no tests, build or database), as the review rules require.
+
+- **R1-F1, blocker: editing an announcement changes its start time without the user touching it** (`sheetRequest.ts:64`, `:113`).
+  - **Cause:** the edit sheet loads the start rounded down to the minute. The server stores "now" with its seconds, for posts made with «الآن» (the default) and for «ابدأ الآن». So saving any such announcement sends a `startsAt` up to 59 s earlier, even with nothing changed, and the server records and audits that move.
+  - **Effect 1:** an extended closure posted «الآن» can never have its text corrected. The server refuses with `CLOSURE_EXTENDED`, and the message blames a start change the owner didn't make.
+  - **Effect 2:** an announcement running for more than 30 days refuses any text edit with the start's `out_of_range`.
+  - **Effect 3:** «لم يتغيّر شيء» never appears for these announcements.
+  - **Not caught:** every test fixture is on a whole minute. The fix and its tests are in the report.
+- **R1-F2, should-fix: the extension and delete dialogs disappear on a 409** (`ClosureLine.tsx:16`, `AnnouncementCard.tsx:80`).
+  - **Cause:** each dialog lives under the button that opened it, and that button is only drawn while the card still offers the action. After a 409 the list is fetched again; once it shows the closure as extended (or moved, or deleted), the button and the open dialog are unmounted.
+  - **Example:** two owners extend the same closure. The second gets `CLOSURE_ALREADY_EXTENDED`, which flashes and vanishes. I think the keyboard focus then drops to the page body, but I haven't run it to confirm.
+  - **Not caught:** tests 38 and 41 render the dialogs outside the list.
+- **R1-F3, nit:** finding 169's resolution says only the ledger and the showcase import the calendar entry. The announcement sheet now imports it too, in this same PR.
+- **R1-F4, nit:** the sheet's calendar highlights the browser's "today", not Gaza's.
+
+The lead's decisions I was asked to judge:
+- **LEAD-D11 (pre-bundling the calendar library for the component tests):** sound. It only touches the component test settings, the build is unchanged, and it hides no slowness a user would feel.
+- **LEAD-D3 (how the finding 169 guard was tested):** acceptable. It exercises the same mechanism as the leak #127 hit. Whether the guard catches that exact case (a dashboard-only page drawing the calendar through the main barrel) would need a build, which I couldn't run.
+- **Lane A's LA-D1–D15:** all acceptable or sound. R1-F1 breaks the intent of LA-D4 and LA-D14 in practice.
+
+All the plan's tests 25–44 are present. Tests 31, 33, 38 and 41 are weaker than they look, for the reasons above. Finding numbers 181–183 are unused, because every defect is within the PR's scope.
+
+Report: `C:\dev\masaha\workspace\WORKER_A\PAYMENTS_STEP10\6_REVIEW_LEAD_R1_CLAUDE_CODE.md`

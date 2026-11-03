@@ -1,0 +1,72 @@
+== B1 (apps/api/src/modules/audit/platformEvents.ts) broken run exit 1
+     × the platform's list names no customer, subscription, check-in, visit, payment, package, announcement or closure action, nor a space's capacity, override, settings or staff; an account's event is the platform's only with no space 21ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/audit/platformEvents.unit.test.ts > the admin's allowlist > the platform's list names no customer, subscription, check-in, visit, payment, package, announcement or closure action, nor a space's capacity, override, settings or staff; an account's event is the platform's only with no space
+AssertionError: payment.recorded: expected true to be false // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B2 (apps/api/src/modules/audit/platformEvents.ts) broken run exit 1
+     × the platform's list names no customer, subscription, check-in, visit, payment, package, announcement or closure action, nor a space's capacity, override, settings or staff; an account's event is the platform's only with no space 17ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/audit/platformEvents.unit.test.ts > the admin's allowlist > the platform's list names no customer, subscription, check-in, visit, payment, package, announcement or closure action, nor a space's capacity, override, settings or staff; an account's event is the platform's only with no space
+AssertionError: expected true to be false // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B3 (apps/api/src/modules/audit/auditPeriod.ts) broken run exit 1
+     × the last 30 days start at the Gaza midnight 29 days before today, across a daylight-saving change; all time has no start 8ms
+      Tests  1 failed (1)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |unit| src/modules/audit/auditPeriod.unit.test.ts > the audit logs' period > the last 30 days start at the Gaza midnight 29 days before today, across a daylight-saving change; all time has no start
+AssertionError: expected '2026-10-11T08:00:00.000Z' to be '2026-10-11T21:00:00.000Z' // Object.is equality
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed (1)
+== B4 (packages/shared/src/audit/requests.ts) broken run exit 1
+     × the period defaults to the last 30 days; actions are known, each once, at most 30; q 1–80; the actor an id, MASAHA or SYSTEM 12ms
+      Tests  1 failed | 1 passed (2)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/audit/requests.unit.test.ts > the owner's audit query > the period defaults to the last 30 days; actions are known, each once, at most 30; q 1–80; the actor an id, MASAHA or SYSTEM
+AssertionError: expected null to deeply equal { actions: [ 'invalid_choice' ] }
+   restored: sha256 same
+   restored run exit 0: Tests  2 passed (2)
+== B5 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × the owner reads every entry of the space, newest first, paged, with before and after as stored: the staff's, the system's and the admin's; another space's never 518ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > the owner reads every entry of the space, newest first, paged, with before and after as stored: the staff's, the system's and the admin's; another space's never
+AssertionError: expected [ 5, 4 ] to deeply equal [ 4, 3 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B6 (apps/api/src/modules/audit/audit.mapper.ts) broken run exit 1
+     × the admin's actor is MASAHA with no id or name; a staff member's is named, also once their link ended; the system's is SYSTEM 579ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > the admin's actor is MASAHA with no id or name; a staff member's is named, also once their link ended; the system's is SYSTEM
+AssertionError: expected { kind: 'PERSON', id: 5, name: '' } to deeply equal { kind: 'MASAHA' }
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B7 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × each target has its type, id and current name: a customer, a subscription, a visit by its visitor or its customer, a check-in, a space; a deleted announcement is marked; a payment has none 548ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > each target has its type, id and current name: a customer, a subscription, a visit by its visitor or its customer, a check-in, a space; a deleted announcement is marked; a payment has none
+AssertionError: expected [ …(8) ] to deeply equal [ …(8) ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B8 (packages/shared/src/audit/requests.ts) broken run exit 1
+     × the last 30 days by default, from the Gaza midnight 29 days back; ALL reaches an older entry 476ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > the last 30 days by default, from the Gaza midnight 29 days back; ALL reaches an older entry
+AssertionError: expected [ 1, 2 ] to deeply equal [ 1 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)
+== B9 (apps/api/src/modules/audit/audit.repository.ts) broken run exit 1
+     × q finds the entries whose target's name holds it (أحمد for احمد); actor (a person, MASAHA, SYSTEM) and actions narrow; each before the page is cut, the total right 518ms
+      Tests  1 failed | 8 skipped (9)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  |api| src/modules/audit/spaceAuditLog.api.test.ts > the owner's log > q finds the entries whose target's name holds it (أحمد for احمد); actor (a person, MASAHA, SYSTEM) and actions narrow; each before the page is cut, the total right
+AssertionError: expected [] to deeply equal [ 1 ]
+   restored: sha256 same
+   restored run exit 0: Tests  1 passed | 8 skipped (9)

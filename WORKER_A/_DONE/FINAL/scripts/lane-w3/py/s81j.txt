@@ -1,0 +1,29 @@
+<<<OLD
+import { Badge, Card, CardContent } from '@shared/design-system';
+===
+import { useCopy } from '@shared/copy';
+import { Badge, Card, CardContent } from '@shared/design-system';
+>>>
+<<<OLD
+ * balance from the one badge (DI-40); the archive; and the customer's actions at its end (DK-013).
+ */
+===
+ * balance from the one badge (DI-40); the archive; and the customer's actions at its end (DK-013),
+ * a group of their own.
+ */
+>>>
+<<<OLD
+}) {
+  return (
+===
+}) {
+  const label = useCopy().desk.customers.columns.actions;
+  return (
+>>>
+<<<OLD
+        <span className="ms-auto">{actions}</span>
+===
+        <div role="group" aria-label={label} className="ms-auto flex flex-wrap items-center gap-2">
+          {actions}
+        </div>
+>>>

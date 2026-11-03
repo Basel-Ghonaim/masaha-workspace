@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/audit/services/actionWords
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |unit| src/features/audit/services/actionWords.unit.test.ts (4 tests | 1 failed) 34ms
+   ❯ actionView (4)
+     × every AUDIT_ACTIONS action has a word in ar 24ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:15:48
+   Duration  3.44s (transform 72%, import 26%, tests 1%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/audit/services/actionWords.unit.test.ts > actionView > every AUDIT_ACTIONS action has a word in ar
+AssertionError: expected [ 'visit.writtenOff' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "visit.writtenOff",
++ ]
+
+ ❯ src/features/audit/services/actionWords.unit.test.ts:11:77
+      9|     (_, catalogue) => {
+     10|       const words = catalogue.audit.actions as Readonly<Record<string,…
+     11|       expect(AUDIT_ACTIONS.filter((action) => words[action] === undefi…
+       |                                                                             ^
+     12|       expect(AUDIT_ACTIONS.filter((action) => !actionView(action, cata…
+     13|     },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/audit/services/actionWords

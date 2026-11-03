@@ -1,0 +1,210 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/space/finance
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/pages/dashboard/space/finance/FinancePage.component.test.tsx (1 test | 1 failed) 7814ms
+   ❯ the owner's finance page (1)
+     × refuses reception with the 403 inside the shell, reading no finance 3635ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  15:30:15
+   Duration  20.54s (tests 39%, transform 25%, environment 17%, import 14%, setup 5%)
+
+stderr | src/pages/dashboard/space/finance/FinancePage.component.test.tsx > the owner's finance page > refuses reception with the 403 inside the shell, reading no finance
+RangeError: Invalid time value
+    at monthLabel (C:/dev/masaha/app-lane-w1/apps/web/src/features/finance/services/monthLabel.ts:16:6)
+    at useIncomeTab (C:/dev/masaha/app-lane-w1/apps/web/src/features/finance/hooks/income/useIncomeTab.ts:36:17)
+    at IncomeTab (C:/dev/masaha/app-lane-w1/apps/web/src/features/finance/components/IncomeTab.tsx:12:18)
+    at Object.react_stack_bottom_frame (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:28571:20)
+    at renderWithHooks (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:8030:22)
+    at updateFunctionComponent (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:10569:19)
+    at beginWork (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:12205:18)
+    at runWithFiberInDEV (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:1048:13)
+    at performUnitOfWork (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:19176:22)
+    at workLoopSync (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:19004:41) {
+  [stack]: [Getter/Setter],
+  [message]: 'Invalid time value'
+}
+
+The above error occurred in the <IncomeTab> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, RenderErrorBoundary.
+
+React Router caught the following error during render RangeError: Invalid time value
+    at monthLabel (C:/dev/masaha/app-lane-w1/apps/web/src/features/finance/services/monthLabel.ts:16:6)
+    at useIncomeTab (C:/dev/masaha/app-lane-w1/apps/web/src/features/finance/hooks/income/useIncomeTab.ts:36:17)
+    at IncomeTab (C:/dev/masaha/app-lane-w1/apps/web/src/features/finance/components/IncomeTab.tsx:12:18)
+    at Object.react_stack_bottom_frame (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:28571:20)
+    at renderWithHooks (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:8030:22)
+    at updateFunctionComponent (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:10569:19)
+    at beginWork (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:12205:18)
+    at runWithFiberInDEV (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:1048:13)
+    at performUnitOfWork (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:19176:22)
+    at workLoopSync (C:\dev\masaha\app-lane-w1\node_modules\react-dom\cjs\react-dom-client.development.js:19004:41)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/finance/FinancePage.component.test.tsx > the owner's finance page > refuses reception with the 403 inside the shell, reading no finance
+TestingLibraryElementError: Unable to find role="heading" and name "You don’t have access to this page"
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col gap-6 px-4 py-6 outline-none md:px-8"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"mx-auto flex w-full max-w-xl flex-1 flex-col justify-center px-4 py-10 md:px-8"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col items-center gap-2 px-4 py-10 text-center"[39m
+      [33mdata-slot[39m=[32m"empty-state"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"mb-2 flex size-14 items-center justify-center rounded-full bg-muted text-muted-foreground [&_svg:not([class*='size-'])]:size-6"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-triangle-alert lucide-alert-triangle"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 9v4"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 17h.01"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</div>[39m
+      [36m<h1[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+      [36m>[39m
+        [0mSomething went wrong[0m
+      [36m</h1>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"max-w-sm text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [0mThe problem is on our side, not yours. Try again in a moment.[0m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"mt-4 flex w-full flex-col gap-2 md:w-auto md:flex-row md:justify-center"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mTry again[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-center text-body-sm text-muted-foreground"[39m
+      [33mrole[39m=[32m"status"[39m
+    [36m/>[39m
+  [36m</div>[39m
+[36m</main>[39m
+
+Ignored nodes: comments, script, style
+[36m<main[39m
+  [33mclass[39m=[32m"flex flex-1 flex-col gap-6 px-4 py-6 outline-none md:px-8"[39m
+  [33mid[39m=[32m"main"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"mx-auto flex w-full max-w-xl flex-1 flex-col justify-center px-4 py-10 md:px-8"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col items-center gap-2 px-4 py-10 text-center"[39m
+      [33mdata-slot[39m=[32m"empty-state"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"mb-2 flex size-14 items-center justify-center rounded-full bg-muted text-muted-foreground [&_svg:not([class*='size-'])]:size-6"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-triangle-alert lucide-alert-triangle"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 9v4"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M12 17h.01"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</div>[39m
+      [36m<h1[39m
+        [33mclass[39m=[32m"text-heading-3"[39m
+      [36m>[39m
+        [0mSomething went wrong[0m
+      [36m</h1>[39m
+      [36m<p[39m
+        [33mclass[39m=[32m"max-w-sm text-body-sm text-muted-foreground"[39m
+      [36m>[39m
+        [0mThe problem is on our side, not yours. Try again in a moment.[0m
+      [36m</p>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"mt-4 flex w-full flex-col gap-2 md:w-auto md:flex-row md:justify-center"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+        [36m>[39m
+          [0mTry again[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-center text-body-sm text-muted-foreground"[39m
+      [33mrole[39m=[32m"status"[39m
+    [36m/>[39m
+  [36m</div>[39m
+[36m</main>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/pages/dashboard/space/finance/FinancePage.component.test.tsx:80:26
+     78|     const main = await screen.findByRole('main');
+     79|     expect(
+     80|       await within(main).findByRole('heading', { name: 'You don’t have…
+       |                          ^
+     81|     ).toBeInTheDocument();
+     82|     expect(requests.some((request) => request.url?.includes('/finance/…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/space/finance

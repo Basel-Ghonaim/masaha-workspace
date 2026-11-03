@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx (2 tests | 1 failed) 813ms
+   ❯ DeskPage (2)
+     × puts the uncollected card before who is here, and hides it below xl when empty 652ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  15:27:12
+   Duration  21.75s (transform 56%, import 19%, environment 17%, setup 5%, tests 4%)
+
+  Transform  |component| transforming modules took 11.78s · 56% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/space/desk/DeskPage.component.test.tsx > DeskPage > puts the uncollected card before who is here, and hides it below xl when empty
+Error: [2mexpect([22m[31melement[39m[2m).toHaveClass([22m[32m[32m"hidden xl:flex"[32m[39m[2m)[22m
+
+Expected the element to have class:
+[32m  hidden xl:flex[39m
+Received:
+[31m  flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg[39m
+ ❯ src/pages/dashboard/space/desk/DeskPage.component.test.tsx:72:19
+     70|     const empty = await screen.findByRole('region', { name: 'Not colle…
+     71|     expect(await screen.findByText('Nothing left to collect.')).toBeIn…
+     72|     expect(empty).toHaveClass('hidden', 'xl:flex');
+       |                   ^
+     73|   });
+     74|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/space/desk/DeskPage.component.test.tsx

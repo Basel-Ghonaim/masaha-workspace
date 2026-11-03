@@ -1,0 +1,31 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx (4 tests | 1 failed) 2461ms
+   ❯ PaymentsLedger (4)
+     × applies a period once its second day is chosen, the earlier first; a new click starts afresh 631ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/payments/components/ledger/PaymentsLedger.component.test.tsx > PaymentsLedger > applies a period once its second day is chosen, the earlier first; a new click starts afresh
+Error: [2mexpect([22m[31mreceived[39m[2m).toBeVisible()[22m
+
+[31mreceived[39m value must be an HTMLElement or an SVGElement.
+Received has type:  Null
+Received has value: [31mnull[39m
+ ❯ src/features/payments/components/ledger/PaymentsLedger.component.test.tsx:145:22
+    143|     await user.click(await screen.findByRole('button', { name: /Octobe…
+    144|     // One day chosen: the picker stays open on it, and nothing is app…
+    145|     expect(picker()).toBeVisible();
+       |                      ^
+    146|     expect(address()).toHaveTextContent(/^$/);
+    147|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  16:48:54
+   Duration  16.72s (import 52%, transform 15%, tests 15%, environment 13%, setup 4%)
+

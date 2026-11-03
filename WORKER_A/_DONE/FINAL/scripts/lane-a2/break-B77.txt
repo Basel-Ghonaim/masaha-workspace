@@ -1,0 +1,62 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/spaces/space/space.api.test.ts (106 tests | 1 failed | 105 skipped) 1335ms
+   ❯ GET /admin/spaces/:spaceId (15)
+     × a space's read names its retired amenities, in the platform's order; a save answers them too 747ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 105 skipped (106)
+   Start at  15:37:01
+   Duration  18.71s (transform 60%, import 24%, tests 12%, setup 3%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/spaces/space/space.api.test.ts > GET /admin/spaces/:spaceId > a space's read names its retired amenities, in the platform's order; a save answers them too
+AssertionError: expected { id: 1, slug: 'focus-hub', …(22) } to match object { Object (retiredAmenities) }
+(30 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+    "retiredAmenities": [
+      {
+        "iconKey": "wifi",
+-       "id": 3,
+-       "nameAr": "pager",
+-       "nameEn": "PAGER",
+-     },
+-     {
+-       "iconKey": "wifi",
+-       "id": 2,
+-       "nameAr": "fax",
+-       "nameEn": "FAX",
++       "id": 1,
++       "nameAr": "printer",
++       "nameEn": "PRINTER",
+      },
+    ],
+  }
+
+ ❯ src/modules/spaces/space/space.api.test.ts:261:26
+    259|     ];
+    260|     const read = await adminRequest(app, admin, 'get', path(space.id));
+    261|     expect(dataOf(read)).toMatchObject({ retiredAmenities: retired });
+       |                          ^
+    262|     const saved = await adminRequest(app, admin, 'patch', path(space.i…
+    263|     expect(dataOf(saved)).toMatchObject({ retiredAmenities: retired });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

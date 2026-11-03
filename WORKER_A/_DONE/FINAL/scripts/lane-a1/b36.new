@@ -1,0 +1,1 @@
+...(email !== undefined && { email: { contains: email.split('@')[0] ?? '', mode: 'insensitive' } }),

@@ -1,0 +1,43 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/statement/useStatement.component.test.tsx (4 tests | 1 failed) 417ms
+   ❯ useStatement (4)
+     × offers the owner the void of a payment not voided; reception none, a voided payment none 150ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  14:08:16
+   Duration  9.04s (import 53%, transform 22%, environment 16%, tests 5%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/statement/useStatement.component.test.tsx > useStatement > offers the owner the void of a payment not voided; reception none, a voided payment none
+AssertionError: expected [ { id: 7, …(4) }, null ] to deeply equal [ null, null ]
+
+- Expected
++ Received
+
+  [
+-   null,
++   {
++     "amountAgorot": 10000,
++     "id": 7,
++     "method": "CASH",
++     "receivedAt": "2026-10-01T09:00:00Z",
++     "who": "Sara Khalid",
++   },
+    null,
+  ]
+
+ ❯ src/features/desk/hooks/statement/useStatement.component.test.tsx:162:75
+    160|       expect(reception.result.current.state).toBe('ready');
+    161|     });
+    162|     expect(reception.result.current.payments.rows.map((row) => row.voi…
+       |                                                                           ^
+    163|   });
+    164| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

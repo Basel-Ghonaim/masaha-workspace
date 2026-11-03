@@ -1,0 +1,3 @@
+        if (account.role === 'ADMIN') throw AppError.conflict('ACCOUNT_IS_ADMIN', 'An admin');
+        if (
+          account.role !== 'USER' ||

@@ -1,0 +1,6 @@
+feat(forms): say when a password is too long
+
+The policy's upper bound, 72 bytes in UTF-8, was only a field error.
+It becomes the fourth rule of PASSWORD_RULES, shown only while broken:
+'Too long, shorten it' on register, reset and the forced change
+(G6.3, AC-020). The rules carry whether they show only when broken.

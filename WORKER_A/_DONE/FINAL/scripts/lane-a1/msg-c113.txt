@@ -1,0 +1,8 @@
+test(staff): pin three refusals and the expiry
+
+Three staff refusals and the sign-in's second expiry check had no test
+of their own, so removing any of them stayed green (finding 93). Each
+now has one: the re-issue's refusal of an OWNER-role account with no
+other link, the 404 of a deactivated reception link at the re-issue
+and the handover, a re-activation's ACCOUNT_IS_ADMIN, and a temporary
+password that expires between the password check and the lock.

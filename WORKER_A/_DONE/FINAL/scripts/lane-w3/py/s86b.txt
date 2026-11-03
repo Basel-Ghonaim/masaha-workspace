@@ -1,0 +1,89 @@
+<<<OLD
+  Button,
+  EmptyState,
+} from '@shared/design-system';
+===
+  Button,
+  EmptyState,
+  UsersIcon,
+} from '@shared/design-system';
+>>>
+<<<OLD
+/** What stands in for the rows when there are none: the failure with its retry, or the empty states. */
+function ListEmpty({ list }: { list: CustomersListView }) {
+===
+/**
+ * What stands in for the rows when there are none: the failure with its retry, or the empty states;
+ * no customers yet offers «زبون جديد» (`add`), with its icon.
+ */
+function ListEmpty({
+  list,
+  add,
+}: {
+  list: CustomersListView;
+  add: { label: string; run: (from: HTMLElement) => void };
+}) {
+>>>
+<<<OLD
+  return <EmptyState title={list.empty.title} description={list.empty.text ?? undefined} />;
+}
+===
+  if (list.state === 'empty') {
+    return (
+      <EmptyState icon={<UsersIcon />} title={list.empty.title} description={list.empty.text ?? undefined}>
+        <Button
+          onClick={(event) => {
+            add.run(event.currentTarget);
+          }}
+        >
+          {add.label}
+        </Button>
+      </EmptyState>
+    );
+  }
+  return <EmptyState title={list.empty.title} description={list.empty.text ?? undefined} />;
+}
+>>>
+<<<OLD
+ * owner's «استرجاع» for an archived one.
+ */
+export function CustomersList({
+  spaceId,
+  owner,
+  fileLink,
+  subscribe,
+}: {
+===
+ * owner's «استرجاع» for an archived one. «زبون جديد» (`add`) sits by the count, and in the empty
+ * state; the footer says which customers the page shows.
+ */
+export function CustomersList({
+  spaceId,
+  owner,
+  fileLink,
+  subscribe,
+  add,
+}: {
+>>>
+<<<OLD
+  /** Opens the page's subscription sheet, from a customer's «⋯». */
+  subscribe: OpenSheet;
+}) {
+  const list = useCustomersList(spaceId, { owner });
+===
+  /** Opens the page's subscription sheet, from a customer's «⋯». */
+  subscribe: OpenSheet;
+  /** «زبون جديد»: opens the page's sheet for a new customer, the focus coming back to `from`. */
+  add: (from: HTMLElement) => void;
+}) {
+  const list = useCustomersList(spaceId, { owner });
+  const adding = { label: list.addLabel, run: add };
+>>>
+<<<OLD
+        empty={<ListEmpty list={list} />}
+        toolbar={<CustomersFilters toolbar={list.toolbar} count={list.count} />}
+===
+        empty={<ListEmpty list={list} add={adding} />}
+        toolbar={<CustomersFilters toolbar={list.toolbar} count={list.count} add={adding} />}
+        summary={list.summary}
+>>>

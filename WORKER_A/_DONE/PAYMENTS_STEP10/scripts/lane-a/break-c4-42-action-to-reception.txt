@@ -1,0 +1,51 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx -t reception reads its line instead
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx (8 tests | 1 failed | 7 skipped) 482ms
+   ❯ useExtensionDialog (8)
+     × offers the owner «Extend subscriptions» on a started closure; reception reads its line instead 477ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  12:51:36
+   Duration  16.69s (import 55%, transform 23%, environment 15%, setup 4%, tests 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx > useExtensionDialog > offers the owner «Extend subscriptions» on a started closure; reception reads its line instead
+AssertionError: expected <button data-slot="button" …(2)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) self-start"
+  data-card-action=""
+  data-slot="button"
+>
+  Extend subscriptions
+</button>
+
+ ❯ src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx:252:76
+    250|       await screen.findByText('The owner extends subscriptions once th…
+    251|     ).toBeInTheDocument();
+    252|     expect(screen.queryByRole('button', { name: 'Extend subscriptions'…
+       |                                                                            ^
+    253|   });
+    254|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/extension/useExtensionDialog.component.test.tsx -t ^^^"reception^^^ reads^^^ its^^^ line^^^ instead^^^"

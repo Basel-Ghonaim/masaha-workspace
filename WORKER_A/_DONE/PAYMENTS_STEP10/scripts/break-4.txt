@@ -1,0 +1,34 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx (4 tests | 1 failed | 3 skipped) 4970ms
+   ❯ useVoidDialog (4)
+     × says a retry is safe after no answer, and never sends the void again by itself 4968ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 skipped (4)
+   Start at  14:06:54
+   Duration  14.06s (import 37%, tests 36%, transform 14%, environment 10%, setup 3%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx > useVoidDialog > says a retry is safe after no answer, and never sends the void again by itself
+AssertionError: expected [ { …(19) }, { …(19) }, { …(19) } ] to have a length of 1 but got 3
+
+- Expected
++ Received
+
+- 1
++ 3
+
+ ❯ src/features/desk/hooks/void/useVoidDialog.component.test.tsx:134:22
+    132|       await vi.advanceTimersByTimeAsync(10_000);
+    133|     });
+    134|     expect(requests).toHaveLength(1);
+       |                      ^
+    135|     expect(screen.getByRole('textbox', { name: 'Reason' })).toHaveValu…
+    136|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

@@ -1,0 +1,108 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the owner’s eleven pages, the overview marked as the page shown 2221ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists reception’s four pages at its space, the front desk among them 283ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the admin’s eight pages under the platform’s own header 156ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > shows the admin the lookups page: its title in the top bar, and the governorates 1150ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > links each page below its branch 197ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > links the space’s public page, by its slug, in a new tab 428ms
+ × |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell 4260ms
+   → Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today 703ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses the owner reception’s payments today with the 403 72ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 404 inside the shell, with no pages listed, for a space id that is not one 87ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 403 inside the shell for a space the user holds no link to 66ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 404 inside the shell for a page the space branch does not have 85ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses a non-admin the platform’s pages with the 403, without the admin’s navigation 93ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > sends a guest to sign-in, carrying the space page asked for 30ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends the admin 68ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends an owner, to the overview 48ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends reception, to the front desk 71ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends a user with no role and no space, home 9ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends a user back to the space they entered last 194ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > remembers it for the user 195ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > moves to another space from the switcher, listing its role’s pages and remembering it 683ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > remembers no space the user holds no link to 51ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > closes the drawer when another space is chosen in it 429ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > opens the drawer with the pages and the language, and closes it when a page is chosen 378ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the amenities’ tab from the address 101ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the governorates’ tab when the address names no tab it has () 106ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the governorates’ tab when the address names no tab it has (?tab=elsewhere) 111ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > keeps the tab chosen in the address, and none for the first tab 289ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > names its tabs after the page, with its hint under them 66ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's add-space page > offers the public catalogue’s areas, and opens the new space’s editor once it is added 1202ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > is titled by the space’s name once it has loaded, in the top bar and the tab, under a trail back to the list 285ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > is titled "Edit space" while the space loads 60ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > shows the 404 inside the shell for an id that names no space 63ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's space profile > shows the owner the space profile under its title, read from the managed route 225ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's space profile > refuses reception the space profile with the 403 63ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's packages and prices > shows the owner Packages & prices under its title, its prices and packages read from the managed routes 101ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows the owner the desk under its title, with who is present and their check-out 225ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows reception the desk under its title, with who is present and their check-out 176ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > puts «Check in a visit» in the bar at the foot below 768 px, and «Switch staff» in the «⋯» menu 219ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows the owner the ledger under «Payments», each customer a link to their file 192ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows reception «My payments today»: the handover figures and its own payments 95ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > shows the owner «Data reports» under its title, the reporter a visitor 126ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > refuses reception the space’s data reports with the 403 48ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > shows the admin «Data reports» under its title, every space’s, the reporter named 152ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > refuses an owner the admin’s data reports with the 403 29ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows the owner the customers under its title, each a link to the file 314ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows reception the customers under its title, each a link to the file 206ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows the owner a customer’s file titled by their name, under a trail back to the list 151ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows reception a customer’s file titled by their name, under a trail back to the list 124ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > titles the file «Customer file» while it loads 54ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > shows the owner the staff page under its title, its list read from the managed route 224ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > refuses reception the staff page with the 403 132ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's settings > shows the owner the settings page under its title, read from the managed route 270ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's settings > refuses reception the settings page with the 403 91ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > shows the list under its title, each row with its menu, and the place field of the lookups 721ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > leads from "Add space", above the list, to the add page, which adds no page to the sidebar 770ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > keeps every menu’s actions waiting out a 429 through a change of filter, then of page 1801ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's owners page > shows the admin’s owners page under its title, with the owners 190ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's owners page > offers «Add owner» above the owners list 189ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's users page > shows the admin’s users page under its title, with the users 205ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+TestingLibraryElementError: Unable to find role="main"
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+[36m</body>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ stateInMain src/pages/dashboard/routes.component.test.tsx:167:30
+    165| /** The heading named `name` in the main landmark, where a status stat…
+    166| async function stateInMain(name: string) {
+    167|   return within(await screen.findByRole('main')).findByRole('heading',…
+       |                              ^
+    168| }
+    169|
+ ❯ src/pages/dashboard/routes.component.test.tsx:263:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 59 passed (60)
+   Start at  12:38:18
+   Duration  45.51s (tests 67%, transform 12%, environment 10%, import 9%, setup 3%)
+

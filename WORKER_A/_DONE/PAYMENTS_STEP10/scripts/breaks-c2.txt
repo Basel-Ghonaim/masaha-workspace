@@ -1,0 +1,16 @@
+2: RED exit 1 — ['× voids a payment with its reason, and no key: a second void answers the first (S4) 7ms', 'FAIL  |unit| src/features/desk/repository/deskRepository.unit.test.ts > the desk repository > voids a payment with its reason, and no key: a second void answers the first (S4)']
+3: RED exit 1 — ['× requires a reason, sends it once, and its toast names the amount and who 3322ms', 'FAIL  |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx > useVoidDialog > requires a reason, sends it once, and its toast names the amount and who']
+4: RED exit 1 — ['× says a retry is safe after no answer, and never sends the void again by itself 4968ms', 'FAIL  |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx > useVoidDialog > says a retry is safe after no answer, and never sends the void again by itself']
+5: RED exit 1 — ['× words a 403 shown by mistake as no longer open, and reads the user’s spaces again 523ms', 'FAIL  |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx > useVoidDialog > words a 403 shown by mistake as no longer open, and reads the user’s spaces again']
+6: RED exit 1 — ['× is an alertdialog named by its title, the reason focused first, the action destructive, a failure an alert; axe-clean 3517ms', 'FAIL  |component| src/features/desk/components/void/VoidDialog.component.test.tsx > VoidDialog > is an alertdialog named by its title, the reason focused first, the action destructive, a failure an alert; axe-clean']
+Traceback (most recent call last):
+  File "C:\dev\masaha\workspace\WORKER_A\PAYMENTS_STEP10\scripts\breaks.py", line 51, in <module>
+    main()
+    ~~~~^^
+  File "C:\dev\masaha\workspace\WORKER_A\PAYMENTS_STEP10\scripts\breaks.py", line 46, in main
+    print(run(brk), flush=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u22ef' in position 31: character maps to <undefined>

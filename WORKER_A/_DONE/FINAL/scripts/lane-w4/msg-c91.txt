@@ -1,0 +1,8 @@
+refactor(users): one folder per operation
+
+The users feature kept its older operations flat at the top of hooks/
+and components/ (finding 82), against architecture section 3. The
+account menus, the account hook, sign-out, the forced change and the
+password change each move to their own folder, with their tests. The
+entry exports the same names, and no behaviour changes. The account
+settings screen adds its own operations next.

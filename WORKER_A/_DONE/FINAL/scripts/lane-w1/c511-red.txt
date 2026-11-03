@@ -1,0 +1,46 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/staff/components/StaffList
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/staff/components/StaffList.component.test.tsx (3 tests | 1 failed) 2802ms
+   ❯ StaffList (3)
+     × reaches the held «New temporary password» by the keyboard, its reason read with it 1113ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/staff/components/StaffList.component.test.tsx > StaffList > reaches the held «New temporary password» by the keyboard, its reason read with it
+Error: [2mexpect([22m[31mreceived[39m[2m).toHaveAttribute()[22m
+
+[31mreceived[39m value must be an HTMLElement or an SVGElement.
+Received has type:  Undefined
+Received has value: [31mundefined[39m
+ ❯ src/features/staff/components/StaffList.component.test.tsx:84:18
+     82|     // Radix skips a disabled item: the held one stays in the arrow ke…
+     83|     const held = visited.find((element) => element?.textContent.includ…
+     84|     expect(held).toHaveAttribute('role', 'menuitem');
+       |                  ^
+     85|     expect(held).toHaveAttribute('aria-disabled', 'true');
+     86|     expect(held).toHaveTextContent('They’ve changed the temporary pass…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  15:49:33
+   Duration  18.08s (import 34%, transform 29%, environment 17%, tests 16%, setup 4%)
+
+  Transform  |component| transforming modules took 5.07s · 29% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/staff/components/StaffList

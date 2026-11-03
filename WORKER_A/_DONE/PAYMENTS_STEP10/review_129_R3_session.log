@@ -1,0 +1,26 @@
+I've reviewed my range of #129 (`dc427a54..fcf46637`, 6 commits). My verdict is **mergeable after a fix round**, but one of the fixes needs your decision first. CI was green when I started, and the head was still `fcf46637` (`CLEAN`) when I finished. I ran nothing: no tests, build or browser, per the rules. So test results and byte sizes below come from the lead's and lane C's reports.
+
+**Findings**
+- **F1 (should-fix): the undo after removing a space that left the directory can never work.**
+  - «إزالة» is only offered on spaces that left the directory. Its «تراجع» re-saves the space, but the contract answers 404 for saving a space that isn't publicly listed.
+  - So the user gets «لم تعد هذه المساحة في الدليل.» and the favourite is gone for good.
+  - Test 81 passes only because its fake server answers 204, which the API never does here. `favorites.md` and `directory.md` also say the undo saves the space again.
+  - **Decision needed:** your approved DI-58 asks for «إزالة» with «تراجع». I suggest dropping the undo for these rows. The alternative is a new finding (187) asking the API to allow the re-save, which is outside this PR's scope.
+- **F2 (should-fix): a guest's held favourite or report never expires.**
+  - Only signing in or closing the sign-in prompt clears it. Following the prompt's sign-in link and then leaving the sign-in page keeps it held.
+  - On a shared computer, the next person to sign in in that tab gets the space saved into *their* favourites. For a report, the dialog opens by itself on that space's page later.
+  - Fix: limit the hold to the sign-in round trip (a time limit, or drop it once the guest leaves the sign-in pages), with a test. Memory-only stays as S14 says.
+- **F3 (nit):** the heart's accessible name switches between «حفظ…» and «إزالة…» while its pressed state also switches. This contradicts the ARIA guidance for toggle buttons, though it is what the plan specified.
+- **F4 (nit):** `overview.md`'s Data reports line doesn't mention the new report button on a space's page.
+
+**What checked out**
+- **The favourite after a guest signs in (LEAD-D12):** the cause matches how TanStack Query v5 handles a read already in flight, and the fix is sound. Its test is real (I saw the red log) but depends on request timing.
+- **The guest's return:** after signing in, the action runs once, never from the address, and nothing is sent by itself. Finding 168 is true.
+- **The rest of my focus list:** the toggle, the report dialog, «بلاغاتي», the account area, and the space page's announcement order (including the closure's cut-off at "now", which is the same in Gaza time and UTC). The documents are accurate apart from F1 and F4.
+- **Lane C's merge into lane B:** nothing lost or duplicated.
+- **Finding 180:** the stated cause fits the code, and recording it rather than fixing it is reasonable.
+- **Tests:** all 27 planned tests (59–85) are present and would fail on their named break, except test 81, which is weaker (F1).
+
+**Decisions:** I judged all 21 of lane C's decisions and the lead's D8, D9, D10 and D12; none is wrong. LC-D8 (the held report stays held until its dialog closes) widens F2. I found nothing to report outside my range, and used no new finding numbers.
+
+The report is at `C:\dev\masaha\workspace\WORKER_A\PAYMENTS_STEP10\6_REVIEW_LEAD_R3_CLAUDE_CODE.md`.

@@ -1,0 +1,78 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/desk/components/correct
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w3/apps/web
+
+ ❯ |component| src/features/desk/components/correct/CorrectSheet.component.test.tsx (6 tests | 2 failed) 7259ms
+   ❯ a subscription’s correction (6)
+     × sends only the changed fields, the name focused first, the focus back to «⋯»; axe-clean 2764ms
+     × says PRICE_BELOW_PAID inside the sheet, every value kept, and sends the terms saved once 1572ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 4 passed (6)
+   Start at  13:42:28
+   Duration  18.94s (tests 39%, transform 25%, import 19%, environment 13%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/correct/CorrectSheet.component.test.tsx > a subscription’s correction > sends only the changed fields, the name focused first, the focus back to «⋯»; axe-clean
+AssertionError: expected [ [ 'patch', …(2) ] ] to deeply equal [ [ 'patch', …(2) ] ]
+
+- Expected
++ Received
+
+@@ -3,9 +3,10 @@
+      "patch",
+      "/manage/spaces/7/subscriptions/1",
+      {
+        "daysPerWeek": 3,
+        "endsOn": null,
++       "name": "Exams by the hour",
+        "totalDays": 10,
+      },
+    ],
+  ]
+
+ ❯ src/features/desk/components/correct/CorrectSheet.component.test.tsx:102:87
+    100|       expect(screen.queryByRole('dialog')).toBeNull();
+    101|     });
+    102|     expect(writes().map((request) => [request.method, request.url, bod…
+       |                                                                                       ^
+    103|       [
+    104|         'patch',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/desk/components/correct/CorrectSheet.component.test.tsx > a subscription’s correction > says PRICE_BELOW_PAID inside the sheet, every value kept, and sends the terms saved once
+AssertionError: expected [ 'patch', 'put', 'patch' ] to deeply equal [ 'patch', 'put', 'put' ]
+
+- Expected
++ Received
+
+  [
+    "patch",
+    "put",
+-   "put",
++   "patch",
+  ]
+
+ ❯ src/features/desk/components/correct/CorrectSheet.component.test.tsx:181:55
+    179|     });
+    180|     // The hours were saved: the second attempt sends the price alone.
+    181|     expect(writes().map((request) => request.method)).toEqual(['patch'…
+       |                                                       ^
+    182|   });
+    183|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w3\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w3\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/desk/components/correct

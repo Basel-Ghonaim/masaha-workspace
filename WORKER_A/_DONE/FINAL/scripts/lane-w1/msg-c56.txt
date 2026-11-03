@@ -1,0 +1,9 @@
+feat(staff): show each person's month and start
+
+The staff list adds «أُضيف في», the link's Gaza date now that
+StaffMember carries it, and «مقبوضاته هذا الشهر», what each person
+collected this month, read from finance's month's collections and
+composed by the page; the amount and the menu's new «عرض مقبوضاته»
+open the ledger of that person over the month's days (EC16). A read
+that failed shows «—», never a zero. This supersedes staff design
+issue 9, which deferred them to the payments step.

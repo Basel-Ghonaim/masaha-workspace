@@ -1,0 +1,7 @@
+test(spaces): find the names' own query
+
+The test that proves the space's read takes its owners' names on its
+own connection compared the backend waiting on users with the read's,
+so any read of users before the names would have passed it (finding
+78). It now finds the waiting backend by the names reader's own
+statement, the owners' ids and names by their ids, before comparing.

@@ -1,0 +1,18 @@
+fix(spaces): finish the spaces list and editor
+
+The spaces list and the space editor had seven gaps against their
+design (G26.1–G26.5, G26.8, G20.2; D6.10):
+
+- a verified row's menu said «تعديل», though its owner edits it:
+  «عرض (يعدّلها المالك)»;
+- hiding or showing a space toasted with no way back: «تراجع» sends
+  the opposite (P9), the undo's own toast offering none;
+- the delete dialog's dismiss said «إلغاء»: «رجوع» (P9);
+- the phone's filter sheet had no way back to the list: the primary
+  «عرض {n} نتيجة» closes it, and «مسح الفلاتر» is ghost, unavailable
+  with no filter on;
+- the missing badge read «غير مُدخلة:»: «ناقصة: {groups}»;
+- a verified space's notice gave no way to correct a fact: «لتصحيح
+  معلومة:» and «بلاغات {space}», the admin's reports of the space;
+- below 768 px a section's header action sat beside its title; it
+  leads the content now.

@@ -1,0 +1,20 @@
+
+> check:build
+> npm run check:build -w @masaha/web
+
+
+> @masaha/web@0.0.0 check:build
+> node scripts/checkBuild.ts
+
+_calendar-CpjILx3X.js is calendar's chunk in the site's first download.
+No showcase code in 60 build files (1011 strings checked).
+No dashboard code in the site's first download.
+
+Each heavy library (data-table, leaflet, calendar) must be a chunk of its own, and it and Leaflet's stylesheet must stay out of the site's first download (finding 45): look for a static import of what uses them outside the pages that need them, or a group in scripts/libraryChunks.ts that no longer matches its library.
+npm error Lifecycle script `check:build` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c node scripts/checkBuild.ts

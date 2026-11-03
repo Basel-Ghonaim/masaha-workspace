@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/shared/errors/toAppError.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |unit| src/shared/errors/toAppError.unit.test.ts (17 tests | 1 failed) 14ms
+   ❯ toAppError, given the server’s envelope (7)
+     × keeps the record a refusal names, in the contract’s shape only 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 16 passed (17)
+   Start at  16:32:35
+   Duration  700ms (import 64%, transform 32%, tests 3%, worker 1%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/errors/toAppError.unit.test.ts > toAppError, given the server’s envelope > keeps the record a refusal names, in the contract’s shape only
+AssertionError: expected undefined to deeply equal { userId: 7 }
+
+- Expected:
+{
+  "userId": 7,
+}
+
++ Received:
+undefined
+
+ ❯ src/shared/errors/toAppError.unit.test.ts:59:27
+     57|     );
+     58|
+     59|     expect(named.details).toEqual({ userId: 7 });
+       |                           ^
+     60|     expect(malformed.details).toBeUndefined();
+     61|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/shared/errors/toAppError.unit.test.ts

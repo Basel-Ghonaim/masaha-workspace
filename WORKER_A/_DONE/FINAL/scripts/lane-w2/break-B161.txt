@@ -1,0 +1,270 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/platform-settings/components/admin
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx (6 tests | 1 failed) 8385ms
+   ❯ PlatformSettingsCards (6)
+     × freshness refuses 0 and 366 with its words 3754ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  15:36:13
+   Duration  22.45s (tests 38%, transform 21%, import 20%, environment 16%, setup 4%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx > PlatformSettingsCards > freshness refuses 0 and 366 with its words
+TestingLibraryElementError: Unable to find an element with the text: From 1 to 365 days. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+  [33mid[39m=[32m"staleness"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"card-title"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mData freshness[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [33mdata-slot[39m=[32m"card-description"[39m
+    [36m>[39m
+      [0mAfter this visitors see «may have changed», or the price is hidden on unverified spaces.[0m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"contents"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"px-(--card-padding) flex flex-col gap-5"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"grid items-start gap-5 md:grid-cols-2"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_17_-control"[39m
+              [33mid[39m=[32m"_r_17_-label"[39m
+            [36m>[39m
+              [0mPrices (days)[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"off"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_17_-control"[39m
+              [33minputmode[39m=[32m"numeric"[39m
+              [33mname[39m=[32m"priceStalenessDays"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_18_-control"[39m
+              [33mid[39m=[32m"_r_18_-label"[39m
+            [36m>[39m
+              [0mOther data (days)[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"off"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_18_-control"[39m
+              [33minputmode[39m=[32m"numeric"[39m
+              [33mname[39m=[32m"stalenessDays"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex items-center px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap gap-2"[39m
+      [33mdata-slot[39m=[32m"card-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"submit"[39m
+      [36m>[39m
+        [0mSave[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</form>[39m
+[36m</div>[39m
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33mclass[39m=[32m"flex flex-col gap-(--card-padding) overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg"[39m
+  [33mdata-slot[39m=[32m"card"[39m
+  [33mid[39m=[32m"staleness"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"@container/card-header grid auto-rows-min items-start gap-1 px-(--card-padding) has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto] [.border-b]:pb-(--card-padding)"[39m
+    [33mdata-slot[39m=[32m"card-header"[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-heading-3"[39m
+      [33mdata-slot[39m=[32m"card-title"[39m
+    [36m>[39m
+      [36m<h2>[39m
+        [0mData freshness[0m
+      [36m</h2>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+      [33mdata-slot[39m=[32m"card-description"[39m
+    [36m>[39m
+      [0mAfter this visitors see «may have changed», or the price is hidden on unverified spaces.[0m
+    [36m</div>[39m
+  [36m</div>[39m
+  [36m<form[39m
+    [33mclass[39m=[32m"contents"[39m
+    [33mnovalidate[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"px-(--card-padding) flex flex-col gap-5"[39m
+      [33mdata-slot[39m=[32m"card-content"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"grid items-start gap-5 md:grid-cols-2"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_17_-control"[39m
+              [33mid[39m=[32m"_r_17_-label"[39m
+            [36m>[39m
+              [0mPrices (days)[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"off"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_17_-control"[39m
+              [33minputmode[39m=[32m"numeric"[39m
+              [33mname[39m=[32m"priceStalenessDays"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+          [33mdata-slot[39m=[32m"field"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+          [36m>[39m
+            [36m<label[39m
+              [33mclass[39m=[32m"text-label text-foreground"[39m
+              [33mfor[39m=[32m"_r_18_-control"[39m
+              [33mid[39m=[32m"_r_18_-label"[39m
+            [36m>[39m
+              [0mOther data (days)[0m
+            [36m</label>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+            [33mdata-size[39m=[32m"md"[39m
+            [33mdata-slot[39m=[32m"input-group"[39m
+          [36m>[39m
+            [36m<input[39m
+              [33mautocomplete[39m=[32m"off"[39m
+              [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+              [33mdata-slot[39m=[32m"input"[39m
+              [33mdir[39m=[32m"ltr"[39m
+              [33mid[39m=[32m"_r_18_-control"[39m
+              [33minputmode[39m=[32m"numeric"[39m
+              [33mname[39m=[32m"stalenessDays"[39m
+            [36m/>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex items-center px-(--card-padding) [.border-t]:pt-(--card-padding) flex-wrap gap-2"[39m
+      [33mdata-slot[39m=[32m"card-footer"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] h-(--control-height) px-(--button-padding-inline)"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mtype[39m=[32m"submit"[39m
+      [36m>[39m
+        [0mSave[0m
+      [36m</button>[39m
+    [36m</div>[39m
+  [36m</form>[39m
+[36m</div>[39m
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/platform-settings/components/admin/PlatformSettingsCards.component.test.tsx:163:36
+    161|     await user.click(within(staleness).getByRole('button', { name: 'Sa…
+    162|
+    163|     expect(await within(staleness).findAllByText('From 1 to 365 days')…
+       |                                    ^
+    164|     await user.clear(prices);
+    165|     await user.click(within(staleness).getByRole('button', { name: 'Sa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/platform-settings/components/admin

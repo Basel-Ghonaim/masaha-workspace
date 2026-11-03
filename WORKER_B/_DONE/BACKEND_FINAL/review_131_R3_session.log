@@ -1,0 +1,18 @@
+My verdict for R3 (the overviews and the closing docs, `53c6a7e3..c41a5397`) is **mergeable after a fix round**. I found no blocker: one should-fix in a document and two nits. CI was green, and the head stayed at `c41a5397` (`CLEAN`) from start to end.
+
+**Findings:**
+- **R3-F1 — should-fix, a false document.** `docs/features/announcements.md:62` says `runningTypes` is "one `DISTINCT` query". The code uses Prisma's `distinct: ['type']` without the setting that would make it SQL. The SQL logged during the lead's cost measurement on a generated year (EC4) shows a plain `SELECT id, type` with the duplicates removed in Node. The code is fine; fix the wording, folded into `447be920`.
+- **R3-F2 — nit.** `docs/backend/conventions.md:293` still says the owner's overview "will read `closures.summary`", though it now does. Fold into `a12f928e`.
+- **R3-F3 — nit.** `occupancy.glance(space, at = clock())` has a default that only its test uses; the one real caller always passes `at`. Make `at` required, folded into `447be920`.
+
+**What held up:**
+- **No amount anywhere:** there is no amount field in the owner's answer, nested or otherwise. Every field is picked by name, so no source object slips through. Debts reach the overview only as a count of customers.
+- **Who reads what:** reception gets 403 on the owner's overview, and the admin's overview sits behind `/admin`'s guard. `platform.stats.read` is removed, and only the three documents recording its removal mention it.
+- **Counts:** the `overview` module computes nothing and never imports `finance`. Each count uses the same filter as the list it links to, and I checked each filter line by line (including the `ENDING_SOON` rule, unverified = not hidden, `status=editable` with `stale=true`, and new users = last 30 Gaza days). Staleness reads the thresholds saved in the platform settings each time; there is no constant.
+- **Cost:** no N+1. The verified-space ids are read three times in the admin's overview rather than the planned two; that is negligible.
+- **Tests:** every planned test (T-M1–T-M10, T-O1–T-O11, U-O1, U-O2) is present. Reading each test against the code, each planned break would fail. Two of them (dropping the unpriced visits' `checked_out_at` condition, dropping `deleted_at` from the running types) cannot turn T-O2 red, because the count and its list share one rule, but T-M3 and T-M5's hand counts catch them. I could not run the breaks, so the red lines themselves are only from the lane's report.
+- **Closing documents:** v1-mvp, `overview.md`, `docs/README.md`, the conventions "how many owe" line, foundation §13's screen 12 line and the findings index all match the code. None of them claims a screen is built.
+
+I judged every decision taken without the owner in my range as sound or acceptable, except `glance`'s optional `at`, which is the R3-F3 nit. I found nothing outside my range.
+
+The report is at `C:\dev\masaha\workspace\WORKER_B\BACKEND_FINAL\6_REVIEW_R3_CLAUDE_CODE.md`.

@@ -1,0 +1,4 @@
+        onOpenAutoFocus={(event) => {
+          event.preventDefault();
+          if (event.target instanceof HTMLElement) event.target.querySelector('textarea')?.focus();
+        }}

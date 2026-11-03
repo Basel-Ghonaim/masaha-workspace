@@ -1,0 +1,40 @@
+[heavy] waiting (try 1 of 60)
+[heavy] waiting (try 2 of 60)
+[heavy] waiting (try 3 of 60)
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+
+src/features/overview/components/admin/AdminOverview.tsx(29,22): error TS2322: Type '{ label: string; items: { key: string; label: string; value: string; helper: string; href: string; }[]; } | undefined' is not assignable to type '{ label: string; items: { key: string; label: string; value: string; helper: string; href: string; }[]; }'.
+  Type 'undefined' is not assignable to type '{ label: string; items: { key: string; label: string; value: string; helper: string; href: string; }[]; }'.
+src/features/overview/components/admin/AdminOverview.tsx(30,25): error TS2322: Type '{ title: string; description: string; rows: { key: string; name: SpaceNameView; states: string[]; groups: { key: string; text: string; }[]; edit: { label: string; href: string; }; }[]; viewAll: { ...; }; none: string; } | undefined' is not assignable to type '{ title: string; description: string; rows: { key: string; name: SpaceNameView; states: string[]; groups: { key: string; text: string; }[]; edit: { label: string; href: string; }; }[]; viewAll: { ...; }; none: string; }'.
+  Type 'undefined' is not assignable to type '{ title: string; description: string; rows: { key: string; name: SpaceNameView; states: string[]; groups: { key: string; text: string; }[]; edit: { label: string; href: string; }; }[]; viewAll: { ...; }; none: string; }'.
+src/features/overview/components/owner/OwnerOverview.tsx(37,22): error TS2322: Type '{ title: string; rows: AttentionRowView[]; allClear: string; } | undefined' is not assignable to type '{ title: string; rows: AttentionRowView[]; allClear: string; }'.
+  Type 'undefined' is not assignable to type '{ title: string; rows: AttentionRowView[]; allClear: string; }'.
+src/features/overview/components/owner/OwnerOverview.tsx(39,22): error TS2322: Type '{ title: string; ratio: string; view: { label: string; href: string; }; meter: { value: number; max: number; label: string; tone: "warning" | "primary"; valueText: string; } | null; now: string; state: { ...; }; line: string; } | undefined' is not assignable to type '{ title: string; ratio: string; view: { label: string; href: string; }; meter: { value: number; max: number; label: string; tone: "warning" | "primary"; valueText: string; } | null; now: string; state: { ...; }; line: string; }'.
+  Type 'undefined' is not assignable to type '{ title: string; ratio: string; view: { label: string; href: string; }; meter: { value: number; max: number; label: string; tone: "warning" | "primary"; valueText: string; } | null; now: string; state: { ...; }; line: string; }'.
+src/features/overview/components/owner/OwnerOverview.tsx(41,15): error TS18048: 'announcements' is possibly 'undefined'.
+src/features/overview/components/owner/OwnerOverview.tsx(45,20): error TS18048: 'announcements' is possibly 'undefined'.
+src/features/overview/components/owner/OwnerOverview.tsx(46,20): error TS18048: 'announcements' is possibly 'undefined'.
+src/features/overview/components/owner/OwnerOverview.tsx(47,21): error TS18048: 'announcements' is possibly 'undefined'.
+src/features/overview/components/owner/OwnerOverview.tsx(52,19): error TS2322: Type '{ title: string; count: string; viewAll: { label: string; href: string; }; rows: { key: string; name: string; href: string; line: string | null; renew: { label: string; href: string; }; }[]; none: string; } | undefined' is not assignable to type '{ title: string; count: string; viewAll: { label: string; href: string; }; rows: { key: string; name: string; href: string; line: string | null; renew: { label: string; href: string; }; }[]; none: string; }'.
+  Type 'undefined' is not assignable to type '{ title: string; count: string; viewAll: { label: string; href: string; }; rows: { key: string; name: string; href: string; line: string | null; renew: { label: string; href: string; }; }[]; none: string; }'.
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 2
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc -b

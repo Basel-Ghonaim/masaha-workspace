@@ -1,0 +1,9 @@
+feat(space-links): one schema of space statuses
+
+GET /admin/spaces read its statuses through a second schema, the
+list's widened by editable, while the web's list read the narrower one,
+so two shared schemas could drift (finding 158). SPACE_STATUSES now
+holds editable beside the four others and adminSpacesQuerySchema is the
+one schema every reader uses; ADMIN_SPACES_STATUSES and
+adminSpacesListQuerySchema are gone. The web's list keeps offering its
+four choices until its own commit words editable (D6.4).

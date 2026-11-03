@@ -1,0 +1,148 @@
+##### npm run test:unit -w @masaha/web -- src/features/announcements/services/sheetRequest.unit.test.ts (exit 1)
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit src/features/announcements/services/sheetRequest.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |unit| src/features/announcements/services/sheetRequest.unit.test.ts (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:19:43
+   Duration  313ms (worker 95%, environment 5%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/features/announcements/services/sheetRequest.unit.test.ts [ src/features/announcements/services/sheetRequest.unit.test.ts ]
+Error: Cannot find module './sheetRequest' imported from C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/services/sheetRequest.unit.test.ts
+ ❯ src/features/announcements/services/sheetRequest.unit.test.ts:4:1
+      2| import { describe, expect, it } from 'vitest';
+      3| import type { SheetValues } from '../types/SheetValues';
+      4| import { createRequestOf, editRequestOf, instantOf, minuteOf, valuesOf…
+       | ^
+      5|
+      6| const VALUES: SheetValues = {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/features/announcements/services/sheetRequest.unit.test.ts
+##### npm run test:component -w @masaha/web -- src/features/announcements/hooks/sheet (exit 1)
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/hooks/sheet
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx (0 test)
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:19:45
+   Duration  2.27s (environment 76%, setup 21%, transform 2%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx [ src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx ]
+Error: Failed to resolve import "../../components/sheet/AnnouncementSheet" from "src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/hooks/sheet/useAnnouncementSheet.component.test.tsx:21:34
+  11 |  import { bodyOf, fakeTransport, ok, refused, restoreTransport } from "../../../../test/fakeTransport";
+  12 |  import { startPreferences } from "../../../../test/startPreferences";
+  13 |  import { AnnouncementSheet } from "../../components/sheet/AnnouncementSheet";
+     |                                     ^
+  14 |  var _jsxFileName = "C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/hooks/sheet/useAnnouncementSheet.com...
+  15 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/hooks/sheet
+##### npm run test:component -w @masaha/web -- src/features/announcements/components (exit 1)
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/announcements/components
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a/apps/web
+
+ ❯ |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx (0 test)
+ ❯ |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx (0 test)
+
+ Test Files  2 failed (2)
+      Tests  no tests
+   Start at  12:19:49
+   Duration  6.45s (environment 78%, setup 20%, transform 1%)
+
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/announcements/components/list/AnnouncementsList.component.test.tsx [ src/features/announcements/components/list/AnnouncementsList.component.test.tsx ]
+Error: Failed to resolve import "../sheet/AnnouncementSheet" from "src/features/announcements/components/list/AnnouncementsList.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/components/list/AnnouncementsList.tsx:23:34
+  3  |  import { useRef, useState } from "react";
+  4  |  import { useAnnouncementsList } from "../../hooks/list/useAnnouncementsList";
+  5  |  import { AnnouncementSheet } from "../sheet/AnnouncementSheet";
+     |                                     ^
+  6  |  import { AnnouncementCard } from "./AnnouncementCard";
+  7  |  var _jsxFileName = "C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/components/list/AnnouncementsList.tsx";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx [ src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx ]
+Error: Failed to resolve import "./AnnouncementSheet" from "src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/components/sheet/AnnouncementSheet.component.test.tsx:11:34
+  8  |  import { stubScreenWidth } from "../../../../test/screenWidth";
+  9  |  import { startPreferences } from "../../../../test/startPreferences";
+  10 |  import { AnnouncementSheet } from "./AnnouncementSheet";
+     |                                     ^
+  11 |  var _jsxFileName = "C:/dev/masaha/app-lane-a/apps/web/src/features/announcements/components/sheet/AnnouncementSheet.c...
+  12 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-a\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-a\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/announcements/components

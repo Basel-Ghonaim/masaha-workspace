@@ -1,0 +1,49 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/favorites/hooks/resume
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w4/apps/web
+
+ ❯ |component| src/features/favorites/hooks/resume/useResumeFavorite.component.test.tsx (7 tests | 1 failed) 742ms
+   ❯ useResumeFavorite (7)
+     × lets a guest’s held favourite go from the browser’s storage once they land on another page 8ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  11:32:23
+   Duration  9.85s (transform 39%, environment 25%, import 21%, tests 8%, setup 7%)
+
+  Transform  |component| transforming modules took 3.67s · 39% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/favorites/hooks/resume/useResumeFavorite.component.test.tsx > useResumeFavorite > lets a guest’s held favourite go from the browser’s storage once they land on another page
+AssertionError: expected '{"kind":"favorite","spaceId":7,"name"…' to be null
+
+- Expected:
+null
+
++ Received:
+"{\"kind\":\"favorite\",\"spaceId\":7,\"name\":{\"text\":\"Masaha Hub\"},\"path\":\"/spaces/masaha-hub\",\"at\":1793439152820}"
+
+ ❯ src/features/favorites/hooks/resume/useResumeFavorite.component.test.tsx:102:55
+    100|     noteSitePage('/about', true);
+    101|
+    102|     expect(localStorage.getItem('masaha.heldIntent')).toBeNull();
+       |                                                       ^
+    103|   });
+    104|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w4\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w4\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/favorites/hooks/resume

@@ -1,0 +1,3 @@
+            ...retired
+              .filter(({ id }) => linked.includes(id) && !active.some((one) => one.id === id))
+              .map((amenity) => ({ ...amenity, isActive: false })),

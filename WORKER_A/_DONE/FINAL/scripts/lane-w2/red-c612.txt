@@ -1,0 +1,683 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/spaces/components/editor src/features/spaces/components/menu src/features/spaces/hooks/hide src/features/space-links/components/admin-list
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/features/spaces/hooks/hide/useSetSpaceHidden.component.test.tsx (7 tests | 1 failed) 1549ms
+   ❯ useSetSpaceHidden (7)
+     × hiding offers «تراجع» that shows it again 248ms
+ ❯ |component| src/features/spaces/components/menu/SpaceActionsMenu.component.test.tsx (19 tests | 1 failed) 10969ms
+   ❯ SpaceActionsMenu, for a deleted space (7)
+     × a verified row’s menu reads «عرض (يعدّلها المالك)»; an unverified one’s «تعديل» 3176ms
+ ❯ |component| src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx (26 tests | 1 failed) 12526ms
+   ❯ AdminSpacesList, on a phone (6)
+     × the phone’s sheet closes on «عرض N نتيجة»; clear is disabled with none 434ms
+ ❯ |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx (33 tests | 2 failed) 29354ms
+   ❯ the opening hours section (4)
+     × a section’s header action leads its content below 768 437ms
+     × a verified space’s notice leads to its reports, to correct a fact 3079ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx > AdminSpacesList, on a phone > the phone’s sheet closes on «عرض N نتيجة»; clear is disabled with none
+Error: [2mexpect([22m[31melement[39m[2m).toBeDisabled()[22m
+
+Received element is not disabled:
+  [31m<button
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"
+  data-slot="button"
+/>[39m
+ ❯ src/features/space-links/components/admin-list/AdminSpacesList.component.test.tsx:559:74
+    557|     await userEvent.click(screen.getByRole('button', { name: 'Filters'…
+    558|     const sheet = await screen.findByRole('dialog', { name: 'Filters' …
+    559|     expect(within(sheet).getByRole('button', { name: 'Clear filters' }…
+       |                                                                          ^
+    560|     await userEvent.click(within(sheet).getByRole('button', { name: 'S…
+    561|     await waitFor(() => {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx > the opening hours section > a section’s header action leads its content below 768
+AssertionError: expected <button data-slot="button" …(2)></button> to be null
+
+- Expected:
+null
+
++ Received:
+<button
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"
+  data-slot="button"
+  type="button"
+>
+  Copy to all days
+</button>
+
+ ❯ src/features/spaces/components/editor/SpaceEditor.component.test.tsx:536:80
+    534|
+    535|     const header = hours.querySelector('[data-slot=card-header]') as H…
+    536|     expect(within(header).queryByRole('button', { name: 'Copy to all d…
+       |                                                                                ^
+    537|     const content = hours.querySelector('[data-slot=card-content]') as…
+    538|     const copy = within(content).getByRole('button', { name: 'Copy to …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |component| src/features/spaces/components/editor/SpaceEditor.component.test.tsx > the opening hours section > a verified space’s notice leads to its reports, to correct a fact
+TestingLibraryElementError: Unable to find role="link" and name `/reports$/`
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"success"[39m
+        [36m>[39m
+          [0mVerified[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"outline-none"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-info bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"alert"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+          [33mrole[39m=[32m"status"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-info"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"12"[39m
+              [33mcy[39m=[32m"12"[39m
+              [33mr[39m=[32m"10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 16v-4"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 8h.01"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+            [33mdata-slot[39m=[32m"alert-title"[39m
+          [36m>[39m
+            [0mEdited by ⁨Sami⁩[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+            [33mdata-slot[39m=[32m"alert-description"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0mThis space is verified, so it shows here read-only.[0m
+            [36m</p>[39m
+            [36m<p>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"underline underline-offset-4"[39m
+                [33mhref[39m=[32m"/spaces/focus-hub"[39m
+                [33mrel[39m=[32m"noreferrer"[39m
+                [33mtarget[39m=[32m"_blank"[39m
+              [36m>[39m
+                [0mView on the site[0m
+              [36m</a>[39m
+            [36m</p>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap gap-2"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mOwners’ actions[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:items-start lg:gap-8"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Profile sections"[39m
+          [33mclass[39m=[32m"lg:sticky lg:top-20 lg:col-span-3 lg:flex lg:flex-col lg:gap-1 hidden"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"location"[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_8%)] h-8 px-3 pointer-coarse:h-(--control-height) shrink-0 rounded-full lg:w-full lg:justify-start lg:rounded-md lg:border-transparent"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/spaces/7#profile"[39m
+          [36m>[39m
+            [0mThe space[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) shrink-0 rounded-full lg:w-full lg:justify-start lg:rounded-md lg:border-transparent"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/spaces/7#hours"[39m
+          [36m>[39m
+            [0mOpening hours[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:no...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<section[39m
+      [33maria-atomic[39m=[32m"false"[39m
+      [33maria-label[39m=[32m"Notifications"[39m
+      [33maria-live[39m=[32m"polite"[39m
+      [33maria-relevant[39m=[32m"additions text"[39m
+      [33mdata-react-aria-top-layer[39m=[32m"true"[39m
+      [33mtabindex[39m=[32m"-1"[39m
+    [36m/>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"flex flex-col gap-4"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-(--radius-pill) px-2 text-caption whitespace-nowrap [&>svg]:pointer-events-none [&>svg]:size-3 bg-success-subtle text-success-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"badge"[39m
+          [33mdata-variant[39m=[32m"success"[39m
+        [36m>[39m
+          [0mVerified[0m
+        [36m</span>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"outline-none"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"group/alert grid w-full gap-0.5 rounded-lg border px-4 py-3 text-start text-body-sm has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2.5 *:[svg]:row-span-2 *:[svg]:translate-y-0.5 *:[svg]:text-current *:[svg:not([class*='size-'])]:size-4 border-info bg-info-subtle text-info-subtle-foreground"[39m
+          [33mdata-slot[39m=[32m"alert"[39m
+          [33mdata-variant[39m=[32m"info"[39m
+          [33mrole[39m=[32m"status"[39m
+        [36m>[39m
+          [36m<svg[39m
+            [33maria-hidden[39m=[32m"true"[39m
+            [33mclass[39m=[32m"lucide lucide-info"[39m
+            [33mfill[39m=[32m"none"[39m
+            [33mheight[39m=[32m"24"[39m
+            [33mstroke[39m=[32m"currentColor"[39m
+            [33mstroke-linecap[39m=[32m"round"[39m
+            [33mstroke-linejoin[39m=[32m"round"[39m
+            [33mstroke-width[39m=[32m"2"[39m
+            [33mviewBox[39m=[32m"0 0 24 24"[39m
+            [33mwidth[39m=[32m"24"[39m
+            [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+          [36m>[39m
+            [36m<circle[39m
+              [33mcx[39m=[32m"12"[39m
+              [33mcy[39m=[32m"12"[39m
+              [33mr[39m=[32m"10"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 16v-4"[39m
+            [36m/>[39m
+            [36m<path[39m
+              [33md[39m=[32m"M12 8h.01"[39m
+            [36m/>[39m
+          [36m</svg>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-label group-has-[>svg]/alert:col-start-2 [&_a]:underline [&_a]:underline-offset-3"[39m
+            [33mdata-slot[39m=[32m"alert-title"[39m
+          [36m>[39m
+            [0mEdited by ⁨Sami⁩[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"text-body-sm text-balance group-has-[>svg]/alert:col-start-2 md:text-pretty [&_a]:underline [&_a]:underline-offset-3 [&_p:not(:last-child)]:mb-4"[39m
+            [33mdata-slot[39m=[32m"alert-description"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0mThis space is verified, so it shows here read-only.[0m
+            [36m</p>[39m
+            [36m<p>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"underline underline-offset-4"[39m
+                [33mhref[39m=[32m"/spaces/focus-hub"[39m
+                [33mrel[39m=[32m"noreferrer"[39m
+                [33mtarget[39m=[32m"_blank"[39m
+              [36m>[39m
+                [0mView on the site[0m
+              [36m</a>[39m
+            [36m</p>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-wrap gap-2"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mOwners’ actions[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:items-start lg:gap-8"[39m
+      [36m>[39m
+        [36m<nav[39m
+          [33maria-label[39m=[32m"Profile sections"[39m
+          [33mclass[39m=[32m"lg:sticky lg:top-20 lg:col-span-3 lg:flex lg:flex-col lg:gap-1 hidden"[39m
+        [36m>[39m
+          [36m<a[39m
+            [33maria-current[39m=[32m"location"[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_8%)] h-8 px-3 pointer-coarse:h-(--control-height) shrink-0 rounded-full lg:w-full lg:justify-start lg:rounded-md lg:border-transparent"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/spaces/7#profile"[39m
+          [36m>[39m
+            [0mThe space[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) shrink-0 rounded-full lg:w-full lg:justify-start lg:rounded-md lg:border-transparent"[39m
+            [33mdata-discover[39m=[32m"true"[39m
+            [33mdata-slot[39m=[32m"button"[39m
+            [33mhref[39m=[32m"/spaces/7#hours"[39m
+          [36m>[39m
+            [0mOpening hours[0m
+          [36m</a>[39m
+          [36m<a[39m
+            [33mclass[39m=[32m"inline-flex items-center justify-center gap-2 border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:no...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/spaces/components/editor/SpaceEditor.component.test.tsx:549:31
+    547|     });
+    548|
+    549|     const link = await screen.findByRole('link', { name: /reports$/ });
+       |                               ^
+    550|     expect(link).toHaveAttribute('href', '/reports?space=7');
+    551|     expect(link.parentElement?.textContent?.replace(/[\u2066-\u2069]/g…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |component| src/features/spaces/components/menu/SpaceActionsMenu.component.test.tsx > SpaceActionsMenu, for a deleted space > a verified row’s menu reads «عرض (يعدّلها المالك)»; an unverified one’s «تعديل»
+TestingLibraryElementError: Unable to find role="menuitem" and name "View (its owner edits it)"
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<main[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-haspopup[39m=[32m"menu"[39m
+        [33maria-label[39m=[32m"Actions: ⁨Focus Hub⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+        [33mdata-state[39m=[32m"closed"[39m
+        [33mid[39m=[32m"radix-_r_9o_"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-ellipsis-vertical lucide-more-vertical"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"5"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"19"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-haspopup[39m=[32m"menu"[39m
+        [33maria-label[39m=[32m"Actions: ⁨Palm Hub⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+        [33mdata-state[39m=[32m"closed"[39m
+        [33mid[39m=[32m"radix-_r_9t_"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-ellipsis-vertical lucide-more-vertical"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"5"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"19"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex justify-end"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Restore ⁨Olive Desk⁩"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRestore[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<button[39m
+        [33maria-controls[39m=[32m"radix-_r_a3_"[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33maria-haspopup[39m=[32m"menu"[39m
+        [33maria-label[39m=[32m"Actions: ⁨Cedar Hub⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-radix-popper-align[39m=[32m"end"[39m
+        [33mdata-radix-popper-side[39m=[32m"bottom"[39m
+  ...
+
+Ignored nodes: comments, script, style
+[36m<body[39m
+  [33mdata-scroll-locked[39m=[32m"1"[39m
+  [33mstyle[39m=[32m"pointer-events: none;"[39m
+[36m>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mdata-aria-hidden[39m=[32m"true"[39m
+    [33mdata-radix-focus-guard[39m=[32m""[39m
+    [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+    [33mtabindex[39m=[32m"0"[39m
+  [36m/>[39m
+  [36m<div>[39m
+    [36m<main[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-haspopup[39m=[32m"menu"[39m
+        [33maria-label[39m=[32m"Actions: ⁨Focus Hub⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+        [33mdata-state[39m=[32m"closed"[39m
+        [33mid[39m=[32m"radix-_r_9o_"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-ellipsis-vertical lucide-more-vertical"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"5"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"19"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<button[39m
+        [33maria-expanded[39m=[32m"false"[39m
+        [33maria-haspopup[39m=[32m"menu"[39m
+        [33maria-label[39m=[32m"Actions: ⁨Palm Hub⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-slot[39m=[32m"dropdown-menu-trigger"[39m
+        [33mdata-state[39m=[32m"closed"[39m
+        [33mid[39m=[32m"radix-_r_9t_"[39m
+        [33mtype[39m=[32m"button"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-ellipsis-vertical lucide-more-vertical"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"12"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"5"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+          [36m<circle[39m
+            [33mcx[39m=[32m"12"[39m
+            [33mcy[39m=[32m"19"[39m
+            [33mr[39m=[32m"1"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+      [36m</button>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex justify-end"[39m
+      [36m>[39m
+        [36m<button[39m
+          [33maria-label[39m=[32m"Restore ⁨Olive Desk⁩"[39m
+          [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height)"[39m
+          [33mdata-slot[39m=[32m"button"[39m
+          [33mtype[39m=[32m"button"[39m
+        [36m>[39m
+          [0mRestore[0m
+        [36m</button>[39m
+      [36m</div>[39m
+      [36m<button[39m
+        [33maria-controls[39m=[32m"radix-_r_a3_"[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33maria-haspopup[39m=[32m"menu"[39m
+        [33maria-label[39m=[32m"Actions: ⁨Cedar Hub⁩"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height)"[39m
+        [33mdata-radix-popper-align[39m=[32m"end"[39m
+        [33mdata-radix-popper-side[39m=[32m"bottom"[39m
+  ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/spaces/components/menu/SpaceActionsMenu.component.test.tsx:381:20
+    379|     await userEvent.click(menuButton('Cedar Hub'));
+    380|     expect(
+    381|       await screen.findByRole('menuitem', { name: 'View (its owner edi…
+       |                    ^
+    382|     ).toHaveAttribute('href', '/spaces/14');
+    383|     expect(screen.queryByRole('menuitem', { name: 'Edit' })).not.toBeI…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |component| src/features/spaces/hooks/hide/useSetSpaceHidden.component.test.tsx > useSetSpaceHidden > hiding offers «تراجع» that shows it again
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Undo"
+
+Here are the accessible roles:
+
+  button:
+
+  Name "Close notification":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close notification"[39m
+    [33mclass[39m=[32m"absolute top-3 end-3 inline-flex size-6 items-center justify-center rounded-sm text-current opacity-70 hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-close-button[39m=[32m"true"[39m
+    [33mdata-disabled[39m=[32m"false"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<li[39m
+  [33mclass[39m=[32m"relative flex w-(--width) items-start gap-3 rounded-lg border border-border bg-popover p-4 text-body-sm text-popover-foreground shadow-floating has-data-close-button:pe-10"[39m
+  [33mdata-dismissible[39m=[32m"true"[39m
+  [33mdata-expanded[39m=[32m"false"[39m
+  [33mdata-front[39m=[32m"true"[39m
+  [33mdata-index[39m=[32m"0"[39m
+  [33mdata-mounted[39m=[32m"true"[39m
+  [33mdata-promise[39m=[32m"false"[39m
+  [33mdata-removed[39m=[32m"false"[39m
+  [33mdata-sonner-toast[39m=[32m""[39m
+  [33mdata-styled[39m=[32m"false"[39m
+  [33mdata-swipe-out[39m=[32m"false"[39m
+  [33mdata-swiped[39m=[32m"false"[39m
+  [33mdata-swiping[39m=[32m"false"[39m
+  [33mdata-visible[39m=[32m"true"[39m
+  [33mdata-x-position[39m=[32m"right"[39m
+  [33mdata-y-position[39m=[32m"bottom"[39m
+  [33mstyle[39m=[32m"--index: 0; --toasts-before: 0; --z-index: 1; --offset: 0px; --initial-height: 0px;"[39m
+  [33mtabindex[39m=[32m"0"[39m
+[36m>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close notification"[39m
+    [33mclass[39m=[32m"absolute top-3 end-3 inline-flex size-6 items-center justify-center rounded-sm text-current opacity-70 hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&_svg:not([class*='size-'])]:size-4"[39m
+    [33mdata-close-button[39m=[32m"true"[39m
+    [33mdata-disabled[39m=[32m"false"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-1 flex-col gap-0.5"[39m
+    [33mdata-content[39m=[32m""[39m
+  [36m>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"text-label"[39m
+      [33mdata-title[39m=[32m""[39m
+    [36m>[39m
+      [36m<span>[39m
+        [0mPalm Hub[0m
+      [36m</span>[39m
+      [0m is hidden from the site[0m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</li>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/features/spaces/hooks/hide/useSetSpaceHidden.component.test.tsx:165:46
+    163|     const hidden = await toastTitled('Palm Hub is hidden from the site…
+    164|     await userEvent.click(
+    165|       within(hidden.closest('li') ?? hidden).getByRole('button', { nam…
+       |                                              ^
+    166|     );
+    167|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  4 failed (4)
+      Tests  5 failed | 80 passed (85)
+   Start at  10:27:44
+   Duration  47.00s (tests 47%, transform 18%, import 17%, environment 14%, setup 4%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/spaces/components/editor src/features/spaces/components/menu src/features/spaces/hooks/hide src/features/space-links/components/admin-list

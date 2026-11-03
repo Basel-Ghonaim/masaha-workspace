@@ -1,0 +1,102 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/shared/routing/focus/useMainFocus.component.test.tsx (6 tests | 1 failed) 3428ms
+   ❯ the focus on a page change (6)
+     × focuses the heading of a card the hash names when the card takes no focus itself 3032ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  13:15:17
+   Duration  11.07s (tests 32%, transform 26%, environment 23%, import 13%, setup 7%)
+
+  Transform  |component| transforming modules took 2.76s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/routing/focus/useMainFocus.component.test.tsx > the focus on a page change > focuses the heading of a card the hash names when the card takes no focus itself
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<h2
+  tabindex="-1"
+>
+  Opening hours
+</h2>[39m
+Received element with focus:
+  [31m<h2
+  id="owners"
+  tabindex="-1"
+>
+  For owners
+</h2>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"[39m
+        [33mhref[39m=[32m"#main"[39m
+      [36m>[39m
+        [0mSkip to content[0m
+      [36m</a>[39m
+      [36m<a[39m
+        [33mhref[39m=[32m"/elsewhere"[39m
+      [36m>[39m
+        [0mSite header link[0m
+      [36m</a>[39m
+      [36m<main[39m
+        [33maria-label[39m=[32m"Site"[39m
+        [33mid[39m=[32m"main"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<h1>[39m
+          [0mAbout[0m
+        [36m</h1>[39m
+        [36m<h2[39m
+          [33mid[39m=[32m"owners"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [0mFor owners[0m
+        [36m</h2>[39m
+        [36m<h2[39m
+          [33mid[39m=[32m"contact"[39m
+          [33mtabindex[39m=[32m"-1"[39m
+        [36m>[39m
+          [0mContact us[0m
+        [36m</h2>[39m
+        [36m<section[39m
+          [33mid[39m=[32m"hours"[39m
+        [36m>[39m
+          [36m<h2[39m
+            [33mtabindex[39m=[32m"-1"[39m
+          [36m>[39m
+            [0mOpening hours[0m
+          [36m</h2>[39m
+        [36m</section>[39m
+      [36m</main>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m...
+ ❯ src/shared/routing/focus/useMainFocus.component.test.tsx:148:70
+    146|
+    147|     await waitFor(() => {
+    148|       expect(screen.getByRole('heading', { name: 'Opening hours' })).t…
+       |                                                                      ^
+    149|     });
+    150|   });
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

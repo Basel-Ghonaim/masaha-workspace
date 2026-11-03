@@ -1,0 +1,45 @@
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit src/modules/finance/occupancyGrid.unit.test.ts
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-b-lane-f/apps/api
+
+ ❯ |unit| src/modules/finance/occupancyGrid.unit.test.ts (3 tests | 1 failed) 14ms
+   ❯ the occupancy grid (3)
+     × the average per weekday and hour over 4 weeks, one decimal 11ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  13:00:35
+   Duration  413ms (transform 52%, import 25%, tests 14%, worker 8%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/finance/occupancyGrid.unit.test.ts > the occupancy grid > the average per weekday and hour over 4 weeks, one decimal
+AssertionError: expected 0.7 to be 1.3 // Object.is equality
+
+- Expected
++ Received
+
+- 1.3
++ 0.7
+
+ ❯ src/modules/finance/occupancyGrid.unit.test.ts:35:31
+     33|     expect(grid.map(({ weekday }) => weekday)).toEqual([0, 1, 2, 3, 4,…
+     34|     expect(grid.every(({ hours }) => hours.length === 24)).toBe(true);
+     35|     expect(grid[0]?.hours[9]).toBe(1.3);
+       |                               ^
+     36|     expect(grid[1]?.hours[14]).toBe(0.8);
+     37|     expect(grid[6]?.hours[23]).toBe(0.3);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-b-lane-f\apps\api
+npm error workspace @masaha/api@0.0.0
+npm error location C:\dev\masaha\app-b-lane-f\apps\api
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit src/modules/finance/occupancyGrid.unit.test.ts

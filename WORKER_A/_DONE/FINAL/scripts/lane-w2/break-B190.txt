@@ -1,0 +1,210 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/pages/dashboard/admin/UsersPage
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w2/apps/web
+
+ ❯ |component| src/pages/dashboard/admin/UsersPage.component.test.tsx (11 tests | 1 failed) 12912ms
+   ❯ UsersPage (11)
+     × the users page’s held items are reached by the keyboard, their reason read 3424ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 10 passed (11)
+   Start at  10:09:34
+   Duration  28.18s (tests 47%, transform 28%, import 12%, environment 10%, setup 3%)
+
+  Transform  |component| transforming modules took 7.63s · 28% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/admin/UsersPage.component.test.tsx > UsersPage > the users page’s held items are reached by the keyboard, their reason read
+Error: [2mexpect([22m[31melement[39m[2m).toHaveFocus()[22m
+
+Expected element with focus:
+  [32m<div
+  aria-disabled="true"
+  class="relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"
+  data-disabled=""
+  data-orientation="vertical"
+  data-radix-collection-item=""
+  data-slot="dropdown-menu-item"
+  data-variant="default"
+  role="menuitem"
+  tabindex="-1"
+>
+  <span
+    class="flex flex-col"
+  >
+    <span>
+      Change role
+    </span>
+    <span
+      class="text-caption text-muted-foreground"
+    >
+      Their role follows their links — unlink them first
+    </span>
+  </span>
+</div>[39m
+Received element with focus:
+  [31m<a
+  class="relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 data-held:opacity-50 data-[variant=destructive]:text-destructive data-[variant=destructive]:[&_svg]:text-destructive data-[variant=destructive]:focus:bg-destructive-subtle data-[variant=destructive]:focus:text-destructive-subtle-foreground data-[variant=destructive]:focus:[&_svg]:text-destructive-subtle-foreground"
+  data-discover="true"
+  data-highlighted=""
+  data-orientation="vertical"
+  data-radix-collection-item=""
+  data-slot="dropdown-menu-item"
+  data-variant="default"
+  href="/dashboard/admin/owners?q=hadi%40example.com"
+  role="menuitem"
+  tabindex="0"
+>
+  Unlink them
+</a>[39m
+
+Ignored nodes: comments, script, style
+[36m<html[39m
+  [33mdata-theme[39m=[32m"light"[39m
+  [33mdir[39m=[32m"ltr"[39m
+  [33mlang[39m=[32m"en"[39m
+[36m>[39m
+  [36m<head />[39m
+  [36m<body[39m
+    [33mdata-scroll-locked[39m=[32m"1"[39m
+    [33mstyle[39m=[32m"pointer-events: none;"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mdata-aria-hidden[39m=[32m"true"[39m
+      [33mdata-radix-focus-guard[39m=[32m""[39m
+      [33mstyle[39m=[32m"outline: none; opacity: 0; position: fixed; pointer-events: none;"[39m
+      [33mtabindex[39m=[32m"0"[39m
+    [36m/>[39m
+    [36m<div>[39m
+      [36m<section[39m
+        [33maria-label[39m=[32m"Users"[39m
+        [33mclass[39m=[32m"outline-none"[39m
+        [33mtabindex[39m=[32m"-1"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"overflow-hidden rounded-lg border border-(--card-border) bg-card text-card-foreground shadow-raised"[39m
+          [33mdata-layout[39m=[32m"table"[39m
+          [33mdata-slot[39m=[32m"data-table"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"px-(--card-padding) py-4"[39m
+            [33mdata-slot[39m=[32m"data-table-toolbar"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"flex flex-col gap-3"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33maria-hidden[39m=[32m"true"[39m
+                [33mclass[39m=[32m"grid items-start gap-3 md:grid-cols-2 xl:grid-cols-3"[39m
+                [33mdata-aria-hidden[39m=[32m"true"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"group/field flex flex-col gap-1.5"[39m
+                  [33mdata-slot[39m=[32m"field"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"flex items-center justify-between gap-2 group-data-disabled/field:opacity-50"[39m
+                  [36m>[39m
+                    [36m<label[39m
+                      [33mclass[39m=[32m"text-label text-foreground"[39m
+                      [33mfor[39m=[32m"_r_1a_-control"[39m
+                      [33mid[39m=[32m"_r_1a_-label"[39m
+                    [36m>[39m
+                      [0mSearch[0m
+                    [36m</label>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"h-(--control-height) flex w-full min-w-0 items-center gap-2 rounded-(--radius-control) border border-input bg-background px-3 text-foreground transition-colors has-[[data-slot=input-action]]:pe-1 has-[[data-slot=input]:focus-visible]:outline-2 has-[[data-slot=input]:focus-visible]:outline-offset-2 has-[[data-slot=input]:focus-visible]:outline-ring has-[[data-slot=input]:focus-visible:not([aria-invalid=true])]:border-ring has-[[data-slot=input][aria-invalid=true]]:border-destructive has-[[data-slot=input]:disabled]:cursor-not-allowed has-[[data-slot=input]:disabled]:opacity-50"[39m
+                    [33mdata-size[39m=[32m"md"[39m
+                    [33mdata-slot[39m=[32m"input-group"[39m
+                  [36m>[39m
+                    [36m<span[39m
+                      [33maria-hidden[39m=[32m"true"[39m
+                      [33mclass[39m=[32m"flex shrink-0 text-muted-foreground [&_svg:not([class*='size-'])]:size-4"[39m
+                    [36m>[39m
+                      [36m<svg[39m
+                        [33maria-hidden[39m=[32m"true"[39m
+                        [33mclass[39m=[32m"lucide lucide-search"[39m
+                        [33mfill[39m=[32m"none"[39m
+                        [33mheight[39m=[32m"24"[39m
+                        [33mstroke[39m=[32m"currentColor"[39m
+                        [33mstroke-linecap[39m=[32m"round"[39m
+                        [33mstroke-linejoin[39m=[32m"round"[39m
+                        [33mstroke-width[39m=[32m"2"[39m
+                        [33mviewBox[39m=[32m"0 0 24 24"[39m
+                        [33mwidth[39m=[32m"24"[39m
+                        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+                      [36m>[39m
+                        [36m<path[39m
+                          [33md[39m=[32m"m21 21-4.34-4.34"[39m
+                        [36m/>[39m
+                        [36m<circle[39m
+                          [33mcx[39m=[32m"11"[39m
+                          [33mcy[39m=[32m"11"[39m
+                          [33mr[39m=[32m"8"[39m
+                        [36m/>[39m
+                      [36m</svg>[39m
+                    [36m</span>[39m
+                    [36m<input[39m
+                      [33mclass[39m=[32m"h-full min-w-0 flex-1 bg-transparent text-(length:--control-text-size) leading-(--type-body-line-height) outline-none placeholder:text-muted-foreground file:inline-flex file:border-0 file:bg-transparent file:text-label file:text-foreground disabled:cursor-not-allowed"[39m
+                      [33mdata-slot[39m=[32m"input"[39m
+                      [33mid[39m=[32m"_r_1a_-control"[39m
+                      [33mmaxlength[39m=[32m"100"[39m
+                      [33mplaceholder[39m=[32m"Name or email"[39m
+                      [33mtype[39m=[32m"search"[39m
+                      [33mvalue[39m=[32m""[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"flex flex-wrap items-center gap-3"[39m
+              [36m>[39m
+                [36m<p[39m
+                  [33maria-live[39m=[32m"polite"[39m
+                  [33mclass[39m=[32m"text-body-sm text-muted-foreground"[39m
+                [36m>[39m
+                  [0mUsers: 3[0m
+                [36m</p>[39m
+                [36m<div[39m
+                  [33maria-hidden[39m=[32m"true"[39m
+                  [33maria-label[39m=[32m"Role"[39m
+                  [33mclass[39m=[32m"flex flex-wrap items-center gap-2"[39m
+                  [33mdata-aria-hidden[39m=[32m"true"[39m
+                  [33mdata-slot[39m=[32m"toggle-group"[39m
+                  [33mdir[39m=[32m"ltr"[39m
+                  [33mrole[39m=[32m"radiogroup"[39m
+                  [33mstyle[39m=[32m"outline: none;"[39m
+                  [33mtabindex[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<button[39m
+                    [33maria-checked[39m=[32m"true"[39m
+                    [33mclass[39m=[32m"group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visi...
+ ❯ src/pages/dashboard/admin/UsersPage.component.test.tsx:169:20
+    167|     const [held] = await screen.findAllByRole('menuitem');
+    168|     await waitFor(() => {
+    169|       expect(held).toHaveFocus();
+       |                    ^
+    170|     });
+    171|     expect(held).toHaveAttribute('aria-disabled', 'true');
+ ❯ runWithExpensiveErrorDiagnosticsDisabled ../../node_modules/@testing-library/dom/dist/config.js:47:12
+ ❯ checkCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:124:77
+ ❯ Timeout.checkRealTimersCallback ../../node_modules/@testing-library/dom/dist/wait-for.js:118:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w2\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w2\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/pages/dashboard/admin/UsersPage

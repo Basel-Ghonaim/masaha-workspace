@@ -1,0 +1,42 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+ ❯ |unit| src/shared/storage/cloudinaryStorage.unit.test.ts (8 tests | 1 failed) 49ms
+   ❯ the Cloudinary storage (7)
+     × lists a prefix through the Admin API, following next_cursor, each public id back to its key 12ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  17:15:32
+   Duration  414ms (transform 43%, tests 33%, import 19%, worker 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/storage/cloudinaryStorage.unit.test.ts > the Cloudinary storage > lists a prefix through the Admin API, following next_cursor, each public id back to its key
+AssertionError: expected [ { …(2) } ] to deeply equal [ { …(2) }, { …(2) } ]
+
+- Expected
++ Received
+
+  [
+    {
+      "createdAt": 2026-10-12T08:00:00.000Z,
+      "key": "spaces/abc/card.webp",
+    },
+-   {
+-     "createdAt": 2026-10-12T08:00:01.000Z,
+-     "key": "spaces/abc/page.webp",
+-   },
+  ]
+
+ ❯ src/shared/storage/cloudinaryStorage.unit.test.ts:188:20
+    186|     for await (const entry of storage.list('spaces/')) listed.push(ent…
+    187|
+    188|     expect(listed).toEqual([
+       |                    ^
+    189|       { key: 'spaces/abc/card.webp', createdAt: new Date('2026-10-12T0…
+    190|       { key: 'spaces/abc/page.webp', createdAt: new Date('2026-10-12T0…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

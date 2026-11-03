@@ -1,0 +1,314 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/overview/components/admin
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/overview/components/admin/AdminOverview.component.test.tsx (4 tests | 1 failed) 5523ms
+   ❯ AdminOverview (4)
+     × shows the privacy note 3052ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 3 passed (4)
+   Start at  15:15:41
+   Duration  26.84s (transform 30%, import 25%, tests 21%, environment 18%, setup 6%)
+
+  Transform  |component| transforming modules took 7.89s · 30% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/overview/components/admin/AdminOverview.component.test.tsx > AdminOverview > shows the privacy note
+TestingLibraryElementError: Unable to find an element with the text: A space’s operating data is private to its management — customers, visits, subscriptions, payments and finance.. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mOverview[0m
+      [36m</h1>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Platform summary"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/spaces"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+                    [36m<dt[39m
+                      [33mclass[39m=[32m"text-label text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mSpaces[0m
+                    [36m</dt>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-heading-1"[39m
+                    [36m>[39m
+                      [0m16[0m
+                    [36m</dd>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                    [36m>[39m
+                      [0m10 verified · 4 unverified · 2 hidden[0m
+                    [36m</dd>[39m
+                  [36m</dl>[39m
+                [36m</div>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/reports?status=open"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+                    [36m<dt[39m
+                      [33mclass[39m=[32m"text-label text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mOpen data reports[0m
+                    [36m</dt>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-heading-1"[39m
+                    [36m>[39m
+                      [0m5[0m
+                    [36m</dd>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                    [36m>[39m
+                      [0m3 waiting for the admin · 2 waiting for owners[0m
+                    [36m</dd>[39m
+                  [36m</dl>[39m
+                [36m</div>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/spaces?stale=true"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+                    [36m<dt[39m
+                      [33mclass[39m=[32m"text-label text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mStale or missing data[0m
+                    [36m</dt>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-heading-1"[39m
+                    [36m>[39m
+                      [0m7[0m
+                    [36m</dd>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mBy the platform’s freshness limits, or not added yet[0m
+                    [36m</dd>[39m
+                  [36m</dl>[39m
+                [36m</div>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/spaces?status=unverified"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+           ...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<main>[39m
+      [36m<h1>[39m
+        [0mOverview[0m
+      [36m</h1>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"flex flex-col gap-6"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33maria-label[39m=[32m"Platform summary"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/spaces"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+                    [36m<dt[39m
+                      [33mclass[39m=[32m"text-label text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mSpaces[0m
+                    [36m</dt>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-heading-1"[39m
+                    [36m>[39m
+                      [0m16[0m
+                    [36m</dd>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                    [36m>[39m
+                      [0m10 verified · 4 unverified · 2 hidden[0m
+                    [36m</dd>[39m
+                  [36m</dl>[39m
+                [36m</div>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/reports?status=open"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+                    [36m<dt[39m
+                      [33mclass[39m=[32m"text-label text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mOpen data reports[0m
+                    [36m</dt>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-heading-1"[39m
+                    [36m>[39m
+                      [0m5[0m
+                    [36m</dd>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                    [36m>[39m
+                      [0m3 waiting for the admin · 2 waiting for owners[0m
+                    [36m</dd>[39m
+                  [36m</dl>[39m
+                [36m</div>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/spaces?stale=true"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+                    [36m<dt[39m
+                      [33mclass[39m=[32m"text-label text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mStale or missing data[0m
+                    [36m</dt>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-heading-1"[39m
+                    [36m>[39m
+                      [0m7[0m
+                    [36m</dd>[39m
+                    [36m<dd[39m
+                      [33mclass[39m=[32m"text-caption text-muted-foreground"[39m
+                    [36m>[39m
+                      [0mBy the platform’s freshness limits, or not added yet[0m
+                    [36m</dd>[39m
+                  [36m</dl>[39m
+                [36m</div>[39m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"flex"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"flex flex-1 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+                [33mdata-discover[39m=[32m"true"[39m
+                [33mhref[39m=[32m"/spaces?status=unverified"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"flex overflow-hidden rounded-lg border border-(--card-border) bg-card py-(--card-padding) text-body text-card-foreground shadow-raised has-[>img:first-child]:pt-0 *:[img:first-child]:rounded-t-lg *:[img:last-child]:rounded-b-lg flex-row items-start gap-3 px-(--card-padding) flex-1 hover:bg-accent"[39m
+                  [33mdata-slot[39m=[32m"stat-card"[39m
+                [36m>[39m
+                  [36m<dl[39m
+                    [33mclass[39m=[32m"flex flex-1 flex-col gap-1"[39m
+                  [36m>[39m
+           ...
+ ❯ waitForWrapper ../../node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/features/overview/components/admin/AdminOverview.component.test.tsx:131:20
+    129|
+    130|     expect(
+    131|       await screen.findByText(
+       |                    ^
+    132|         'A space’s operating data is private to its management — custo…
+    133|       ),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/overview/components/admin

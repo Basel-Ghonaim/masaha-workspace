@@ -1,0 +1,66 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/finance
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-w1/apps/web
+
+ ❯ |component| src/features/finance/components/IncomeTab.component.test.tsx (4 tests | 2 failed) 2778ms
+   ❯ Finance › Income (4)
+     × shows the three tiles, the two charts and the collections table; axe-clean 591ms
+     × says no change when the month before had no income, and no payments yet 462ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/finance/components/IncomeTab.component.test.tsx > Finance › Income > shows the three tiles, the two charts and the collections table; axe-clean
+AssertionError: expected undefined to deeply equal {}
+
+- Expected:
+{}
+
++ Received:
+undefined
+
+ ❯ src/features/finance/components/IncomeTab.component.test.tsx:108:33
+    106|     await screen.findByText('Income = amounts actually collected, excl…
+    107|     expect(requests[0]?.url).toBe('/manage/spaces/7/finance/income');
+    108|     expect(requests[0]?.params).toEqual({});
+       |                                 ^
+    109|     const tiles = [...container.querySelectorAll('[data-slot="stat-car…
+    110|     expect(tiles).toEqual([
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/features/finance/components/IncomeTab.component.test.tsx > Finance › Income > says no change when the month before had no income, and no payments yet
+AssertionError: expected 'October 2026₪1,120' to be 'October 2026₪1,120.00' // Object.is equality
+
+Expected: "October 2026₪1,120.00"
+Received: "October 2026₪1,120"
+
+ ❯ src/features/finance/components/IncomeTab.component.test.tsx:148:22
+    146|     await screen.findByText('No payments yet');
+    147|     const tiles = [...container.querySelectorAll('[data-slot="stat-car…
+    148|     expect(tiles[1]).toBe('October 2026₪1,120.00');
+       |                      ^
+    149|     expect(screen.getByText('No collections this month.')).toBeInTheDo…
+    150|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  15:26:36
+   Duration  15.98s (import 29%, transform 29%, environment 19%, tests 18%, setup 5%)
+
+  Transform  |component| transforming modules took 4.46s · 29% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-w1\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-w1\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/finance

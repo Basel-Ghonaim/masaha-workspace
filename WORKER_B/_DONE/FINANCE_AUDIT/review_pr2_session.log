@@ -1,0 +1,20 @@
+I reviewed PR #130 and my verdict is **mergeable**: no blocker, one should-fix and three nits, all small. CI was green on head `299d8abd` (CodeRabbit skipped), and the head was the same and still CLEAN when I re-checked at the end. I only read the commits and ran nothing. The red lines (tests and breaks B1–B12), the local verification and the real run's database writes I know only from worker B's report.
+
+**The SERIOUS decision (decision 5):** right.
+- **The normalisation is correct.** The project's phone rule always stores a Palestinian mobile (059/056) as `+970…`, so the seeded `+97259…` becoming `+97059…` is intended.
+- **It is not a defect of the API.** The save compares the normalised value with what is stored. The stored form really did change, so writing it and auditing it (entry 56) is true. Comparing the normalised forms instead would leave a form the rule forbids while reporting a different value as saved.
+- **Leaving the `+970` value on worker B's dev database was right.** Restoring by SQL breaks the run's hard limit, and the app can't restore the old form because every save normalises.
+- **Finding 153 is true.** The seed accepts any E.164 number and stores it as given.
+
+**Findings** (all go in worker B's next PR's first commit):
+- **F1, should-fix:** the "read stored, write normalised" decision (S10) has no test and isn't in the contract. No test stores `+97259…` or an email with capitals. If someone made the read stricter, the public About page would return a 500 and every test would stay green. The fix:
+  - one test case where that stored form reads back as stored (200);
+  - one where saving it rewrites and audits it;
+  - one sentence in the contract.
+- **F2, nit:** finding 153 says the save "audits a change no one made", but the admin's save made it. The finding also misses a sharper case: a seeded foreign number is shown on the card, but saving the card with only the email changed is refused (422 on the WhatsApp).
+- **F3, nit:** `platform-settings.md:29` says the bodies are checked "in the browser too". No web code uses these schemas yet.
+- **F4, nit:** "a save that changes nothing writes nothing" isn't literally true on a database with no contact rows. A save of two nulls still inserts two empty rows, though nothing a reader sees changes.
+
+The other eight decisions hold. Authorization, the save's locking under concurrency, the audit entries, validation and scope all checked out against the code. Each test is shown able to fail by its planned break, apart from T4, which has none planned. T6, B8's test, still proves the race even though it fails on the lock-wait check rather than the planned 500.
+
+The full report is at `C:\dev\masaha\workspace\WORKER_B\FINANCE_AUDIT\6_REVIEW_PR2_CLAUDE_CODE.md`.

@@ -1,0 +1,47 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/features/data-reports/components/mine
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-c/apps/web
+
+ ❯ |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx (3 tests | 1 failed) 469ms
+   ❯ MyReportsList (3)
+     × folds a long message to two lines with «Show more», a short one with none, each in its own direction; axe-clean 326ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/components/mine/MyReportsList.component.test.tsx > MyReportsList > folds a long message to two lines with «Show more», a short one with none, each in its own direction; axe-clean
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <button
+  aria-controls="_r_0_-42"
+  aria-expanded="false"
+  class="inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-primary underline-offset-4 hover:underline h-8 pointer-coarse:h-(--control-height) px-0"
+  data-slot="button"
+>
+  Show more
+</button> instead[39m
+ ❯ src/features/data-reports/components/mine/MyReportsList.component.test.tsx:85:53
+     83|     expect(message).not.toHaveClass('line-clamp-2');
+     84|
+     85|     expect(within(short).queryByRole('button')).not.toBeInTheDocument(…
+       |                                                     ^
+     86|     expect(within(short).getByText('الساعات خاطئة')).toHaveAttribute('…
+     87|     expect(within(short).getByText('Reply from the space')).toBeInTheD…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  12:33:08
+   Duration  7.29s (import 31%, transform 31%, environment 24%, setup 7%, tests 7%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-c\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-c\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/features/data-reports/components/mine

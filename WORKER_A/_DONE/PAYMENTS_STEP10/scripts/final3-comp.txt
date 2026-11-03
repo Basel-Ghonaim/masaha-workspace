@@ -1,0 +1,22 @@
+
+> test:component
+> npm run test:component --workspaces --if-present
+
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+Not implemented: navigation to another Document
+
+ Test Files  300 passed (300)
+      Tests  1733 passed (1733)
+   Start at  15:45:25
+   Duration  397.63s (environment 35%, import 31%, tests 21%, setup 10%, transform 3%)
+
+Environment  |component| jsdom was created 300 times · 780.33s total, 35% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

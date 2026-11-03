@@ -1,0 +1,60 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-a2/apps/api
+
+Datasource "db": PostgreSQL database "masaha_a_lane_a2_test", schema "public" at "localhost:5433"
+
+31 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+ ❯ |api| src/modules/desk/customers.api.test.ts (11 tests | 1 failed | 10 skipped) 2988ms
+   ❯ the customers list (11)
+     × a customer row's current subscription carries its progress and its limits 1648ms
+
+ Test Files  1 failed | 4 skipped (5)
+      Tests  1 failed | 35 skipped (36)
+   Start at  15:14:20
+   Duration  51.16s (import 51%, transform 32%, tests 9%, setup 8%)
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |api| src/modules/desk/customers.api.test.ts > the customers list > a customer row's current subscription carries its progress and its limits
+AssertionError: expected [ { id: 1, name: 'Sara', …(5) } ] to match object [ { name: 'Sara', …(1) } ]
+(9 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -2,16 +2,10 @@
+    {
+      "current": {
+        "daysPerWeek": 3,
+        "hoursPerDay": 6,
+        "id": 1,
+-       "progress": {
+-         "daysThisWeek": 2,
+-         "daysUsed": 2,
+-         "minutesToday": 0,
+-         "minutesUsed": 120,
+-       },
+        "totalDays": 12,
+        "totalHours": 60,
+      },
+      "name": "Sara",
+    },
+
+ ❯ src/modules/desk/customers.api.test.ts:201:43
+    199|     await createCheckIn(limited, { checkedInAt: new Date('2026-10-21T0…
+    200|
+    201|     expect(dataOf(await list(reception))).toMatchObject([
+       |                                           ^
+    202|       {
+    203|         name: 'Sara',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

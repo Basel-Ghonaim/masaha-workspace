@@ -1,0 +1,32 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx (12 tests | 1 failed) 2368ms
+   ❯ useDecideSheet (12)
+     × words the admin’s 403 as a space verified meanwhile, and reads the admin’s reports again 95ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 11 passed (12)
+   Start at  12:34:41
+   Duration  7.63s (tests 32%, transform 27%, environment 19%, import 17%, setup 5%)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx > useDecideSheet > words the admin’s 403 as a space verified meanwhile, and reads the admin’s reports again
+Error: [2mexpect([22m[31melement[39m[2m).toHaveTextContent()[22m
+
+Expected element to have text content:
+[32m  This space is verified: its owner decides this report.[39m
+Received:
+[31m  We couldn’t save the decisionThis is no longer open to you at this space.Reference: ⁦req-1⁩[39m
+ ❯ src/features/data-reports/hooks/decide/useDecideSheet.component.test.tsx:338:46
+    336|     await user.click(screen.getByRole('button', { name: 'Corrected' })…
+    337|
+    338|     expect(await screen.findByRole('alert')).toHaveTextContent(
+       |                                              ^
+    339|       'This space is verified: its owner decides this report.',
+    340|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

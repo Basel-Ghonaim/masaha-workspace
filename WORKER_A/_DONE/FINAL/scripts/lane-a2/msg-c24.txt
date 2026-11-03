@@ -1,0 +1,11 @@
+fix(jobs): answer 500 when failures fill a batch
+
+The auto check-out takes at most 500 due stays a run, the earliest
+first. A stay that always fails stays due, so 500 such stays would fill
+every batch: the job would close nothing for any other space while the
+cron saw 200 (finding 121).
+
+Each auto check-out now answers stalled: true when it closed nothing
+and its failures equal the batch it took; the jobs' endpoint answers
+500 for such a run, logs "job stalled" with the job's name and count,
+and still runs the other jobs.

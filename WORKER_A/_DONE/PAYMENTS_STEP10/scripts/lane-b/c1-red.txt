@@ -1,0 +1,81 @@
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component src/shared/design-system/components/display/FilterTag
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-lane-b/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/FilterTag/FilterTag.component.test.tsx (3 tests | 2 failed) 84ms
+   ❯ FilterTag (3)
+     × shows its label, with a remove button named by the caller 44ms
+     × removes the filter on a click and on Enter 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/FilterTag/FilterTag.component.test.tsx > FilterTag > shows its label, with a remove button named by the caller
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Remove the space filter"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<span>[39m
+      [0mSpace: Nour Hub[0m
+    [36m</span>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/shared/design-system/components/display/FilterTag/FilterTag.component.test.tsx:16:19
+     14|
+     15|     expect(screen.getByText('Space: Nour Hub')).toBeVisible();
+     16|     expect(screen.getByRole('button', { name: 'Remove the space filter…
+       |                   ^
+     17|   });
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/shared/design-system/components/display/FilterTag/FilterTag.component.test.tsx > FilterTag > removes the filter on a click and on Enter
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Remove the field filter"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<span>[39m
+      [0mField: Prices[0m
+    [36m</span>[39m
+  [36m</div>[39m
+[36m</body>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/shared/design-system/components/display/FilterTag/FilterTag.component.test.tsx:27:27
+     25|       </FilterTag>,
+     26|     );
+     27|     const remove = screen.getByRole('button', { name: 'Remove the fiel…
+       |                           ^
+     28|
+     29|     await user.click(remove);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  11:45:20
+   Duration  3.30s (environment 47%, import 32%, setup 16%, transform 3%, tests 3%)
+
+npm error Lifecycle script `test:component` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-lane-b\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-lane-b\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project component src/shared/design-system/components/display/FilterTag

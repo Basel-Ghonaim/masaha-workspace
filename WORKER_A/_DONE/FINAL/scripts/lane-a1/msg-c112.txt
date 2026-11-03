@@ -1,0 +1,6 @@
+feat(staff): date each reception link
+
+The owner's staff page says when each person was added («أُضيف في»,
+OW-018), but StaffMember carried no date. Each member now answers
+addedAt, its reception link's created_at in ISO 8601, in the list and
+in a change's answer. The web's fixtures typed as StaffMember carry it.

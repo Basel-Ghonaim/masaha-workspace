@@ -1,0 +1,106 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app/apps/web
+
+ ❯ |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx (0 test)
+ ❯ |component| src/features/desk/components/void/VoidPaymentAction.component.test.tsx (0 test)
+ ❯ |component| src/features/desk/components/void/VoidDialog.component.test.tsx (0 test)
+ ❯ |component| src/features/desk/hooks/statement/useStatement.component.test.tsx (4 tests | 1 failed) 353ms
+   ❯ useStatement (4)
+     × offers the owner the void of a payment not voided; reception none, a voided payment none 82ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/components/void/VoidDialog.component.test.tsx [ src/features/desk/components/void/VoidDialog.component.test.tsx ]
+Error: Failed to resolve import "./VoidDialog" from "src/features/desk/components/void/VoidDialog.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/components/void/VoidDialog.component.test.tsx:10:27
+  7  |  import { fakeTransport, refused, restoreTransport } from "../../../../test/fakeTransport";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { VoidDialog } from "./VoidDialog";
+     |                              ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/components/void/VoidDialog.component.test.tsx";
+  11 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/features/desk/components/void/VoidPaymentAction.component.test.tsx [ src/features/desk/components/void/VoidPaymentAction.component.test.tsx ]
+Error: Failed to resolve import "./VoidPaymentAction" from "src/features/desk/components/void/VoidPaymentAction.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/components/void/VoidPaymentAction.component.test.tsx:11:34
+  7  |  import { fakeTransport, ok, restoreTransport } from "../../../../test/fakeTransport";
+  8  |  import { startPreferences } from "../../../../test/startPreferences";
+  9  |  import { VoidPaymentAction } from "./VoidPaymentAction";
+     |                                     ^
+  10 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/components/void/VoidPaymentAction.component.test.tsx";
+  11 |  import { jsxDEV as _jsxDEV, Fragment as _Fragment } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/features/desk/hooks/void/useVoidDialog.component.test.tsx [ src/features/desk/hooks/void/useVoidDialog.component.test.tsx ]
+Error: Failed to resolve import "../../components/void/VoidDialog" from "src/features/desk/hooks/void/useVoidDialog.component.test.tsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app/apps/web/src/features/desk/hooks/void/useVoidDialog.component.test.tsx:19:27
+  9  |  import { bodyOf, fakeTransport, ok, refused, restoreTransport } from "../../../../test/fakeTransport";
+  10 |  import { startPreferences } from "../../../../test/startPreferences";
+  11 |  import { VoidDialog } from "../../components/void/VoidDialog";
+     |                              ^
+  12 |  var _jsxFileName = "C:/dev/masaha/app/apps/web/src/features/desk/hooks/void/useVoidDialog.component.test.tsx";
+  13 |  import { jsxDEV as _jsxDEV } from "react/jsx-dev-runtime";
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/features/desk/hooks/statement/useStatement.component.test.tsx > useStatement > offers the owner the void of a payment not voided; reception none, a voided payment none
+AssertionError: expected undefined to deeply equal { id: 7, amountAgorot: 10000, …(3) }
+
+- Expected:
+{
+  "amountAgorot": 10000,
+  "id": 7,
+  "method": "CASH",
+  "receivedAt": "2026-10-01T09:00:00Z",
+  "who": "Sara Khalid",
+}
+
++ Received:
+undefined
+
+ ❯ src/features/desk/hooks/statement/useStatement.component.test.tsx:145:24
+    143|     });
+    144|     const [paid, voided] = owner.result.current.payments.rows;
+    145|     expect(paid?.void).toEqual({
+       |                        ^
+    146|       id: 7,
+    147|       amountAgorot: 10000,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  4 failed (4)
+      Tests  1 failed | 3 passed (4)
+   Start at  13:59:28
+   Duration  14.81s (environment 54%, import 22%, setup 14%, transform 9%, tests 1%)
+
