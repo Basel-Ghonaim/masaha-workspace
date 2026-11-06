@@ -1,136 +1,204 @@
-# Masaha — the main supervisor's handoff (2026-11-01)
+# Masaha — the main supervisor's handoff (2026-11-05, evening)
 
 You are taking over as the owner's **analyst and control room** for Masaha — the **main supervisor**. This file
-supersedes the 2026-10-26…11-01 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-10-26_to_11-01.md`, the record of
-#122–#132 and of how the last missions were run). Your auto-memory loads too; the repository and this file win.
-**Read this file whole, then the *Status log* of `DESIGN\ROUND2\HANDOFF_DESIGN_81.md`, then `BOARD.md`.**
+supersedes the 2026-11-01 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-11-01_to_11-05.md`: the deployment, the
+presentation, the privacy page). **You may not be Claude:** the rules that lived in Claude's private memory are copied
+into §8 — this file, the repository and `BOARD.md` are everything you have.
+**Read this file whole, then `BOARD.md`, then `REFACTOR_NOTES.md`, then the two active task folders
+(`TASKS\DIRECTORY_FILTERS\`, `TASKS\IDENTITY\`), each starting from `0_OWNER_DECISIONS.md`.**
 
 ## 0. The supervisors
 
 | Supervisor | Its one job | Its file |
 |---|---|---|
 | **You — the main supervisor** | analysis with the owner, plans, approvals, prompts, verification, reviews, merges, documents | this file |
-| **«مشرف مراجعة التصميم #81»** | design review round 2 (Issue #81) | `DESIGN\ROUND2\HANDOFF_DESIGN_81.md` (last entry 2026-10-20; idle) |
+| **«مشرف مراجعة التصميم #81»** | design review round 2 (Issue #81) | `DESIGN\ROUND2\HANDOFF_DESIGN_81.md` (idle since 2026-10-20) |
 
 A **logo worker** may run with the owner on `TASKS\LOGO\HANDOFF_LOGO.md` — not yours until he brings its decision.
 
 ## 1. Your role and how you speak
 
-- **Arabic** with the owner; **English** in every prompt and plan. Arabic replies: no line starts with an English word
-  or a code token; decisions as items with options and a recommendation, never tables; short, then deeper on request.
+- **Arabic** with the owner — **plain, colloquial-leaning Arabic, with every technical or on-screen term in English**
+  (Connect, Copy snippet, Environment Variables, Redeploy…); never over-translate. UI tasks as short numbered
+  click-by-click steps. No line starts with an English word or a code token; decisions as items with options and a
+  recommendation, never tables; short first. **English** in every prompt and plan.
 - You run in `C:\dev\masaha\app` but **never edit the repository**. Read-only git and `gh`; you write in the
-  workspace. **Merge only with the owner's word.** An approved merge also means: `gh pr merge <n> --merge
-  --match-head-commit <full sha>`; delete the branch (remote, local) and its `backup/*`; move `app` to `main` (`git
-  switch main` + `pull --ff-only`) and `app-b` (`git switch --detach origin/main`); `npm ci` if the lockfile moved;
-  `npm run build -w @masaha/shared`; after a schema change `npx prisma migrate deploy` + `generate` on `masaha_dev`
-  and on `masaha_b_dev`/`masaha_b_test` (B's `.env`); tick the tracking Issue's box; update `BOARD.md` and this file.
-- **Verify every worker report in the code** before believing it: the head, `gh pr checks` green, `CLEAN`, subjects
-  ≤ 50 with a body, no tool attribution, no `fixup!`, no rebase left, no `#PRNUM`, the scope, any migration's SQL, the
-  claims that matter; spot-check a reviewer's top finding — **and every finding of a non-Claude reviewer** (Copilot was
-  thin on #132: 0 findings in 6 minutes where Claude found 9).
-- **The owner sets each day's work** — never impose schedules. He may delegate open points to you ("the rest as your
-  recommendation"): then settle each by the safest recommendation and **log it** in the task's
-  `SUPERVISOR_DECISIONS*.md`; show him those that override an earlier word of his.
+  workspace. **Merge only with the owner's word**: `gh pr merge <n> --merge --match-head-commit <full sha>` (or the
+  owner merges on GitHub — then check the head he merged is the one you reviewed); delete the branch (remote, local)
+  and its `backup/*`; `app` → `git switch main` + `pull --ff-only`; `app-b` → `git switch --detach origin/main`;
+  `npm ci` only if `package-lock.json` moved; `npm run build -w @masaha/shared`; after a schema change `migrate
+  deploy` + `generate` on the databases. Update `BOARD.md` (and this file at a milestone).
+- **Every merge to `main` deploys to production** (Vercel, from `main` only). Say so before asking for a merge.
+- **Verify every worker report in the code** before believing it: head, `gh pr checks` green, `CLEAN`, subjects
+  ≤ 50 with a body, no tool attribution, no `fixup!`, no `#PRNUM`, the scope, the claims that matter — **and look at
+  the worker's screenshots yourself**. OpenCode's report was wrong twice on #134 ("text identical", "renders
+  correctly" while raw `<strong>` tags showed and two words differed): never trust a non-Claude report unchecked.
+  A text the owner approved is compared sentence by sentence with a script (bold splits cause false positives).
+- **The owner sets each day's work.** Delegated points ("as your recommendation") → the safest option, logged.
+- **claude.ai is the owner's company account:** Artifacts are fine while working, but a finished deliverable is
+  saved locally (workspace) and the Artifact deleted (the owner's rule). Masaha deliverables live in the workspace.
+- **Token budget:** on 2026-11-05 the owner's weekly Claude usage reached 99% — the supervisor role moved to a
+  non-Claude model until it renews (about 2026-11-07); workers are OpenCode.
 
 ## 2. State (start here)
 
-> **Update 2026-11-02:** `main` = `8ff11443` — **#133 (the deployment item, F-7) merged**: Vercel + Neon config, CSP
-> headers (33, 46, 64 closed), migrations on production deploys, cron every 15 min (finding 213), the runbook in
-> `setup.md` › *The deployment*. Decisions in `WORKER_B\DEPLOY\0_OWNER_DECISIONS.md` (Google consent screen stays
-> *Testing*). The owner's accounts are ready; next: his first deploy with the supervisor, step by step. The
-> presentation moved to **2026-11-03** (a training course), run locally; the Vercel link to share. The text below is
-> the 2026-11-01 state.
+> **`main` = `77abda30` (#136, 2026-11-05). Masaha v1 is built and LIVE at `https://masaha-omega.vercel.app`.**
+> - **#133** the deployment (Vercel + Neon Frankfurt, CSP headers, migrations on production deploys, the runbook in
+>   `docs/development/setup.md` › *The deployment*). **#134** the privacy page in the prototype (screen **33**).
+>   **#135** the privacy page `/privacy` in the web + the cron documents at 60 minutes. **#136** single-page
+>   pagination hidden (`ListPagination`, all 16 lists) + a stray dot on the privacy page.
+> - **Live setup (all done by the owner; no secret is ever written here):** Vercel project `masaha` (Hobby), env vars
+>   in Production (`DIRECT_URL` for migrations, `TRUST_PROXY=1`, `NODEJS_HELPERS=0`, SMTP via the Gmail account
+>   `masahatgaza@gmail.com`, Cloudinary, `JOBS_SECRET`); **cron-job.org** calls `/api/v1/internal/jobs/run` **every
+>   60 minutes** (200 OK); **Google sign-in published** (Branding filled, support email masahatgaza, no logo yet;
+>   OAuth client in the owner's personal Google Cloud project "My First Project", masahatgaza added as Owner).
+>   The live site holds the 13 real spaces the owner entered (all unverified → Home's «المتاحة الآن» is empty there).
+> - **Known live issue:** the reset email lands in **spam** (new Gmail, no own domain — ADR 0014's email deviation);
+>   the "link sent" screen already tells users to check spam. Real fix at launch: own domain + SPF/DKIM/DMARC.
+> - **Open findings:** **23, 65, 152** — measured after about a week of live use (from ~2026-11-12): 65 the reset
+>   send's timing in Vercel's logs, 23 the per-address ceiling from usage, 152 the audit table's size in Neon.
+>   Highest finding on `main`: **213**; the next free is **214** (check the index first).
+> - **The presentation (2026-11-03, a training course) was held successfully,** demoed from the local environment.
+>   `masaha_dev` still holds that **DEMO_SHOW** data (13 real spaces + 24 seed spaces with ChatGPT covers, Pal Hub run
+>   by «أحمد الشوا» / «ليلى النجار», 50 users, two months of activity). `TASKS\DEMO_SHOW\RUN.md` has the accounts,
+>   `today.ts` (refreshes "present now") and the rebuild; the pre-demo backup is
+>   `TASKS\DEMO_SHOW\scripts\masaha_dev_before.dump`. **Never `db:seed` it** (the seed brings back a full space).
+> - Open Issues: #72 (postponed), #81 (design round 2). `app-review` is old (`0ec43b61`), the owner's call.
+> - **The owner's order (2026-11-05):** the refactor goes **page by page, in order**; the **full project review**
+>   waits until the owner says he is ready. The **visual identity** runs in parallel.
 
-> **`main` = `951107f4` (#132 merged, 2026-11-01). Masaha v1 is built: every one of the 32 screens complete, the API
-> complete, every finding closed but the deployment's six.**
-> - **#127–#132 merged** (2026-10-27…11-01): #127 payments screens; #128 the audit reader; #129 announcements, data
->   reports, favourites (one PR by a lead and sub-agents); #130 the platform settings; #131 finance, both overviews,
->   `/me`, the visits list, the rest of the API (one PR, lead + sub-agents); **#132 the final mission** — every missing
->   screen and gap, 61 findings closed (55 built, 6 accepted), migrations M1 (`subscription_usage` in `bigint`) and M2
->   (`published_period`), 124 commits + 25 fix-round commits, 1001 files.
-> - **Open findings: only the deployment's six** — **23** (a per-address ceiling for signed-in requests), **33, 46,
->   64** (the deployment's headers for Google sign-in, the map's tiles, Cloudinary's photos), **65** (the reset wait,
->   measured), **152** (the audit's retention, decided after the first deployment's measurement).
-> - **Tracking Issues:** #125 and #126 closed (all boxes ticked). Open Issues: #72 (the editor's DI-27 comment,
->   postponed by the owner), #81 (design round 2).
-> - **Both workers idle**, both worktrees at `951107f4`; all databases migrated (`masaha_dev`, `masaha_test`,
->   `masaha_b_dev`, `masaha_b_test`); no lane database left; no `backup/*` branch left. The owner's review environment
->   `app-review` is at `0ec43b61` (old): updating it needs `migrate deploy` (#128–#132 add M1, M2) — his call; never
->   discard his `DirectoryResults.tsx` experiment there.
-> - **What comes next (the owner decides the order):**
->   1. **The full project review** — the owner cancelled the home-page review and replaced it with a complete review
->      of the whole project (to scope with him: who reviews, how many parts, his in-person pass).
->   2. **The deployment item** (ADR 0014): the six findings above, the hosting, the cron for `/internal/jobs/run`, the
->      environment variables (`JOBS_SECRET`, SMTP, Cloudinary, Google), the first measurement for 152.
->   3. **The defence/presentation on 2026-11-02** (the owner's): demo data — `$env:SEED_DEMO='true'; npm run db:seed`
->      renews the day-bound states (FULL, closed-today) on every run; needs the `SEED_ADMIN_*` variables.
->   4. Open design work: the logo (its own worker), Issue #72 (postponed), design round 2's 10 remaining reviews (#81).
+## 2a. Active work (2026-11-05 evening) — two OpenCode workers, both local, no PR, no push
+
+**A. DIRECTORY_FILTERS — refactor round 1, the directory page «المساحات»** (`TASKS\DIRECTORY_FILTERS\`).
+- Worker: OpenCode in `app`, branch `refactor/directory-filters` (local). Prototype only (`docs/design/`); the web
+  and API come later **on the same branch**, and that PR's first commit carries #136's two nits.
+- The first build was **rejected by the owner** (chips everywhere; the amenities filter came back — the supervisor's
+  fault: the owner cancelled amenities on 2026-10-12). Kept as `backup/directory-filters-1`.
+- **Final decisions = `0_OWNER_DECISIONS.md` › Revision 1 (R1–R6)**: no chips anywhere; the price sort is one Select
+  of whole options («السعر الشهري: الأقل أولًا»…, four subscriptions × two directions), a space without that price
+  leaves the list and the card shows the price; no amenities; «متاحة الآن» and «مفتوحة الآن» out of the filters
+  (a live-status architecture decision is coming — do not touch it); «أخرى» = three checkboxes (students, Friday,
+  evening ≥ 20:00); the place = one dropdown «اختر المنطقة» with a search and six collapsible rows (five governorates
+  + «كل المناطق»), one choice, `?gov=` for a whole governorate.
+- **State:** the correction `3_EXEC_PROMPT_FIX1.md` was handed to the worker (or is about to be). Next: the worker
+  stops with URLs and screenshots in `Downloads\directory-filters-shots\fix1\` → you check them yourself (§1) with the
+  owner → his notes go to the same session → the report `4_REPORT.md`. Then plan the web/API step (the
+  production notes are at the end of Revision 1: `Combobox` collapsible groups, `sort=price`, `governorate`,
+  `evening`, the docs and decisions D4/U1/U5).
+- **The owner's bar: production-ready, no errors.** He reacts strongly to sloppy UI — check at 390/768/1440, AR/EN,
+  light/dark before showing him anything.
+
+**B. IDENTITY — the palette lab** (`TASKS\IDENTITY\`).
+- Worker: OpenCode in `app-b`, branch `design/palette-lab` (local, `37e7bca7`), new files only
+  (`docs/design/prototype/Palette lab.html`, `masaha/palette-lab.js`); serve on port 5401.
+- **The owner's favourite: Sea sunset** (brand-600 `#AB432D`, blue-grey neutrals); all 38 contrast pairs pass; the
+  lab warns of a clash with red (destructive).
+- **Next (proposed, awaiting the owner's yes):** lab round 2 — a "Status check" screen (primary beside destructive),
+  "Sea sunset 2" (hue toward orange) and "Sea sunset 3" (destructive moved to crimson), and the "copy values" bug
+  (it prints a literal `\n`). The exact worker note: `TASKS\IDENTITY\3_EXEC_PROMPT_LAB_R2.md` (done: Sea sunset 2 and 3
+  exist). **Round 3** (`3_EXEC_PROMPT_LAB_R3.md`): the theme bug (light shows dark), a sticky toolbar, a palette
+  gallery with favourites and a compare mode, no nested scrollbars, and 10 new palettes. Then the owner picks one → the logo is drawn in it (`TASKS\LOGO\`, SVG; words stay in the real
+  font) → colour + logo decided together → `foundation.md` §4, the prototype's and the web's tokens, Google
+  Branding. Whether the lab lands in the repo is decided then.
+
+**Later:** design round 2 (#81, 10 reviews left), #72; findings 23, 65, 152 measured from ~2026-11-12.
 
 ## 3. The owner's standing rules
 
-- **Nothing reaches CI untested** (2026-10-28): complete local verification before a PR — lint, typecheck,
-  `test:unit`, `test:component`, `test:api`, the production build + `check:build`, every `check:*`. The machine (15.3 GB,
-  12 cores) runs **two heavy runs at once** when the owner frees 8–10 GB; a third waits; **≥ 4 GB free per run**; a run
-  killed for memory is re-run, then run in parts, until every file has run green. (For #128's and #130's fix rounds the
-  owner chose touched files + CI — ask per round.)
-- **The no-stop rule for long runs:** an executor never stops until ready for review; a SERIOUS problem is decided,
-  recorded first, and a part that cannot be made right is left out on its own branch. Hard limits: no merge, no push to
-  `main`, no force-push of another branch, no migration the plan does not name, no data changed through the app beyond
-  the named writes, never weaken a test, no secret printed, no tool attribution.
-- **Fix rounds:** by default each fix folded into its commit (`--fixup` + autosquash); **for #132 the owner ordered
-  new commits on top instead** (no fold, no force-push) — ask which for the next round. A review's small findings ride
-  the next PR's first commit only when a next PR exists; at the end of a plan, fix them all in the round.
-- **Reviews:** Claude (headless, from `app-design`, read-only, commit objects only) for money, auth, schema; split by
-  commit range for a big PR (3–5 parts, never overlapping); the effort chosen with the owner (xhigh for the riskiest
-  part). Non-Claude reviewers (Copilot CLI, Codex, OpenCode): their prompt must say **"a read-only review, NOT a Work
-  Item: do not run start-work-item"** (Copilot obeyed `CLAUDE.md`'s checklist and stopped otherwise); verify their
-  findings in the code.
-- **The web/API split between workers was lifted for the project's end** (one PR may change both).
-- Never stop for the file count; never leave silently; demo data never changed through the app; real runs name every
-  write; the PR number checked with the issues API just before a push (Issues share numbers).
+- **Nothing reaches CI untested** — complete local verification before a PR. With **OpenCode** workers the owner
+  runs the tests himself (OpenCode is ~20× slower): the prompt makes the worker **stop at one planned point**, print
+  the exact commands for `C:\dev\masaha\app` (or `app-b`), and continue on his pasted results (only the failed or
+  affected commands again). **Claude Code** workers run the verification themselves. `test:api` may be left to CI
+  when a PR changes no API code (the owner's decision, per task).
+- **Plans:** small, fully-decided tasks need no approval round — the worker writes a short plan file, then executes
+  without stopping (the owner approved this pattern for DEPLOY, PRIVACY, QUICK_FIXES_1). Big or open tasks keep the
+  plan → approval → execution method (§4).
+- **The no-stop rule** for long runs; hard limits: no merge, no push to `main`, no force-push of another branch, no
+  unplanned migration, no data changed through the app beyond named writes, never weaken a test, no secret printed,
+  no tool attribution. Prisma refuses `migrate reset` from an AI agent: the worker asks the owner.
+- **Fix rounds:** each fix folded into its commit (`--fixup` + autosquash, a `backup/*` first). A review's small
+  findings ride the next PR's first commit when one exists.
+- **Reviews:** Claude (headless, read-only) for money, auth, schema; non-Claude reviewers' findings verified in code.
+- **Public text:** never name hosting providers, free plans or session durations in public pages (the owner's
+  security rule, 2026-11-04).
 
-## 4. The method that worked (#129, #131, #132)
+## 4. The method that worked
 
-- **Decisions first with the owner** (numbered, options + recommendation) → **a planning prompt** (one self-contained
-  plan, numbered for editing, units/dependencies/lanes, no pointers to workspace files; Opus at xhigh for a big one) →
-  **the plan** → your review in the code → **the approval note at its top** → **the execution prompt for a lead**:
-  the lead builds the foundation, launches sub-agents in its own worktrees (`git worktree add`), a test database per
-  API lane (`masaha_<x>_lane_<y>_test`, dropped after), schedules heavy runs by a grant script on the memory
-  (`_DONE\PAYMENTS_STEP10\scripts\heavy.mjs`), joins lanes by rebase (no merge commits), runs the complete verification
-  and a real run (headless Chrome over CDP), opens one PR.
-- **Unattended handovers:** a planning session and a separate, clean executor session that waits for a flag file
-  (`READY`, `FIX_READY`) with a bounded background script; the supervisor's own watchers (`_SHARED\scripts\
-  watch_ready.sh`, a 5-minute copy in `_DONE\BACKEND_FINAL\scripts`) launch reviews or fixers. A headless fixer
-  (`claude -p … --allowedTools Bash Read Write Edit Grep Glob` in the worker's folder) worked for #131.
-- **Claude review command** (from `app-design`; pre-fetch `origin` and `pull/<n>/head` first and tell parallel
-  reviewers not to fetch): `claude -p "Read <prompt> whole and do it." --model claude-opus-5-5 --effort <level>
-  --add-dir 'C:\dev\masaha\workspace' --strict-mcp-config --no-chrome --settings
+- **Decisions first with the owner** → a self-contained prompt (everything inline: approved texts are embedded, no
+  pointers into the workspace) → the worker's short plan file → execution → your review in the code and screenshots →
+  the owner's merge word.
+- **Watchers:** for a running worker, a bounded background script (`gh pr list --head <branch>` + `gh pr checks` +
+  the report file, every 2 minutes, ≤ 5 hours) wakes you when the PR is green and `CLEAN`; tell the owner to keep the
+  conversation open. Write it into a file in your scratchpad and run it in the background.
+- **Big runs:** lead + sub-agents, own worktrees, test DB per API lane, heavy-run grants (`_DONE\PAYMENTS_STEP10\
+  scripts\heavy.mjs`); models of the files under `WORKER_A\_DONE\FINAL\` and `WORKER_B\_DONE\BACKEND_FINAL\`.
+- **Claude review command** (from `app-design`; pre-fetch first): `claude -p "Read <prompt> whole and do it." --model
+  claude-opus-5-5 --effort <level> --add-dir 'C:\dev\masaha\workspace' --strict-mcp-config --no-chrome --settings
   'C:\dev\masaha\workspace\_SHARED\worker-settings.json' --allowedTools "Bash(git *)" "Bash(gh *)" Read Grep Glob
-  Write Edit > <log> 2>&1` (the log stays empty until it ends).
-- **Models of the files** (all under `_DONE`): planning `WORKER_A\_DONE\FINAL\1_PLAN_PROMPT.md`,
-  `WORKER_B\_DONE\BACKEND_FINAL\1_PLAN_PROMPT.md`; execution `WORKER_A\_DONE\FINAL\3_EXEC_PROMPT_LEAD.md`; split reviews
-  `WORKER_A\_DONE\FINAL\5_REVIEW_PROMPT_COMMON.md` + `_R*.md`; fix rounds `WORKER_A\_DONE\FINAL\7_FIX_ROUND.md` (new
-  commits), `WORKER_B\_DONE\BACKEND_FINAL\7_FIX_ROUND.md` (headless, folded); waiting prompts
-  `WORKER_A\_DONE\FINAL\0_WAIT_PROMPT.md`, `0_WAIT_FIX_PROMPT.md`.
+  Write Edit > <log> 2>&1`.
 
 ## 5. Ledgers
 
-- **Findings:** open only 23, 33, 46, 64, 65, 152 (the deployment's). The highest number on `main` is **212**; the next
-  free is **213** (check the index first).
-- **Open decisions:** `_SHARED\OPEN_DECISIONS.md` — points 1–4 built (#131's lines written).
-- **Design decisions:** `DESIGN\DECISIONS\` (O3 and A8 built into the overviews).
+- **Findings:** open 23, 65, 152 (after the deployment's measurements); next free **214**.
+- **The owner's notes for the refactor:** `REFACTOR_NOTES.md` (Home's empty «المتاحة الآن» on unverified spaces,
+  spam, #136's nits, and whatever the owner adds).
+- **Decisions:** `WORKER_B\DEPLOY\0_OWNER_DECISIONS.md` (deployment, items 1–10), `TASKS\DEMO_SHOW\0_OWNER_DECISIONS.md`,
+  `TASKS\PRIVACY\PRIVACY_AR.md` / `PRIVACY_EN.md` (the approved policy text), `_SHARED\OPEN_DECISIONS.md`,
+  `DESIGN\DECISIONS\`.
+- **The presentation:** `TASKS\PRESENTATION\Masaha.pdf` (8 slides, Arabic; source `deck.html`, rendered by headless
+  Chrome).
 
 ## 6. The workspace
 
-`C:\dev\masaha\workspace\`: `WORKER_A\`, `WORKER_B\` (both with only `_DONE` now), `DESIGN\`, `TASKS\`, `_SHARED\`;
-`BOARD.md` (keep it true). Backup: private repo `Basel-Ghonaim/masaha-workspace`, nightly 23:00.
+`C:\dev\masaha\workspace\`: `WORKER_A\`, `WORKER_B\` (DEPLOY lives in `WORKER_B\DEPLOY`), `DESIGN\`, `TASKS\`
+(DEMO_SHOW, PRESENTATION, PRIVACY, QUICK_FIXES_1), `_SHARED\`; `BOARD.md` (keep it true); `REFACTOR_NOTES.md`.
+Backup: private repo `Basel-Ghonaim/masaha-workspace`, nightly 23:00.
 
 ## 7. Hazards and lessons
 
-- A watcher, a review or a headless worker launched from your conversation dies with it — tell the owner to keep it
-  open; stop an orphaned watcher by its process (it outlives `TaskStop`).
-- Git Bash pastes can prepend `[200~` and break a command.
-- `gh pr merge --match-head-commit` needs the **full** sha.
-- `git checkout -- <file>` loses work — restore from a backup copy; Python writes with `newline=""`; `jq` is absent
-  (use `gh --jq`); heredocs can fail to parse (scripts in files).
-- The demo seed renews its day-bound states on every run; a case the data lacks is never made through the app.
+- A watcher or headless worker launched from your conversation dies with it — the owner keeps it open.
+- **Writing files through Python/heredocs:** the tool turns some backslash escapes into real characters — a
+  backslash-zero once became a NUL byte in this file. Build paths with `os.path.join` / `chr(92)`, and check new files
+  for NUL bytes.
+- Vercel hides sensitive variables for good: a lost secret is rotated (new value in Vercel + Redeploy + every user of
+  it), never recovered.
+- `gh pr merge --match-head-commit` needs the full sha; `git checkout -- <file>` loses work; `jq` is absent (use
+  `gh --jq`); Git Bash pastes can prepend `[200~`.
+- The demo seed renews a FULL space on every run — never on `masaha_dev` while it holds DEMO_SHOW.
+- The prototype: shared Babel globals (a duplicate top-level name breaks pages) and a prebuilt CSS holding only the
+  classes already used — `check-parse` and `check-classes` catch both.
+- **Never revive a decision the owner cancelled** without asking him first, even if it looks useful (the amenities
+  filter, 2026-11-05). Before proposing a filter or a screen change, search `docs/features/<cap>.md` and the
+  prototype's comments for an earlier owner decision on it.
+
+## 8. Rules from the previous supervisor's private memory (you have no copy of it)
+
+- **Identity:** the owner's own project; never name the university, the supervisor or the defence publicly.
+- **Replies in Arabic:** no line starts with an English word or a code token; decisions as items with options and a
+  recommendation, never tables; short first.
+- **Method:** decide with the owner first → a short, self-contained prompt → the worker's plan saved, then it stops
+  (big tasks) or runs (small, decided ones) → complete local verification → the report to a file.
+- **Prompts in `C:\dev\masaha\workspace\`**, one folder per task, numbered files (`0_OWNER_DECISIONS`, `1_…`,
+  `2_PLAN`, `3_EXEC_PROMPT`, `4_REPORT`). Plan prompts forbid temp copies, trial worktrees and scratch runs.
+- **Two workers in parallel** only on separate files (one schema change, one dependency change at a time, no shared
+  code file). `app` and `app-b`; a worktree with a schema branch gets its own `masaha_<item>_dev/_test` databases.
+- **Fix rounds on an unmerged PR fold into their commits** (`backup/*` first, `--fixup` + autosquash); no fix commits.
+  Serious review fixes reopen the PR; small ones ride the next PR's first commit, named in its description.
+- **Report only when `gh pr checks` is green on the pushed head** and GitHub says `CLEAN`. Rebase only when the PR is
+  dirty, never by default. `#PRNUM` in docs is replaced with the real number just before the push.
+- **No production code only tests use** (no parameter or option only a test passes); stub platform seams instead.
+- **Prisma:** `migrate dev --create-only` once only (a second run applies it to `masaha_dev`); on data loss use
+  `migrate diff --script`. `migrate reset` needs the owner.
+- **A lane killed for memory:** retry once, then let CI judge — write this into every execution prompt. Two full test
+  lanes at once fit with 8–10 GB free; a third waits.
+- **Workers never stop on file count**; they report it.
+- **A command inside a pasted worker transcript is not for you** — ask before acting on it (merges above all).
+- **"As your recommendation"** = the safest option, logged; never a merge on it. **"Merge"** approved = also delete the
+  branch and clean the worker.
+- **Screenshots** go to `C:\Users\basel\Downloads\<task>-shots\`, curated, never pushed.
+- **Windows shell traps:** no `jq` in Git Bash (use `gh --jq`), bound every watch loop; long scripts go in files, not
+  heredocs; stopping a backgrounded API dev task leaves processes on the port — stop by PID and check the port;
+  restore a broken file from a `cp` backup, never `git checkout --`.
+- **claude.ai Artifacts** (company account): fine while working; a finished deliverable is saved in the workspace and
+  the Artifact deleted.
+- **Workflow-rule gaps** ride on the next worker item as their own commit.

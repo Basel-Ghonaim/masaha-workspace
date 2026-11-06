@@ -25,3 +25,4 @@ Settled with the main supervisor in Arabic, 2026-11-01. The execution prompt `3_
 9. **Speed over the usual stop:** the worker writes and saves its plan, then executes in the same session without
    waiting for approval (the owner's explicit override of "plan saved, then stop", for the deadline). The supervisor
    reviews the PR.
+10. **2026-11-05:** the privacy page shipped (#135); the Google consent screen's Branding filled (support email masahatgaza, no logo) and the app **published**: Google sign-in is open to everyone (item 6's Testing ends).
