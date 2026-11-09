@@ -187,5 +187,22 @@ The owner tried `mockup\index.html` and approved it officially. Two changes, bui
 **All sections decided (2026-11-08).** Next: an HTML mock-up of the whole page with its Sheets for the owner to see
 (he asked for it), then the prototype round, then production.
 
+## Before production (2026-11-09 — the prototype round merged as #138 at 7fb73c3c)
+
+The prototype plan's three proposed alternatives, decided one by one before the production plan:
+
+- **X1 — a shift's English name (approved, the supervisor's recommendation):** each shift row in the Sheet has an
+  optional English name beside the Arabic one, as «مرافق أخرى» does; empty, the English interface shows the Arabic
+  name. The API already has `nameEn` optional: no migration. Revises S3's "one name".
+- **X2 — «عن المساحة» complete (approved, the supervisor's recommendation):** the section counts as complete in
+  «اكتمال الملف» only when it has an **Arabic description** (the public page's main text); the English description
+  stays optional (B2) and its absence is said by the section's effect line only, never by the bar. Revises the
+  prototype's "complete with the name alone".
+- **X3 — the admin's unverified alert (approved, the supervisor's recommendation):** dropped; the header's «غير موثّقة»
+  badge (H4) says it. In the spirit of G4.
+- **A3 — deferred by the owner (2026-11-09):** where «قاعة للنساء» / «للنساء فقط» and the owner-declared «دوام مسائي»
+  live in the profile is **not decided**; it is decided with the women + evening task. The production plan neither
+  builds nor reserves a place for them, and assumes nothing about them.
+
 - **A3 — later:** where «قاعة للنساء» and the owner-declared evening hours live (here, or a «مزايا المساحة» section)
   is decided with that task, not built now.
