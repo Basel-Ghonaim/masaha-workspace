@@ -64,6 +64,49 @@ and a group-level choice (a design-system extension); the API gains `sort=price`
 `availableNow` stays in the API (Home reads it) and only leaves the directory's filters; `docs/features/directory.md`,
 the API contract and the decisions D4/U1/U5 are updated in that PR.
 
+## Between revisions (2026-11-06, with the OpenCode worker, while the supervisor was away)
+
+The place went back to the 2026-10-12 multi-select `Combobox` (R5/R6 dropped: no `?gov=`). The price went through
+several builds (a grouped Select; then a period Select + direction chips + a typed range) — superseded by Revision 2.
+
+## Revision 2 — final (2026-11-07, supersedes R1, R4, R5, R6 and the 2026-11-06 price)
+
+**The price (approved 2026-11-07 after a live trial in the prototype):**
+- P1 — the subscription is one **segmented choice**: الكل · ساعة · يوم · أسبوع · شهر, «الكل» by default (no price
+  filter). A subscription chosen keeps only the spaces with that price (hidden prices excluded) and shows that price
+  on each card; the count says «N مساحات لها سعر شهري».
+- P2 — once a subscription is chosen, a **range** «من / إلى» in shekels shows under it (placeholders: the lowest and
+  highest price of that subscription); whole numbers above zero, Arabic-Indic digits accepted, an error on the field
+  (and «إلى» under «من» said on «إلى»), an invalid bound is not applied.
+- P3 — the **direction lives in the sort only**: «الأرخص شهريًا» / «الأغلى شهريًا» (named by the chosen
+  subscription; English "Monthly price: low to high / high to low"), disabled while «الكل»; back to «الأحدث تحديثًا»
+  when the subscription is cleared. No direction chips, no "customise range" link, no grouped price items.
+- P4 — «مسح» resets the subscription to «الكل» and empties the range; the URL keeps `sub`, `priceMin`, `priceMax`,
+  `sort=price`, `dir=desc`.
+
+**The panel, top to bottom:** المنطقة · السعر · **الدوام** (checkboxes: «مفتوحة الآن», «مفتوحة مساءً», «مفتوحة يوم
+الجمعة») · **أخرى** (checkboxes: «المساحات الموثّقة فقط», «أسعار للطلاب»). The «المساحات» heading and its switch go.
+
+**Live status and time (the owner, 2026-11-07, architecture):**
+- A1 — **«ممتلئ» stays as built** (derived from the desk's check-ins against the capacity, plus the staff's optional
+  override, ADR 0008) but is **a badge on the card, never a filter**.
+- A2 — **«مفتوحة الآن»** replaces «متاحة الآن»: open now by the space's hours on Gaza's clock and no closure in
+  force, for **verified and unverified** spaces alike; a FULL verified space stays in the results with its badge.
+  It also feeds Home's «المتاحة الآن» section. Revises ADR 0008 (the filter selected `AVAILABLE`; the API's
+  `availableNow` becomes `openNow`) — the ADR revision is written with the production step.
+- A3 — **hours stay optional.** A space without hours stays in the list and every other filter, never passes
+  «مفتوحة الآن» or «مفتوحة مساءً», its page says the hours are not available, and the admin's spaces list flags it
+  «بدون ساعات». No default hours are assumed (the 10:00–16:00 idea was weighed and dropped).
+- A4 — **«مفتوحة مساءً»** = the space closes at 20:00 or later on at least one of its open days (its schedule, not
+  today). **Future direction:** an owner-declared «دوام مسائي» feature on the space, like the women's hall; the
+  filter will then pass a space by its hours **or** that feature. The prototype may simulate the feature in its
+  sample data only; nothing in the owner's profile edits it yet.
+- A5 — **spaces for women:** the direction is approved (a space with a women's hall or women-only); the details
+  (its model, the filter) are decided when it is built — its own ticket, not in this round.
+
+**Small fixes in the same round:** the range caption shortened («بالشيكل، على السعر الشهري»); the sheet's button
+«عرض N نتائج» with correct Arabic plurals (shared, every page); the filter column 4/12 between 1024 and 1279.
+
 ## The method (approved 2026-11-05)
 
 - An **OpenCode** worker in `C:\dev\masaha\app`, a normal round: branch `refactor/directory-filters` from the latest

@@ -1,0 +1,21 @@
+My verdict is **mergeable after a fix round**. I found no blocker, four should-fixes and three nits. The review is saved to `C:\dev\masaha\workspace\TASKS\DIRECTORY_PROD\6_REVIEW_CLAUDE_CODE.md`. CI is green on `e1838447`, and the head didn't move during the review (still `e1838447`, `CLEAN`).
+
+The core holds:
+- **Price SQL:** one lateral `min()` is the filter, the card's price and the price-order key, and hidden prices are excluded.
+- **Open now:** the SQL rule matches the TypeScript `hoursStatus` rule at all four test clocks. A space its staff closed by hand is left out, as OD2 approved.
+- **Paging and clock:** every filter applies before the page is cut, and one clock read is used per answer.
+- **Leave-one-out (T33):** sound. Each filter drops exactly its own space.
+- **Removed key:** `availableNow` is gone, and an old link or request gets the unfiltered list.
+
+**Should-fix:**
+- **F1 — wrong price label while loading.** When a visitor switches from one subscription to another, the previous page stays on screen until the new one arrives. Those cards show the old period's prices with the new period's word, for example a ₪20 daily price reading «20 ₪ / شهر». The cause is that the cards take the period from the address, not from the answer being shown; I confirmed the kept-page behaviour in TanStack 5.104.1's source. No test covers a switch between two periods. Fold into `d93fc646`.
+- **F2 — prototype layout broken at 1024–1279 px.** Commit 5 moved `lg:col-span-9` onto a new wrapper, but the 4/12 column rule (R8) still targets `.dir-results`. That makes 4 + 9 = 13 columns, so in `Directory.html` the results drop below the filters. I read this from the CSS and markup; I didn't render it. Fold into `e1838447`.
+- **F3 — a removed test lost coverage.** The deleted `list.api.test.ts` case proved that the student-prices filter keeps a verified space with stale prices and one updated exactly 30 days ago. T14 kept only the half that leaves out a stale unverified space. A break to the student-prices condition, using freshness only and ignoring verification, would now pass every lane. The report's claim that `price.api.test.ts` "proves both fully" is wrong for this half. Fold into `d93fc646`.
+- **F4 — ADR 0008's body was edited.** Besides the correct *Revised* line, the original 2026-09-28 decision bullet was rewritten. `documentation.md` §1 allows only a *Revised* line on a record. Fold into `dbc543cc`.
+
+**Nits:**
+- **F5:** the «من» hint reads «0» when the lowest price is under ₪1, a value the field refuses, and the test pins it.
+- **F6:** `HOURS_STATUSES` is exported and read by nothing; two other names are exported but used only in their own file.
+- **F7:** commit 5 adds finding 215 without mentioning it in its message.
+
+Of the report's deviations, only the removed tests is wrong (in part, F3); the rest are sound or acceptable. Everything was read at the head commit; I ran no test, build or browser. The CI timings behind finding 214 and the report's red-first claims are things I only read in the report.

@@ -1,0 +1,25 @@
+I've reviewed #138 at `5413937904f8b9f1450f372dbb02731eeded2804`. Verdict: **mergeable after a fix round**: no blockers, four should-fix and five nits. Checks were green and the head did not move.
+
+**Should-fix:**
+1. **Escape breaks the contacts' keyboard reorder.** The Sheet catches Escape before the reorder code does. So Escape after a keyboard move asks «تجاهل التغييرات؟», and Escape right after lifting closes the Sheet outright. The fix is to block the Sheet's Escape while a contact is lifted. I found this by reading the vendored Radix code; it should be confirmed in the browser.
+2. **The hours Sheet counts as changed when it opens on a space without hours.** Opening «أضف ساعات العمل» and pressing «رجوع» straight away asks to discard changes nobody made.
+3. **One link still sends owners to Packages to change prices.** It's in `Owner settings.html:87`, a file the PR doesn't touch, so CHANGES.md's "every «الأسعار» link moved" isn't quite true.
+4. **The admin's «إدارة قائمة المرافق» link leaves an edited Sheet without asking.** Unsaved changes are lost.
+
+**Nits:**
+- **Shifts sample:** Packages shows two shifts and a morning package, while the profile says the space has no shifts.
+- **Map pin:** it can't be dragged (L2), and nothing records why.
+- **New space:** `?id=new` has no hide or delete in the top bar.
+- **CHANGES.md:** rows group several decisions instead of one line each.
+- **Custom hours:** each day's time fields are labelled only «من» / «إلى» for screen readers.
+
+The rest checks out:
+- **Decisions:** every one from G1 to M4 is built, apart from the L2 pin drag; each has one line in the report.
+- **Global names:** no top-level name is repeated across any page's scripts, and none uses a browser-owned name or object rest.
+- **Shared pages:** Space details loads none of the changed modules, and the add-space page uses only what was kept.
+- **Records:** INDEX §58 and the board's 26 frames match one to one.
+- **Scope:** all 14 files are under `docs/design/`, in one Conventional commit with no tool attribution.
+
+Not covered: I ran nothing, so the browser pass is still the supervisor's. The prototype's `check-parse` and `check-classes` scripts aren't in CI and I didn't run them; I spot-checked about 90 new classes and all exist.
+
+The report is at `C:\dev\masaha\workspace\TASKS\SPACE_PROFILE\6_REVIEW_CLAUDE_CODE.md`.

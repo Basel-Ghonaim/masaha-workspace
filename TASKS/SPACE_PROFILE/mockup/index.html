@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ملف المساحة — نموذج</title>
+<style>
+:root{
+  --bg:#F4FCFE;--card:#fff;--fg:#182022;--muted:#5C6567;--muted-bg:#EAF5F7;--border:#DBE6E9;--input:#747E80;
+  --primary:#02787D;--primary-fg:#fff;--accent:#EAFBFC;--accent-fg:#05494C;
+  --warn-bg:#FFF5EA;--warn-fg:#593700;--danger:#BE222A;--danger-bg:#FEF4F3;--success:#137D41;--success-bg:#ECFCEF;
+  --shadow:0 1px 2px rgba(12,19,21,.06),0 2px 8px rgba(12,19,21,.05);--r:8px;
+}
+[data-theme=dark]{
+  --bg:#0C1315;--card:#182022;--fg:#F4FCFE;--muted:#9DA7A9;--muted-bg:#2A3234;--border:#2A3234;--input:#747E80;
+  --primary:#50B3B8;--primary-fg:#001D1F;--accent:#023235;--accent-fg:#D5F4F5;
+  --warn-bg:#261400;--warn-fg:#FBD3A2;--danger:#FC6E68;--danger-bg:#370003;--success:#63B77C;--success-bg:#001F0A;--shadow:none;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 "Segoe UI",Tahoma,"Noto Sans Arabic",sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--primary)}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.topbar{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 24px}
+.topbar h1{font-size:18px;margin:0}
+.topbar .tools{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
+.layout{max-width:1180px;margin:0 auto;padding:24px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px;align-items:start}
+.index{position:sticky;top:76px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px}
+.index a{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 10px;border-radius:6px;color:var(--fg);text-decoration:none;font-size:14px}
+.index a:hover{background:var(--accent)}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.dot.ok{background:var(--success)}.dot.stale{background:#D6912B}.dot.missing{background:var(--danger)}.dot.opt{background:var(--border)}
+.main{display:flex;flex-direction:column;gap:20px;min-width:0}
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:20px;scroll-margin-top:80px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.sec-head h2{font-size:17px;margin:0}
+.meta{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:2px 8px;border-radius:99px;background:var(--muted-bg);color:var(--fg)}
+.badge.warn{background:var(--warn-bg);color:var(--warn-fg)}
+.badge.ok{background:var(--success-bg);color:var(--success)}
+.badge.cover{background:var(--primary);color:var(--primary-fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:36px;padding:0 14px;border-radius:var(--r);border:1px solid var(--border);background:var(--card);cursor:pointer;white-space:nowrap;font-size:14px;text-decoration:none;color:var(--fg)}
+.btn:hover{background:var(--accent)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:var(--primary-fg)}
+.btn.primary:hover{filter:brightness(.92)}
+.btn.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.ghost{border-color:transparent;background:transparent}
+.btn.sm{height:32px;padding:0 10px;font-size:13px}
+.btn.icon{width:36px;padding:0}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.empty{border:1px dashed var(--border);border-radius:10px;padding:20px;text-align:center;color:var(--muted)}
+.empty p{margin:0 0 12px}
+/* header */
+.hdr{display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px}
+.cover-thumb{height:124px;border-radius:10px;overflow:hidden}
+.hdr-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:flex-start}
+.hdr h2{font-size:24px;margin:0}
+.progress{height:8px;border-radius:99px;background:var(--muted-bg);overflow:hidden;margin:6px 0}
+.progress>i{display:block;height:100%;background:var(--success);border-radius:99px}
+/* photos */
+.ph{position:relative;border-radius:10px;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-start;color:#fff;font-size:13px}
+.ph span.lbl{position:absolute;bottom:8px;inset-inline-start:8px;background:rgba(0,0,0,.35);padding:1px 8px;border-radius:99px}
+.ph .badge.cover{position:absolute;top:8px;inset-inline-start:8px}
+.ph-view{display:grid;grid-template-columns:3fr 2fr;gap:8px}
+.ph-view .cover-big{height:248px}
+.ph-view .thumbs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:120px 120px;gap:8px}
+.ph-view .thumbs .ph:nth-child(n+5){display:none}
+.ph-count{position:absolute;bottom:8px;inset-inline-end:8px;background:rgba(0,0,0,.45);color:#fff;font-size:12px;padding:1px 8px;border-radius:99px;display:none}
+.ph-more{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:600}
+.ph-edit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.ph-edit .ph{height:120px;cursor:grab;outline-offset:3px}
+.ph-edit .ph.drag{opacity:.4}
+.ph-edit .ph.over{box-shadow:0 0 0 3px var(--primary)}
+.ph-edit .ph.lifted{box-shadow:0 0 0 3px var(--primary);transform:scale(1.03)}
+.ph-del{position:absolute;top:6px;inset-inline-end:6px;width:28px;height:28px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;cursor:pointer}
+.hint{font-size:13px;color:var(--muted);margin:8px 0}
+.drop{border:1px dashed var(--input);border-radius:10px;padding:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:12px}
+/* tables */
+table.view{width:100%;border-collapse:collapse;font-size:14px}
+table.view th,table.view td{text-align:start;padding:9px 10px;border-bottom:1px solid var(--border)}
+table.view th{font-weight:500;color:var(--muted);font-size:13px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.lang-col h3{font-size:13px;color:var(--muted);margin:0 0 6px;font-weight:500}
+.clamp{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.note{background:var(--warn-bg);color:var(--warn-fg);border-radius:8px;padding:8px 12px;font-size:13px}
+.am-view{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.am{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:var(--muted-bg);font-size:14px}
+.ic{width:18px;height:18px;flex:none;color:var(--primary)}
+.ct{text-decoration:none;color:var(--fg)}
+.ct:hover{background:var(--accent)}
+.ct-ic{width:32px;height:32px;flex:none;border-radius:50%;background:var(--card);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+.ct-v{font-size:12px;color:var(--muted);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}
+.contact-row.other{grid-template-columns:24px 140px 1fr 1.3fr 36px}
+.contacts a{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--fg)}
+.contacts a:last-child{border-bottom:0}
+.contacts .type{color:var(--muted);font-size:13px;min-width:90px}
+.map{position:relative;height:180px;border-radius:10px;overflow:hidden;background:
+  linear-gradient(90deg,transparent 49%,rgba(0,0,0,.05) 50%,transparent 51%) 0 0/60px 60px,
+  linear-gradient(0deg,transparent 49%,rgba(0,0,0,.05) 50%,transparent 51%) 0 0/60px 60px,#DCEFE8;border:1px solid var(--border)}
+[data-theme=dark] .map{background-color:#1d3a35}
+.pin{position:absolute;width:26px;height:26px;margin:-26px 0 0 -13px;cursor:grab;touch-action:none}
+.pin svg{width:26px;height:26px;color:var(--primary);filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(12,19,21,.5);z-index:20;display:none}
+.sheet{position:fixed;top:0;bottom:0;left:0;width:min(560px,100%);background:var(--card);z-index:21;display:none;flex-direction:column;box-shadow:0 0 30px rgba(0,0,0,.2)}
+.sheet.open,.scrim.open{display:flex}
+.sheet header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border)}
+.sheet header h2{margin:0;font-size:17px}
+.sheet .body{flex:1;overflow:auto;padding:20px}
+.sheet footer{display:flex;gap:8px;padding:14px 20px;border-top:1px solid var(--border)}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted);margin-bottom:12px}
+label.f>span{display:flex;justify-content:space-between}
+input.i,select.i,textarea.i{height:40px;border:1px solid var(--input);border-radius:var(--r);background:var(--card);padding:0 10px;font-size:15px;color:var(--fg);width:100%}
+textarea.i{height:110px;padding:8px 10px;resize:vertical}
+.err{color:var(--danger);font-size:12px;margin-top:2px}
+.rows{display:flex;flex-direction:column;gap:8px}
+.row{display:grid;gap:8px;align-items:center}
+.row-head{font-size:12px;color:var(--muted)}
+.price-row{grid-template-columns:1.1fr 1fr 1.1fr 1fr 36px}
+.price-row.noshift{grid-template-columns:1.1fr 1fr 1fr 36px}
+.with-cur{position:relative}
+.with-cur span{position:absolute;inset-inline-end:10px;top:9px;color:var(--muted)}
+.check{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer}
+.check:hover{background:var(--accent)}
+.check input{width:18px;height:18px;accent-color:var(--primary)}
+.day-row{grid-template-columns:90px 120px 1fr 1fr}
+.contact-row{grid-template-columns:24px 150px 1fr 36px}
+.handle{cursor:grab;color:var(--muted);text-align:center;user-select:none}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:30;background:rgba(12,19,21,.5)}
+.modal.open{display:flex}
+.modal .box{background:var(--card);border-radius:12px;padding:20px;width:min(380px,92%)}
+.modal h3{margin:0 0 6px;font-size:17px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:8px 16px;border-radius:8px;font-size:14px;z-index:40;display:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mock-note{max-width:1180px;margin:12px auto 0;padding:0 24px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr;padding:16px}
+  .index{display:none}
+  .hdr{grid-template-columns:64px minmax(0,1fr);gap:12px}
+  .cover-thumb{height:64px;width:64px;border-radius:10px}
+  .cover-thumb .badge{display:none}
+  .hdr h2{font-size:20px}
+  .hdr-top .acts{grid-column:1 / -1}
+  .hdr-top .acts{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .ph-view{display:flex;flex-direction:column;gap:8px}
+  .ph-view .cover-big{height:auto;aspect-ratio:16/9}
+  .ph-view .thumbs{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:2px}
+  .ph-view .thumbs .ph{flex:0 0 96px;height:72px;scroll-snap-align:start}
+  .ph-view .thumbs .ph:nth-child(n+5){display:flex}
+  .ph-view .thumbs .lbl,.ph-view .ph-more{display:none}
+  .ph-count{display:block}
+  .ph-edit{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid2{grid-template-columns:1fr}
+  .am-view{grid-template-columns:1fr 1fr}
+  .sheet{width:100%}
+  .price-row,.price-row.noshift{grid-template-columns:1fr 1fr;padding:10px;border:1px solid var(--border);border-radius:10px}
+  .price-row .del,.price-row.noshift .del{justify-self:end}
+  .row-head{display:none}
+  .day-row{grid-template-columns:1fr auto;padding:10px;border:1px solid var(--border);border-radius:10px}
+  .contact-row{grid-template-columns:24px 1fr 36px}
+  .contact-row .val{grid-column:2 / span 2}
+  .contact-row.other{grid-template-columns:24px 1fr 36px}
+  .contact-row.other input:not(.val){grid-column:2 / span 2}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1>ملف المساحة</h1>
+  <div class="tools">نموذج للمراجعة
+    <button class="btn sm" id="themeBtn">المظهر الداكن</button>
+  </div>
+</div>
+<p class="mock-note">نموذج تفاعلي للقرارات المعتمدة (2026-11-08) — ليس التصميم النهائي بألوانه وخطوطه. جرّب «تعديل» في كل قسم، و«إدارة الصور»، وصغّر النافذة لترى شكل الهاتف.</p>
+<div class="layout">
+  <nav class="index" aria-label="أقسام الملف" id="index"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <header><h2 id="sheetTitle"></h2><button class="btn icon ghost" id="sheetX" aria-label="رجوع">✕</button></header>
+  <div class="body" id="sheetBody"></div>
+  <footer><button class="btn primary" id="sheetSave">حفظ</button><button class="btn" id="sheetBack">رجوع</button></footer>
+</aside>
+<div class="modal" id="modal" role="alertdialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="box"><h3 id="mTitle"></h3><p id="mText" style="margin:0 0 16px;color:var(--muted);font-size:14px"></p>
+  <div style="display:flex;gap:8px"><button class="btn" id="mOk"></button><button class="btn" id="mNo">رجوع</button></div></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<div class="sr" aria-live="assertive" id="live"></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const esc=(s)=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ICON={
+ pin:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>',
+ wifi:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg>',
+ bolt:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+ sun:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+ cup:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM16 10h2a2 2 0 0 1 0 4h-2M8 2v3M12 2v3"/></svg>',
+ users:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 5a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/></svg>',
+ dot:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M9 12l2 2 4-4"/></svg>',
+ ext:'↗',copy:'⧉'
+};
+const AMENITIES=[['internet','إنترنت','wifi'],['power','كهرباء مستقرة','bolt'],['solar','طاقة شمسية','sun'],['generator','خط كهرباء مولّد','bolt'],['drinks','مشروبات ساخنة','cup'],['meeting','قاعة اجتماعات','users'],['halls','قاعات للإيجار','users'],['training','دورات تدريبية تقنية','dot']];
+const PERIODS=[['hour','ساعة'],['day','يوم'],['week','أسبوع'],['month','شهر']];
+const PERIOD_VIEW={hour:'بالساعة',day:'يومي',week:'أسبوعي',month:'شهري'};
+const DAYS=[['sat','السبت'],['sun','الأحد'],['mon','الاثنين'],['tue','الثلاثاء'],['wed','الأربعاء'],['thu','الخميس'],['fri','الجمعة']];
+const TIMES=[];for(let h=6;h<24;h++){TIMES.push(String(h).padStart(2,'0')+':00');TIMES.push(String(h).padStart(2,'0')+':30')}
+const CTYPES=[['whatsapp','واتساب','0599123456'],['phone','هاتف','0599123456'],['email','بريد إلكتروني','name@example.com'],['instagram','إنستغرام','اسم الحساب أو الرابط'],['facebook','فيسبوك','اسم الصفحة أو الرابط'],['telegram','تيليجرام','اسم الحساب أو الرابط'],['tiktok','تيك توك','اسم الحساب أو الرابط'],['x','X (تويتر)','اسم الحساب أو الرابط'],['linkedin','لينكدإن','رابط الصفحة'],['youtube','يوتيوب','رابط القناة'],['website','موقع إلكتروني','https://…'],['other','وسيلة أخرى','الرابط أو الرقم']];
+const CINIT={whatsapp:'وا',phone:'☎',email:'@',instagram:'IG',facebook:'f',telegram:'TG',tiktok:'TT',x:'X',linkedin:'in',youtube:'▶',website:'🌐',other:'＋'};
+const COLORS=['#7A9E9F','#C08B5C','#6B7FA6','#8DA36B','#A66B7F','#5E8C8F','#B5865A'];
+const S={
+ nameAr:'فوكس هاب',nameEn:'Focus Hub',area:'النصر',gov:'غزة',
+ descAr:'مساحة عمل هادئة في قلب حي النصر، فيها إنترنت سريع وكهرباء مستقرة طول اليوم، ومكاتب مريحة للطلاب والعاملين عن بعد. عنا قاعة اجتماعات صغيرة ومشروبات ساخنة، وبنستقبل الحجوزات بالساعة واليوم والشهر. أجواء مناسبة للتركيز والدراسة، وفريق موجود دايمًا للمساعدة.',
+ descEn:'',
+ addrAr:'شارع النصر، بجانب مسجد الشافعي',addrEn:'An-Nasr St., next to Al-Shafi‘i Mosque',landAr:'مقابل عمارة الرزي',landEn:'',
+ pin:{x:46,y:55},
+ photos:[1,2,3,4,5,6].map(n=>({id:n,color:COLORS[n%COLORS.length]})),
+ prices:[{p:'hour',a:'all',s:'',v:'3'},{p:'day',a:'all',s:'',v:'15'},{p:'month',a:'all',s:'',v:'300'},{p:'month',a:'students',s:'',v:'250'}],
+ hours:{sat:['08:00','18:00'],sun:['08:00','18:00'],mon:['08:00','18:00'],tue:['08:00','18:00'],wed:['08:00','18:00'],thu:['08:00','18:00'],fri:null},
+ shifts:[],
+ amen:['internet','solar','drinks','meeting'],otherAmen:[{ar:'مكتبة صغيرة',en:'Small library'}],
+ contacts:[{t:'whatsapp',v:'0599123456'},{t:'instagram',v:'focushub'},{t:'facebook',v:'focushub.gaza'},{t:'other',n:'ديسكورد',v:'discord.gg/focushub'}],
+ dates:{prices:'قبل 3 أيام',hours:'قبل يومين',shifts:'قبل يومين',amen:'قبل 95 يومًا',about:'قبل 10 أيام',location:'قبل 10 أيام',contacts:'قبل 5 أيام'},
+ stale:{amen:true}
+};
+let photoEdit=false;
+const SECTIONS=[['photos','الصور'],['prices','الأسعار المعلنة'],['hours','ساعات العمل'],['shifts','الورديات'],['amen','المرافق'],['about','عن المساحة'],['location','الموقع'],['contacts','التواصل']];
+const filled={photos:()=>S.photos.length>0,prices:()=>S.prices.length>0,hours:()=>Object.values(S.hours).some(Boolean),shifts:()=>true,amen:()=>S.amen.length+S.otherAmen.length>0,about:()=>!!S.nameEn,location:()=>!!S.addrAr,contacts:()=>S.contacts.length>0};
+function state(k){if(k==='shifts')return S.shifts.length?'ok':'opt';if(!filled[k]())return 'missing';return S.stale[k]?'stale':'ok'}
+function toast(t){const el=$('#toast');el.textContent=t;el.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>el.style.display='none',2200)}
+function say(t){$('#live').textContent=t}
+
+/* ---------- render ---------- */
+function headOf(k,title,{edit=true,extra=''}={}){
+  const st=state(k);const date=S.dates[k];
+  let meta='';
+  if(k!=='photos'&&filled[k]()&&k!=='shifts'||k==='shifts'&&S.shifts.length) meta=`<span>آخر تحديث ${date}</span>`;
+  if(st==='stale') meta+=` <span class="badge warn">قد تكون قديمة</span> <button class="btn sm" data-confirm="${k}">ما زالت صحيحة</button>`;
+  const btn=edit&&(filled[k]()&&!(k==='shifts'&&!S.shifts.length))?`<button class="btn sm" data-edit="${k}">تعديل</button>`:'';
+  return `<div class="sec-head"><div><h2>${title}</h2><div class="meta">${extra}${meta}</div></div>${btn}</div>`;
+}
+function renderHeader(){
+  const done=SECTIONS.filter(([k])=>k!=='shifts').filter(([k])=>filled[k]()).length;
+  const issues=SECTIONS.filter(([k])=>k!=='shifts'&&state(k)!=='ok').map(([k,t])=>state(k)==='missing'?`<a href="#${k}" style="color:var(--danger)">${t}: لم تُضف بعد</a>`:`<a href="#${k}" style="color:var(--warn-fg)">${t}: بحاجة لتأكيد</a>`);
+  const cover=S.photos[0];
+  return `<section class="card" aria-label="ملخص المساحة"><div class="hdr">
+   ${cover?`<div class="cover-thumb ph" style="background:${cover.color}"><span class="badge cover">الغلاف</span></div>`:`<div class="cover-thumb empty" style="display:flex;flex-direction:column;align-items:center;justify-content:center"><b style="font-size:32px;color:var(--primary)">${esc(S.nameEn[0])}</b><a href="#photos">أضف صورة غلاف</a></div>`}
+   <div><div class="hdr-top"><div><h2>${esc(S.nameAr||S.nameEn)}</h2>
+     <div class="meta">${esc(S.area)}، ${esc(S.gov)} · <span class="badge ok">✓ موثّقة</span></div></div>
+     <div class="acts" style="display:flex;gap:8px"><button class="btn" id="copyLink">${ICON.copy} نسخ الرابط</button><a class="btn" href="#" onclick="toast('تُفتح الصفحة العامة في تبويب جديد');return false">عرض الصفحة العامة ${ICON.ext}</a></div></div>
+     <div style="margin-top:16px;border-top:1px solid var(--border);padding-top:12px">
+      <div style="display:flex;justify-content:space-between;font-size:14px"><b style="font-weight:600">اكتمال الملف</b><span style="color:var(--muted)">${done} من 7 أقسام</span></div>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="7" aria-valuenow="${done}"><i style="width:${done/7*100}%"></i></div>
+      <div style="font-size:13px">${issues.length?issues.join(' · '):'<span style="color:var(--success)">الملف مكتمل ومحدّث</span>'}</div>
+     </div></div></div></section>`;
+}
+function renderPhotos(){
+  const n=S.photos.length;
+  const head=`<div class="sec-head"><div><h2>الصور</h2><div class="meta">${n} من 10 صور</div></div>${n&&!photoEdit?'<button class="btn sm" id="phManage">إدارة الصور</button>':''}${photoEdit?'<button class="btn sm primary" id="phDone">تم</button>':''}</div>`;
+  if(!photoEdit){
+    if(!n) return `<section class="card" id="photos">${head}<div class="empty"><p>لم تُضف صور بعد. أول صورة تكون غلاف مساحتك في الدليل.</p><button class="btn primary" id="phManage">أضف صورًا</button></div></section>`;
+    const tile=(p,i,more)=>`<div class="ph" style="background:${p.color}"><span class="lbl">صورة ${p.id}</span>${more?`<div class="ph-more">+${more}</div>`:''}</div>`;
+    const rest=S.photos.slice(1);const more=n>5?n-5:0;
+    const cover=`<div class="ph cover-big" style="background:${S.photos[0].color}"><span class="badge cover">الغلاف</span><span class="lbl">صورة ${S.photos[0].id}</span><span class="ph-count">${n} صور</span></div>`;
+    return `<section class="card" id="photos">${head}<div class="ph-view">${cover}${rest.length?`<div class="thumbs">${rest.map((p,i)=>tile(p,i+1,i===3?more:0)).join('')}</div>`:''}</div></section>`;
+  }
+  const full=n>=10;
+  return `<section class="card" id="photos">${head}
+   <div class="drop">${full?'<span style="font-size:14px">وصلت الحد الأقصى (10 صور). احذف صورة لتضيف غيرها.</span>':`<div><button class="btn primary" id="phAdd">اختر صورًا</button></div><span style="font-size:13px;color:var(--muted)">حتى 10 صور · JPEG أو PNG أو WebP · حتى 4 ميجابايت للصورة</span>`}</div>
+   <p class="hint">اسحب صورة إلى الأول لتصبح الغلاف. بلوحة المفاتيح: اختر الصورة، اضغط مسافة لرفعها، حرّكها بالأسهم، ثم مسافة لوضعها.</p>
+   <div class="ph-edit" id="phGrid" role="list">${S.photos.map((p,i)=>`<div class="ph" role="listitem" tabindex="0" draggable="true" data-i="${i}" style="background:${p.color}" aria-label="صورة ${p.id}${i===0?'، الغلاف':''}، المكان ${i+1} من ${n}">${i===0?'<span class="badge cover">الغلاف</span>':''}<span class="lbl">صورة ${p.id}</span><button class="ph-del" data-del="${i}" aria-label="حذف صورة ${p.id}">✕</button></div>`).join('')}</div>
+  </section>`;
+}
+function renderPrices(){
+  const head=headOf('prices','الأسعار المعلنة');
+  if(!S.prices.length) return `<section class="card" id="prices">${head}<div class="empty"><p>لم تُضف أسعار بعد.</p><button class="btn primary" data-edit="prices">إضافة سعر</button></div></section>`;
+  const hasSt=S.prices.some(r=>r.a==='students'), hasSh=S.prices.some(r=>r.s);
+  const order=['hour','day','week','month'];
+  const rows=[...S.prices].sort((a,b)=>order.indexOf(a.p)-order.indexOf(b.p)||(a.a>b.a?1:-1));
+  return `<section class="card" id="prices">${head}<table class="view"><thead><tr><th>الفترة</th>${hasSt?'<th>لمن</th>':''}${hasSh?'<th>الوردية</th>':''}<th>السعر</th></tr></thead><tbody>
+   ${rows.map(r=>`<tr><td>${PERIOD_VIEW[r.p]}</td>${hasSt?`<td>${r.a==='students'?'للطلاب':'للجميع'}</td>`:''}${hasSh?`<td>${esc(r.s||'—')}</td>`:''}<td><span class="ltr">${esc(r.v)} ₪</span></td></tr>`).join('')}</tbody></table>
+   <p class="hint" style="margin-bottom:0">تظهر في «الباقات والأسعار» للقراءة، مع رابط إلى هنا.</p></section>`;
+}
+function groupDays(h){
+  const out=[];DAYS.forEach(([k,n])=>{const v=h[k];const key=v?v.join('–'):'closed';const last=out[out.length-1];if(last&&last.key===key){last.to=n;}else out.push({key,from:n,to:null,v})});
+  return out;
+}
+function renderHours(){
+  const head=headOf('hours','ساعات العمل');
+  if(!filled.hours()) return `<section class="card" id="hours">${head}<div class="empty"><p>ساعات العمل غير متوفرة.</p><button class="btn primary" data-edit="hours">أضف ساعات العمل</button></div></section>`;
+  const today='sat';
+  return `<section class="card" id="hours">${head}<div style="display:flex;flex-direction:column;gap:6px;font-size:15px">
+   ${groupDays(S.hours).map(g=>`<div style="display:flex;gap:16px"><span style="min-width:150px">${g.from}${g.to?' – '+g.to:''}</span>${g.v?`<span class="ltr">${g.v[0]}–${g.v[1]}</span>`:'<span style="color:var(--muted)">مغلقة</span>'}${(g.from==='السبت')?' <span class="badge">اليوم</span>':''}</div>`).join('')}
+   </div><p class="hint" style="margin-bottom:0">إغلاق مؤقت؟ <a href="#" onclick="toast('ينتقل إلى الإعلانات');return false">أضف إعلان إغلاق</a></p></section>`;
+}
+function renderShifts(){
+  const head=headOf('shifts','الورديات');
+  if(!S.shifts.length) return `<section class="card" id="shifts">${head}<div class="empty"><p>لا توجد ورديات. الورديات اختيارية، تحتاجها إذا كانت لديك أسعار أو باقات لفترات محددة من اليوم.</p><button class="btn" data-edit="shifts">إضافة وردية</button></div></section>`;
+  return `<section class="card" id="shifts">${head}<div>${S.shifts.map(s=>`${esc(s.n)} <span class="ltr">${s.f}–${s.t}</span>`).join(' · ')}</div></section>`;
+}
+function renderAmen(){
+  const head=headOf('amen','المرافق');
+  if(!filled.amen()) return `<section class="card" id="amen">${head}<div class="empty"><p>لم تُضف مرافق بعد.</p><button class="btn primary" data-edit="amen">أضف المرافق</button></div></section>`;
+  const items=AMENITIES.filter(a=>S.amen.includes(a[0])).map(a=>`<div class="am">${ICON[a[2]]}${a[1]}</div>`).concat(S.otherAmen.map(o=>`<div class="am">${ICON.dot}${esc(o.ar)}</div>`));
+  return `<section class="card" id="amen">${head}<div class="am-view">${items.join('')}</div></section>`;
+}
+function renderAbout(){
+  const head=headOf('about','عن المساحة');
+  const col=(lang,name,desc,dir)=>`<div class="lang-col" dir="${dir}"><h3 dir="rtl" style="text-align:start">${lang}</h3><div style="font-weight:600;margin-bottom:4px">${esc(name)||'<span style="color:var(--muted);font-weight:400">لم يُضف الاسم</span>'}</div>${desc?`<div class="clamp" id="d${dir}">${esc(desc)}</div><button class="btn ghost sm" style="padding:0" onclick="this.previousElementSibling.classList.toggle('clamp');this.textContent=this.textContent==='عرض المزيد'?'عرض أقل':'عرض المزيد'">عرض المزيد</button>`:`<div class="note" dir="rtl">الوصف ${dir==='ltr'?'بالإنجليزية':'بالعربية'} لم يُضف. زوار الموقع ${dir==='ltr'?'بالإنجليزية':'بالعربية'} لن يروا وصفًا لمساحتك.</div>`}</div>`;
+  return `<section class="card" id="about">${head}<div class="grid2">${col('بالعربية',S.nameAr,S.descAr,'rtl')}${col('بالإنجليزية',S.nameEn,S.descEn,'ltr')}</div></section>`;
+}
+function renderLocation(){
+  const head=headOf('location','الموقع');
+  return `<section class="card" id="location">${head}<div class="grid2"><div style="display:flex;flex-direction:column;gap:6px">
+   <div><b style="font-weight:600">${esc(S.area)}، ${esc(S.gov)}</b></div><div>${esc(S.addrAr)}</div><div dir="ltr" style="color:var(--muted);text-align:end">${esc(S.addrEn)}</div>
+   ${S.landAr?`<div>العلامة المميزة: ${esc(S.landAr)}</div>`:''}
+   ${S.addrEn?'':'<div class="note">العنوان بالإنجليزية لم يُضف.</div>'}
+   <div><a class="btn sm" href="#" onclick="toast('يفتح خرائط Google');return false">فتح في خرائط Google ${ICON.ext}</a></div></div>
+   <div class="map" aria-label="خريطة موقع المساحة"><div class="pin" style="left:${S.pin.x}%;top:${S.pin.y}%">${ICON.pin}</div></div></div></section>`;
+}
+function renderContacts(){
+  const head=headOf('contacts','التواصل');
+  if(!S.contacts.length) return `<section class="card" id="contacts">${head}<div class="empty"><p>لم تُضف وسائل تواصل بعد. الزوار لن يجدوا طريقة للتواصل معك.</p><button class="btn primary" data-edit="contacts">أضف وسيلة تواصل</button></div></section>`;
+  return `<section class="card" id="contacts">${head}<div class="am-view">${S.contacts.map(c=>{const t=CTYPES.find(x=>x[0]===c.t);const name=c.t==='other'?c.n:t[1];return `<a class="am ct" href="#" onclick="toast('يفتح ${esc(name)}');return false"><span class="ct-ic">${CINIT[c.t]}</span><span style="min-width:0"><span style="display:block;font-weight:600">${esc(name)}</span><span class="ltr ct-v">${esc(c.v)}</span></span></a>`}).join('')}</div></section>`;
+}
+function renderIndex(){
+  $('#index').innerHTML=SECTIONS.map(([k,t])=>`<a href="#${k}"><span>${t}</span><span class="dot ${state(k)}" title="${{ok:'مكتمل',stale:'بحاجة لتأكيد',missing:'ناقص',opt:'اختياري'}[state(k)]}"></span></a>`).join('');
+}
+function render(){
+  $('#main').innerHTML=renderHeader()+renderPhotos()+renderPrices()+renderHours()+renderShifts()+renderAmen()+renderAbout()+renderLocation()+renderContacts();
+  renderIndex();bindMain();
+}
+function bindMain(){
+  document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>openSheet(b.dataset.edit));
+  document.querySelectorAll('[data-confirm]').forEach(b=>b.onclick=()=>{delete S.stale[b.dataset.confirm];S.dates[b.dataset.confirm]='اليوم';render();toast('تم تأكيد المعلومات')});
+  const cl=$('#copyLink');if(cl)cl.onclick=()=>toast('تم نسخ رابط الصفحة');
+  document.querySelectorAll('#phManage').forEach(b=>b.onclick=()=>{photoEdit=true;render();$('#photos').scrollIntoView({block:'start'})});
+  const done=$('#phDone');if(done)done.onclick=()=>{photoEdit=false;render()};
+  const add=$('#phAdd');if(add)add.onclick=()=>{const id=Math.max(0,...S.photos.map(p=>p.id))+1;S.photos.push({id,color:COLORS[id%COLORS.length]});render();toast('رُفعت صورة '+id)};
+  if(photoEdit) bindPhotoGrid();
+}
+/* ---------- photo drag (mouse + keyboard) ---------- */
+let lifted=null;
+function bindPhotoGrid(){
+  const grid=$('#phGrid');if(!grid)return;let from=null;
+  grid.querySelectorAll('.ph').forEach(el=>{
+    el.addEventListener('dragstart',e=>{from=+el.dataset.i;el.classList.add('drag');e.dataTransfer.effectAllowed='move'});
+    el.addEventListener('dragend',()=>el.classList.remove('drag'));
+    el.addEventListener('dragover',e=>{e.preventDefault();el.classList.add('over')});
+    el.addEventListener('dragleave',()=>el.classList.remove('over'));
+    el.addEventListener('drop',e=>{e.preventDefault();move(from,+el.dataset.i)});
+    el.addEventListener('keydown',e=>{
+      const i=+el.dataset.i;
+      if(e.key===' '||e.key==='Enter'){if(e.target.closest('.ph-del'))return;e.preventDefault();if(lifted===null){lifted=i;el.classList.add('lifted');say('رُفعت الصورة. حرّكها بالأسهم ثم اضغط مسافة لوضعها.')}else{say('وُضعت الصورة في المكان '+(lifted+1)+(lifted===0?'، وأصبحت الغلاف':''));lifted=null;render();focusPh(i)}}
+      else if(lifted!==null&&['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)){e.preventDefault();const step={ArrowLeft:1,ArrowRight:-1,ArrowDown:1,ArrowUp:-1}[e.key];const to=Math.max(0,Math.min(S.photos.length-1,i+step));if(to!==i){const p=S.photos.splice(i,1)[0];S.photos.splice(to,0,p);lifted=to;render();const nel=focusPh(to);nel.classList.add('lifted');say('المكان '+(to+1)+' من '+S.photos.length)}}
+      else if(e.key==='Escape'&&lifted!==null){lifted=null;render();focusPh(i)}
+    });
+  });
+  grid.querySelectorAll('[data-del]').forEach(b=>b.onclick=(e)=>{e.stopPropagation();const i=+b.dataset.del;confirmBox('حذف هذه الصورة؟','لا يمكن التراجع عن الحذف.','حذف',()=>{S.photos.splice(i,1);render();toast('حُذفت الصورة')})});
+}
+function focusPh(i){const el=document.querySelectorAll('#phGrid .ph')[i];if(el)el.focus();return el}
+function move(a,b){if(a===null||a===b)return;const p=S.photos.splice(a,1)[0];S.photos.splice(b,0,p);render();toast(b===0?'أصبحت الغلاف':'تم الترتيب')}
+function confirmBox(t,txt,okLabel,ok){const m=$('#modal');$('#mTitle').textContent=t;$('#mText').textContent=txt;const b=$('#mOk');b.textContent=okLabel;b.className='btn danger';m.classList.add('open');b.focus();b.onclick=()=>{m.classList.remove('open');ok()};$('#mNo').onclick=()=>m.classList.remove('open')}
+
+/* ---------- sheets ---------- */
+let draft=null,cur=null,dirty=false,lastFocus=null;
+function openSheet(k){
+  cur=k;dirty=false;lastFocus=document.activeElement;
+  const titles={prices:'تعديل الأسعار',hours:'تعديل ساعات العمل',shifts:'تعديل الورديات',amen:'تعديل المرافق',about:'تعديل: عن المساحة',location:'تعديل الموقع',contacts:'تعديل التواصل'};
+  draft=JSON.parse(JSON.stringify(S));
+  if(k==='prices'&&!draft.prices.length)draft.prices.push({p:'hour',a:'all',s:'',v:''});
+  if(k==='shifts'&&!draft.shifts.length)draft.shifts.push({n:'',f:'08:00',t:'13:00'});
+  if(k==='contacts'&&!draft.contacts.length)draft.contacts.push({t:'whatsapp',v:''});
+  if(k==='hours'){draft._custom=!uniform(draft.hours);if(!filled.hours())draft.hours={sat:['08:00','18:00'],sun:['08:00','18:00'],mon:['08:00','18:00'],tue:['08:00','18:00'],wed:['08:00','18:00'],thu:['08:00','18:00'],fri:null}}
+  $('#sheetTitle').textContent=titles[k];$('#sheet').classList.add('open');$('#scrim').classList.add('open');drawSheet();
+  setTimeout(()=>{const f=$('#sheetBody input,#sheetBody select,#sheetBody textarea');if(f)f.focus()},50);
+}
+function uniform(h){const wk=['sat','sun','mon','tue','wed','thu'].map(d=>h[d]?h[d].join():'x');return wk.every(v=>v===wk[0]&&v!=='x')}
+function closeSheet(force){
+  if(dirty&&!force){confirmBox('تجاهل التغييرات؟','لم تُحفظ تغييراتك في هذا القسم.','تجاهل',()=>closeSheet(true));$('#mOk').className='btn';return}
+  $('#sheet').classList.remove('open');$('#scrim').classList.remove('open');cur=null;if(lastFocus)lastFocus.focus();
+}
+$('#sheetX').onclick=()=>closeSheet();$('#sheetBack').onclick=()=>closeSheet();$('#scrim').onclick=()=>closeSheet();
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&cur&&!$('#modal').classList.contains('open'))closeSheet()});
+$('#sheetBody').addEventListener('input',()=>{dirty=true});
+$('#sheetSave').onclick=()=>{
+  const errs=validate();drawSheet(errs);if(Object.keys(errs).length){const e=$('#sheetBody .err');if(e)e.scrollIntoView({block:'center'});return}
+  const keep=['prices','hours','shifts','amen','otherAmen','contacts','nameAr','nameEn','descAr','descEn','addrAr','addrEn','landAr','landEn','area','gov','pin'];
+  keep.forEach(x=>S[x]=draft[x]);S.dates[cur]='الآن';delete S.stale[cur];
+  if(cur==='prices')S.prices=S.prices.filter(r=>r.v!=='');
+  const k=cur;closeSheet(true);render();toast('تم الحفظ');const sec=document.getElementById(k);if(sec)sec.scrollIntoView({block:'start'});
+};
+function opts(list,val){return list.map(([v,l])=>`<option value="${v}" ${v===val?'selected':''}>${l}</option>`).join('')}
+function topts(val){return TIMES.map(t=>`<option ${t===val?'selected':''}>${t}</option>`).join('')}
+function validate(){
+  const e={};
+  if(cur==='prices'){const seen={};draft.prices.forEach((r,i)=>{if(!/^\d+$/.test(String(r.v).trim())||+r.v<=0)e['p'+i]='اكتب المبلغ بالشيكل.';const key=r.p+r.a+r.s;if(seen[key]!==undefined)e['p'+i]='هذا السعر مضاف من قبل.';seen[key]=i;})}
+  if(cur==='hours'){DAYS.forEach(([d])=>{const v=draft.hours[d];if(v&&v[1]<=v[0])e['h'+d]='«إلى» يجب أن تكون بعد «من».'})}
+  if(cur==='shifts'){draft.shifts.forEach((s,i)=>{if(!s.n.trim())e['s'+i]='اكتب اسم الوردية.';else if(s.t<=s.f)e['s'+i]='«إلى» يجب أن تكون بعد «من».'})}
+  if(cur==='amen'){draft.otherAmen.forEach((o,i)=>{if(!o.ar.trim())e['a'+i]='اكتب اسم المرفق.';else if(AMENITIES.some(a=>a[1]===o.ar.trim()))e['a'+i]='هذا المرفق موجود في القائمة، اختره من فوق.'})}
+  if(cur==='about'){if(!draft.nameEn.trim())e.nameEn='الاسم بالإنجليزية مطلوب.'}
+  if(cur==='location'){if(!draft.addrAr.trim())e.addrAr='اكتب العنوان بالعربية.'}
+  if(cur==='contacts'){const seen={};draft.contacts.forEach((c,i)=>{const v=c.v.trim();if(c.t==='other'&&!(c.n||'').trim()){e['c'+i]='اكتب اسم الوسيلة.';return}if(!v)e['c'+i]='اكتب '+(c.t==='other'?'الرابط أو الرقم':CTYPES.find(x=>x[0]===c.t)[1])+'.';else if((c.t==='whatsapp'||c.t==='phone')&&!/^0?5\d{8}$/.test(v.replace(/[٠-٩]/g,d=>d.charCodeAt(0)-0x660)))e['c'+i]=(c.t==='whatsapp'?'رقم الواتساب':'رقم الهاتف')+' غير صحيح.';if(seen[c.t+v])e['c'+i]='هذه الوسيلة مضافة من قبل.';seen[c.t+v]=1})}
+  return e;
+}
+const err=(e,k)=>e&&e[k]?`<div class="err">${e[k]}</div>`:'';
+function drawSheet(e){
+  const b=$('#sheetBody');let h='';
+  if(cur==='prices'){
+    const hasShifts=draft.shifts.length>0;const cls='price-row'+(hasShifts?'':' noshift');
+    h+=`<p class="hint" style="margin-top:0">كل صف سعر واحد. اترك ما لا تقدّمه.</p>`;
+    h+=`<div class="row ${cls} row-head"><span>الفترة</span><span>لمن</span>${hasShifts?'<span>الوردية</span>':''}<span>المبلغ</span><span></span></div><div class="rows">`;
+    draft.prices.forEach((r,i)=>{h+=`<div><div class="row ${cls}">
+      <select class="i" aria-label="الفترة" data-f="prices.${i}.p">${opts(PERIODS,r.p)}</select>
+      <select class="i" aria-label="لمن" data-f="prices.${i}.a">${opts([['all','الجميع'],['students','الطلاب']],r.a)}</select>
+      ${hasShifts?`<select class="i" aria-label="الوردية" data-f="prices.${i}.s">${opts([['','بدون وردية'],...draft.shifts.map(s=>[s.n,s.n])],r.s)}</select>`:''}
+      <div class="with-cur"><input class="i" inputmode="numeric" aria-label="المبلغ" data-f="prices.${i}.v" value="${esc(r.v)}" dir="ltr"><span>₪</span></div>
+      <button class="btn icon ghost del" data-rm="prices.${i}" aria-label="حذف هذا السعر">✕</button></div>${err(e,'p'+i)}</div>`});
+    h+=`</div><button class="btn" style="margin-top:12px" id="addRow">+ إضافة سعر</button>`;
+    if(!hasShifts)h+=`<p class="hint">تريد سعرًا لفترة من اليوم؟ <a href="#" id="toShifts">أضف وردية</a></p>`;
+  }
+  if(cur==='hours'){
+    const H=draft.hours;
+    if(!draft._custom){
+      const main=H.sat||['08:00','18:00'];
+      h+=`<div style="font-weight:600;margin-bottom:8px">من السبت إلى الخميس</div><div class="grid2" style="gap:12px">
+        <label class="f"><span>من</span><select class="i" id="mainFrom">${topts(main[0])}</select></label>
+        <label class="f"><span>إلى</span><select class="i" id="mainTo">${topts(main[1])}</select></label></div>${err(e,'hsat')}
+        <label class="check" style="padding-inline:0"><input type="checkbox" id="friOn" ${H.fri?'checked':''}> مفتوحة يوم الجمعة أيضًا</label>
+        ${H.fri?`<div class="grid2" style="gap:12px;padding-inline-start:28px"><label class="f"><span>الجمعة من</span><select class="i" id="friFrom">${topts(H.fri[0])}</select></label><label class="f"><span>إلى</span><select class="i" id="friTo">${topts(H.fri[1])}</select></label></div>${err(e,'hfri')}`:'<p class="hint" style="padding-inline-start:28px;margin-top:0">الجمعة: إجازة</p>'}
+        <button class="btn" id="custom" style="margin-top:8px">تخصيص الأيام</button>`;
+    }else{
+      h+=`<p class="hint" style="margin-top:0">لكل يوم ساعاته، أو اجعله إجازة.</p><div class="rows">`;
+      DAYS.forEach(([d,n])=>{const v=H[d];h+=`<div><div class="row day-row"><b style="font-weight:600">${n}</b>
+        <label class="check" style="padding:0"><input type="checkbox" data-day="${d}" ${v?'checked':''}> ${v?'مفتوحة':'إجازة'}</label>
+        ${v?`<select class="i" aria-label="${n} من" data-hf="${d}.0">${topts(v[0])}</select><select class="i" aria-label="${n} إلى" data-hf="${d}.1">${topts(v[1])}</select>`:'<span></span><span></span>'}</div>${err(e,'h'+d)}</div>`});
+      h+=`</div><button class="btn ghost" id="simple" style="margin-top:10px">رجوع إلى الشكل البسيط</button>`;
+    }
+  }
+  if(cur==='shifts'){
+    h+=`<p class="hint" style="margin-top:0">كل وردية ضمن ساعات يوم مفتوح واحد على الأقل.</p><div class="rows">`;
+    draft.shifts.forEach((s,i)=>{h+=`<div><div class="row" style="grid-template-columns:1.4fr 1fr 1fr 36px"><input class="i" placeholder="اسم الوردية، مثلًا: المسائية" aria-label="اسم الوردية" data-f="shifts.${i}.n" value="${esc(s.n)}">
+      <select class="i" aria-label="من" data-f="shifts.${i}.f">${topts(s.f)}</select><select class="i" aria-label="إلى" data-f="shifts.${i}.t">${topts(s.t)}</select>
+      <button class="btn icon ghost" data-rm="shifts.${i}" aria-label="حذف الوردية">✕</button></div>${err(e,'s'+i)}</div>`});
+    h+=`</div><button class="btn" style="margin-top:12px" id="addRow">+ إضافة وردية</button>`;
+  }
+  if(cur==='amen'){
+    h+=`<div class="grid2" style="gap:2px 12px">${AMENITIES.map(a=>`<label class="check"><input type="checkbox" data-am="${a[0]}" ${draft.amen.includes(a[0])?'checked':''}>${ICON[a[2]]}${a[1]}</label>`).join('')}</div>
+      <h3 style="font-size:15px;margin:18px 0 8px">مرافق أخرى</h3><div class="rows">`;
+    draft.otherAmen.forEach((o,i)=>{h+=`<div><div class="row" style="grid-template-columns:1fr 1fr 36px"><input class="i" placeholder="الاسم بالعربية" aria-label="الاسم بالعربية" data-f="otherAmen.${i}.ar" value="${esc(o.ar)}"><input class="i" dir="ltr" placeholder="English (optional)" aria-label="الاسم بالإنجليزية" data-f="otherAmen.${i}.en" value="${esc(o.en)}"><button class="btn icon ghost" data-rm="otherAmen.${i}" aria-label="حذف المرفق">✕</button></div>${err(e,'a'+i)}</div>`});
+    h+=`</div><button class="btn" style="margin-top:12px" id="addRow">+ إضافة مرفق آخر</button>`;
+  }
+  if(cur==='about'){
+    const cnt=(v)=>`<span class="ltr" style="font-size:12px">${(v||'').length} / 1000</span>`;
+    h+=`<div class="grid2" style="gap:12px"><label class="f"><span>الاسم بالعربية <em style="font-style:normal">اختياري</em></span><input class="i" data-f="nameAr" value="${esc(draft.nameAr)}"></label>
+      <label class="f"><span>الاسم بالإنجليزية <em style="font-style:normal;color:var(--fg)">مطلوب</em></span><input class="i" dir="ltr" data-f="nameEn" value="${esc(draft.nameEn)}">${err(e,'nameEn')}<small>تغيير الاسم لا يغيّر رابط صفحتك.</small></label></div>
+      <label class="f"><span>الوصف بالعربية <em style="font-style:normal">اختياري · ${cnt(draft.descAr)}</em></span><textarea class="i" data-f="descAr" maxlength="1000">${esc(draft.descAr)}</textarea></label>
+      <label class="f"><span>الوصف بالإنجليزية <em style="font-style:normal">اختياري · ${cnt(draft.descEn)}</em></span><textarea class="i" dir="ltr" data-f="descEn" maxlength="1000">${esc(draft.descEn)}</textarea></label>`;
+  }
+  if(cur==='location'){
+    const areas=[['النصر','غزة'],['الرمال','غزة'],['الشيخ رضوان','غزة'],['دير البلح','الوسطى'],['النصيرات','الوسطى'],['خان يونس (المدينة)','خان يونس'],['المواصي','خان يونس']];
+    h+=`<label class="f"><span>المنطقة</span><select class="i" id="areaSel">${['غزة','الوسطى','خان يونس'].map(g=>`<optgroup label="محافظة ${g}">${areas.filter(a=>a[1]===g).map(a=>`<option ${a[0]===draft.area?'selected':''} data-gov="${g}">${a[0]}</option>`).join('')}</optgroup>`).join('')}</select></label>
+     <div class="grid2" style="gap:12px"><label class="f"><span>العنوان بالعربية</span><input class="i" data-f="addrAr" value="${esc(draft.addrAr)}">${err(e,'addrAr')}</label><label class="f"><span>العنوان بالإنجليزية <em style="font-style:normal">اختياري</em></span><input class="i" dir="ltr" data-f="addrEn" value="${esc(draft.addrEn)}"></label>
+     <label class="f"><span>العلامة المميزة بالعربية <em style="font-style:normal">اختياري</em></span><input class="i" data-f="landAr" value="${esc(draft.landAr)}"></label><label class="f"><span>العلامة المميزة بالإنجليزية <em style="font-style:normal">اختياري</em></span><input class="i" dir="ltr" data-f="landEn" value="${esc(draft.landEn)}"></label></div>
+     <div style="display:flex;justify-content:space-between;align-items:center;margin:4px 0 8px"><span style="font-size:13px;color:var(--muted)">اسحب العلامة أو اضغط على مكان المساحة</span><button class="btn sm" id="myLoc">استخدم موقعي الحالي</button></div>
+     <div class="map" id="editMap" style="height:300px"><div class="pin" id="editPin" style="left:${draft.pin.x}%;top:${draft.pin.y}%" tabindex="0" aria-label="علامة المساحة، حرّكها بالأسهم">${ICON.pin}</div></div><div id="outErr"></div>`;
+  }
+  if(cur==='contacts'){
+    h+=`<p class="hint" style="margin-top:0">اسحب ⠿ لترتيب الوسائل؛ الأولى تظهر أولًا للزوار.</p><div class="rows" id="cRows">`;
+    draft.contacts.forEach((c,i)=>{const t=CTYPES.find(x=>x[0]===c.t);const oth=c.t==='other';h+=`<div class="crow" draggable="true" data-i="${i}"><div class="row contact-row${oth?' other':''}"><span class="handle" tabindex="0" aria-label="رتّب ${oth?esc(c.n||'وسيلة أخرى'):t[1]}: مسافة للرفع، الأسهم للتحريك" data-ci="${i}">⠿</span>
+      <select class="i" aria-label="النوع" data-f="contacts.${i}.t">${opts(CTYPES.map(x=>[x[0],x[1]]),c.t)}</select>
+      ${oth?`<input class="i" placeholder="اسم الوسيلة، مثلًا: ديسكورد" aria-label="اسم الوسيلة" data-f="contacts.${i}.n" value="${esc(c.n||'')}">`:''}
+      <input class="i val" dir="ltr" placeholder="${t[2]}" aria-label="${oth?'الرابط أو الرقم':t[1]}" data-f="contacts.${i}.v" value="${esc(c.v)}">
+      <button class="btn icon ghost" data-rm="contacts.${i}" aria-label="حذف">✕</button></div>${err(e,'c'+i)}</div>`});
+    h+=`</div><button class="btn" style="margin-top:12px" id="addRow">+ إضافة وسيلة تواصل</button>`;
+  }
+  b.innerHTML=h;bindSheet();
+}
+function setPath(path,val){const p=path.split('.');let o=draft;for(let i=0;i<p.length-1;i++)o=o[p[i]];o[p[p.length-1]]=val}
+function bindSheet(){
+  const b=$('#sheetBody');
+  b.querySelectorAll('[data-f]').forEach(el=>el.addEventListener(el.tagName==='SELECT'?'change':'input',()=>{setPath(el.dataset.f,el.value);dirty=true;if(el.tagName==='SELECT'&&(cur==='contacts'))drawSheet();if(cur==='about'&&el.tagName==='TEXTAREA'){const c=el.closest('label').querySelector('.ltr');if(c)c.textContent=el.value.length+' / 1000'}}));
+  b.querySelectorAll('[data-rm]').forEach(el=>el.onclick=()=>{const [arr,i]=el.dataset.rm.split('.');draft[arr].splice(+i,1);dirty=true;drawSheet()});
+  const add=$('#addRow');if(add)add.onclick=()=>{dirty=true;
+    if(cur==='prices'){const used=new Set(draft.prices.filter(r=>r.a==='all'&&!r.s).map(r=>r.p));let next=PERIODS.find(([p])=>!used.has(p));let a='all';if(!next){const us=new Set(draft.prices.filter(r=>r.a==='students').map(r=>r.p));next=PERIODS.find(([p])=>!us.has(p))||PERIODS[0];a='students'}draft.prices.push({p:next[0],a,s:'',v:''})}
+    if(cur==='shifts')draft.shifts.push({n:'',f:'13:00',t:'18:00'});
+    if(cur==='amen')draft.otherAmen.push({ar:'',en:''});
+    if(cur==='contacts')draft.contacts.push({t:'whatsapp',v:''});
+    drawSheet();const ins=b.querySelectorAll('.rows>div');const last=ins[ins.length-1];if(last){const f=last.querySelector('input,select');if(f)f.focus()}};
+  const ts=$('#toShifts');if(ts)ts.onclick=(e)=>{e.preventDefault();closeSheet(true);openSheet('shifts')};
+  b.querySelectorAll('[data-am]').forEach(el=>el.onchange=()=>{const k=el.dataset.am;draft.amen=el.checked?[...draft.amen,k]:draft.amen.filter(x=>x!==k);dirty=true});
+  /* hours */
+  const mf=$('#mainFrom'),mt=$('#mainTo');
+  if(mf){const upd=()=>{['sat','sun','mon','tue','wed','thu'].forEach(d=>draft.hours[d]=[mf.value,mt.value]);dirty=true};mf.onchange=upd;mt.onchange=upd;
+    $('#friOn').onchange=(ev)=>{draft.hours.fri=ev.target.checked?[mf.value,mt.value]:null;dirty=true;drawSheet()};
+    const ff=$('#friFrom'),ft=$('#friTo');if(ff){const u=()=>{draft.hours.fri=[ff.value,ft.value];dirty=true};ff.onchange=u;ft.onchange=u}
+    $('#custom').onclick=()=>{draft._custom=true;drawSheet()}}
+  b.querySelectorAll('[data-day]').forEach(el=>el.onchange=()=>{const d=el.dataset.day;if(el.checked){const last=[...DAYS].map(x=>x[0]).map(k=>draft.hours[k]).filter(Boolean).pop()||['08:00','18:00'];draft.hours[d]=[...last]}else draft.hours[d]=null;dirty=true;drawSheet()});
+  b.querySelectorAll('[data-hf]').forEach(el=>el.onchange=()=>{const [d,i]=el.dataset.hf.split('.');draft.hours[d][+i]=el.value;dirty=true});
+  const sim=$('#simple');if(sim)sim.onclick=()=>{const toSimple=()=>{const m=draft.hours.sat||['08:00','18:00'];['sat','sun','mon','tue','wed','thu'].forEach(d=>draft.hours[d]=[...m]);draft._custom=false;drawSheet()};
+    const wk=['sat','sun','mon','tue','wed','thu'];if(wk.every(d=>draft.hours[d]&&draft.hours[d].join()===(draft.hours.sat||[]).join()))toSimple();else{confirmBox('سيتم توحيد الساعات','ستأخذ أيام السبت إلى الخميس ساعات السبت. متابعة؟','متابعة',toSimple);$('#mOk').className='btn primary'}};
+  /* location */
+  const as=$('#areaSel');if(as)as.onchange=()=>{draft.area=as.value;draft.gov=as.selectedOptions[0].dataset.gov;dirty=true};
+  const map=$('#editMap'),pin=$('#editPin');
+  if(map){const place=(cx,cy)=>{const r=map.getBoundingClientRect();draft.pin={x:Math.round((cx-r.left)/r.width*100),y:Math.round((cy-r.top)/r.height*100)};pin.style.left=draft.pin.x+'%';pin.style.top=draft.pin.y+'%';dirty=true;
+      $('#outErr').innerHTML=draft.pin.x<8?'<div class="err">الموقع خارج قطاع غزة.</div>':''};
+    let drag=false;pin.onpointerdown=(e)=>{drag=true;pin.setPointerCapture(e.pointerId)};pin.onpointermove=(e)=>{if(drag)place(e.clientX,e.clientY)};pin.onpointerup=()=>drag=false;
+    map.onclick=(e)=>{if(e.target===map)place(e.clientX,e.clientY)};
+    pin.onkeydown=(e)=>{const d={ArrowLeft:[-2,0],ArrowRight:[2,0],ArrowUp:[0,-2],ArrowDown:[0,2]}[e.key];if(!d)return;e.preventDefault();draft.pin={x:Math.max(0,Math.min(100,draft.pin.x+d[0])),y:Math.max(0,Math.min(100,draft.pin.y+d[1]))};pin.style.left=draft.pin.x+'%';pin.style.top=draft.pin.y+'%';dirty=true};
+    $('#myLoc').onclick=()=>{draft.pin={x:52,y:48};pin.style.left='52%';pin.style.top='48%';dirty=true;toast('نُقلت العلامة إلى موقعك الحالي')}}
+  /* contacts reorder */
+  const rows=$('#cRows');
+  if(rows){let from=null;rows.querySelectorAll('.crow').forEach(r=>{r.ondragstart=()=>{from=+r.dataset.i};r.ondragover=(e)=>e.preventDefault();r.ondrop=(e)=>{e.preventDefault();const to=+r.dataset.i;if(from===null||from===to)return;const c=draft.contacts.splice(from,1)[0];draft.contacts.splice(to,0,c);dirty=true;drawSheet()}});
+    let liftedC=null;rows.querySelectorAll('.handle').forEach(hd=>hd.onkeydown=(e)=>{const i=+hd.dataset.ci;
+      if(e.key===' '){e.preventDefault();if(liftedC===null){liftedC=i;say('رُفعت. حرّكها بالأسهم ثم مسافة لوضعها.')}else{liftedC=null;say('وُضعت في المكان '+(i+1))}}
+      else if(liftedC!==null&&(e.key==='ArrowUp'||e.key==='ArrowDown')){e.preventDefault();const to=Math.max(0,Math.min(draft.contacts.length-1,i+(e.key==='ArrowDown'?1:-1)));if(to===i)return;const c=draft.contacts.splice(i,1)[0];draft.contacts.splice(to,0,c);liftedC=to;dirty=true;drawSheet();const n=$('#cRows').querySelectorAll('.handle')[to];n.focus();say('المكان '+(to+1)+' من '+draft.contacts.length)}})}
+}
+/* theme */
+$('#themeBtn').onclick=()=>{const d=document.documentElement;const dark=d.dataset.theme==='dark';d.dataset.theme=dark?'':'dark';$('#themeBtn').textContent=dark?'المظهر الداكن':'المظهر الفاتح'};
+render();
+</script>
+</body>
+</html>

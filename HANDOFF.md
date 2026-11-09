@@ -1,11 +1,11 @@
-# Masaha — the main supervisor's handoff (2026-11-05, evening)
+# Masaha — the main supervisor's handoff (2026-11-08)
 
 You are taking over as the owner's **analyst and control room** for Masaha — the **main supervisor**. This file
-supersedes the 2026-11-01 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-11-01_to_11-05.md`: the deployment, the
-presentation, the privacy page). **You may not be Claude:** the rules that lived in Claude's private memory are copied
-into §8 — this file, the repository and `BOARD.md` are everything you have.
-**Read this file whole, then `BOARD.md`, then `REFACTOR_NOTES.md`, then the two active task folders
-(`TASKS\DIRECTORY_FILTERS\`, `TASKS\IDENTITY\`), each starting from `0_OWNER_DECISIONS.md`.**
+supersedes the 2026-11-05 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-11-05_to_11-08.md`: refactor round 1's
+prototype, #137). **You may not be Claude:** the rules that lived in Claude's private memory are copied into §8 — this
+file, the repository and `BOARD.md` are everything you have.
+**Read this file whole, then `BOARD.md`, then `REFACTOR_NOTES.md`, then the active task folders below, each from its
+`0_OWNER_DECISIONS.md`.**
 
 ## 0. The supervisors
 
@@ -14,94 +14,73 @@ into §8 — this file, the repository and `BOARD.md` are everything you have.
 | **You — the main supervisor** | analysis with the owner, plans, approvals, prompts, verification, reviews, merges, documents | this file |
 | **«مشرف مراجعة التصميم #81»** | design review round 2 (Issue #81) | `DESIGN\ROUND2\HANDOFF_DESIGN_81.md` (idle since 2026-10-20) |
 
-A **logo worker** may run with the owner on `TASKS\LOGO\HANDOFF_LOGO.md` — not yours until he brings its decision.
-
 ## 1. Your role and how you speak
 
-- **Arabic** with the owner — **plain, colloquial-leaning Arabic, with every technical or on-screen term in English**
-  (Connect, Copy snippet, Environment Variables, Redeploy…); never over-translate. UI tasks as short numbered
-  click-by-click steps. No line starts with an English word or a code token; decisions as items with options and a
-  recommendation, never tables; short first. **English** in every prompt and plan.
-- You run in `C:\dev\masaha\app` but **never edit the repository**. Read-only git and `gh`; you write in the
-  workspace. **Merge only with the owner's word**: `gh pr merge <n> --merge --match-head-commit <full sha>` (or the
-  owner merges on GitHub — then check the head he merged is the one you reviewed); delete the branch (remote, local)
-  and its `backup/*`; `app` → `git switch main` + `pull --ff-only`; `app-b` → `git switch --detach origin/main`;
-  `npm ci` only if `package-lock.json` moved; `npm run build -w @masaha/shared`; after a schema change `migrate
-  deploy` + `generate` on the databases. Update `BOARD.md` (and this file at a milestone).
-- **Every merge to `main` deploys to production** (Vercel, from `main` only). Say so before asking for a merge.
-- **Verify every worker report in the code** before believing it: head, `gh pr checks` green, `CLEAN`, subjects
-  ≤ 50 with a body, no tool attribution, no `fixup!`, no `#PRNUM`, the scope, the claims that matter — **and look at
-  the worker's screenshots yourself**. OpenCode's report was wrong twice on #134 ("text identical", "renders
-  correctly" while raw `<strong>` tags showed and two words differed): never trust a non-Claude report unchecked.
-  A text the owner approved is compared sentence by sentence with a script (bold splits cause false positives).
+- **Arabic** with the owner — **plain, colloquial-leaning Arabic, with every technical or on-screen term in English**;
+  never over-translate. UI tasks as short numbered click-by-click steps. No line starts with an English word or a code
+  token; decisions as items with options and a recommendation, never tables; short first. **English** in every prompt
+  and plan.
+- You run in `C:\dev\masahapp` but **never edit the repository** (exception: the owner asked the supervisor to
+  rebuild the directory's price block live in the prototype on 2026-11-07 — only on his explicit word). Read-only git
+  and `gh`; you write in the workspace. **Merge only with the owner's word**: `gh pr merge <n> --merge
+  --match-head-commit <full sha>`; then delete the branch (remote, local) and its `backup/*`, `app` → `git switch
+  main` + `pull --ff-only`; `npm ci` only if `package-lock.json` moved; `npm run build -w @masaha/shared`; after a
+  schema change `migrate deploy` + `generate`. Update `BOARD.md` (and this file at a milestone).
+- **Every merge to `main` deploys to production** (Vercel). Say so before asking for a merge.
+- **Verify every worker report in the code** before believing it (head, `gh pr checks`, `CLEAN`, subjects ≤ 50 with a
+  body, no tool attribution, no `fixup!`, no `#PRNUM`, scope, the claims that matter) — **and look at the screens
+  yourself** (the prototype at 390/768/1024/1440, AR/EN, light/dark). Never trust a non-Claude report unchecked.
+- **The owner's bar:** production-ready, no errors; he reacts strongly to sloppy UI and to unexplained disabled
+  controls. **Never revive a decision he cancelled** without asking.
 - **The owner sets each day's work.** Delegated points ("as your recommendation") → the safest option, logged.
-- **claude.ai is the owner's company account:** Artifacts are fine while working, but a finished deliverable is
-  saved locally (workspace) and the Artifact deleted (the owner's rule). Masaha deliverables live in the workspace.
-- **Token budget:** on 2026-11-05 the owner's weekly Claude usage reached 99% — the supervisor role moved to a
-  non-Claude model until it renews (about 2026-11-07); workers are OpenCode.
+- **claude.ai is the owner's company account:** Artifacts fine while working; deliverables saved in the workspace.
+- **Local servers the supervisor used:** `C:\dev\masahapp\.claude\launch.json` (excluded from git through
+  `.git/info/exclude`): `prototype` on 5325 (serves `app`'s `docs/design/prototype`), `profile-mockup` on 5330.
 
 ## 2. State (start here)
 
-> **`main` = `77abda30` (#136, 2026-11-05). Masaha v1 is built and LIVE at `https://masaha-omega.vercel.app`.**
-> - **#133** the deployment (Vercel + Neon Frankfurt, CSP headers, migrations on production deploys, the runbook in
->   `docs/development/setup.md` › *The deployment*). **#134** the privacy page in the prototype (screen **33**).
->   **#135** the privacy page `/privacy` in the web + the cron documents at 60 minutes. **#136** single-page
->   pagination hidden (`ListPagination`, all 16 lists) + a stray dot on the privacy page.
-> - **Live setup (all done by the owner; no secret is ever written here):** Vercel project `masaha` (Hobby), env vars
->   in Production (`DIRECT_URL` for migrations, `TRUST_PROXY=1`, `NODEJS_HELPERS=0`, SMTP via the Gmail account
->   `masahatgaza@gmail.com`, Cloudinary, `JOBS_SECRET`); **cron-job.org** calls `/api/v1/internal/jobs/run` **every
->   60 minutes** (200 OK); **Google sign-in published** (Branding filled, support email masahatgaza, no logo yet;
->   OAuth client in the owner's personal Google Cloud project "My First Project", masahatgaza added as Owner).
->   The live site holds the 13 real spaces the owner entered (all unverified → Home's «المتاحة الآن» is empty there).
-> - **Known live issue:** the reset email lands in **spam** (new Gmail, no own domain — ADR 0014's email deviation);
->   the "link sent" screen already tells users to check spam. Real fix at launch: own domain + SPF/DKIM/DMARC.
-> - **Open findings:** **23, 65, 152** — measured after about a week of live use (from ~2026-11-12): 65 the reset
->   send's timing in Vercel's logs, 23 the per-address ceiling from usage, 152 the audit table's size in Neon.
->   Highest finding on `main`: **213**; the next free is **214** (check the index first).
-> - **The presentation (2026-11-03, a training course) was held successfully,** demoed from the local environment.
->   `masaha_dev` still holds that **DEMO_SHOW** data (13 real spaces + 24 seed spaces with ChatGPT covers, Pal Hub run
->   by «أحمد الشوا» / «ليلى النجار», 50 users, two months of activity). `TASKS\DEMO_SHOW\RUN.md` has the accounts,
->   `today.ts` (refreshes "present now") and the rebuild; the pre-demo backup is
->   `TASKS\DEMO_SHOW\scripts\masaha_dev_before.dump`. **Never `db:seed` it** (the seed brings back a full space).
+> **2026-11-08 update: `main` = `7fb73c3c`: #139 (DIRECTORY_PROD, done) then #138 (SPACE_PROFILE's prototype round).
+> Next: SPACE_PROFILE's production step, the women + evening task, the palette lab. See `BOARD.md`.**
+> **`main` = `40cb481d` (#137, 2026-11-07). Masaha v1 is LIVE at `https://masaha-omega.vercel.app`.**
+> - Live setup, the spam issue, DEMO_SHOW data in `masaha_dev` (**never `db:seed` it**), the presentation: unchanged —
+>   see the archived handoff (`_SHARED\HANDOFFS\HANDOFF_2026-11-05_to_11-08.md` §2).
+> - **Open findings:** 23, 65, 152 (measured from ~2026-11-12); **214** (the flaky Home test, fixed inside
+>   DIRECTORY_PROD); **215** (the prototype's Home and `TodayHours`, recorded by DIRECTORY_PROD). Check the index.
 > - Open Issues: #72 (postponed), #81 (design round 2). `app-review` is old (`0ec43b61`), the owner's call.
-> - **The owner's order (2026-11-05):** the refactor goes **page by page, in order**; the **full project review**
->   waits until the owner says he is ready. The **visual identity** runs in parallel.
+> - **The owner's order:** the refactor goes page by page; the full project review waits for his word.
+> - **Worktrees:** `app` = DIRECTORY_PROD's executor (`feat/directory-filters`, work in progress); `app-b` = the
+>   palette lab (`design/palette-lab`); `app-design` = SPACE_PROFILE's prototype worker (`design/space-profile`, from
+>   2026-11-08); `app-review` = old.
 
-## 2a. Active work (2026-11-05 evening) — two OpenCode workers, both local, no PR, no push
+## 2a. Active work (2026-11-08)
 
-**A. DIRECTORY_FILTERS — refactor round 1, the directory page «المساحات»** (`TASKS\DIRECTORY_FILTERS\`).
-- Worker: OpenCode in `app`, branch `refactor/directory-filters` (local). Prototype only (`docs/design/`); the web
-  and API come later **on the same branch**, and that PR's first commit carries #136's two nits.
-- The first build was **rejected by the owner** (chips everywhere; the amenities filter came back — the supervisor's
-  fault: the owner cancelled amenities on 2026-10-12). Kept as `backup/directory-filters-1`.
-- **Final decisions = `0_OWNER_DECISIONS.md` › Revision 1 (R1–R6)**: no chips anywhere; the price sort is one Select
-  of whole options («السعر الشهري: الأقل أولًا»…, four subscriptions × two directions), a space without that price
-  leaves the list and the card shows the price; no amenities; «متاحة الآن» and «مفتوحة الآن» out of the filters
-  (a live-status architecture decision is coming — do not touch it); «أخرى» = three checkboxes (students, Friday,
-  evening ≥ 20:00); the place = one dropdown «اختر المنطقة» with a search and six collapsible rows (five governorates
-  + «كل المناطق»), one choice, `?gov=` for a whole governorate.
-- **State:** the correction `3_EXEC_PROMPT_FIX1.md` was handed to the worker (or is about to be). Next: the worker
-  stops with URLs and screenshots in `Downloads\directory-filters-shots\fix1\` → you check them yourself (§1) with the
-  owner → his notes go to the same session → the report `4_REPORT.md`. Then plan the web/API step (the
-  production notes are at the end of Revision 1: `Combobox` collapsible groups, `sort=price`, `governorate`,
-  `evening`, the docs and decisions D4/U1/U5).
-- **The owner's bar: production-ready, no errors.** He reacts strongly to sloppy UI — check at 390/768/1440, AR/EN,
-  light/dark before showing him anything.
+**A. DIRECTORY_PROD — the directory's filters in web + API** (`TASKS\DIRECTORY_PROD\`).
+- Decisions 1–15 + the plan's OD1–OD7 (all as the planner recommended) in `0_OWNER_DECISIONS.md`; plan `2_PLAN.md`
+  (654 lines, a numbered test matrix); executor prompt `3_EXEC_PROMPT.md` — a **fresh Claude Code session** (Opus 5.5
+  high) in `app` on `feat/directory-filters`, expected **PR #138**, five commits, ~90 files. Running now.
+- The owner's bar for it: **tests that work and point the right way, never bent; filter tests without a gap.**
+- Next: verify its report and CI yourself; recommend a separate Claude review (≈90 files) — the owner decides; the
+  merge is his word. **The women + evening task must start only after this PR merges** (same filter files).
 
-**B. IDENTITY — the palette lab** (`TASKS\IDENTITY\`).
-- Worker: OpenCode in `app-b`, branch `design/palette-lab` (local, `37e7bca7`), new files only
-  (`docs/design/prototype/Palette lab.html`, `masaha/palette-lab.js`); serve on port 5401.
-- **The owner's favourite: Sea sunset** (brand-600 `#AB432D`, blue-grey neutrals); all 38 contrast pairs pass; the
-  lab warns of a clash with red (destructive).
-- **Next (proposed, awaiting the owner's yes):** lab round 2 — a "Status check" screen (primary beside destructive),
-  "Sea sunset 2" (hue toward orange) and "Sea sunset 3" (destructive moved to crimson), and the "copy values" bug
-  (it prints a literal `\n`). The exact worker note: `TASKS\IDENTITY\3_EXEC_PROMPT_LAB_R2.md` (done: Sea sunset 2 and 3
-  exist). **Round 3** (`3_EXEC_PROMPT_LAB_R3.md`): the theme bug (light shows dark), a sticky toolbar, a palette
-  gallery with favourites and a compare mode, no nested scrollbars, and 10 new palettes. Then the owner picks one → the logo is drawn in it (`TASKS\LOGO\`, SVG; words stay in the real
-  font) → colour + logo decided together → `foundation.md` §4, the prototype's and the web's tokens, Google
-  Branding. Whether the lab lands in the repo is decided then.
+**B. SPACE_PROFILE — the owner's space profile + the admin's editor** (`TASKS\SPACE_PROFILE\`).
+- Every section decided with the owner, one by one, in `0_OWNER_DECISIONS.md` (G, H, P, R, W, S, A, B, L, C and the
+  post-mock-up **M1–M4**, which override earlier lines). The owner tried the interactive mock-up
+  `mockup\index.html` and **approved it officially** (its phone header overflow is a mock-up bug; M2 says the fix).
+- Next: the prototype round — `3_PLAN_AND_EXEC_PROMPT.md` (a worker in `app-design`: short plan, build at once, stop
+  **uncommitted** for review; commit/push/PR only on the owner's word). Then production (plan → approval → a fresh
+  executor), where a **drag-and-drop dependency is approved** and **the contacts' new types / «وسيلة أخرى» need a
+  migration** the plan must name.
 
-**Later:** design round 2 (#81, 10 reviews left), #72; findings 23, 65, 152 measured from ~2026-11-12.
+**C. IDENTITY — the palette lab** (`TASKS\IDENTITY\`): OpenCode in `app-b` (`design/palette-lab`, new files only,
+port 5401). The owner favours **Sea sunset**; rounds 2 (status check, Sea sunset 2/3, copy-values bug) and 3
+(`3_EXEC_PROMPT_LAB_R3.md`: the theme bug, the desktop preview at 1440 (bug 5), a toolbar, a gallery with favourites
+and compare, 10 new palettes). Then: the owner picks → the logo in it (`TASKS\LOGO\`) → tokens. Watch
+`foundation.md` (DIRECTORY_PROD adds `SegmentedControl` there).
+
+**D. WOMEN + EVENING** (one task, not started): spaces with a women's hall / women-only, and the owner-declared
+evening hours; the direction approved, the details decided when it starts — **after DIRECTORY_PROD merges**.
+
+**Later:** design round 2 (#81), #72; findings 23, 65, 152.
 
 ## 3. The owner's standing rules
 

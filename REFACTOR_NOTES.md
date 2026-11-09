@@ -34,4 +34,17 @@ presentation). Each one is checked in the code and becomes a finding or a work i
   **Revised the same day (Revision 1, `3_EXEC_PROMPT_FIX1.md`):** no chips anywhere; the price sort is one Select of
   whole options; no amenities, no live/open-now filters for now; «أخرى» as checkboxes with «مساءً»; the place is one
   dropdown with a search and six collapsible rows (five governorates + «كل المناطق»), one choice, `?gov=` for a whole
-  governorate.
+  governorate. **Final: Revision 2 (2026-11-07)** in `0_OWNER_DECISIONS.md` — segmented subscription + range, the
+  direction in the sort, «الدوام» (open now / evening / Friday), «أخرى» (verified / students); «مفتوحة الآن» by hours
+  for every space (ADR 0008 revision owed in the production step); «ممتلئ» a badge; hours optional; women's spaces
+  approved as a direction (own ticket later). Worker prompt: `3_EXEC_PROMPT_FINAL.md`.
+  **Merged 2026-11-07 as #137 (`40cb481d`, prototype only).** The web/API step is still owed (new branch, new PR):
+  the production notes in `0_OWNER_DECISIONS.md` › Revision 1's end and Revision 2 (A1–A4), ADR 0008's revision,
+  a segmented-control component in the design system, `openNow`/`evening`/`sort=price` in the API.
+- **2026-11-07 — a flaky component test (to fix in its own small PR, record as finding 214 — check the index
+  first):** `apps/web/src/pages/site/public/home/HomePage.component.test.tsx` › «Set my location on the map» starts
+  the pick on the Directory's map — after navigating to `/spaces?view=map` it waits for the searchbox with
+  `findByRole`'s default 1 s; under CI load the lazy map view takes longer. It failed twice on #137 (which changed no
+  app code; it passes locally alone; main's last runs passed). #137 was merged on the owner's word with that one
+  check red. Fix: wait for the route's content properly (a longer `findByRole` timeout, or await the lazy chunk),
+  no production change.
