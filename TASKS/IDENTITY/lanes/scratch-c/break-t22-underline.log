@@ -1,0 +1,33 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-c/apps/api
+
+ ❯ |unit| src/modules/auth/email/resetEmail.unit.test.ts (9 tests | 1 failed) 13ms
+   ❯ resetEmail (8)
+     × writes its links in #1a1f25 ink, the one in the English text underlined 6ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  13:17:54
+   Duration  338ms (transform 57%, import 23%, tests 13%, worker 7%)
+
+
+--- stderr ---
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/auth/email/resetEmail.unit.test.ts > resetEmail > writes its links in #1a1f25 ink, the one in the English text underlined
+AssertionError: expected 'color:#1a1f25;' to contain 'text-decoration:underline;'
+
+Expected: "text-decoration:underline;"
+Received: "color:#1a1f25;"
+
+ ❯ src/modules/auth/email/resetEmail.unit.test.ts:87:21
+     85|
+     86|     expect(english).toContain('color:#1a1f25;');
+     87|     expect(english).toContain('text-decoration:underline;');
+       |                     ^
+     88|     expect(asText).toHaveLength(2);
+     89|     for (const style of asText) expect(style).toContain('color:#1a1f25…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

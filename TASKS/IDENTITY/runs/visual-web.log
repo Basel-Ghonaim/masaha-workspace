@@ -1,0 +1,202 @@
+
+> dev
+> npm run dev -w @masaha/web
+
+
+> @masaha/web@0.0.0 dev
+> vite
+
+[2m1:42:15 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because vite config has changed
+
+  [32m[1mVITE[22m v8.3.1[39m  [2mready in [0m[1m630[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5323[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m1:42:16 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] scanning dependencies...
+[2m1:42:18 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] bundling dependencies...
+[2m1:56:29 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mYou are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.
+[2m2:07:13 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:07:31 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:10:56 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:11:14 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:17:54 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:17:57 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:18:23 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:18:26 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:18:36 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:18:40 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:11 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:15 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:21 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:25 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:37 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:41 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:19:58 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:20:03 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:20:37 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:20:40 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:21:01 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mYou are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.
+[2m2:21:04 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:21:08 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:21:38 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:21:41 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:22:16 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:23:22 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:23:25 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:23:53 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:23:55 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:24:25 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:27:26 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:33:01 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:33:04 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:33:28 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:33:32 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:34:02 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:34:06 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:34:32 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mYou are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.
+[2m2:34:46 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:34:56 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:34:58 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:41:57 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:50:16 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:50:40 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/Button/Button.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:50:40 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteMenu.tsx[22m
+[2m2:50:40 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/occupancy/components/LiveStatusControl.tsx[22m
+[2m2:50:53 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteMenu.tsx[22m
+[2m2:50:55 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteMenu.tsx[22m
+[2m2:53:09 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/photos/PhotosEdit.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/card/SpaceCard.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/ContactList.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/finance/components/DebtsTab.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/occupancy/components/LiveStatusControl.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/overview/components/admin/PlatformTiles.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/overview/components/owner/OwnerOverview.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/contacts/ContactsSheet.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/photos/PhotosEdit.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/shell/AdminLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/FieldSection.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/navigation/SidebarSection.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/RegisterPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/contacts/ContactsView.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/AreaCards.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/photos/PhotosView.tsx[22m
+[2m2:55:03 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/shell/FocusLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/display/LogoSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/display/Logo/Logo.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/design-system/components/display/Logo/index.ts[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/display/Logo/Logo.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/shell/AdminLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/components/data/DataTable/DataTable.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/data/Table/Table.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/display/FilterTag/FilterTag.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcasePreview.tsx, /src/pages/showcase/ShowcasePage.tsx, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcasePreview.tsx, /src/pages/showcase/ShowcasePage.tsx, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/feedback/Skeleton/Skeleton.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/components/fields/Calendar/Calendar.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Combobox/Combobox.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/FieldSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/SortableSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Input/Input.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/SegmentedControl/SegmentedControl.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/navigation/SidebarSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Select/Select.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/ToggleGroup/ToggleGroup.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/RegisterPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/navigation/Tabs/Tabs.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/design-system/index.ts[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/AreaCards.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/shell/FocusLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteFooter.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteHeader.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteMenu.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/Button/Button.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/leaflet.css[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/shell/AdminLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcasePreview.tsx, /src/pages/showcase/ShowcasePage.tsx, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/navigation/SidebarSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/design-system/index.ts[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcasePreview.tsx, /src/pages/showcase/ShowcasePage.tsx, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/display/LogoSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/card/SpaceCard.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/ContactList.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/finance/components/DebtsTab.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/overview/components/admin/PlatformTiles.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/overview/components/owner/OwnerOverview.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/contacts/ContactsSheet.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/SortableSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/AreaCards.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/Button/Button.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/components/data/DataTable/DataTable.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/data/Table/Table.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/display/FilterTag/FilterTag.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/components/fields/Calendar/Calendar.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Combobox/Combobox.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Input/Input.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Select/Select.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/SegmentedControl/SegmentedControl.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/ToggleGroup/ToggleGroup.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/navigation/Tabs/Tabs.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/leaflet.css[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/card/SpaceCard.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/directory/components/page/ContactList.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/finance/components/DebtsTab.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/overview/components/admin/PlatformTiles.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/overview/components/owner/OwnerOverview.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/contacts/ContactsSheet.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/contacts/ContactsView.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/ShowcaseNav.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/SortableSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/public/home/AreaCards.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/Button/Button.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/components/data/DataTable/DataTable.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/data/Table/Table.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/display/FilterTag/FilterTag.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/components/fields/Calendar/Calendar.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/fields/Combobox/Combobox.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/occupancy/components/LiveStatusControl.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteMenu.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/actions/Button/Button.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/FieldSection.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/auth/RegisterPage.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteFooter.tsx[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/design-system/components/display/Logo/drawing.ts[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/shared/design-system/components/display/Logo/index.ts[22m
+[2m2:55:04 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/display/Logo/Logo.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/photos/PhotosEdit.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/showcase/sections/fields/SortableSection.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/navigation/Tabs/Tabs.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/shared/design-system/leaflet.css[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/contacts/ContactsSheet.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/photos/PhotosEdit.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/components/feedback/Skeleton/Skeleton.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/features/spaces/components/photos/PhotosView.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/dashboard/shell/AdminLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/site/shell/FocusLayout.tsx, /src/shared/design-system/tokens/tailwind.css?direct[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteHeader.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/shared/design-system/tokens/tailwind.css?direct, /src/pages/site/shell/SiteMenu.tsx[22m
+[2m2:55:05 PM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mindex.html[22m
+[2m2:59:03 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mYou are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL.
+[2m2:59:19 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+[2m2:59:23 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mCouldn't load preload assets:  {"isTrusted":true}
+npm error Lifecycle script `dev` failed with error:
+npm error code 4294967295
+npm error path C:\dev\masaha\app-design\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-design\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vite

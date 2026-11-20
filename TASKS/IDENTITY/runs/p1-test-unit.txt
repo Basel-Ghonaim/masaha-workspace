@@ -1,0 +1,75 @@
+
+> test:unit
+> npm run test:unit --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/packages/shared
+
+
+ Test Files  28 passed (28)
+      Tests  323 passed (323)
+   Start at  12:19:58
+   Duration  3.49s (import 65%, transform 27%, tests 6%, worker 2%)
+
+  Transform  transforming modules took 4.01s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/api
+
+
+ Test Files  77 passed (77)
+      Tests  921 passed (921)
+   Start at  12:20:02
+   Duration  8.68s (import 59%, transform 21%, tests 17%, worker 2%)
+
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/pages/showcase/registry.unit.test.ts (9 tests | 1 failed) 49ms
+   ❯ the showcase registry (5)
+     × has an entry, in the same category, for every component folder 18ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/pages/showcase/registry.unit.test.ts > the showcase registry > has an entry, in the same category, for every component folder
+AssertionError: no entry for display/Logo: expected undefined to be defined
+ ❯ src/pages/showcase/registry.unit.test.ts:28:71
+     26|       const name = COVERED_BY[folder.name] ?? folder.name;
+     27|       const found = ENTRIES.find((item) => item.name === name);
+     28|       expect(found, `no entry for ${folder.category}/${folder.name}`).…
+       |                                                                       ^
+     29|       expect(found?.category, folder.name).toBe(folder.category);
+     30|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 190 passed (191)
+      Tests  1 failed | 1307 passed (1308)
+   Start at  12:20:11
+   Duration  35.29s (import 69%, transform 21%, tests 9%, worker 2%)
+
+    Isolate  191 workers spawned · ~719ms startup each (spawn + environment, per file)
+             at least ~11.76s faster with isolate: false — reuses workers across files instead of one per file
+
+npm error Lifecycle script `test:unit` failed with error:
+npm error code 1
+npm error path C:\dev\masaha\app-design\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-design\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run --project unit

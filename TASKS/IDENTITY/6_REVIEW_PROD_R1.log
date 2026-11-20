@@ -1,0 +1,24 @@
+I've reviewed the colour-system commits of #144 (role R1). My verdict: **mergeable after a fix round**. There are no blockers, three should-fix findings and two nits. CI was green on `4cff26c7`, and the head did not move during the review (still `CLEAN`). As the review prompt requires, I ran nothing: no tests, servers or browser.
+
+**Should-fix:**
+1. **Contact tile caption contrast on hover.** In the space profile's contact tiles (`ContactsView.tsx:20`, `:29`), the grey caption (the phone number or address) keeps its muted colour when the tile is hovered. That drops it to about 4.41:1 in light and 4.17:1 in dark, below the 4.5 minimum. Before this PR it measured above 4.5. The token test doesn't cover this text-and-background pair, and foundation §5 says text on that hover should be the full text colour. Fix: make the caption switch to the full text colour on hover, as the table's sort header and the segmented control already do.
+2. **Hover looks the same as selected in dark, in three places.** Dark mode now uses the same fill for hover and for the `secondary` colour. Three places still draw "current" or "pressed" with `secondary`, so a hovered item looks selected:
+   - the account navigation (`AccountLayout.tsx:31`);
+   - the space editor's section index (`SectionIndex.tsx:39`);
+   - the «الأقرب إليّ» button (`NearMeButton.tsx:20`).
+
+   The lead fixed this exact problem in the phone menu (SiteMenu) but didn't look for it elsewhere. Fix: apply the same treatment (the selected tint, no hover). For the «الأقرب إليّ» toggle, the owner should choose its look.
+3. **`check:classes` gap.** The new rule misses other spellings of the same states, such as `data-[state=open]:bg-accent` (common in older copied menu code), `aria-[expanded=true]:`, `data-[highlighted]:` and `active:`. Lane A noted this gap only in its own report: there is no finding for it and foundation §3 doesn't mention it. Fix: treat those spellings as the states they stand for, add test cases and one line in §3. If the owner declines, record it as finding 227.
+
+All three fixes fold into commit e1cc1a7f ("tell hover from selected").
+
+**Nits:**
+- **Row menus have no hover of their own.** The «⋯» button inside a hovered table row uses the same fill as the row, in both themes. This already happened under Sea, so the PR didn't cause it. It should be recorded as finding 226.
+- **The colour-maths test is partly blind.** I checked every constant against the published values, and all are correct today. But one half of the conversion is never checked against a hand-written colour, so a future typo there would go unnoticed. One fixed expectation closes it: dark `accent` paints `#471f46` (the visual pass's Chrome measurement). It folds into c602db41.
+
+On the rest of my rows: the token values match the approved plan, and tests T1–T12 and T20 are present; each would fail on its planned break, except for the gaps above (the test fails only partly on a wrong constant; the class check misses those spellings). No assertion was loosened against `main`. The switch from OKLCH to OKLab mixes is a sound deviation. ADR 0019 stays short and names no files or code.
+
+My figures for the contrast drop and the masked constant are hand calculations, because running a local Python check needed your approval. The browser colour values I used come from the visual pass, not my own measurement.
+
+Files are in `C:\dev\masaha\workspace\TASKS\IDENTITY`:
+- 6_REVIEW_PROD_R1.md

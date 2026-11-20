@@ -1,0 +1,496 @@
+[
+ {
+  "id": "OW-01",
+  "part": "OW",
+  "screen": "12 Overview (O)",
+  "state": "the work queue, people present (NS1)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26"
+ },
+ {
+  "id": "OW-02",
+  "part": "OW",
+  "screen": "17 Payments (O)",
+  "state": "a week with 70 payments, page 1 of 4",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/payments?from=2026-10-27&to=2026-11-02"
+ },
+ {
+  "id": "OW-03",
+  "part": "OW",
+  "screen": "17 Payments (O)",
+  "state": "voided payments shown",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/payments?from=2026-10-19&to=2026-10-25&voided=1"
+ },
+ {
+  "id": "OW-04",
+  "part": "OW",
+  "screen": "17 Payments (O)",
+  "state": "today (the page's landing; NS2's payments)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/payments"
+ },
+ {
+  "id": "OW-05",
+  "part": "OW",
+  "screen": "17 Payments (O)",
+  "state": "filters that match nothing",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/payments?from=2026-11-01&to=2026-11-01&staff=3&method=TRANSFER&kind=SUBSCRIPTION"
+ },
+ {
+  "id": "OW-06",
+  "part": "OW",
+  "screen": "17 Payments (O)",
+  "state": "filters bottom sheet open",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/payments",
+  "widths": [
+   390
+  ],
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الفلاتر",
+     "en": "text:Filters"
+    },
+    "wait": 700
+   }
+  ]
+ },
+ {
+  "id": "OW-07",
+  "part": "OW",
+  "screen": "17 Payments (O)",
+  "state": "void a payment: confirmed with no reason",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/payments?from=2026-11-02&to=2026-11-02",
+  "steps": [
+   {
+    "click": "css:button[data-row-action]",
+    "nth": 0,
+    "wait": 400
+   },
+   {
+    "click": {
+     "ar": "text:إلغاء الدفعة…",
+     "en": "text:Void payment…"
+    },
+    "wait": 600
+   },
+   {
+    "click": {
+     "ar": "text:إلغاء الدفعة",
+     "en": "text:Void payment"
+    },
+    "within": "css:[role=alertdialog]",
+    "wait": 400
+   }
+  ]
+ },
+ {
+  "id": "OW-08",
+  "part": "OW",
+  "screen": "19 Finance & statistics (O)",
+  "state": "income, this month",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/finance",
+  "settle": 900
+ },
+ {
+  "id": "OW-09",
+  "part": "OW",
+  "screen": "19 Finance & statistics (O)",
+  "state": "debts",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/finance?tab=debts"
+ },
+ {
+  "id": "OW-10",
+  "part": "OW",
+  "screen": "19 Finance & statistics (O)",
+  "state": "occupancy, October",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/finance?tab=occupancy&month=2026-10",
+  "settle": 900
+ },
+ {
+  "id": "OW-11",
+  "part": "OW",
+  "screen": "21 Prices & packages (O)",
+  "state": "the published prices and 6 private packages (one paused)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/packages"
+ },
+ {
+  "id": "OW-12",
+  "part": "OW",
+  "screen": "21 Prices & packages (O)",
+  "state": "new package sheet, saved empty",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/packages",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:باقة جديدة",
+     "en": "text:New package"
+    },
+    "wait": 700
+   },
+   {
+    "click": {
+     "ar": "text:حفظ الباقة",
+     "en": "text:Save package"
+    },
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "OW-13",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "the whole profile",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile",
+  "settle": 1200
+ },
+ {
+  "id": "OW-14",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "an open report's notice in its section",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile?report=1#report",
+  "settle": 1200
+ },
+ {
+  "id": "OW-15",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "hours sheet",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile?sheet=hours#hours",
+  "settle": 1200
+ },
+ {
+  "id": "OW-16",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "published prices sheet",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile?sheet=prices#prices",
+  "settle": 1200
+ },
+ {
+  "id": "OW-17",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "about sheet, the English name cleared and saved",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile?sheet=about#about",
+  "settle": 900,
+  "steps": [
+   {
+    "clear": {
+     "ar": "field:الاسم بالإنجليزية",
+     "en": "field:Name in English"
+    }
+   },
+   {
+    "click": {
+     "ar": "text:حفظ",
+     "en": "text:Save"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "OW-18",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "discard question after an edit",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile?sheet=about#about",
+  "settle": 900,
+  "steps": [
+   {
+    "type": {
+     "ar": "field:الاسم بالإنجليزية",
+     "en": "field:Name in English"
+    },
+    "text": "Pal Hub Gaza"
+   },
+   {
+    "click": {
+     "ar": "text:رجوع",
+     "en": "text:Back"
+    },
+    "within": "css:[role=dialog]",
+    "nth": 0,
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "id": "OW-19",
+  "part": "OW",
+  "screen": "20 Space profile (O)",
+  "state": "photos in manage mode",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/profile#photos",
+  "settle": 1000,
+  "steps": [
+   {
+    "click": {
+     "ar": "text:إدارة الصور",
+     "en": "text:Manage photos"
+    },
+    "wait": 700
+   }
+  ]
+ },
+ {
+  "id": "OW-20",
+  "part": "OW",
+  "screen": "18 Announcements (O+R)",
+  "state": "active (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/announcements"
+ },
+ {
+  "id": "OW-21",
+  "part": "OW",
+  "screen": "18 Announcements (O+R)",
+  "state": "ended, a closure already extended",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/announcements?state=ended"
+ },
+ {
+  "id": "OW-22",
+  "part": "OW",
+  "screen": "18 Announcements (O+R)",
+  "state": "new announcement, a temporary closure chosen",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/announcements",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:إعلان جديد",
+     "en": "text:New announcement"
+    },
+    "nth": 0,
+    "wait": 700
+   },
+   {
+    "click": {
+     "ar": "text:إغلاق مؤقت",
+     "en": "text:Temporary closure"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 400
+   }
+  ]
+ },
+ {
+  "id": "OW-23",
+  "part": "OW",
+  "screen": "18 Announcements (O+R)",
+  "state": "new announcement, published empty",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/announcements",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:إعلان جديد",
+     "en": "text:New announcement"
+    },
+    "nth": 0,
+    "wait": 700
+   },
+   {
+    "click": {
+     "ar": "text:نشر الإعلان",
+     "en": "text:Publish"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "OW-24",
+  "part": "OW",
+  "screen": "23 Data reports (O)",
+  "state": "three reports, one new",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/reports"
+ },
+ {
+  "id": "OW-25",
+  "part": "OW",
+  "screen": "23 Data reports (O)",
+  "state": "deciding a report: not accepted with no reply",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/reports?open=1",
+  "settle": 800,
+  "steps": [
+   {
+    "click": {
+     "ar": "text:لم يُعتمد",
+     "en": "text:Not accepted"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "OW-26",
+  "part": "OW",
+  "screen": "22 Staff (O)",
+  "state": "one reception account",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/staff"
+ },
+ {
+  "id": "OW-27",
+  "part": "OW",
+  "screen": "22 Staff (O)",
+  "state": "a row's menu (a held item with its reason)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/staff",
+  "steps": [
+   {
+    "click": {
+     "ar": "css:button[aria-label^=\"إجراءات: \"]",
+     "en": "css:button[aria-label^=\"Actions: \"]"
+    },
+    "nth": 0,
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "OW-28",
+  "part": "OW",
+  "screen": "22 Staff (O)",
+  "state": "add staff, sent empty",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/staff",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:إضافة موظف",
+     "en": "text:Add staff member"
+    },
+    "wait": 700
+   },
+   {
+    "click": {
+     "ar": "text:إنشاء حساب الاستقبال",
+     "en": "text:Create the reception account"
+    },
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "OW-29",
+  "part": "OW",
+  "screen": "22 Staff (O)",
+  "state": "remove access: the question",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/staff",
+  "steps": [
+   {
+    "click": {
+     "ar": "css:button[aria-label^=\"إجراءات: \"]",
+     "en": "css:button[aria-label^=\"Actions: \"]"
+    },
+    "nth": 0,
+    "wait": 500
+   },
+   {
+    "click": {
+     "ar": "text:إيقاف وصوله",
+     "en": "text:Remove access"
+    },
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "id": "OW-30",
+  "part": "OW",
+  "screen": "31 Audit log (O13, owner's)",
+  "state": "last 30 days, page 1 of 45",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/audit"
+ },
+ {
+  "id": "OW-31",
+  "part": "OW",
+  "screen": "31 Audit log (O13, owner's)",
+  "state": "filters bottom sheet open",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/audit",
+  "widths": [
+   390
+  ],
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الفلاتر",
+     "en": "text:Filters"
+    },
+    "wait": 700
+   }
+  ]
+ },
+ {
+  "id": "OW-32",
+  "part": "OW",
+  "screen": "24 Settings (O)",
+  "state": "every card",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/settings"
+ },
+ {
+  "id": "OW-33",
+  "part": "OW",
+  "screen": "24 Settings (O)",
+  "state": "capacity 0 saved: unsaved changes and the field's error",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/settings",
+  "steps": [
+   {
+    "type": {
+     "ar": "field:السعة",
+     "en": "field:Capacity"
+    },
+    "text": "0"
+   },
+   {
+    "click": {
+     "ar": "text:حفظ",
+     "en": "text:Save"
+    },
+    "nth": 0,
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "id": "OW-34",
+  "part": "OW",
+  "screen": "12 Overview (O)",
+  "state": "evening: after Pal Hub's closing (Friday 20:00 Gaza; taken after 18:00 UTC)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26",
+  "after": "18:00Z"
+ }
+]

@@ -1,0 +1,61 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx (10 tests | 2 failed) 326ms
+   ❯ Logo (10)
+     × draws the full logo in its frame: the words in the ink, the dots in the spark 27ms
+     × draws the mark in its square frame: the ة twice in the ink, the dots in the spark 16ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx > Logo > draws the full logo in its frame: the words in the ink, the dots in the spark
+AssertionError: expected [ 'fill-foreground', 'fill-primary' ] to deeply equal [ 'fill-foreground', 'fill-spark' ]
+
+- Expected
++ Received
+
+  [
+    "fill-foreground",
+-   "fill-spark",
++   "fill-primary",
+  ]
+
+ ❯ src/shared/design-system/components/display/Logo/Logo.component.test.tsx:33:24
+     31|
+     32|     expect(svg).toHaveAttribute('viewBox', '263 45 2473 903');
+     33|     expect(fills(svg)).toEqual(['fill-foreground', 'fill-spark']);
+       |                        ^
+     34|     expect(container.querySelectorAll('svg svg')).toHaveLength(0);
+     35|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx > Logo > draws the mark in its square frame: the ة twice in the ink, the dots in the spark
+AssertionError: expected [ 'fill-foreground', …(2) ] to deeply equal [ 'fill-foreground', …(2) ]
+
+- Expected
++ Received
+
+  [
+    "fill-foreground",
+    "fill-foreground",
+-   "fill-spark",
++   "fill-primary",
+  ]
+
+ ❯ src/shared/design-system/components/display/Logo/Logo.component.test.tsx:42:24
+     40|
+     41|     expect(svg).toHaveAttribute('viewBox', '190 17 778 778');
+     42|     expect(fills(svg)).toEqual(['fill-foreground', 'fill-foreground', …
+       |                        ^
+     43|   });
+     44|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed (10)
+   Start at  12:09:58
+   Duration  6.84s (environment 44%, import 35%, setup 12%, tests 5%, transform 4%)
+

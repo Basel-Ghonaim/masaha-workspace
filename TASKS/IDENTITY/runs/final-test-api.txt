@@ -1,0 +1,48 @@
+[heavy] waiting 60 s (try 1 of 45)
+[heavy] waiting 60 s (try 2 of 45)
+[heavy] waiting 60 s (try 3 of 45)
+[heavy] waiting 60 s (try 4 of 45)
+[heavy] waiting 60 s (try 5 of 45)
+[heavy] waiting 60 s (try 6 of 45)
+[heavy] waiting 60 s (try 7 of 45)
+[heavy] waiting 60 s (try 8 of 45)
+[heavy] waiting 60 s (try 9 of 45)
+[heavy] waiting 60 s (try 10 of 45)
+[heavy] waiting 60 s (try 11 of 45)
+[heavy] waiting 60 s (try 12 of 45)
+[heavy] waiting 60 s (try 13 of 45)
+[heavy] waiting 60 s (try 14 of 45)
+[heavy] waiting 60 s (try 15 of 45)
+[heavy] waiting 60 s (try 16 of 45)
+[heavy] waiting 60 s (try 17 of 45)
+[heavy] waiting 60 s (try 18 of 45)
+[heavy] waiting 60 s (try 19 of 45)
+[heavy] waiting 60 s (try 20 of 45)
+[heavy] waiting 60 s (try 21 of 45)
+
+> test:api
+> npm run test:api --workspaces --if-present
+
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_design_test", schema "public" at "localhost:5433"
+
+32 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+
+ Test Files  125 passed (125)
+      Tests  1432 passed (1432)
+   Start at  15:28:51
+   Duration  1366.88s (tests 75%, import 20%, setup 3%, transform 2%)
+

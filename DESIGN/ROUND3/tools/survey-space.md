@@ -1,0 +1,882 @@
+# Survey: the space dashboard (space 26), owner and reception
+
+Read-only survey of the source in `C:\dev\masaha\app-design\apps\web\src` and the `masaha_dr_dev` copy, taken 2026-11-13. It covers one section per page, in sidebar order, then the space shell.
+
+## Conventions for the capture script
+- **App and API.**
+  - The app is `http://localhost:5320`.
+  - API paths below are under `/api/v1`; a path written `…/x` means `/api/v1/manage/spaces/26/x`.
+  - Sign-in is at `/login`. A protected URL redirects there with `?next=`.
+  - The owner is `demo-owner@example.com` (user 2, «أحمد الشوا»).
+  - Reception is `demo-reception@example.com` (user 3, «ليلى النجار»).
+- **Language and theme.**
+  - They are local preferences: localStorage `masaha.language` = `ar`|`en` and `masaha.theme` = `light`|`dark`.
+  - Set them before loading the page instead of clicking the toggles.
+  - Arabic (RTL) is the default.
+- **Names with inserted values.**
+  - `isolate()` wraps every inserted value in U+2068 … U+2069: names, amounts, dates, counts.
+  - A few catalogue lines hold U+2066 … U+2069 around a phone example.
+  - Strip `/[\u2066-\u2069]/g` from `innerText` and `aria-label` before matching. The `⁨…⁩` marks below show where the isolates sit.
+- **Amounts.**
+  - Amounts use `Intl` ILS currency: `ar-u-nu-latn` gives e.g. «50 ₪» with directional marks, `en` gives "₪50".
+  - Match them with a prefix or a regex, e.g. `^استلام ` or `^Receive `.
+- **Widths.**
+  - Below 768 is the phone: drawer, page header «⋯» menus, bottom action bar, filter sheets.
+  - 768–1023 is the icon rail.
+  - From 1024 the sidebar is expanded.
+  - From 1280 (xl) the desk shows two columns.
+- **Failures.**
+  - The transport retries a GET 2 times on a 5xx, a network error or a timeout, after 1 s and then 2 s. Answer a held request with the failure every time; the failure state shows after about 3 s.
+  - A 429 is never retried. Answer it with `Retry-After`: the retry button stays disabled while the countdown runs.
+  - The offline state («لا يوجد اتصال بالإنترنت» / "No internet connection") is a network abort, not an HTTP status.
+- **The data.**
+  - Today in Gaza is 2026-11-13; the data stops at 2026-11-02. So every "today" view is empty: the log, the payments, my payments.
+  - Nobody is present (no open visit or check-in), there is no live-status override, and there are 0 unpriced visits.
+  - Space 26 «بال هاب» / "Pal Hub" (slug `pal-hub`, area «الرمال» / "Al-Rimal") is open 08:00–22:00, and 12:00–20:00 on Friday.
+- **WRITES** marks a click that changes the database: a check-in, a payment, a sign-out, and so on. Every state not marked only opens, or only changes the URL or local state.
+
+## Overview «نظرة عامة» / "Overview" — /dashboard/spaces/:spaceId   (roles: owner)
+- example URLs: `/dashboard/spaces/26`. As reception, the same URL shows the 403. `/dashboard/spaces/abc` shows the 404 «الصفحة غير موجودة» / "Page not found".
+- params: none.
+- states by URL: ready at `/dashboard/spaces/26`. With this data it shows:
+  - attention rows:
+    - «بلاغ جديد» / "1 new report", which links to `/dashboard/spaces/26/reports?status=open`
+    - «7 زيارات لم تُحصَّل» / "7 visits not collected", which links to `/desk#uncollected`
+    - about 8 customers who owe, «… زبائن عليهم مبالغ», which links to `/finance?tab=debts`
+  - no capacity, unpriced, stale or closure row;
+  - the present card «0 / 40» with its meter;
+  - the tile «إعلانات نشطة» / "Active announcements" = 1;
+  - the card «اشتراكات تنتهي هذا الأسبوع» / "Subscriptions ending this week", with 3 rows (customers 7, 11, 24). Each row has «تجديد» / "Renew", a link to the customer's file.
+- states by click:
+  - live-status popover (P2): `button[aria-label^="يظهر للزوار:"]` / `[aria-label^="Visitors see:"]` (occupancy.status.name). It is the same control as on the desk (see Desk). Opening it and picking a chip do not write. A duration button **WRITES** (`PUT …/status-override`).
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/overview` (read again on every mount)
+  - `GET /api/v1/manage/spaces/26/occupancy` (polled every 30 s)
+  - the shell's own requests
+- empty/other notes:
+  - Loading shows skeleton blocks (`aria-busy`); hold `/overview` to see them.
+  - A 500 shows the alert «تعذّر تحميل النظرة العامة» / "Couldn’t load the overview" (overview.loadFailed) with a retry.
+  - The state where nothing is waiting, «كل شيء على ما يرام» / "All is in order", can't be reached with this data.
+
+## Desk «مكتب الاستقبال» / "Front desk" — /dashboard/spaces/:spaceId/desk   (roles: both)
+- example URLs: owner and reception: `/dashboard/spaces/26/desk`. Reception lands here after sign-in. A bad id gives the 404 inside the shell: `/dashboard/spaces/abc/desk`. A space you have no link to gives the 403 inside the shell: `/dashboard/spaces/1/desk` (space 1 is soft-deleted) or `/dashboard/spaces/999/desk`.
+- params:
+  - `view=log`: shows the «السجل»/"Log" tab. Anything else, or no value, shows «الآن»/"Now".
+  - `logDay=YYYY-MM-DD`: the log's day. **Owner only**, and only for a day before today; reception always gets today and the value is ignored.
+  - `logPage=N`: the log's page, 20 rows per page, paged in the browser.
+  - `uncollectedPage=N`: the uncollected card's page. It also opens the card expanded.
+  - `writtenOffPage=N`: **owner only**. Its presence alone opens the uncollected card on its «لن تُحصَّل»/"Written off" view.
+  - hash `#uncollected`: opens the uncollected card expanded and focuses its heading.
+  - hash `#unpriced`: the unpriced card's anchor. That card is hidden at space 26 (it has 0 unpriced visits).
+- states by URL:
+  - now (default): `/dashboard/spaces/26/desk`. Nobody is present in the data, so the present list is empty: «لا أحد حاضر الآن» / "No one is here right now" (occupancy.present.empty.title).
+  - log today (empty): `/dashboard/spaces/26/desk?view=log` → «لا يوجد حضور في هذا اليوم» / "No one came on this day" (desk.log.empty). This is reception's log too.
+  - log, a day with data (owner): `/dashboard/spaces/26/desk?view=log&logDay=2026-11-01` (25 entries: 11 visits + 14 check-ins; the page shows 1–20).
+  - log page 2 (owner): `/dashboard/spaces/26/desk?view=log&logDay=2026-11-01&logPage=2`. Other days with more than 20 entries: 2026-10-27, 2026-10-21, 2026-10-19 (23 each), 2026-10-26 (22).
+  - log, a short day: `/dashboard/spaces/26/desk?view=log&logDay=2026-11-02` (8 entries).
+  - uncollected expanded: `/dashboard/spaces/26/desk#uncollected`. The space has 7 uncollected visits (ids 560, 559, 443, 244, 211, 152, 137, none with a customer). The title reads «7 زيارات غير محصّلة» / "7 visits not collected" (desk.uncollected.title). There is only 1 page (20 per page), so `uncollectedPage=2` is past the last page and falls back to page 1.
+  - written-off view (owner): `/dashboard/spaces/26/desk?writtenOffPage=1`. One row: visit 555 «كريم الزعانين» (customer 34). No page 2.
+  - reception's desk: the same URLs signed in as reception. There is no written-off toggle, no write-off «⋯», no log day picker, and no unpriced card.
+- states by click (all exist at every width unless a width is named):
+  - **Live status popover (P2)**, top bar. Trigger: role=button, aria-label «يظهر للزوار: متاح — غيّرها» / "Visitors see: Available — change it" (occupancy.status.name; the state word is wrapped in U+2068…U+2069).
+    - Visible text: from 768 «يظهر للزوار: متاح» / "Visitors see: Available" (occupancy.status.line) plus a chevron. Below 768, the word alone: «متاح» / "Available" (terms.liveStatuses.available).
+    - Opens a Popover titled «الحالة التي يراها الزوار» / "What visitors see" (occupancy.override.title). It holds:
+      - a toggle group: «متاح»/«ممتلئ»/«مغلق الآن» ("Available"/"Full"/"Closed now"). Picking a state does not write.
+      - «لمدة» / "For", then 4 duration buttons «30 د»/«ساعة»/«ساعتين»/«حتى الإغلاق» ("30 min"/"1 hour"/"2 hours"/"Until closing") (occupancy.override.durations). **WRITES**: `PUT /manage/spaces/26/status-override`.
+      - the note «بعدها تعود الحالة تلقائيًا حسب الحضور.» / "Then the status follows attendance again."
+    - Opening it does not write.
+    - While the space is closed (after its hours in Gaza; space 26 is open 08–22, one weekday 12–20) and there is no override, the trigger is disabled and beside it shows «لا تُضبط الحالة والمساحة مغلقة الآن.» / "The status can’t be set while the space is closed." (occupancy.override.closed).
+    - Under an override, the popover also shows «العودة للحالة التلقائية» / "Back to the automatic status" (**WRITES**: `DELETE …/status-override`). The data has no override.
+  - **Visit check-in dialog**: from 768, the top-bar button «تسجيل زيارة» / "Check in a visit" (desk.actions.checkIn). Below 768, the same text on the full-width button in the bottom bar `css=[data-slot="page-action-bar"] button`.
+    - Opens a Dialog titled «تسجيل زيارة» / "Check in a visit" (desk.visit.title), description «لا يُنشأ ملف زبون.» / "No customer file is created."
+    - Fields: «الاسم» / "Name"; the switch «طالب» / "Student"; «الوردية» / "Shift" chips «صباحي»/«مسائي» ("Morning"/"Evening"); the rate line «تُحسب … للساعة، حتى ….» (desk.visit.rate.hourCapped).
+    - Submit: «تسجيل الزيارة» / "Check in" (desk.visit.submit). **WRITES**: `POST /manage/spaces/26/visits`.
+    - Opening it does not write.
+  - **Visit dialog validation**: open it, clear Name, press submit. Under «الاسم» it shows «القيمة أقصر من المسموح.» / "This is too short." (validation.too_short; the blank name fails min 1 and is not mapped to required). Nothing is sent.
+  - **Receive a payment**: from 768, the top-bar button «استلام دفعة» / "Receive a payment" (desk.pay.title). Below 768, open «⋯» first (see the menu below), then menuitem «استلام دفعة».
+    - Opens a Dialog «استلام دفعة» with:
+      - a search input, aria-label «اختر الزبون» / "Choose the customer" (desk.pay.choose);
+      - the label «عليهم مبالغ:» / "Customers who owe:" and a list of debtors, each with «اختيار» / "Choose" (desk.pay.pick).
+    - Clicking «اختيار» loads that customer's file (`GET /customers/:id`) and shows the form: the items radio «الدفعة عن» / "The payment is for", the amount «المستلم الآن (₪)» / "Received now (₪)", the method «نقدًا»/«تحويل» ("Cash"/"Transfer").
+    - Submit: «تسجيل ⁨…⁩» / "Record …" (desk.pay.submit). **WRITES**: `POST /manage/spaces/26/payments`.
+    - Opening it and choosing do not write.
+  - **Phone «⋯» page-header menu** (below 768 only): role=button, aria-label «إجراءات أخرى» / "More actions" (desk.actions.more).
+    - Its menuitems: «استلام دفعة» / "Receive a payment"; «زبون جديد» / "New customer"; «تبديل الموظف» / "Switch staff".
+    - **«تبديل الموظف» WRITES**: it signs out (`POST /auth/logout`) and goes to `/sign-in?next=/dashboard/spaces/26/desk`. Do not click it in a capture run.
+  - **Switch staff button** (from 768): «تبديل الموظف» / "Switch staff" (desk.actions.switchStaff). **WRITES**: sign-out, as above.
+  - **New-customer sheet**: from 768, the top-bar button «زبون جديد» / "New customer" (desk.sheet.entry.new). Below 768, «⋯» → «زبون جديد».
+    - Opens a Sheet from the end side, title «زبون جديد» / "New customer" (desk.sheet.title.new), description «الاسم والجوال، ثم الاشتراك والدفع.»
+    - Fields: «الاسم», «رقم الجوال» (optional), «الباقة» / "Package" with the groups «منشورة للزوار» and «خاصة بالمكتب — لا تظهر للزوار», the custom option «مخصّص», «من»/«إلى», and the money block.
+    - Close button: «إغلاق» / "Close" (desk.sheet.close).
+    - Submit: «حفظ واستلام ⁨…⁩» or «حفظ بدون دفع» ("Save and receive …" / "Save without payment"). **WRITES**: `POST /customers`, then `POST /customers/:id/subscriptions`.
+    - Opening it reads only: `GET /manage/spaces/26/packages` and `GET /manage/spaces/26`.
+  - **New-customer sheet validation**: open it and submit with Name empty → «القيمة أقصر من المسموح.» / "This is too short." under «الاسم». Nothing is sent. The submit is blocked until the packages or prices have loaded.
+  - **Search results**: type into the search box, role=searchbox, aria-label «ابحث بالاسم أو آخر أرقام الجوال» / "Search by name or the mobile’s last digits" (desk.search.label). The results show after a 400 ms pause. Requests `GET /customers?q=…&limit=6&page=1`.
+    - Match (active subscription and a debt): type `نور` → card «نور حسن» (customer 15, «3 أيام أسبوعيًا», owes 100 ₪).
+    - Other matches: `سامر` (customer 18, owes 40 ₪); `بلال` (26, owes 50 ₪); `سارة` (7, ends today, «ينتهي قريبًا» / "Ending soon", owes 80 ₪).
+    - Expired: `محمد عوض` (customer 6). The card shows the extra button «تجديد» / "Renew".
+    - No subscription: `معتز` (customer 30, a 5 ₪ visit debt).
+    - No result: type `ززز`. It shows the empty state «لا أحد بهذا الاسم أو الرقم» / "No one by this name or number" (desk.search.none.title), the primary button «تسجيل زيارة باسم «⁨ززز⁩»» / "Check in a visit for “ززز”" (desk.search.checkInNamed), and the link-button «زبون جديد باسم «⁨ززز⁩»» / "New customer named “ززز”" (desk.sheet.entry.newNamed).
+    - Digits: type `0000`. It shows «تسجيل زيارة» and «زبون جديد بهذا الرقم» / "New customer with this number" (desk.sheet.entry.newNumber).
+    - The count line is polite live text, e.g. «نتيجة واحدة» / "1 result".
+  - **Customer card «⋯» menu** (in the search results): role=button, aria-label «إجراءات أخرى: ⁨نور حسن⁩» / "More actions: نور حسن" (desk.customer.menu.label).
+    - Its menuitems: «ملف الزبون» / "Customer file" (a link); «اشتراك جديد» / "New subscription"; «تعديل البيانات» / "Edit details"; and, owner only, «أرشفة…» / "Archive…".
+    - «أرشفة…» **WRITES at once** for a settled customer. For a customer who owes, it opens the AlertDialog «أرشفة ⁨…⁩؟» with «أرشفة رغم الدين» (**WRITES**) and «رجوع».
+    - Opening the menu does not write.
+  - **Edit details dialog**: card «⋯» → «تعديل البيانات». Opens the Dialog «تعديل البيانات» / "Edit details" with «الاسم» and «رقم الجوال». Save: «حفظ» / "Save". **WRITES**: `PATCH /customers/:id`.
+  - **Subscribe sheet**: card «⋯» → «اشتراك جديد». Opens the Sheet «اشتراك جديد» / "New subscription" (desk.sheet.title.subscribe). It shows the prior debt «مستحق من قبل: …» when they owe. Opening it does not write.
+  - **Renewal sheet**: on the expired card (`محمد عوض`), click the button «تجديد» / "Renew" (desk.sheet.entry.renew). It reads the statement first (`GET /manage/spaces/26/subscriptions/6`), then opens the Sheet «تجديد الاشتراك» / "Renew subscription". Submit: «تجديد واستلام …» or «تجديد بدون دفع». Opening it does not write.
+  - **Pre-check-in choice dialog**: on a card with no subscription (`معتز`) or an expired one (`محمد عوض`), click the button «حضور» / "Check in". Its aria-label is «حضور ⁨معتز الكرد⁩» / "Check in معتز الكرد" (desk.customer.checkInName).
+    - Opens a Dialog «تسجيل حضور · ⁨…⁩» / "Check in · …" (desk.subscriber.pre.title), with the line «لا يوجد اشتراك.» or «انتهى الاشتراك «…» في ….».
+    - Its buttons:
+      - «تسجيل كزيارة» / "Check in as a visit" — **WRITES**;
+      - «تسجيل على أي حال» / "Check in anyway" — **WRITES**; expired subscription only;
+      - «اشتراك جديد» or «تجديد» — opens a sheet, does not write;
+      - «رجوع» / "Back".
+    - Opening it does not write.
+    - **On an active card (`نور`, `سامر`, `بلال`, `سارة`), «حضور» checks in at once. WRITES**: `POST /check-ins`.
+  - **Receive from a card**: the card button «استلام ⁨100 ₪⁩» / "Receive …" (desk.customer.receive; match by the prefix «استلام »). It opens the payment dialog straight on that customer's items. Opening it does not write.
+  - **Now / Log tabs**: a tablist with aria-label «الحضور واليوم» / "Who is here, and the day" (desk.log.tabs.label). Tabs: «الآن» / "Now" and «السجل» / "Log". Selecting one sets `?view=log`. No write.
+  - **Log day picker** (owner, Log tab only): the trigger is `css=[data-slot="date-picker-trigger"]`, named «يوم السجل» plus its value, e.g. «اليوم» (desk.log.day / desk.log.today).
+    - It opens a calendar popover `css=[data-slot="date-picker-content"]`, aria-label «يوم السجل» / "Day". The month buttons are «الشهر السابق»/«الشهر التالي» ("Previous month"/"Next month").
+    - Days after today are disabled. Choosing a day sets `logDay`. No write.
+  - **Uncollected «عرض الكل»**: in the uncollected card, the button «عرض الكل (7)» / "Show all (7)" (desk.uncollected.showAll). It expands the list, and its label becomes «عرض أقل» / "Show fewer". No write.
+  - **Uncollected / written-off toggle** (owner only): a toggle group with aria-label «أيّ الزيارات» / "Which visits", items «غير محصّل» / "Uncollected" and «لن تُحصَّل» / "Written off" (desk.writtenOff.*). The second item loads `GET /written-off-visits?page=1`. No write.
+  - **Written-off row «تراجع»**: its aria-label is «تراجع عن شطب زيارة ⁨كريم الزعانين⁩ · ⁨…⁩». **WRITES**: `DELETE /visits/555/write-off`.
+  - **Collect dialog**: the uncollected row button «تحصيل» / "Collect" (desk.uncollected.collect). It opens the Dialog «تحصيل زيارة · ⁨محمود سالم⁩» / "Collect a visit · …".
+    - Fields: the amount, prefilled; the method; «ملاحظة» / "Note".
+    - Submit: «تسجيل ⁨16 ₪⁩» / "Record …". **WRITES**: `POST /payments`.
+  - **Debt dialog**: the uncollected row button «تسجيل دين» / "Record a debt" (desk.uncollected.debt; shown only when the visit has no customer, which is true of all 7 rows). It opens the Dialog «تسجيل دين · ⁨…⁩» / "Record a debt · …" with «الاسم» and «رقم الجوال» (placeholder `+970 59 000 0000`). Submit: «تسجيل الدين» / "Record the debt". **WRITES**: `PUT /visits/:id/customer`.
+  - **Debt dialog validation**: open it, then submit with the phone empty → «رقم الجوال مطلوب ليُسجَّل المبلغ دينًا، مثل ⁦+970 59 000 0000⁩» / "A mobile number is needed to record the debt, e.g. +970 59 000 0000" (desk.debt.phoneRequired; the Arabic has U+2066…U+2069 around the number). Nothing is sent.
+  - **Row «⋯» → write off** (owner only): role=button, aria-label «إجراءات أخرى لزيارة ⁨محمود سالم⁩» / "More actions for محمود سالم’s visit" (desk.uncollected.more). Its menuitem «لن يُحصَّل…» / "Write off…" opens the AlertDialog «لن يُحصَّل مبلغ هذه الزيارة؟» / "Write off this visit?" with:
+    - the field «السبب» / "Reason";
+    - the confirm «لن يُحصَّل» / "Write off" (**WRITES**: `POST /visits/:id/write-off`);
+    - «رجوع» / "Back".
+  - **Write-off validation**: open it and confirm with the reason empty → «اكتب السبب» / "Write the reason" (desk.writeOff.reasonRequired). Nothing is sent.
+  - **Visit check-out dialog**: needs someone present, and nobody is present in the data.
+    - Either check in a visit first (**WRITES**), or answer `GET /manage/spaces/26/occupancy` with a person `{kind:'VISIT',…}` and `GET /manage/spaces/26/visits/:id` with a quote.
+    - Trigger: the row's button «خروج» / "Check out", aria-label «خروج ⁨name⁩» / "Check out name" (desk.checkOut.openName).
+    - It opens a Dialog «تسجيل خروج · ⁨name⁩» / "Check out · name" with the rows الدخول/الخروج/المدة, the money block, and the submit «خروج واستلام …» / «خروج بدون دفع».
+    - Opening it reads `GET /visits/:id`. The submit **WRITES**: `POST /visits/:id/check-out`.
+    - **A subscriber row's «خروج» checks out at once. WRITES**: `POST /check-ins/:id/check-out`. That may open the dialog «خرج ⁨name⁩» (desk.usageOut.title) after the write.
+  - **Price-a-visit dialog**: not reachable. The unpriced card is hidden with 0 unpriced visits. To reach it, mock `GET /unpriced-visits` with a row. Its trigger is «تحديد السعر» / "Set the price" and it opens «سعر زيارة · ⁨name⁩».
+- requests on load (owner), all under `/api/v1`:
+  - `GET /manage/spaces` (shell)
+  - `GET /manage/spaces/26/data-reports?status=OPEN&page=1&limit=1` (shell badge, owner only)
+  - `GET /manage/spaces/26/visit-terms`
+  - `GET /manage/spaces/26` (shifts)
+  - `GET /manage/spaces/26/occupancy` (polled every 30 s while visible)
+  - `GET /manage/spaces/26/check-ins?open=true`
+  - `GET /manage/spaces/26/uncollected-visits?page=1`
+  - `GET /manage/spaces/26/unpriced-visits?page=1` (only where the visit terms say `mayTypePrice`: the owner yes; reception at 26 no, because `reception_may_type_prices=false`)
+  - With `view=log`, the owner's log also requests:
+    - `GET /manage/spaces/26/visits?from=D&to=D&page=1&limit=50`
+    - `GET /manage/spaces/26/check-ins?from=D&to=D&page=1&limit=50`
+    - Each list's further pages are fetched while more remain.
+  - Reception's log requests `GET …/visits?page=1&limit=50` with no range, and check-ins for today's range.
+  - The written-off view requests `GET /manage/spaces/26/written-off-visits?page=N`.
+  - On submit: as marked WRITES above.
+  - Good holds or failures for the loading, 500 and 429 states:
+    - `…/occupancy`: the present list's loading, failure («تعذّر تحميل الحاضرين») and offline states;
+    - `…/uncollected-visits`: the card's skeleton, failure («تعذّر تحميل الزيارات غير المحصّلة») and offline states;
+    - `…/visit-terms`: on failure the alert «تعذّر تحميل أسعار الزيارات» / "We couldn’t load the visit prices" (desk.terms.loadFailed) appears above the search, and the check-out buttons are disabled;
+    - `…/customers?q=…`: the search's skeletons, and the failure «تعذّر البحث في الزبائن».
+- empty/other notes:
+  - Reception vs owner:
+    - Reception has no write-off «⋯», no «لن تُحصَّل» toggle, no unpriced card, and no «أرشفة…» in the card «⋯».
+    - Reception's log has no day picker (today only), and `logDay` is ignored for reception.
+    - Reception's uncollected card, when empty, is hidden below xl (1280). The owner's card always shows.
+    - The sidebar shows reception's 4 items, ungrouped.
+  - The present list: a table from 768, cards below it. Its detail column shows from lg (1024).
+  - The uncollected card sits beside the present list from xl (1280): 8/4 columns. Below xl it comes before the list.
+  - The search box takes the focus on arrival from 768 only.
+
+
+## Customers «الزبائن» / "Customers" — /dashboard/spaces/:spaceId/customers   (roles: both)
+- example URLs:
+  - `/dashboard/spaces/26/customers`: 27 customers who are not archived, 20 per page.
+  - `/dashboard/spaces/26/customers?page=2`: 7 rows, with the line «عرض 21–27 من 27» / "Showing 21–27 of 27" (forms.listRange).
+- params:
+  - `features/desk/services/customersQueryOf.ts` reads each one. A value the server's schema rejects is dropped. Each change replaces the URL and resets to page 1.
+  - `q`: 1–60 characters. It matches a name, or 2 or more trailing phone digits. The field writes it 400 ms after typing pauses.
+  - `status=UPCOMING|ACTIVE|ENDING_SOON|EXPIRED|ARCHIVED`. `ARCHIVED` is for the owner only; reception's value is dropped and the default list shows. The default leaves archived customers out.
+  - `kind=PACKAGE|WEEK|MONTH|CUSTOM|NONE`
+  - `payment=OWES|CREDIT|SETTLED`
+  - `page=N`: a page past the last is replaced by the last.
+- states by URL:
+  - default: `/dashboard/spaces/26/customers`
+  - page 2: `/dashboard/spaces/26/customers?page=2`
+  - past the last page: `?page=9`, which is replaced by `?page=2`
+  - status:
+    - `?status=ACTIVE` (e.g. 17 آية مطر, 26 بلال عاشور, 18 سامر جودة, 15 نور حسن)
+    - `?status=ENDING_SOON` (24, 7, 11, 10)
+    - `?status=EXPIRED`
+  - kind:
+    - `?kind=NONE` (30, 31, 32, 34, 35)
+    - `?kind=MONTH`
+    - `?kind=CUSTOM` (10, 11, 15)
+  - payment:
+    - `?payment=OWES` (8 rows)
+    - `?payment=CREDIT` (1 row: لينا حسونة)
+  - a combination with 1 row: `?kind=MONTH&payment=OWES` (بلال عاشور)
+  - search hit: `?q=%D8%A8%D9%84%D8%A7%D9%84` (q=بلال) or `?q=0221`
+  - search with no result: `?q=zzzz` → EmptyState «لا يوجد زبائن يطابقون البحث» / "No customers match", with the text «جرّب اسمًا أو رقمًا آخر، أو غيّر الفلاتر.» / "Try another name or number, or change the filters." (desk.customers.noMatch)
+  - filter with no result: `?status=UPCOMING` or `?kind=WEEK` → the same noMatch state
+  - archived (owner): `?status=ARCHIVED`. 3 rows: 33 إسراء دلول, 22 فادي الرنتيسي, 21 مريم أبو سمرة. Each row has «استرجاع» in place of «⋯».
+  - archived as reception: `?status=ARCHIVED` is ignored and the default list shows.
+- states by click:
+  - Status chips: a toggle group «تصفية حسب الحالة» / "Filter by status" (desk.customers.status.label).
+    - Items: «الكل» / "All", «لم يبدأ» / "Not started", «نشط» / "Active", «ينتهي قريبًا» / "Ending soon", «منتهٍ» / "Expired" (desk.customer.statuses.*), and for the owner only «مؤرشف» / "Archived".
+    - All widths. Changes the URL only. No write.
+  - Kind select (from 768): combobox «نوع الاشتراك» / "Subscription type" (desk.customers.kind.label).
+    - Options: «كل الأنواع» / "All types", «شهري» / "Monthly", «أسبوعي» / "Weekly", «باقة» / "Package", «مخصّص» / "Custom", «بدون اشتراك» / "No subscription".
+    - No write.
+  - Payment select (from 768): combobox «الدفع» / "Payment" (desk.customers.payment.label).
+    - Options: «كل حالات الدفع» / "All payment states", «عليه دين» / "Owes money", «له رصيد» / "In credit", «مسدّد» / "Settled".
+    - No write.
+  - Filters sheet (below 768 only): the button «الفلاتر» / "Filters" (desk.customers.filters.title). With a filter applied, its aria-label becomes «فلتر واحد مطبّق» / "1 filter applied".
+    - Opens a bottom Sheet «الفلاتر» with the two selects.
+    - Footer: «مسح الفلاتر» / "Clear filters" and «عرض 27 زبونًا» / "Show 27 customers" (filters.show; it closes the sheet). Close: «إغلاق» / "Close".
+    - No write.
+  - New-customer sheet: the button «زبون جديد» / "New customer" (desk.sheet.entry.new). It sits at the end of the chips row at every width, and in the empty state.
+    - Opens a Sheet on the end side, «زبون جديد», with the text «الاسم والجوال، ثم الاشتراك والدفع.»
+    - Fields: «الاسم»; «رقم الجوال» (marked «اختياري»); «الباقة»; «من»; the money group «الدفع».
+    - Close: «إغلاق» / "Close".
+    - Opening it does not write.
+  - New-customer sheet validation: open it and click the footer submit with nothing typed. The submit reads «حفظ بدون دفع» / "Save without payment", or «حفظ واستلام …» once a package is chosen.
+    - Under «الاسم» it shows «القيمة أقصر من المسموح.» / "This is too short." (validation.too_short: a blank name fails min 1; it is not `required`).
+    - Nothing is sent.
+  - Row «⋯» menu: aria-label «إجراءات أخرى: ⁨بلال عاشور⁩» / "More actions: ⁨بلال عاشور⁩" (desk.customer.menu.label). It is in the table's last column from 768, and on each card below 768.
+    - While the customer's file loads, it holds one busy item «جارٍ تحميل الإجراءات…» / "Loading the actions…".
+    - Items for customer 26, in order:
+      - «حضور» / "Check in": **WRITES** if selected
+      - «استلام ⁨50 ₪⁩» / "Receive …"
+      - «ملف الزبون» / "Customer file": a link
+      - «اشتراك جديد» / "New subscription"
+      - «تعديل البيانات» / "Edit details"
+      - owner only: «أرشفة…» / "Archive…"
+    - For customer 8 أحمد ياسين (expired, settled), the menu has «تجديد» / "Renew" instead. Its «أرشفة…» **WRITES** at once.
+    - Opening the menu only does a GET.
+  - Receive a payment: «⋯» (customer 26) → «استلام ⁨50 ₪⁩». Opens a Dialog «استلام دفعة · ⁨بلال عاشور⁩» / "Receive a payment · …" (desk.pay.titleFor), with the line «أقدم بند: …» / "Oldest item: …".
+    - The radio «الدفعة عن» / "The payment is for".
+    - «المستلم الآن (₪)» / "Received now (₪)", prefilled.
+    - The method «نقدًا»/«تحويل».
+    - «ملاحظة» / "Note".
+    - Submit: «تسجيل ⁨50 ₪⁩» / "Record …" (**WRITES**).
+    - Opening it does not write.
+  - Payment amount validation: in that dialog, type `abc` in «المستلم الآن (₪)». It shows «اكتب مبلغًا بالشيكل، حتى منزلتين عشريتين» / "Enter an amount in shekels, up to two decimals" (desk.money.amountInvalid). Nothing is sent.
+  - Subscribe sheet: «⋯» → «اشتراك جديد». Opens a Sheet «اشتراك جديد» / "New subscription".
+    - When the customer owes, it shows «مستحق من قبل: …» / "Owed from before: …".
+    - Opening it does not write.
+  - Renewal sheet: «⋯» on customer 8 → «تجديد». Opens a Sheet «تجديد الاشتراك» / "Renew subscription".
+    - Submit: «تجديد بدون دفع» or «تجديد واستلام …».
+    - Opening it does not write.
+  - Edit details: «⋯» → «تعديل البيانات». Opens a Dialog «تعديل البيانات» / "Edit details".
+    - Fields: «الاسم» and «رقم الجوال» (marked «اختياري»), with the help «إليه يُرسل تذكير الدين على واتساب.»
+    - Save: «حفظ» / "Save".
+    - Opening it does not write.
+  - Edit, nothing changed: click «حفظ» without changing anything. It shows «لم يتغيّر شيء» / "Nothing changed" (desk.edit.nothingChanged). Nothing is sent.
+  - Edit, blank name: clear «الاسم» and click «حفظ». It shows «القيمة أقصر من المسموح.» / "This is too short." (validation.too_short). Nothing is sent.
+  - Archive question (owner, customer owes): «⋯» on customer 26 → «أرشفة…». Opens an AlertDialog «أرشفة ⁨بلال عاشور⁩؟» / "Archive …?" (desk.archive.title), with the text «عليه ⁨50 ₪⁩ غير مسدّدة…».
+    - Buttons: «أرشفة رغم الدين» / "Archive anyway" (**WRITES**) and «رجوع» / "Back".
+    - Opening it does not write.
+  - Archive a settled customer (owner): «⋯» → «أرشفة…». **WRITES** at once (`POST …/archive`) and shows a toast with «تراجع». Avoid it.
+  - Restore (owner, on `?status=ARCHIVED`): the button «استرجاع» / "Restore" (desk.customer.menu.restore). **WRITES**.
+  - Check in: «⋯» → «حضور». **WRITES** (`POST …/check-ins`). Avoid it.
+  - Pagination: a nav «صفحات الزبائن» / "Pages of customers" with the links «السابق»/«التالي» ("Previous"/"Next") and «الصفحة 2» / "Page 2". Changes the URL only.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/customers?page=1&limit=20`, adding `q`, `status`, `kind` and `payment` when set. Hold it to show loading, or answer it with a 500 or a 429.
+  - On opening a row's «⋯»: `GET …/customers/{id}`.
+  - On opening a sheet:
+    - `GET …/packages`
+    - `GET /manage/spaces/26`
+    - `GET …/visit-terms`
+    - `GET …/customers/{id}`
+    - `GET …/subscriptions/{subId}` (a renewal only)
+  - On submit:
+    - new customer: `POST …/customers` (with an Idempotency-Key), then `POST …/customers/{id}/subscriptions`
+    - subscribe or renew: `POST …/customers/{id}/subscriptions`
+    - edit: `PATCH …/customers/{id}`
+    - archive or restore: `POST …/customers/{id}/archive` or `…/restore`
+    - pay: `POST …/payments`
+    - check in: `POST …/check-ins`
+- empty/other notes:
+  - Loading shows the DataTable skeleton.
+  - A 500 shows the alert «تعذّر تحميل الزبائن» / "We couldn’t load the customers", with «إعادة المحاولة» / "Try again".
+  - When a refresh fails, the last list stays with «تعذّر التحديث؛ تظهر آخر قائمة.»
+  - These states need a mocked answer (`data:[]`, `totalRecords:0`):
+    - the true empty state «لا يوجد زبائن بعد» / "No customers yet", with «زبون جديد»
+    - the archived empty state «لا يوجد زبائن مؤرشفون» / "No archived customers", for `status=ARCHIVED`
+  - The count line reads «27 زبونًا» / "27 customers". The section and the table are named «زبائن المساحة» / "The space’s customers".
+  - The header has the title only.
+  - Reception compared with the owner: no «مؤرشف» chip, no «أرشفة…», and never any archived rows. Everything else is the same.
+
+## Customer file «ملف الزبون» / "Customer file" — /dashboard/spaces/:spaceId/customers/:customerId   (roles: both)
+- example URLs:
+  - active subscription with a debt:
+    - `/dashboard/spaces/26/customers/26` (بلال عاشور): subscription 31 «شهري», ACTIVE, 300 of 350 ₪ paid, owes 50 ₪, has a phone. Its statement has payments 552 (100), 551 (200) and 550 (100, voided «ملغاة»).
+    - also `/customers/18` (سامر جودة, subscription 20, owes 40 ₪) and `/customers/15` (نور حسن, subscription 17, owes 100 ₪)
+  - ending soon with a debt: `/customers/7` (سارة خالد, subscription 8 ends 2026-11-13, owes 80 ₪). The header has «حضور», «استلام …» and «تجديد».
+  - expired and settled: `/customers/8` (أحمد ياسين, subscription 9). The header has only «تجديد».
+  - ended early: `/customers/14` (خالد منصور, subscription 16). The item «تصحيح الاشتراك» is held, with «انتهى الاشتراك مبكرًا».
+  - credit: `/customers/11` (لينا حسونة, subscription 12, per hour, ENDING_SOON, «له رصيد …», about 33 ₪).
+  - no subscription, with unpaid visits:
+    - `/customers/32` (حمزة شبير, visit 553 owes 25 ₪)
+    - `/customers/31` (ياسمين عوض, visit 552 owes 15 of 25 ₪)
+    - `/customers/35` and `/customers/30`
+  - no subscription and nothing owed: `/customers/34` (كريم الزعانين; his visit was written off). It shows «لا توجد اشتراكات» / "No subscriptions" and «هذا الزبون يأتي بزيارات فقط.» / "This customer only comes for visits." (desk.file.subscriptions.none / onlyVisits).
+  - no phone: `/customers/17` (آية مطر). It shows «بدون رقم جوال» / "No mobile number".
+  - archived: `/customers/22` (فادي الرنتيسي), and also `/customers/21` and `/customers/33`. They show the badge «مؤرشف» / "Archived".
+  - not found: `/customers/999999` → the API answers 404 → EmptyState «لم نجد هذا الزبون» / "We couldn’t find this customer", with «ربما ليس من زبائن هذه المساحة.» / "They may not be a customer of this space." (desk.file.notFound).
+  - an invalid id: `/customers/abc` → the generic 404.
+- params: none.
+- states by URL: as listed above. The h1 is «ملف الزبون» / "Customer file" until the file loads, then the customer's name.
+- states by click:
+  - Breadcrumb: a nav «مسار التنقّل» / "Breadcrumb" (desk.file.breadcrumb), with the link «الزبائن» / "Customers". No write.
+  - WhatsApp reminder: the link «تذكير على واتساب» / "WhatsApp reminder" (desk.file.reminder.label), probably `a[href^="https://wa.me"]`.
+    - It shows when the customer owes and has a phone: 26, 7, 18, 15, 32 and others.
+    - It opens a new tab, so hover or focus it only.
+  - Check in: the header button «حضور», aria-label «حضور ⁨بلال عاشور⁩» / "Check in …" (desk.customer.checkInName). **WRITES**. Avoid it.
+  - Receive the oldest item: the header button «استلام ⁨50 ₪⁩» / "Receive …" (desk.customer.receive). It opens the payment dialog «استلام دفعة · ⁨…⁩», with «أقدم بند: …».
+    - Opening it does not write.
+    - Typing `abc` in the amount shows «اكتب مبلغًا بالشيكل، حتى منزلتين عشريتين»; nothing is sent.
+  - Renew from the header: the header button «تجديد» / "Renew" (desk.sheet.entry.renew), on customers 8 and 7. It opens the Sheet «تجديد الاشتراك» / "Renew subscription". Opening it does not write.
+  - Header «⋯»: aria-label «إجراءات أخرى: ⁨…⁩» / "More actions: …", in a group «إجراءات» / "Actions".
+    - Items: «اشتراك جديد», «تعديل البيانات», and for the owner «أرشفة…». There is no «ملف الزبون» item here.
+    - Opening it does not write.
+    - The sub-dialogs behave as on the customers list:
+      - Edit, nothing changed → «لم يتغيّر شيء».
+      - Edit, blank name → «القيمة أقصر من المسموح.» / "This is too short.".
+      - Archive on customer 26 → the AlertDialog «أرشفة ⁨بلال عاشور⁩؟».
+      - Archive on a settled customer (8) **WRITES** at once.
+  - Restore (owner, archived file `/customers/22`): the header button «استرجاع» / "Restore". **WRITES**. Reception sees no header actions on an archived file.
+  - Show the statement: on a subscription card (its h3 is «شهري» for customer 26), the button «عرض الكشف» / "Show the statement" (desk.statement.show, aria-expanded=false).
+    - It opens «الحضور» / "Attendance" and «الدفعات» / "Payments" inside the card. A voided row has the badge «ملغاة» / "Voided". Each payment shows «سجّلها …» / "Recorded by …".
+    - The button then reads «إخفاء الكشف» / "Hide the statement".
+    - It sends `GET …/subscriptions/31`. No write.
+    - Several cards repeat this button, so scope it to the card.
+  - Payment «⋯» (owner, statement open): aria-label «إجراءات الدفعة: ⁨100 ₪⁩ · ⁨بلال عاشور⁩» / "Payment actions: … · …" (desk.void.menu), `css=[data-row-action]`. Its item is «إلغاء الدفعة…» / "Void payment…". No write.
+  - Void dialog: that item opens an AlertDialog «إلغاء الدفعة؟» / "Void this payment?".
+    - Field: «السبب» / "Reason".
+    - Buttons: «إلغاء الدفعة» / "Void payment" (**WRITES** `POST …/payments/:id/void`) and «رجوع» / "Back".
+    - Opening it does not write.
+  - Void validation: confirm with the reason empty. It shows «اكتب سبب الإلغاء» / "Write why it is voided" (desk.void.reasonRequired). Nothing is sent.
+  - Receive what's left: the card footer button «استلام المتبقي» / "Receive what’s left" (desk.file.card.receiveLeft). It opens the payment dialog on that subscription. No write.
+  - End the subscription: the card footer button «إنهاء الاشتراك» / "End subscription" (desk.end.action), on customer 26's subscription 31. It is absent on expired or ended subscriptions.
+    - It opens an AlertDialog «إنهاء الاشتراك اليوم؟» / "End the subscription today?".
+    - Buttons: «إنهاء الاشتراك» (**WRITES** `POST …/subscriptions/31/end`) and «رجوع».
+    - Opening it does not write.
+  - Card «⋯»: aria-label «إجراءات أخرى: ⁨شهري⁩» / "More actions: ⁨شهري⁩" (the subscription's name). Its item is «تصحيح الاشتراك» / "Correct the subscription" (desk.correct.action). No write.
+  - Correct sheet: that item opens a Sheet «تصحيح ⁨شهري⁩» / "Correct …".
+    - The fieldset «الاسم والتواريخ والحدود» / "Name, dates and limits": «الاسم», «من», «إلى», and the limits, each with «بلا حد» / "No limit".
+    - For the owner only, the fieldset «السعر» / "The price": «طريقة الاحتساب», «السعر (₪)» and «سبب التصحيح».
+    - Footer: «حفظ التصحيح» / "Save the correction" and «رجوع». Close: «إغلاق».
+    - Opening it does not write.
+  - Correct, nothing changed: click «حفظ التصحيح» untouched. It shows the info line «لم يتغيّر شيء» / "Nothing changed". Nothing is sent.
+  - Correct item held: on `/customers/14`, the card «⋯» item «تصحيح الاشتراك» is disabled, with the caption «انتهى الاشتراك مبكرًا» / "Ended early".
+  - Renew from the card: the card footer button «تجديد» / "Renew". It shows only on the newest card when it is ENDING_SOON or EXPIRED (customers 7, 8, 11, 14). It opens the renewal sheet. No write.
+  - Collect an unpaid visit: on `/customers/32`, in the card «زيارات غير مدفوعة» / "Unpaid visits", the row button «تحصيل» / "Collect". It opens the payment dialog on that visit. No write.
+  - Unpaid visit «⋯» (owner): aria-label «إجراءات أخرى لزيارة ⁨حمزة شبير · …⁩» / "More actions for …’s visit" (desk.uncollected.more). Its item is «لن يُحصَّل…» / "Write off…". No write.
+  - Write-off dialog: that item opens an AlertDialog «لن يُحصَّل مبلغ هذه الزيارة؟» / "Write off this visit?".
+    - Field: «السبب».
+    - Buttons: «لن يُحصَّل» / "Write off" (**WRITES**) and «رجوع».
+    - Opening it does not write.
+  - Write-off validation: confirm with the reason empty. It shows «اكتب السبب» / "Write the reason". Nothing is sent.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/customers/{customerId}`. Hold it, or answer it with a 500 or a 429. A 404 gives the not-found state.
+  - `GET /api/v1/manage/spaces`, the shell's (it also gives the space's name for the reminder).
+  - On submit:
+    - check in: `POST …/check-ins`
+    - pay: `POST …/payments`
+    - void: `POST …/payments/{id}/void`
+    - end: `POST …/subscriptions/{id}/end`
+    - correct: `PATCH …/subscriptions/{id}`, and for the owner `PUT …/subscriptions/{id}/price`
+    - edit: `PATCH …/customers/{id}`
+    - archive or restore: `POST …/archive` or `…/restore`
+    - write off: `POST …/visits/{visitId}/write-off`
+    - subscribe or renew: `POST …/customers/{id}/subscriptions`
+- empty/other notes:
+  - Loading shows 2 skeletons.
+  - A 500 shows the alert «تعذّر تحميل ملف الزبون» / "We couldn’t load the customer’s file", with a retry.
+  - A failed statement shows «تعذّر تحميل الكشف» / "We couldn’t load the statement".
+  - The header shows:
+    - the phone, left to right
+    - «حاضر منذ …» / "Here since …" when the customer is present (nobody is in this data)
+    - the status badge
+    - «الرصيد» / "Balance": «عليه …», «له رصيد …» or «مسدّد»
+  - The subscription cards have the payment badges «مدفوع», «مدفوع جزئيًا» and «غير مدفوع», and the lines «المستحق» (or «المستحق حتى الآن»), «المدفوع» and «المتبقي».
+  - Reception compared with the owner:
+    - no void «⋯» in the statements
+    - no write-off «⋯» on unpaid visits
+    - no «السعر» fieldset in the correct sheet
+    - no «أرشفة…» or «استرجاع»
+    - no actions at all on an archived file
+  - These are not reachable without a write, or a mocked file whose `present` is set:
+    - the «خروج» check-out
+    - the usage-out dialog
+  - The pre-check-in choice dialog is not on this page; it is only on the desk's search cards.
+
+## Payments «الدفعات» / "Payments" — /dashboard/spaces/:spaceId/payments   (roles: owner)
+- example URLs: `/dashboard/spaces/26/payments` (today, empty) · `/dashboard/spaces/26/payments?from=2026-10-27&to=2026-11-02` (70 payments, 4 pages). Reception at this URL gets the 403.
+- params:
+  - `from`, `to` = YYYY-MM-DD. Both or neither; a range over 92 days is ignored and the page shows today.
+  - `staff` = 2 (owner «أحمد الشوا (أنت)») or 3 (reception «ليلى النجار»).
+  - `method` = CASH|TRANSFER; `kind` = VISIT|SUBSCRIPTION; `voided=1` shows voided payments; `page` = N.
+- states by URL:
+  - empty today: `…/payments` → «لا توجد دفعات اليوم» / "No payments today" (payments.ledger.emptyToday.title). The totals line still shows, starting «اليوم · المجموع …».
+  - range: `…/payments?from=2026-10-27&to=2026-11-02`. The totals line reads «27 أكتوبر – 2 نوفمبر 2026 · المجموع … · نقدًا … · تحويل … · 70 دفعة» (the range wording comes from Intl).
+  - page 2: `…/payments?from=2026-10-27&to=2026-11-02&page=2`.
+  - staff filter: `…/payments?from=2026-10-27&to=2026-11-02&staff=3`.
+  - method / kind: `…/payments?from=2026-10-01&to=2026-10-31&method=TRANSFER`, or the same range with `&kind=SUBSCRIPTION`.
+  - no match: `…/payments?from=2026-11-01&to=2026-11-01&staff=3&method=TRANSFER&kind=SUBSCRIPTION` → «لا توجد دفعات تطابق الفلاتر» / "No payments match the filters", with the button «مسح الفلاتر» / "Clear filters" (payments.ledger.filters.clear).
+  - voided shown: `…/payments?from=2026-10-19&to=2026-10-25&voided=1`. Two voided rows are struck through with the badge «ملغاة» / "Voided" and the line «ألغاها …: …». A totals line «الملغاة: دفعتان · …» / "Voided: 2 payments · …" appears. Voided rows have no «⋯».
+  - past the last page: the page falls back to the last one.
+- states by click:
+  - Period picker:
+    - Trigger (from 768): `css=[data-slot="date-picker-trigger"]`, labelled «الفترة» / "Period" (payments.ledger.range.label). Its text is the period, e.g. «اليوم».
+    - It opens a calendar popover named «اختر الفترة» / "Choose a period", with «الشهر السابق»/«الشهر التالي» ("Previous month"/"Next month") and a footer «اليوم» / "Today".
+    - Below 768 the picker sits in the filters sheet. No write.
+  - Range over 92 days: in the picker, click a day, go back more than 3 months with «الشهر السابق», then click a second day. The field shows «أطول فترة 92 يومًا؛ اختر فترة أقصر.» / "The longest period is 92 days; choose a shorter one." (payments.ledger.range.tooLong). No write.
+  - Staff select: combobox «الموظف» / "Staff". Options: «كل الموظفين» / "All staff", «أحمد الشوا (أنت)» / "أحمد الشوا (you)", «ليلى النجار». It sits in the filter row from 768 and in the sheet below. No write.
+  - Method select: combobox «الطريقة» / "Method". Options: «كل الطرق» / "All methods", «نقدًا» / "Cash", «تحويل» / "Transfer". No write.
+  - Kind select: combobox «النوع» / "Type". Options: «كل الأنواع» / "All types", «زيارات» / "Visits", «اشتراكات» / "Subscriptions". No write.
+  - Filters sheet (below 768 only):
+    - Trigger: the button «الفلاتر» / "Filters" (payments.ledger.filters.title). With filters on, its aria-label is «فلتر واحد مطبّق» / "1 filter applied" (filters.applied).
+    - It opens a bottom Sheet «الفلاتر» with the four fields, «عرض 70 دفعة» / "Show 70 payments" (filters.show, closes the sheet), «مسح الفلاتر», and the close button «إغلاق» / "Close". No write.
+  - «إظهار الملغاة» / "Show voided": a toggle button with aria-pressed, in a group labelled «تصفية سريعة» / "Quick filter". All widths. It only sets `voided=1`. No write.
+  - Row «⋯» menu: on `…/payments?from=2026-11-02&to=2026-11-02`, click the first `button[data-row-action]`. Its aria-label starts «إجراءات الدفعة: » / "Payment actions: " (desk.void.menu); the first row is payment 571, 30 ₪, «سامر جودة».
+    - It opens a menu with one item, «إلغاء الدفعة…» / "Void payment…" (desk.void.action).
+    - The rows are a table from 768 and cards below. No write.
+  - Void dialog: the menu item opens an AlertDialog «إلغاء الدفعة؟» / "Void this payment?" (desk.void.title).
+    - It has the reason «السبب» / "Reason", «رجوع» / "Back", and «إلغاء الدفعة» / "Void payment" (desk.void.confirm).
+    - Opening it does not write. Confirming **WRITES**: `POST /manage/spaces/26/payments/571/void {reason}`.
+  - Void validation: in the dialog, confirm with the reason empty → «اكتب سبب الإلغاء» / "Write why it is voided" (desk.void.reasonRequired). Nothing is sent.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/payments?voided=EXCLUDE&page=1&limit=20`. It adds `from`, `to`, `recordedById`, `method` and `kind` when they are set, and sends `voided=INCLUDE` when the URL has `voided=1`.
+  - `GET /api/v1/manage/spaces/26/staff`.
+  - `GET /api/v1/manage/spaces/26` (the owners, for the staff filter).
+- empty/other notes:
+  - Loading shows the DataTable skeleton.
+  - A 500 shows the alert «تعذّر تحميل الدفعات» / "We couldn’t load the payments" with a retry.
+  - A failed refresh over rows already shown keeps them with «تعذّر التحديث؛ تظهر آخر قائمة.»
+
+## My payments «دفعاتي اليوم» / "My payments today" — /dashboard/spaces/:spaceId/my-payments   (roles: reception)
+- example URLs: `/dashboard/spaces/26/my-payments` as `demo-reception@example.com`. The owner at this URL gets the 403.
+- params: `page=N` only. It always shows reception's own payments of today; the server forbids a range.
+- states by URL:
+  - empty (the only real state): `…/my-payments` → EmptyState «لم تسجّل أي دفعة اليوم» / "You haven’t recorded any payments today" (payments.mine.empty).
+  - The intro reads «الدفعات التي سجّلتها أنت اليوم، لتسليمها في نهاية الوردية · ⁨13 نوفمبر 2026⁩».
+  - The handover figures «نقدًا للتسليم» / "Cash to hand over", «تحويل» / "Transfer" and «المجموع» / "Total" are all 0. From 768 they are 3 stat cards; below 768 they are one card in a region «أرقام التسليم» / "Handover figures".
+  - Rows and page 2 need GET `…/payments` mocked with `meta.totals` and `totalPages > 1`, then `?page=2`.
+- states by click: none (paging uses links).
+- requests on load: `GET /api/v1/manage/spaces/26/payments?voided=INCLUDE&page=1&limit=20`.
+- empty/other notes:
+  - Loading shows a skeleton in place of the figures and the table skeleton.
+  - A 500 shows the alert «تعذّر تحميل دفعاتك» / "We couldn’t load your payments" with a retry.
+  - The note line reads «خطأ في دفعة؟ يلغيها صاحب المساحة، وتظهر هنا مشطوبة.»
+  - This page differs from the owner's «الدفعات»: no filters, no void, no range.
+
+## Finance «المالية والتقارير» / "Finance & reports" — /dashboard/spaces/:spaceId/finance   (roles: owner)
+- example URLs:
+  - Income: `…/finance` and `…/finance?month=2026-10`.
+  - Debts: `…/finance?tab=debts` and `…/finance?tab=debts&month=2026-10`.
+  - Occupancy: `…/finance?tab=occupancy` and `…/finance?tab=occupancy&month=2026-10`.
+  - Reception gets the 403.
+- params:
+  - `tab` = income|debts|occupancy. The default is income, and it is never written to the URL.
+  - `month` = YYYY-MM, from 2026-11 back to 2024-12. The default is the current month, 2026-11; anything else reads as the current month.
+  - `page` = the page of who owes; `credit` = the page of who is in credit.
+- states by URL:
+  - Income, current month: `…/finance`. November has 18 payments. It shows:
+    - the definition line;
+    - 3 tiles: «اليوم» / "Today", the month, and «منذ البداية» / "All time";
+    - the charts «الدخل حسب الشهر» / "Income by month" and «دخل الزيارات يوميًا» / "Visit income per day";
+    - the table «التحصيل حسب الموظف» / "Collections by staff member".
+  - Income, full month: `…/finance?month=2026-10`.
+  - Income, empty month: `…/finance?month=2024-12` → «لا تحصيل في هذا الشهر.» / "No collections this month."
+  - Debts: `…/finance?tab=debts`. It shows:
+    - the tiles «مجموع الديون» / "Total owed", «أرصدة للزبائن» / "Customer credit", «دفعوا في نوفمبر 2026», and «زيارات غير محصّلة» (a link to `/desk#uncollected`);
+    - the list «عليهم مبالغ» / "Customers who owe", with about 8 rows. Each row has «تذكير على واتساب» / "WhatsApp reminder" when the customer has a phone, and «استلام دفعة» / "Receive payment", which links to the customer's file;
+    - the list «لهم رصيد» / "In credit", with 1 row (customer 11);
+    - the payers card, with 4 payers in November and no «عرض الكل».
+  - Debts, October: `…/finance?tab=debts&month=2026-10`. It has 19 payers, so «عرض الكل» / "View all" shows and links to `/payments?from=2026-10-01&to=2026-10-31`.
+  - Debts, empty month: `…/finance?tab=debts&month=2024-12` → «لم يدفع أحد في هذا الشهر.» / "No one paid this month."
+  - Debts paging: `…/finance?tab=debts&page=2` is past the last page (about 8 debtors) and likely shows «لا توجد ديون» / "No one owes anything". There is no fallback to the last page, and a real page 2 can't be reached.
+  - Occupancy: `…/finance?tab=occupancy`. It shows the tiles «متوسط مدة الجلوس», «ساعة الذروة» and «متوسط الحضور اليومي», the heatmap «ساعات الذروة» / "Peak hours", and the chart «الزيارات والمشتركون يوميًا».
+  - Occupancy, empty month: `…/finance?tab=occupancy&month=2024-12` → the stay helper «لا جلسات مغلقة في …».
+- states by click:
+  - Tabs: role=tab «الدخل» / "Income", «الديون» / "Debts", «الإشغال» / "Occupancy", in a tablist «التقارير» / "Reports" (finance.tabs). They change the URL only.
+  - Month select: combobox «الشهر» / "Month" (finance.month). Options read like «نوفمبر 2026» / "November 2026"; there are 24. It changes the URL only.
+  - Export «⋯» (below 768):
+    - Trigger: `button[aria-label="إجراءات أخرى"]` / "More actions" (finance.export.more).
+    - The menu holds «تصدير الدخل (CSV)», «تصدير الديون (CSV)» or «تصدير الإشغال (CSV)» by tab ("Export income (CSV)", …).
+    - Opening the menu does not write.
+  - Export button (from 768): the same label as an outline button in the top bar.
+    - A click downloads a CSV and toasts «نُزّل الملف» / "File downloaded". Nothing is written on the server.
+    - The debts export first fetches `GET …/finance/debts?state=OWES&page=n&limit=50` through to the last page; a failure toasts «تعذّر تصدير الديون».
+    - The income and occupancy exports are disabled until their data has loaded.
+  - Do not click «تذكير على واتساب»: it is an external `wa.me` link in a new tab.
+- requests on load:
+  - income: `GET /api/v1/manage/spaces/26/finance/income[?month=]`
+  - debts:
+    - `GET …/finance/debts?state=OWES&page=1&limit=20`
+    - `GET …/finance/debts?state=CREDIT&page=1&limit=20`
+    - `GET …/finance/payers?[month=&]page=1&limit=5`
+  - occupancy: `GET …/finance/occupancy[?month=]`
+  - plus `GET /manage/spaces` (the space's name for the reminder)
+- empty/other notes:
+  - Loading shows skeleton tiles and charts for each tab.
+  - A 500 shows the alert «تعذّر تحميل المالية» / "Couldn’t load finance" with a retry.
+  - Any one of the 3 debts requests failing fails the debts tab.
+
+## Packages «الباقات والأسعار» / "Packages & prices" — /dashboard/spaces/:spaceId/packages   (roles: owner)
+- example URLs: `/dashboard/spaces/26/packages`. Reception gets the 403.
+- params: none.
+- states by URL:
+  - Ready. It shows the line «أسعار الأسبوع والشهر تُختار أيضًا في المكتب عند إنشاء اشتراك.»
+  - The published-prices card (`#prices`) has the link «تعديل الأسعار في ملف المساحة» / "Edit the prices in the space profile", which goes to `/profile?sheet=prices#prices`.
+  - «الباقات الخاصة» / "Private packages" lists 6 packages (ids 6–11). Package 11 «10 أيام خلال شهر» is paused: it is muted and has the badge «موقوفة» / "Paused".
+  - The empty state «لا توجد باقات خاصة» / "No private packages" needs a mock (`[]`).
+- states by click:
+  - New package sheet: the button «باقة جديدة» / "New package" (packages.add) opens a Sheet on the end side, «باقة جديدة».
+    - Fields:
+      - «اسم الباقة» / "Package name"
+      - «الصلاحية (أيام)», prefilled with 30
+      - the limit chips «الحدود»
+      - billing «سعر ثابت | بالساعة | باليوم»
+      - «السعر الكلي (₪)»
+      - audience «الجميع | الطلاب»
+      - shift «بدون وردية | صباحي | مسائي»
+      - a summary
+    - Footer: «حفظ الباقة» / "Save package". Close: «إغلاق» / "Close".
+    - All widths. Opening it does not write.
+  - Empty submit: in the new sheet, click «حفظ الباقة» → «أدخل اسم الباقة» / "Enter the package name" (packages.fieldErrors.name.required) and «أدخل السعر» / "Enter the price" (packages.fieldErrors.amount.required). Nothing is sent.
+  - Limit left empty: press the chip «عدد الأيام» / "Number of days", then submit → «أدخل العدد أو أطفئ هذا الحد» / "Enter the number, or turn this limit off" (packages.fieldErrors.limitEmpty). No write.
+  - Billing chip «بالساعة» / "Per hour": relabels the amount to «سعر الساعة (₪)» / "Price per hour (₪)". No write.
+  - Edit sheet: `button[aria-label^="تعديل "]` / `[aria-label^="Edit "]`, e.g. «تعديل ⁨يومي⁩» (packages.editNamed). It opens «تعديل الباقة» / "Edit package", prefilled. No write.
+  - **The availability switch WRITES.** It is role=switch «⁨يومي⁩: متاحة في المكتب» / "⁨يومي⁩: available at the desk" (packages.availableNamed) and sends `PATCH …/packages/:id {isActive}`. Do not click it.
+- requests on load: `GET /api/v1/manage/spaces/26` (the prices card and the shifts) and `GET /api/v1/manage/spaces/26/packages`.
+- on submit: `POST /manage/spaces/26/packages` (new) or `PATCH /manage/spaces/26/packages/:packageId` (edit).
+- empty/other notes:
+  - Loading shows role=status «جارٍ التحميل» / "Loading" with skeletons.
+  - A 500 shows the EmptyState «تعذّر تحميل الباقات» / "We couldn’t load the packages" with a retry.
+  - The prices card has its own loading and failure states, from `GET /manage/spaces/26`.
+
+## Profile «ملف المساحة» / "Space profile" — /dashboard/spaces/:spaceId/profile   (roles: owner)
+- example URLs:
+  - `/dashboard/spaces/26/profile`.
+  - `…/profile#hours`. The same works for `#photos`, `#prices`, `#shifts`, `#amenities`, `#about`, `#location` and `#contacts`.
+  - `…/profile?sheet=prices#prices`.
+  - `…/profile?report=1#report`.
+  - Reception at any of these gets the 403.
+- params:
+  - `sheet=prices|hours|shifts|amenities|about|location|contacts`: opens that Sheet once the page has drawn, then the app removes `sheet` from the URL and keeps the hash. Any other value is ignored.
+  - `report=<id>`: shows the notice of an OPEN report inside the section of its field. HOURS goes to hours, PRICES to prices, LOCATION to location, OTHER to about, AMENITIES to amenities, CONTACT to contacts.
+  - `#<section>`: scrolls to that section and focuses its heading. `#report` lands on the notice.
+- states by URL:
+  - report notice: `…/profile?report=1#report`. Report 1 is about HOURS and is OPEN. The notice «بلاغ مفتوح على ساعات العمل» / "An open report on Opening hours" (dataReports.notice.title) shows in the hours section.
+    - In it, «تم التصحيح» / "Corrected" (notice.resolve) **WRITES** `PATCH …/data-reports/1`.
+    - The link «فتح البلاغ للرد» / "Open the report to reply" goes to `…/reports?open=1`.
+  - `?report=2` and `?report=3` show no notice: those reports are already decided.
+  - the hours sheet opened by URL: `…/profile?sheet=hours#hours`.
+- states by click:
+  - Section editors: each section has an outline button with the text «تعديل» / "Edit" (spaces.editor.section.edit). Its aria-label is «تعديل {section}» / "Edit {section}" (section.editNamed, no isolates).
+    - Each opens a Sheet on the end side: full width below 768, `max-w-2xl` from 768.
+    - The Sheet's foot has «حفظ» / "Save" (section.save) and «رجوع» / "Back" (section.back). The close button is also named «رجوع».
+    - Opening never writes. The sections, as trigger aria-label → Sheet title:
+      - Prices: «تعديل الأسعار المعلنة» / "Edit Published prices" → «تعديل الأسعار المعلنة» / "Edit the published prices" (editor.prices.sheetTitle).
+      - Hours: «تعديل ساعات العمل» / "Edit Opening hours" → «تعديل ساعات العمل» / "Edit the opening hours" (hours.sheetTitle).
+      - Shifts: «تعديل الورديات» / "Edit Shifts" → «تعديل الورديات» / "Edit the shifts" (shifts.sheetTitle).
+      - Amenities: «تعديل المرافق» / "Edit Amenities" → «تعديل المرافق» / "Edit the amenities" (amenities.sheetTitle).
+      - About: «تعديل عن المساحة» / "Edit About the space" → «تعديل: عن المساحة» / "Edit: about the space" (about.sheetTitle).
+      - Location: «تعديل الموقع» / "Edit Location" → «تعديل الموقع» / "Edit the location" (location.sheetTitle). It holds a Leaflet map.
+      - Contacts: «تعديل التواصل» / "Edit Contacts" → «تعديل التواصل» / "Edit the contacts" (contacts.sheetTitle).
+  - Hours per day: in the hours Sheet, «تخصيص الأيام» / "Set each day" (hours.customise) switches to one row per day. No write.
+  - Hours unify dialog: from the per-day view, «رجوع إلى الشكل البسيط» / "Back to the simple view" (hours.simple). Space 26's days differ, so it opens an AlertDialog «سيتم توحيد الساعات لكل الأيام. متابعة؟» / "Every day will take the same hours. Continue?" (hours.unify.title). No write.
+  - About validation: in the about Sheet, clear «الاسم بالإنجليزية» / "Name in English", then «حفظ». The error is «أدخل الاسم بالإنجليزية» / "Enter the English name" (about.fieldErrors.nameEn.too_short). Nothing is sent.
+  - Contacts validation: «إضافة وسيلة تواصل» / "Add a contact" (contacts.add), then «حفظ». The error is «املأ القيمة أو احذف هذه الوسيلة» / "Fill in the value, or remove this contact" (contacts.fieldErrors.empty). Nothing is sent.
+  - Prices validation: «إضافة سعر» / "Add a price" (prices.add), then «حفظ». An amount error shows, probably «أدخل المبلغ» / "Enter the amount" (prices.fieldErrors.amount.required; the exact code is unconfirmed). Nothing is sent.
+  - Save with nothing changed: open any Sheet and press «حفظ» untouched. A toast says «لم يتغيّر شيء» / "Nothing changed" (section.unchanged). Nothing is sent.
+  - Discard dialog: edit a field in a Sheet, then press «رجوع». An AlertDialog opens: «تجاهل التغييرات؟» / "Discard the changes?" (editor.discard.title), with «رجوع» / "Back" and «تجاهل التغييرات» / "Discard changes". No write.
+  - Leave dialog: with an edited Sheet, go back in the browser's history. It asks «مغادرة الصفحة مع تغييرات غير محفوظة؟» / "Leave with unsaved changes?" (editor.leave.title), with «البقاء» / "Stay" and «المغادرة» / "Leave".
+  - Photos edit mode: «إدارة الصور» / "Manage photos" (photos.manage). Its label becomes «تم» / "Done".
+    - It shows the tile «اختر صورًا» / "Choose photos" (photos.choose), which opens the system's file picker. An upload **WRITES**.
+    - Entering the mode does not write.
+  - Photo delete dialog: in edit mode, the button aria-label «حذف الصورة 1» / "Delete Photo 1" (photos.removeNamed). It opens an AlertDialog «حذف هذه الصورة؟» / "Delete this photo?", with «رجوع» and «حذف» / "Delete" (**WRITES** `DELETE …/photos/:id`).
+  - Copy link: the header button «نسخ الرابط» / "Copy link" (header.copyLink). It copies to the clipboard and toasts «نُسخ رابط الصفحة العامة» / "Public page link copied". No server write.
+  - Public page: the header link «عرض الصفحة العامة» / "View public page" opens `/spaces/pal-hub` in a new tab.
+  - Section index: `nav[aria-label="أقسام الملف"]` / "Profile sections", from 1024 only.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26`
+  - `GET /api/v1/manage/spaces/26/photos`
+  - `GET /api/v1/lookups`
+  - `GET /api/v1/manage/spaces/26/packages`
+  - with `?report=1`, also `GET /api/v1/manage/spaces/26/data-reports/1`
+  - on submit:
+    - about and location: `PATCH /manage/spaces/26`
+    - hours and shifts: `PUT /manage/spaces/26/hours`
+    - prices, amenities and contacts: `PUT /manage/spaces/26/{prices|amenities|contacts}`
+    - «ما زالت صحيحة»: `POST …/{group}/confirm`
+    - photos: `POST …/photos` (multipart), `DELETE …/photos/:id`, `PUT …/photos/order`
+- empty/other notes:
+  - Every section is filled: 7 hours, 9 prices, 2 shifts, 6+2 amenities, 2 contacts, 4 photos. So these can't be reached:
+    - the empty states of the sections
+    - «أضف صورة غلاف»
+  - Every group was updated on 2026-11-01. So these can't be reached either:
+    - the stale badge
+    - «ما زالت صحيحة» / "Still correct"
+
+## Announcements «الإعلانات» / "Announcements" — /dashboard/spaces/:spaceId/announcements   (roles: both)
+- example URLs: `/dashboard/spaces/26/announcements` (the Active tab), `…/announcements?state=upcoming`, `…/announcements?state=ended`.
+  - The data, with today 2026-11-13:
+    - Active: id 4, an OFFER.
+    - Scheduled: none.
+    - Ended: 3 (id 2 GENERAL, id 3 CLOSURE, id 5 EVENT).
+  - Closure 3 is already extended: closure_extensions id 1, 2 days, by user 2.
+- params:
+  - `state=upcoming|ended`. Missing or any other value shows Active.
+  - `page=N`, 20 per page. No tab has more than 20, so page 2 can't be reached. A page past the last is replaced by the last.
+- states by URL:
+  - tabs: role=tab, each named by its label and its count: «نشطة 1» / "Active 1", «مجدولة 0» / "Scheduled 0", «منتهية 3» / "Ended 3" (announcements.tabs.*). A click rewrites the URL in place.
+  - empty: `…?state=upcoming` → «لا توجد إعلانات مجدولة» / "No scheduled announcements" (empty.UPCOMING), its text, and a second «إعلان جديد» button.
+  - extended closure: on `…?state=ended`, card 3 shows:
+    - the line «مُدّد اشتراكان · يومان · ⁨أحمد الشوا⁩ · <date>» (extension.line)
+    - the lock «مُدّدت اشتراكاته، فلا يُحذف ولا تُؤخَّر نهايته.» / "Its subscriptions were extended, so it isn’t deleted and its end isn’t moved later." (closure.extendedLock)
+    - no «⋯» and no edit
+- states by click:
+  - New-announcement sheet: the button «إعلان جديد» / "New announcement" (actions.new), at the end of the tabs row. It opens a Sheet «إعلان جديد» / "New announcement" (sheet.new).
+    - Close: «إغلاق» / "Close".
+    - Submit: «نشر الإعلان» / "Publish" (sheet.publish).
+    - All widths. Opening it does not write.
+  - New-announcement validation: with no text, press «نشر الإعلان». The error is «أدخل نص الإعلان بالعربية» / "Enter the Arabic text" (sheet.fields.textArRequired). The type defaults to GENERAL. Nothing is sent.
+  - Closure warning: in the radio group «النوع» / "Type", choose «إغلاق مؤقت» / "Temporary closure" (types.CLOSURE). A warning appears: «تظهر المساحة «مغلق الآن» للزوار طوال هذه الفترة، ويُنبَّه الاستقبال عند تسجيل الحضور.» (sheet.closure). No write.
+  - Period fields:
+    - «يبدأ» / "Starts": toggles «الآن» / "Now" and «في موعد» / "At a time".
+    - «ينتهي» / "Ends": «في موعد» / "At a time" and «بلا موعد» / "No end". «بلا موعد» shows the help «يبقى حتى تنهيه.» / "It stays until you end it."
+    - «في موعد» shows a date picker button, which opens a calendar with «الشهر السابق» and «الشهر التالي», and the field «الساعة» / "Time".
+    - No write.
+  - Edit sheet: on the Active tab, card 4's button «تعديل» / "Edit" (actions.edit). It opens a Sheet «تعديل الإعلان» / "Edit announcement" (sheet.edit), with the submit «حفظ» / "Save". Opening it does not write.
+  - Edit, nothing changed: press «حفظ» untouched. A toast says «لم يتغيّر شيء» / "Nothing changed" (sheet.nothingChanged). Nothing is sent.
+  - Card «⋯» menu: the trigger's aria-label starts «إجراءات أخرى: عرض» / "More actions: Offer" (actions.more). The period after it is isolated, so match the prefix. Its item is «حذف…» / "Delete…" (actions.delete). No write.
+  - Delete dialog, running announcement: card 4's «⋯» → «حذف…». It opens an AlertDialog «حذف إعلان «عرض · {period}»؟» / "Delete the announcement “Offer · {period}”?" (delete.title).
+    - Its text: «يختفي من صفحة المساحة فورًا. لا يمكن استرجاعه.» (delete.running).
+    - Buttons: «حذف» / "Delete" (**WRITES** `DELETE`) and «رجوع» / "Back".
+  - Delete dialog, ended announcement: on `…?state=ended`, the GENERAL or EVENT card's «⋯» → «حذف…». The text is «يُحذف من القائمة. لا يمكن استرجاعه.» / "It leaves this list. It can’t be brought back." (delete.ended). Opening it does not write.
+  - End now: «إنهاء الآن» / "End now" (actions.end), on card 4. **WRITES** at once, with no confirmation. The toast offers «تراجع».
+  - Start now: «ابدأ الآن» / "Start now". **WRITES**. There is no scheduled card, so it can't be reached.
+  - Closure extension dialog: can't be reached without a write or a mock. It needs the owner and a CLOSURE that has started with `extension: null`; the only closure is already extended.
+    - Trigger: «تمديد الاشتراكات» / "Extend subscriptions" (extension.action).
+    - Title: «تمديد الاشتراكات التي شملها الإغلاق؟» / "Extend the subscriptions this closure covered?".
+    - Field: «عدد الأيام» / "Number of days".
+    - Buttons: the submit «مدّد N اشتراك…» / "Extend N subscriptions" and «رجوع».
+    - Opening it reads `GET …/announcements/:id/extend-subscriptions`.
+    - To reach it, mock the list's answer with such a closure.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/announcements/summary`
+  - `GET /api/v1/manage/spaces/26/announcements?state=RUNNING&page=1&limit=20` (`state=UPCOMING` or `ENDED` on the other tabs)
+  - on submit:
+    - new: `POST …/announcements` (with an Idempotency-Key)
+    - edit: `PATCH …/announcements/4`
+    - end: `POST …/:id/end`
+    - start: `POST …/:id/start`
+    - delete: `DELETE …/:id`
+    - extend: `POST …/:id/extend-subscriptions` (with a key)
+- empty/other notes:
+  - Reception compared with the owner:
+    - reception never sees «تمديد الاشتراكات»
+    - on a closure that has started and is not extended, reception sees «يمدّد المالك الاشتراكات بعد بدء الإغلاق.» / "The owner extends subscriptions once the closure has started."
+    - reception keeps new, edit, end, start and delete
+  - On a closure that has not started yet, the owner sees `closure.upcoming`.
+
+## Data reports «بلاغات البيانات» / "Data reports" — /dashboard/spaces/:spaceId/reports   (roles: owner)
+- example URLs: `/dashboard/spaces/26/reports`, `…/reports?status=open`, `…/reports?status=decided`, `…/reports?open=1`, `…/reports?open=2`.
+  - Reception gets the 403.
+  - There are 3 reports:
+    - 1: HOURS, OPEN.
+    - 2: PRICES, RESOLVED, with a note.
+    - 3: LOCATION, DISMISSED, with a note.
+- params:
+  - `status=open|decided`. Anything else shows All.
+  - `page=N`, 20 per page. Page 2 can't be reached.
+  - `open=<reportId>`: opens the decide Sheet. A report that isn't on the page is read by its id. Closing the Sheet removes `open` from the URL.
+- states by URL:
+  - Status chips: a toggle group «تصفية حسب الحالة» / "Filter by status", with «الكل» / "All", «جديدة» / "New" and «تمت المراجعة» / "Reviewed" (dataReports.chips.*).
+  - An open report: `…?open=1`.
+  - A decided report, read only: `…?open=2`. It shows «القرار» / "Decision" and «الردّ: …» / "Reply: …".
+  - The count line reads «3 بلاغات» / "3 reports".
+  - These can't be reached: «لا توجد بلاغات» (empty), and «لا توجد بلاغات تطابق الفلاتر» with «عرض الكل» (no match).
+- states by click:
+  - Decide sheet: the row's button «فتح» / "Open" (dataReports.open). The list is a table from 768 and cards below. It opens a Sheet «بلاغ عن ساعات العمل» / "Report about Opening hours" (sheet.title).
+    - The link «تعديل الحقل» / "Edit the field" (sheet.editField) goes to `…/profile?report=1#report`.
+    - The reply «ردّ إدارة المساحة» / "Reply from the space" (sheet.replySpace).
+    - The buttons «تم التصحيح» / "Corrected" and «لم يُعتمد» / "Not accepted".
+    - Close: «إغلاق» / "Close".
+    - Opening it does not write.
+  - Dismiss validation: in report 1's Sheet, with the reply empty, press «لم يُعتمد». The error is «اكتب السبب؛ هو ما سيقرؤه صاحب البلاغ.» / "Write the reason; it’s what the reporter will read." (sheet.replyRequired). Nothing is sent.
+  - Resolve: «تم التصحيح». **WRITES** `PATCH …/data-reports/1`.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/data-reports?page=1&limit=20`, adding `status=OPEN|DECIDED` when a chip is chosen.
+  - With `?open=<id>` for a report that isn't on the page, also `GET …/data-reports/<id>`.
+  - On submit: `PATCH /manage/spaces/26/data-reports/:id {status, note?}`.
+- empty/other notes:
+  - The reporter is never named; the list shows «زائر» / "A visitor".
+  - The sidebar badge counts the OPEN reports (1).
+
+## Staff «الموظفون» / "Staff" — /dashboard/spaces/:spaceId/staff   (roles: owner)
+- example URLs: `/dashboard/spaces/26/staff`. Reception gets the 403.
+  - It has one row: user 3, «ليلى النجار», demo-reception@example.com, badge «نشط» / "Active".
+  - Her temporary password is settled.
+- params: none.
+- states by URL: the list as above.
+- states by click:
+  - Add-staff sheet: the button «إضافة موظف» / "Add staff member" (staff.add.open). It opens a Sheet «إضافة موظف».
+    - Fields: «الاسم» / "Name" and «البريد الإلكتروني» / "Email".
+    - Submit: «إنشاء حساب الاستقبال» / "Create the reception account". Close: «إغلاق».
+    - Opening it does not write.
+  - Add-staff validation: submit it empty. It shows «أدخل الاسم» / "Enter the name" (add.fieldErrors.name.too_short) and «أدخل بريدًا صحيحًا، مثل name@example.com» / "Enter a valid email, e.g. name@example.com" (email.invalid_format). Nothing is sent.
+  - Row «⋯» menu: aria-label «إجراءات: ⁨ليلى النجار⁩» / "Actions: ⁨ليلى النجار⁩" (staff.menu). The list is a table from 768 and cards below. Its items, in order:
+    - the link «عرض مقبوضاته» / "View collections", to `…/payments?staff=3&from=2026-11-01&to=2026-11-13`;
+    - «كلمة مرور مؤقتة جديدة» / "New temporary password", held (aria-disabled), with the reason «غيّر كلمة المرور المؤقتة؛ إن نسي كلمة مروره يستعيدها بالبريد.» (reissue.heldSettled);
+    - a separator, then «إيقاف وصوله» / "Remove access", destructive.
+    - Opening the menu does not write.
+  - Remove-access dialog: the menu's «إيقاف وصوله». It opens an AlertDialog «إيقاف وصول ⁨ليلى النجار⁩؟» / "Remove …’s access?" (deactivate.title), with «رجوع» and «إيقاف الوصول» / "Remove access" (**WRITES** `PATCH …/staff/3`).
+  - Re-issue dialog: can't be reached; the item is held for this account. It would show «كلمة مرور مؤقتة جديدة لـ … ؟» with «إصدار» / "Issue".
+  - One-time password dialog: needs a **WRITE** first. It follows the add-staff submit (`POST …/staff`) or a re-issue (`POST …/staff/:id/temporary-password`).
+    - Its title is «كلمة المرور المؤقتة» / "Temporary password" (users.temporaryPassword.title).
+    - It has «نسخ» / "Copy" and the choice «طريقة التسليم».
+    - Its done button **WRITES** `POST …/temporary-password/handover`.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/staff`
+  - `GET /api/v1/manage/spaces/26/finance/income`, for this month's collections column
+- empty/other notes:
+  - The empty state «لا يوجد موظفون» / "No staff yet" can't be reached.
+  - If the income read fails, the collections column shows «—».
+
+## Audit log «سجل التدقيق» / "Audit log" — /dashboard/spaces/:spaceId/audit   (roles: owner)
+- example URLs:
+  - `/dashboard/spaces/26/audit`
+  - `…/audit?page=2`
+  - `…/audit?period=all`
+  - `…/audit?actor=3`
+  - `…/audit?type=payments`
+  - `…/audit?q=zzzz`
+  - Reception gets the 403.
+- The data:
+  - 894 events in the last 30 days, 2383 in all.
+  - Actors: 3 (Leila), 2 (Ahmad), and null (the system). The admin (1) appears in all time only.
+  - The last 30 days by group: visit 359, checkIn 297, payment 195, subscription 16, customer 15, space 9, announcement 2, dataReport 1.
+- params:
+  - `q`: 1–80 characters.
+  - `period=all`: anything else shows the last 30 days.
+  - `actor=<userId>|masaha|system`.
+  - `type=payments|visits|checkIns|customers|subscriptions|packages|announcements|space|staff|settings|reports`.
+  - `page=N`: 20 per page, 45 pages in the last 30 days.
+- states by URL:
+  - page 2: `…/audit?page=2`
+  - search with no results: `…/audit?q=zzzz` → «لا توجد أحداث تطابق الفلاتر» / "No events match the filters"
+  - a filter with no results: `…/audit?type=packages` (also `type=staff` or `type=settings`) → the same line
+  - the admin as actor: `…/audit?period=all&actor=masaha` → «فريق مساحة» / "The Masaha team"
+  - The count line reads «الأحداث: 894» / "Events: 894".
+- states by click:
+  - Period select (from 768): combobox «الفترة» / "Period", options «آخر 30 يومًا» / "Last 30 days" and «كل الفترة» / "All time". No write.
+  - Actor select (from 768): combobox «المنفّذ» / "Actor", options «الكل», «ليلى النجار», «أحمد الشوا», «النظام». It shows only when the period has 2 or more actors. No write.
+  - Type select (from 768): combobox «نوع الإجراء» / "Action type", options «كل الإجراءات» and then the groups. No write.
+  - Filters sheet (below 768): the button aria-label «الفلاتر» / "Filters" (audit.filters.title); with a filter applied it is «فلتر واحد مطبّق» / "1 filter applied".
+    - It opens a bottom Sheet «الفلاتر», with «عرض 894 نتيجة» / "Show 894 results" and «مسح الفلاتر» / "Clear filters". Close: «إغلاق».
+    - No write.
+  - Search: the search field «بحث في الهدف» / "Search the target". It writes `q` after typing pauses. No write.
+- requests on load: `GET /api/v1/manage/spaces/26/audit-log?period=LAST_30_DAYS&page=1&limit=20`, adding `q`, `actions=<comma list>` and `actor` when set.
+- empty/other notes:
+  - The details column shows from 1024; below that, the details sit under the target.
+  - The target links go to the customer's file, the profile, the packages, the announcements, the payments, or `reports?open=<id>`.
+
+## Settings «الإعدادات» / "Settings" — /dashboard/spaces/:spaceId/settings   (roles: owner)
+- example URLs: `/dashboard/spaces/26/settings` and `…/settings#attendance` (also `#pricing`, `#reception`, `#reminder`, `#account`). Reception gets the 403.
+- The data:
+  - auto check-out on, with no stay limit
+  - rounding UP_AFTER_MINUTES 15, with the day cap on
+  - student prices on
+  - reception may not type a price
+  - the reminder is the default text, so «استعادة النص الافتراضي» is disabled
+- params: none.
+- states by URL: the cards, in order:
+  - «الحضور والحالة المباشرة» / "Attendance and the live status": the capacity, the switch «خروج تلقائي عند الإغلاق», and «خروج تلقائي بعد (ساعات)».
+  - «تسعير الزيارات» / "Visit pricing":
+    - the link «تُعدَّل أسعار الساعة واليوم في ملف المساحة», to `…/profile?sheet=prices#prices`
+    - the radio «التقريب»
+    - the switches «لا يتجاوز سعر اليوم» and «استخدام أسعار الطلاب للزيارات عند توفرها»
+  - «الاستقبال» / "Reception": the switch «يكتب الاستقبال سعرًا يدويًا».
+  - «رسالة التذكير» / "Reminder message": the text «نص الرسالة», and the insert buttons aria-label «إدراج {الاسم}», «إدراج {المبلغ}» and «إدراج {المساحة}».
+  - «حسابي» / "My account": the link «الإعدادات الشخصية» / "Personal settings".
+- states by click: every card saves with «حفظ» / "Save".
+  - Unsaved changes: change any field. The badge «تغييرات غير محفوظة» / "Unsaved changes" and the button «تجاهل التغييرات» / "Discard changes" appear. No write.
+  - Save with nothing changed: the line «لم يتغيّر شيء» / "Nothing changed". Nothing is sent.
+  - Capacity validation: type `0` in «السعة» / "Capacity" and save. The error is «عدد صحيح من 1 إلى 1000» / "A whole number from 1 to 1,000". Nothing is sent.
+  - Rounding validation: clear «دقائق التقريب» / "Rounding minutes" and save. The error is «أدخل عدد الدقائق» / "Enter the minutes". Nothing is sent.
+  - Reminder validation: clear «نص الرسالة» and save. The error is «اكتب نص الرسالة» / "Write the message". Nothing is sent.
+- requests on load:
+  - `GET /api/v1/manage/spaces/26/capacity`
+  - `GET /api/v1/manage/spaces/26/settings`
+  - `GET /api/v1/manage/spaces`, for the space's name in the reminder's preview
+  - on submit: `PATCH /manage/spaces/26/settings`. The attendance card sends `PUT …/capacity` first, then the `PATCH`.
+- empty/other notes:
+  - A failed settings read shows one alert, «تعذّر تحميل الإعدادات», with «إعادة المحاولة». The attendance card is then hidden.
+  - A failed capacity read shows its own alert.
+
+## Space shell — /dashboard/spaces/:spaceId/*   (roles: both)
+- example URLs: the owner lands on `/dashboard/spaces/26` (overview), and reception on `/dashboard/spaces/26/desk`. `/dashboard` redirects each user to their remembered or first space.
+- sidebar `nav[data-slot="sidebar"]`: aria-label «لوحة إدارة المساحة» / "Space dashboard" (dashboard.spaceNavigation).
+  - Its form follows the width:
+    - ≥1024 (lg): expanded, `data-mode="desktop"`, w-62.
+    - 768–1023: icon **rail** `data-mode="tablet"`, w-16. Labels are sr-only; each item shows a Tooltip with its name on hover or focus. A line divides the groups, whose labels are sr-only.
+    - <768: **drawer**, a Sheet from the start side, `data-mode="phone"`, holding a `SheetTitle` with the same label.
+  - Owner's groups, each a `role=group` named by its label, items in order:
+    - (no group): «نظرة عامة» / "Overview".
+    - «اليوم» / "Today": «مكتب الاستقبال» / "Front desk"; «الزبائن» / "Customers"; «الدفعات» / "Payments".
+    - «المال» / "Money": «المالية والتقارير» / "Finance & reports"; «الباقات والأسعار» / "Packages & prices".
+    - «المساحة» / "The space": «ملف المساحة» / "Space profile"; «الإعلانات» / "Announcements"; «بلاغات البيانات» / "Data reports".
+    - «الفريق والإعدادات» / "Team & settings": «الموظفون» / "Staff"; «سجل التدقيق» / "Audit log"; «الإعدادات» / "Settings".
+    - The keys are dashboard.groups.* and dashboard.pages.*.
+  - Reception's list is ungrouped, 4 items: «مكتب الاستقبال», «الزبائن», «دفعاتي اليوم» / "My payments today", «الإعلانات».
+  - The current item has `aria-current="page"`. The overview item is current only on its exact path.
+  - Badge: «بلاغات البيانات» shows the count `1` (1 OPEN report at space 26), `css=[data-slot="sidebar-menu-badge"]`. It is aria-hidden; the item's description reads «1 بلاغات جديدة» / "1 new reports" (dashboard.badges.newReports).
+  - Sidebar foot: the link «عرض الصفحة العامة» / "View public page" (dashboard.publicPage) → `/spaces/pal-hub` in a new tab. It shows once `/manage/spaces` has answered.
+  - Below 768 the drawer's foot also holds the language and theme toggles. The drawer's head holds the account menu.
+- switcher (sidebar header):
+  - The owner has only one live space (26; the link to space 1 is to a deleted space and is left out of `/manage/spaces`). So the switcher is **not a button**: just the mark «ب»(initial) with «بال هاب» / "Pal Hub" and the area «الرمال» / "Al-Rimal".
+  - States by URL:
+    - Choose-a-space: `/dashboard/spaces/999` (or `/dashboard/spaces/1`). The switcher becomes role=button «اختر مساحة» / "Choose a space" (spaceLinks.chooseSpace). It opens a DropdownMenu labelled «مساحاتك» / "Your spaces" with the menuitem link «بال هاب الرمال» → `/dashboard/spaces/26`. The page body shows the 403 «لا تملك صلاحية الوصول إلى هذه الصفحة» / "You don’t have access to this page" (status.forbidden.title).
+    - Loading: hold `GET /api/v1/manage/spaces`. The switcher shows `role=status` aria-label «جارٍ التحميل» / "Loading" with skeletons.
+    - Failed: answer `GET /manage/spaces` with a 500. It shows the alert «تعذّر تحميل مساحاتك» / "Couldn’t load your spaces" (spaceLinks.loadFailed) and the button «إعادة المحاولة» / "Try again" (status.retry).
+  - With two or more spaces, the trigger would be named «تبديل المساحة: ⁨بال هاب⁩» / "Switch space: Pal Hub" (spaceLinks.switchSpace). That needs a second live link, which the data does not have.
+- top bar `header` (sticky):
+  - Below 768: the drawer trigger, role=button, aria-label «القائمة» / "Menu" (dashboard.menu), `css=[data-slot="sidebar-trigger"]`. It opens the drawer. Choosing a link closes it.
+  - Then the page's `h1` title (the route's dashboard.pages.* name; the customer file uses the customer's name) and the page's own controls (the desk: see above).
+  - From 768:
+    - the language toggle: role=button, text «English» when the UI is Arabic, «العربية» when it is English (preferences.languageName of the other language). No write to the server.
+    - the theme toggle: aria-label «المظهر الداكن» / "Dark theme" in light mode, and «المظهر الفاتح» / "Light theme" in dark (preferences.switchTheme).
+    - the account menu: role=button, aria-label «قائمة الحساب: ⁨أحمد الشوا⁩» / "Account menu: أحمد الشوا" (users.menu); reception's is «قائمة الحساب: ⁨ليلى النجار⁩».
+- account menu (DropdownMenu):
+  - Label: «أحمد الشوا · صاحب المساحة» / "… · Owner" (users.nameWithRole + users.roles.OWNER); reception's is «ليلى النجار · موظف استقبال» / "… · Reception". The email is under it.
+  - Menuitems: «الموقع العام» / "Public site" (→ `/`); «إعدادات حسابي» / "Account settings"; «تسجيل الخروج» / "Sign out" (**WRITES**: logout).
+  - Below 768 the same menu opens from the drawer's head. The trigger, with the same aria-label, shows the name and role.
+- P2 public-state control: the live status popover is described under Desk. The same control also sits in the overview's top bar.
+- skip link: the first focusable element, `a[href="#main"]` «تخطَّ إلى المحتوى» / "Skip to content" (site.skipToContent). It is visible on keyboard focus: press Tab once after load. `main#main` takes the focus on each page change.
+- phone bottom bar `css=[data-slot="page-action-bar"]` (below 768, desk only): holds «تسجيل زيارة».
+- guards:
+  - A page the role does not allow shows the 403 inside the shell, for example reception at `/dashboard/spaces/26/payments`, `/finance`, `/packages`, `/profile`, `/reports`, `/staff`, `/audit`, `/settings`, or at `/dashboard/spaces/26` (the overview).
+  - The owner at `/dashboard/spaces/26/my-payments` gets the 403 as well.
+  - An unknown sub-path gives the 404 «الصفحة غير موجودة» / "Page not found" (status.notFound.title), e.g. `/dashboard/spaces/26/nope`.
+- states by click (shell):
+  - Phone drawer (below 768): click role=button «القائمة» / "Menu" (`[data-slot="sidebar-trigger"]`). It opens the drawer (a Sheet, `nav[data-mode="phone"]`). Escape or a link closes it. No write.
+  - Rail tooltip (768–1023): hover or focus a rail item, e.g. «مكتب الاستقبال». The tooltip shows the item's name. No write.
+  - Switcher menu: at `/dashboard/spaces/999`, click «اختر مساحة» / "Choose a space". The menu «مساحاتك» / "Your spaces" opens. No write.
+  - Account menu (from 768): click the top-bar button «قائمة الحساب: ⁨أحمد الشوا⁩» / "Account menu: …" (strip the isolates). It opens the menu above. No write unless you pick «تسجيل الخروج».
+  - Account menu in the drawer (below 768): open «القائمة», then click the same-named button at the drawer's head. No write.
+  - Language toggle: click «English» / «العربية». The whole UI switches language and direction (a local preference, no API write).
+  - Theme toggle: click «المظهر الداكن» / "Dark theme". The theme switches (local). No write.
+  - Skip link: press Tab once on any page. «تخطَّ إلى المحتوى» / "Skip to content" shows at the top start. No write.
+- requests (shell, every page):
+  - `GET /api/v1/manage/spaces`;
+  - owner only: `GET /api/v1/manage/spaces/26/data-reports?status=OPEN&page=1&limit=1`;
+  - the session is restored at boot with `POST /api/v1/auth/refresh`, then `GET /api/v1/me` as the session layer does.

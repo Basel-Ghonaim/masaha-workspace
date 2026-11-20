@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>مساحة — the room module (round 2)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=DM+Sans:wght@500&display=swap">
+<style>
+  body { margin: 0; background: #eef1f4; font-family: "IBM Plex Sans Arabic", sans-serif; color: #151f2c; }
+  header { padding: 22px 32px 6px; }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; color: #5d6673; font-size: 14px; }
+  .sheet { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 16px 32px 32px; }
+  .card { border-radius: 14px; padding: 18px 22px 16px; display: grid; gap: 8px; }
+  .light { background: #fff; --ink: #151f2c; --spark: #d2573d; --muted: #5d6673; }
+  .dark { background: #09121e; --ink: #f7fbff; --spark: #fea793; --muted: #a3acb8; }
+  .title { font-size: 13px; color: var(--muted); }
+  .title b { color: var(--ink); }
+  .big { direction: ltr; display: flex; justify-content: center; }
+  .small { direction: ltr; display: flex; gap: 26px; justify-content: center; align-items: flex-end; border-top: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); padding-top: 10px; }
+  svg { display: block; }
+  .latin { font-family: "DM Sans", sans-serif; font-weight: 500; letter-spacing: 0.42em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>مساحة — وحدة «الغرفة»: إعادة رسم المسودة 6 نظيفة + ثلاث إضافات</h1>
+  <p>الحروف من حلقة مربعة ناعمة واحدة بنفس السماكة؛ «مسا» متصلة و«حة» متصلة؛ الحاء مفتوحة (لا تُقرأ هاء)؛ السين بثلاث أسنان؛ نقطتا التاء المربوطة بالشرارة.</p>
+</header>
+<div class="sheet" id="sheet"></div>
+
+<script>
+  // Centre-line geometry, stroke 16. The word runs right to left: م at the right, ة at the left.
+  const WORD = `
+    <g fill="none" stroke="var(--ink)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M488 46 H527 A18 18 0 0 1 545 64 V74 A18 18 0 0 1 527 92 H488 A18 18 0 0 1 470 74 V64 A18 18 0 0 1 488 46 Z"/>
+      <path d="M330 92 H488"/>
+      <path d="M372 92 V66 M408 92 V66 M444 92 V66"/>
+      <path d="M330 92 V8"/>
+      <path d="M232 46 H282 A18 18 0 0 1 300 64 V74 A18 18 0 0 1 282 92 H187"/>
+      <path d="M158 46 H187 A18 18 0 0 1 205 64 V74 A18 18 0 0 1 187 92 H158 A18 18 0 0 1 140 74 V64 A18 18 0 0 1 158 46 Z"/>
+    </g>
+    <g fill="var(--spark)"><rect x="152" y="12" width="15" height="15" rx="4"/><rect x="178" y="12" width="15" height="15" rx="4"/></g>`;
+  const LATIN = (y) => `<text class="latin" x="342" y="${y}" text-anchor="middle" font-size="22" fill="var(--ink)">MASAHA</text>`;
+  const BRACKET = `<g fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"><path d="M134 118 Q134 132 148 132 H226"/><path d="M458 132 H536 Q550 132 550 118"/></g>`;
+  const ROOM = `<path d="M112 58 V138 A10 10 0 0 0 122 148 H562 A10 10 0 0 0 572 138 V58" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round"/>`;
+  const WINDOW = `<rect x="499" y="60" width="17" height="18" rx="4" fill="var(--spark)"/>`;
+
+  const variants = [
+    ['١', 'إعادة رسم 6 نظيفة', 'الخط تحت الاسم كقاعدة، كما في المسودة.', `<svg viewBox="100 -6 484 156" width="WIDTH">${WORD}${BRACKET}${LATIN(140)}</svg>`],
+    ['٢', 'الكلمة تسكن مساحة', 'القاعدة تصير أرض غرفة بجدارين مفتوحة من فوق: الكلمة داخل «مساحة».', `<svg viewBox="100 -6 484 196" width="WIDTH">${WORD}${ROOM}${LATIN(180)}</svg>`],
+    ['٣', 'نافذة مضاءة', 'رأس الميم غرفة نافذتها مضاءة بالشرارة: «مفتوحة الآن».', `<svg viewBox="100 -6 484 156" width="WIDTH">${WORD}${WINDOW}${BRACKET}${LATIN(140)}</svg>`],
+    ['٤', 'الغرفة + النافذة', 'الإضافتان معًا.', `<svg viewBox="100 -6 484 196" width="WIDTH">${WORD}${WINDOW}${ROOM}${LATIN(180)}</svg>`]
+  ];
+  const sheet = document.getElementById('sheet');
+  ['light', 'dark'].forEach((theme) => variants.forEach(([n, t, note, svg]) => {
+    sheet.insertAdjacentHTML('beforeend', `<section class="card ${theme}">
+      <div class="title"><b>${n}. ${t}</b> — ${note}</div>
+      <div class="big">${svg.replace('WIDTH', '520')}</div>
+      <div class="small">${svg.replace('WIDTH', '150')}${svg.replace('WIDTH', '96')}</div>
+    </section>`);
+  }));
+</script>
+</body>
+</html>

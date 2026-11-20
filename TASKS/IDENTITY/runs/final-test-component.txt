@@ -1,0 +1,34 @@
+[heavy] waiting 60 s (try 1 of 45)
+[heavy] waiting 60 s (try 2 of 45)
+[heavy] waiting 60 s (try 3 of 45)
+[heavy] waiting 60 s (try 4 of 45)
+[heavy] waiting 60 s (try 5 of 45)
+[heavy] waiting 60 s (try 6 of 45)
+[heavy] waiting 60 s (try 7 of 45)
+[heavy] waiting 60 s (try 8 of 45)
+[heavy] waiting 60 s (try 9 of 45)
+[heavy] waiting 60 s (try 10 of 45)
+[heavy] waiting 60 s (try 11 of 45)
+[heavy] waiting 60 s (try 12 of 45)
+
+> test:component
+> npm run test:component --workspaces --if-present
+
+
+> @masaha/web@0.0.0 test:component
+> vitest run --project component
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+Not implemented: navigation to another Document
+
+ Test Files  348 passed (348)
+      Tests  2120 passed (2120)
+   Start at  16:37:46
+   Duration  499.28s (environment 33%, import 30%, tests 25%, setup 9%, transform 2%)
+
+Environment  |component| jsdom was created 348 times · 927.61s total, 33% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

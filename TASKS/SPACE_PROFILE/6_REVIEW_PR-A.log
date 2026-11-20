@@ -1,0 +1,18 @@
+I've reviewed #140. Verdict: **mergeable after a fix round**. There are no blockers. The migration, server-side authorization and documents hold, but four should-fix defects need a round first.
+
+CI is green (10 checks pass, CodeRabbit skipped) and GitHub shows CLEAN. The head didn't move during the review (`29bcf80a`, 2 commits, 37 files).
+
+**Should-fix:**
+- **F1: YouTube video links are saved broken.** A pasted `youtube.com/watch?v=…` is accepted and saved as `https://www.youtube.com/watch`, which drops the video id and opens YouTube's home. The current editor offers YouTube from merge day. `youtu.be` links are refused for being videos, so this is inconsistent, and the data-model document's "a YouTube channel" line is wrong. Fix in the round: refuse non-channel paths and add the case to T4.
+- **F2: «وسيلة أخرى» turns a mistyped number into an IP-address link.** A mobile typed without its 0 (`599123456`) fails the phone rule, then gets read as a web address and saved as `https://35.181.230.0`. I'm relying on how the URL standard parses a bare number here; checking it with `node` needed an approval I didn't take. Fix in the round: refuse a number-only value the phone rule rejects, with a T5 case. The website type has had the same flaw since #48, so that part belongs in finding 218.
+- **F3: one API test is missing and the gap is undeclared.** T19's case (removing a shift a package uses → 409) doesn't exist; nothing in `hours.api.test.ts` mentions packages. The report moved these API checks (EC8, T16–T20) to PR-C, which only touches web files, and didn't list that among its departures. Fix: add the test to #140 as its own `test(spaces)` commit, or you add that file to PR-C's list.
+- **F4: no phone field reads Arabic-Indic digits.** Decision C2 assumes they're read "as today", but they aren't, for WhatsApp and phone either. The executor rightly didn't change the platform's phone rule, but didn't record a finding as the workflow requires. This needs your decision and finding 217, before PR-C.
+
+**Nits:**
+- **F5:** the current editor mishandles a «وسيلة أخرى» contact in two places, only for one created through the API before PR-C. Changing its type makes Save silently do nothing, and the admin's read-only view shows «وسيلة أخرى» instead of its own name. PR-C replaces both, so nothing to do in this PR.
+- **F6 (unconfirmed):** LinkedIn links on country subdomains, like `ps.linkedin.com/in/…`, are refused.
+
+Of the report's deviations, five are sound. Two are wrong: not recording finding 217, and the undeclared EC8 move. The full matrix and judgments are in the review.
+
+Files are in C:\dev\masaha\workspace\TASKS\SPACE_PROFILE:
+- 6_REVIEW_PR-A.md

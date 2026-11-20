@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Shown until the app sets each page's title, in the fallback's language (lang="ar" above). -->
+    <title>مساحة</title>
+    <script>
+      // Resolves the theme, language and direction before first paint, so a reload never flashes
+      // (docs/frontend/localisation.md#mechanism). The attributes on <html> above are the fallback
+      // when this script cannot run. It reads the keys shared/storage declares, which the app's
+      // preferences store writes.
+      ((window, document) => {
+        const LANGUAGES = ['ar', 'en'];
+        const stored = (key, allowed) => {
+          try {
+            const value = window.localStorage.getItem(key);
+            return allowed.includes(value) ? value : null;
+          } catch {
+            return null;
+          }
+        };
+        const theme =
+          stored('masaha.theme', ['light', 'dark']) ??
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const language =
+          stored('masaha.language', LANGUAGES) ??
+          window.navigator.languages
+            .map((tag) => tag.split('-')[0].toLowerCase())
+            .find((base) => LANGUAGES.includes(base)) ??
+          'ar';
+        const root = document.documentElement;
+        root.dataset.theme = theme;
+        root.lang = language;
+        root.dir = language === 'ar' ? 'rtl' : 'ltr';
+      })(window, document);
+    </script>
+    <script>
+      // Before any module: the schemas' library, zod, reads its settings from this global, and
+      // jitless it never probes for eval, which the site's Content-Security-Policy refuses and would
+      // report on every page (docs/development/setup.md, The deployment).
+      globalThis.__zod_globalConfig = { jitless: true };
+    </script>
+    <link rel="stylesheet" href="/src/shared/design-system/tokens/tailwind.css" />
+    <!-- The browser's icons and its bar's colour, drawn outside the page, where no token reaches:
+         they carry the identity's values themselves (docs/frontend/design-system/foundation.md §16). -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#f7fbff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0d1217" media="(prefers-color-scheme: dark)" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/app/main.tsx"></script>
+  </body>
+</html>

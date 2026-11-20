@@ -1,0 +1,652 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 66 failed) 56ms
+   ❯ theme key parity (6)
+     × resolves every role and themed token in the light theme 8ms
+     × resolves every role and themed token in the dark theme 3ms
+     × resolves every colour to a colour in the light theme, a translucent one only with its ground 1ms
+     × resolves every colour to a colour in the dark theme, a translucent one only with its ground 1ms
+   ❯ the palette (7)
+     × defines exactly the identity's ramps, eleven steps each, and white 3ms
+     × light: background is the logo's #f7fbff 2ms
+     × light: foreground is the logo's #1a1f25 1ms
+     × light: spark is the logo's #b55bb3 0ms
+     × dark: background is the logo's #0d1217 0ms
+     × dark: foreground is the logo's #f7fbff 0ms
+     × dark: spark is the logo's #d27ed0 0ms
+   ❯ contrast (138)
+     × light: hover-foreground on hover meets 4.5:1 0ms
+     × light: muted-foreground on hover meets 4.5:1 0ms
+     × light: sidebar-foreground on hover meets 4.5:1 0ms
+     × light: primary-foreground on primary-hover meets 4.5:1 0ms
+     × light: foreground on hover-on-muted over muted meets 4.5:1 0ms
+     × light: scrim-foreground on scrim over #ffffff meets 4.5:1 0ms
+     × light: scrim-foreground on scrim over #000000 meets 4.5:1 0ms
+     × light: spark on background meets 3:1 0ms
+     × light: spark on card meets 3:1 0ms
+     × light: spark on popover meets 3:1 0ms
+     × light: spark on sidebar meets 3:1 0ms
+     × light: spark on accent meets 3:1 0ms
+     × light: spark on sidebar-accent meets 3:1 0ms
+     × light: ring on hover meets 3:1 0ms
+     × dark: hover-foreground on hover meets 4.5:1 0ms
+     × dark: muted-foreground on hover meets 4.5:1 1ms
+     × dark: sidebar-foreground on hover meets 4.5:1 0ms
+     × dark: primary-foreground on primary-hover meets 4.5:1 0ms
+     × dark: foreground on hover-on-muted over muted meets 4.5:1 0ms
+     × dark: scrim-foreground on scrim over #ffffff meets 4.5:1 0ms
+     × dark: scrim-foreground on scrim over #000000 meets 4.5:1 0ms
+     × dark: spark on background meets 3:1 2ms
+     × dark: spark on card meets 3:1 0ms
+     × dark: spark on popover meets 3:1 0ms
+     × dark: spark on sidebar meets 3:1 0ms
+     × dark: spark on accent meets 3:1 0ms
+     × dark: spark on sidebar-accent meets 3:1 0ms
+     × dark: ring on hover meets 3:1 0ms
+   ❯ fills seen (22)
+     × light: hover stands apart from card at 1.2:1 0ms
+     × light: hover stands apart from background at 1.2:1 0ms
+     × light: hover stands apart from popover at 1.2:1 0ms
+     × light: hover stands apart from sidebar at 1.2:1 0ms
+     × light: hover-on-muted stands apart from muted at 1.2:1 0ms
+     × light: skeleton stands apart from card at 1.2:1 0ms
+     × light: skeleton stands apart from background at 1.2:1 0ms
+     × light: accent stands apart from card at 1.15:1 0ms
+     × light: sidebar-accent stands apart from sidebar at 1.15:1 0ms
+     × dark: hover stands apart from card at 1.2:1 0ms
+     × dark: hover stands apart from background at 1.2:1 0ms
+     × dark: hover stands apart from popover at 1.2:1 0ms
+     × dark: hover stands apart from sidebar at 1.2:1 0ms
+     × dark: hover-on-muted stands apart from muted at 1.2:1 0ms
+     × dark: skeleton stands apart from card at 1.2:1 0ms
+     × dark: skeleton stands apart from background at 1.2:1 0ms
+     × light: hover is not the selected tint (accent) 0ms
+     × light: hover is not the selected tint (sidebar-accent) 0ms
+     × dark: hover is not the selected tint (accent) 0ms
+     × dark: hover is not the selected tint (sidebar-accent) 0ms
+   ❯ the brand never reads as an error (15)
+     × light: spark is apart from destructive (normal vision) 0ms
+     × light: spark is apart from destructive (protan vision) 0ms
+     × light: spark is apart from destructive (deutan vision) 0ms
+     × dark: spark is apart from destructive (normal vision) 0ms
+     × dark: spark is apart from destructive (protan vision) 0ms
+     × dark: spark is apart from destructive (deutan vision) 0ms
+   ❯ the spark carries no text (2)
+     × offers the spark only as a fill, an edge, an outline and a mark 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 66 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every role and themed token in the light theme
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every role and themed token in the dark theme
+AssertionError: expected [ 'primary-hover', 'hover', …(6) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "primary-hover",
++   "hover",
++   "hover-foreground",
++   "hover-on-muted",
++   "spark",
++   "scrim",
++   "scrim-foreground",
++   "skeleton",
++ ]
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:492:21
+    490|   it.each(THEMES)('resolves every role and themed token in the %s them…
+    491|     const missing = [...ROLES, ...THEMED_TOKENS].filter((key) => !them…
+    492|     expect(missing).toEqual([]);
+       |                     ^
+    493|   });
+    494|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the light theme, a translucent one only with its ground
+Error: --primary-hover (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the dark theme, a translucent one only with its ground
+Error: --primary-hover (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > defines exactly the identity's ramps, eleven steps each, and white
+AssertionError: expected [ 'amber-100', 'amber-200', …(65) ] to deeply equal [ 'amber-100', 'amber-200', …(65) ]
+
+- Expected
++ Received
+
+@@ -19,10 +19,21 @@
+    "blue-600",
+    "blue-700",
+    "blue-800",
+    "blue-900",
+    "blue-950",
++   "brand-100",
++   "brand-200",
++   "brand-300",
++   "brand-400",
++   "brand-50",
++   "brand-500",
++   "brand-600",
++   "brand-700",
++   "brand-800",
++   "brand-900",
++   "brand-950",
+    "green-100",
+    "green-200",
+    "green-300",
+    "green-400",
+    "green-50",
+@@ -52,18 +63,7 @@
+    "red-600",
+    "red-700",
+    "red-800",
+    "red-900",
+    "red-950",
+-   "spark-100",
+-   "spark-200",
+-   "spark-300",
+-   "spark-400",
+-   "spark-50",
+-   "spark-500",
+-   "spark-600",
+-   "spark-700",
+-   "spark-800",
+-   "spark-900",
+-   "spark-950",
+    "white",
+  ]
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:513:28
+    511|       'white',
+    512|     ];
+    513|     expect(colours.sort()).toEqual(expected.sort());
+       |                            ^
+    514|   });
+    515|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > light: background is the logo's #f7fbff
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > dark: foreground is the logo's #f7fbff
+AssertionError: expected '#f4fcfe' to be '#f7fbff' // Object.is equality
+
+Expected: "#f7fbff"
+Received: "#f4fcfe"
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:42
+    519|     ),
+    520|   )("$theme: $token is the logo's $hex", ({ theme, token, hex }) => {
+    521|     expect(toHex(painted(theme, token))).toBe(hex);
+       |                                          ^
+    522|   });
+    523| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > light: foreground is the logo's #1a1f25
+AssertionError: expected '#182022' to be '#1a1f25' // Object.is equality
+
+Expected: "#1a1f25"
+Received: "#182022"
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:42
+    519|     ),
+    520|   )("$theme: $token is the logo's $hex", ({ theme, token, hex }) => {
+    521|     expect(toHex(painted(theme, token))).toBe(hex);
+       |                                          ^
+    522|   });
+    523| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > light: spark is the logo's #b55bb3
+Error: --spark (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > dark: background is the logo's #0d1217
+AssertionError: expected '#0c1315' to be '#0d1217' // Object.is equality
+
+Expected: "#0d1217"
+Received: "#0c1315"
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:42
+    519|     ),
+    520|   )("$theme: $token is the logo's $hex", ({ theme, token, hex }) => {
+    521|     expect(toHex(painted(theme, token))).toBe(hex);
+       |                                          ^
+    522|   });
+    523| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > dark: spark is the logo's #d27ed0
+Error: --spark (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: hover-foreground on hover meets 4.5:1
+Error: --hover-foreground (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: muted-foreground on hover meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: sidebar-foreground on hover meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: ring on hover meets 3:1
+Error: --hover (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: primary-foreground on primary-hover meets 4.5:1
+Error: --primary-hover (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: foreground on hover-on-muted over muted meets 4.5:1
+Error: --hover-on-muted (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: scrim-foreground on scrim over #ffffff meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: scrim-foreground on scrim over #000000 meets 4.5:1
+Error: --scrim-foreground (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on background meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on card meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on popover meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on sidebar meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on accent meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on sidebar-accent meets 3:1
+Error: --spark (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: hover-foreground on hover meets 4.5:1
+Error: --hover-foreground (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: muted-foreground on hover meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: sidebar-foreground on hover meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: ring on hover meets 3:1
+Error: --hover (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: primary-foreground on primary-hover meets 4.5:1
+Error: --primary-hover (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: foreground on hover-on-muted over muted meets 4.5:1
+Error: --hover-on-muted (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: scrim-foreground on scrim over #ffffff meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: scrim-foreground on scrim over #000000 meets 4.5:1
+Error: --scrim-foreground (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on background meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on card meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on popover meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on sidebar meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on accent meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on sidebar-accent meets 3:1
+Error: --spark (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from card at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from background at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from popover at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from sidebar at 1.2:1
+Error: --hover (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover-on-muted stands apart from muted at 1.2:1
+Error: --hover-on-muted (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: skeleton stands apart from card at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: skeleton stands apart from background at 1.2:1
+Error: --skeleton (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[24/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: accent stands apart from card at 1.15:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: sidebar-accent stands apart from sidebar at 1.15:1
+AssertionError: expected 1.065826883493417 to be greater than or equal to 1.15
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:548:21
+    546|     ({ theme, fill, ground, minimum }) => {
+    547|       const ratio = contrastRatio(painted(theme, fill, ground), painte…
+    548|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    549|     },
+    550|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[25/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover stands apart from card at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover stands apart from background at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover stands apart from popover at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover stands apart from sidebar at 1.2:1
+Error: --hover (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[26/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover-on-muted stands apart from muted at 1.2:1
+Error: --hover-on-muted (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[27/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: skeleton stands apart from card at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: skeleton stands apart from background at 1.2:1
+Error: --skeleton (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[28/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover is not the selected tint (accent)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover is not the selected tint (sidebar-accent)
+Error: --hover (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:555:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[29/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover is not the selected tint (accent)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover is not the selected tint (sidebar-accent)
+Error: --hover (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:555:19
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[30/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > light: spark is apart from destructive (normal vision)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > light: spark is apart from destructive (protan vision)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > light: spark is apart from destructive (deutan vision)
+Error: --spark (light) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:571:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[31/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: spark is apart from destructive (normal vision)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: spark is apart from destructive (protan vision)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: spark is apart from destructive (deutan vision)
+Error: --spark (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:571:22
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[32/66]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the spark carries no text > offers the spark only as a fill, an edge, an outline and a mark
+AssertionError: expected {} to deeply equal { …(4) }
+
+- Expected
++ Received
+
+- {
+-   "bg-spark": "background-color: var(--spark);",
+-   "border-spark": "border-color: var(--spark);",
+-   "fill-spark": "fill: var(--spark);",
+-   "outline-spark": "outline-color: var(--spark);",
+- }
++ {}
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:601:48
+    599|
+    600|   it('offers the spark only as a fill, an edge, an outline and a mark'…
+    601|     expect(Object.fromEntries(sparkUtilities)).toEqual({
+       |                                                ^
+    602|       'bg-spark': 'background-color: var(--spark);',
+    603|       'border-spark': 'border-color: var(--spark);',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[33/66]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  66 failed | 128 passed (194)
+   Start at  11:51:33
+   Duration  884ms (transform 49%, tests 29%, import 18%, worker 3%)
+

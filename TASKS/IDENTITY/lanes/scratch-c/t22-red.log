@@ -1,0 +1,78 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-c/apps/api
+
+ ❯ |unit| src/modules/auth/email/resetEmail.unit.test.ts (9 tests | 3 failed) 18ms
+   ❯ resetEmail (8)
+     × draws with ink + berry's neutrals only: #f7fbff, #ffffff, #dde5ed, #1a1f25 and #5e646a 8ms
+     × draws its button as the web's primary: a #1a1f25 ink cell under a #ffffff label 2ms
+     × writes its links in #1a1f25 ink, the one in the English text underlined 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/modules/auth/email/resetEmail.unit.test.ts > resetEmail > draws with ink + berry's neutrals only: #f7fbff, #ffffff, #dde5ed, #1a1f25 and #5e646a
+AssertionError: expected Set{ '#f4fcfe', '#02787d', …(4) } to deeply equal Set{ '#f7fbff', '#ffffff', …(3) }
+
+- Expected
++ Received
+
+  Set {
+-   "#1a1f25",
+-   "#5e646a",
+-   "#dde5ed",
+-   "#f7fbff",
++   "#02787d",
++   "#182022",
++   "#5c6567",
++   "#dbe6e9",
++   "#f4fcfe",
+    "#ffffff",
+  }
+
+ ❯ src/modules/auth/email/resetEmail.unit.test.ts:64:74
+     62|   // The identity's values, written by hand (ADR 0019, finding 19): a …
+     63|   it("draws with ink + berry's neutrals only: #f7fbff, #ffffff, #dde5e…
+     64|     expect(new Set(email.html.toLowerCase().match(/#[0-9a-f]{3,8}\b/g)…
+       |                                                                          ^
+     65|       new Set(['#f7fbff', '#ffffff', '#dde5ed', '#1a1f25', '#5e646a']),
+     66|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  |unit| src/modules/auth/email/resetEmail.unit.test.ts > resetEmail > draws its button as the web's primary: a #1a1f25 ink cell under a #ffffff label
+AssertionError: expected 'border-radius:8px;background:#02787d;' to contain 'background:#1a1f25;'
+
+Expected: "background:#1a1f25;"
+Received: "border-radius:8px;background:#02787d;"
+
+ ❯ src/modules/auth/email/resetEmail.unit.test.ts:75:18
+     73|       ).exec(email.html) ?? [];
+     74|
+     75|     expect(cell).toContain('background:#1a1f25;');
+       |                  ^
+     76|     expect(label).toContain('color:#ffffff;');
+     77|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  |unit| src/modules/auth/email/resetEmail.unit.test.ts > resetEmail > writes its links in #1a1f25 ink, the one in the English text underlined
+AssertionError: expected 'color:#02787d;' to contain 'color:#1a1f25;'
+
+Expected: "color:#1a1f25;"
+Received: "color:#02787d;"
+
+ ❯ src/modules/auth/email/resetEmail.unit.test.ts:86:21
+     84|     );
+     85|
+     86|     expect(english).toContain('color:#1a1f25;');
+       |                     ^
+     87|     expect(english).toContain('text-decoration:underline;');
+     88|     expect(asText).toHaveLength(2);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 6 passed (9)
+   Start at  13:17:11
+   Duration  369ms (transform 58%, import 21%, tests 15%, worker 6%)
+

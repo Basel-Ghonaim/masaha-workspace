@@ -1,0 +1,113 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 5 failed) 42ms
+   ❯ theme key parity (6)
+     × gives every theme exactly the same keys 12ms
+     × resolves every role and themed token in the dark theme 2ms
+     × resolves every colour to a colour in the dark theme, a translucent one only with its ground 1ms
+   ❯ contrast (138)
+     × dark: foreground on hover-on-muted over muted meets 4.5:1 0ms
+   ❯ fills seen (22)
+     × dark: hover-on-muted stands apart from muted at 1.2:1 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > gives every theme exactly the same keys
+AssertionError: expected [ Array(58) ] to deeply equal [ Array(59) ]
+
+- Expected
++ Received
+
+@@ -19,11 +19,10 @@
+    "elevation-overlay",
+    "elevation-raised",
+    "foreground",
+    "hover",
+    "hover-foreground",
+-   "hover-on-muted",
+    "info",
+    "info-foreground",
+    "info-subtle",
+    "info-subtle-foreground",
+    "input",
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:486:48
+    484|     const [first, ...others] = THEMES;
+    485|     for (const theme of others) {
+    486|       expect([...themes[theme].keys()].sort()).toEqual([...themes[firs…
+       |                                                ^
+    487|     }
+    488|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every role and themed token in the dark theme
+AssertionError: expected [ 'hover-on-muted' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "hover-on-muted",
++ ]
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:492:21
+    490|   it.each(THEMES)('resolves every role and themed token in the %s them…
+    491|     const missing = [...ROLES, ...THEMED_TOKENS].filter((key) => !them…
+    492|     expect(missing).toEqual([]);
+       |                     ^
+    493|   });
+    494|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the dark theme, a translucent one only with its ground
+Error: --hover-on-muted (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: foreground on hover-on-muted over muted meets 4.5:1
+Error: --hover-on-muted (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover-on-muted stands apart from muted at 1.2:1
+Error: --hover-on-muted (dark) is not defined
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:387:11
+    385|   const value = themes[theme].get(token) ?? primitives.get(token);
+    386|   if (value === undefined) {
+    387|     throw new Error(`--${token} (${theme}) is not defined`);
+       |           ^
+    388|   }
+    389|   return resolveValue(theme, value);
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed | 189 passed (194)
+   Start at  11:54:25
+   Duration  540ms (transform 54%, tests 21%, import 20%, worker 4%)
+

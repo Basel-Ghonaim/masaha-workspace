@@ -1,0 +1,420 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-b/apps/web
+
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > renders the header, the page in the main landmark, and the footer
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the wordmark, the pages and sign-in to their paths
+ × |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo in the header’s home link, which it names «Masaha», and «مساحة» in Arabic 405ms
+   → Unable to find an accessible element with the role "link" and name "Masaha"
+
+Here are the accessible roles:
+
+  button:
+
+  Name "Menu":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Menu"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "العربية":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Dark theme":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Dark theme"[39m
+    [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) hidden md:inline-flex"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "":
+  [36m<a[39m
+    [33mclass[39m=[32m"rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Home":
+  [36m<a[39m
+    [33maria-current[39m=[32m"page"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground active"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Spaces":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/spaces"[39m
+  [36m/>[39m
+
+  Name "About Masaha":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  Name "Sign in":
+  [36m<a[39m
+    [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) hidden md:inline-flex"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/login"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Main navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Main navigation"[39m
+    [33mclass[39m=[32m"ms-6 hidden items-center gap-1 md:flex"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<header[39m
+  [33mclass[39m=[32m"border-b border-border bg-background"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"mx-auto flex h-14 max-w-7xl items-center gap-2 px-4 md:px-8"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33maria-label[39m=[32m"Menu"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-menu"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M4 5h16"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M4 12h16"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M4 19h16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<a[39m
+      [33mclass[39m=[32m"rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+      [33mdata-discover[39m=[32m"true"[39m
+      [33mhref[39m=[32m"/"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"w-auto shrink-0 aspect-[2473/903] h-10"[39m
+        [33mdata-slot[39m=[32m"logo"[39m
+        [33mfocusable[39m=[32m"false"[39m
+        [33mviewBox[39m=[32m"263 45 2473 903"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33mclass[39m=[32m"fill-foreground"[39m
+          [33md[39m=[32m"M 1401.500 71.039 C 1381.369 76.382, 1363.278 91.099, 1354.732 109.084 C 1346.894 125.578, 1347.500 104.222, 1347.500 364 C 1347.500 622.966, 1346.980 601.774, 1353.923 625.900 C 1370.234 682.572, 1418.526 727.220, 1477 739.688 C 1484.858 741.363, 1492.485 741.500, 1578 741.500 L 1670.500 741.500 1681.160 738.791 C 1699.294 734.183, 1714 728.712, 1714 726.575 C 1714 725.926, 1710.017 721.925, 1705.148 717.684 C 1695.792 709.533, 1693.920 707.612, 1684.600 696.594 C 1665.989 674.593, 1650.340 641.048, 1646.497 614.915 C 1645.363 607.205, 1645.694 607.336, 1632.307 609.287 C 1615.533 611.732, 1529.046 611.844, 1519.742 609.433 C 1508.425 606.501, 1499.114 598.734, 1494.101 588.046 L 1491.500 582.500 1490.975 353.500 C 1490.399 102.684, 1490.860 120.459, 1484.609 108 C 1475.430 89.707, 1457.981 75.890, 1437.356 70.581 C 1428.787 68.376, 1410.660 68.607, 1401.500 71.039 M 456.500 256.695 C 407.737 261.410, 362.166 284.319, 332.578 318.992 C 312.821 342.143, 298.011 371.459, 291.645 400.016 C 287.070 420.543, 286.830 427.316, 287.254 524 C 287.637 611.452, 287.721 614.820, 289.750 624 C 303.327 685.455, 347.411 728.269, 411 741.759 C 422.257 744.148, 717.645 744.858, 731.139 742.529 C 742.108 740.636, 749.940 738.007, 761.384 732.374 C 770.381 727.946, 788 715.643, 788 713.789 C 788 713.233, 783.457 708.021, 777.905 702.205 C 754.347 677.531, 739.025 652.001, 727.905 618.893 L 722.663 603.287 713.535 607.611 C 696.878 615.501, 705.132 615.074, 575.257 614.770 C 463.438 614.509, 459.341 614.434, 454.837 612.567 C 443.039 607.675, 432.211 597.074, 427.744 586.042 L 425.500 580.500 425.500 502.500 L 425.500 424.500 427.888 417.500 C 432.637 403.580, 441.603 393.526, 455 387.098 L 462.500 383.500 579.500 383 C 643.850 382.725, 700.455 382.793, 705.289 383.152 C 720.066 384.248, 730.191 391.035, 736.392 404 L 739.500 410.500 740.077 493.500 C 740.686 581.179, 740.744 582.295, 745.600 600.500 C 748.814 612.550, 755.185 629.415, 760.669 640.391 C 787.510 694.113, 839.769 732.196, 898.006 740.472 C 911.393 742.375, 1184.300 742.754, 1199.500 740.891 C 1216.673 738.787, 1239.532 730.686, 1255.129 721.176 C 1298.027 695.021, 1324.767 653.552, 1329.906 605.211 C 1331.357 591.564, 1331.390 428.848, 1329.945 413 C 1323.564 343.018, 1267.499 283.228, 1197.767 272.043 C 1185.656 270.100, 1180.810 270, 1098.686 270 C 1018.531 270, 1011.592 270.135, 1001.919 271.880 C 935.544 283.859, 891.967 340.473, 898.934 405.676 C 901.026 425.255, 905.536 435.628, 916.955 447.120 C 937.045 467.338, 969.735 470.332, 993.518 454.133 C 1006.951 444.982, 1015.570 430.943, 1017.542 415 C 1018.880 404.176, 1023.296 397.888, 1032.382 393.868 L 1037.500 391.604 1101 391.324 C 1166.228 391.036, 1172.839 391.342, 1179.946 394.977 C 1186.516 398.337, 1192.780 404.808, 1196.213 411.781 L 1199.500 418.456 1199.774 495.469 C 1200.039 569.825, 1199.980 572.706, 1198.066 578.991 C 1193.266 594.750, 1180.957 606.383, 1163.145 611.997 C 1156.937 613.953, 1154.064 614, 1039.605 614 C 937.699 614, 921.655 613.801, 916.552 612.472 C 896.115 607.148, 879.271 590.111, 873.975 569.404 C 872.082 562.001, 872 558.045, 872 474.301 C 872 419.484, 871.605 383.302, 870.939 377.211 C 864.555 318.764, 823.759 273.414, 764.408 258.787 L 755.500 256.591 608 256.450 C 526.875 256.372, 458.700 256.482, 456.500 256.695 M 2360.937 269.023 C 2304.897 278.900, 2257.560 321.199, 2241.588 375.671 C 2235.076 397.880, 2235 399.156, 2235 486.984 C 2235 537.043, 2234.620 568.731, 2233.979 572.109 C 2231.554 584.898, 2222.388 597.306, 2211.592 602.413 C 2208.585 603.836, 2205.891 605, 2205.606 605 C 2205.321 605, 2204.916 558.763, 2204.707 502.250 C 2204.420 424.764, 2204.018 398.148, 2203.075 394 C 2198.748 374.983, 2184.839 359.475, 2165.382 351.975 C 2157.277 348.851, 2139.247 348.058, 2129.974 350.417 C 2107.509 356.132, 2091.523 371.514, 2084.677 394 C 2083.971 396.320, 2083.425 430.896, 2083.056 496.574 L 2082.500 595.648 2079.749 599.804 C 2075.264 606.579, 2070.791 608.234, 2058.042 607.835 C 2048.029 607.522, 2047.092 607.313, 2043.550 604.608 C 2041.467 603.018, 2038.803 599.643, 2037.631 597.108 C 2035.503 592.507, 2035.500 592.352, 2035.422 493 C 2035.362 416.078, 2035.053 392.153, 2034.062 387.563 C 2029.051 364.353, 2011.937 34...
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the footer to about, to the privacy policy and to the contact section
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > marks the current page's link, and only it, as the current page
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > switches to the other language, and <html>'s lang and dir follow
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > sets data-theme to the opposite of the theme shown
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > keeps the language in the header at every width, and the theme there from 768 px only (SH-005)
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > opens the phone menu with the links, the theme and sign-in, and closes it when a link is chosen
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo, named «Masaha», at the head of the phone menu, which keeps its own name
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > offers «تخطَّ إلى المحتوى» first, leading to the page’s main content
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > offers «Skip to content» first in the focus shell too, leading to its main
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > moves the focus to the main content when another page opens, not on the first load nor when only the search changes
+ ↓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > closes the phone menu when the history moves under it
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the owner’s twelve pages, the overview marked as the page shown
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists reception’s four pages at its space, the front desk among them
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > draws the owner’s pages in four groups named by task, the overview first and ungrouped
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > draws reception’s four pages with no group names
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > keeps the group names for assistive technology only on the rail
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > counts the open reports on the owner’s «Data reports», named for a reader, and shows none at zero
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > shows no count on «Data reports» with no open report
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > counts the reports waiting for the admin on the admin’s «Data reports»
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the admin’s eight pages under the platform’s own header
+ × |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > heads the admin’s sidebar with the logo hidden from assistive technology, «مساحة» read once beside «إدارة المنصة», and no «م» tile 163ms
+   → [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"aria-hidden"[32m[39m[2m, [22m[32m[32m"true"[32m[39m[2m) // element.getAttribute("aria-hidden") === "true"[22m
+
+Expected the element to have attribute:
+[32m  aria-hidden="true"[39m
+Received:
+[31m  null[39m
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > shows the admin the lookups page: its title in the top bar, and the governorates
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > links each page below its branch
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > links the space’s public page, by its slug, in a new tab
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses the owner reception’s payments today with the 403
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 404 inside the shell, with no pages listed, for a space id that is not one
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 403 inside the shell for a space the user holds no link to
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 404 inside the shell for a page the space branch does not have
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses a non-admin the platform’s pages with the 403, without the admin’s navigation
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > sends a guest to sign-in, carrying the space page asked for
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends the admin
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends an owner, to the overview
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends reception, to the front desk
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends a user with no role and no space, home
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends a user back to the space they entered last
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > remembers it for the user
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > moves to another space from the switcher, listing its role’s pages and remembering it
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > remembers no space the user holds no link to
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > closes the drawer when another space is chosen in it
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > keeps the top bar to the trigger and the page; the drawer opens with the account, its foot holding the language and the theme
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > opens the drawer with the pages and the language, and closes it when a page is chosen
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the amenities’ tab from the address
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the governorates’ tab when the address names no tab it has ()
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the governorates’ tab when the address names no tab it has (?tab=elsewhere)
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > keeps the tab chosen in the address, and none for the first tab
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > names its tabs after the page, each tab with its own hint under them
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's add-space page > offers the public catalogue’s areas, and opens the new space’s editor once it is added
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > is titled by the space’s name once it has loaded, in the top bar and the tab, under a trail back to the list
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > is titled "Edit space" while the space loads
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > shows the 404 inside the shell for an id that names no space
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's space profile > shows the owner the space profile under its title, read from the managed route
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's space profile > refuses reception the space profile with the 403
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's packages and prices > shows the owner Packages & prices under its title, its prices and packages read from the managed routes
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows the owner the desk under its title, with who is present and their check-out
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows reception the desk under its title, with who is present and their check-out
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > puts «Check in a visit» in the bar at the foot below 768 px, and «Switch staff» in the «⋯» menu
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > lands the overview’s «with no price» link on the desk’s card of them, its heading focused
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows the owner the ledger under «Payments», each customer a link to their file
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows reception «My payments today»: the handover figures and its own payments
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > shows the owner «Data reports» under its title, the reporter a visitor
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > refuses reception the space’s data reports with the 403
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > shows the admin «Data reports» under its title, every space’s, the reporter named
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > refuses an owner the admin’s data reports with the 403
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows the owner the customers under its title, each a link to the file
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows reception the customers under its title, each a link to the file
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows the owner a customer’s file titled by their name, under a trail back to the list
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows reception a customer’s file titled by their name, under a trail back to the list
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > titles the file «Customer file» while it loads
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > shows the owner the staff page under its title, its list read from the managed route
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > refuses reception the staff page with the 403
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's settings > shows the owner the settings page under its title, read from the managed route
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's settings > refuses reception the settings page with the 403
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > shows the list under its title, each row with its menu, and the place field of the lookups
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > leads from "Add space", above the list, to the add page, which adds no page to the sidebar
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > keeps every menu’s actions waiting out a 429 through a change of filter, then of page
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's owners page > shows the admin’s owners page under its title, with the owners
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's owners page > offers «Add owner» above the owners list
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's users page > shows the admin’s users page under its title, with the users
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's announcements > shows the owner the announcements under «Announcements», by state
+ ↓ |component| src/pages/dashboard/routes.component.test.tsx > the space's announcements > shows reception the same announcements under «Announcements»
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > heads the admin’s sidebar with the logo hidden from assistive technology, «مساحة» read once beside «إدارة المنصة», and no «م» tile
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"aria-hidden"[32m[39m[2m, [22m[32m[32m"true"[32m[39m[2m) // element.getAttribute("aria-hidden") === "true"[22m
+
+Expected the element to have attribute:
+[32m  aria-hidden="true"[39m
+Received:
+[31m  null[39m
+ ❯ src/pages/dashboard/routes.component.test.tsx:388:56
+    386|     const head = within(header);
+    387|     expect(head.queryByText('م')).not.toBeInTheDocument();
+    388|     expect(header.querySelector('[data-slot="logo"]')).toHaveAttribute…
+       |                                                        ^
+    389|     expect(head.queryByRole('img')).not.toBeInTheDocument();
+    390|     expect(head.getByText('مساحة')).toHaveClass('sr-only');
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo in the header’s home link, which it names «Masaha», and «مساحة» in Arabic
+TestingLibraryElementError: Unable to find an accessible element with the role "link" and name "Masaha"
+
+Here are the accessible roles:
+
+  button:
+
+  Name "Menu":
+  [36m<button[39m
+    [33maria-expanded[39m=[32m"false"[39m
+    [33maria-haspopup[39m=[32m"dialog"[39m
+    [33maria-label[39m=[32m"Menu"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+    [33mdata-slot[39m=[32m"sheet-trigger"[39m
+    [33mdata-state[39m=[32m"closed"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "العربية":
+  [36m<button[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  Name "Dark theme":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Dark theme"[39m
+    [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) hidden md:inline-flex"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "":
+  [36m<a[39m
+    [33mclass[39m=[32m"rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Home":
+  [36m<a[39m
+    [33maria-current[39m=[32m"page"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground active"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Spaces":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/spaces"[39m
+  [36m/>[39m
+
+  Name "About Masaha":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) text-muted-foreground aria-[current=page]:text-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  Name "Sign in":
+  [36m<a[39m
+    [33mclass[39m=[32m"shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-8 px-3 pointer-coarse:h-(--control-height) hidden md:inline-flex"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/login"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  navigation:
+
+  Name "Main navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Main navigation"[39m
+    [33mclass[39m=[32m"ms-6 hidden items-center gap-1 md:flex"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<header[39m
+  [33mclass[39m=[32m"border-b border-border bg-background"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"mx-auto flex h-14 max-w-7xl items-center gap-2 px-4 md:px-8"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-expanded[39m=[32m"false"[39m
+      [33maria-haspopup[39m=[32m"dialog"[39m
+      [33maria-label[39m=[32m"Menu"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) md:hidden"[39m
+      [33mdata-slot[39m=[32m"sheet-trigger"[39m
+      [33mdata-state[39m=[32m"closed"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-menu"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M4 5h16"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M4 12h16"[39m
+        [36m/>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M4 19h16"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+    [36m<a[39m
+      [33mclass[39m=[32m"rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"[39m
+      [33mdata-discover[39m=[32m"true"[39m
+      [33mhref[39m=[32m"/"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"w-auto shrink-0 aspect-[2473/903] h-10"[39m
+        [33mdata-slot[39m=[32m"logo"[39m
+        [33mfocusable[39m=[32m"false"[39m
+        [33mviewBox[39m=[32m"263 45 2473 903"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33mclass[39m=[32m"fill-foreground"[39m
+          [33md[39m=[32m"M 1401.500 71.039 C 1381.369 76.382, 1363.278 91.099, 1354.732 109.084 C 1346.894 125.578, 1347.500 104.222, 1347.500 364 C 1347.500 622.966, 1346.980 601.774, 1353.923 625.900 C 1370.234 682.572, 1418.526 727.220, 1477 739.688 C 1484.858 741.363, 1492.485 741.500, 1578 741.500 L 1670.500 741.500 1681.160 738.791 C 1699.294 734.183, 1714 728.712, 1714 726.575 C 1714 725.926, 1710.017 721.925, 1705.148 717.684 C 1695.792 709.533, 1693.920 707.612, 1684.600 696.594 C 1665.989 674.593, 1650.340 641.048, 1646.497 614.915 C 1645.363 607.205, 1645.694 607.336, 1632.307 609.287 C 1615.533 611.732, 1529.046 611.844, 1519.742 609.433 C 1508.425 606.501, 1499.114 598.734, 1494.101 588.046 L 1491.500 582.500 1490.975 353.500 C 1490.399 102.684, 1490.860 120.459, 1484.609 108 C 1475.430 89.707, 1457.981 75.890, 1437.356 70.581 C 1428.787 68.376, 1410.660 68.607, 1401.500 71.039 M 456.500 256.695 C 407.737 261.410, 362.166 284.319, 332.578 318.992 C 312.821 342.143, 298.011 371.459, 291.645 400.016 C 287.070 420.543, 286.830 427.316, 287.254 524 C 287.637 611.452, 287.721 614.820, 289.750 624 C 303.327 685.455, 347.411 728.269, 411 741.759 C 422.257 744.148, 717.645 744.858, 731.139 742.529 C 742.108 740.636, 749.940 738.007, 761.384 732.374 C 770.381 727.946, 788 715.643, 788 713.789 C 788 713.233, 783.457 708.021, 777.905 702.205 C 754.347 677.531, 739.025 652.001, 727.905 618.893 L 722.663 603.287 713.535 607.611 C 696.878 615.501, 705.132 615.074, 575.257 614.770 C 463.438 614.509, 459.341 614.434, 454.837 612.567 C 443.039 607.675, 432.211 597.074, 427.744 586.042 L 425.500 580.500 425.500 502.500 L 425.500 424.500 427.888 417.500 C 432.637 403.580, 441.603 393.526, 455 387.098 L 462.500 383.500 579.500 383 C 643.850 382.725, 700.455 382.793, 705.289 383.152 C 720.066 384.248, 730.191 391.035, 736.392 404 L 739.500 410.500 740.077 493.500 C 740.686 581.179, 740.744 582.295, 745.600 600.500 C 748.814 612.550, 755.185 629.415, 760.669 640.391 C 787.510 694.113, 839.769 732.196, 898.006 740.472 C 911.393 742.375, 1184.300 742.754, 1199.500 740.891 C 1216.673 738.787, 1239.532 730.686, 1255.129 721.176 C 1298.027 695.021, 1324.767 653.552, 1329.906 605.211 C 1331.357 591.564, 1331.390 428.848, 1329.945 413 C 1323.564 343.018, 1267.499 283.228, 1197.767 272.043 C 1185.656 270.100, 1180.810 270, 1098.686 270 C 1018.531 270, 1011.592 270.135, 1001.919 271.880 C 935.544 283.859, 891.967 340.473, 898.934 405.676 C 901.026 425.255, 905.536 435.628, 916.955 447.120 C 937.045 467.338, 969.735 470.332, 993.518 454.133 C 1006.951 444.982, 1015.570 430.943, 1017.542 415 C 1018.880 404.176, 1023.296 397.888, 1032.382 393.868 L 1037.500 391.604 1101 391.324 C 1166.228 391.036, 1172.839 391.342, 1179.946 394.977 C 1186.516 398.337, 1192.780 404.808, 1196.213 411.781 L 1199.500 418.456 1199.774 495.469 C 1200.039 569.825, 1199.980 572.706, 1198.066 578.991 C 1193.266 594.750, 1180.957 606.383, 1163.145 611.997 C 1156.937 613.953, 1154.064 614, 1039.605 614 C 937.699 614, 921.655 613.801, 916.552 612.472 C 896.115 607.148, 879.271 590.111, 873.975 569.404 C 872.082 562.001, 872 558.045, 872 474.301 C 872 419.484, 871.605 383.302, 870.939 377.211 C 864.555 318.764, 823.759 273.414, 764.408 258.787 L 755.500 256.591 608 256.450 C 526.875 256.372, 458.700 256.482, 456.500 256.695 M 2360.937 269.023 C 2304.897 278.900, 2257.560 321.199, 2241.588 375.671 C 2235.076 397.880, 2235 399.156, 2235 486.984 C 2235 537.043, 2234.620 568.731, 2233.979 572.109 C 2231.554 584.898, 2222.388 597.306, 2211.592 602.413 C 2208.585 603.836, 2205.891 605, 2205.606 605 C 2205.321 605, 2204.916 558.763, 2204.707 502.250 C 2204.420 424.764, 2204.018 398.148, 2203.075 394 C 2198.748 374.983, 2184.839 359.475, 2165.382 351.975 C 2157.277 348.851, 2139.247 348.058, 2129.974 350.417 C 2107.509 356.132, 2091.523 371.514, 2084.677 394 C 2083.971 396.320, 2083.425 430.896, 2083.056 496.574 L 2082.500 595.648 2079.749 599.804 C 2075.264 606.579, 2070.791 608.234, 2058.042 607.835 C 2048.029 607.522, 2047.092 607.313, 2043.550 604.608 C 2041.467 603.018, 2038.803 599.643, 2037.631 597.108 C 2035.503 592.507, 2035.500 592.352, 2035.422 493 C 2035.362 416.078, 2035.053 392.153, 2034.062 387.563 C 2029.051 364.353, 2011.937 34...
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:104:53
+    102|     const user = userEvent.setup();
+    103|     await renderSite('/');
+    104|     const home = within(screen.getByRole('banner')).getByRole('link', …
+       |                                                     ^
+    105|
+    106|     expect(within(home).getByRole('img', { name: 'Masaha' })).toBeInTh…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 83 skipped (85)
+   Start at  13:07:50
+   Duration  15.01s (tests 57%, transform 17%, environment 11%, import 11%, setup 4%)
+
+tests exit 1

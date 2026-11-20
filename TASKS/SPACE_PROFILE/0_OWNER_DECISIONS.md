@@ -204,5 +204,31 @@ The prototype plan's three proposed alternatives, decided one by one before the 
   live in the profile is **not decided**; it is decided with the women + evening task. The production plan neither
   builds nor reserves a place for them, and assumes nothing about them.
 
+## The production plan (approved 2026-11-10)
+
+`2_PLAN_PROD.md` approved officially with **every recommendation**: OD1 (a) three PRs — contacts + migration (#140) →
+the sortable list, the dnd-kit dependency (#141) → the profile (#142); OD2 (a) hide/delete in the admin editor's top
+bar; OD3 (a) `?sheet=` opens the Sheet; OD4 (a) the closure link to the announcements page; OD5 (a) an empty-saved
+section keeps its date; OD6 DI-1…DI-8 and SD1–SD7; OD7 (a). The migration (§7: five enum values, a `label` column,
+its CHECK) approved as shown. Execution by a fresh Claude Code session (`3_EXEC_PROMPT.md`).
+
+- **2026-11-10 — Arabic-Indic digits in contacts (record only):** C2's "normalised as today (Arabic-Indic digits…)"
+  is untrue — the shared phone rule reads Western digits only. The owner: **record it, change nothing.** PR-C writes
+  it as an Open finding (the next free number) and builds no digit conversion.
+
 - **A3 — later:** where «قاعة للنساء» and the owner-declared evening hours live (here, or a «مزايا المساحة» section)
   is decided with that task, not built now.
+
+## #143's fix round (approved 2026-11-12 — "as recommended")
+
+The Claude review (`6_REVIEW_PR-C.md`: mergeable after a fix round) was verified by the supervisor in the code, all
+ten findings. The owner approved every recommendation:
+
+- **FR1 — all of F1–F10 now,** folded into their commits on #143 (none carried to the next PR, which is the
+  identity's, on other files).
+- **FR2 — F5 option (a):** drop the dead "unsaved" hold — `unsaved` leaves the owners' slot, and `space-links` loses
+  its hold, its reason line, its test and its document lines (a narrow licence into `space-links`).
+- **FR3 — F2's related point taken:** the hours' and the shifts' Sheets send the other half of their group **as read
+  at the save**, not as read at opening.
+- **FR4 — F9 fixed in the round; finding 219 recorded** (Open): a toast's removal timer can outlive its test file's
+  jsdom (CI's first `test:component` run on #143).

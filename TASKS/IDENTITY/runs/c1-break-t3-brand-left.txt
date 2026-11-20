@@ -1,0 +1,44 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 1 failed) 37ms
+   ❯ the palette (7)
+     × defines exactly the identity's ramps, eleven steps each, and white 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > defines exactly the identity's ramps, eleven steps each, and white
+AssertionError: expected [ 'amber-100', 'amber-200', …(66) ] to deeply equal [ 'amber-100', 'amber-200', …(65) ]
+
+- Expected
++ Received
+
+@@ -19,10 +19,11 @@
+    "blue-600",
+    "blue-700",
+    "blue-800",
+    "blue-900",
+    "blue-950",
++   "brand-500",
+    "green-100",
+    "green-200",
+    "green-300",
+    "green-400",
+    "green-50",
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:513:28
+    511|       'white',
+    512|     ];
+    513|     expect(colours.sort()).toEqual(expected.sort());
+       |                            ^
+    514|   });
+    515|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 193 passed (194)
+   Start at  11:54:14
+   Duration  411ms (transform 54%, tests 22%, import 21%, worker 4%)
+

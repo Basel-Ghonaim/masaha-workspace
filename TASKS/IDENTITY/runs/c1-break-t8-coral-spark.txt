@@ -1,0 +1,71 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 4 failed) 33ms
+   ❯ the palette (7)
+     × dark: spark is the logo's #d27ed0 6ms
+   ❯ the brand never reads as an error (15)
+     × dark: spark is apart from destructive (normal vision) 1ms
+     × dark: spark is apart from destructive (protan vision) 0ms
+     × dark: spark is apart from destructive (deutan vision) 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > dark: spark is the logo's #d27ed0
+AssertionError: expected '#ef7b62' to be '#d27ed0' // Object.is equality
+
+Expected: "#d27ed0"
+Received: "#ef7b62"
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:42
+    519|     ),
+    520|   )("$theme: $token is the logo's $hex", ({ theme, token, hex }) => {
+    521|     expect(toHex(painted(theme, token))).toBe(hex);
+       |                                          ^
+    522|   });
+    523| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: spark is apart from destructive (normal vision)
+AssertionError: expected 0.03582407266221194 to be greater than or equal to 0.1
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:574:22
+    572|       seenBy(matrix, painted(theme, 'destructive')),
+    573|     );
+    574|     expect(distance).toBeGreaterThanOrEqual(matrix ? APART_CVD : APART…
+       |                      ^
+    575|   });
+    576|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: spark is apart from destructive (protan vision)
+AssertionError: expected 0.02154403492089186 to be greater than or equal to 0.08
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:574:22
+    572|       seenBy(matrix, painted(theme, 'destructive')),
+    573|     );
+    574|     expect(distance).toBeGreaterThanOrEqual(matrix ? APART_CVD : APART…
+       |                      ^
+    575|   });
+    576|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: spark is apart from destructive (deutan vision)
+AssertionError: expected 0.005193945793697915 to be greater than or equal to 0.08
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:574:22
+    572|       seenBy(matrix, painted(theme, 'destructive')),
+    573|     );
+    574|     expect(distance).toBeGreaterThanOrEqual(matrix ? APART_CVD : APART…
+       |                      ^
+    575|   });
+    576|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 190 passed (194)
+   Start at  11:53:58
+   Duration  417ms (transform 54%, import 22%, tests 20%, worker 4%)
+

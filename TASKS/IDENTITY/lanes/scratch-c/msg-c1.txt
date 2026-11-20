@@ -1,0 +1,21 @@
+feat(web): add the favicon and home-screen icon
+
+The site had no icon of its own: a tab showed the browser's default, a
+phone's home screen a picture of the page. It now shows the logo's small
+mark.
+
+favicon.svg is the berry mark of the design archive (its words path
+defined once and drawn twice, with the mark file's clips and
+transforms), ink and spark by class, switched to their dark values by
+the browser's own scheme, with no background. favicon.ico holds 16, 32
+and 48 px PNGs of the app icon (the mark on its white tile), for a
+browser that takes no SVG and for a dark tab bar the ink would vanish
+on. apple-touch-icon.png is the mark on white at 180 px, full bleed,
+since iOS rounds the corners itself and turns transparent ones black.
+The rasters were drawn from the owner's SVGs in headless Chrome at
+device scale 1, the .ico packed by a small script; neither is kept.
+
+The browser draws these icons and its bar's theme-color outside the
+page, where no token reaches, so they carry the identity's hexes
+themselves (ADR 0019). The new unit test holds the links, the files,
+their sizes and those hexes, written by hand.

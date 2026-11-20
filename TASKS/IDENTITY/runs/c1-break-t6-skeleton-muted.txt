@@ -1,0 +1,40 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 2 failed) 43ms
+   ❯ fills seen (22)
+     × light: skeleton stands apart from card at 1.2:1 5ms
+     × light: skeleton stands apart from background at 1.2:1 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: skeleton stands apart from card at 1.2:1
+AssertionError: expected 1.1103766271845814 to be greater than or equal to 1.2
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:548:21
+    546|     ({ theme, fill, ground, minimum }) => {
+    547|       const ratio = contrastRatio(painted(theme, fill, ground), painte…
+    548|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    549|     },
+    550|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: skeleton stands apart from background at 1.2:1
+AssertionError: expected 1.0679551354500088 to be greater than or equal to 1.2
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:548:21
+    546|     ({ theme, fill, ground, minimum }) => {
+    547|       const ratio = contrastRatio(painted(theme, fill, ground), painte…
+    548|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    549|     },
+    550|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 192 passed (194)
+   Start at  11:54:02
+   Duration  466ms (transform 52%, tests 22%, import 22%, worker 4%)
+

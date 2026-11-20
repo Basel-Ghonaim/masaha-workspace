@@ -1,0 +1,23 @@
+
+> typecheck
+> npm run typecheck --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/api@0.0.0 typecheck
+> tsc --noEmit
+
+
+> @masaha/web@0.0.0 typecheck
+> tsc -b
+
+npm error Lifecycle script `typecheck` failed with error:
+npm error code 4294967295
+npm error path C:\dev\masaha\app-design\apps\web
+npm error workspace @masaha/web@0.0.0
+npm error location C:\dev\masaha\app-design\apps\web
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc -b

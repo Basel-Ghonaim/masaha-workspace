@@ -1,0 +1,12 @@
+fix(design-system): wash a row's ghost control
+
+Inside a table row, which takes the hover fill under the pointer and
+while its menu is open, a ghost control's own hover and open state
+took the same fill and showed nothing (finding 226). The owner decided
+it takes the ink's wash, hover-on-muted, over the row's hover, in both
+themes.
+
+The ghost variant's rule names the row, so it outweighs the plain hover
+by specificity, never by the order the utilities are emitted in. The
+token test now checks the wash seen from hover and the foreground over
+it, in both themes.

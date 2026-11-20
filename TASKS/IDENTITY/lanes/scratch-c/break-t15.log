@@ -1,0 +1,60 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-c/apps/web
+
+ ❯ |unit| scripts/browserIcons.unit.test.ts (5 tests | 1 failed) 18ms
+   ❯ the browser's icons (5)
+     × the .ico holds 16, 32 and 48 px images in its directory, each a PNG of that size 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  13:22:06
+   Duration  347ms (transform 41%, import 25%, tests 21%, worker 12%, environment 1%)
+
+
+--- stderr ---
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| scripts/browserIcons.unit.test.ts > the browser's icons > the .ico holds 16, 32 and 48 px images in its directory, each a PNG of that size
+AssertionError: expected [ { width: 32, height: 32, …(1) } ] to deeply equal [ …(3) ]
+
+- Expected
++ Received
+
+  [
+    {
+-     "height": 16,
+-     "png": {
+-       "height": 16,
+-       "width": 16,
+-     },
+-     "width": 16,
+-   },
+-   {
+      "height": 32,
+      "png": {
+        "height": 32,
+        "width": 32,
+      },
+      "width": 32,
+-   },
+-   {
+-     "height": 48,
+-     "png": {
+-       "height": 48,
+-       "width": 48,
+-     },
+-     "width": 48,
+    },
+  ]
+
+ ❯ scripts/browserIcons.unit.test.ts:99:21
+     97|     });
+     98|
+     99|     expect(entries).toEqual(
+       |                     ^
+    100|       [16, 32, 48].map((px) => ({ width: px, height: px, png: { width:…
+    101|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

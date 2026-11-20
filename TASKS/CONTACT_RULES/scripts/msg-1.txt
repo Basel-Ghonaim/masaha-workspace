@@ -1,0 +1,12 @@
+fix(shared): read Arabic-Indic digits in phones
+
+Every phone the platform takes (a contact's WhatsApp or phone, a «وسيلة أخرى»
+number, a customer's phone, the platform's WhatsApp) refused a number typed on
+an Arabic keyboard: the rule read Western digits only (finding 217). The owner
+decided that Arabic-Indic and Eastern digits are read as Western ones.
+
+The one reader of typed digits, toWesternDigits, moves from the web's
+shared/lib to @masaha/shared/core, so the browser and the server read the same
+digits; the phone rule and «وسيلة أخرى»'s test for a number read through it. The
+accepted forms are unchanged: +970, +972, 00970, 00972 and the local 0, each
+already tested.

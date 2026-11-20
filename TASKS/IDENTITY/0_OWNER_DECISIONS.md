@@ -10,6 +10,39 @@ The lab built (`design/palette-lab` in app-b, 37e7bca7, not yet reported). **The
 confused with red (destructive). Next: a status-clash check in the lab (primary beside destructive), a tuned variant,
 the "copy values" bug (it prints a literal `\n`), then the logo in the chosen colours.
 
+## Ink + spark (2026-11-11)
+
+- **I1 — the direction:** the brand takes two roles, a dark **ink** for actions and structure and a warm **spark** for
+  "what matters now" (the idea taken from Oyoun Academy's design system — an idea, not its values). Every coral /
+  orange / earthy colour failed as the primary (it differs from the destructive red by hue only; under colour
+  blindness they look the same).
+- **I2 — the finalists (the owner, 2026-11-11):** **`slate-coral`** (slate-blue ink + coral spark) and
+  **`slate-berry`** (slate ink + berry spark), beside **today's Sea** for comparison. `charcoal-coral` is removed from
+  the trial. The owner likes both equally: **the logo decides** — the mark is drawn in both, and colour and logo are
+  chosen together. If coral wins, its dark tint is desaturated (the error-tint resemblance, report §130) and the
+  sidebar count badge is ink.
+- **I3 — next:** the logo plan (`TASKS\LOGO\`).
+- **I4 — BERRY ADOPTED officially (the owner, 2026-11-11):** `slate-berry` is the identity (ink + berry spark) and the
+  logo's colours (`final-trace/*-berry.svg`). The coral design is **kept for now** (not deleted): once berry is in
+  production, people's opinion is gathered and compared. The owner's idea of a coral dark mode as a third mode was
+  answered no by the supervisor (dark is exactly where coral resembles the error colour; one brand, two themes).
+
+## The production plan (2026-11-12)
+
+`2_PLAN_PROD.md` (from `1_PLAN_PROMPT_PROD.md`, planner in app-design, Opus xhigh) — **approved by the owner with
+its recommendations:** OD2 (a) one PR; OD3 (a) no platform logo in the owner / reception shell; OD4 (a) the raster
+icons rendered by the executor in headless Chrome, the `.ico` packed by a scratchpad script (no dependency); OD5 (a)
+berry becomes the prototype's default, Sea and coral behind `?identity=`; SD1–SD10 and D1–D5 as written.
+**OD1 (how it executes) — reopened by the owner:** "if the task is big, why not a lead with sub-agents?" (the plan
+recommended one executor). **Settled: OD1 (b) — a lead with sub-agents** (the supervisor's revised recommendation:
+it protects the lead's context, which ran out on #143's first executor; the owner frees the disk for it). Each lane in
+a worktree of its own when the disk allows (≈ 1 GB a lane), else the same folder on disjoint files with the lead
+committing; at most 3 sub-agents at once; the heavy runs and the visual pass scheduled by the lead.
+**The owner's no-conflict rule (2026-11-12):** the lead may start before #143 merges, but edits **no file #143
+changes** until it has merged (today `foundation.md` and the layer's `index.ts`); the sub-agents start only after the
+merge, once the lead has rebased and finished the shared layer on the merged `main`. Execution starts only after #143 merges (the owner, 2026-11-12). Its finding becomes
+**220** (#143's fix round takes 219).
+
 ## Step 1 — the palette lab (approved 2026-11-05)
 
 1. **A palette lab page in the prototype** to choose the colours by eye on real screens: one click swaps the whole

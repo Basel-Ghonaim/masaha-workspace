@@ -1,0 +1,22 @@
+The owner resumes you (2026-11-16). Your stop was right; the API lane is now green on your head.
+
+What happened while you were stopped (record it in 4_REPORT.md under a new section "Resumed 2026-11-16"):
+- The supervisor cleared the grant slot your interrupted retry left (heavy-slot-1; logged as a super CLEAR line).
+- Docker was restarted. The owner ran, on head 792ece8c5a77f070f14f40dc04686b44a4b1fb77 in app-cr:
+  1. the two failing files alone (filters.api.test.ts, adminOverview.api.test.ts): 2 files, 37 tests passed;
+  2. the same two on main (app-design): 37 passed;
+  3. the full test:api through heavy.mjs (lane cr): 126 files, 1,451 tests passed, exit 0
+     (logs: TASKS\CONTACT_RULES\diag-branch.log, diag-main.log, diag-full-api.log).
+- Conclusion: yesterday's 500s and connection drops were the environment (Postgres under memory pressure), not the
+  branch. No code changed since your stop.
+
+Continue from your plan's §12.2 to the end, exactly as written: the self-review, #PRNUM replaced by the real number
+(backup branch first; format:check and check:links again), the PR description (§12.4; its Evidence states the first
+API run's 7 environment failures, the retry, and the owner's green full run above), push and open the PR at once
+(§12.3), wait for CI and CLEAN, then 4_REPORT.md (§13). Do not run the full lanes again.
+
+Another PR (Google's site verification, a separate executor, in app) may open soon. Open yours now; if the number
+gh prints is not the one you wrote, follow §12.3 step 4.
+
+All hard limits stand: no merge, no push to main, no force-push except --force-with-lease on fix/contact-rules, no
+tool attribution, never touch C:\dev\masaha\app.

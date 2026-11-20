@@ -1,0 +1,2607 @@
+{
+ "run": "own2",
+ "screens": {
+  "void-dialog-390": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 352,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-destructive": {
+        "want": "#be222a",
+        "got": "#be222a",
+        "count": 1,
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]"
+       },
+       "text-destructive-foreground": {
+        "want": "#ffffff",
+        "got": "#ffffff",
+        "count": 1,
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-void-dialog-390-light-ar-390.png",
+     "contrast": {
+      "checked": 5,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 63,
+       "offscreen": 142,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "textarea#_r_54_-control[data-slot=textarea]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         41,
+         406,
+         308,
+         96
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=alert-dialog-cancel]",
+        "text": "رجوع",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         41,
+         566,
+         308,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]",
+        "text": "إلغاء الدفعة",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         41,
+         518,
+         308,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-void-dialog-390-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "403 https://accounts.google.com/gsi/button?type=standard&theme=filled_black&size=large&text=continue_with&shape=rectangular&logo_alignment=center&width=400&is_fedcm_supported=true&client_id=358999304307-ql8gic9l75ej3acvticgabqeiipic6sm.apps.googleusercontent.com&iframe_id=gsi_423275_375839&cas=O%2F2Xld60pr3xI676CeXPzLyPDeafA7yRFJDmTX1v3%2FM&hl=en"
+      },
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/spaces/26/payments?from=2026-11-01&to=2026-11-10"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 360,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-destructive": {
+        "want": "#fc6e68",
+        "got": "#fc6e68",
+        "count": 1,
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]"
+       },
+       "text-destructive-foreground": {
+        "want": "#370003",
+        "got": "#370003",
+        "count": 1,
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-void-dialog-390-dark-ar-390.png",
+     "contrast": {
+      "checked": 5,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 63,
+       "offscreen": 142,
+       "disabled": 0
+      }
+     },
+     "focus": {
+      "steps": [
+       {
+        "el": "textarea#_r_54_-control[data-slot=textarea]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         41,
+         406,
+         308,
+         96
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=alert-dialog-cancel]",
+        "text": "رجوع",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         41,
+         566,
+         308,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]",
+        "text": "إلغاء الدفعة",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         41,
+         518,
+         308,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-void-dialog-390-dark-ar-390-focus.png",
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 1024,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 694,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-destructive": {
+        "want": "#fc6e68",
+        "got": "#fc6e68",
+        "count": 1,
+        "el": "div#radix-_r_9j_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]"
+       },
+       "text-destructive-foreground": {
+        "want": "#370003",
+        "got": "#370003",
+        "count": 1,
+        "el": "div#radix-_r_9j_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-void-dialog-390-dark-en-768.png",
+     "contrast": {
+      "checked": 5,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 84,
+       "offscreen": 64,
+       "disabled": 0
+      }
+     },
+     "focus": {
+      "steps": [
+       {
+        "el": "textarea#_r_9m_-control[data-slot=textarea]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         185,
+         520,
+         398,
+         96
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_9j_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=alert-dialog-cancel]",
+        "text": "Back",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         387,
+         632,
+         66,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_9j_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]",
+        "text": "Void payment",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         461,
+         632,
+         122,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-void-dialog-390-dark-en-768-focus.png",
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "textarea#_r_54_-control[data-slot=textarea]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        41,
+        406,
+        308,
+        96
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=alert-dialog-cancel]",
+       "text": "رجوع",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        41,
+        566,
+        308,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]",
+       "text": "إلغاء الدفعة",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        41,
+        518,
+        308,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-ar-390": {
+     "steps": [
+      {
+       "el": "textarea#_r_54_-control[data-slot=textarea]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        41,
+        406,
+        308,
+        96
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=alert-dialog-cancel]",
+       "text": "رجوع",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        41,
+        566,
+        308,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_51_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]",
+       "text": "إلغاء الدفعة",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        41,
+        518,
+        308,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    },
+    "dark-en-768": {
+     "steps": [
+      {
+       "el": "textarea#_r_9m_-control[data-slot=textarea]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        185,
+        520,
+        398,
+        96
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_9j_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=alert-dialog-cancel]",
+       "text": "Back",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        387,
+        632,
+        66,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_9j_[data-slot=alert-dialog-content][role=alertdialog] > form > div[data-slot=alert-dialog-footer] > button[data-slot=button]",
+       "text": "Void payment",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        461,
+        632,
+        122,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  }
+ },
+ "hover": [
+  {
+   "label": "today in the calendar (beside a range day)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "wash",
+   "want": "#d7dfe6",
+   "rest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Thursday, November 12th, 2026\"]",
+    "text": "12",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ecf4fc",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Thursday, November 12th, 2026\"]",
+    "text": "12",
+    "bg": "oklab(0.236863 -0.00398637 -0.0131455 / 0.1)",
+    "bgHex": "#1a1f25",
+    "bgAlpha": 0.1,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#d7dfe6",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Monday, November 2nd, 2026\"]",
+    "text": "2",
+    "bg": "rgb(255, 227, 253)",
+    "bgHex": "#ffe3fd",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffe3fd",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selHover": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Monday, November 2nd, 2026\"]",
+    "text": "2",
+    "bg": "rgb(255, 227, 253)",
+    "bgHex": "#ffe3fd",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffe3fd",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": true,
+    "selectedIsAccent": true,
+    "differ": true
+   },
+   "pixelSample": {
+    "at": [
+     462,
+     365
+    ],
+    "hex": "#d7dee6"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-today-in-the-calendar-beside-a-range-day--light-en.png"
+  },
+  {
+   "label": "calendar range end (filled) hovered",
+   "theme": "light",
+   "lang": "en",
+   "kind": "primary",
+   "want": "#3c4147",
+   "rest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Tuesday, November 10th, 2026\"]",
+    "text": "10",
+    "bg": "rgb(26, 31, 37)",
+    "bgHex": "#1a1f25",
+    "bgAlpha": 1,
+    "color": "#ffffff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #ffffff",
+    "shadow": "none",
+    "painted": "#1a1f25",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#ffffff",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #ffffff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#ffffff",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #ffffff",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Tuesday, November 10th, 2026\"]",
+    "text": "10",
+    "bg": "oklch(0.371743 0.0124857 none)",
+    "bgHex": "#463e40",
+    "bgAlpha": 1,
+    "color": "#ffffff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #ffffff",
+    "shadow": "none",
+    "painted": "#463e40",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#ffffff",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #ffffff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#ffffff",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #ffffff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": false,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     390,
+     365
+    ],
+    "hex": "#463e40"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-calendar-range-end-filled-hovered-light-en.png"
+  },
+  {
+   "label": "calendar range middle day hovered (keeps the tint?)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "accent",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Wednesday, November 4th, 2026\"]",
+    "text": "4",
+    "bg": "rgb(255, 227, 253)",
+    "bgHex": "#ffe3fd",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffe3fd",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Wednesday, November 4th, 2026\"]",
+    "text": "4",
+    "bg": "rgb(255, 227, 253)",
+    "bgHex": "#ffe3fd",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffe3fd",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": false,
+    "hoverChanged": false,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     426,
+     325
+    ],
+    "hex": "#ffe3fd"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-calendar-range-middle-day-hovered-keeps-the-tint--light-en.png"
+  },
+  {
+   "label": "today in the calendar (beside a range day)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "wash",
+   "want": "#3c4147",
+   "rest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Thursday, November 12th, 2026\"]",
+    "text": "12",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Thursday, November 12th, 2026\"]",
+    "text": "12",
+    "bg": "oklab(0.986198 -0.00252253 -0.00630087 / 0.08)",
+    "bgHex": "#f7fbff",
+    "bgAlpha": 0.08,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#3c4147",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Monday, November 2nd, 2026\"]",
+    "text": "2",
+    "bg": "oklab(0.313362 0.0706377 -0.043643)",
+    "bgHex": "#471f46",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#471f46",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selHover": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Monday, November 2nd, 2026\"]",
+    "text": "2",
+    "bg": "oklab(0.313362 0.0706377 -0.043643)",
+    "bgHex": "#471f46",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#471f46",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": true,
+    "selectedIsAccent": true,
+    "differ": true
+   },
+   "pixelSample": {
+    "at": [
+     462,
+     365
+    ],
+    "hex": "#3d4147"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-today-in-the-calendar-beside-a-range-day--dark-en.png"
+  },
+  {
+   "label": "calendar range end (filled) hovered",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "primary",
+   "want": "#c7cbd0",
+   "rest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Tuesday, November 10th, 2026\"]",
+    "text": "10",
+    "bg": "rgb(247, 251, 255)",
+    "bgHex": "#f7fbff",
+    "bgAlpha": 1,
+    "color": "#0d1217",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #0d1217",
+    "shadow": "none",
+    "painted": "#f7fbff",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#0d1217",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #0d1217",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#0d1217",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #0d1217",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Tuesday, November 10th, 2026\"]",
+    "text": "10",
+    "bg": "oklch(0.840961 0.00790307 none)",
+    "bgHex": "#d0c9ca",
+    "bgAlpha": 1,
+    "color": "#0d1217",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #0d1217",
+    "shadow": "none",
+    "painted": "#d0c9ca",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#0d1217",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #0d1217",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#0d1217",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #0d1217",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": false,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     390,
+     365
+    ],
+    "hex": "#cfc9ca"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-calendar-range-end-filled-hovered-dark-en.png"
+  },
+  {
+   "label": "calendar range middle day hovered (keeps the tint?)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "accent",
+   "want": "#2c3137",
+   "rest": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Wednesday, November 4th, 2026\"]",
+    "text": "4",
+    "bg": "oklab(0.313362 0.0706377 -0.043643)",
+    "bgHex": "#471f46",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#471f46",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "tbody > tr > td[role=gridcell] > button[data-slot=button][aria-label=\"Wednesday, November 4th, 2026\"]",
+    "text": "4",
+    "bg": "oklab(0.313362 0.0706377 -0.043643)",
+    "bgHex": "#471f46",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#471f46",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": false,
+    "hoverChanged": false,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     426,
+     325
+    ],
+    "hex": "#471f46"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-calendar-range-middle-day-hovered-keeps-the-tint--dark-en.png"
+  },
+  {
+   "label": "live status control (success tone)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]",
+    "text": "Visitors see: ⁨Available⁩",
+    "bg": "rgb(236, 252, 239)",
+    "bgHex": "#ecfcef",
+    "bgAlpha": 1,
+    "color": "#034d25",
+    "border": "#137d41",
+    "borderStart": "#137d41",
+    "borderWidth": "1px",
+    "outline": "none 3px #034d25",
+    "shadow": "none",
+    "painted": "#ecfcef",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#034d25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #034d25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#034d25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #034d25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]",
+    "text": "Visitors see: ⁨Available⁩",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#137d41",
+    "borderStart": "#137d41",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     483,
+     16
+    ],
+    "hex": "#dde5ed"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-live-status-control-success-tone--light-en.png"
+  },
+  {
+   "label": "live status control (warning tone)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Full⁩ — change \"]",
+    "text": "Visitors see: ⁨Full⁩",
+    "bg": "rgb(255, 245, 234)",
+    "bgHex": "#fff5ea",
+    "bgAlpha": 1,
+    "color": "#593700",
+    "border": "#b27406",
+    "borderStart": "#b27406",
+    "borderWidth": "1px",
+    "outline": "none 3px #593700",
+    "shadow": "none",
+    "painted": "#fff5ea",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#593700",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #593700",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#593700",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #593700",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Full⁩ — change \"]",
+    "text": "Visitors see: ⁨Full⁩",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#b27406",
+    "borderStart": "#b27406",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     519,
+     16
+    ],
+    "hex": "#dde5ed"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-live-status-control-warning-tone--light-en.png"
+  },
+  {
+   "label": "live status control (neutral tone)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Closed now⁩, se\"]",
+    "text": "Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩",
+    "bg": "rgb(236, 244, 252)",
+    "bgHex": "#ecf4fc",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ecf4fc",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Closed now⁩, se\"]",
+    "text": "Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     346,
+     47
+    ],
+    "hex": "#dde5ed"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-live-status-control-neutral-tone--light-en.png"
+  },
+  {
+   "label": "live status control (success tone)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#2c3137",
+   "rest": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]",
+    "text": "Visitors see: ⁨Available⁩",
+    "bg": "rgb(0, 31, 10)",
+    "bgHex": "#001f0a",
+    "bgAlpha": 1,
+    "color": "#bae8c5",
+    "border": "#63b77c",
+    "borderStart": "#63b77c",
+    "borderWidth": "1px",
+    "outline": "none 3px #bae8c5",
+    "shadow": "none",
+    "painted": "#001f0a",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#bae8c5",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #bae8c5",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#bae8c5",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #bae8c5",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]",
+    "text": "Visitors see: ⁨Available⁩",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#63b77c",
+    "borderStart": "#63b77c",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     483,
+     16
+    ],
+    "hex": "#2c3137"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-live-status-control-success-tone--dark-en.png"
+  },
+  {
+   "label": "live status control (warning tone)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#2c3137",
+   "rest": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Full⁩ — change \"]",
+    "text": "Visitors see: ⁨Full⁩",
+    "bg": "rgb(38, 20, 0)",
+    "bgHex": "#261400",
+    "bgAlpha": 1,
+    "color": "#fbd3a2",
+    "border": "#d6912b",
+    "borderStart": "#d6912b",
+    "borderWidth": "1px",
+    "outline": "none 3px #fbd3a2",
+    "shadow": "none",
+    "painted": "#261400",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#fbd3a2",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #fbd3a2",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#fbd3a2",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #fbd3a2",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Full⁩ — change \"]",
+    "text": "Visitors see: ⁨Full⁩",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#d6912b",
+    "borderStart": "#d6912b",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     519,
+     16
+    ],
+    "hex": "#2c3137"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-live-status-control-warning-tone--dark-en.png"
+  },
+  {
+   "label": "live status control (neutral tone)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#2c3137",
+   "rest": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Closed now⁩, se\"]",
+    "text": "Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#ecf4fc",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "1px",
+    "outline": "none 3px #ecf4fc",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#ecf4fc",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #ecf4fc",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#ecf4fc",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #ecf4fc",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Closed now⁩, se\"]",
+    "text": "Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": false,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     346,
+     47
+    ],
+    "hex": "#2c3137"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-live-status-control-neutral-tone--dark-en.png"
+  },
+  {
+   "label": "menu item (account menu, opened by Enter)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Account settings",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffffff",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Account settings",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 1px #101010",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Public site",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 1px #101010",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selHover": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Public site",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 1px #101010",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": true,
+    "selectedIsAccent": false,
+    "differ": false
+   },
+   "pixelSample": {
+    "at": [
+     1397,
+     155
+    ],
+    "hex": "#dde5ed"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-menu-item-account-menu-opened-by-Enter--light-en.png"
+  },
+  {
+   "label": "menu item (account menu, opened by Enter)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#2c3137",
+   "rest": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Account settings",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#1a1f25",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Account settings",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 1px #eeeeee",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Public site",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 1px #eeeeee",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selHover": {
+    "el": "div#radix-_r_o_[data-slot=dropdown-menu-content][role=menu] > a[data-slot=dropdown-menu-item][role=menuitem]",
+    "text": "Public site",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 1px #eeeeee",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": true,
+    "selectedIsAccent": false,
+    "differ": false
+   },
+   "pixelSample": {
+    "at": [
+     1397,
+     155
+    ],
+    "hex": "#2c3137"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/own2-hover-menu-item-account-menu-opened-by-Enter--dark-en.png"
+  }
+ ],
+ "ec": {
+  "scrim-light": {
+   "at": {
+    "x": 120,
+    "y": 790
+   },
+   "ground": "#ffffff",
+   "painted": "#8a8788",
+   "computed": "oklch(0.179324 0.0129872 none / 0.5)",
+   "wantInk": "#86898b"
+  },
+  "scrim-dark": {
+   "at": {
+    "x": 120,
+    "y": 790
+   },
+   "ground": "#1a1f25",
+   "painted": "#181417",
+   "computed": "oklch(0.179324 0.0129872 none / 0.7)",
+   "wantInk": "#11161b"
+  },
+  "heatmapOverflow-ar": {
+   "scrollWidth": 395,
+   "clientWidth": 390,
+   "heatmap": true,
+   "offenders": [
+    {
+     "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+     "rect": [
+      390,
+      391
+     ],
+     "position": "absolute",
+     "cls": "sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg"
+    }
+   ]
+  },
+  "heatmapOverflow-en": {
+   "scrollWidth": 426,
+   "clientWidth": 390,
+   "heatmap": true,
+   "offenders": [
+    {
+     "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+     "rect": [
+      -1,
+      0
+     ],
+     "position": "absolute",
+     "cls": "sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg"
+    }
+   ]
+  },
+  "photoLifted2-light": {
+   "mouse": {
+    "how": "mouse drag",
+    "el": "div > div > div[role=button][aria-label=\"Photo 3\"]",
+    "focused": true,
+    "focusVisible": false,
+    "cls": "cursor-grab select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring outline-2 outline-spark",
+    "outline": "solid 2px #b55bb3 offset 0px",
+    "rect": [
+     1163,
+     394,
+     255,
+     144
+    ],
+    "clippedBy": [
+     {
+      "el": "div > div",
+      "rect": [
+       1162,
+       393,
+       257,
+       146
+      ]
+     },
+     {
+      "el": "div#photos[data-slot=card]",
+      "rect": [
+       570,
+       138,
+       838,
+       721
+      ]
+     }
+    ]
+   },
+   "mouseEdge": {
+    "top": "#ffffff",
+    "start": "#ffffff",
+    "insideTop": "#ecf4fc"
+   },
+   "kRest": {
+    "how": "keyboard focus",
+    "el": "div > div > div[role=button][aria-label=\"Photo 2\"]",
+    "focused": true,
+    "focusVisible": true,
+    "cls": "cursor-grab select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+    "outline": "solid 2px #1a1f25 offset 2px",
+    "rect": [
+     861,
+     378,
+     255,
+     144
+    ],
+    "clippedBy": [
+     {
+      "el": "div > div",
+      "rect": [
+       860,
+       377,
+       257,
+       146
+      ]
+     }
+    ]
+   },
+   "keyboard": {
+    "how": "keyboard lift",
+    "el": "div > div > div[role=button][aria-label=\"Photo 2\"]",
+    "focused": true,
+    "focusVisible": true,
+    "cls": "cursor-grab select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring outline-2 outline-spark",
+    "outline": "solid 2px #1a1f25 offset 2px",
+    "rect": [
+     861,
+     378,
+     255,
+     144
+    ],
+    "clippedBy": [
+     {
+      "el": "div > div",
+      "rect": [
+       860,
+       377,
+       257,
+       146
+      ]
+     }
+    ]
+   },
+   "keyboardEdge": {
+    "top": "#ffffff",
+    "start": "#ffffff",
+    "insideTop": "#ecf4fc"
+   },
+   "spark": "#b55bb3",
+   "ring": "#1a1f25"
+  },
+  "photoLifted2-dark": {
+   "mouse": {
+    "how": "mouse drag",
+    "el": "div > div > div[role=button][aria-label=\"Photo 3\"]",
+    "focused": true,
+    "focusVisible": false,
+    "cls": "cursor-grab select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring outline-2 outline-spark",
+    "outline": "solid 2px #d27ed0 offset 0px",
+    "rect": [
+     1163,
+     394,
+     255,
+     144
+    ],
+    "clippedBy": [
+     {
+      "el": "div > div",
+      "rect": [
+       1162,
+       393,
+       257,
+       146
+      ]
+     },
+     {
+      "el": "div#photos[data-slot=card]",
+      "rect": [
+       570,
+       138,
+       838,
+       721
+      ]
+     }
+    ]
+   },
+   "mouseEdge": {
+    "top": "#1a1f25",
+    "start": "#1a1f25",
+    "insideTop": "#2c3137"
+   },
+   "kRest": {
+    "how": "keyboard focus",
+    "el": "div > div > div[role=button][aria-label=\"Photo 2\"]",
+    "focused": true,
+    "focusVisible": true,
+    "cls": "cursor-grab select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+    "outline": "solid 2px #f7fbff offset 2px",
+    "rect": [
+     861,
+     378,
+     255,
+     144
+    ],
+    "clippedBy": [
+     {
+      "el": "div > div",
+      "rect": [
+       860,
+       377,
+       257,
+       146
+      ]
+     }
+    ]
+   },
+   "keyboard": {
+    "how": "keyboard lift",
+    "el": "div > div > div[role=button][aria-label=\"Photo 2\"]",
+    "focused": true,
+    "focusVisible": true,
+    "cls": "cursor-grab select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring outline-2 outline-spark",
+    "outline": "solid 2px #f7fbff offset 2px",
+    "rect": [
+     861,
+     378,
+     255,
+     144
+    ],
+    "clippedBy": [
+     {
+      "el": "div > div",
+      "rect": [
+       860,
+       377,
+       257,
+       146
+      ]
+     }
+    ]
+   },
+   "keyboardEdge": {
+    "top": "#1a1f25",
+    "start": "#1a1f25",
+    "insideTop": "#2c3137"
+   },
+   "spark": "#d27ed0",
+   "ring": "#f7fbff"
+  },
+  "inputFocus-light": {
+   "focused": "input#_r_dk_-control[data-slot=input]",
+   "box": "solid 2px #1a1f25 border #1a1f25"
+  },
+  "inputFocus-dark": {
+   "focused": "input#_r_el_-control[data-slot=input]",
+   "box": "solid 2px #f7fbff border #f7fbff"
+  }
+ },
+ "notes": [],
+ "shots": [
+  "26-hover-calendar-today-light.png",
+  "26-hover-calendar-today-dark.png",
+  "18-void-payment-dialog-light-ar-390.png",
+  "37-hover-live-status-success-light.png",
+  "37-hover-live-status-warning-light.png",
+  "37-hover-live-status-neutral-light.png",
+  "37-hover-live-status-success-dark.png",
+  "37-hover-live-status-warning-dark.png",
+  "37-hover-live-status-neutral-dark.png",
+  "36-hover-menu-item-light.png",
+  "36-hover-menu-item-dark.png",
+  "22-finance-heatmap-overflow-light-ar-390.png",
+  "30-photo-lifted-mouse-light-en-1440.png",
+  "29-photo-lifted-keyboard-light-en-1440.png",
+  "30-photo-lifted-mouse-dark-en-1440.png",
+  "29-photo-lifted-keyboard-dark-en-1440.png"
+ ],
+ "blocked": [],
+ "loads": 1,
+ "chrome": {
+  "pid": 23196,
+  "left": []
+ }
+}

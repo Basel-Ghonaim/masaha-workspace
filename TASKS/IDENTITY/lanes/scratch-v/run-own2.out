@@ -1,0 +1,47 @@
+12:27:00 chrome pid 23196, port 59239, profile cdp-profile-own2
+12:27:05 signed in (demo-owner@example.com) at /dashboard/spaces/26/payments
+12:27:11   hover today in the calendar (beside a range day) (light/en): rest #ecf4fc -> hover #d7dfe6 (bg oklab(0.236863 -0.00398637 -0.0131455 / 0.1)) want #d7dfe6; selected #ffe3fd/#ffe3fd -> under pointer #ffe3fd :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:27:12   hover calendar range end (filled) hovered (light/en): rest #1a1f25 -> hover #463e40 (bg oklch(0.371743 0.0124857 none)) want #3c4147 :: {"hoverIsToken":false,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:27:14   hover calendar range middle day hovered (keeps the tint?) (light/en): rest #ffe3fd -> hover #ffe3fd (bg rgb(255, 227, 253)) want #dde5ed :: {"hoverIsToken":false,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:27:19   hover today in the calendar (beside a range day) (dark/en): rest #2c3137 -> hover #3c4147 (bg oklab(0.986198 -0.00252253 -0.00630087 / 0.08)) want #3c4147; selected #471f46/#471f46 -> under pointer #471f46 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:27:20   hover calendar range end (filled) hovered (dark/en): rest #f7fbff -> hover #d0c9ca (bg oklch(0.840961 0.00790307 none)) want #c7cbd0 :: {"hoverIsToken":false,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:27:22   hover calendar range middle day hovered (keeps the tint?) (dark/en): rest #471f46 -> hover #471f46 (bg oklab(0.313362 0.0706377 -0.043643)) want #2c3137 :: {"hoverIsToken":false,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:27:27   void-dialog-390 light-ar-390: CONSOLE 4 (checked 5 texts, 352 elements)
+12:27:27   void dialog open: true
+12:27:30   void-dialog-390 dark-ar-390: clean (checked 5 texts, 360 elements)
+12:27:30   void dialog open: true
+12:27:34   void-dialog-390 dark-en-768: clean (checked 5 texts, 694 elements)
+12:27:34   void dialog open: true
+12:27:35 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:27:38   scrim light: ground #ffffff -> painted #8a8788 (computed oklch(0.179324 0.0129872 none / 0.5)); n-950 @ 0.5 would paint #86898b
+12:27:41   scrim dark: ground #1a1f25 -> painted #181417 (computed oklch(0.179324 0.0129872 none / 0.7)); n-950 @ 0.7 would paint #11161b
+12:28:05 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:28:10   hover live status control (success tone) (light/en): rest #ecfcef -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:28:10     (state read again: true; the trigger says «Visitors see: ⁨Available⁩»)
+12:28:35 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 95 bytes)
+12:28:42   hover live status control (warning tone) (light/en): rest #fff5ea -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:28:42     (state read again: true; the trigger says «Visitors see: ⁨Full⁩»)
+12:29:05 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 149 bytes)
+12:29:10   hover live status control (neutral tone) (light/en): rest #ecf4fc -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:29:10     (state read again: true; the trigger says «Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩»)
+12:29:36 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:29:38   hover live status control (success tone) (dark/en): rest #001f0a -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:29:38     (state read again: true; the trigger says «Visitors see: ⁨Available⁩»)
+12:30:06 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 95 bytes)
+12:30:10   hover live status control (warning tone) (dark/en): rest #261400 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:30:10     (state read again: true; the trigger says «Visitors see: ⁨Full⁩»)
+12:30:36 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 149 bytes)
+12:30:43   hover live status control (neutral tone) (dark/en): rest #2c3137 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:30:43     (state read again: true; the trigger says «Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩»)
+12:31:06 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:31:12   hover menu item (account menu, opened by Enter) (light/en): rest #ffffff -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed; selected #dde5ed/#dde5ed -> under pointer #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":false,"differ":false}
+12:31:17   hover menu item (account menu, opened by Enter) (dark/en): rest #1a1f25 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137; selected #2c3137/#2c3137 -> under pointer #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":false,"differ":false}
+12:31:21   heatmap 390 ar: {"scrollWidth":395,"clientWidth":390,"heatmap":true,"offenders":[{"el":"div#root > div[data-slot=sidebar-wrapper] > a","rect":[390,391],"position":"absolute","cls":"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg"}]}
+12:31:24   heatmap 390 en: {"scrollWidth":426,"clientWidth":390,"heatmap":true,"offenders":[{"el":"div#root > div[data-slot=sidebar-wrapper] > a","rect":[-1,0],"position":"absolute","cls":"sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg"}]}
+12:31:25 fulfilled /api/v1/manage/spaces/26/photos (605 -> 1052 bytes)
+12:31:33   photo light: mouse solid 2px #b55bb3 offset 0px edge {"top":"#ffffff","start":"#ffffff","insideTop":"#ecf4fc"} clipped [{"el":"div > div","rect":[1162,393,257,146]},{"el":"div#photos[data-slot=card]","rect":[570,138,838,721]}]; keyboard solid 2px #1a1f25 offset 2px fv true edge {"top":"#ffffff","start":"#ffffff","insideTop":"#ecf4fc"} clipped [{"el":"div > div","rect":[860,377,257,146]}]
+12:31:39   photo dark: mouse solid 2px #d27ed0 offset 0px edge {"top":"#1a1f25","start":"#1a1f25","insideTop":"#2c3137"} clipped [{"el":"div > div","rect":[1162,393,257,146]},{"el":"div#photos[data-slot=card]","rect":[570,138,838,721]}]; keyboard solid 2px #f7fbff offset 2px fv true edge {"top":"#1a1f25","start":"#1a1f25","insideTop":"#2c3137"} clipped [{"el":"div > div","rect":[860,377,257,146]}]
+12:31:41   input focus light: {"focused":"input#_r_dk_-control[data-slot=input]","box":"solid 2px #1a1f25 border #1a1f25"}
+12:31:44   input focus dark: {"focused":"input#_r_el_-control[data-slot=input]","box":"solid 2px #f7fbff border #f7fbff"}
+12:31:45 refreshes 0, loads 1, blocked []
+12:31:48 chrome 23196 stopped by PID; cdp-profile-own2 processes left: 0

@@ -1,0 +1,49 @@
+
+> test:api
+> npm run test:api --workspaces --if-present
+
+
+> @masaha/api@0.0.0 test:api
+> vitest run --project api
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/api
+
+npm warn allow-scripts .npmrc allow-scripts setting is being ignored because --allow-scripts was passed on the command line
+Loaded Prisma config from prisma.config.ts.
+
+Prisma schema loaded from prisma\schema.prisma.
+Datasource "db": PostgreSQL database "masaha_design_test", schema "public" at "localhost:5433"
+
+32 migrations found in prisma/migrations
+
+Applying migration `20261024133344_payment_void_guard`
+Applying migration `20261025081716_session_activity`
+Applying migration `20261025112542_data_report_rules`
+Applying migration `20261026114022_closure_extension_key`
+Applying migration `20261029144213_subscription_usage_bigint`
+Applying migration `20261029154841_subscription_published_period`
+Applying migration `20261110085157_contact_types_and_other`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261024133344_payment_void_guard/
+    └─ migration.sql
+  └─ 20261025081716_session_activity/
+    └─ migration.sql
+  └─ 20261025112542_data_report_rules/
+    └─ migration.sql
+  └─ 20261026114022_closure_extension_key/
+    └─ migration.sql
+  └─ 20261029144213_subscription_usage_bigint/
+    └─ migration.sql
+  └─ 20261029154841_subscription_published_period/
+    └─ migration.sql
+  └─ 20261110085157_contact_types_and_other/
+    └─ migration.sql
+
+All migrations have been successfully applied.
+ ❯ |api| src/modules/desk/customers.api.test.ts (12 tests | 1 failed) 12232ms
+   ❯ the customers list (12)
+     × each filter applies before the page is cut: every page full, the total right 5248ms

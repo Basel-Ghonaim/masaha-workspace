@@ -1,0 +1,65 @@
+[heavy] waiting 60 s (try 1 of 45)
+[heavy] waiting 60 s (try 2 of 45)
+[heavy] waiting 60 s (try 3 of 45)
+[heavy] waiting 60 s (try 4 of 45)
+[heavy] waiting 60 s (try 5 of 45)
+[heavy] waiting 60 s (try 6 of 45)
+[heavy] waiting 60 s (try 7 of 45)
+[heavy] waiting 60 s (try 8 of 45)
+[heavy] waiting 60 s (try 9 of 45)
+[heavy] waiting 60 s (try 10 of 45)
+[heavy] waiting 60 s (try 11 of 45)
+[heavy] waiting 60 s (try 12 of 45)
+[heavy] waiting 60 s (try 13 of 45)
+[heavy] waiting 60 s (try 14 of 45)
+
+> test:unit
+> npm run test:unit --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/packages/shared
+
+
+ Test Files  28 passed (28)
+      Tests  323 passed (323)
+   Start at  16:24:33
+   Duration  3.90s (import 66%, transform 27%, tests 5%, worker 2%)
+
+  Transform  transforming modules took 4.16s · 27% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/api
+
+
+ Test Files  77 passed (77)
+      Tests  924 passed (924)
+   Start at  16:24:38
+   Duration  9.07s (import 60%, transform 20%, tests 18%, worker 2%)
+
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+
+ Test Files  197 passed (197)
+      Tests  1385 passed (1385)
+   Start at  16:24:48
+   Duration  35.09s (import 71%, transform 19%, tests 8%, worker 1%)
+
+     Import  |unit| 785 modules were evaluated 5638 times · 141.41s total, 71% of tracked time
+             ~5.29s faster with isolate: false — shared modules are evaluated once per worker instead of once per file
+             learn more: https://vitest.dev/guide/improving-performance#test-isolation
+

@@ -1,0 +1,350 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-b/apps/web
+
+ ❯ |component| src/pages/site/auth/changePasswordPage.component.test.tsx (4 tests | 1 failed) 5103ms
+   ❯ the change password page (4)
+     × shows the change in the focus shell, whose short header offers only the logo, linking home, and sign-out 1068ms
+ ❯ |component| src/pages/site/shell/SiteLayout.component.test.tsx (14 tests | 2 failed) 7523ms
+   ❯ the site shell (14)
+     × draws the logo in the header’s home link, which it names «Masaha», and «مساحة» in Arabic 89ms
+     × draws the logo, named «Masaha», at the head of the phone menu, which keeps its own name 239ms
+ ❯ |component| src/pages/dashboard/routes.component.test.tsx (71 tests | 1 failed) 24939ms
+   ❯ the dashboard's navigation (13)
+     × heads the admin’s sidebar with the logo hidden from assistive technology, «مساحة» read once beside «إدارة المنصة», and no «م» tile 54ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > heads the admin’s sidebar with the logo hidden from assistive technology, «مساحة» read once beside «إدارة المنصة», and no «م» tile
+Error: [2mexpect([22m[31melement[39m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <span
+  aria-hidden="true"
+  class="flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"
+>
+  م
+</span> instead[39m
+ ❯ src/pages/dashboard/routes.component.test.tsx:387:39
+    385|     if (header === null) throw new Error('The sidebar has no header');
+    386|     const head = within(header);
+    387|     expect(head.queryByText('م')).not.toBeInTheDocument();
+       |                                       ^
+    388|     expect(header.querySelector('[data-slot="logo"]')).toHaveAttribute…
+    389|     expect(head.queryByRole('img')).not.toBeInTheDocument();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |component| src/pages/site/auth/changePasswordPage.component.test.tsx > the change password page > shows the change in the focus shell, whose short header offers only the logo, linking home, and sign-out
+TestingLibraryElementError: Unable to find an accessible element with the role "img" and name "Masaha"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<a[39m
+  [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+  [33mdata-discover[39m=[32m"true"[39m
+  [33mhref[39m=[32m"/"[39m
+[36m>[39m
+  [0mMasaha[0m
+[36m</a>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/auth/changePasswordPage.component.test.tsx:58:25
+     56|     const home = header.getByRole('link', { name: 'Masaha' });
+     57|     expect(home).toHaveAttribute('href', '/');
+     58|     expect(within(home).getByRole('img', { name: 'Masaha' })).toBeInTh…
+       |                         ^
+     59|     expect(header.getByRole('button', { name: 'Sign out' })).toBeInThe…
+     60|     expect(header.queryByRole('button', { name: 'العربية' })).not.toBe…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo in the header’s home link, which it names «Masaha», and «مساحة» in Arabic
+TestingLibraryElementError: Unable to find an accessible element with the role "img" and name "Masaha"
+
+There are no accessible roles. But there might be some inaccessible roles. If you wish to access them, then set the `hidden` option to `true`. Learn more about this here: https://testing-library.com/docs/dom-testing-library/api-queries#byrole
+
+Ignored nodes: comments, script, style
+[36m<a[39m
+  [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+  [33mdata-discover[39m=[32m"true"[39m
+  [33mhref[39m=[32m"/"[39m
+[36m>[39m
+  [0mMasaha[0m
+[36m</a>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:106:25
+    104|     const home = within(screen.getByRole('banner')).getByRole('link', …
+    105|
+    106|     expect(within(home).getByRole('img', { name: 'Masaha' })).toBeInTh…
+       |                         ^
+    107|
+    108|     await user.click(within(screen.getByRole('banner')).getByRole('but…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo, named «Masaha», at the head of the phone menu, which keeps its own name
+TestingLibraryElementError: Unable to find an accessible element with the role "img" and name "Masaha"
+
+Here are the accessible roles:
+
+  heading:
+
+  Name "Menu":
+  [36m<h2[39m
+    [33mclass[39m=[32m"text-heading-3 sr-only"[39m
+    [33mdata-slot[39m=[32m"sheet-title"[39m
+    [33mid[39m=[32m"radix-_r_3a_"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  [36m<p[39m
+    [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+  [36m/>[39m
+
+  --------------------------------------------------navigation:
+
+  Name "Main navigation":
+  [36m<nav[39m
+    [33maria-label[39m=[32m"Main navigation"[39m
+    [33mclass[39m=[32m"flex flex-col gap-1"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+  link:
+
+  Name "Home":
+  [36m<a[39m
+    [33maria-current[39m=[32m"page"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-foreground active"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/"[39m
+  [36m/>[39m
+
+  Name "Spaces":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/spaces"[39m
+  [36m/>[39m
+
+  Name "About Masaha":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-foreground"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/about"[39m
+  [36m/>[39m
+
+  Name "Sign in":
+  [36m<a[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start"[39m
+    [33mdata-discover[39m=[32m"true"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mhref[39m=[32m"/login"[39m
+  [36m/>[39m
+
+  --------------------------------------------------button:
+
+  Name "Dark theme":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Dark theme"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) self-start"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------button:
+
+  Name "Close menu":
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close menu"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m/>[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m<div[39m
+  [33maria-labelledby[39m=[32m"radix-_r_3a_"[39m
+  [33mclass[39m=[32m"fixed z-(--z-modal) flex flex-col bg-popover text-body text-popover-foreground shadow-overlay duration-(--duration-medium) ease-(--easing-standard) outline-none data-open:animate-in data-closed:animate-out inset-y-0 start-0 h-full w-full border-e border-(--card-border) data-open:slide-in-from-start data-closed:slide-out-to-start md:w-3/4 md:max-w-sm *:data-[slot=sheet-header]:pe-12"[39m
+  [33mdata-side[39m=[32m"start"[39m
+  [33mdata-slot[39m=[32m"sheet-content"[39m
+  [33mdata-state[39m=[32m"open"[39m
+  [33mid[39m=[32m"radix-_r_39_"[39m
+  [33mrole[39m=[32m"dialog"[39m
+  [33mstyle[39m=[32m"pointer-events: auto;"[39m
+  [33mtabindex[39m=[32m"-1"[39m
+[36m>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"flex flex-col gap-1 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-header"[39m
+  [36m>[39m
+    [36m<h2[39m
+      [33mclass[39m=[32m"text-heading-3 sr-only"[39m
+      [33mdata-slot[39m=[32m"sheet-title"[39m
+      [33mid[39m=[32m"radix-_r_3a_"[39m
+    [36m>[39m
+      [0mMenu[0m
+    [36m</h2>[39m
+    [36m<p[39m
+      [33mclass[39m=[32m"text-heading-3 text-primary"[39m
+    [36m>[39m
+      [0mMasaha[0m
+    [36m</p>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"min-h-0 min-w-0 flex-1 overflow-y-auto px-4"[39m
+    [33mdata-slot[39m=[32m"sheet-body"[39m
+  [36m>[39m
+    [36m<nav[39m
+      [33maria-label[39m=[32m"Main navigation"[39m
+      [33mclass[39m=[32m"flex flex-col gap-1"[39m
+    [36m>[39m
+      [36m<a[39m
+        [33maria-current[39m=[32m"page"[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-foreground active"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/"[39m
+      [36m>[39m
+        [0mHome[0m
+      [36m</a>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-foreground"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/spaces"[39m
+      [36m>[39m
+        [0mSpaces[0m
+      [36m</a>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start aria-[current=page]:bg-secondary aria-[current=page]:text-secondary-foreground"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/about"[39m
+      [36m>[39m
+        [0mAbout Masaha[0m
+      [36m</a>[39m
+      [36m<a[39m
+        [33mclass[39m=[32m"inline-flex shrink-0 items-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground h-(--control-height) px-(--button-padding-inline) w-full justify-start"[39m
+        [33mdata-discover[39m=[32m"true"[39m
+        [33mdata-slot[39m=[32m"button"[39m
+        [33mhref[39m=[32m"/login"[39m
+      [36m>[39m
+        [36m<svg[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"lucide lucide-log-in"[39m
+          [33mfill[39m=[32m"none"[39m
+          [33mheight[39m=[32m"24"[39m
+          [33mstroke[39m=[32m"currentColor"[39m
+          [33mstroke-linecap[39m=[32m"round"[39m
+          [33mstroke-linejoin[39m=[32m"round"[39m
+          [33mstroke-width[39m=[32m"2"[39m
+          [33mviewBox[39m=[32m"0 0 24 24"[39m
+          [33mwidth[39m=[32m"24"[39m
+          [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+        [36m>[39m
+          [36m<path[39m
+            [33md[39m=[32m"m10 17 5-5-5-5"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M15 12H3"[39m
+          [36m/>[39m
+          [36m<path[39m
+            [33md[39m=[32m"M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"[39m
+          [36m/>[39m
+        [36m</svg>[39m
+        [0mSign in[0m
+      [36m</a>[39m
+    [36m</nav>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"mt-auto flex flex-col gap-2 p-4"[39m
+    [33mdata-slot[39m=[32m"sheet-footer"[39m
+  [36m>[39m
+    [36m<button[39m
+      [33maria-label[39m=[32m"Dark theme"[39m
+      [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground size-(--control-height) self-start"[39m
+      [33mdata-slot[39m=[32m"button"[39m
+      [33mtype[39m=[32m"button"[39m
+    [36m>[39m
+      [36m<svg[39m
+        [33maria-hidden[39m=[32m"true"[39m
+        [33mclass[39m=[32m"lucide lucide-moon"[39m
+        [33mfill[39m=[32m"none"[39m
+        [33mheight[39m=[32m"24"[39m
+        [33mstroke[39m=[32m"currentColor"[39m
+        [33mstroke-linecap[39m=[32m"round"[39m
+        [33mstroke-linejoin[39m=[32m"round"[39m
+        [33mstroke-width[39m=[32m"2"[39m
+        [33mviewBox[39m=[32m"0 0 24 24"[39m
+        [33mwidth[39m=[32m"24"[39m
+        [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+      [36m>[39m
+        [36m<path[39m
+          [33md[39m=[32m"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"[39m
+        [36m/>[39m
+      [36m</svg>[39m
+    [36m</button>[39m
+  [36m</div>[39m
+  [36m<button[39m
+    [33maria-label[39m=[32m"Close menu"[39m
+    [33mclass[39m=[32m"inline-flex shrink-0 items-center justify-center gap-2 rounded-(--radius-control) border border-transparent text-label whitespace-nowrap transition-colors select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground absolute top-3 end-3 size-8 pointer-coarse:size-(--control-height)"[39m
+    [33mdata-slot[39m=[32m"button"[39m
+    [33mtype[39m=[32m"button"[39m
+  [36m>[39m
+    [36m<svg[39m
+      [33maria-hidden[39m=[32m"true"[39m
+      [33mclass[39m=[32m"lucide lucide-x"[39m
+      [33mfill[39m=[32m"none"[39m
+      [33mheight[39m=[32m"24"[39m
+      [33mstroke[39m=[32m"currentColor"[39m
+      [33mstroke-linecap[39m=[32m"round"[39m
+      [33mstroke-linejoin[39m=[32m"round"[39m
+      [33mstroke-width[39m=[32m"2"[39m
+      [33mviewBox[39m=[32m"0 0 24 24"[39m
+      [33mwidth[39m=[32m"24"[39m
+      [33mxmlns[39m=[32m"http://www.w3.org/2000/svg"[39m
+    [36m>[39m
+      [36m<path[39m
+        [33md[39m=[32m"M18 6 6 18"[39m
+      [36m/>[39m
+      [36m<path[39m
+        [33md[39m=[32m"m6 6 12 12"[39m
+      [36m/>[39m
+    [36m</svg>[39m
+  [36m</button>[39m
+[36m</div>[39m
+ ❯ Object.getElementError ../../node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ ../../node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ src/pages/site/shell/SiteLayout.component.test.tsx:210:17
+    208|
+    209|     const menu = within(screen.getByRole('dialog', { name: 'Menu' }));
+    210|     expect(menu.getByRole('img', { name: 'Masaha' })).toBeInTheDocumen…
+       |                 ^
+    211|   });
+    212|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  3 failed (3)
+      Tests  4 failed | 85 passed (89)
+   Start at  13:03:32
+   Duration  33.86s (tests 60%, environment 16%, transform 12%, import 10%, setup 3%)
+
+tests exit 1

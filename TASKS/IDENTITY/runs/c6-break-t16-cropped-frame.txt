@@ -1,0 +1,32 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx (10 tests | 1 failed) 278ms
+   ❯ Logo (10)
+     × draws the full logo in its frame: the words in the ink, the dots in the spark 27ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx > Logo > draws the full logo in its frame: the words in the ink, the dots in the spark
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"viewBox"[32m[39m[2m, [22m[32m[32m"263 45 2473 903"[32m[39m[2m) // element.getAttribute("viewBox") === "263 45 2473 903"[22m
+
+Expected the element to have attribute:
+[32m  viewBox="263 45 2473 903"[39m
+Received:
+[31m  viewBox="263 45 2000 903"[39m
+ ❯ src/shared/design-system/components/display/Logo/Logo.component.test.tsx:32:17
+     30|     const svg = screen.getByRole('img', { name: 'Masaha' });
+     31|
+     32|     expect(svg).toHaveAttribute('viewBox', '263 45 2473 903');
+       |                 ^
+     33|     expect(fills(svg)).toEqual(['fill-foreground', 'fill-spark']);
+     34|     expect(container.querySelectorAll('svg svg')).toHaveLength(0);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  12:10:10
+   Duration  6.49s (environment 45%, import 35%, setup 12%, tests 5%, transform 3%)
+

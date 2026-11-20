@@ -1,0 +1,77 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 7 failed) 40ms
+   ❯ the palette (7)
+     × light: spark is the logo's #b55bb3 8ms
+   ❯ contrast (138)
+     × light: spark on background meets 3:1 1ms
+     × light: spark on card meets 3:1 0ms
+     × light: spark on popover meets 3:1 0ms
+     × light: spark on sidebar meets 3:1 0ms
+     × light: spark on accent meets 3:1 0ms
+     × light: spark on sidebar-accent meets 3:1 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the palette > light: spark is the logo's #b55bb3
+AssertionError: expected '#d27ed0' to be '#b55bb3' // Object.is equality
+
+Expected: "#b55bb3"
+Received: "#d27ed0"
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:521:42
+    519|     ),
+    520|   )("$theme: $token is the logo's $hex", ({ theme, token, hex }) => {
+    521|     expect(toHex(painted(theme, token))).toBe(hex);
+       |                                          ^
+    522|   });
+    523| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on background meets 3:1
+AssertionError: expected 2.6452425137812914 to be greater than or equal to 3
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on card meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on popover meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on sidebar meets 3:1
+AssertionError: expected 2.7503172774201485 to be greater than or equal to 3
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on accent meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: spark on sidebar-accent meets 3:1
+AssertionError: expected 2.3126244261615683 to be greater than or equal to 3
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/7]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  7 failed | 187 passed (194)
+   Start at  11:54:10
+   Duration  463ms (transform 53%, tests 23%, import 20%, worker 3%)
+

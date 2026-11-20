@@ -1,0 +1,39 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 1 failed) 36ms
+   ❯ the spark carries no text (2)
+     × offers the spark only as a fill, an edge, an outline and a mark 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the spark carries no text > offers the spark only as a fill, an edge, an outline and a mark
+AssertionError: expected { …(5) } to deeply equal { …(4) }
+
+- Expected
++ Received
+
+  {
+    "bg-spark": "background-color: var(--spark);",
+    "border-spark": "border-color: var(--spark);",
+    "fill-spark": "fill: var(--spark);",
+    "outline-spark": "outline-color: var(--spark);",
++   "text-spark": "color: var(--spark);",
+  }
+
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:601:48
+    599|
+    600|   it('offers the spark only as a fill, an edge, an outline and a mark'…
+    601|     expect(Object.fromEntries(sparkUtilities)).toEqual({
+       |                                                ^
+    602|       'bg-spark': 'background-color: var(--spark);',
+    603|       'border-spark': 'border-color: var(--spark);',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 193 passed (194)
+   Start at  11:54:21
+   Duration  426ms (transform 56%, import 22%, tests 18%, worker 4%)
+

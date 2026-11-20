@@ -1,0 +1,15 @@
+﻿PR #149 is mergeable after one fix round: there are no blockers, but there are three should-fix items, all in tests or docs. CI was green before I started, and the head stayed at `a28f74df` (CLEAN) through the review. The full review is in `C:\dev\masaha\workspace\TASKS\CONTACT_RULES\7_REVIEW.md`.
+
+**Verdicts:** R1–R8 and R10 PASS. R9 and R11 are WEAK, and R12 FAILs on one wrong document line.
+
+- **The rules hold.** I traced every input in the R2, R4 and R5 tables through the code, and each one gives the expected result. Every phone input goes through the shared rule on both the browser and the server, and none bypasses it.
+- **The browser checks first and the server still enforces.** Tests prove that the contacts' Sheet and the desk's edit dialog send nothing for a refused value, and that the API stores nothing.
+- **No data changed.** The two demo seed contacts (a Facebook page and a website) still pass the new rules.
+- **The row's control is right.** It applies only to a ghost button inside a table row, and the tokens match the report: 10 % light, 8 % dark.
+
+**Findings:**
+1. **F1 (R12):** finding 217's resolution quotes the Sheet's test input with four ٧, which makes it 11 digits. The phone rule would refuse that number. The test actually types 10 digits, `٠٥٩٩٧٧٧٨٨٨`. This fix goes into commit `a28f74df`.
+2. **F2 (R4, R5, R11):** five refused inputs have no test of their own: `javascript:alert(1)`, `facebook.com/search/?q=x`, `facebook.com/masaha/about`, `notfacebook.com/masaha`, and `facebook.com/profile.php` with no id. The code refuses all five. The biggest gap is a one-segment section link: `/search`, `/events` or `/share` on its own could be dropped from the blocked list and no test would fail. These tests go into commit `1873382b`.
+3. **F3 (R9):** the test for finding 219 (the toast timer outliving a test file) can't fail. The report says it passed before the fix, because the timing problem never reproduced locally. The setup change itself is sound and hides no errors, and the finding's resolution says this honestly. You can either accept it as a smoke test or ask for a test that reproduces the problem.
+
+Finding 228 (the customers' search reading Arabic-Indic last digits as a name) is still Open and correctly described. Every `#149` in the docs belongs to this PR, and no `#PRNUM` is left.

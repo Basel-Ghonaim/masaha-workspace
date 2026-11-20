@@ -1,0 +1,106 @@
+824 hits, 79 unique (path, match, context)
+590f3297 docs/design/CHANGES.md:133  [focus@example.com]  Every contact shows its value on one line, cut at its end (`focus@example.com`, `@focushub.example`); a phone is the contract's `phone` t
+8d57ae78 docs/design/CHANGES.md:156  [nour@example.com]  طريقة دخوله، ولا تظهر كلمة مرور» with «ترقية وربط» (`?email=nour@example.com` opens it there); `ALREADY_OWNER` says «مالك مسبقًا — اربطه
+8d57ae78 docs/design/INDEX.md:34  [nour@example.com]  | `Admin owners.html?sheet=add&email=nour@example.com` | the owners page | the add-owner sheet as the server leav
+14fdc60b docs/design/INDEX.md:549  [nour@example.com]  ccount → «ربط» — desktop 1440 | `Staff.html?sheet=add&email=nour@example.com` | 1440×1000 | [37-staff-owner/07-email-already-has-an-acco
+14fdc60b docs/design/INDEX.md:550  [nour@example.com]  n account → «ربط» — phone 390 | `Staff.html?sheet=add&email=nour@example.com` | 390×844 | [37-staff-owner/08-email-already-has-an-accoun
+06bd96f4 docs/design/INDEX.md:630  [nour@example.com]  nked on submit — desktop 1440 | `Staff.html?sheet=add&email=nour@example.com` | 1440×1000 | [37-staff-owner/07-email-already-has-an-acco
+06bd96f4 docs/design/INDEX.md:631  [nour@example.com]  linked on submit — phone 390 | `Staff.html?sheet=add&email=nour@example.com` | 390×844 | [37-staff-owner/08-email-already-has-an-accoun
+14fdc60b docs/design/INDEX.md:640  [nour@example.com]  nd link — desktop 1440 | `Admin owners.html?sheet=add&email=nour@example.com` | 1440×1000 | [44-admin-owners/05-existing-account-upgrade
+14fdc60b docs/design/INDEX.md:641  [nour@example.com]  e and link — phone 390 | `Admin owners.html?sheet=add&email=nour@example.com` | 390×844 | [44-admin-owners/06-existing-account-upgrade-a
+110ce838 docs/design/INDEX.md:833  [sara@gmial.com]  email — phone 390 | `Forgot password.html?state=sent&email=sara@gmial.com` | 390×844 | — |
+14fdc60b docs/design/prototype/Admin owners.html:33  [reem@example.com]  pageParams.get('pass') ? { name: tr('ريم', 'Reem'), email: 'reem@example.com', pw: 'Msh-9d3x-527' } : null);
+8d57ae78 docs/design/prototype/Admin owners.html:36  [nour@example.com]  // `?email=nour@example.com`: the sheet as the server left it, the email answered EMAIL
+14fdc60b docs/design/prototype/Admin owners.html:45  [name@example.com]  /.test(email.trim())) x.email = tr('أدخل بريدًا صحيحًا، مثل name@example.com', 'Enter a valid email, e.g. name@example.com');
+14fdc60b docs/design/prototype/Admin owners.html:45  [name@example.com]  ا صحيحًا، مثل name@example.com', 'Enter a valid email, e.g. name@example.com');
+8d57ae78 docs/design/prototype/Admin owners.html:62  [name@example.com]  S+\.\S+$/.test(mail)) x.email = tr('أدخل بريدًا صحيحًا، مثل name@example.com', 'Enter a valid email, e.g. name@example.com');
+14fdc60b docs/design/prototype/Admin owners.html:87  [name@example.com]  rror={err.email}><Input type="email" dir="ltr" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} /
+8d57ae78 docs/design/prototype/Admin owners.html:158  [name@example.com]  ror={emailError}><Input type="email" dir="ltr" placeholder="name@example.com" value={email} onChange={(e) => { setEmail(e.target.value);
+14fdc60b docs/design/prototype/Admin settings.html:38  [hello@masaha.example]  const contact = useCard({ email: 'hello@masaha.example', whatsapp: '+970 59 000 0000' });
+14fdc60b docs/design/prototype/Flows - states.html:411  [nour@example.com]  0</p><iframe loading="lazy" src="Staff.html?sheet=add&email=nour@example.com" width="1440" height="1000" title="Email already has an acc
+06bd96f4 docs/design/prototype/Flows - states.html:411  [nour@example.com]  0</p><iframe loading="lazy" src="Staff.html?sheet=add&email=nour@example.com" width="1440" height="1000" title="Email with an account →
+14fdc60b docs/design/prototype/Flows - states.html:412  [nour@example.com]  0</p><iframe loading="lazy" src="Staff.html?sheet=add&email=nour@example.com" width="390" height="844" title="Email already has an accou
+06bd96f4 docs/design/prototype/Flows - states.html:412  [nour@example.com]  0</p><iframe loading="lazy" src="Staff.html?sheet=add&email=nour@example.com" width="390" height="844" title="Email with an account → li
+14fdc60b docs/design/prototype/Flows - states.html:474  [nour@example.com]  ame loading="lazy" src="Admin%20owners.html?sheet=add&email=nour@example.com" width="1440" height="1000" title="Existing account → upgra
+14fdc60b docs/design/prototype/Flows - states.html:475  [nour@example.com]  ame loading="lazy" src="Admin%20owners.html?sheet=add&email=nour@example.com" width="390" height="844" title="Existing account → upgrade
+110ce838 docs/design/prototype/Flows - states.html:567  [sara@gmial.com]  ing="lazy" src="Forgot%20password.html?state=sent&amp;email=sara@gmial.com" width="390" height="844" title="Forgot · sent to a mistype
+12ae39f6 docs/design/prototype/Forgot password.html:30  [sara@example.com]  React.useState(pageParams.get('email') || (initialState ? 'sara@example.com' : ''));
+14fdc60b docs/design/prototype/Forgot password.html:35  [sara@example.com]  const [email, setEmail] = React.useState(initialState ? 'sara@example.com' : '');
+14fdc60b docs/design/prototype/Forgot password.html:72  [name@example.com]  ut type="email" dir="ltr" autoComplete="email" placeholder="name@example.com" value={email} disabled={loading} onChange={(e) => setEmail
+14fdc60b docs/design/prototype/Register.html:31  [taken@example.com]  exists: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'taken@example.com', password: 'masaha2026' },
+14fdc60b docs/design/prototype/Register.html:32  [sara@example.com]  ratelimit: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'sara@example.com', password: 'masaha2026' },
+14fdc60b docs/design/prototype/Register.html:33  [sara@example.com]  network: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'sara@example.com', password: 'masaha2026' },
+14fdc60b docs/design/prototype/Register.html:34  [sara@example.com]  loading: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'sara@example.com', password: 'masaha2026' },
+14fdc60b docs/design/prototype/Register.html:35  [sara@example.com]  typing: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'sara@example.com', password: 'masaha2' },
+14fdc60b docs/design/prototype/Register.html:36  [sara@example.com]  filled: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'sara@example.com', password: 'masaha2026' }
+12ae39f6 docs/design/prototype/Register.html:36  [sara@example.com]  toolong: { name: tr("سارة أحمد", "Sara Ahmad"), email: 'sara@example.com', password: 'ب'.repeat(40) + '1' },
+14fdc60b docs/design/prototype/Register.html:42  [name@example.com]  ', 'Check the email address, for example')} <span dir="ltr">name@example.com</span></>;
+14fdc60b docs/design/prototype/Register.html:93  [name@example.com]  ut type="email" dir="ltr" autoComplete="email" placeholder="name@example.com" value={v.email} disabled={loading} onChange={set('email')}
+14fdc60b docs/design/prototype/Reset password.html:68  [sara@example.com]  <CardDescription>{tr("للحساب ", "For ")}<span dir="ltr">sara@example.com</span></CardDescription>
+12ae39f6 docs/design/prototype/Reset password.html:103  [sara@example.com]  <CardDescription>{tr("للحساب ", "For ")}<Ltr>{maskEmail('sara@example.com')}</Ltr></CardDescription>
+14fdc60b docs/design/prototype/Sign in.html:33  [name@example.com]  const [email, setEmail] = React.useState(prefill ? 'name@example.com' : '');
+14fdc60b docs/design/prototype/Sign in.html:49  [wrong@example.com]  // Demo: "wrong@example.com" fails; anything else signs in and returns to where the use
+14fdc60b docs/design/prototype/Sign in.html:71  [name@example.com]  ut type="email" dir="ltr" autoComplete="email" placeholder="name@example.com" value={email} disabled={loading} onChange={(e) => setEmail
+14fdc60b docs/design/prototype/Staff.html:31  [sami@example.com]  d: 'st1', name: tr('سامي', 'Sami'), key: DESK.SAMI, email: 'sami@example.com', status: 'active', last: tr('اليوم 07:52', 'Today 07:52'),
+14fdc60b docs/design/prototype/Staff.html:32  [hala@example.com]  { id: 'st2', name: tr('هالة', 'Hala'), key: 'هالة', email: 'hala@example.com', status: 'suspended', last: tr('قبل 3 أسابيع', '3 weeks ag
+06bd96f4 docs/design/prototype/Staff.html:33  [sami@example.com]  d: 'st1', name: tr('سامي', 'Sami'), key: DESK.SAMI, email: 'sami@example.com', status: 'active', added: '2026-03-02', pending: false, mo
+14fdc60b docs/design/prototype/Staff.html:34  [nour@example.com]  const EXISTING = ['nour@example.com', 'sara@example.com'];
+14fdc60b docs/design/prototype/Staff.html:34  [sara@example.com]  const EXISTING = ['nour@example.com', 'sara@example.com'];
+06bd96f4 docs/design/prototype/Staff.html:34  [laila@example.com]  id: 'st3', name: tr('ليلى', 'Laila'), key: 'ليلى', email: 'laila@example.com', status: 'active', added: '2026-09-28', pending: true, mon
+06bd96f4 docs/design/prototype/Staff.html:35  [hala@example.com]  { id: 'st2', name: tr('هالة', 'Hala'), key: 'هالة', email: 'hala@example.com', status: 'removed', added: '2026-05-10', pending: false, m
+14fdc60b docs/design/prototype/Staff.html:42  [laila@example.com]  geParams.get('pass') ? { name: tr('ليلى', 'Laila'), email: 'laila@example.com', pw: 'Msh-7k2q-418' } : null);
+14fdc60b docs/design/prototype/Staff.html:48  [name@example.com]  /.test(email.trim())) x.email = tr('أدخل بريدًا صحيحًا، مثل name@example.com', 'Enter a valid email, e.g. name@example.com');
+14fdc60b docs/design/prototype/Staff.html:48  [name@example.com]  ا صحيحًا، مثل name@example.com', 'Enter a valid email, e.g. name@example.com');
+14fdc60b docs/design/prototype/Staff.html:104  [name@example.com]  rror={err.email}><Input type="email" dir="ltr" placeholder="name@example.com" value={email} onChange={(e) => setEmail(e.target.value)} /
+14fdc60b docs/design/prototype/masaha/admin-data.js:6  [ahmad@example.com]  { id: 'o1', name: T('أحمد', 'Ahmad'), email: 'ahmad@example.com', spaces: ['focus'], status: 'active', joined: '2025-03-02'
+14fdc60b docs/design/prototype/masaha/admin-data.js:7  [maha@example.com]  { id: 'o2', name: T('مها', 'Maha'), email: 'maha@example.com', spaces: ['branch'], status: 'active', joined: '2025-06-18
+14fdc60b docs/design/prototype/masaha/admin-data.js:8  [yousef@example.com]  { id: 'o3', name: T('يوسف', 'Yousef'), email: 'yousef@example.com', spaces: ['numberone'], status: 'active', joined: '2025-11
+14fdc60b docs/design/prototype/masaha/admin-data.js:9  [rima@example.com]  { id: 'o4', name: T('ريما', 'Rima'), email: 'rima@example.com', spaces: [], status: 'suspended', joined: '2026-01-20' }
+b6bec056 docs/design/prototype/masaha/admin-data.js:10  [rima@example.com]  { id: 'o4', name: T('ريما', 'Rima'), email: 'rima@example.com', spaces: ['olive'], status: 'suspended', joined: '2026-01-
+14fdc60b docs/design/prototype/masaha/admin-data.js:30  [sara@example.com]  { id: 'u1', name: T('سارة أحمد', 'Sara Ahmad'), email: 'sara@example.com', role: 'user', method: 'google', joined: '2026-09-27', sta
+14fdc60b docs/design/prototype/masaha/admin-data.js:31  [omar@example.com]  { id: 'u2', name: T('عمر حلس', 'Omar Hilles'), email: 'omar@example.com', role: 'user', method: 'email', joined: '2026-09-25', stat
+14fdc60b docs/design/prototype/masaha/admin-data.js:32  [layan@example.com]  { id: 'u3', name: T('ليان حمدان', 'Layan Hamdan'), email: 'layan@example.com', role: 'user', method: 'both', joined: '2026-09-24', statu
+14fdc60b docs/design/prototype/masaha/admin-data.js:33  [khaled@example.com]  : 'u4', name: T('خالد النجار', 'Khaled Al-Najjar'), email: 'khaled@example.com', role: 'user', method: 'email', joined: '2026-08-02', stat
+14fdc60b docs/design/prototype/masaha/admin-data.js:34  [nour@example.com]  { id: 'u5', name: T('نور سالم', 'Nour Salem'), email: 'nour@example.com', role: 'user', method: 'google', joined: '2026-09-23', sta
+14fdc60b docs/design/prototype/masaha/admin-data.js:36  [basel@example.com]  { id: 'ua', name: T('باسل', 'Basel'), email: 'basel@example.com', role: 'admin', method: 'email', joined: '2025-01-10', sta
+8d57ae78 docs/design/prototype/masaha/admin-data.js:45  [mona@example.com]  { id: 'ua2', name: T('منى', 'Mona'), email: 'mona@example.com', role: 'admin', method: 'email', joined: '2026-06-02', sta
+14fdc60b docs/design/prototype/masaha/admin-data.js:88  [basel@example.com]  LD, RSTAT, ACTION, fmt, areaName, admin: { name: B, email: 'basel@example.com' } };
+14fdc60b docs/design/prototype/masaha/details-data.js:10  [focus@example.com]  wal', value: '+970 59 000 0001' }, { type: 'email', value: 'focus@example.com' }, { type: 'instagram', value: 'focushub.example' }, { typ
+590f3297 docs/design/prototype/masaha/details-data.js:10  [focus@example.com]  one', value: '+970 59 000 0001' }, { type: 'email', value: 'focus@example.com' }, { type: 'instagram', value: 'focushub.example' }, { typ
+14fdc60b docs/design/prototype/masaha/details-data.js:21  [branch@example.com]  doo', value: '+970 56 000 0003' }, { type: 'email', value: 'branch@example.com' }, { type: 'tiktok', value: 'branchhub.example' }],
+590f3297 docs/design/prototype/masaha/details-data.js:21  [branch@example.com]  one', value: '+970 56 000 0003' }, { type: 'email', value: 'branch@example.com' }, { type: 'tiktok', value: 'branchhub.example' }],
+14fdc60b docs/design/prototype/masaha/details-data.js:51  [white@example.com]  app', value: '+970 59 000 0007' }, { type: 'email', value: 'white@example.com' }], announcements: []
+14fdc60b docs/design/prototype/masaha/details-data.js:66  [hello@example.com]  M.platformContact = { whatsapp: '+970 59 000 0099', email: 'hello@example.com' };
+14fdc60b docs/design/prototype/masaha/owner-data.js:41  [ahmad@example.com]  loseAt: '18:00', owner: { name: T('أحمد', 'Ahmad'), email: 'ahmad@example.com' }, spaces, members, present, log, history, attendanceOf, t
+14fdc60b docs/design/prototype/masaha/owner.jsx:8  [ahmad@example.com]  nst STAFF = IS_OWNER ? { name: tr('أحمد', 'Ahmad'), email: 'ahmad@example.com', role: tr('صاحب المساحة', 'Owner') } : { name: tr('سامي',
+14fdc60b docs/design/prototype/masaha/owner.jsx:8  [sami@example.com]  المساحة', 'Owner') } : { name: tr('سامي', 'Sami'), email: 'sami@example.com', role: tr('موظف استقبال', 'Reception') };
+14fdc60b docs/design/prototype/masaha/profile-b.jsx:63  [name@example.com]  l: '+970 59 000 0000', ooredoo: '+970 56 000 0000', email: 'name@example.com', instagram: 'username', facebook: 'page', tiktok: 'usernam
+7b0a5dfd docs/design/prototype/masaha/profile-b.jsx:134  [name@example.com]  { whatsapp: '0599 123 456', phone: '0599 123 456', email: 'name@example.com', instagram: '@name', facebook: 'facebook.com/name', tiktok
+516ce763 docs/design/prototype/masaha/profile-c.jsx:156  [name@example.com]  ['email', tr('بريد إلكتروني', 'Email'), 'name@example.com', 'mail'],
+14fdc60b docs/design/prototype/masaha/shared.jsx:67  [sara@example.com]  DEMO_USER = { name: tr('سارة أحمد', 'Sara Ahmad'), email: 'sara@example.com' };
+
+by match:
+     372  nour@example.com
+      84  name@example.com
+      73  sara@example.com
+      64  focus@example.com
+      39  sara@gmial.com
+      29  ahmad@example.com
+      20  basel@example.com
+      19  sami@example.com
+      10  reem@example.com
+      10  maha@example.com
+      10  yousef@example.com
+      10  rima@example.com
+      10  omar@example.com
+      10  layan@example.com
+      10  khaled@example.com
+       9  laila@example.com
+       7  hala@example.com
+       7  branch@example.com
+       7  white@example.com
+       7  hello@example.com
+       5  taken@example.com
+       4  hello@masaha.example
+       4  wrong@example.com
+       4  mona@example.com

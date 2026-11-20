@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Masaha — 10 wordmark drafts (round 1)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Jost:wght@500&family=DM+Sans:wght@500&family=Manrope:wght@800&family=Plus+Jakarta+Sans:ital,wght@1,800&family=Sora:wght@600&family=Lexend:wght@700&family=Outfit:wght@800&display=swap">
+<style>
+  body { margin: 0; background: #f2f2f2; font-family: "IBM Plex Sans Arabic", sans-serif; color: #111; }
+  header { padding: 22px 32px 8px; }
+  header h1 { margin: 0; font-size: 20px; }
+  header p { margin: 4px 0 0; color: #666; font-size: 14px; }
+  .sheet { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 16px 32px 32px; }
+  .card { background: #fff; border-radius: 12px; padding: 18px 22px; display: grid; gap: 10px; }
+  .num { font-size: 13px; color: #777; }
+  .num b { color: #111; }
+  .big { direction: ltr; height: 120px; display: flex; align-items: center; justify-content: center; color: #000; }
+  .small { direction: ltr; display: flex; gap: 22px; align-items: center; justify-content: center; border-top: 1px solid #eee; padding-top: 10px; color: #000; }
+  .w { line-height: 1; white-space: nowrap; }
+  .w1 { font-family: "Jost"; font-weight: 500; letter-spacing: -0.02em; }
+  .w2 { font-family: "DM Sans"; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; }
+  .w4 { font-family: "Manrope"; font-weight: 800; letter-spacing: -0.04em; }
+  .w6 { font-family: "Plus Jakarta Sans"; font-style: italic; font-weight: 800; letter-spacing: -0.02em; }
+  .w7 { font-family: "Sora"; font-weight: 600; letter-spacing: -0.03em; }
+  .w8 { font-family: "Lexend"; font-weight: 700; letter-spacing: -0.06em; }
+  svg { display: block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Masaha — عشر مسودات أولية للكلمة (بلا ألوان)</h1>
+  <p>كل مسودة تطبّق مبدأً من تحليل شعار عيون أكاديمي بطريقتها، من غير نسخه. كل بطاقة: الكلمة كبيرة، ثم بحجم رأس الموقع (24px) وأصغر (16px).</p>
+</header>
+<div class="sheet" id="sheet"></div>
+
+<script>
+  // Custom drawn words (stroke-built, geometric). viewBoxes are set per drawing.
+  const lam = (x, h, w) => `M${x} ${h} L${x + w / 2} 0 L${x + w} ${h}`;
+  const custom = {
+    // 3 — capitals with no crossbars: the A's are open triangles (negative space).
+    c3: { vb: '-6 -6 352 72', sw: 5, d: `M0 60 V0 L24 40 L48 0 V60 ${lam(66, 60, 44)} M158 9 A14 14 0 1 0 144 30 A15 15 0 1 1 128 52 ${lam(176, 60, 44)} M238 0 V60 M238 30 H272 M272 0 V60 ${lam(290, 60, 44)}` },
+    // 5 — the M's right stem is also the first A's left leg (a ligature); heavy, short low crossbars.
+    c5: { vb: '-8 -8 310 76', sw: 11, d: `M0 60 V0 L22 34 L44 0 V60 M44 0 L74 60 M44 42 H65 M118 9 A14 14 0 1 0 104 30 A15 15 0 1 1 88 52 ${lam(136, 60, 44)} M143.3 40 H172.7 M198 0 V60 M198 30 H232 M232 0 V60 ${lam(250, 60, 44)} M257.3 40 H286.7` },
+    // 10 — a monoline lowercase built from circles and lines (single-storey a, one tall h).
+    c10: { vb: '-12 -32 368 104', sw: 9, d: 'M5 60 V10 M5 30 A15 15 0 0 1 35 30 V60 M35 30 A15 15 0 0 1 65 30 V60 M125 10 V60 M167 17 A12.5 12.5 0 1 0 155 35 A12.5 12.5 0 1 1 143 55 M230 10 V60 M250 -22 V60 M250 32 A15 15 0 0 1 280 32 V60 M340 10 V60', circles: [[100, 35, 25], [205, 35, 25], [315, 35, 25]] }
+  };
+  const drawn = (key, h) => {
+    const c = custom[key];
+    const [, , w, vh] = c.vb.split(' ').map(Number);
+    const width = Math.round(h * w / vh);
+    const circles = (c.circles || []).map(([cx, cy, r]) => `<circle cx="${cx}" cy="${cy}" r="${r}"/>`).join('');
+    return `<svg width="${width}" height="${h}" viewBox="${c.vb}" fill="none" stroke="currentColor" stroke-width="${c.sw}" stroke-linecap="round" stroke-linejoin="round"><path d="${c.d}"/>${circles}</svg>`;
+  };
+  // 9 — a heavy capital word cut by one horizontal band of negative space.
+  const cut = (h) => `<svg width="${Math.round(h * 4.6)}" height="${h}" viewBox="0 0 460 100"><defs><mask id="m${h}"><rect width="460" height="100" fill="#fff"/><rect x="0" y="47" width="460" height="9" fill="#000"/></mask></defs><text x="230" y="86" text-anchor="middle" font-family="Outfit" font-weight="800" font-size="104" letter-spacing="-2" fill="currentColor" mask="url(#m${h})">MASAHA</text></svg>`;
+  const text = (cls, word, size) => `<span class="w ${cls}" style="font-size:${size}px">${word}</span>`;
+
+  const drafts = [
+    [1, 'هندسي بحروف صغيرة', 'مبدأ 1: هيكل هندسي هادئ؛ حروف صغيرة ودودة.', (s) => text('w1', 'masaha', s)],
+    [2, 'حروف كبيرة متباعدة', 'مبدأ 5: رسمي ومؤسسي، يُقرأ من بعيد.', (s) => text('w2', 'masaha', s * 0.62)],
+    [3, 'A بلا خط وسطي', 'مبدأ 3: الفراغ يكمل الحرف؛ خط رفيع مرسوم.', (s) => drawn('c3', s * 0.78)],
+    [4, 'نقطة في الآخر', 'مبدأ 6: «masaha.» عبارة واثقة؛ ثقيل وصغير الحروف.', (s) => text('w4', 'masaha.', s)],
+    [5, 'M وA بخط مشترك', 'مبدأ 2: ساق M اليمنى هي ساق A اليسرى؛ ثقيل.', (s) => drawn('c5', s * 0.8)],
+    [6, 'مائل ثقيل', 'مبدأ 7: حركة وطاقة؛ بحرف كبير أول.', (s) => text('w6', 'Masaha', s)],
+    [7, 'ودود بحرف كبير أول', 'خط حديث ناعم؛ متزن ومألوف.', (s) => text('w7', 'Masaha', s)],
+    [8, 'متلاصق مستدير', 'مسافات ضيقة جدًا: الكلمة كتلة واحدة.', (s) => text('w8', 'masaha', s)],
+    [9, 'مقطوع بشريط فارغ', 'مبدأ 3 بشكل آخر: شريط فراغ يعبر الكلمة كأفق.', (s) => cut(s * 0.86)],
+    [10, 'خط واحد مبني من دوائر', 'مبدأ 1 مرسوم يدويًا: a بدائرة، h وحيد طويل.', (s) => drawn('c10', s * 0.95)]
+  ];
+  document.getElementById('sheet').innerHTML = drafts.map(([n, title, note, render]) => `
+    <section class="card">
+      <div class="num"><b>${n}. ${title}</b> — ${note}</div>
+      <div class="big">${render(78)}</div>
+      <div class="small">${render(24)}${render(16)}</div>
+    </section>`).join('');
+</script>
+</body>
+</html>

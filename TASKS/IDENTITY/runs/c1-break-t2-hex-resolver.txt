@@ -1,0 +1,284 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 29 failed) 38ms
+   ❯ the measures (4)
+     × mixes as CSS color-mix does 4ms
+   ❯ theme key parity (6)
+     × resolves every colour to a colour in the light theme, a translucent one only with its ground 1ms
+     × resolves every colour to a colour in the dark theme, a translucent one only with its ground 1ms
+   ❯ contrast (138)
+     × light: primary-foreground on primary-hover meets 4.5:1 0ms
+     × light: foreground on hover-on-muted over muted meets 4.5:1 0ms
+     × light: scrim-foreground on scrim over #ffffff meets 4.5:1 0ms
+     × light: scrim-foreground on scrim over #000000 meets 4.5:1 0ms
+     × dark: accent-foreground on accent meets 4.5:1 0ms
+     × dark: sidebar-accent-foreground on sidebar-accent meets 4.5:1 0ms
+     × dark: foreground on accent meets 4.5:1 0ms
+     × dark: foreground on sidebar-accent meets 4.5:1 0ms
+     × dark: muted-foreground on accent meets 4.5:1 0ms
+     × dark: muted-foreground on sidebar-accent meets 4.5:1 0ms
+     × dark: primary-foreground on primary-hover meets 4.5:1 0ms
+     × dark: foreground on hover-on-muted over muted meets 4.5:1 0ms
+     × dark: scrim-foreground on scrim over #ffffff meets 4.5:1 0ms
+     × dark: scrim-foreground on scrim over #000000 meets 4.5:1 0ms
+     × dark: spark on accent meets 3:1 0ms
+     × dark: spark on sidebar-accent meets 3:1 0ms
+     × dark: ring on accent meets 3:1 0ms
+     × dark: ring on sidebar-accent meets 3:1 0ms
+   ❯ fills seen (22)
+     × light: hover-on-muted stands apart from muted at 1.2:1 0ms
+     × dark: hover-on-muted stands apart from muted at 1.2:1 0ms
+     × dark: accent stands apart from card at 1.15:1 2ms
+     × dark: sidebar-accent stands apart from sidebar at 1.15:1 0ms
+     × dark: hover is not the selected tint (accent) 0ms
+     × dark: hover is not the selected tint (sidebar-accent) 0ms
+   ❯ the brand never reads as an error (15)
+     × dark: the selected tint (accent) is apart from the destructive tint 0ms
+     × dark: the selected tint (sidebar-accent) is apart from the destructive tint 0ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 29 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the measures > mixes as CSS color-mix does
+Error: Not a colour: color-mix(in oklab, #ffffff, #000000)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:460:18
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the light theme, a translucent one only with its ground
+Error: Not a colour: color-mix(in oklch, var(--neutral-900), var(--neutral-50) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the dark theme, a translucent one only with its ground
+Error: Not a colour: color-mix(in oklch, var(--neutral-50), var(--neutral-950) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:498:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: primary-foreground on primary-hover meets 4.5:1
+Error: Not a colour: color-mix(in oklch, var(--neutral-900), var(--neutral-50) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: foreground on hover-on-muted over muted meets 4.5:1
+Error: Not a colour: color-mix(in oklab, var(--neutral-900) 10%, transparent)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: scrim-foreground on scrim over #ffffff meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: scrim-foreground on scrim over #000000 meets 4.5:1
+Error: Not a colour: color-mix(in oklab, var(--neutral-900) 70%, transparent)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: accent-foreground on accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: sidebar-accent-foreground on sidebar-accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: foreground on accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: foreground on sidebar-accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: muted-foreground on accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: muted-foreground on sidebar-accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on accent meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: spark on sidebar-accent meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: ring on accent meets 3:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: ring on sidebar-accent meets 3:1
+Error: Not a colour: color-mix(in oklab, var(--spark-800) 30%, var(--spark-900))
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: primary-foreground on primary-hover meets 4.5:1
+Error: Not a colour: color-mix(in oklch, var(--neutral-50), var(--neutral-950) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: foreground on hover-on-muted over muted meets 4.5:1
+Error: Not a colour: color-mix(in oklab, var(--neutral-50) 8%, transparent)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: scrim-foreground on scrim over #ffffff meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: scrim-foreground on scrim over #000000 meets 4.5:1
+Error: Not a colour: color-mix(in oklab, var(--neutral-50) 70%, transparent)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:537:57
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover-on-muted stands apart from muted at 1.2:1
+Error: Not a colour: color-mix(in oklab, var(--neutral-900) 10%, transparent)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover-on-muted stands apart from muted at 1.2:1
+Error: Not a colour: color-mix(in oklab, var(--neutral-50) 8%, transparent)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: accent stands apart from card at 1.15:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: sidebar-accent stands apart from sidebar at 1.15:1
+Error: Not a colour: color-mix(in oklab, var(--spark-800) 30%, var(--spark-900))
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:547:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover is not the selected tint (accent)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > dark: hover is not the selected tint (sidebar-accent)
+Error: Not a colour: color-mix(in oklab, var(--spark-800) 30%, var(--spark-900))
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:555:44
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/29]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: the selected tint (accent) is apart from the destructive tint
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the brand never reads as an error > dark: the selected tint (sidebar-accent) is apart from the destructive tint
+Error: Not a colour: color-mix(in oklab, var(--spark-800) 30%, var(--spark-900))
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:380:9
+    378|     return { ...result, alpha: result.alpha * Math.min(1, sum) };
+    379|   }
+    380|   throw new Error(`Not a colour: ${value}`);
+       |         ^
+    381| }
+    382|
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:389:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:394:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:581:16
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/29]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  29 failed | 165 passed (194)
+   Start at  11:53:50
+   Duration  628ms (transform 55%, import 21%, tests 21%, worker 4%)
+

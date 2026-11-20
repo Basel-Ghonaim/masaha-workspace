@@ -1,0 +1,1745 @@
+{
+ "run": "pub-ec8+ec9+home",
+ "screens": {
+  "home": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 4200,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-ar-390.png",
+     "contrast": {
+      "checked": 67,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 16,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > button[data-slot=sheet-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > a",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         216,
+         8,
+         110,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "exception",
+       "text": "TypeError: canvas.getContext is not a function\n    at <anonymous>:43:22\n    at <anonymous>:499:3"
+      },
+      {
+       "kind": "exception",
+       "text": "TypeError: canvas.getContext is not a function\n    at <anonymous>:43:22\n    at <anonymous>:499:3"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-en-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > a",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         112,
+         8,
+         110,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "header > div > nav[aria-label=\"Main navigation\"] > a[data-slot=button]",
+        "text": "Home",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         254,
+         12,
+         64,
+         32
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-en-1440-focus.png",
+     "console": []
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 4200,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-ar-390.png",
+     "contrast": {
+      "checked": 67,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 16,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 4200,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-en-390.png",
+     "contrast": {
+      "checked": 67,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 16,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 4200,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-en-390.png",
+     "contrast": {
+      "checked": 67,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 16,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 2553,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-ar-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 2553,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-ar-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 2697,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-en-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 2697,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-en-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-ar-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-dark-ar-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-ec8+ec9+home-home-light-en-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > button[data-slot=sheet-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > a",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        216,
+        8,
+        110,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > a",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        112,
+        8,
+        110,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "header > div > nav[aria-label=\"Main navigation\"] > a[data-slot=button]",
+       "text": "Home",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        254,
+        12,
+        64,
+        32
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  }
+ },
+ "hover": [],
+ "ec": {
+  "ec8": {
+   "/favicon.svg": {
+    "status": 200,
+    "type": "image/svg+xml",
+    "bytes": 14988,
+    "ok": false
+   },
+   "/favicon.ico": {
+    "status": 200,
+    "type": "image/x-icon",
+    "bytes": 2112,
+    "ok": true
+   },
+   "/apple-touch-icon.png": {
+    "status": 200,
+    "type": "image/png",
+    "bytes": 3264,
+    "ok": true
+   },
+   "links": [
+    "<link rel=\"icon\" href=\"/favicon.ico\" sizes=\"16x16 32x32 48x48\">",
+    "<link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">",
+    "<link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">",
+    "<meta name=\"theme-color\" content=\"#f7fbff\" media=\"(prefers-color-scheme: light)\">",
+    "<meta name=\"theme-color\" content=\"#0d1217\" media=\"(prefers-color-scheme: dark)\">"
+   ],
+   "iconRequests": [
+    "Script http://localhost:5323/src/shared/design-system/icons/index.ts",
+    "Script http://localhost:5323/src/shared/design-system/icons/GlyphIcon.tsx",
+    "Script http://localhost:5323/src/shared/design-system/icons/iconSet.tsx",
+    "Script http://localhost:5323/src/shared/design-system/icons/Icon.tsx",
+    "Other http://localhost:5323/favicon.svg",
+    "Script http://localhost:5323/src/pages/showcase/sections/icons/IconsSection.tsx",
+    "Script http://localhost:5323/src/features/lookups/components/AmenityIcon.tsx",
+    "Script http://localhost:5323/src/features/users/components/account-menu/accountLinkIcons.ts",
+    "Script http://localhost:5323/src/features/lookups/components/sheet/AmenityIconField.tsx",
+    "Script http://localhost:5323/@fs/C:/dev/masaha/app-design/packages/shared/src/lookups/amenityIcons.ts"
+   ],
+   "svg-light": [
+    [
+     "#1a1f25",
+     20236
+    ],
+    [
+     "#b55bb3",
+     4806
+    ],
+    [
+     "#666869",
+     171
+    ],
+    [
+     "#877b86",
+     95
+    ]
+   ],
+   "svg-dark": [
+    [
+     "#f7fbff",
+     20233
+    ],
+    [
+     "#d27ed0",
+     4806
+    ],
+    [
+     "#9e9fa0",
+     173
+    ],
+    [
+     "#8a808a",
+     95
+    ]
+   ]
+  },
+  "ec9": {
+   "ico": [
+    {
+     "w": 16,
+     "h": 16,
+     "bpp": 32,
+     "size": 463
+    },
+    {
+     "w": 32,
+     "h": 32,
+     "bpp": 32,
+     "size": 697
+    },
+    {
+     "w": 48,
+     "h": 48,
+     "bpp": 32,
+     "size": 898
+    }
+   ],
+   "apple": {
+    "name": "apple-touch-icon.png",
+    "size": [
+     180,
+     180
+    ],
+    "corners": [
+     "#ffffff/255",
+     "#ffffff/255",
+     "#ffffff/255",
+     "#ffffff/255"
+    ],
+    "transparentPixels": 0,
+    "drawingBox": [
+     22,
+     12,
+     157,
+     168
+    ],
+    "margins": {
+     "start": 22,
+     "top": 12,
+     "end": 22,
+     "bottom": 11
+    }
+   },
+   "ico16": {
+    "name": "favicon.ico 16",
+    "size": [
+     16,
+     16
+    ],
+    "corners": [
+     "#000000/0",
+     "#000000/0",
+     "#000000/0",
+     "#000000/0"
+    ],
+    "transparentPixels": 20,
+    "drawingBox": [
+     2,
+     1,
+     13,
+     14
+    ],
+    "margins": {
+     "start": 2,
+     "top": 1,
+     "end": 2,
+     "bottom": 1
+    }
+   },
+   "google": {
+    "name": "masaha-logo-120.png",
+    "size": [
+     120,
+     120
+    ],
+    "corners": [
+     "#ffffff/255",
+     "#ffffff/255",
+     "#ffffff/255",
+     "#ffffff/255"
+    ],
+    "transparentPixels": 0,
+    "drawingBox": [
+     24,
+     18,
+     95,
+     101
+    ],
+    "margins": {
+     "start": 24,
+     "top": 18,
+     "end": 24,
+     "bottom": 18
+    },
+    "inkOutsideRoundCrop": 0
+   }
+  }
+ },
+ "notes": [],
+ "shots": [
+  "ec8-favicon-svg-light.png",
+  "ec8-favicon-svg-dark.png",
+  "ec9-rasters.png",
+  "01-home-light-ar-390.png",
+  "01-home-dark-en-1440.png"
+ ],
+ "blocked": [],
+ "loads": 6,
+ "chrome": {
+  "pid": 31616,
+  "left": []
+ }
+}

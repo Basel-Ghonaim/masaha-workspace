@@ -1,0 +1,7 @@
+chore(web): add Google's site verification file
+
+Google refused the branding's verification: the home page was not
+registered to the owner. Search Console proves the site's ownership
+by this file, served at the site's root, and checks it again later,
+so it stays for good. Prettier ignores it, to keep it byte for byte
+as Google gave it, and setup.md's step 5 says why it is there.

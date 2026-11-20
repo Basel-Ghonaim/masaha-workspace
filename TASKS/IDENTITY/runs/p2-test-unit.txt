@@ -1,0 +1,51 @@
+
+> test:unit
+> npm run test:unit --workspaces --if-present
+
+
+> @masaha/shared@0.0.0 test:unit
+> vitest run
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/packages/shared
+
+
+ Test Files  28 passed (28)
+      Tests  323 passed (323)
+   Start at  12:50:13
+   Duration  2.98s (import 65%, transform 26%, tests 7%, worker 3%)
+
+  Transform  transforming modules took 3.10s · 26% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
+
+> @masaha/api@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/api
+
+
+ Test Files  77 passed (77)
+      Tests  921 passed (921)
+   Start at  12:50:16
+   Duration  8.37s (import 58%, transform 22%, tests 17%, worker 2%)
+
+
+> @masaha/web@0.0.0 test:unit
+> vitest run --project unit
+
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+
+ Test Files  196 passed (196)
+      Tests  1346 passed (1346)
+   Start at  12:50:26
+   Duration  30.75s (import 73%, transform 18%, tests 8%, worker 2%)
+
+     Import  |unit| 784 modules were evaluated 5193 times · 131.51s total, 73% of tracked time
+             ~4.48s faster with isolate: false — shared modules are evaluated once per worker instead of once per file
+             learn more: https://vitest.dev/guide/improving-performance#test-isolation
+

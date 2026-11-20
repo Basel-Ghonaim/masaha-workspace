@@ -1,0 +1,1074 @@
+{
+ "run": "recheck",
+ "screens": {
+  "phonemenu-recheck": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 544,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_7q_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      },
+      {
+       "where": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10 self-start",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        264,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 10,
+        "el": "span#_r_8o_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 10,
+        "el": "span#_r_8o_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/recheck-phonemenu-recheck-light-ar-390.png",
+     "contrast": {
+      "checked": 9,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 16,
+       "offscreen": 102,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-body] > nav[aria-label=\"التنقّل الرئيسي\"] > a[data-slot=button]",
+        "text": "الرئيسية",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         17,
+         72,
+         357,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-body] > nav[aria-label=\"التنقّل الرئيسي\"] > a[data-slot=button]",
+        "text": "المساحات",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         17,
+         116,
+         357,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-body] > nav[aria-label=\"التنقّل الرئيسي\"] > a[data-slot=button]",
+        "text": "عن مساحة",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         17,
+         160,
+         357,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "403 https://accounts.google.com/gsi/button?type=standard&theme=filled_black&size=large&text=continue_with&shape=rectangular&logo_alignment=center&width=400&is_fedcm_supported=true&client_id=358999304307-ql8gic9l75ej3acvticgabqeiipic6sm.apps.googleusercontent.com&iframe_id=gsi_198412_581099&cas=Crk5hsw3c%2BCVqn5J7o3GzzItLQUTw01iGYi%2Fzcf07CM&hl=en"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/98_Sh0XnFENaTKzv72ZzrA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/98_Sh0XnFENaTKzv72ZzrA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/rXUJcUvUsNyF9y__nL88Iw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/rXUJcUvUsNyF9y__nL88Iw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/K69UVxwh1VY7MAKruHSoMw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/K69UVxwh1VY7MAKruHSoMw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ZYCjyiQZHjgHKs2TC8D7UQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ZYCjyiQZHjgHKs2TC8D7UQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/XetpsNMZuJJ0qzsz4iUY2g/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/XetpsNMZuJJ0qzsz4iUY2g/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/WKTZHKxSfBvpz_DXjvRqXg/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/WKTZHKxSfBvpz_DXjvRqXg/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/G8hUCUiWeCErEafROzir2w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/G8hUCUiWeCErEafROzir2w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/oMf_Spde-S61MEKQp1rnjg/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/oMf_Spde-S61MEKQp1rnjg/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/8ylXxU0RFM91gxx7P4OuTw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/8ylXxU0RFM91gxx7P4OuTw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/w8sEnBPfrbMfE02_kMj_Pw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/w8sEnBPfrbMfE02_kMj_Pw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/eAzRNdzEmMhYKliC4a1OTw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/eAzRNdzEmMhYKliC4a1OTw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/wYBwNfO7OBe-BKg48sojPQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/wYBwNfO7OBe-BKg48sojPQ/card.webp"
+      },
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/spaces"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    }
+   },
+   "axe": {
+    "light-ar-390": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-body] > nav[aria-label=\"التنقّل الرئيسي\"] > a[data-slot=button]",
+       "text": "الرئيسية",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        17,
+        72,
+        357,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-body] > nav[aria-label=\"التنقّل الرئيسي\"] > a[data-slot=button]",
+       "text": "المساحات",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        17,
+        116,
+        357,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div#radix-_r_7l_[data-slot=sheet-content][role=dialog] > div[data-slot=sheet-body] > nav[aria-label=\"التنقّل الرئيسي\"] > a[data-slot=button]",
+       "text": "عن مساحة",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        17,
+        160,
+        357,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    }
+   }
+  },
+  "desk-recheck": {
+   "variants": {
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 900,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 319,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#uncollected[data-slot=card][role=region] > div[data-slot=card-header] > div[data-slot=toggle-group][role=radiogroup][aria-label=\"Which visits\"] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "Uncollected",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "border-success": {
+        "want": "#63b77c",
+        "got": "#63b77c",
+        "count": 1,
+        "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]"
+       },
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div > div > div > button[data-slot=popover-trigger][aria-label=\"Visitors see: ⁨Available⁩ — ch\"]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/recheck-desk-recheck-dark-en-1440.png",
+     "contrast": {
+      "checked": 59,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Overview",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         76,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Front desk",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         155,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/spaces/26/desk"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    }
+   },
+   "axe": {
+    "dark-en-1440": []
+   },
+   "focus": {
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Overview",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        76,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Front desk",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        155,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  }
+ },
+ "hover": [],
+ "ec": {
+  "head": "color-mix(in oklab, #f7fbff, #0d1217 18%)",
+  "primary-desk-light": {
+   "label": "primary (Check in a visit) light",
+   "at": [
+    1143,
+    15
+   ],
+   "rest": "#1a1f25",
+   "hovered": "#3c4147",
+   "restBg": "rgb(26, 31, 37)",
+   "hoverBg": "oklab(0.371743 -0.00372288 -0.0119135)"
+  },
+  "scrim-light": {
+   "at": [
+    120,
+    790
+   ],
+   "ground": "#ffffff",
+   "painted": "#85888a",
+   "computed": "oklab(0.179324 -0.00474257 -0.0120903 / 0.5)",
+   "wantInk": "#86898b"
+  },
+  "primary-calendar-light": {
+   "label": "primary (calendar range end) light",
+   "at": [
+    390,
+    365
+   ],
+   "rest": "#1a1f25",
+   "hovered": "#3c4147",
+   "restBg": "rgb(26, 31, 37)",
+   "hoverBg": "oklab(0.371743 -0.00372288 -0.0119135)"
+  },
+  "primary-desk-dark": {
+   "label": "primary (Check in a visit) dark",
+   "at": [
+    1143,
+    15
+   ],
+   "rest": "#f7fbff",
+   "hovered": "#c7cbd0",
+   "restBg": "rgb(247, 251, 255)",
+   "hoverBg": "oklab(0.840961 -0.00292214 -0.00734296)"
+  },
+  "scrim-dark": {
+   "at": [
+    120,
+    790
+   ],
+   "ground": "#1a1f25",
+   "painted": "#11161b",
+   "computed": "oklab(0.179324 -0.00474257 -0.0120903 / 0.7)",
+   "wantInk": "#11161b"
+  },
+  "primary-calendar-dark": {
+   "label": "primary (calendar range end) dark",
+   "at": [
+    390,
+    365
+   ],
+   "rest": "#f7fbff",
+   "hovered": "#c7cbd0",
+   "restBg": "rgb(247, 251, 255)",
+   "hoverBg": "oklab(0.840961 -0.00292214 -0.00734296)"
+  },
+  "live-neutral-light": {
+   "read": true,
+   "word": "Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩",
+   "secondary": true,
+   "label": "live status neutral (secondary) light",
+   "at": [
+    348,
+    47
+   ],
+   "rest": "#ecf4fc",
+   "hovered": "#d9e1e9",
+   "restBg": "rgb(236, 244, 252)",
+   "hoverBg": "oklab(0.905318 -0.00501498 -0.0127381)"
+  },
+  "live-neutral-dark": {
+   "read": true,
+   "word": "Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩",
+   "secondary": true,
+   "label": "live status neutral (secondary) dark",
+   "at": [
+    348,
+    47
+   ],
+   "rest": "#2c3137",
+   "hovered": "#3a3f45",
+   "restBg": "rgb(44, 49, 55)",
+   "hoverBg": "oklab(0.36477 -0.0036429 -0.0117978)"
+  },
+  "secondaryProbe": {
+   "light oklab": "oklab(0.905318 -0.00501498 -0.0127381) = #d9e1e9",
+   "dark oklab": "oklab(0.36477 -0.0036429 -0.0117978) = #3a3f45",
+   "light oklch (before)": "oklch(0.905318 0.0136936 none) = #e8dcdf",
+   "dark oklch (before)": "oklch(0.36477 0.0123493 none) = #443c3e"
+  },
+  "photo-light": {
+   "mouse": {
+    "outline": "solid 2px #b55bb3 offset -2px",
+    "fv": false,
+    "rect": [
+     1162.65625,
+     393.84375,
+     255.34375,
+     143.625
+    ],
+    "edges": {
+     "top0": "#b55bb3",
+     "top1": "#b55bb3",
+     "top2": "#ecf4fc",
+     "start0": "#b55bb3",
+     "start1": "#b55bb3",
+     "outside": "#ffffff"
+    }
+   },
+   "focused": {
+    "outline": "solid 2px #1a1f25 offset 2px",
+    "fv": true,
+    "rect": [
+     861.328125,
+     377.84375,
+     255.328125,
+     143.609375
+    ],
+    "edges": {
+     "top0": "#ecf4fc",
+     "top1": "#ecf4fc",
+     "top2": "#ecf4fc",
+     "start0": "#ecf4fc",
+     "start1": "#ecf4fc",
+     "outside": "#ffffff"
+    }
+   },
+   "keyboard": {
+    "outline": "solid 2px #b55bb3 offset -2px",
+    "fv": true,
+    "rect": [
+     861.328125,
+     377.84375,
+     255.328125,
+     143.609375
+    ],
+    "edges": {
+     "top0": "#b55bb3",
+     "top1": "#b55bb3",
+     "top2": "#ecf4fc",
+     "start0": "#b55bb3",
+     "start1": "#ecf4fc",
+     "outside": "#ffffff"
+    }
+   }
+  },
+  "photo-dark": {
+   "mouse": {
+    "outline": "solid 2px #d27ed0 offset -2px",
+    "fv": false,
+    "rect": [
+     1162.65625,
+     393.84375,
+     255.34375,
+     143.625
+    ],
+    "edges": {
+     "top0": "#d27ed0",
+     "top1": "#d27ed0",
+     "top2": "#2c3137",
+     "start0": "#d27ed0",
+     "start1": "#d27ed0",
+     "outside": "#1a1f25"
+    }
+   },
+   "focused": {
+    "outline": "solid 2px #f7fbff offset 2px",
+    "fv": true,
+    "rect": [
+     861.328125,
+     377.84375,
+     255.328125,
+     143.609375
+    ],
+    "edges": {
+     "top0": "#2c3137",
+     "top1": "#2c3137",
+     "top2": "#2c3137",
+     "start0": "#2c3137",
+     "start1": "#2c3137",
+     "outside": "#1a1f25"
+    }
+   },
+   "keyboard": {
+    "outline": "solid 2px #d27ed0 offset -2px",
+    "fv": true,
+    "rect": [
+     861.328125,
+     377.84375,
+     255.328125,
+     143.609375
+    ],
+    "edges": {
+     "top0": "#d27ed0",
+     "top1": "#d27ed0",
+     "top2": "#2c3137",
+     "start0": "#d27ed0",
+     "start1": "#2c3137",
+     "outside": "#1a1f25"
+    }
+   }
+  },
+  "menu-light": {
+   "current": {
+    "label": "phone menu current (Spaces) light",
+    "at": [
+     365,
+     119
+    ],
+    "rest": "#ffe3fd",
+    "hovered": "#ffe3fd",
+    "restBg": "rgb(255, 227, 253)",
+    "hoverBg": "rgb(255, 227, 253)"
+   },
+   "other": {
+    "label": "phone menu other (Home) light",
+    "at": [
+     365,
+     75
+    ],
+    "rest": "#ffffff",
+    "hovered": "#dde5ed",
+    "restBg": "rgba(0, 0, 0, 0)",
+    "hoverBg": "rgb(221, 229, 237)"
+   }
+  },
+  "menu-dark": {
+   "current": {
+    "label": "phone menu current (Spaces) dark",
+    "at": [
+     365,
+     119
+    ],
+    "rest": "#471f46",
+    "hovered": "#471f46",
+    "restBg": "oklab(0.313362 0.0706377 -0.043643)",
+    "hoverBg": "oklab(0.313362 0.0706377 -0.043643)"
+   },
+   "other": {
+    "label": "phone menu other (Home) dark",
+    "at": [
+     365,
+     75
+    ],
+    "rest": "#1a1f25",
+    "hovered": "#2c3137",
+    "restBg": "rgba(0, 0, 0, 0)",
+    "hoverBg": "rgb(44, 49, 55)"
+   }
+  },
+  "axeMenu": [],
+  "axeDesk": [],
+  "blocked": [],
+  "loads": 1,
+  "refreshes": 0
+ },
+ "notes": [],
+ "shots": [
+  "F1-primary-hover-light.png",
+  "F1-primary-hover-dark.png",
+  "F1-dialog-scrim-dark-en-1440.png",
+  "F4-live-status-neutral-light.png",
+  "F4-live-status-neutral-dark.png",
+  "F2-photo-lifted-mouse-light.png",
+  "F2-photo-lifted-keyboard-light.png",
+  "F2-photo-lifted-mouse-dark.png",
+  "F2-photo-lifted-keyboard-dark.png",
+  "F3-phone-menu-current-vs-hover-light-390.png",
+  "F3-phone-menu-current-vs-hover-dark-390.png"
+ ],
+ "chrome": {
+  "pid": 14700,
+  "left": []
+ }
+}

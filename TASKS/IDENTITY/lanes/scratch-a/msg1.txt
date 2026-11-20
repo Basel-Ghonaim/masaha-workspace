@@ -1,0 +1,20 @@
+feat(design-system): tell hover from selected
+
+The spark's tint meant both a hover and a choice: a row, a menu item, a
+chip or a sidebar item under the pointer looked selected. Hover is now
+the neutral role (hover) and selected keeps the tint (accent,
+sidebar-accent), under the pointer too: an item hovers only while it is
+not on, current or inside a range, never by the order the variants are
+emitted in. A chip that is on gains a spark edge and the sidebar's
+current item a 3 px spark bar, a second mark beside the hue. The ink's
+own hover is primary-hover.
+
+A control drawn on a muted or secondary ground (the sort headers,
+today's day, the filter tag's remove button, the contact tiles, the
+segmented control, the desktop tabs) hovers with the ink's wash,
+hover-on-muted: in dark the neutral hover equals muted and would vanish
+there.
+
+check:classes gains a third rule: the selected tint under a hover or
+highlight variant fails anywhere in src, the layer included, so the
+next copied component cannot bring hover:bg-accent back unseen.

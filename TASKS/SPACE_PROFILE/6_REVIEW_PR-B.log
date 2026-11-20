@@ -1,0 +1,19 @@
+**Verdict on #141: mergeable after a fix round.** CI was green on the head (`4109534c`), GitHub showed `CLEAN`, and the head didn't move during the review. There are no blockers, because no production page uses the list yet. Nothing was run, per the review rules. I checked dnd-kit's and Radix's behaviour in their installed source (same versions), not in a browser.
+
+The findings that matter most for PR-C:
+- **F1 — Escape closes the Sheet.** The Sheet's library catches Escape at the document before the sortable can stop it. A keyboard user who presses Escape to put a contact back closes the Sheet, or gets asked «تجاهل التغييرات؟». The doc's «kept from an overlay» is false, and the test uses a plain `div` rather than a real Sheet, so it can't catch this.
+- **F2 — a lift outlives the focus.** If the user lifts an item and then clicks elsewhere, the item stays lifted. Every re-render (typing in a Sheet field, say) pulls the focus back to the grip.
+- **F3 — buttons inside a dragged tile break from the keyboard.** When the whole tile is the drag handle, Space or Enter on a button inside it lifts the tile instead of pressing the button. This would hit the delete button on each photo.
+- **F4 — Escape can lose the focus.** After moving an item up and pressing Escape, the focus is lost. This rests on how browsers handle a moved element; I read it, I didn't observe it.
+- **F5 — the showcase stops the page scrolling on a phone.** `touch-none` on the grid tiles means a swipe on the grid doesn't scroll, which contradicts «a swipe still scrolls». The touch sensor doesn't need it.
+- **F6 — motion ignores the design system.** Items slide with dnd-kit's 200 ms default and ignore reduced motion.
+
+Smaller items:
+- **F7 (should-fix, unconfirmed):** on a mouse or touch drag, the "lifted" announcement is replaced right away by "moved".
+- **F8 — test gap:** the keyboard-step test never checks that the backward arrow does nothing in a list.
+- **F9 — false doc line:** foundation §3 says `check:build` already covers the new entry; it won't until PR-C.
+- **Nits:** every handle reads as "not pressed" at rest; a new list array on every render can make dnd-kit's slide animation snap; a repeated message isn't announced twice.
+
+All the fixes belong in a fix round folded into `4109534c`, so no new finding number is needed. Of the report's deviations, moving the build-size check to PR-C, the mouse-plus-touch sensors and the caller's role-description word are sound. The `handleProps`-only API is acceptable once F3 is fixed. PR-C now owes the build-chunk group and its tests, the measured chunk size, and the two heavy-library lines in `architecture.md`.
+
+The full review is in `C:\dev\masaha\workspace\TASKS\SPACE_PROFILE\6_REVIEW_PR-B.md`.

@@ -1,0 +1,18 @@
+feat(auth): draw the reset email in ink
+
+The reset email still drew Sea: its petrol teal on the brand line, the
+button and the links, and Sea's neutrals around them. Finding 19 accepted
+its colours written inline, outside the design system, on the condition
+that a change of the brand or the neutrals is carried to it by hand; the
+identity is now ink + berry (ADR 0019), so this carries it.
+
+The brand line, the button's fill and the links take the ink; the page,
+the borders, the text and the muted lines the ink's neutrals. Every pair
+is one the web verifies: the primary's label on the primary, the text
+and the muted text on the card and the background. The text keeps its
+own name beside the ink: the same value, another meaning. The English
+link inside a sentence is underlined, since ink beside ink text is told
+apart only by that. No spark and no image.
+
+The unit test holds the exact colour set, the button and the links, by
+hand.

@@ -1,0 +1,21 @@
+# Breaks seen failing (each made once, restored from a backup copy)
+
+## ScrollRegion.component.test.tsx (6 tests)
+- drop role="group" -> 4 failed (named group, no tab stop, tab stop, watches)
+- tabIndex={0} always -> 2 failed (no tab stop while it fits; leaves the order when it fits again)
+- never measured (no setOverflows) -> 1 failed (becomes a tab stop once it overflows)
+- comparison reversed (<) -> 1 failed (becomes a tab stop ...)
+- own box only (children not observed) -> 1 failed (watches its own box and its content's)
+- names made optional -> typecheck fails: TS2578 unused @ts-expect-error at both lines (116, 118)
+
+## PhotosSection / OccupancyTab component tests (18 tests in the two files)
+- photo ul given its aria-label again -> 1 failed (the phone's named strip: the list is named)
+- photo row in a plain div instead of ScrollRegion -> 1 failed (no group)
+- heatmap in a plain div instead of ScrollRegion -> 1 failed (no group named Peak hours)
+- empty state wrapped in a ScrollRegion too -> 1 failed (a group in the empty card)
+
+## MarkerMap component tests (7 tests); both new tests first seen failing on main's code (tooltip not aria-hidden)
+- Tooltip eventHandlers dropped -> 2 failed (selected; passing) at the aria-hidden assertion (axe not reached)
+- hidden only when permanent -> 1 failed (the passing tooltip)
+- MutationObserver not started, the one removal in the effect kept -> 1 failed (passing: Leaflet sets aria-describedby on each focus, after the effect)
+- no removal at all -> 2 failed (both keep aria-describedby)

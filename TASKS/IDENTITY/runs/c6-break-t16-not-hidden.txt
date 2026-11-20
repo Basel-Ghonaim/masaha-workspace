@@ -1,0 +1,34 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx (10 tests | 2 failed) 319ms
+   ❯ Logo (10)
+     × is hidden from assistive technology without a label (full) 19ms
+     × is hidden from assistive technology without a label (mark) 11ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx > Logo > is hidden from assistive technology without a label (full)
+ FAIL  |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx > Logo > is hidden from assistive technology without a label (mark)
+Error: [2mexpect([22m[31melement[39m[2m).toHaveAttribute([22m[32m[32m"aria-hidden"[32m[39m[2m, [22m[32m[32m"true"[32m[39m[2m) // element.getAttribute("aria-hidden") === "true"[22m
+
+Expected the element to have attribute:
+[32m  aria-hidden="true"[39m
+Received:
+[31m  null[39m
+ ❯ src/shared/design-system/components/display/Logo/Logo.component.test.tsx:25:44
+     23|
+     24|     expect(screen.queryByRole('img')).not.toBeInTheDocument();
+     25|     expect(container.querySelector('svg')).toHaveAttribute('aria-hidde…
+       |                                            ^
+     26|   });
+     27|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 8 passed (10)
+   Start at  12:09:29
+   Duration  6.62s (environment 41%, import 38%, setup 12%, tests 5%, transform 4%)
+

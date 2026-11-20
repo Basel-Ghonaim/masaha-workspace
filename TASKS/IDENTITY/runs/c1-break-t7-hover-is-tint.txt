@@ -1,0 +1,59 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 6 failed) 32ms
+   ❯ fills seen (22)
+     × light: hover stands apart from card at 1.2:1 4ms
+     × light: hover stands apart from background at 1.2:1 1ms
+     × light: hover stands apart from popover at 1.2:1 0ms
+     × light: hover stands apart from sidebar at 1.2:1 0ms
+     × light: hover is not the selected tint (accent) 1ms
+     × light: hover is not the selected tint (sidebar-accent) 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from card at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from popover at 1.2:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from sidebar at 1.2:1
+AssertionError: expected 1.1892624008927601 to be greater than or equal to 1.2
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:548:21
+    546|     ({ theme, fill, ground, minimum }) => {
+    547|       const ratio = contrastRatio(painted(theme, fill, ground), painte…
+    548|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    549|     },
+    550|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover stands apart from background at 1.2:1
+AssertionError: expected 1.1438271099522173 to be greater than or equal to 1.2
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:548:21
+    546|     ({ theme, fill, ground, minimum }) => {
+    547|       const ratio = contrastRatio(painted(theme, fill, ground), painte…
+    548|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    549|     },
+    550|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover is not the selected tint (accent)
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover is not the selected tint (sidebar-accent)
+AssertionError: expected 0 to be greater than or equal to 0.02
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:555:71
+    553|     THEMES.flatMap((theme) => ['accent', 'sidebar-accent'].map((select…
+    554|   )('$theme: hover is not the selected tint ($selected)', ({ theme, se…
+    555|     expect(deltaE(painted(theme, 'hover'), painted(theme, selected))).…
+       |                                                                       ^
+    556|       NOTICEABLE,
+    557|     );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  6 failed | 188 passed (194)
+   Start at  11:53:54
+   Duration  471ms (transform 57%, import 22%, tests 17%, worker 3%)
+

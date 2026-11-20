@@ -1,0 +1,531 @@
+[
+ {
+  "id": "DK-01",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "now: people present (NS1), reception",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "settle": 900
+ },
+ {
+  "id": "DK-02",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "now: the owner's view",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/desk",
+  "settle": 900
+ },
+ {
+  "id": "DK-03",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "search: a subscriber who owes",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "type": {
+     "ar": "label:ابحث بالاسم أو آخر أرقام الجوال",
+     "en": "label:Search by name or the mobile’s last digits"
+    },
+    "text": "نور",
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "id": "DK-04",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "search: nobody by that name",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "type": {
+     "ar": "label:ابحث بالاسم أو آخر أرقام الجوال",
+     "en": "label:Search by name or the mobile’s last digits"
+    },
+    "text": "ززز",
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "id": "DK-05",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "check in a visit: sent with no name",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:تسجيل زيارة",
+     "en": "text:Check in a visit"
+    },
+    "nth": 0,
+    "wait": 700
+   },
+   {
+    "click": {
+     "ar": "text:تسجيل الزيارة",
+     "en": "text:Check in"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "DK-06",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "check out a visitor: the charge and its payment (NS1)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:خروج ريم أبو عمرة",
+     "en": "label:Check out ريم أبو عمرة"
+    },
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "id": "DK-07",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "receive a payment: choose the customer",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى",
+     "en": "label:More actions"
+    },
+    "width": [
+     390
+    ],
+    "wait": 500
+   },
+   {
+    "click": {
+     "ar": "text:استلام دفعة",
+     "en": "text:Receive a payment"
+    },
+    "nth": 0,
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "id": "DK-08",
+  "part": "DK",
+  "screen": "16 New subscription (O+R)",
+  "state": "new customer from the desk: saved empty",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى",
+     "en": "label:More actions"
+    },
+    "width": [
+     390
+    ],
+    "wait": 500
+   },
+   {
+    "click": {
+     "ar": "text:زبون جديد",
+     "en": "text:New customer"
+    },
+    "nth": 0,
+    "wait": 1200
+   },
+   {
+    "click": {
+     "ar": "text:حفظ بدون دفع",
+     "en": "text:Save without payment"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "id": "DK-09",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "check in a customer with no subscription: the choice",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "type": {
+     "ar": "label:ابحث بالاسم أو آخر أرقام الجوال",
+     "en": "label:Search by name or the mobile’s last digits"
+    },
+    "text": "معتز",
+    "wait": 1200
+   },
+   {
+    "click": {
+     "ar": "label:حضور معتز الكرد",
+     "en": "label:Check in معتز الكرد"
+    },
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "id": "DK-10",
+  "part": "DK",
+  "screen": "16 New subscription (O+R)",
+  "state": "renew an expired subscription (from the desk's search)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "type": {
+     "ar": "label:ابحث بالاسم أو آخر أرقام الجوال",
+     "en": "label:Search by name or the mobile’s last digits"
+    },
+    "text": "محمد عوض",
+    "wait": 1200
+   },
+   {
+    "click": {
+     "ar": "text:تجديد",
+     "en": "text:Renew"
+    },
+    "nth": 0,
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "id": "DK-11",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "the log of a past day (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/desk?view=log&logDay=2026-11-01",
+  "settle": 900
+ },
+ {
+  "id": "DK-12",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "uncollected visits, expanded (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/desk#uncollected",
+  "settle": 900
+ },
+ {
+  "id": "DK-13",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "write off a visit: confirmed with no reason (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/desk#uncollected",
+  "settle": 600,
+  "steps": [
+   {
+    "click": {
+     "ar": "css:button[aria-label^=\"إجراءات أخرى لزيارة\"]",
+     "en": "css:button[aria-label^=\"More actions for\"]"
+    },
+    "nth": 0,
+    "wait": 500
+   },
+   {
+    "click": {
+     "ar": "text:لن يُحصَّل…",
+     "en": "text:Write off…"
+    },
+    "wait": 600
+   },
+   {
+    "click": {
+     "ar": "text:لن يُحصَّل",
+     "en": "text:Write off"
+    },
+    "within": "css:[role=alertdialog]",
+    "wait": 500
+   }
+  ]
+ },
+ {
+  "id": "DK-14",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "collect an uncollected visit (reception)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk#uncollected",
+  "settle": 600,
+  "steps": [
+   {
+    "click": {
+     "ar": "text:تحصيل",
+     "en": "text:Collect"
+    },
+    "nth": 0,
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "id": "DK-15",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "the live status control open (P2)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "steps": [
+   {
+    "click": {
+     "ar": "css:button[aria-label^=\"يظهر للزوار\"]",
+     "en": "css:button[aria-label^=\"Visitors see\"]"
+    },
+    "wait": 700
+   }
+  ]
+ },
+ {
+  "id": "DK-16",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "the phone's «⋯» menu",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "widths": [
+   390
+  ],
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى",
+     "en": "label:More actions"
+    },
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "id": "DK-17",
+  "part": "DK",
+  "screen": "14 Customers (O+R)",
+  "state": "27 customers, page 1 (reception)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/customers"
+ },
+ {
+  "id": "DK-18",
+  "part": "DK",
+  "screen": "14 Customers (O+R)",
+  "state": "archived (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers?status=ARCHIVED"
+ },
+ {
+  "id": "DK-19",
+  "part": "DK",
+  "screen": "14 Customers (O+R)",
+  "state": "a search that matches nobody",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/customers?q=zzzz"
+ },
+ {
+  "id": "DK-20",
+  "part": "DK",
+  "screen": "14 Customers (O+R)",
+  "state": "filters bottom sheet open",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/customers",
+  "widths": [
+   390
+  ],
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الفلاتر",
+     "en": "text:Filters"
+    },
+    "wait": 700
+   }
+  ]
+ },
+ {
+  "id": "DK-21",
+  "part": "DK",
+  "screen": "14 Customers (O+R)",
+  "state": "a row's menu (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى: بلال عاشور",
+     "en": "label:More actions: بلال عاشور"
+    },
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "id": "DK-22",
+  "part": "DK",
+  "screen": "14 Customers (O+R)",
+  "state": "archive a customer who owes: the question (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى: بلال عاشور",
+     "en": "label:More actions: بلال عاشور"
+    },
+    "wait": 1000
+   },
+   {
+    "click": {
+     "ar": "text:أرشفة…",
+     "en": "text:Archive…"
+    },
+    "wait": 700
+   }
+  ]
+ },
+ {
+  "id": "DK-23",
+  "part": "DK",
+  "screen": "15 Customer details (O+R)",
+  "state": "an active subscription that owes (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers/26"
+ },
+ {
+  "id": "DK-24",
+  "part": "DK",
+  "screen": "15 Customer details (O+R)",
+  "state": "the statement open, a voided payment (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers/26",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:عرض الكشف",
+     "en": "text:Show the statement"
+    },
+    "nth": 0,
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "id": "DK-25",
+  "part": "DK",
+  "screen": "15 Customer details (O+R)",
+  "state": "correct the subscription (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers/26",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى: شهري",
+     "en": "label:More actions: شهري"
+    },
+    "wait": 500
+   },
+   {
+    "click": {
+     "ar": "text:تصحيح الاشتراك",
+     "en": "text:Correct the subscription"
+    },
+    "wait": 900
+   }
+  ]
+ },
+ {
+  "id": "DK-26",
+  "part": "DK",
+  "screen": "15 Customer details (O+R)",
+  "state": "in credit, usage-based (reception)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/customers/11"
+ },
+ {
+  "id": "DK-27",
+  "part": "DK",
+  "screen": "15 Customer details (O+R)",
+  "state": "no subscription, unpaid visits (owner)",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers/32"
+ },
+ {
+  "id": "DK-28",
+  "part": "DK",
+  "screen": "16 New subscription (O+R)",
+  "state": "a new subscription for a customer who owes (reception)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/customers/26",
+  "steps": [
+   {
+    "click": {
+     "ar": "label:إجراءات أخرى: بلال عاشور",
+     "en": "label:More actions: بلال عاشور"
+    },
+    "wait": 500
+   },
+   {
+    "click": {
+     "ar": "text:اشتراك جديد",
+     "en": "text:New subscription"
+    },
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "id": "DK-29",
+  "part": "DK",
+  "screen": "15 Customer details (O+R)",
+  "state": "a customer who is not there",
+  "role": "owner",
+  "url": "/dashboard/spaces/26/customers/999999"
+ },
+ {
+  "id": "DK-30",
+  "part": "DK",
+  "screen": "17 Payments (R: my payments today)",
+  "state": "today's own payments (NS2)",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/my-payments"
+ },
+ {
+  "id": "DK-31",
+  "part": "DK",
+  "screen": "18 Announcements (O+R)",
+  "state": "reception's view",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/announcements"
+ },
+ {
+  "id": "DK-32",
+  "part": "DK",
+  "screen": "13 Front desk (O+R)",
+  "state": "evening: after Pal Hub's closing (Friday 20:00 Gaza; taken after 18:00 UTC); the live status control held",
+  "role": "reception",
+  "url": "/dashboard/spaces/26/desk",
+  "settle": 900,
+  "after": "18:00Z"
+ }
+]

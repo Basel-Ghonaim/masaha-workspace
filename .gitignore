@@ -13,3 +13,9 @@ _SHARED/snapshot.log
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Browser profiles and caches that capture scripts leave behind: large, regenerated, never needed.
+# (The 2026-11-13 snapshot took 1.5 GB of them and its push failed.)
+**/cdp-profile*/
+**/chrome-profile*/
+**/__pycache__/

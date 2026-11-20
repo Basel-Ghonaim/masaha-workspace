@@ -1,0 +1,5026 @@
+{
+ "run": "pub-home+directory+space+sorthdr",
+ "screens": {
+  "home": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 4981,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-ar-390.png",
+     "contrast": {
+      "checked": 83,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > button[data-slot=sheet-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > a",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         216,
+         8,
+         110,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ly4AnisrnWLv03eAKnpbQA/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/UWY8h5RXDKM9aJX5MZbxPw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/PaCM5XvTPEmU1S38EDlG_w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/CKBVrfxvaVqAL5SExLr6DQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/pyRhUDLcsVxBf0__1lAujw/card.webp"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-en-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > a",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         112,
+         8,
+         110,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "header > div > nav[aria-label=\"Main navigation\"] > a[data-slot=button]",
+        "text": "Home",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         254,
+         12,
+         64,
+         32
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-en-1440-focus.png",
+     "console": []
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 4981,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-ar-390.png",
+     "contrast": {
+      "checked": 83,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 5077,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-en-390.png",
+     "contrast": {
+      "checked": 83,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 5077,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-en-390.png",
+     "contrast": {
+      "checked": 83,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 2553,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-ar-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 2553,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-ar-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 2697,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-en-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 2697,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-en-768.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-ar-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 399,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-dark-ar-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 2192,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 391,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "span#_r_a_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-home-light-en-1440.png",
+     "contrast": {
+      "checked": 87,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > button[data-slot=sheet-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > a",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        216,
+        8,
+        110,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > a",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        112,
+        8,
+        110,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "header > div > nav[aria-label=\"Main navigation\"] > a[data-slot=button]",
+       "text": "Home",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        254,
+        12,
+        64,
+        32
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  },
+  "directory": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 4723,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 365,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-ar-390.png",
+     "contrast": {
+      "checked": 91,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "section > div[data-slot=refreshing] > div > a",
+        "text": "ب بال هاب الرمال · غزة متاح موثّقة اليوم ⁦08:00–22:00⁩ ⁦‏200",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         16,
+         307,
+         358,
+         376
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=refreshing] > div > div > button[data-slot=button][aria-label=\"حفظ ⁨بال هاب⁩ في المفضّلة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(15, 30, 40, 0.1) 0px 8px 24px 0px",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         28,
+         319,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "section > div[data-slot=refreshing] > div > a",
+        "text": "ج جاردن سبييس الدرج · غزة متاح موثّقة اليوم ⁦08:00–18:00⁩ ⁦‏",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         16,
+         699,
+         358,
+         376
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/K69UVxwh1VY7MAKruHSoMw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/K69UVxwh1VY7MAKruHSoMw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/ZYCjyiQZHjgHKs2TC8D7UQ/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/ZYCjyiQZHjgHKs2TC8D7UQ/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/XetpsNMZuJJ0qzsz4iUY2g/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/XetpsNMZuJJ0qzsz4iUY2g/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/WKTZHKxSfBvpz_DXjvRqXg/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/WKTZHKxSfBvpz_DXjvRqXg/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/G8hUCUiWeCErEafROzir2w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/G8hUCUiWeCErEafROzir2w/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/oMf_Spde-S61MEKQp1rnjg/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/oMf_Spde-S61MEKQp1rnjg/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/w8sEnBPfrbMfE02_kMj_Pw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/w8sEnBPfrbMfE02_kMj_Pw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/cX0QnqN6rPUyU1b_Gqlibw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/cX0QnqN6rPUyU1b_Gqlibw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/eRmQV-b2Bnp-4WVLTN-6hg/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/eRmQV-b2Bnp-4WVLTN-6hg/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/2wGtXpzjcV8q6z-CS8oe7w/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/2wGtXpzjcV8q6z-CS8oe7w/card.webp"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 1836,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 448,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "List",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-en-1440.png",
+     "contrast": {
+      "checked": 115,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "section > div[data-slot=refreshing] > div > a",
+        "text": "P Pal Hub Al-Rimal · Gaza City Available Verified Today ⁦08:",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         422,
+         252,
+         291,
+         360
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=refreshing] > div > div > button[data-slot=button][aria-label=\"Save ⁨Pal Hub⁩ to favourites\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 8px 24px 0px",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         661,
+         264,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "section > div[data-slot=refreshing] > div > a",
+        "text": "G Garden Space Al-Daraj · Gaza City Available Verified Today",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         729,
+         252,
+         291,
+         360
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-en-1440-focus.png",
+     "console": []
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 4723,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 373,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-ar-390.png",
+     "contrast": {
+      "checked": 91,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 4761,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 365,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "List",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-en-390.png",
+     "contrast": {
+      "checked": 91,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 4761,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 373,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "List",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-en-390.png",
+     "contrast": {
+      "checked": 91,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 2767,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 365,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-ar-768.png",
+     "contrast": {
+      "checked": 95,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 2767,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 373,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-ar-768.png",
+     "contrast": {
+      "checked": 95,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 2805,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 365,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "List",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-en-768.png",
+     "contrast": {
+      "checked": 95,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 2805,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 373,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "List",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-en-768.png",
+     "contrast": {
+      "checked": 95,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 1836,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 440,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-ar-1440.png",
+     "contrast": {
+      "checked": 115,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 1836,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 448,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "قائمة",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-dark-ar-1440.png",
+     "contrast": {
+      "checked": 115,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 1836,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 440,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div#_r_3_-control[data-slot=toggle-group][role=radiogroup] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "List",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 11,
+        "el": "span#_r_15_-status[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-directory-light-en-1440.png",
+     "contrast": {
+      "checked": 115,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "section > div[data-slot=refreshing] > div > a",
+       "text": "ب بال هاب الرمال · غزة متاح موثّقة اليوم ⁦08:00–22:00⁩ ⁦‏200",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        16,
+        307,
+        358,
+        376
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=refreshing] > div > div > button[data-slot=button][aria-label=\"حفظ ⁨بال هاب⁩ في المفضّلة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(15, 30, 40, 0.1) 0px 8px 24px 0px",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        28,
+        319,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "section > div[data-slot=refreshing] > div > a",
+       "text": "ج جاردن سبييس الدرج · غزة متاح موثّقة اليوم ⁦08:00–18:00⁩ ⁦‏",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        16,
+        699,
+        358,
+        376
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "section > div[data-slot=refreshing] > div > a",
+       "text": "P Pal Hub Al-Rimal · Gaza City Available Verified Today ⁦08:",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        422,
+        252,
+        291,
+        360
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=refreshing] > div > div > button[data-slot=button][aria-label=\"Save ⁨Pal Hub⁩ to favourites\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.4) 0px 8px 24px 0px",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        661,
+        264,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "section > div[data-slot=refreshing] > div > a",
+       "text": "G Garden Space Al-Daraj · Gaza City Available Verified Today",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        729,
+        252,
+        291,
+        360
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  },
+  "space": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 3215,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 305,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-ar-390.png",
+     "contrast": {
+      "checked": 77,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "عرض كل الصور (7)",
+        "image": "div > div > button[aria-label=\"عرض الصورة 1\"] > img",
+        "rect": [
+         40,
+         301,
+         4,
+         19
+        ],
+        "fg": "#1a1f25",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#f7fbff@0.90"
+        ],
+        "minRatio": 15.79,
+        "p10": 15.79,
+        "median": 15.79,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > button[data-slot=sheet-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > a",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         216,
+         8,
+         110,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 2296,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 323,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-en-1440.png",
+     "contrast": {
+      "checked": 80,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "View all photos (7)",
+        "image": "div > div > button[aria-label=\"View photo 1\"] > img",
+        "rect": [
+         376,
+         316,
+         108,
+         19
+        ],
+        "fg": "#f7fbff",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#0d1217@0.90"
+        ],
+        "minRatio": 17.65,
+        "p10": 17.65,
+        "median": 17.65,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > header > div > a",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         112,
+         8,
+         110,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "header > div > nav[aria-label=\"Main navigation\"] > a[data-slot=button]",
+        "text": "Home",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         254,
+         12,
+         64,
+         32
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-en-1440-focus.png",
+     "console": []
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 3215,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 313,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        216,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-ar-390.png",
+     "contrast": {
+      "checked": 77,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "عرض كل الصور (7)",
+        "image": "div > div > button[aria-label=\"عرض الصورة 1\"] > img",
+        "rect": [
+         40,
+         301,
+         4,
+         19
+        ],
+        "fg": "#f7fbff",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#0d1217@0.90"
+        ],
+        "minRatio": 17.65,
+        "p10": 17.65,
+        "median": 17.65,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 3307,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 305,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-en-390.png",
+     "contrast": {
+      "checked": 77,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "View all photos (7)",
+        "image": "div > div > button[aria-label=\"View photo 1\"] > img",
+        "rect": [
+         242,
+         301,
+         108,
+         19
+        ],
+        "fg": "#1a1f25",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#f7fbff@0.90"
+        ],
+        "minRatio": 15.79,
+        "p10": 15.79,
+        "median": 15.79,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 3307,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 313,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        64,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-en-390.png",
+     "contrast": {
+      "checked": 77,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "View all photos (7)",
+        "image": "div > div > button[aria-label=\"View photo 1\"] > img",
+        "rect": [
+         242,
+         301,
+         108,
+         19
+        ],
+        "fg": "#f7fbff",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#0d1217@0.90"
+        ],
+        "minRatio": 17.65,
+        "p10": 17.65,
+        "median": 17.65,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 2700,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 317,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-ar-768.png",
+     "contrast": {
+      "checked": 81,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "عرض كل الصور (7)",
+        "image": "div > div > button[aria-label=\"عرض الصورة 1\"] > img",
+        "rect": [
+         412,
+         289,
+         4,
+         19
+        ],
+        "fg": "#1a1f25",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#f7fbff@0.90"
+        ],
+        "minRatio": 15.79,
+        "p10": 15.79,
+        "median": 15.79,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 2700,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 325,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        626,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-ar-768.png",
+     "contrast": {
+      "checked": 81,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "عرض كل الصور (7)",
+        "image": "div > div > button[aria-label=\"عرض الصورة 1\"] > img",
+        "rect": [
+         412,
+         289,
+         4,
+         19
+        ],
+        "fg": "#f7fbff",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#0d1217@0.90"
+        ],
+        "minRatio": 17.65,
+        "p10": 17.65,
+        "median": 17.65,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 2738,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 317,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-en-768.png",
+     "contrast": {
+      "checked": 81,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "View all photos (7)",
+        "image": "div > div > button[aria-label=\"View photo 1\"] > img",
+        "rect": [
+         248,
+         289,
+         108,
+         19
+        ],
+        "fg": "#1a1f25",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#f7fbff@0.90"
+        ],
+        "minRatio": 15.79,
+        "p10": 15.79,
+        "median": 15.79,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 2738,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 325,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        32,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-en-768.png",
+     "contrast": {
+      "checked": 81,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "View all photos (7)",
+        "image": "div > div > button[aria-label=\"View photo 1\"] > img",
+        "rect": [
+         248,
+         289,
+         108,
+         19
+        ],
+        "fg": "#f7fbff",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#0d1217@0.90"
+        ],
+        "minRatio": 17.65,
+        "p10": 17.65,
+        "median": 17.65,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 2269,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 315,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-ar-1440.png",
+     "contrast": {
+      "checked": 80,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "عرض كل الصور (7)",
+        "image": "div > div > button[aria-label=\"عرض الصورة 1\"] > img",
+        "rect": [
+         956,
+         316,
+         4,
+         19
+        ],
+        "fg": "#1a1f25",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#f7fbff@0.90"
+        ],
+        "minRatio": 15.79,
+        "p10": 15.79,
+        "median": 15.79,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 2269,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 323,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        1218,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "مساحة",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "مساحة"
+       },
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-dark-ar-1440.png",
+     "contrast": {
+      "checked": 80,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "عرض كل الصور (7)",
+        "image": "div > div > button[aria-label=\"عرض الصورة 1\"] > img",
+        "rect": [
+         956,
+         316,
+         4,
+         19
+        ],
+        "fg": "#f7fbff",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#0d1217@0.90"
+        ],
+        "minRatio": 17.65,
+        "p10": 17.65,
+        "median": 17.65,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 2296,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 315,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div > header > div > a",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-10",
+       "size": [
+        109.53,
+        40
+       ],
+       "pos": [
+        112,
+        8
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": "img",
+       "label": "Masaha",
+       "hidden": null,
+       "transforms": [],
+       "link": {
+        "href": "/",
+        "name": "Masaha"
+       },
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div[data-slot=card] > div[data-slot=card-content] > div > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-space-light-en-1440.png",
+     "contrast": {
+      "checked": 80,
+      "failures": [],
+      "images": [
+       {
+        "el": "span#_r_6_",
+        "text": "View all photos (7)",
+        "image": "div > div > button[aria-label=\"View photo 1\"] > img",
+        "rect": [
+         376,
+         316,
+         108,
+         19
+        ],
+        "fg": "#1a1f25",
+        "fgAlpha": 1,
+        "min": 4.5,
+        "layers": [
+         "#f7fbff@0.90"
+        ],
+        "minRatio": 15.79,
+        "p10": 15.79,
+        "median": 15.79,
+        "fails": false
+       }
+      ],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > button[data-slot=sheet-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > a",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        216,
+        8,
+        110,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > header > div > a",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        112,
+        8,
+        110,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "header > div > nav[aria-label=\"Main navigation\"] > a[data-slot=button]",
+       "text": "Home",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        254,
+        12,
+        64,
+        32
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  }
+ },
+ "hover": [
+  {
+   "label": "sort header (showcase DataTable; no production table sorts)",
+   "theme": "light",
+   "lang": "en",
+   "kind": "wash",
+   "want": "#d7dfe6",
+   "rest": {
+    "el": "thead[data-slot=table-header] > tr[data-slot=table-row] > th[data-slot=table-head] > button",
+    "text": "Member",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#5e646a",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #5e646a",
+    "shadow": "none",
+    "painted": "#ffffff",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#5e646a",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #5e646a",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#5e646a",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #5e646a",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "thead[data-slot=table-header] > tr[data-slot=table-row] > th[data-slot=table-head] > button",
+    "text": "Member",
+    "bg": "oklab(0.236863 -0.00398637 -0.0131455 / 0.1)",
+    "bgHex": "#1a1f25",
+    "bgAlpha": 0.1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#e8e9e9",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": false,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     40,
+     179
+    ],
+    "hex": "#d7dee6"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-hover-sort-header-showcase-DataTable-no-production-table-sorts--light-en.png"
+  },
+  {
+   "label": "sort header (showcase DataTable; no production table sorts)",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "wash",
+   "want": "#3c4147",
+   "rest": {
+    "el": "thead[data-slot=table-header] > tr[data-slot=table-row] > th[data-slot=table-head] > button",
+    "text": "Member",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#9fa6ad",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #9fa6ad",
+    "shadow": "none",
+    "painted": "#1a1f25",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#9fa6ad",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #9fa6ad",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#9fa6ad",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #9fa6ad",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "thead[data-slot=table-header] > tr[data-slot=table-row] > th[data-slot=table-head] > button",
+    "text": "Member",
+    "bg": "oklab(0.986198 -0.00252253 -0.00630087 / 0.08)",
+    "bgHex": "#f7fbff",
+    "bgAlpha": 0.08,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3136",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": false,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     40,
+     179
+    ],
+    "hex": "#3d4147"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/pub-home+directory+space+sorthdr-hover-sort-header-showcase-DataTable-no-production-table-sorts--dark-en.png"
+  }
+ ],
+ "ec": {},
+ "notes": [],
+ "shots": [
+  "01-home-light-ar-390.png",
+  "01-home-dark-en-1440.png",
+  "02-directory-light-ar-390.png",
+  "02-directory-dark-en-1440.png",
+  "04-space-page-light-ar-390.png",
+  "04-space-page-dark-en-1440.png",
+  "27-hover-sort-header-showcase-light.png",
+  "27-hover-sort-header-showcase-dark.png"
+ ],
+ "blocked": [],
+ "loads": 6,
+ "chrome": {
+  "pid": 28676,
+  "left": []
+ }
+}

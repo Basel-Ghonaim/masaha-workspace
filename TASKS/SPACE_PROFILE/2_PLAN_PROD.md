@@ -3,6 +3,12 @@
 > Planner: Claude Code (Opus 5.5), 2026-11-09, on `main` at `7fb73c3c` (clean, = `origin/main`).
 > Executed later by a fresh Claude Code session. Every number below (§, SD, DI, EC, T, OD, R) is
 > referenced by the others; the executor follows them in order and escalates rather than deviates.
+>
+> **APPROVED by the owner, 2026-11-10 — every recommendation as written:** OD1 (a) three PRs A → B → C ·
+> OD2 (a) hide/delete in the editor's top bar (C4) · OD3 (a) `?sheet=` opens the Sheet · OD4 (a) the closure
+> link → the announcements page · OD5 (a) an empty-saved group keeps its date line · OD6 DI-1…DI-8 and
+> SD1–SD7 all approved · OD7 (a) nothing to do on production. PA-1 and PA-2 not taken. Where §-text says
+> "if OD… (a)/(b)", take (a) and drop the other. The migration of §7 is approved as shown.
 
 ## 1. Summary
 

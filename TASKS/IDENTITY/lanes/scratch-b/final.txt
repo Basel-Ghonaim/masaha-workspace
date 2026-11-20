@@ -1,0 +1,170 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-b/apps/web
+
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > opens a reset link for a guest, in the focus shell 2527ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > opens a reset link for a signed-in user too: it has no guest guard 89ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > links to a new link when this one can no longer be used 209ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > links to sign in once the password is set, the way back gone 713ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > carries the return page to sign in, before and after the password is set 466ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > carries the return page to a new link when this one can no longer be used 130ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > marks the recovery done once the password is set, and not before 390ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > offers the way back to sign in until the password is set 58ms
+ ✓ |component| src/pages/site/auth/resetPasswordPage.component.test.tsx > the reset password page > offers the way back to sign in beside a new link when this one can no longer be used 94ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > renders the header, the page in the main landmark, and the footer 401ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > /login > shows its page to a guest, in the focus shell: the short header and no footer 519ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > /login > sends a signed-in user on to the page they came for, under RequireGuest 154ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > show the 404 inside the shell for an unknown path, with links home and to the directory 506ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the wordmark, the pages and sign-in to their paths 372ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > /register > shows its page to a guest, in the focus shell: the short header and no footer 207ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > show the general error inside the shell when a page throws 196ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > show offline inside the shell when a page's code cannot be fetched, with a way home 129ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > /register > sends a signed-in user on to the page they came for, under RequireGuest 70ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo in the header’s home link, which it names «Masaha», and «مساحة» in Arabic 458ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > shows the Directory under its title 312ms
+ ✓ |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > names its navigation «My account» and marks the page open as current; axe-clean 1664ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > links the footer to about, to the privacy policy and to the contact section 140ms
+ ✓ |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > sends a guest to sign-in, carrying the page asked for 228ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > marks the current page's link, and only it, as the current page 229ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > switches to the other language, and <html>'s lang and dir follow 296ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > lands the user on the page they came for once signed in, through RequireGuest alone 1156ms
+ ✓ |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > opens «Favourites» signed in, under the same navigation; axe-clean 628ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 1440, from 768 px a breadcrumb back to the Directory with its last search 899ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > sets data-theme to the opposite of the theme shown 386ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > keeps the language in the header at every width, and the theme there from 768 px only (SH-005) 113ms
+ ✓ |component| src/pages/site/account/AccountLayout.component.test.tsx > AccountLayout > «Choose your area» from the favourites focuses the place filter from 1024 px, past the shell’s rule 790ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > opens the phone menu with the links, the theme and sign-in, and closes it when a link is chosen 602ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > moves the focus to the site’s main content once signed in, the sign-in button gone 865ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > shows a space’s page titled by its name; at 390, below it a back link 678ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > draws the logo, named «Masaha», at the head of the phone menu, which keeps its own name 412ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > wires the unverified contact dialog with its none line and configured email 805ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > lands an owner in their space’s overview, through RequireGuest, when no page asked for the sign-in 841ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > offers «تخطَّ إلى المحتوى» first, leading to the page’s main content 486ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > offers «Skip to content» first in the focus shell too, leading to its main 183ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > moves the focus to the main content when another page opens, not on the first load nor when only the search changes 258ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > lands a user with no dashboard home, through RequireGuest, when no page asked for the sign-in 851ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > says why the session ended, only after the server ended it for idleness 96ms
+ ✓ |component| src/pages/site/shell/SiteLayout.component.test.tsx > the site shell > closes the phone menu when the history moves under it 537ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > Home’s search opens the Directory with what was typed; axe-clean 1169ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > says a session ended for idleness above the form 165ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > links to a forgotten password and to a new account, each carrying the return page 130ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > speaks to the people who sign in: the ones who save and report, and the ones who run a space 52ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > names the way back to the space next points to, from the directory’s cached read 108ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > goes back to the previous page when the read of the space next points to is not held 109ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the sign-in page > goes back home without a return page, or with one that would leave the site 105ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > About has «Contact us» before «For space owners», each with the configured contact, and no university line; the footer offers «Browse spaces» first; axe-clean 630ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > with no contact configured, About’s sections keep their text without buttons 118ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > reserves the footer’s room on a phone only under the contact bar: a space with a WhatsApp or a phone 238ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > reserves the footer’s room on a phone only under the contact bar: a space with neither 113ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > gives the footer its room back on leaving a space’s page with a bar 218ms
+ ✓ |component| src/pages/site/routes.component.test.tsx > the site's routes > show offline when a page throws while the browser reports no connection 75ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the register page > lands the new account on the page it came for, through RequireGuest alone 811ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the register page > offers the way back, as sign-in does 79ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the register page > links to sign in carrying the return page, and space owners to the about page’s owners 128ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the register page > offers the privacy policy in one small line 88ms
+ ✓ |component| src/pages/site/auth/authPages.component.test.tsx > the register page > offers to sign in with a taken email, carrying the return page 933ms
+ ✓ |component| src/pages/site/shell/SiteAccount.component.test.tsx > the header's account > shows sign-in to a guest, and no account 983ms
+ ✓ |component| src/pages/site/shell/SiteAccount.component.test.tsx > the header's account > shows the account in place of sign-in once the user signs in 1329ms
+stderr | src/pages/site/shell/SiteAccount.component.test.tsx > the header's account > shows sign-in again in place of the account once the user signs out
+Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["me","favorites",{}]
+Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["public","lookups","catalogue"]
+Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["public","directory","pins",{}]
+
+ ✓ |component| src/pages/site/shell/SiteAccount.component.test.tsx > the header's account > shows the account as its avatar at every width, the first name beside it from 768 px 135ms
+stderr | src/pages/site/shell/SiteAccount.component.test.tsx > the phone menu's account > shows the account section in place of sign-in, and sign-in again once signed out
+Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["me","favorites",{}]
+Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["public","lookups","catalogue"]
+Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["public","directory","pins",{}]
+
+ ✓ |component| src/pages/site/shell/SiteAccount.component.test.tsx > the header's account > shows sign-in again in place of the account once the user signs out 621ms
+ ✓ |component| src/pages/site/shell/SiteAccount.component.test.tsx > the phone menu's account > shows the account section in place of sign-in, and sign-in again once signed out 374ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > shows the recovery to a guest, in the focus shell 410ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > sends a signed-in user on, under RequireGuest 317ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > links back to sign in, and to the contact 88ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > opens the platform’s WhatsApp for someone who cannot reach their email, when it is set 131ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > carries the return page back to sign in 55ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > carries the return page on to the new password 121ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > drops a return page that leaves the site 46ms
+ ✓ |component| src/pages/site/auth/forgotPasswordPage.component.test.tsx > the forgot password page > links on to the new password once a link is open in this browser 126ms
+ ✓ |component| src/pages/site/auth/changePasswordPage.component.test.tsx > the change password page > shows the change in the focus shell, whose short header offers only the logo, linking home, and sign-out 311ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the owner’s twelve pages, the overview marked as the page shown 554ms
+ ✓ |component| src/pages/site/auth/changePasswordPage.component.test.tsx > the change password page > lands the user on the page they asked for once the password is saved 836ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists reception’s four pages at its space, the front desk among them 278ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > draws the owner’s pages in four groups named by task, the overview first and ungrouped 316ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > draws reception’s four pages with no group names 174ms
+ ✓ |component| src/pages/site/auth/changePasswordPage.component.test.tsx > the change password page > lands a user with no role and no links home when no page was asked for 329ms
+ ✓ |component| src/pages/site/auth/changePasswordPage.component.test.tsx > the change password page > signs out from the header, and then sends the guest to sign-in 219ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > keeps the group names for assistive technology only on the rail 132ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > counts the open reports on the owner’s «Data reports», named for a reader, and shows none at zero 501ms
+ ✓ |component| src/app/router.component.test.tsx > the app's route tree > shows the root's general error, with no header, when the site shell fails 144ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > shows no count on «Data reports» with no open report 316ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > counts the reports waiting for the admin on the admin’s «Data reports» 450ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > lists the admin’s eight pages under the platform’s own header 151ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > heads the admin’s sidebar with the logo hidden from assistive technology, «مساحة» read once beside «إدارة المنصة», and no «م» tile 64ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > shows the admin the lookups page: its title in the top bar, and the governorates 216ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > links each page below its branch 478ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's navigation > links the space’s public page, by its slug, in a new tab 621ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses reception the owner’s payments with the 403 inside the shell 91ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows reception its own payments today 87ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses the owner reception’s payments today with the 403 75ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 404 inside the shell, with no pages listed, for a space id that is not one 54ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 403 inside the shell for a space the user holds no link to 66ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > shows the 404 inside the shell for a page the space branch does not have 68ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > refuses a non-admin the platform’s pages with the 403, without the admin’s navigation 19ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard's guards > sends a guest to sign-in, carrying the space page asked for 15ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends the admin 37ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends an owner, to the overview 47ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends reception, to the front desk 75ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends a user with no role and no space, home 10ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > /dashboard > sends a user back to the space they entered last 167ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > remembers it for the user 129ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > moves to another space from the switcher, listing its role’s pages and remembering it 797ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > entering a space > remembers no space the user holds no link to 44ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > closes the drawer when another space is chosen in it 573ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > keeps the top bar to the trigger and the page; the drawer opens with the account, its foot holding the language and the theme 220ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the dashboard on a phone > opens the drawer with the pages and the language, and closes it when a page is chosen 651ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the amenities’ tab from the address 189ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the governorates’ tab when the address names no tab it has () 204ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > opens the governorates’ tab when the address names no tab it has (?tab=elsewhere) 134ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > keeps the tab chosen in the address, and none for the first tab 278ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's lookups page > names its tabs after the page, each tab with its own hint under them 170ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's add-space page > offers the public catalogue’s areas, and opens the new space’s editor once it is added 1238ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > is titled by the space’s name once it has loaded, in the top bar and the tab, under a trail back to the list 298ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > is titled "Edit space" while the space loads 53ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's space editor > shows the 404 inside the shell for an id that names no space 122ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's space profile > shows the owner the space profile under its title, read from the managed route 310ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's space profile > refuses reception the space profile with the 403 94ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's packages and prices > shows the owner Packages & prices under its title, its prices and packages read from the managed routes 118ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows the owner the desk under its title, with who is present and their check-out 279ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > shows reception the desk under its title, with who is present and their check-out 227ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > puts «Check in a visit» in the bar at the foot below 768 px, and «Switch staff» in the «⋯» menu 240ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's front desk > lands the overview’s «with no price» link on the desk’s card of them, its heading focused 366ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows the owner the ledger under «Payments», each customer a link to their file 216ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's payments > shows reception «My payments today»: the handover figures and its own payments 108ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > shows the owner «Data reports» under its title, the reporter a visitor 186ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's data reports > refuses reception the space’s data reports with the 403 68ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > shows the admin «Data reports» under its title, every space’s, the reporter named 358ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's data reports > refuses an owner the admin’s data reports with the 403 26ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows the owner the customers under its title, each a link to the file 376ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows reception the customers under its title, each a link to the file 255ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows the owner a customer’s file titled by their name, under a trail back to the list 165ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > shows reception a customer’s file titled by their name, under a trail back to the list 141ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's customers > titles the file «Customer file» while it loads 58ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > shows the owner the staff page under its title, its list read from the managed route 165ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's staff > refuses reception the staff page with the 403 112ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's settings > shows the owner the settings page under its title, read from the managed route 167ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the owner's settings > refuses reception the settings page with the 403 68ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > shows the list under its title, each row with its menu, and the place field of the lookups 519ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > leads from "Add space", above the list, to the add page, which adds no page to the sidebar 523ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's spaces page > keeps every menu’s actions waiting out a 429 through a change of filter, then of page 1063ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's owners page > shows the admin’s owners page under its title, with the owners 119ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's owners page > offers «Add owner» above the owners list 127ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the admin's users page > shows the admin’s users page under its title, with the users 119ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's announcements > shows the owner the announcements under «Announcements», by state 167ms
+ ✓ |component| src/pages/dashboard/routes.component.test.tsx > the space's announcements > shows reception the same announcements under «Announcements» 98ms
+
+ Test Files  10 passed (10)
+      Tests  150 passed (150)
+   Start at  13:08:44
+   Duration  42.78s (tests 51%, import 18%, environment 16%, transform 9%, setup 5%)
+
+tests exit 0

@@ -41,6 +41,12 @@ presentation). Each one is checked in the code and becomes a finding or a work i
   **Merged 2026-11-07 as #137 (`40cb481d`, prototype only).** The web/API step is still owed (new branch, new PR):
   the production notes in `0_OWNER_DECISIONS.md` › Revision 1's end and Revision 2 (A1–A4), ADR 0008's revision,
   a segmented-control component in the design system, `openNow`/`evening`/`sort=price` in the API.
+- **2026-11-10 — contacts (and every phone) refuse Arabic-Indic digits — the owner: record only.** Found by
+  SPACE_PROFILE's executor on #140: `٠٥٩٩١٢٣٤٥٦` is refused; the platform's phone rule (`normalisePhone`, shared)
+  reads Western digits only — WhatsApp and phone today, «وسيلة أخرى» too. The decision C2 assumed they were
+  accepted ("normalised as today (Arabic-Indic digits…)"): that premise is false. Not fixed: written as a finding in
+  the repository by the next PR that touches docs (PR-C, #142 — the next free number after the reviews' findings),
+  Open; the fix, if ever, is its own small PR (the rule is shared: desk customers, reception, contacts).
 - **2026-11-07 — a flaky component test (to fix in its own small PR, record as finding 214 — check the index
   first):** `apps/web/src/pages/site/public/home/HomePage.component.test.tsx` › «Set my location on the map» starts
   the pick on the Directory's map — after navigating to `/spaces?view=map` it waits for the searchbox with

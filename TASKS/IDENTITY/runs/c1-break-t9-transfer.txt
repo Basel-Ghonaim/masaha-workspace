@@ -1,0 +1,110 @@
+[heavy] waiting 60 s (try 1 of 45)
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 8 failed) 40ms
+   ❯ the measures (4)
+     × measures contrast as WCAG defines it 7ms
+   ❯ contrast (138)
+     × light: success on muted meets 4.5:1 1ms
+     × light: info on muted meets 4.5:1 0ms
+     × light: muted-foreground on accent meets 4.5:1 0ms
+     × light: muted-foreground on sidebar-accent meets 4.5:1 0ms
+     × light: muted-foreground on hover meets 4.5:1 0ms
+     × dark: destructive on muted meets 4.5:1 0ms
+   ❯ fills seen (22)
+     × light: hover-on-muted stands apart from muted at 1.2:1 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > the measures > measures contrast as WCAG defines it
+AssertionError: expected 4.055911243237188 to be close to 4.54, received difference is 0.48408875676281227, but expected 0.005
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:450:69
+    448|   it('measures contrast as WCAG defines it', () => {
+    449|     expect(contrastRatio(parseHex('#000000'), parseHex('#ffffff'))).to…
+    450|     expect(contrastRatio(parseHex('#767676'), parseHex('#ffffff'))).to…
+       |                                                                     ^
+    451|   });
+    452|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: success on muted meets 4.5:1
+AssertionError: expected 4.251449873941293 to be greater than or equal to 4.5
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: info on muted meets 4.5:1
+AssertionError: expected 4.469902903183444 to be greater than or equal to 4.5
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: muted-foreground on accent meets 4.5:1
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: muted-foreground on sidebar-accent meets 4.5:1
+AssertionError: expected 4.498478793801398 to be greater than or equal to 4.5
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: muted-foreground on hover meets 4.5:1
+AssertionError: expected 4.230181861246772 to be greater than or equal to 4.5
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: destructive on muted meets 4.5:1
+AssertionError: expected 4.424923779658968 to be greater than or equal to 4.5
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > fills seen > light: hover-on-muted stands apart from muted at 1.2:1
+AssertionError: expected 1.1912431198857156 to be greater than or equal to 1.2
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:548:21
+    546|     ({ theme, fill, ground, minimum }) => {
+    547|       const ratio = contrastRatio(painted(theme, fill, ground), painte…
+    548|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    549|     },
+    550|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed | 186 passed (194)
+   Start at  11:53:47
+   Duration  489ms (transform 53%, tests 22%, import 20%, worker 5%)
+

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ثلاثة اتجاهات · مساحة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7FBFF;--fg:#1A1F25;--muted:#5E646A;--line:#DDE5ED;--card:#fff;--ink:#1A1F25;--ink-fg:#F7FBFF;--ink-muted:#C9D0D7;--spark:#B55BB3;--sel:#FFE3FD;--hover:#DDE5ED;--ring:#1A1F25}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0D1217;--fg:#F7FBFF;--muted:#9FA6AD;--line:#2C3137;--card:#1A1F25;--ink:#1A1F25;--ink-fg:#F7FBFF;--ink-muted:#9FA6AD;--spark:#D27ED0;--sel:#4a2449;--hover:#2C3137;--ring:#F7FBFF}}
+:root[data-theme=dark]{--bg:#0D1217;--fg:#F7FBFF;--muted:#9FA6AD;--line:#2C3137;--card:#1A1F25;--ink:#1A1F25;--ink-fg:#F7FBFF;--ink-muted:#9FA6AD;--spark:#D27ED0;--sel:#4a2449;--hover:#2C3137;--ring:#F7FBFF}
+*{box-sizing:border-box}
+html{background:var(--bg);color:var(--fg)}
+body{margin:0;font:400 16px/1.75 "IBM Plex Sans Arabic",system-ui,sans-serif;background:var(--bg)}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ring);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1280px;margin-inline:auto;padding-inline:40px}
+@media (max-width:767px){.wrap{padding-inline:16px}}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px;border-bottom:1px solid var(--line)}
+header.top img{height:40px;display:block}
+.theme{font:inherit;font-size:14px;background:none;border:1px solid var(--line);color:var(--fg);border-radius:8px;padding:8px 14px;min-height:44px;cursor:pointer}
+.theme:hover{background:var(--hover)}
+.intro{padding-block:64px 48px;display:grid;grid-template-columns:7fr 5fr;gap:48px;align-items:end}
+@media (max-width:1023px){.intro{grid-template-columns:1fr;gap:24px;padding-block:40px 32px}}
+h1{font-size:44px;line-height:1.3;font-weight:600;margin:0}
+@media (max-width:767px){h1{font-size:30px}}
+.lead{font-size:18px;color:var(--muted);margin:16px 0 0;max-width:62ch}
+.facts{margin:0;padding:0;list-style:none;font-size:15px;color:var(--muted);border-inline-start:3px solid var(--spark);padding-inline-start:16px}
+.facts a{color:var(--fg)}
+h2{font-size:28px;line-height:1.4;font-weight:600;margin:0}
+h3{font-size:18px;font-weight:600;margin:0 0 8px}
+section{padding-block:56px;border-top:1px solid var(--line)}
+.before-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+@media (max-width:1023px){.before-strip{grid-template-columns:repeat(2,1fr)}}
+figure{margin:0}
+figure img{width:100%;display:block;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+.dir-head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:start}
+@media (max-width:767px){.dir-head{grid-template-columns:1fr}}
+.letter{width:64px;height:64px;border-radius:12px;background:var(--ink);color:var(--ink-fg);display:grid;place-items:center;font-size:28px;font-weight:600;position:relative}
+.letter::after{content:"";position:absolute;inset-block-end:8px;inset-inline-end:8px;width:8px;height:8px;border-radius:2px;background:var(--spark)}
+[data-theme=dark] .letter,.dark .letter{border:1px solid #484E54}
+.idea{font-size:18px;margin:4px 0 0;max-width:68ch}
+.idea-2{color:var(--muted);margin:4px 0 0;max-width:68ch;font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.links a{font-size:14px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;text-decoration:none;min-height:40px;display:inline-flex;align-items:center;background:var(--card)}
+.links a:hover{background:var(--hover)}
+.links a.main{background:var(--ink);color:var(--ink-fg);border-color:var(--ink)}
+.links a.main:hover{opacity:.88}
+.shots{display:grid;grid-template-columns:3fr 1fr;gap:16px;margin-top:32px;align-items:start}
+@media (max-width:767px){.shots{grid-template-columns:1fr}}
+.pair-label{font-size:14px;font-weight:500;margin:32px 0 8px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+@media (max-width:767px){.ba{grid-template-columns:1fr}}
+.tag{display:inline-block;font-size:13px;font-weight:500;margin-bottom:6px}
+.tag.after{border-bottom:2px solid var(--spark)}
+.missing{border:1px dashed var(--line);border-radius:8px;padding:32px;color:var(--muted);font-size:14px;text-align:center}
+.overturns{font-size:14px;color:var(--muted);margin-top:16px;max-width:90ch}
+footer{padding-block:40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img id="logo" src="_shared/logo/masaha-logo-berry.svg" alt="مساحة">
+    <button class="theme" id="theme" type="button">الوضع الداكن</button>
+  </header>
+
+  <div class="intro">
+    <div>
+      <h1>الجولة الثالثة: ثلاثة اتجاهات للتصميم</h1>
+      <p class="lead">الموقع اليوم صحيح ونظيف، لكنه بلا شخصية: كل شيء بطاقة بيضاء بزوايا مدوّرة، والخط صغير ومتساوٍ، ولون التوت لا يؤدي عمله. هذه ثلاث إجابات مختلفة عن سؤال واحد: ما الذي يحتاجه من يبحث عن مكان يعمل فيه اليوم في غزة، وكيف يجب أن يبدو؟ الألوان والشعار ثابتان في الثلاثة.</p>
+    </div>
+    <ul class="facts">
+      <li><strong>توصيتي:</strong> الاتجاه A أساسًا، مع رسم القطاع من B والجملة الملخّصة من C — والسبب في الملخّص.</li>
+      <li><a href="../DIAGNOSIS.md">التشخيص كاملًا (DIAGNOSIS.md)</a></li>
+      <li><a href="../FOR_THE_OWNER_AR.md">ملخّص لك بالعربية (FOR_THE_OWNER_AR.md)</a></li>
+      <li>كل اتجاه يعمل على 390 و1440، بالعربية والإنجليزية، فاتحًا وداكنًا — بدّل من رأس كل صفحة.</li>
+      <li>لوحة «مراجعة» في زاوية كل صفحة: روابط الصفحات و«حالات تجريبية».</li>
+    </ul>
+  </div>
+
+  <section aria-labelledby="before-h">
+    <h2 id="before-h">قبل: الموقع الحالي</h2>
+    <div class="before-strip">
+      <figure><a href="_shared/before/home-1440-ar-light.full.jpg"><img src="_shared/before/home-1440-ar-light.jpg" alt="الرئيسية اليوم على 1440" loading="lazy"></a><figcaption>الرئيسية · 1440</figcaption></figure>
+      <figure><a href="_shared/before/spaces-1440-ar-light.full.jpg"><img src="_shared/before/spaces-1440-ar-light.jpg" alt="الدليل اليوم على 1440" loading="lazy"></a><figcaption>المساحات · 1440</figcaption></figure>
+      <figure><a href="_shared/before/space-1440-ar-light.full.jpg"><img src="_shared/before/space-1440-ar-light.jpg" alt="صفحة مساحة اليوم على 1440" loading="lazy"></a><figcaption>صفحة مساحة · 1440</figcaption></figure>
+      <figure><a href="_shared/before/map-1440-ar-light.jpg"><img src="_shared/before/map-1440-ar-light.jpg" alt="الخريطة اليوم على 1440" loading="lazy"></a><figcaption>الخريطة · 1440</figcaption></figure>
+    </div>
+  </section>
+
+  <div id="dirs"></div>
+
+  <footer>مساحة — الجولة الثالثة للتصميم، 2026-11-14. نماذج للمراجعة فقط، ليست الموقع الحقيقي.</footer>
+</div>
+
+<script>
+var DIRS = [
+  { id: 'A', name: '«اللوحة»', en: 'The live board',
+    idea: 'مساحة لوحة حيّة لأماكن العمل المفتوحة الآن في غزة: الحالة أولًا، في صفوف، كما تجيب لوحة المواعيد أو قائمة Google Maps.',
+    idea2: 'كثيفة وعملية، بأرقام كبيرة بدل الصور الكبيرة، ولون التوت يعلّم «مفتوحة الآن» أخيرًا. يبقى الخط الحالي.',
+    overturns: 'يغيّر: سلّم الخطوط (§7)، بطاقة الصورة (U12) إلى صفوف بصورة صغيرة، تقسيم الرئيسية، صف اليوم في جدول الساعات، خريطة OSM الافتراضية، تنقّل الحساب.' },
+  { id: 'B', name: '«القطاع»', en: 'The Strip',
+    idea: 'مساحة خريطة لأماكن العمل على طول القطاع: المكان أولًا، وشكل القطاع الطويل علامة ثانية للهوية بجانب الشعار.',
+    idea2: 'مكانية ودافئة: صور أكبر، والقائمة والخريطة جنبًا إلى جنب على الشاشة الكبيرة، وخط عرض هندسي (Alexandria) يجاوب حروف الشعار.',
+    overturns: 'يغيّر: «القائمة أو الخريطة، لا جنبًا إلى جنب» (§9)، الخط (§7، §15)، الزوايا والكثافة، الشريط الجانبي للفلاتر، بطاقة الصورة، تقسيم الرئيسية.' },
+  { id: 'C', name: '«الدليل»', en: 'The guide',
+    idea: 'مساحة دليل مطبوع بعناية لمساحات العمل: المحافظات فصوله، وكل مساحة مدخل مكتوب من معلوماتها الحقيقية.',
+    idea2: 'تحريرية وطباعية: خط نسخ للعناوين (Amiri للعربية، Markazi Text للإنجليزية) مع الخط الحالي للمعلومات، وجملة تلخّص كل مساحة من بياناتها، وصندوق حقائق بالحبر.',
+    overturns: 'يغيّر: الخط (§7، §15)، بطاقة الصورة (U12)، الشريط الجانبي للفلاتر، ترتيب الدليل الافتراضي مجمّعًا حسب المحافظة، ترتيب صفحة المساحة (U8)، تقسيم الرئيسية.' }
+];
+var PAGES = [
+  ['home.html', 'الرئيسية'], ['spaces.html', 'المساحات'], ['spaces.html?filters=open', 'الفلاتر مفتوحة'], ['spaces.html?view=map', 'الخريطة'],
+  ['space.html?slug=branch-hub', 'صفحة مساحة'], ['about.html', 'عن مساحة'], ['login.html', 'تسجيل الدخول'], ['account.html', 'إعدادات حسابي'],
+  ['favorites.html', 'المفضّلة'], ['404.html', '404']
+];
+function shot(dir, page, w, theme) {
+  var base = page.replace(/[?=&#]/g, '_').replace(/\.html/, '');
+  return dir + '/shots/' + base + '-' + w + '-ar-' + (theme || 'light') + '.jpg';
+}
+function img(src, alt, full) {
+  return '<a href="' + (full || src) + '"><img src="' + src + '" alt="' + alt + '" loading="lazy" onerror="this.parentNode.outerHTML=\'<div class=missing>لم تُلتقط بعد</div>\'"></a>';
+}
+var html = '';
+DIRS.forEach(function (d) {
+  html += '<section aria-labelledby="d' + d.id + '"><div class="dir-head"><div class="letter" aria-hidden="true">' + d.id + '</div><div>' +
+    '<h2 id="d' + d.id + '">' + d.id + ' — ' + d.name + ' <span lang="en" dir="ltr" style="color:var(--muted);font-weight:400">' + d.en + '</span></h2>' +
+    '<p class="idea">' + d.idea + '</p><p class="idea-2">' + d.idea2 + '</p>' +
+    '<div class="links"><a class="main" href="' + d.id + '/home.html">افتح الاتجاه ' + d.id + '</a>' +
+    PAGES.slice(1).map(function (p) { return '<a href="' + d.id + '/' + p[0] + '">' + p[1] + '</a>'; }).join('') +
+    '<a href="' + d.id + '/DESIGN.md">DESIGN.md</a></div>' +
+    '<p class="overturns">' + d.overturns + '</p></div></div>';
+  html += '<div class="shots"><figure>' + img(shot(d.id, 'home.html', 1440), 'الرئيسية في الاتجاه ' + d.id + ' على 1440', shot(d.id, 'home.html', 1440).replace('.jpg', '.full.jpg')) + '<figcaption>الرئيسية · 1440</figcaption></figure>' +
+    '<figure>' + img(shot(d.id, 'home.html', 390), 'الرئيسية في الاتجاه ' + d.id + ' على 390', shot(d.id, 'home.html', 390).replace('.jpg', '.full.jpg')) + '<figcaption>الرئيسية · 390</figcaption></figure></div>';
+  html += '<div class="shots"><figure>' + img(shot(d.id, 'space.html?slug=branch-hub', 1440), 'صفحة مساحة في الاتجاه ' + d.id) + '<figcaption>صفحة مساحة · 1440</figcaption></figure>' +
+    '<figure>' + img(shot(d.id, 'space.html?slug=branch-hub', 390, 'dark'), 'صفحة مساحة داكنة في الاتجاه ' + d.id) + '<figcaption>صفحة مساحة · 390 · داكن</figcaption></figure></div>';
+  [['spaces.html', 'spaces-1440-ar-light', 'المساحات'], ['spaces.html?view=map', 'map-1440-ar-light', 'الخريطة'], ['login.html', 'login-1440-ar-light', 'تسجيل الدخول']].forEach(function (p) {
+    html += '<p class="pair-label">' + p[2] + ': قبل وبعد · 1440</p><div class="ba"><figure><span class="tag">قبل</span>' + img('_shared/before/' + p[1] + '.jpg', p[2] + ' قبل') + '</figure>' +
+      '<figure><span class="tag after">بعد — ' + d.id + '</span>' + img(shot(d.id, p[0], 1440), p[2] + ' بعد، الاتجاه ' + d.id) + '</figure></div>';
+  });
+  html += '</section>';
+});
+document.getElementById('dirs').innerHTML = html;
+var root = document.documentElement, btn = document.getElementById('theme'), logo = document.getElementById('logo');
+function isDark() { return root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
+function paint() { btn.textContent = isDark() ? 'الوضع الفاتح' : 'الوضع الداكن'; logo.src = '_shared/logo/' + (isDark() ? 'masaha-logo-dark-berry.svg' : 'masaha-logo-berry.svg'); }
+btn.addEventListener('click', function () { root.dataset.theme = isDark() ? 'light' : 'dark'; paint(); });
+paint();
+</script>
+</body>
+</html>

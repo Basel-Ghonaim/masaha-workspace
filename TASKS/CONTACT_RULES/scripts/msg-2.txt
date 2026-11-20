@@ -1,0 +1,13 @@
+fix(spaces): accept only real links in contacts
+
+A website took any host with a dot, so a bare number was stored as an
+IP address (123 as https://0.0.0.123), and a Facebook link kept any
+path, so a video's link lost its id and opened Facebook's video home
+(finding 218).
+
+A link's host is now a domain with a top-level domain. A Facebook link
+must name a page or a profile: a username, profile.php?id=<digits> or
+/people/<name>/<id>; a handle that names one of Facebook's own sections
+is refused too. The browser runs the same shared rule first, so the
+Sheet says a refused value on its row and sends nothing; the server
+still refuses it.

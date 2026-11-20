@@ -1,0 +1,6404 @@
+{
+ "run": "adm",
+ "screens": {
+  "admin-overview": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 1317,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 127,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "border-success": {
+        "want": "#137d41",
+        "got": "#137d41",
+        "count": 1,
+        "el": "div#root > section[aria-label=\"الإشعارات\"] > ol > li"
+       },
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div#root > section[aria-label=\"الإشعارات\"] > ol > li"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div#root > section[aria-label=\"الإشعارات\"] > ol > li"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-ar-390.png",
+     "contrast": {
+      "checked": 28,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 1,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": false,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "section[aria-label=\"ملخص المنصة\"] > ul > li > a",
+        "text": "المساحات 37 19 موثّقة · 18 غير موثّقة · 0 مخفية",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         16,
+         81,
+         358,
+         126
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 900,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 237,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-en-1440.png",
+     "contrast": {
+      "checked": 42,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Overview",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         76,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Spaces",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         155,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-en-1440-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 1317,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 123,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-ar-390.png",
+     "contrast": {
+      "checked": 28,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 1361,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 115,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-en-390.png",
+     "contrast": {
+      "checked": 28,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 1361,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 123,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-en-390.png",
+     "contrast": {
+      "checked": 28,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 1024,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 227,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        719,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-ar-768.png",
+     "contrast": {
+      "checked": 31,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 1024,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 243,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        719,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-ar-768.png",
+     "contrast": {
+      "checked": 31,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 1024,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 227,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        14,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-en-768.png",
+     "contrast": {
+      "checked": 31,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 1024,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 243,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        14,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-en-768.png",
+     "contrast": {
+      "checked": 31,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 900,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 221,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        1325,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-ar-1440.png",
+     "contrast": {
+      "checked": 42,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 900,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 237,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        1325,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-dark-ar-1440.png",
+     "contrast": {
+      "checked": 42,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 900,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 221,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-overview-light-en-1440.png",
+     "contrast": {
+      "checked": 42,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": false,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "section[aria-label=\"ملخص المنصة\"] > ul > li > a",
+       "text": "المساحات 37 19 موثّقة · 18 غير موثّقة · 0 مخفية",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        16,
+        81,
+        358,
+        126
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Overview",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        76,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Spaces",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        155,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  },
+  "admin-spaces": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 2531,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 438,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-ar-390.png",
+     "contrast": {
+      "checked": 168,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": false,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "main#main > div > div > a[data-slot=button]",
+        "text": "إضافة مساحة",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         16,
+         81,
+         109,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin/spaces"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 1780,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 655,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-en-1440.png",
+     "contrast": {
+      "checked": 152,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Overview",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         76,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Spaces",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         155,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-en-1440-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin/spaces"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 2531,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 446,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-ar-390.png",
+     "contrast": {
+      "checked": 168,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 2512,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 438,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-en-390.png",
+     "contrast": {
+      "checked": 168,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 2512,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 446,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-en-390.png",
+     "contrast": {
+      "checked": 168,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 2532,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 550,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        719,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-ar-768.png",
+     "contrast": {
+      "checked": 175,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 2532,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 566,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        719,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-ar-768.png",
+     "contrast": {
+      "checked": 175,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 2532,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 550,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        14,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-en-768.png",
+     "contrast": {
+      "checked": 175,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 2532,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 566,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        14,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 26,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-en-768.png",
+     "contrast": {
+      "checked": 175,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 1780,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 639,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        1325,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-ar-1440.png",
+     "contrast": {
+      "checked": 152,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 1780,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 655,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        1325,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-dark-ar-1440.png",
+     "contrast": {
+      "checked": 152,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 1780,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 639,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 26,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "tr[data-slot=table-row] > td[data-slot=table-cell] > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-spaces-light-en-1440.png",
+     "contrast": {
+      "checked": 152,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 1
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": false,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "main#main > div > div > a[data-slot=button]",
+       "text": "إضافة مساحة",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        16,
+        81,
+        109,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Overview",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        76,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Spaces",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        155,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  },
+  "admin-space-editor": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 3742,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 380,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#1f6cb0",
+        "got": "#1f6cb0",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-ar-390.png",
+     "contrast": {
+      "checked": 113,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": false,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "button#radix-_r_13q_[data-slot=dropdown-menu-trigger][aria-label=\"إجراءات الصفحة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         16,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/iEMCPrTDTzX-AW_N1EkqDw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/cp36yusMvLzE828x263OZw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/dch-HqNEiiejO3e794bErw/card.webp"
+      },
+      {
+       "kind": "network.status",
+       "text": "404 http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: the server responded with a status of 404 (Not Found) http://localhost:5323/api/v1/files/spaces/yrFclavWddUiAQuSxxSo9Q/card.webp"
+      },
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin/spaces/26"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 3382,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 541,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#fc6e68",
+        "got": "#fc6e68",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success": {
+        "want": "#63b77c",
+        "got": "#63b77c",
+        "count": 8,
+        "el": "nav[aria-label=\"Profile sections\"] > a[data-slot=button] > span > span"
+       },
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#64a6e9",
+        "got": "#64a6e9",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-en-1440.png",
+     "contrast": {
+      "checked": 136,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Overview",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         76,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Spaces",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         155,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-en-1440-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin/spaces/26"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 3742,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 388,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#64a6e9",
+        "got": "#64a6e9",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-ar-390.png",
+     "contrast": {
+      "checked": 113,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 3798,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 380,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#1f6cb0",
+        "got": "#1f6cb0",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-en-390.png",
+     "contrast": {
+      "checked": 113,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 3798,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 388,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#64a6e9",
+        "got": "#64a6e9",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-en-390.png",
+     "contrast": {
+      "checked": 113,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-768": {
+     "key": "light-ar-768",
+     "height": 3335,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 488,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        719,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#be222a",
+        "got": "#be222a",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#1f6cb0",
+        "got": "#1f6cb0",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-ar-768.png",
+     "contrast": {
+      "checked": 117,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-768": {
+     "key": "dark-ar-768",
+     "height": 3335,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 504,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        719,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#fc6e68",
+        "got": "#fc6e68",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#64a6e9",
+        "got": "#64a6e9",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-ar-768.png",
+     "contrast": {
+      "checked": 117,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-768": {
+     "key": "light-en-768",
+     "height": 3357,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 488,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        14,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#be222a",
+        "got": "#be222a",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#1f6cb0",
+        "got": "#1f6cb0",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-en-768.png",
+     "contrast": {
+      "checked": 117,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-en-768": {
+     "key": "dark-en-768",
+     "height": 3357,
+     "overflow": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 504,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "shrink-0 aspect-square size-9",
+       "size": [
+        36,
+        36
+       ],
+       "pos": [
+        14,
+        16
+       ],
+       "visible": true,
+       "viewBox": "190 17 778 778",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 13.5
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#fc6e68",
+        "got": "#fc6e68",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#64a6e9",
+        "got": "#64a6e9",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-en-768.png",
+     "contrast": {
+      "checked": 117,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-ar-1440": {
+     "key": "light-ar-1440",
+     "height": 3382,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 525,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        1325,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#be222a",
+        "got": "#be222a",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success": {
+        "want": "#137d41",
+        "got": "#137d41",
+        "count": 8,
+        "el": "nav[aria-label=\"أقسام الملف\"] > a[data-slot=button] > span > span"
+       },
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#1f6cb0",
+        "got": "#1f6cb0",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-ar-1440.png",
+     "contrast": {
+      "checked": 136,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-1440": {
+     "key": "dark-ar-1440",
+     "height": 3382,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 541,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        1325,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#fc6e68",
+        "got": "#fc6e68",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success": {
+        "want": "#63b77c",
+        "got": "#63b77c",
+        "count": 8,
+        "el": "nav[aria-label=\"أقسام الملف\"] > a[data-slot=button] > span > span"
+       },
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#64a6e9",
+        "got": "#64a6e9",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-dark-ar-1440.png",
+     "contrast": {
+      "checked": 136,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-1440": {
+     "key": "light-en-1440",
+     "height": 3382,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 525,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "text-destructive": {
+        "want": "#be222a",
+        "got": "#be222a",
+        "count": 1,
+        "el": "header > div > div > button[data-slot=button]"
+       },
+       "bg-success": {
+        "want": "#137d41",
+        "got": "#137d41",
+        "count": 8,
+        "el": "nav[aria-label=\"Profile sections\"] > a[data-slot=button] > span > span"
+       },
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 2,
+        "el": "div > div > p > span[data-slot=badge]"
+       },
+       "border-info": {
+        "want": "#1f6cb0",
+        "got": "#1f6cb0",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > div > div[data-slot=alert][role=status]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-space-editor-light-en-1440.png",
+     "contrast": {
+      "checked": 136,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": false,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "button#radix-_r_13q_[data-slot=dropdown-menu-trigger][aria-label=\"إجراءات الصفحة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        16,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Overview",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        76,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Spaces",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        155,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  },
+  "admin-drawer": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 233,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#radix-_r_2_[data-slot=sheet-content][role=dialog] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        275,
+        90
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-drawer-light-ar-390.png",
+     "contrast": {
+      "checked": 16,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 17,
+       "offscreen": 11,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "button#radix-_r_16j_[data-slot=dropdown-menu-trigger][aria-label=\"قائمة الحساب: ⁨Basel⁩\"]",
+        "text": "B Basel · أدمن baselghonaim@gmail.com",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         111,
+         8,
+         271,
+         58
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "نظرة عامة",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         115,
+         150,
+         263,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "المساحات",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         115,
+         229,
+         263,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": true,
+        "inSidebar": true,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-drawer-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-en-390": {
+     "key": "dark-en-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 249,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#radix-_r_2_[data-slot=sheet-content][role=dialog] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        90
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-drawer-dark-en-390.png",
+     "contrast": {
+      "checked": 16,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 17,
+       "offscreen": 11,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "dark-ar-390": {
+     "key": "dark-ar-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 249,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#radix-_r_2_[data-slot=sheet-content][role=dialog] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        275,
+        90
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "rtl",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#261400",
+        "got": "#261400",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#fbd3a2",
+        "got": "#fbd3a2",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-drawer-dark-ar-390.png",
+     "contrast": {
+      "checked": 16,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 17,
+       "offscreen": 11,
+       "disabled": 0
+      }
+     },
+     "console": []
+    },
+    "light-en-390": {
+     "key": "light-en-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 233,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": []
+     },
+     "logo": [
+      {
+       "where": "div#radix-_r_2_[data-slot=sheet-content][role=dialog] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        90
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#1a1f25",
+        "#b55bb3"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-warning-subtle": {
+        "want": "#fff5ea",
+        "got": "#fff5ea",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       },
+       "text-warning-subtle-foreground": {
+        "want": "#593700",
+        "got": "#593700",
+        "count": 2,
+        "el": "li > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-drawer-light-en-390.png",
+     "contrast": {
+      "checked": 16,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 17,
+       "offscreen": 11,
+       "disabled": 0
+      }
+     },
+     "console": []
+    }
+   },
+   "axe": {
+    "light-ar-390": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "button#radix-_r_16j_[data-slot=dropdown-menu-trigger][aria-label=\"قائمة الحساب: ⁨Basel⁩\"]",
+       "text": "B Basel · أدمن baselghonaim@gmail.com",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        111,
+        8,
+        271,
+        58
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "نظرة عامة",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        115,
+        150,
+        263,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "المساحات",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        115,
+        229,
+        263,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": true,
+       "inSidebar": true,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    }
+   }
+  },
+  "admin-reports-filtered": {
+   "variants": {
+    "light-ar-390": {
+     "key": "light-ar-390",
+     "height": 844,
+     "overflow": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 114,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#b55bb3",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div > section[aria-label=\"بلاغات البيانات\"] > div[data-slot=toggle-group][role=radiogroup][aria-label=\"تصفية حسب الحالة\"] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "الكل",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [],
+     "status": {
+      "theme": "light",
+      "tokens": {
+       "destructive": "#be222a",
+       "success": "#137d41",
+       "warning": "#b27406",
+       "info": "#1f6cb0"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-info-subtle": {
+        "want": "#f1f8fe",
+        "got": "#f1f8fe",
+        "count": 1,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#004174",
+        "got": "#004174",
+        "count": 1,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "bg-success-subtle": {
+        "want": "#ecfcef",
+        "got": "#ecfcef",
+        "count": 1,
+        "el": "div > div > span > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#034d25",
+        "got": "#034d25",
+        "count": 1,
+        "el": "div > div > span > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-reports-filtered-light-ar-390.png",
+     "contrast": {
+      "checked": 31,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "تخطَّ إلى المحتوى",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         248,
+         8,
+         126,
+         43
+        ],
+        "inView": true,
+        "onTop": false,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+        "text": "",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         334,
+         8,
+         40,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div > section[aria-label=\"بلاغات البيانات\"] > div[data-slot=toggle-group][role=radiogroup][aria-label=\"تصفية حسب الحالة\"] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "الكل",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#1a1f25",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#1a1f25",
+        "sidebarRing": "#1a1f25",
+        "rect": [
+         302,
+         141,
+         72,
+         36
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "light"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-reports-filtered-light-ar-390-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin/reports?space=26"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    },
+    "dark-en-1440": {
+     "key": "dark-en-1440",
+     "height": 900,
+     "overflow": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "over": false,
+      "offenders": []
+     },
+     "sea": {
+      "elements": 291,
+      "hits": [],
+      "hitCount": 0,
+      "sheetHits": []
+     },
+     "spark": {
+      "spark": "#d27ed0",
+      "textHits": [],
+      "buttonHits": [
+       {
+        "el": "div > section[aria-label=\"Data reports\"] > div[data-slot=toggle-group][role=radiogroup][aria-label=\"Filter by status\"] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "All",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       },
+       {
+        "el": "section[aria-label=\"Data reports\"] > div > div[data-slot=toggle-group][role=radiogroup][aria-label=\"Handled by\"] > button[data-slot=toggle-group-item][role=radio]",
+        "text": "All",
+        "bg": false,
+        "borders": [
+         "top",
+         "right",
+         "bottom",
+         "left"
+        ]
+       }
+      ]
+     },
+     "logo": [
+      {
+       "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+       "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+       "size": [
+        98.58,
+        36
+       ],
+       "pos": [
+        16,
+        16
+       ],
+       "visible": true,
+       "viewBox": "263 45 2473 903",
+       "role": null,
+       "label": null,
+       "hidden": "true",
+       "transforms": [],
+       "link": null,
+       "fills": [
+        "#f7fbff",
+        "#d27ed0"
+       ],
+       "dir": "ltr",
+       "startGap": 0
+      }
+     ],
+     "status": {
+      "theme": "dark",
+      "tokens": {
+       "destructive": "#fc6e68",
+       "success": "#63b77c",
+       "warning": "#d6912b",
+       "info": "#64a6e9"
+      },
+      "tokenMismatch": [],
+      "samples": {
+       "bg-info-subtle": {
+        "want": "#001934",
+        "got": "#001934",
+        "count": 1,
+        "el": "tbody[data-slot=table-body] > tr[data-slot=table-row] > td[data-slot=table-cell] > span[data-slot=badge]"
+       },
+       "text-info-subtle-foreground": {
+        "want": "#c0deff",
+        "got": "#c0deff",
+        "count": 1,
+        "el": "tbody[data-slot=table-body] > tr[data-slot=table-row] > td[data-slot=table-cell] > span[data-slot=badge]"
+       },
+       "bg-success-subtle": {
+        "want": "#001f0a",
+        "got": "#001f0a",
+        "count": 1,
+        "el": "tbody[data-slot=table-body] > tr[data-slot=table-row] > td[data-slot=table-cell] > span[data-slot=badge]"
+       },
+       "text-success-subtle-foreground": {
+        "want": "#bae8c5",
+        "got": "#bae8c5",
+        "count": 1,
+        "el": "tbody[data-slot=table-body] > tr[data-slot=table-row] > td[data-slot=table-cell] > span[data-slot=badge]"
+       }
+      },
+      "mismatches": []
+     },
+     "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-reports-filtered-dark-en-1440.png",
+     "contrast": {
+      "checked": 60,
+      "failures": [],
+      "images": [],
+      "skipped": {
+       "covered": 0,
+       "offscreen": 0,
+       "disabled": 0
+      }
+     },
+     "axe": [],
+     "focus": {
+      "steps": [
+       {
+        "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+        "text": "Skip to content",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "1px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         16,
+         8,
+         133,
+         43
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": false,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Overview",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         76,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       },
+       {
+        "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+        "text": "Spaces",
+        "focusVisible": true,
+        "outline": {
+         "style": "solid",
+         "width": "2px",
+         "color": "#f7fbff",
+         "offset": "2px"
+        },
+        "boxShadow": "none",
+        "ring": "#f7fbff",
+        "sidebarRing": "#f7fbff",
+        "rect": [
+         12,
+         155,
+         223,
+         40
+        ],
+        "inView": true,
+        "onTop": true,
+        "inDialog": false,
+        "inSidebar": true,
+        "inCard": false
+       }
+      ],
+      "ok": true,
+      "theme": "dark"
+     },
+     "focusShot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-admin-reports-filtered-dark-en-1440-focus.png",
+     "console": [
+      {
+       "kind": "log.javascript",
+       "text": "Access to XMLHttpRequest at 'https://accounts.google.com/gsi/style' from origin 'http://localhost:5323' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. http://localhost:5323/dashboard/admin/reports?space=26"
+      },
+      {
+       "kind": "network.failed",
+       "text": "net::ERR_FAILED https://accounts.google.com/gsi/style"
+      },
+      {
+       "kind": "log.network",
+       "text": "Failed to load resource: net::ERR_FAILED https://accounts.google.com/gsi/style"
+      }
+     ]
+    }
+   },
+   "axe": {
+    "light-ar-390": [],
+    "dark-en-1440": []
+   },
+   "focus": {
+    "light-ar-390": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "تخطَّ إلى المحتوى",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        248,
+        8,
+        126,
+        43
+       ],
+       "inView": true,
+       "onTop": false,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-wrapper] > div[data-slot=sidebar-inset] > header > button[data-slot=sidebar-trigger][aria-label=\"القائمة\"]",
+       "text": "",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        334,
+        8,
+        40,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div > section[aria-label=\"بلاغات البيانات\"] > div[data-slot=toggle-group][role=radiogroup][aria-label=\"تصفية حسب الحالة\"] > button[data-slot=toggle-group-item][role=radio]",
+       "text": "الكل",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#1a1f25",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#1a1f25",
+       "sidebarRing": "#1a1f25",
+       "rect": [
+        302,
+        141,
+        72,
+        36
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "light"
+    },
+    "dark-en-1440": {
+     "steps": [
+      {
+       "el": "div#root > div[data-slot=sidebar-wrapper] > a",
+       "text": "Skip to content",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "1px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        16,
+        8,
+        133,
+        43
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": false,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Overview",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        76,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      },
+      {
+       "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+       "text": "Spaces",
+       "focusVisible": true,
+       "outline": {
+        "style": "solid",
+        "width": "2px",
+        "color": "#f7fbff",
+        "offset": "2px"
+       },
+       "boxShadow": "none",
+       "ring": "#f7fbff",
+       "sidebarRing": "#f7fbff",
+       "rect": [
+        12,
+        155,
+        223,
+        40
+       ],
+       "inView": true,
+       "onTop": true,
+       "inDialog": false,
+       "inSidebar": true,
+       "inCard": false
+      }
+     ],
+     "ok": true,
+     "theme": "dark"
+    }
+   }
+  }
+ },
+ "hover": [
+  {
+   "label": "FilterTag's remove",
+   "theme": "light",
+   "lang": "en",
+   "kind": "wash",
+   "want": "#d7dfe6",
+   "rest": {
+    "el": "section[aria-label=\"Data reports\"] > div > span[data-slot=filter-tag] > button[data-slot=button][aria-label=\"Remove the space filter\"]",
+    "text": "",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ecf4fc",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "section[aria-label=\"Data reports\"] > div > span[data-slot=filter-tag] > button[data-slot=button][aria-label=\"Remove the space filter\"]",
+    "text": "",
+    "bg": "oklab(0.236863 -0.00398637 -0.0131455 / 0.1)",
+    "bgHex": "#1a1f25",
+    "bgAlpha": 0.1,
+    "color": "#1a1f25",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#d7dfe6",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     400,
+     296
+    ],
+    "hex": "#d7dee6"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-hover-FilterTag-s-remove-light-en.png"
+  },
+  {
+   "label": "sort header (admin spaces)",
+   "theme": "light",
+   "lang": "en",
+   "missing": "[...document.querySelectorAll('[data-slot=table-head] button')].find((b) => window.__vp.visible(b))"
+  },
+  {
+   "label": "admin spaces row",
+   "theme": "light",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "div[data-slot=table-container] > table[data-slot=table][aria-label=\"Spaces\"] > tbody[data-slot=table-body] > tr[data-slot=table-row]",
+    "text": "Al-Salam Hub Deir al-Balah Unverified — No owner Up to date ",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffffff",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div[data-slot=table-container] > table[data-slot=table][aria-label=\"Spaces\"] > tbody[data-slot=table-body] > tr[data-slot=table-row]",
+    "text": "Al-Salam Hub Deir al-Balah Unverified — No owner Up to date ",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffffff",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": false,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     844,
+     320
+    ],
+    "hex": "#dde5ed"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-hover-admin-spaces-row-light-en.png"
+  },
+  {
+   "label": "admin sidebar item beside the current one",
+   "theme": "light",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#dde5ed",
+   "rest": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Space owners",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#484e54",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #484e54",
+    "shadow": "none",
+    "painted": "#ffffff",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#484e54",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #484e54",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#484e54",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #484e54",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Space owners",
+    "bg": "rgb(221, 229, 237)",
+    "bgHex": "#dde5ed",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#dde5ed",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selRest": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Spaces",
+    "bg": "rgb(255, 227, 253)",
+    "bgHex": "#ffe3fd",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffe3fd",
+    "before": {
+     "bg": "rgb(181, 91, 179)",
+     "bgHex": "#b55bb3",
+     "bgAlpha": 1,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "selHover": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Spaces",
+    "bg": "rgb(255, 227, 253)",
+    "bgHex": "#ffe3fd",
+    "bgAlpha": 1,
+    "color": "#1a1f25",
+    "border": "#dde5ed",
+    "borderStart": "#dde5ed",
+    "borderWidth": "0px",
+    "outline": "none 3px #1a1f25",
+    "shadow": "none",
+    "painted": "#ffe3fd",
+    "before": {
+     "bg": "rgb(181, 91, 179)",
+     "bgHex": "#b55bb3",
+     "bgAlpha": 1,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#1a1f25",
+     "border": "#dde5ed",
+     "borderStart": "#dde5ed",
+     "borderWidth": "0px",
+     "outline": "none 3px #1a1f25",
+     "shadow": "none"
+    }
+   },
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": true,
+    "selectedIsAccent": true,
+    "differ": true
+   },
+   "pixelSample": {
+    "at": [
+     225,
+     202
+    ],
+    "hex": "#dde5ed"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-hover-admin-sidebar-item-beside-the-current-one-light-en.png"
+  },
+  {
+   "label": "FilterTag's remove",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "wash",
+   "want": "#3c4147",
+   "rest": {
+    "el": "section[aria-label=\"Data reports\"] > div > span[data-slot=filter-tag] > button[data-slot=button][aria-label=\"Remove the space filter\"]",
+    "text": "",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "section[aria-label=\"Data reports\"] > div > span[data-slot=filter-tag] > button[data-slot=button][aria-label=\"Remove the space filter\"]",
+    "text": "",
+    "bg": "oklab(0.986198 -0.00252253 -0.00630087 / 0.08)",
+    "bgHex": "#f7fbff",
+    "bgAlpha": 0.08,
+    "color": "#f7fbff",
+    "border": "#000000",
+    "borderStart": "#000000",
+    "borderWidth": "1px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#3c4147",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     400,
+     296
+    ],
+    "hex": "#3d4147"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-hover-FilterTag-s-remove-dark-en.png"
+  },
+  {
+   "label": "sort header (admin spaces)",
+   "theme": "dark",
+   "lang": "en",
+   "missing": "[...document.querySelectorAll('[data-slot=table-head] button')].find((b) => window.__vp.visible(b))"
+  },
+  {
+   "label": "admin spaces row",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#2c3137",
+   "rest": {
+    "el": "div[data-slot=table-container] > table[data-slot=table][aria-label=\"Spaces\"] > tbody[data-slot=table-body] > tr[data-slot=table-row]",
+    "text": "Al-Salam Hub Deir al-Balah Unverified — No owner Up to date ",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#1a1f25",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div[data-slot=table-container] > table[data-slot=table][aria-label=\"Spaces\"] > tbody[data-slot=table-body] > tr[data-slot=table-row]",
+    "text": "Al-Salam Hub Deir al-Balah Unverified — No owner Up to date ",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#1a1f25",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": null,
+   "selHover": null,
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": false,
+    "selectedKeeps": null,
+    "selectedIsAccent": null,
+    "differ": null
+   },
+   "pixelSample": {
+    "at": [
+     844,
+     320
+    ],
+    "hex": "#2c3137"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-hover-admin-spaces-row-dark-en.png"
+  },
+  {
+   "label": "admin sidebar item beside the current one",
+   "theme": "dark",
+   "lang": "en",
+   "kind": "hover",
+   "want": "#2c3137",
+   "rest": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Space owners",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bgHex": "#000000",
+    "bgAlpha": 0,
+    "color": "#c9d0d7",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #c9d0d7",
+    "shadow": "none",
+    "painted": "#1a1f25",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#c9d0d7",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #c9d0d7",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#c9d0d7",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #c9d0d7",
+     "shadow": "none"
+    }
+   },
+   "hovered": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Space owners",
+    "bg": "rgb(44, 49, 55)",
+    "bgHex": "#2c3137",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#2c3137",
+    "before": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selRest": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Spaces",
+    "bg": "oklab(0.313362 0.0706377 -0.043643)",
+    "bgHex": "#471f46",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#471f46",
+    "before": {
+     "bg": "rgb(210, 126, 208)",
+     "bgHex": "#d27ed0",
+     "bgAlpha": 1,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "selHover": {
+    "el": "div[data-slot=sidebar-group][role=group] > ul[data-slot=sidebar-menu] > li[data-slot=sidebar-menu-item] > a[data-slot=sidebar-menu-button]",
+    "text": "Spaces",
+    "bg": "oklab(0.313362 0.0706377 -0.043643)",
+    "bgHex": "#471f46",
+    "bgAlpha": 1,
+    "color": "#f7fbff",
+    "border": "#2c3137",
+    "borderStart": "#2c3137",
+    "borderWidth": "0px",
+    "outline": "none 3px #f7fbff",
+    "shadow": "none",
+    "painted": "#471f46",
+    "before": {
+     "bg": "rgb(210, 126, 208)",
+     "bgHex": "#d27ed0",
+     "bgAlpha": 1,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    },
+    "after": {
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgHex": "#000000",
+     "bgAlpha": 0,
+     "color": "#f7fbff",
+     "border": "#2c3137",
+     "borderStart": "#2c3137",
+     "borderWidth": "0px",
+     "outline": "none 3px #f7fbff",
+     "shadow": "none"
+    }
+   },
+   "verdict": {
+    "hoverIsToken": true,
+    "hoverChanged": true,
+    "selectedKeeps": true,
+    "selectedIsAccent": true,
+    "differ": true
+   },
+   "pixelSample": {
+    "at": [
+     225,
+     202
+    ],
+    "hex": "#2c3137"
+   },
+   "shot": "C:/dev/masaha/workspace/TASKS/IDENTITY/lanes/scratch-v/raw/adm-hover-admin-sidebar-item-beside-the-current-one-dark-en.png"
+  }
+ ],
+ "ec": {
+  "adminHeader": [
+   {
+    "width": 1440,
+    "lang": "ar",
+    "read": "مساحة · إدارة المنصة",
+    "logos": [
+     {
+      "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+      "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+      "size": [
+       98.58,
+       36
+      ],
+      "pos": [
+       1325,
+       16
+      ],
+      "visible": true,
+      "viewBox": "263 45 2473 903",
+      "role": null,
+      "label": null,
+      "hidden": "true",
+      "transforms": [],
+      "link": null,
+      "fills": [
+       "#1a1f25",
+       "#b55bb3"
+      ],
+      "dir": "rtl",
+      "startGap": 0
+     }
+    ]
+   },
+   {
+    "width": 1440,
+    "lang": "en",
+    "read": "Masaha · Platform admin",
+    "logos": [
+     {
+      "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+      "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+      "size": [
+       98.58,
+       36
+      ],
+      "pos": [
+       16,
+       16
+      ],
+      "visible": true,
+      "viewBox": "263 45 2473 903",
+      "role": null,
+      "label": null,
+      "hidden": "true",
+      "transforms": [],
+      "link": null,
+      "fills": [
+       "#1a1f25",
+       "#b55bb3"
+      ],
+      "dir": "ltr",
+      "startGap": 0
+     }
+    ]
+   },
+   {
+    "width": 768,
+    "lang": "ar",
+    "read": "مساحة · إدارة المنصة",
+    "logos": [
+     {
+      "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+      "cls": "shrink-0 aspect-square size-9",
+      "size": [
+       36,
+       36
+      ],
+      "pos": [
+       719,
+       16
+      ],
+      "visible": true,
+      "viewBox": "190 17 778 778",
+      "role": null,
+      "label": null,
+      "hidden": "true",
+      "transforms": [],
+      "link": null,
+      "fills": [
+       "#1a1f25",
+       "#1a1f25",
+       "#b55bb3"
+      ],
+      "dir": "rtl",
+      "startGap": 13.5
+     }
+    ]
+   },
+   {
+    "width": 768,
+    "lang": "en",
+    "read": "Masaha · Platform admin",
+    "logos": [
+     {
+      "where": "div#root > div[data-slot=sidebar-wrapper] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+      "cls": "shrink-0 aspect-square size-9",
+      "size": [
+       36,
+       36
+      ],
+      "pos": [
+       14,
+       16
+      ],
+      "visible": true,
+      "viewBox": "190 17 778 778",
+      "role": null,
+      "label": null,
+      "hidden": "true",
+      "transforms": [],
+      "link": null,
+      "fills": [
+       "#1a1f25",
+       "#1a1f25",
+       "#b55bb3"
+      ],
+      "dir": "ltr",
+      "startGap": 13.5
+     }
+    ]
+   },
+   {
+    "width": 390,
+    "lang": "ar",
+    "read": "مساحة · إدارة المنصة",
+    "logos": [
+     {
+      "where": "div#radix-_r_2_[data-slot=sheet-content][role=dialog] > nav[data-slot=sidebar][aria-label=\"لوحة إدارة المنصة\"] > div[data-slot=sidebar-header]",
+      "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+      "size": [
+       98.58,
+       36
+      ],
+      "pos": [
+       275,
+       90
+      ],
+      "visible": true,
+      "viewBox": "263 45 2473 903",
+      "role": null,
+      "label": null,
+      "hidden": "true",
+      "transforms": [],
+      "link": null,
+      "fills": [
+       "#1a1f25",
+       "#b55bb3"
+      ],
+      "dir": "rtl",
+      "startGap": 0
+     }
+    ]
+   },
+   {
+    "width": 390,
+    "lang": "en",
+    "read": "Masaha · Platform admin",
+    "logos": [
+     {
+      "where": "div#radix-_r_2_[data-slot=sheet-content][role=dialog] > nav[data-slot=sidebar][aria-label=\"Platform admin\"] > div[data-slot=sidebar-header]",
+      "cls": "w-auto shrink-0 aspect-[2473/903] h-9",
+      "size": [
+       98.58,
+       36
+      ],
+      "pos": [
+       16,
+       90
+      ],
+      "visible": true,
+      "viewBox": "263 45 2473 903",
+      "role": null,
+      "label": null,
+      "hidden": "true",
+      "transforms": [],
+      "link": null,
+      "fills": [
+       "#1a1f25",
+       "#b55bb3"
+      ],
+      "dir": "ltr",
+      "startGap": 0
+     }
+    ]
+   }
+  ],
+  "ec6mark": {
+   "a": [
+    16,
+    16
+   ],
+   "b": [
+    96,
+    16
+   ],
+   "cls": "shrink-0 aspect-square size-9",
+   "size": [
+    36,
+    36
+   ],
+   "differing": 0,
+   "total": 4096,
+   "percent": 0,
+   "worst": 0,
+   "ok": true
+  }
+ },
+ "notes": [],
+ "shots": [
+  "44-admin-overview-light-ar-390.png",
+  "44-admin-overview-dark-en-1440.png",
+  "45-admin-rail-light-ar-768.png",
+  "45-admin-rail-dark-en-768.png",
+  "46-admin-spaces-light-ar-390.png",
+  "46-admin-spaces-dark-en-1440.png",
+  "47-admin-space-editor-light-ar-390.png",
+  "47-admin-space-editor-dark-en-1440.png",
+  "48-ec6-mark-64-component-vs-file.png",
+  "49-admin-drawer-light-ar-390.png",
+  "49-admin-drawer-dark-en-390.png",
+  "50-admin-reports-filter-tag-dark-en-1440.png",
+  "51-hover-filter-tag-remove-light.png",
+  "51-hover-filter-tag-remove-dark.png"
+ ],
+ "signedInAs": "admin",
+ "blocked": [],
+ "loads": 1,
+ "chrome": {
+  "pid": 20964,
+  "left": []
+ }
+}

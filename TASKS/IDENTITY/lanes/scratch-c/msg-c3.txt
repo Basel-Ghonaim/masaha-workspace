@@ -1,0 +1,16 @@
+docs(design): make berry the prototype's default
+
+Production now draws ink + berry (ADR 0019), but the prototype still
+drew Sea unless a page was opened with ?identity=slate-berry, so the
+design source no longer showed what the site shows.
+
+Without ?identity= (or with an unknown one) every app page is now
+slate-berry, and a link carries the identity only when it is not the
+default. Sea, the first identity, and slate-coral, the trial's other
+candidate, stay behind ?identity=sea and ?identity=slate-coral to
+compare; Sea is the bundle's own tokens, with no data-identity. The
+tab's icon follows the identity as before. The reset email's design
+takes the colours production sends, the stylesheet's header says what
+is now the default, and the archive's documents follow: a CHANGES
+section, INDEX's ?identity= row, and SCREENS' Wordmark line, whose
+option A the logo superseded.

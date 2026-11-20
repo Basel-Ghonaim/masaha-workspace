@@ -1,0 +1,366 @@
+[
+ {
+  "id": "PU-01",
+  "part": "PU",
+  "screen": "1 Home",
+  "state": "default (guest)",
+  "role": "visitor",
+  "url": "/"
+ },
+ {
+  "id": "PU-02",
+  "part": "PU",
+  "screen": "1 Home",
+  "state": "signed in: account in the header, saved hearts",
+  "role": "user",
+  "url": "/"
+ },
+ {
+  "id": "PU-03",
+  "part": "PU",
+  "screen": "1 Home",
+  "state": "nearest to me, location granted in Gaza City",
+  "role": "visitor",
+  "url": "/",
+  "geo": {
+   "lat": 31.515,
+   "lng": 34.45,
+   "accuracy": 50
+  },
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الأقرب إليّ",
+     "en": "text:Nearest to me"
+    },
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "id": "PU-04",
+  "part": "PU",
+  "screen": "1 Home",
+  "state": "nearest to me, location refused",
+  "role": "visitor",
+  "url": "/",
+  "geo": "denied",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الأقرب إليّ",
+     "en": "text:Nearest to me"
+    },
+    "wait": 1500
+   }
+  ]
+ },
+ {
+  "id": "PU-05",
+  "part": "PU",
+  "screen": "2 Directory (list)",
+  "state": "default",
+  "role": "visitor",
+  "url": "/spaces"
+ },
+ {
+  "id": "PU-06",
+  "part": "PU",
+  "screen": "2 Directory (list)",
+  "state": "a subscription chosen, sorted by its price (prices on the cards)",
+  "role": "visitor",
+  "url": "/spaces?period=MONTH&sort=priceAsc"
+ },
+ {
+  "id": "PU-07",
+  "part": "PU",
+  "screen": "2 Directory (list)",
+  "state": "filters bottom sheet open, an area and a subscription on",
+  "role": "visitor",
+  "url": "/spaces?filters=open&area=2&period=MONTH",
+  "widths": [
+   390,
+   768
+  ]
+ },
+ {
+  "id": "PU-08",
+  "part": "PU",
+  "screen": "2 Directory (list)",
+  "state": "no results (search)",
+  "role": "visitor",
+  "url": "/spaces?q=zzzz"
+ },
+ {
+  "id": "PU-09",
+  "part": "PU",
+  "screen": "2 Directory (list)",
+  "state": "page 2 of 3",
+  "role": "visitor",
+  "url": "/spaces?page=2"
+ },
+ {
+  "id": "PU-10",
+  "part": "PU",
+  "screen": "2 Directory (map)",
+  "state": "default, every pin",
+  "role": "visitor",
+  "url": "/spaces?view=map",
+  "settle": 1500
+ },
+ {
+  "id": "PU-11",
+  "part": "PU",
+  "screen": "2 Directory (map)",
+  "state": "a space chosen on the map (card ≥768, bottom sheet <768)",
+  "role": "visitor",
+  "url": "/spaces?view=map",
+  "settle": 900,
+  "steps": [
+   {
+    "waitFor": "css:.map-mark[role=button]",
+    "ms": 12000
+   },
+   {
+    "click": "css:.map-mark[role=button]",
+    "nth": 0,
+    "wait": 900
+   }
+  ]
+ },
+ {
+  "id": "PU-12",
+  "part": "PU",
+  "screen": "2 Directory (map)",
+  "state": "placing my location by hand (after a refused location)",
+  "role": "visitor",
+  "url": "/spaces?view=map",
+  "geo": "denied",
+  "settle": 1200,
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الأقرب إليّ",
+     "en": "text:Nearest to me"
+    },
+    "wait": 1200
+   },
+   {
+    "click": {
+     "ar": "text:حدّد موقعي على الخريطة",
+     "en": "text:Set my location on the map"
+    },
+    "wait": 1200
+   }
+  ]
+ },
+ {
+  "id": "PU-13",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "verified, 4 photos, a running offer (Pal Hub)",
+  "role": "visitor",
+  "url": "/spaces/pal-hub",
+  "settle": 1200
+ },
+ {
+  "id": "PU-14",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "verified, live status FULL (answer patched), hours in 3 groups, phone only",
+  "role": "visitor",
+  "url": "/spaces/radwan-study-hall",
+  "settle": 1200,
+  "patch": {
+   "url": "*/api/v1/spaces/radwan-study-hall/occupancy",
+   "method": "GET",
+   "set": {
+    "data.status": "FULL",
+    "data.hoursStatus": "OPEN"
+   }
+  }
+ },
+ {
+  "id": "PU-15",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "unverified, stale prices hidden, owners' notice",
+  "role": "visitor",
+  "url": "/spaces/freelancers-house",
+  "settle": 1200
+ },
+ {
+  "id": "PU-16",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "a running closure",
+  "role": "visitor",
+  "url": "/spaces/shati-sea-view",
+  "settle": 1200
+ },
+ {
+  "id": "PU-17",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "no Arabic name; live status not set up (no capacity)",
+  "role": "visitor",
+  "url": "/spaces/zeitoun-works",
+  "settle": 1200
+ },
+ {
+  "id": "PU-18",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "a long Arabic name (named state NS4)",
+  "role": "visitor",
+  "url": "/spaces/nuseirat-study-house",
+  "settle": 1200
+ },
+ {
+  "id": "PU-19",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "photo viewer open",
+  "role": "visitor",
+  "url": "/spaces/pal-hub",
+  "settle": 900,
+  "steps": [
+   {
+    "click": {
+     "ar": "text:عرض الصورة 1",
+     "en": "text:View photo 1"
+    },
+    "wait": 1000
+   }
+  ]
+ },
+ {
+  "id": "PU-20",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "a guest taps the heart: the sign-in prompt",
+  "role": "visitor",
+  "url": "/spaces/pal-hub",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:حفظ بال هاب في المفضّلة",
+     "en": "text:Save Pal Hub to favourites"
+    },
+    "wait": 600
+   }
+  ]
+ },
+ {
+  "id": "PU-21",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "report wrong information (signed in), sent empty",
+  "role": "user",
+  "url": "/spaces/pal-hub",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:الإبلاغ عن معلومة غير صحيحة",
+     "en": "text:Report wrong information"
+    },
+    "wait": 600
+   },
+   {
+    "click": {
+     "ar": "text:إرسال",
+     "en": "text:Send"
+    },
+    "within": "css:[role=dialog]",
+    "wait": 400
+   }
+  ]
+ },
+ {
+  "id": "PU-22",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "unverified: the owners' contact dialog",
+  "role": "visitor",
+  "url": "/spaces/freelancers-house",
+  "steps": [
+   {
+    "click": {
+     "ar": "text:هل تدير هذه المساحة؟ تواصل معنا",
+     "en": "text:Do you run this space? Contact us"
+    },
+    "wait": 800
+   }
+  ]
+ },
+ {
+  "id": "PU-23",
+  "part": "PU",
+  "screen": "4 About / Contact",
+  "state": "default",
+  "role": "visitor",
+  "url": "/about"
+ },
+ {
+  "id": "PU-24",
+  "part": "PU",
+  "screen": "33 Privacy policy",
+  "state": "default",
+  "role": "visitor",
+  "url": "/privacy"
+ },
+ {
+  "id": "PU-25",
+  "part": "PU",
+  "screen": "8 404",
+  "state": "an unknown address",
+  "role": "visitor",
+  "url": "/no-such-page"
+ },
+ {
+  "id": "PU-26",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "a space that does not exist",
+  "role": "visitor",
+  "url": "/spaces/no-such-space"
+ },
+ {
+  "id": "PU-27",
+  "part": "PU",
+  "screen": "1 Home",
+  "state": "evening: after Pal Hub's closing (Friday 20:00 Gaza; taken after 18:00 UTC)",
+  "role": "visitor",
+  "url": "/",
+  "after": "18:00Z"
+ },
+ {
+  "id": "PU-28",
+  "part": "PU",
+  "screen": "2 Directory (list)",
+  "state": "evening: after Pal Hub's closing (Friday 20:00 Gaza; taken after 18:00 UTC)",
+  "role": "visitor",
+  "url": "/spaces",
+  "after": "18:00Z"
+ },
+ {
+  "id": "PU-29",
+  "part": "PU",
+  "screen": "2 Directory (map)",
+  "state": "evening: after Pal Hub's closing (Friday 20:00 Gaza; taken after 18:00 UTC)",
+  "role": "visitor",
+  "url": "/spaces?view=map",
+  "settle": 1500,
+  "after": "18:00Z"
+ },
+ {
+  "id": "PU-30",
+  "part": "PU",
+  "screen": "3 Space details",
+  "state": "Pal Hub after Pal Hub's closing (Friday 20:00 Gaza; taken after 18:00 UTC)",
+  "role": "visitor",
+  "url": "/spaces/pal-hub",
+  "settle": 1200,
+  "after": "18:00Z"
+ }
+]

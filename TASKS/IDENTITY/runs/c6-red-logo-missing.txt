@@ -1,0 +1,30 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |component| src/shared/design-system/components/display/Logo/Logo.component.test.tsx [ src/shared/design-system/components/display/Logo/Logo.component.test.tsx ]
+Error: Failed to resolve import "./Logo" from "apps/web/src/shared/design-system/components/display/Logo/index.ts". Does the file exist?
+  Plugin: vite:import-analysis
+  File: C:/dev/masaha/app-design/apps/web/src/shared/design-system/components/display/Logo/index.ts:1:37
+  1  |  export { Logo } from "./Logo";
+     |                        ^
+  2  |  
+ ❯ TransformPluginContext._formatLog ../../node_modules/vite/dist/node/chunks/node.js:8736:39
+ ❯ TransformPluginContext.error ../../node_modules/vite/dist/node/chunks/node.js:8733:14
+ ❯ normalizeUrl ../../node_modules/vite/dist/node/chunks/node.js:26423:18
+ ❯ ../../node_modules/vite/dist/node/chunks/node.js:26493:30
+ ❯ TransformPluginContext.transform ../../node_modules/vite/dist/node/chunks/node.js:26459:4
+ ❯ EnvironmentPluginContainer.transform ../../node_modules/vite/dist/node/chunks/node.js:8515:14
+ ❯ loadAndTransform ../../node_modules/vite/dist/node/chunks/node.js:19998:26
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  12:08:03
+   Duration  9.13s (environment 78%, setup 20%, transform 1%)
+

@@ -1,0 +1,79 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (195 tests | 4 failed) 30ms
+   ❯ theme key parity (6)
+     × resolves every colour to a colour in the light theme, a translucent one only with its ground 6ms
+     × resolves every colour to a colour in the dark theme, a translucent one only with its ground 1ms
+   ❯ contrast (138)
+     × light: primary-foreground on primary-hover meets 4.5:1 0ms
+     × dark: primary-foreground on primary-hover meets 4.5:1 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the light theme, a translucent one only with its ground
+Error: Unsupported mix: color-mix(in oklch, var(--neutral-900), var(--neutral-50) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:337:13
+    335|     // ink's neutrals paints with hue 0, a warm grey this model would …
+    336|     if (method !== 'in oklab' || colours.length !== 2) {
+    337|       throw new Error(`Unsupported mix: ${value}`);
+       |             ^
+    338|     }
+    339|     const [first, second] = colours.map((part) => {
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:366:10
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:483:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:483:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > theme key parity > resolves every colour to a colour in the dark theme, a translucent one only with its ground
+Error: Unsupported mix: color-mix(in oklch, var(--neutral-50), var(--neutral-950) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:337:13
+    335|     // ink's neutrals paints with hue 0, a warm grey this model would …
+    336|     if (method !== 'in oklab' || colours.length !== 2) {
+    337|       throw new Error(`Unsupported mix: ${value}`);
+       |             ^
+    338|     }
+    339|     const [first, second] = colours.map((part) => {
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:366:10
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:483:59
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:483:41
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: primary-foreground on primary-hover meets 4.5:1
+Error: Unsupported mix: color-mix(in oklch, var(--neutral-900), var(--neutral-50) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:337:13
+    335|     // ink's neutrals paints with hue 0, a warm grey this model would …
+    336|     if (method !== 'in oklab' || colours.length !== 2) {
+    337|       throw new Error(`Unsupported mix: ${value}`);
+       |             ^
+    338|     }
+    339|     const [first, second] = colours.map((part) => {
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:366:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:371:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:520:55
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > dark: primary-foreground on primary-hover meets 4.5:1
+Error: Unsupported mix: color-mix(in oklch, var(--neutral-50), var(--neutral-950) 18%)
+ ❯ resolveValue src/shared/design-system/tokens/semantic.unit.test.ts:337:13
+    335|     // ink's neutrals paints with hue 0, a warm grey this model would …
+    336|     if (method !== 'in oklab' || colours.length !== 2) {
+    337|       throw new Error(`Unsupported mix: ${value}`);
+       |             ^
+    338|     }
+    339|     const [first, second] = colours.map((part) => {
+ ❯ resolveToken src/shared/design-system/tokens/semantic.unit.test.ts:366:10
+ ❯ painted src/shared/design-system/tokens/semantic.unit.test.ts:371:16
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:520:55
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 191 passed (195)
+   Start at  14:50:05
+   Duration  449ms (transform 55%, import 22%, tests 19%, worker 5%)
+

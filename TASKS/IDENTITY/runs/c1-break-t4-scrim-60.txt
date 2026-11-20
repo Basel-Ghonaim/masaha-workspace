@@ -1,0 +1,27 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design/apps/web
+
+ ❯ |unit| src/shared/design-system/tokens/semantic.unit.test.ts (194 tests | 1 failed) 36ms
+   ❯ contrast (138)
+     × light: scrim-foreground on scrim over #ffffff meets 4.5:1 5ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| src/shared/design-system/tokens/semantic.unit.test.ts > contrast > light: scrim-foreground on scrim over #ffffff meets 4.5:1
+AssertionError: expected 4.211095266504643 to be greater than or equal to 4.5
+ ❯ src/shared/design-system/tokens/semantic.unit.test.ts:538:21
+    536|     ({ theme, text, surface, over, minimum }) => {
+    537|       const ratio = contrastRatio(painted(theme, text), painted(theme,…
+    538|       expect(ratio).toBeGreaterThanOrEqual(minimum);
+       |                     ^
+    539|     },
+    540|   );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 193 passed (194)
+   Start at  11:54:06
+   Duration  436ms (transform 56%, tests 20%, import 20%, worker 4%)
+

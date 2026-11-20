@@ -1,0 +1,29 @@
+12:56:33 chrome pid 14700, port 65446, profile cdp-profile-rechk
+12:56:54 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:56:55 signed in (demo-owner@example.com) at /dashboard/spaces/26/desk
+12:56:59   primary (Check in a visit) light: rest #1a1f25 -> hovered #3c4147 (computed rgb(26, 31, 37) -> oklab(0.371743 -0.00372288 -0.0119135))
+12:57:00   scrim light: ground #ffffff -> painted #85888a (computed oklab(0.179324 -0.00474257 -0.0120903 / 0.5)); ink n-950 @ 0.5: #86898b
+12:57:04   primary (calendar range end) light: rest #1a1f25 -> hovered #3c4147 (computed rgb(26, 31, 37) -> oklab(0.371743 -0.00372288 -0.0119135))
+12:57:09   primary (Check in a visit) dark: rest #f7fbff -> hovered #c7cbd0 (computed rgb(247, 251, 255) -> oklab(0.840961 -0.00292214 -0.00734296))
+12:57:10   scrim dark: ground #1a1f25 -> painted #11161b (computed oklab(0.179324 -0.00474257 -0.0120903 / 0.7)); ink n-950 @ 0.7: #11161b
+12:57:14   primary (calendar range end) dark: rest #f7fbff -> hovered #c7cbd0 (computed rgb(247, 251, 255) -> oklab(0.840961 -0.00292214 -0.00734296))
+12:57:45 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 149 bytes)
+12:57:49   live status neutral (secondary) light: rest #ecf4fc -> hovered #d9e1e9 (computed rgb(236, 244, 252) -> oklab(0.905318 -0.00501498 -0.0127381))
+12:57:49     («Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩», state read again: true)
+12:58:15 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 149 bytes)
+12:58:22   live status neutral (secondary) dark: rest #2c3137 -> hovered #3a3f45 (computed rgb(44, 49, 55) -> oklab(0.36477 -0.0036429 -0.0117978))
+12:58:22     («Visitors see: ⁨Closed now⁩, set by hand · ⁨1:01⁩», state read again: true)
+12:58:45 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:58:48   secondary probe {"light oklab":"oklab(0.905318 -0.00501498 -0.0127381) = #d9e1e9","dark oklab":"oklab(0.36477 -0.0036429 -0.0117978) = #3a3f45","light oklch (before)":"oklch(0.905318 0.0136936 none) = #e8dcdf","dark oklch (before)":"oklch(0.36477 0.0123493 none) = #443c3e"}
+12:58:48 fulfilled /api/v1/manage/spaces/26/photos (605 -> 1052 bytes)
+12:58:56   photo light: mouse solid 2px #b55bb3 offset -2px fv false {"top0":"#b55bb3","top1":"#b55bb3","top2":"#ecf4fc","start0":"#b55bb3","start1":"#b55bb3","outside":"#ffffff"}; focused solid 2px #1a1f25 offset 2px {"top0":"#ecf4fc","top1":"#ecf4fc","top2":"#ecf4fc","start0":"#ecf4fc","start1":"#ecf4fc","outside":"#ffffff"}; keyboard solid 2px #b55bb3 offset -2px fv true {"top0":"#b55bb3","top1":"#b55bb3","top2":"#ecf4fc","start0":"#b55bb3","start1":"#ecf4fc","outside":"#ffffff"}
+12:59:03   photo dark: mouse solid 2px #d27ed0 offset -2px fv false {"top0":"#d27ed0","top1":"#d27ed0","top2":"#2c3137","start0":"#d27ed0","start1":"#d27ed0","outside":"#1a1f25"}; focused solid 2px #f7fbff offset 2px {"top0":"#2c3137","top1":"#2c3137","top2":"#2c3137","start0":"#2c3137","start1":"#2c3137","outside":"#1a1f25"}; keyboard solid 2px #d27ed0 offset -2px fv true {"top0":"#d27ed0","top1":"#d27ed0","top2":"#2c3137","start0":"#d27ed0","start1":"#2c3137","outside":"#1a1f25"}
+12:59:07   phone menu current (Spaces) light: rest #ffe3fd -> hovered #ffe3fd (computed rgb(255, 227, 253) -> rgb(255, 227, 253))
+12:59:09   phone menu other (Home) light: rest #ffffff -> hovered #dde5ed (computed rgba(0, 0, 0, 0) -> rgb(221, 229, 237))
+12:59:13   phone menu current (Spaces) dark: rest #471f46 -> hovered #471f46 (computed oklab(0.313362 0.0706377 -0.043643) -> oklab(0.313362 0.0706377 -0.043643))
+12:59:15   phone menu other (Home) dark: rest #1a1f25 -> hovered #2c3137 (computed rgba(0, 0, 0, 0) -> rgb(44, 49, 55))
+12:59:20   phonemenu-recheck light-ar-390: SPARK-BUTTON 1 | CONSOLE 56 (checked 9 texts, 544 elements)
+12:59:20 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 100 bytes)
+12:59:24   desk-recheck dark-en-1440: SPARK-BUTTON 1 | CONSOLE 3 (checked 59 texts, 319 elements)
+12:59:24   axe menu []; axe desk []
+12:59:27 chrome 14700 stopped by PID; cdp-profile-rechk processes left: 0

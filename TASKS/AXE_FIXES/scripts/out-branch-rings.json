@@ -1,0 +1,673 @@
+{
+ "label": "branch-rings",
+ "results": [
+  {
+   "screen": "photos",
+   "width": 390,
+   "lang": "ar",
+   "theme": "light",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "light",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "باقي الصور",
+     "tabindex": null,
+     "scroll": 316,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 390,
+   "lang": "ar",
+   "theme": "light",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "light",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "ساعات الذروة",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "regions": [
+    {
+     "label": "ساعات الذروة",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 1440,
+   "lang": "ar",
+   "theme": "light",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "light",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 1440,
+   "lang": "ar",
+   "theme": "light",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "light",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "ساعات الذروة",
+     "tabindex": null,
+     "scroll": 1071,
+     "client": 1071
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 320,
+   "lang": "ar",
+   "theme": "light",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "light",
+    "pageScroll": 320,
+    "pageClient": 320
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "باقي الصور",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    },
+    {
+     "tag": "div",
+     "slot": "table-container",
+     "role": null,
+     "label": null,
+     "tabindex": null,
+     "scroll": 260,
+     "client": 244
+    }
+   ],
+   "regions": [
+    {
+     "label": "باقي الصور",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    }
+   ],
+   "violations": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "nodes": 1,
+     "targets": [
+      "div[data-slot=\"table-container\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "screen": "photos",
+   "width": 390,
+   "lang": "ar",
+   "theme": "dark",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "dark",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "باقي الصور",
+     "tabindex": null,
+     "scroll": 316,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 390,
+   "lang": "ar",
+   "theme": "dark",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "dark",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "ساعات الذروة",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "regions": [
+    {
+     "label": "ساعات الذروة",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 1440,
+   "lang": "ar",
+   "theme": "dark",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "dark",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 1440,
+   "lang": "ar",
+   "theme": "dark",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "dark",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "ساعات الذروة",
+     "tabindex": null,
+     "scroll": 1071,
+     "client": 1071
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 320,
+   "lang": "ar",
+   "theme": "dark",
+   "state": {
+    "lang": "ar",
+    "dir": "rtl",
+    "theme": "dark",
+    "pageScroll": 320,
+    "pageClient": 320
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "باقي الصور",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    },
+    {
+     "tag": "div",
+     "slot": "table-container",
+     "role": null,
+     "label": null,
+     "tabindex": null,
+     "scroll": 260,
+     "client": 244
+    }
+   ],
+   "regions": [
+    {
+     "label": "باقي الصور",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    }
+   ],
+   "violations": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "nodes": 1,
+     "targets": [
+      "div[data-slot=\"table-container\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "screen": "photos",
+   "width": 390,
+   "lang": "en",
+   "theme": "light",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "light",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "The other photos",
+     "tabindex": null,
+     "scroll": 316,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 390,
+   "lang": "en",
+   "theme": "light",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "light",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "Peak hours",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "regions": [
+    {
+     "label": "Peak hours",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 1440,
+   "lang": "en",
+   "theme": "light",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "light",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 1440,
+   "lang": "en",
+   "theme": "light",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "light",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "Peak hours",
+     "tabindex": null,
+     "scroll": 1071,
+     "client": 1071
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 320,
+   "lang": "en",
+   "theme": "light",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "light",
+    "pageScroll": 320,
+    "pageClient": 320
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "The other photos",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    },
+    {
+     "tag": "div",
+     "slot": "table-container",
+     "role": null,
+     "label": null,
+     "tabindex": null,
+     "scroll": 298,
+     "client": 244
+    }
+   ],
+   "regions": [
+    {
+     "label": "The other photos",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    }
+   ],
+   "violations": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "nodes": 1,
+     "targets": [
+      "div[data-slot=\"table-container\"]"
+     ]
+    }
+   ]
+  },
+  {
+   "screen": "photos",
+   "width": 390,
+   "lang": "en",
+   "theme": "dark",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "dark",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "The other photos",
+     "tabindex": null,
+     "scroll": 316,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 390,
+   "lang": "en",
+   "theme": "dark",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "dark",
+    "pageScroll": 390,
+    "pageClient": 390
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "Peak hours",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "regions": [
+    {
+     "label": "Peak hours",
+     "tabindex": "0",
+     "scroll": 576,
+     "client": 316
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 1440,
+   "lang": "en",
+   "theme": "dark",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "dark",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [],
+   "violations": []
+  },
+  {
+   "screen": "occupancy",
+   "width": 1440,
+   "lang": "en",
+   "theme": "dark",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "dark",
+    "pageScroll": 1425,
+    "pageClient": 1425
+   },
+   "scrollers": [],
+   "regions": [
+    {
+     "label": "Peak hours",
+     "tabindex": null,
+     "scroll": 1071,
+     "client": 1071
+    }
+   ],
+   "violations": []
+  },
+  {
+   "screen": "photos",
+   "width": 320,
+   "lang": "en",
+   "theme": "dark",
+   "state": {
+    "lang": "en",
+    "dir": "ltr",
+    "theme": "dark",
+    "pageScroll": 320,
+    "pageClient": 320
+   },
+   "scrollers": [
+    {
+     "tag": "div",
+     "slot": "scroll-region",
+     "role": "group",
+     "label": "The other photos",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    },
+    {
+     "tag": "div",
+     "slot": "table-container",
+     "role": null,
+     "label": null,
+     "tabindex": null,
+     "scroll": 298,
+     "client": 244
+    }
+   ],
+   "regions": [
+    {
+     "label": "The other photos",
+     "tabindex": "0",
+     "scroll": 304,
+     "client": 246
+    }
+   ],
+   "violations": [
+    {
+     "id": "scrollable-region-focusable",
+     "impact": "serious",
+     "nodes": 1,
+     "targets": [
+      "div[data-slot=\"table-container\"]"
+     ]
+    }
+   ]
+  }
+ ],
+ "rings": [
+  {
+   "name": "ring-photos-ar-light-390",
+   "focused": false,
+   "why": "no scroll region with a tab stop"
+  },
+  {
+   "name": "ring-occupancy-ar-light-390",
+   "focused": true,
+   "tabs": 7,
+   "x": 37,
+   "y": 732.84375,
+   "w": 316,
+   "h": 274.375,
+   "outline": "solid 2px rgb(26, 31, 37)",
+   "focusVisible": true
+  },
+  {
+   "name": "ring-photos-ar-light-320",
+   "focused": true,
+   "tabs": 2,
+   "x": 37,
+   "y": 604.84375,
+   "w": 246,
+   "h": 76,
+   "outline": "solid 2px rgb(26, 31, 37)",
+   "focusVisible": true
+  },
+  {
+   "name": "ring-photos-ar-dark-390",
+   "focused": false,
+   "why": "no scroll region with a tab stop"
+  },
+  {
+   "name": "ring-occupancy-ar-dark-390",
+   "focused": true,
+   "tabs": 7,
+   "x": 37,
+   "y": 732.84375,
+   "w": 316,
+   "h": 274.375,
+   "outline": "solid 2px rgb(247, 251, 255)",
+   "focusVisible": true
+  },
+  {
+   "name": "ring-photos-ar-dark-320",
+   "focused": true,
+   "tabs": 2,
+   "x": 37,
+   "y": 604.84375,
+   "w": 246,
+   "h": 76,
+   "outline": "solid 2px rgb(247, 251, 255)",
+   "focusVisible": true
+  },
+  {
+   "name": "ring-photos-en-light-390",
+   "focused": false,
+   "why": "no scroll region with a tab stop"
+  },
+  {
+   "name": "ring-occupancy-en-light-390",
+   "focused": true,
+   "tabs": 7,
+   "x": 37,
+   "y": 732.84375,
+   "w": 316,
+   "h": 274.375,
+   "outline": "solid 2px rgb(26, 31, 37)",
+   "focusVisible": true
+  },
+  {
+   "name": "ring-photos-en-light-320",
+   "focused": true,
+   "tabs": 2,
+   "x": 37,
+   "y": 625.03125,
+   "w": 246,
+   "h": 76,
+   "outline": "solid 2px rgb(26, 31, 37)",
+   "focusVisible": true
+  }
+ ],
+ "errors": []
+}

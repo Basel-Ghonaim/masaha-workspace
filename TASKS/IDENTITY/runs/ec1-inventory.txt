@@ -1,0 +1,140 @@
+apps/web/src/features/desk/components/customer-actions/StateActions.component.test.tsx:221:    expect(buttons[0]).toHaveClass('bg-primary');
+apps/web/src/features/desk/components/customer-actions/StateActions.component.test.tsx:222:    expect(buttons[1]).not.toHaveClass('bg-primary');
+apps/web/src/features/desk/components/sheet/PackageOptions.tsx:56:          <div className="flex min-w-0 items-start justify-between gap-3 rounded-lg border border-primary p-3">
+apps/web/src/features/desk/components/sheet/PackageOptions.tsx:102:                      className="flex min-w-0 cursor-pointer items-start gap-3 rounded-lg border border-border p-3 has-data-checked:border-primary"
+apps/web/src/features/desk/components/uncollected/UncollectedCard.component.test.tsx:48:    expect(collect).toHaveClass('bg-primary');
+apps/web/src/features/desk/components/uncollected/UncollectedCard.component.test.tsx:50:      'bg-primary',
+apps/web/src/features/directory/components/card/SpaceCard.tsx:58:      <Card className="h-full overflow-hidden pt-0 hover:bg-accent">
+apps/web/src/features/directory/components/card/SpaceCard.tsx:74:              <span id={verifiedId} className="flex items-center gap-1 text-body-sm text-primary">
+apps/web/src/features/directory/components/card/SpaceCover.tsx:27:          className="flex size-16 items-center justify-center rounded-xl bg-primary text-heading-1 text-primary-foreground"
+apps/web/src/features/directory/components/favorites/FavoritesView.component.test.tsx:182:    expect(browse).toHaveClass('bg-primary');
+apps/web/src/features/directory/components/map/SpaceSummary.tsx:12:          <span className="flex items-center gap-1 text-body-sm text-primary">
+apps/web/src/features/directory/components/page/ContactList.tsx:16:            className="flex min-w-0 items-center justify-between gap-3 rounded-lg border border-border px-4 py-3 text-body-sm transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+apps/web/src/features/directory/components/page/HoursSection.tsx:42:                    className={cn(row.today && 'bg-accent')}
+apps/web/src/features/directory/components/page/SpaceHeader.tsx:39:          <p className="flex items-center gap-1 text-primary">
+apps/web/src/features/favorites/components/FavoriteButton.component.test.tsx:53:    expect(heart.querySelector('svg')).toHaveClass('fill-current', 'text-primary');
+apps/web/src/features/favorites/components/FavoriteButton.tsx:35:      <HeartIcon aria-hidden className={cn(heart.pressed && 'fill-current text-primary')} />
+apps/web/src/features/finance/components/DebtsTab.tsx:94:              className={tile.href === null ? 'h-full' : 'h-full hover:bg-accent'}
+apps/web/src/features/lookups/components/amenities/AmenityChecklist.tsx:60:                      <CircleCheckIcon aria-hidden className="text-primary" />
+apps/web/src/features/lookups/components/amenities/AmenityChecklist.tsx:62:                      <span className="inline-flex text-primary">
+apps/web/src/features/overview/components/admin/PlatformTiles.tsx:25:                className="flex-1 hover:bg-accent"
+apps/web/src/features/overview/components/owner/OwnerOverview.tsx:48:            className="h-full hover:bg-accent"
+apps/web/src/features/packages/components/sheet/PackageSheet.tsx:93:                        className="text-primary underline underline-offset-4"
+apps/web/src/features/space-links/components/switcher/SpaceHead.tsx:17:        className="flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"
+apps/web/src/features/space-settings/components/pricing/PricingCard.tsx:31:          <Link to={pricesLink} className="text-primary underline underline-offset-4">
+apps/web/src/features/spaces/components/amenities/AmenitiesSheet.tsx:36:              className="text-primary underline underline-offset-4"
+apps/web/src/features/spaces/components/amenities/AmenitiesView.tsx:18:          <span aria-hidden className="flex shrink-0 text-primary">
+apps/web/src/features/spaces/components/contacts/ContactsSheet.tsx:61:                (lifted || dragging) && 'border-primary shadow-floating',
+apps/web/src/features/spaces/components/contacts/ContactsSheet.tsx:68:                  className="flex size-9 shrink-0 cursor-grab items-center justify-center rounded-md text-muted-foreground select-none hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring md:col-span-1 md:mt-6"
+apps/web/src/features/spaces/components/contacts/ContactsSheet.tsx:88:                            <Icon aria-hidden className="size-4 text-primary" />
+apps/web/src/features/spaces/components/contacts/ContactsView.tsx:19:              className="flex min-w-0 items-center gap-3 rounded-lg bg-muted px-3 py-2 hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+apps/web/src/features/spaces/components/contacts/ContactsView.tsx:21:              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-card text-primary">
+apps/web/src/features/spaces/components/editor/ProfileHeader.tsx:41:                <span aria-hidden lang="en" className="text-heading-2 text-primary">
+apps/web/src/features/spaces/components/editor/ProfileHeader.tsx:141:                          className="text-primary underline underline-offset-4"
+apps/web/src/features/spaces/components/hours/HoursView.tsx:15:              row.today && 'bg-accent',
+apps/web/src/features/spaces/components/hours/HoursView.tsx:29:          <Link to={view.closure.href} className="text-primary underline underline-offset-4">
+apps/web/src/features/spaces/components/photos/PhotosEdit.tsx:124:                        (lifted || dragging) && 'outline-2 outline-primary',
+apps/web/src/pages/dashboard/shell/AdminLayout.tsx:19:      className="flex size-9 shrink-0 items-center justify-center rounded-md bg-primary text-label text-primary-foreground"
+apps/web/src/pages/showcase/sections/fields/FieldSection.tsx:42:              className="text-caption text-primary underline-offset-4 hover:underline"
+apps/web/src/pages/showcase/sections/fields/SortableSection.tsx:66:                (lifted || dragging) && 'border-primary shadow-floating',
+apps/web/src/pages/showcase/sections/fields/SortableSection.tsx:90:                (lifted || dragging) && 'border-primary shadow-floating',
+apps/web/src/pages/showcase/sections/fields/SortableSection.tsx:96:                className="flex size-9 shrink-0 cursor-grab items-center justify-center rounded-md text-muted-foreground select-none hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+apps/web/src/pages/showcase/ShowcaseNav.tsx:31:          'block rounded-md px-3 py-1.5 text-body-sm text-foreground hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
+apps/web/src/pages/showcase/ShowcaseNav.tsx:33:          isActive && 'bg-accent text-accent-foreground',
+apps/web/src/pages/site/auth/RegisterPage.tsx:55:          <Link to={SITE_PATHS.privacy} className="text-primary">
+apps/web/src/pages/site/auth/RegisterPage.tsx:61:          <Link to={SITE_PATHS.owners} className="text-primary">
+apps/web/src/pages/site/public/about/AboutPage.component.test.tsx:70:    expect(browse).toHaveClass('bg-primary', 'w-full', 'md:w-auto');
+apps/web/src/pages/site/public/about/AboutPage.tsx:48:                    {icon && <CircleCheckIcon aria-hidden className="text-primary" />}
+apps/web/src/pages/site/public/about/AboutPage.tsx:60:          <a href={`#${CONTACT_ANCHOR}`} className="text-primary">
+apps/web/src/pages/site/public/home/AreaCards.tsx:53:                  <Card className="h-full hover:bg-accent">
+apps/web/src/pages/site/shell/FocusLayout.tsx:24:          <Link to={SITE_PATHS.home} className="text-heading-3 text-primary">
+apps/web/src/pages/site/shell/SiteFooter.tsx:18:          <Link to={SITE_PATHS.spaces} className="text-primary">
+apps/web/src/pages/site/shell/SiteFooter.tsx:21:          <Link to={SITE_PATHS.about} className="text-primary">
+apps/web/src/pages/site/shell/SiteFooter.tsx:24:          <Link to={SITE_PATHS.privacy} className="text-primary">
+apps/web/src/pages/site/shell/SiteFooter.tsx:27:          <Link to={SITE_PATHS.contact} className="text-primary">
+apps/web/src/pages/site/shell/SiteHeader.tsx:26:        <Link to={SITE_PATHS.home} className="text-heading-3 text-primary">
+apps/web/src/pages/site/shell/SiteMenu.tsx:50:          <p className="text-heading-3 text-primary">{copy.site.wordmark}</p>
+apps/web/src/shared/design-system/components/actions/Button/Button.tsx:18:          'bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)]',
+apps/web/src/shared/design-system/components/actions/Button/Button.tsx:20:          'bg-secondary text-secondary-foreground hover:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_8%)]',
+apps/web/src/shared/design-system/components/actions/Button/Button.tsx:22:          'border-(--card-border) bg-card text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground',
+apps/web/src/shared/design-system/components/actions/Button/Button.tsx:24:          'text-foreground hover:bg-accent hover:text-accent-foreground aria-expanded:bg-accent aria-expanded:text-accent-foreground',
+apps/web/src/shared/design-system/components/actions/Button/Button.tsx:26:          'bg-destructive text-destructive-foreground hover:bg-[color-mix(in_oklch,var(--destructive),var(--foreground)_12%)]',
+apps/web/src/shared/design-system/components/actions/Button/Button.tsx:27:        link: 'text-primary underline-offset-4 hover:underline',
+apps/web/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx:63:  "relative flex min-h-9 cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-body-sm outline-hidden select-none pointer-coarse:min-h-(--control-height) focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground focus:[&_svg]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4";
+apps/web/src/shared/design-system/components/actions/DropdownMenu/DropdownMenu.tsx:186:      className={cn(itemClasses, 'data-open:bg-accent data-open:text-accent-foreground', className)}
+apps/web/src/shared/design-system/components/data/BarChart/BarChart.tsx:25:  1: 'bg-chart-1',
+apps/web/src/shared/design-system/components/data/DataTable/DataTable.tsx:248:              <TableRow key={index} aria-hidden className="hover:bg-transparent">
+apps/web/src/shared/design-system/components/data/DataTable/DataTable.tsx:257:            <TableRow className="hover:bg-transparent">
+apps/web/src/shared/design-system/components/data/DataTable/DataTable.tsx:317:        className="-mx-2 inline-flex h-7 items-center gap-1 rounded-sm px-2 transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&_svg]:size-3.5 [&_svg]:shrink-0"
+apps/web/src/shared/design-system/components/data/Heatmap/Heatmap.tsx:74:                  className={cn('block size-full rounded-sm bg-primary', stepOf(value, highest))}
+apps/web/src/shared/design-system/components/data/Heatmap/Heatmap.tsx:84:          <span key={step} className={cn('size-3 shrink-0 rounded-sm bg-primary', step)} />
+apps/web/src/shared/design-system/components/data/Table/Table.tsx:27:      className={cn('bg-muted [&_tr]:hover:bg-muted', className)}
+apps/web/src/shared/design-system/components/data/Table/Table.tsx:63:        'border-b border-border transition-colors hover:bg-accent has-data-open:bg-accent',
+apps/web/src/shared/design-system/components/display/Badge/Badge.tsx:13:        primary: 'bg-accent text-accent-foreground',
+apps/web/src/shared/design-system/components/display/Meter/Meter.tsx:55:          tone === 'primary' ? 'bg-primary' : 'bg-warning',
+apps/web/src/shared/design-system/components/display/StatCard/StatCard.tsx:38:          className="flex size-9 shrink-0 items-center justify-center rounded-md bg-accent text-accent-foreground [&_svg:not([class*='size-'])]:size-5"
+apps/web/src/shared/design-system/components/feedback/Toast/Toast.tsx:55:    'inline-flex h-8 shrink-0 items-center rounded-(--radius-control) bg-primary px-3 text-label text-primary-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring',
+apps/web/src/shared/design-system/components/fields/Calendar/Calendar.tsx:68:  'bg-primary text-primary-foreground hover:bg-[color-mix(in_oklch,var(--primary),var(--foreground)_12%)] hover:text-primary-foreground';
+apps/web/src/shared/design-system/components/fields/Calendar/Calendar.tsx:94:        'data-range-middle:rounded-none data-range-middle:bg-accent data-range-middle:text-accent-foreground',
+apps/web/src/shared/design-system/components/fields/Calendar/Calendar.tsx:156:        range_start: 'rounded-s-(--cell-radius) bg-accent',
+apps/web/src/shared/design-system/components/fields/Calendar/Calendar.tsx:158:        range_end: 'rounded-e-(--cell-radius) bg-accent',
+apps/web/src/shared/design-system/components/fields/Checkbox/Checkbox.tsx:30:        'peer relative flex size-4.5 shrink-0 items-center justify-center rounded-sm border border-input bg-transparent text-primary-foreground transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive data-checked:border-primary data-checked:bg-primary',
+apps/web/src/shared/design-system/components/fields/Combobox/Combobox.tsx:295:        "relative flex min-h-(--control-height) w-full cursor-default items-center gap-2 rounded-sm py-1.5 ps-2 pe-8 text-body outline-hidden select-none data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 data-[selected=true]:bg-accent data-[selected=true]:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+apps/web/src/shared/design-system/components/fields/Input/Input.tsx:102:        "relative flex size-8 shrink-0 items-center justify-center rounded-sm text-muted-foreground transition-colors after:absolute after:-inset-1.5 hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
+apps/web/src/shared/design-system/components/fields/RadioGroup/RadioGroup.tsx:58:        'relative flex aspect-square size-4.5 shrink-0 items-center justify-center rounded-full border border-input bg-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring focus-visible:not-aria-invalid:not-group-aria-invalid/radio-group:border-ring disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive group-aria-invalid/radio-group:border-destructive data-checked:border-primary data-checked:bg-primary',
+apps/web/src/shared/design-system/components/fields/RadioGroup/RadioGroup.tsx:66:        className="size-2.5 rounded-full bg-primary-foreground"
+apps/web/src/shared/design-system/components/fields/Select/Select.tsx:122:        "relative flex min-h-(--control-height) w-full cursor-default items-center gap-2 rounded-sm py-1.5 ps-2 pe-8 text-body outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
+apps/web/src/shared/design-system/components/fields/Switch/Switch.tsx:30:        'peer relative inline-flex h-5 w-9 shrink-0 items-center rounded-full border-2 border-transparent transition-colors after:absolute after:-inset-x-3 after:-inset-y-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:cursor-not-allowed disabled:opacity-50 aria-disabled:opacity-50 aria-invalid:border-destructive data-checked:bg-primary data-unchecked:bg-input',
+apps/web/src/shared/design-system/components/fields/Switch/Switch.tsx:39:        className="pointer-events-none block size-4 rounded-full bg-background transition-transform data-checked:translate-x-4 data-checked:bg-primary-foreground rtl:data-checked:-translate-x-4"
+apps/web/src/shared/design-system/components/fields/ToggleGroup/ToggleGroup.tsx:51:        "group/chip inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-(--radius-pill) border border-input bg-card px-3 text-label whitespace-nowrap text-foreground transition-colors select-none hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring disabled:pointer-events-none disabled:opacity-50 pointer-coarse:h-(--control-height) data-on:border-primary data-on:bg-accent data-on:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+apps/web/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx:84:        className="w-72 border-sidebar-border bg-sidebar text-sidebar-foreground"
+apps/web/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx:106:        'group/sidebar sticky top-0 flex h-svh shrink-0 flex-col border-e border-sidebar-border bg-sidebar text-sidebar-foreground',
+apps/web/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx:192:        mode === 'tablet' && 'border-t border-sidebar-border pt-2 first:border-t-0 first:pt-0',
+apps/web/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx:268:        'flex h-10 w-full items-center gap-3 rounded-md px-3 text-body text-sidebar-foreground transition-colors pointer-coarse:h-(--control-height) hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sidebar-ring data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*="size-"])]:size-5',
+apps/web/src/shared/design-system/components/navigation/Sidebar/Sidebar.tsx:287:            'flex h-5 min-w-5 items-center justify-center rounded-full bg-sidebar-primary px-1.5 text-caption text-sidebar-primary-foreground',
+apps/web/src/shared/design-system/components/navigation/Tabs/Tabs.tsx:41:          'h-9 rounded-full border border-(--card-border) bg-card px-3 text-foreground pointer-coarse:h-(--control-height) not-data-active:hover:bg-accent not-data-active:hover:text-accent-foreground data-active:border-primary data-active:bg-primary data-active:text-primary-foreground md:h-8 md:rounded-md md:border-transparent md:bg-transparent md:text-muted-foreground md:not-data-active:hover:bg-transparent md:not-data-active:hover:text-foreground md:data-active:border-transparent md:data-active:bg-card md:data-active:text-foreground md:data-active:shadow-raised',
+apps/web/src/shared/design-system/components/navigation/Tabs/Tabs.tsx:42:        line: 'h-10 px-1 text-muted-foreground after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:bg-primary after:opacity-0 hover:text-foreground data-active:text-foreground data-active:after:opacity-100',
+apps/web/src/shared/design-system/leaflet.css:24:  outline: 2px solid var(--ring);
+apps/web/src/shared/design-system/leaflet.css:47:  background-color: var(--accent);
+apps/web/src/shared/design-system/leaflet.css:48:  color: var(--accent-foreground);
+apps/web/src/shared/design-system/leaflet.css:56:  outline: 2px solid var(--ring);
+apps/web/src/shared/design-system/leaflet.css:88:  border: calc(var(--spacing) * 0.75) solid var(--primary-foreground);
+apps/web/src/shared/design-system/leaflet.css:90:  background: var(--primary);
+apps/web/src/shared/design-system/leaflet.css:96:  outline: 2px solid var(--ring);
+apps/web/src/shared/design-system/leaflet.css:166:  outline: 3px solid var(--primary);
+apps/web/src/shared/design-system/leaflet.css:172:  outline: 2px solid var(--ring);
+apps/web/src/shared/design-system/leaflet.css:195:  background: var(--primary);
+apps/web/src/shared/design-system/lib/cn.ts:6:// next to text-primary.
+apps/web/src/shared/design-system/lib/cn.unit.test.ts:25:    expect(cn(`text-${style}`, 'text-primary')).toBe(`text-${style} text-primary`);
+apps/web/src/shared/design-system/tokens/semantic.css:56:  --primary-hover: color-mix(in oklch, var(--neutral-900), var(--neutral-50) 18%);
+apps/web/src/shared/design-system/tokens/semantic.css:65:  --hover-on-muted: color-mix(in oklab, var(--neutral-900) 10%, transparent);
+apps/web/src/shared/design-system/tokens/semantic.css:69:  --scrim: color-mix(in oklab, var(--neutral-900) 70%, transparent);
+apps/web/src/shared/design-system/tokens/semantic.css:115:  --overlay-scrim: color-mix(in oklch, var(--neutral-950) 50%, transparent);
+apps/web/src/shared/design-system/tokens/semantic.css:135:  --primary-hover: color-mix(in oklch, var(--neutral-50), var(--neutral-950) 18%);
+apps/web/src/shared/design-system/tokens/semantic.css:139:  --accent: color-mix(in oklab, var(--spark-800) 30%, var(--spark-900));
+apps/web/src/shared/design-system/tokens/semantic.css:144:  --hover-on-muted: color-mix(in oklab, var(--neutral-50) 8%, transparent);
+apps/web/src/shared/design-system/tokens/semantic.css:146:  --scrim: color-mix(in oklab, var(--neutral-50) 70%, transparent);
+apps/web/src/shared/design-system/tokens/semantic.css:170:  --sidebar-accent: color-mix(in oklab, var(--spark-800) 30%, var(--spark-900));
+apps/web/src/shared/design-system/tokens/semantic.css:191:  --overlay-scrim: color-mix(in oklch, var(--neutral-950) 70%, transparent);
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:210:// (the CSS Color 4 spaces); color-mix as CSS Color 5 defines it, interpolating premultiplied.
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:296:/** color-mix(in oklab | oklch, …) with weights already normalised to sum to 1. */
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:357:  const mix = value.match(/^color-mix\((.*)\)$/);
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:386:/** Follows var() and color-mix() through the theme and the primitives to a colour. */
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:466:  it('mixes as CSS color-mix does', () => {
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:467:    expect(toHex(resolveValue('light', 'color-mix(in oklab, #ffffff, #000000)'))).toBe('#636363');
+apps/web/src/shared/design-system/tokens/semantic.unit.test.ts:469:      const wash = resolveValue('light', `color-mix(in ${space}, #ff0000 40%, transparent)`);
+apps/web/src/shared/design-system/tokens/tailwind.css:55:  --color-ring: var(--ring);
+apps/web/src/shared/design-system/tokens/tailwind.css:57:  --color-primary: var(--primary);
+apps/web/src/shared/design-system/tokens/tailwind.css:58:  --color-primary-foreground: var(--primary-foreground);
+apps/web/src/shared/design-system/tokens/tailwind.css:59:  --color-primary-hover: var(--primary-hover);
+apps/web/src/shared/design-system/tokens/tailwind.css:62:  --color-accent: var(--accent);
+apps/web/src/shared/design-system/tokens/tailwind.css:63:  --color-accent-foreground: var(--accent-foreground);
+apps/web/src/shared/design-system/tokens/tailwind.css:87:  --color-sidebar: var(--sidebar);
+apps/web/src/shared/design-system/tokens/tailwind.css:88:  --color-sidebar-foreground: var(--sidebar-foreground);
+apps/web/src/shared/design-system/tokens/tailwind.css:89:  --color-sidebar-primary: var(--sidebar-primary);
+apps/web/src/shared/design-system/tokens/tailwind.css:90:  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+apps/web/src/shared/design-system/tokens/tailwind.css:91:  --color-sidebar-accent: var(--sidebar-accent);
+apps/web/src/shared/design-system/tokens/tailwind.css:92:  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+apps/web/src/shared/design-system/tokens/tailwind.css:93:  --color-sidebar-border: var(--sidebar-border);
+apps/web/src/shared/design-system/tokens/tailwind.css:94:  --color-sidebar-ring: var(--sidebar-ring);
+apps/web/src/shared/routing/focus/SkipLink.tsx:13:      className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:start-4 focus-visible:top-2 focus-visible:z-sticky focus-visible:rounded-md focus-visible:bg-background focus-visible:px-4 focus-visible:py-2 focus-visible:text-primary focus-visible:outline-2 focus-visible:outline-ring"

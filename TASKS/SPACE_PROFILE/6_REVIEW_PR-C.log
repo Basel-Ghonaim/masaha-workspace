@@ -1,0 +1,23 @@
+My verdict on #143 (PR-C) is **mergeable after a fix round**: one blocker and five should-fix findings, all fixable inside the existing commits. CI was green and the PR CLEAN before I started, and the head did not move during the review (still `29a25054`). As the prompt required, I ran nothing: no tests, no browser, no axe. Everything below comes from reading the code at the head and comparing it with `main`.
+
+**Blocker**
+- **F1 — a Sheet closed by a server refusal leaves the page stuck.** If a save fails with 404 or 403, the Sheet disappears, but the page still thinks it is open with unsaved changes.
+  - **After a 404** (space deleted meanwhile), the not-found page silently blocks every link and Back, because the leave dialog isn't drawn in that state. Only a reload gets out.
+  - **After the admin's 403** (space verified meanwhile), leaving the now read-only page still asks about unsaved changes, and focus is probably lost.
+  - `main` had a cleanup for exactly this, which the rewrite dropped. No test covers the 404, or the guard after either refusal.
+
+**Should-fix**
+- **F2 — «عن المساحة» / «الموقع» can overwrite another person's changes.** The save compares against the space as re-read at save time, not as the Sheet opened. If the page re-reads the space while the Sheet is open (e.g. the tab regains focus after 30 s), a co-owner's newer address gets silently reverted. `main` guarded against this, and the code comment still claims it does.
+- **F3 — no area shown for a hidden area.** If the admin hid the space's area, the owner's header and «الموقع» show no area, and the header starts with a stray «·» (the same problem as finding 60).
+- **F4 — admin can't add a retired amenity as their own.** Typing «مولّد» under «مرافق أخرى» after it was retired from the platform list is refused with «اختره من فوق», but the checklist doesn't offer it. The `isActive` flag that would fix this is carried but only a test reads it.
+- **F5 — DI-3 built differently, unexplained.** The editor always passes `unsaved: false` to «ربط مالك», with no written reason. `space-links.md:104` is now wrong, and the link's "wait while unsaved" logic is only reachable from its own test.
+- **F6 — DI-1 is untested.** No test checks that the shifts' "add the hours first" action opens the hours Sheet, and the test whose title claims it doesn't exercise it.
+
+**Nits (F7–F10):** test titles that claim more than they check, plus one assertion that can't fail; an unisolated landmark shown in the other language; a loading skeleton that never goes away after a failed read; small wording mismatches.
+
+The report also has the test-matrix rows for this PR, a one-line judgement per decision/DI/SD, the executor report's deviations judged, the documents check, and what I didn't check and why.
+
+The next free finding number is 219, but the executor's report already offered 219 (not recorded), so a new one would be 220.
+
+Files are in C:\dev\masaha\workspace\TASKS\SPACE_PROFILE:
+- 6_REVIEW_PR-C.md

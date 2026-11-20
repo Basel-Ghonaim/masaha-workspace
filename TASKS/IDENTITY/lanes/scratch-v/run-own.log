@@ -1,0 +1,184 @@
+12:17:45 chrome pid 22428, port 64509, profile cdp-profile-own
+12:17:49 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 536 bytes)
+12:17:50 signed in (demo-owner@example.com) at /dashboard/spaces/26/desk
+12:17:50 oklch probe {"light primary-hover (oklch)":"oklch(0.371743 0.0124857 none) = #463e40","dark primary-hover (oklch)":"oklch(0.840961 0.00790307 none) = #d0c9ca","light primary-hover (oklab)":"oklab(0.371743 -0.00372288 -0.0119135) = #3c4147","dark primary-hover (oklab)":"oklab(0.840961 -0.00292214 -0.00734296) = #c7cbd0","oklch(from #1a1f25)":"oklch(0.236863 0.0137367 none) = #241c1e","oklch(from #f7fbff)":"oklch(0.986198 0.00678705 none) = #fff9fa","secondary hover light (oklch, older)":"oklch(0.905318 0.0136936 none) = #e8dcdf","overlay-scrim light (oklch)":"oklch(0.179324 0.0129872 none / 0.5) = #160f11","var(--primary-hover)":"oklch(0.840961 0.00790307 none) = #d0c9ca"}
+12:17:50 == desk /dashboard/spaces/26/desk
+12:17:55   desk light-ar-390: SPARK-BUTTON 1 | CONSOLE 4 (checked 47 texts, 183 elements)
+12:17:58   desk dark-en-1440: SPARK-BUTTON 1 | CONSOLE 3 (checked 76 texts, 354 elements)
+12:18:00   desk dark-ar-390: SPARK-BUTTON 1 (checked 47 texts, 191 elements)
+12:18:03   desk light-en-390: SPARK-BUTTON 1 (checked 47 texts, 183 elements)
+12:18:05   desk dark-en-390: SPARK-BUTTON 1 (checked 47 texts, 191 elements)
+12:18:07   desk light-ar-768: SPARK-BUTTON 1 (checked 53 texts, 338 elements)
+12:18:10   desk dark-ar-768: SPARK-BUTTON 1 (checked 53 texts, 354 elements)
+12:18:12   desk light-en-768: SPARK-BUTTON 1 (checked 53 texts, 338 elements)
+12:18:15   desk dark-en-768: SPARK-BUTTON 1 (checked 53 texts, 354 elements)
+12:18:16   desk light-ar-1440: SPARK-BUTTON 1 (checked 76 texts, 338 elements)
+12:18:18   desk dark-ar-1440: SPARK-BUTTON 1 (checked 76 texts, 354 elements)
+12:18:19 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 536 bytes)
+12:18:20   desk light-en-1440: SPARK-BUTTON 1 (checked 76 texts, 338 elements)
+12:18:20 == checkin-dialog /dashboard/spaces/26/desk
+12:18:24   checkin-dialog light-ar-390: SPARK-BUTTON 2 | CONSOLE 3 (checked 10 texts, 219 elements)
+12:18:27   checkin-dialog dark-en-1440: SPARK-BUTTON 2 | CONSOLE 3 (checked 10 texts, 390 elements)
+12:18:29   checkin-dialog dark-ar-390: SPARK-BUTTON 2 (checked 10 texts, 227 elements)
+12:18:31   checkin-dialog light-en-1440: SPARK-BUTTON 2 (checked 10 texts, 374 elements)
+12:18:32   checkin-dialog light-ar-768: SPARK-BUTTON 2 (checked 10 texts, 374 elements)
+12:18:33 == overview /dashboard/spaces/26
+12:18:37   overview light-ar-390: CONSOLE 3 (checked 35 texts, 125 elements)
+12:18:41   overview dark-en-1440: CONSOLE 3 (checked 58 texts, 282 elements)
+12:18:43   overview dark-ar-390: clean (checked 35 texts, 133 elements)
+12:18:45   overview light-en-390: clean (checked 35 texts, 125 elements)
+12:18:48   overview dark-en-390: clean (checked 35 texts, 133 elements)
+12:18:50   overview light-ar-768: clean (checked 39 texts, 266 elements)
+12:18:53   overview dark-ar-768: clean (checked 39 texts, 282 elements)
+12:18:55   overview light-en-768: clean (checked 39 texts, 266 elements)
+12:18:57   overview dark-en-768: clean (checked 39 texts, 282 elements)
+12:19:00   overview light-ar-1440: clean (checked 58 texts, 266 elements)
+12:19:02   overview dark-ar-1440: clean (checked 58 texts, 282 elements)
+12:19:03 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 536 bytes)
+12:19:05   overview light-en-1440: clean (checked 58 texts, 266 elements)
+12:19:06   calendar days 2026-11-01..2026-12-05
+12:19:08   payments rows after the range: 18; url /dashboard/spaces/26/payments?from=2026-11-01&to=2026-11-10
+12:19:08 == payments null
+12:19:12   payments light-ar-390: CONSOLE 3 (checked 205 texts, 336 elements)
+12:19:16   payments dark-en-1440: CONSOLE 3 (checked 167 texts, 678 elements)
+12:19:18   payments dark-ar-768: clean (checked 148 texts, 678 elements)
+12:19:18 == datepicker-range null
+12:19:22   datepicker-range light-ar-390: CONSOLE 3 (checked 63 texts, 336 elements)
+12:19:26   datepicker-range dark-en-1440: CONSOLE 3 (checked 122 texts, 782 elements)
+12:19:28   datepicker-range dark-ar-1440: clean (checked 121 texts, 782 elements)
+12:19:31   hover today in the calendar (beside a range day) (light): target missing
+12:19:31   hover calendar range end (filled) hovered (light): target missing
+12:19:34   hover today in the calendar (beside a range day) (dark): target missing
+12:19:34   hover calendar range end (filled) hovered (dark): target missing
+12:19:35 == void-dialog null
+12:19:38   void-dialog light-ar-390: CONSOLE 3 (checked 63 texts, 336 elements)
+12:19:42   void-dialog dark-en-1440: CONSOLE 3 (checked 5 texts, 694 elements)
+12:19:44   void-dialog dark-ar-390: clean (checked 63 texts, 344 elements)
+12:19:47   void-dialog light-en-1440: clean (checked 5 texts, 678 elements)
+12:19:50   hover payments row (light/en): rest #ffffff -> hover #ffffff (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:19:51   hover sort header (payments) (light): target missing
+12:19:53   hover payments row (dark/en): rest #1a1f25 -> hover #1a1f25 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:19:54   hover sort header (payments) (dark): target missing
+12:19:54 == profile /dashboard/spaces/26/profile
+12:19:54 fulfilled /api/v1/manage/spaces/26/photos (605 -> 1052 bytes)
+12:19:59   profile light-ar-390: AXE scrollable-region-focusable | CONSOLE 15 (checked 114 texts, 372 elements)
+12:20:04   profile dark-en-1440: CONSOLE 3 (checked 145 texts, 567 elements)
+12:20:06   profile dark-ar-390: CONSOLE 4 (checked 114 texts, 380 elements)
+12:20:09   profile light-en-390: clean (checked 114 texts, 372 elements)
+12:20:11   profile dark-en-390: clean (checked 114 texts, 380 elements)
+12:20:14   profile light-ar-768: clean (checked 118 texts, 508 elements)
+12:20:18   profile dark-ar-768: clean (checked 118 texts, 524 elements)
+12:20:21   profile light-en-768: clean (checked 118 texts, 508 elements)
+12:20:24   profile dark-en-768: clean (checked 118 texts, 524 elements)
+12:20:27   profile light-ar-1440: clean (checked 145 texts, 551 elements)
+12:20:30   profile dark-ar-1440: clean (checked 145 texts, 567 elements)
+12:20:34   profile light-en-1440: clean (checked 145 texts, 551 elements)
+12:20:34   +N elements: [{"el":"ul[aria-label=\"The other photos\"] > li > span[role=img][aria-label=\"and 2 more\"] > span","text":"+2","bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#f7fbff","border":"#dde5ed","borderStart":"#dde5ed","borderWidth":"0px","outline":"none 3px #f7fbff","shadow":"none","painted":"#595f65","before":{"bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#f7fbff","border":"#dde5ed","borderStart":"#dde5ed","borderWidth":"0px","outline":"none 3px #f7fbff","shadow":"none"},"after":{"bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#f7fbff","border":"#dde5
+12:20:34 == contacts-sheet null
+12:20:38   contacts-sheet light-ar-390: FOCUS | CONSOLE 7 (checked 13 texts, 483 elements)
+12:20:41   contacts-sheet dark-en-1440: FOCUS | CONSOLE 3 (checked 13 texts, 678 elements)
+12:20:43   contacts-sheet dark-ar-768: clean (checked 13 texts, 635 elements)
+12:20:44   contacts-sheet light-en-1440: clean (checked 13 texts, 662 elements)
+12:20:47   contact lifted (light): {"ok":true,"lifted":{"handleFocused":true,"handle":{"el":"ul[aria-label=\"The contacts, in order\"] > li > div > span[role=button][aria-label=\"Reorder WhatsApp\"]","text":"","bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#5e646a","border":"#dde5ed","borderStart":"#dde5ed","borderWidth":"0px","outline":"solid 2px #1a1f25","shadow":"none","painted":"#ffffff","before":{"bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#5e646a","border":"#dde5ed","borderStart":"#dde5ed","borderWidth":"0px","outline":"none 3px #5e646a","shadow":"none"},"after":{"bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#5e646a","border":"#dde5ed","borderStart":"#dde5ed","borderWidth":"0px","outline":"none 3px #5e646a","shadow":"none"}},"item":{"el":"form > div[data-slot=sheet-body] > ul[aria-label=\"The contacts, in order\"] > li","text":"Type WhatsApp WhatsApp Phone Email In
+12:20:49   contact lifted (dark): {"ok":true,"lifted":{"handleFocused":true,"handle":{"el":"ul[aria-label=\"The contacts, in order\"] > li > div > span[role=button][aria-label=\"Reorder WhatsApp\"]","text":"","bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#9fa6ad","border":"#2c3137","borderStart":"#2c3137","borderWidth":"0px","outline":"solid 2px #f7fbff","shadow":"none","painted":"#1a1f25","before":{"bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#9fa6ad","border":"#2c3137","borderStart":"#2c3137","borderWidth":"0px","outline":"none 3px #9fa6ad","shadow":"none"},"after":{"bg":"rgba(0, 0, 0, 0)","bgHex":"#000000","bgAlpha":0,"color":"#9fa6ad","border":"#2c3137","borderStart":"#2c3137","borderWidth":"0px","outline":"none 3px #9fa6ad","shadow":"none"}},"item":{"el":"form > div[data-slot=sheet-body] > ul[aria-label=\"The contacts, in order\"] > li","text":"Type WhatsApp WhatsApp Phone Email In
+12:20:55   photo lifted (light): keyboard solid 2px #1a1f25 offset 2px focusVisible true clipped [{"el":"ul[aria-label=\"The photos, in order\"] > li > div > div","overflow":"hidden","rect":[860,377,1118,522]}] edge px #ffffff,#ffffff; mouse solid 2px #1a1f25 offset 2px
+12:21:01   photo lifted (dark): keyboard solid 2px #f7fbff offset 2px focusVisible true clipped [{"el":"ul[aria-label=\"The photos, in order\"] > li > div > div","overflow":"hidden","rect":[860,377,1118,522]}] edge px #1a1f25,#1a1f25; mouse solid 2px #f7fbff offset 2px
+12:21:01 == finance-income /dashboard/spaces/26/finance
+12:21:05   finance-income light-ar-390: CONSOLE 11 (checked 62 texts, 477 elements)
+12:21:09   finance-income dark-en-1440: CONSOLE 3 (checked 81 texts, 641 elements)
+12:21:11   finance-income dark-ar-390: clean (checked 62 texts, 485 elements)
+12:21:14   finance-income light-en-390: clean (checked 62 texts, 477 elements)
+12:21:16   finance-income dark-en-390: clean (checked 62 texts, 485 elements)
+12:21:19   finance-income light-ar-768: clean (checked 62 texts, 625 elements)
+12:21:21   finance-income dark-ar-768: clean (checked 62 texts, 641 elements)
+12:21:23   finance-income light-en-768: clean (checked 62 texts, 625 elements)
+12:21:26   finance-income dark-en-768: clean (checked 62 texts, 641 elements)
+12:21:28   finance-income light-ar-1440: clean (checked 81 texts, 625 elements)
+12:21:31   finance-income dark-ar-1440: clean (checked 81 texts, 641 elements)
+12:21:33   finance-income light-en-1440: clean (checked 81 texts, 625 elements)
+12:21:33 == finance-heatmap null
+12:21:39   finance-heatmap light-ar-390: OVERFLOW | AXE scrollable-region-focusable | CONSOLE 3 (checked 45 texts, 607 elements)
+12:21:42   finance-heatmap dark-en-1440: CONSOLE 3 (checked 75 texts, 758 elements)
+12:21:45   finance-heatmap dark-ar-390: OVERFLOW (checked 45 texts, 615 elements)
+12:21:47   finance-heatmap light-en-390: OVERFLOW (checked 45 texts, 607 elements)
+12:21:50   finance-heatmap dark-en-390: OVERFLOW (checked 45 texts, 615 elements)
+12:21:52   finance-heatmap light-ar-768: clean (checked 56 texts, 742 elements)
+12:21:54   finance-heatmap dark-ar-768: clean (checked 56 texts, 758 elements)
+12:21:57   finance-heatmap light-en-768: clean (checked 56 texts, 742 elements)
+12:21:59   finance-heatmap dark-en-768: clean (checked 56 texts, 758 elements)
+12:22:02   finance-heatmap light-ar-1440: clean (checked 75 texts, 742 elements)
+12:22:04   finance-heatmap dark-ar-1440: clean (checked 75 texts, 758 elements)
+12:22:06   finance-heatmap light-en-1440: clean (checked 75 texts, 742 elements)
+12:22:10   hover desktop tabs (finance) (light/en): rest #ecf4fc -> hover #d7dfe6 (bg oklab(0.236863 -0.00398637 -0.0131455 / 0.1)) want #d7dfe6; selected #ffffff/#ffffff -> under pointer #ffffff :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":false,"differ":true}
+12:22:13   hover desktop tabs (finance) (dark/en): rest #2c3137 -> hover #3c4147 (bg oklab(0.986198 -0.00252253 -0.00630087 / 0.08)) want #3c4147; selected #1a1f25/#1a1f25 -> under pointer #1a1f25 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":false,"differ":true}
+12:22:13 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 536 bytes)
+12:22:14 == owner-drawer null
+12:22:17   owner-drawer light-ar-390: SPARK-BUTTON 1 | CONSOLE 3 (checked 25 texts, 334 elements)
+12:22:19   owner-drawer dark-en-390: SPARK-BUTTON 1 (checked 25 texts, 350 elements)
+12:22:21   owner-drawer dark-ar-390: SPARK-BUTTON 1 (checked 25 texts, 350 elements)
+12:22:22   owner-drawer light-en-390: SPARK-BUTTON 1 (checked 25 texts, 334 elements)
+12:22:27   hover desk row (present now) (light/en): rest #ffffff -> hover #ffffff (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:29   hover sidebar item beside the current one (light/en): rest #ffffff -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed; selected #ffe3fd/#ffe3fd -> under pointer #ffe3fd :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:22:31   hover chip beside a chip that is on (uncollected) (light/en): rest #ffffff -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed; selected #ffe3fd/#ffe3fd -> under pointer #ffe3fd :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:22:33   hover outline button (Switch staff) (light/en): rest #ffffff -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:35   hover primary button (Check in a visit) (light/en): rest #1a1f25 -> hover #463e40 (bg oklch(0.371743 0.0124857 none)) want #3c4147 :: {"hoverIsToken":false,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:37   hover line tabs (Now/Log) (light/en): rest #f7fbff -> hover #f7fbff (bg rgba(0, 0, 0, 0)) want #dde5ed; selected #f7fbff/#000000 -> under pointer #f7fbff :: {"hoverIsToken":false,"hoverChanged":false,"selectedKeeps":true,"selectedIsAccent":false,"differ":false}
+12:22:38   hover menu item (account menu) (light): target missing
+12:22:39   EC3 accent light: #ffe3fd bar {"bg":"rgb(181, 91, 179)","bgHex":"#b55bb3","bgAlpha":1,"color":"#1a1f25","border":"#dde5ed","borderStart":"#dde5ed","borderWidth":"0px","outline":"none 3px #1a1f25","shadow":"none"}
+12:22:42   hover live status control (success tone) (light/en): rest #ecfcef -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:43 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 531 bytes)
+12:22:46   hover live status control (warning tone) (light/en): rest #fff5ea -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:49   hover live status control (neutral tone) (light/en): rest #fff5ea -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:54   hover desk row (present now) (dark/en): rest #1a1f25 -> hover #1a1f25 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":false,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:22:57   hover sidebar item beside the current one (dark/en): rest #1a1f25 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137; selected #471f46/#471f46 -> under pointer #471f46 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:22:59   hover chip beside a chip that is on (uncollected) (dark/en): rest #1a1f25 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137; selected #471f46/#471f46 -> under pointer #471f46 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:23:01   hover outline button (Switch staff) (dark/en): rest #1a1f25 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:23:02   hover primary button (Check in a visit) (dark/en): rest #f7fbff -> hover #d0c9ca (bg oklch(0.840961 0.00790307 none)) want #c7cbd0 :: {"hoverIsToken":false,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:23:04   hover line tabs (Now/Log) (dark/en): rest #0d1217 -> hover #0d1217 (bg rgba(0, 0, 0, 0)) want #2c3137; selected #0d1217/#000000 -> under pointer #0d1217 :: {"hoverIsToken":false,"hoverChanged":false,"selectedKeeps":true,"selectedIsAccent":false,"differ":false}
+12:23:06   hover menu item (account menu) (dark): target missing
+12:23:07   EC3 accent dark: #471f46 bar {"bg":"rgb(210, 126, 208)","bgHex":"#d27ed0","bgAlpha":1,"color":"#f7fbff","border":"#2c3137","borderStart":"#2c3137","borderWidth":"0px","outline":"none 3px #f7fbff","shadow":"none"}
+12:23:10   hover live status control (success tone) (dark/en): rest #261400 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:23:13 fulfilled /api/v1/manage/spaces/26/occupancy (100 -> 531 bytes)
+12:23:13   hover live status control (warning tone) (dark/en): rest #261400 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:23:17   hover live status control (neutral tone) (dark/en): rest #261400 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":null,"selectedIsAccent":null,"differ":null}
+12:23:19 == me /me
+12:23:23   me light-ar-390: SPARK-BUTTON 2 | CONSOLE 3 (checked 33 texts, 139 elements)
+12:23:26   me dark-en-1440: SPARK-BUTTON 2 | CONSOLE 3 (checked 38 texts, 147 elements)
+12:23:29   me dark-ar-390: SPARK-BUTTON 2 (checked 33 texts, 147 elements)
+12:23:31   me light-en-390: SPARK-BUTTON 2 (checked 33 texts, 139 elements)
+12:23:33   me dark-en-390: SPARK-BUTTON 2 (checked 33 texts, 147 elements)
+12:23:36   me light-ar-768: SPARK-BUTTON 2 (checked 37 texts, 139 elements)
+12:23:38   me dark-ar-768: SPARK-BUTTON 2 (checked 37 texts, 147 elements)
+12:23:40   me light-en-768: SPARK-BUTTON 2 (checked 37 texts, 139 elements)
+12:23:43   me dark-en-768: SPARK-BUTTON 2 (checked 37 texts, 147 elements)
+12:23:45   me light-ar-1440: SPARK-BUTTON 2 (checked 38 texts, 139 elements)
+12:23:48   me dark-ar-1440: SPARK-BUTTON 2 (checked 38 texts, 147 elements)
+12:23:50   me light-en-1440: SPARK-BUTTON 2 (checked 38 texts, 139 elements)
+12:23:50 == favorites /me/favorites
+12:23:53   favorites light-ar-390: CONSOLE 3 (checked 15 texts, 91 elements)
+12:23:56   favorites dark-en-1440: CONSOLE 3 (checked 20 texts, 99 elements)
+12:23:58   favorites dark-ar-390: clean (checked 15 texts, 99 elements)
+12:24:00   favorites light-en-390: clean (checked 15 texts, 91 elements)
+12:24:01   favorites dark-en-390: clean (checked 15 texts, 99 elements)
+12:24:03   favorites light-ar-768: clean (checked 19 texts, 91 elements)
+12:24:05   favorites dark-ar-768: clean (checked 19 texts, 99 elements)
+12:24:06   favorites light-en-768: clean (checked 19 texts, 91 elements)
+12:24:08   favorites dark-en-768: clean (checked 19 texts, 99 elements)
+12:24:10   favorites light-ar-1440: clean (checked 20 texts, 91 elements)
+12:24:11   favorites dark-ar-1440: clean (checked 20 texts, 99 elements)
+12:24:13   favorites light-en-1440: clean (checked 20 texts, 91 elements)
+12:24:17   hover chip beside a chip that is on (/me theme) (light/en): rest #ffffff -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed; selected #ffe3fd/#ffe3fd -> under pointer #ffe3fd :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:24:21   hover chip beside a chip that is on (/me theme) (dark/en): rest #1a1f25 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137; selected #471f46/#471f46 -> under pointer #471f46 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":true,"differ":true}
+12:24:22 == phonemenu-signed-in null
+12:24:26   phonemenu-signed-in light-ar-390: SPARK-BUTTON 1 | CONSOLE 39 (checked 9 texts, 544 elements)
+12:24:28   phonemenu-signed-in dark-en-390: SPARK-BUTTON 1 (checked 9 texts, 560 elements)
+12:24:29   phonemenu-signed-in light-en-360: SPARK-BUTTON 1 (checked 9 texts, 544 elements)
+12:24:31   phonemenu-signed-in dark-ar-360: SPARK-BUTTON 1 (checked 9 texts, 560 elements)
+12:24:34   hover phone menu: the current page entry vs another (light/en): rest #ffffff -> hover #dde5ed (bg rgb(221, 229, 237)) want #dde5ed; selected #ecf4fc/#ecf4fc -> under pointer #ecf4fc :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":false,"differ":true}
+12:24:39   hover phone menu: the current page entry vs another (dark/en): rest #1a1f25 -> hover #2c3137 (bg rgb(44, 49, 55)) want #2c3137; selected #2c3137/#2c3137 -> under pointer #2c3137 :: {"hoverIsToken":true,"hoverChanged":true,"selectedKeeps":true,"selectedIsAccent":false,"differ":false}
+12:24:40   EC14 signed in light-ar: {"who":"signed in","theme":"light","lang":"ar","scrollWidth":360,"clientWidth":360,"rowScroll":360,"rowClient":360,"kids":[{"el":"button[data-slot=sheet-trigger][aria-label=\"القائمة\"]","left":304,"right":344,"w":40},{"el":"a","left":186,"right":296,"w":110},{"el":"button[data-slot=button]","left":68,"right":173,"w":105},{"el":"button#radix-_r_1cl_[data-slot=dropdown-menu-trigger][aria-label=\"قائمة الحساب: ⁨أحمد الشوا⁩\"]","left":16,"right":60,"w":44}],"overlaps":[],"outside":[],"ok":true}
+12:24:41   EC14 signed in dark-ar: {"who":"signed in","theme":"dark","lang":"ar","scrollWidth":360,"clientWidth":360,"rowScroll":360,"rowClient":360,"kids":[{"el":"button[data-slot=sheet-trigger][aria-label=\"القائمة\"]","left":304,"right":344,"w":40},{"el":"a","left":186,"right":296,"w":110},{"el":"button[data-slot=button]","left":68,"right":173,"w":105},{"el":"button#radix-_r_1cl_[data-slot=dropdown-menu-trigger][aria-label=\"قائمة الحساب: ⁨أحمد الشوا⁩\"]","left":16,"right":60,"w":44}],"overlaps":[],"outside":[],"ok":true}
+12:24:42   EC14 signed in light-en: {"who":"signed in","theme":"light","lang":"en","scrollWidth":360,"clientWidth":360,"rowScroll":360,"rowClient":360,"kids":[{"el":"button[data-slot=sheet-trigger][aria-label=\"Menu\"]","left":16,"right":56,"w":40},{"el":"a","left":64,"right":174,"w":110},{"el":"button[data-slot=button]","left":200,"right":292,"w":92},{"el":"button#radix-_r_1cl_[data-slot=dropdown-menu-trigger][aria-label=\"Account menu: ⁨أحمد الشوا⁩\"]","left":300,"right":344,"w":44}],"overlaps":[],"outside":[],"ok":true}
+12:24:43   EC14 signed in dark-en: {"who":"signed in","theme":"dark","lang":"en","scrollWidth":360,"clientWidth":360,"rowScroll":360,"rowClient":360,"kids":[{"el":"button[data-slot=sheet-trigger][aria-label=\"Menu\"]","left":16,"right":56,"w":40},{"el":"a","left":64,"right":174,"w":110},{"el":"button[data-slot=button]","left":200,"right":292,"w":92},{"el":"button#radix-_r_1cl_[data-slot=dropdown-menu-trigger][aria-label=\"Account menu: ⁨أحمد الشوا⁩\"]","left":300,"right":344,"w":44}],"overlaps":[],"outside":[],"ok":true}
+12:24:43 refreshes 0, loads 1, blocked []
+12:24:46 chrome 22428 stopped by PID; cdp-profile-own processes left: 0

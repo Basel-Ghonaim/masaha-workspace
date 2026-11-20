@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مسودات العلامة — الجولة 2</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@600&display=swap">
+<style>
+  :root { font-family: "IBM Plex Sans Arabic", system-ui, sans-serif; }
+  body { margin: 0; background: #e9edf1; color: #151f2c; }
+  header.top { padding: 20px 32px; background: #fff; border-bottom: 1px solid #d9dee4; }
+  header.top h1 { margin: 0 0 4px; font-size: 20px; }
+  header.top p { margin: 0; color: #5b6573; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 1100px) { .grid { grid-template-columns: 1fr; } }
+  .panel { padding: 20px 28px 28px; color: var(--text); background: var(--bg); }
+  .panel h2 { margin: 0 0 12px; font-size: 16px; color: var(--muted); font-weight: 600; }
+  /* The trial's measured values (TASKS\IDENTITY\6_REPORT_INK_SPARK.md). */
+  .coral.light { --bg: #f7fbff; --card: #ffffff; --ink: #151f2c; --spark: #d2573d; --text: #151f2c; --muted: #5d6673; --line: #dce2e9; --tint: #fef5f2; }
+  .coral.dark  { --bg: #09121e; --card: #151f2c; --ink: #f7fbff; --spark: #fea793; --text: #f7fbff; --muted: #a3acb8; --line: #263142; --tint: #2a1d1f; }
+  .berry.light { --bg: #f7fbff; --card: #ffffff; --ink: #1a1f25; --spark: #b55bb3; --text: #1a1f25; --muted: #5c636b; --line: #dde1e6; --tint: #fef3fe; }
+  .berry.dark  { --bg: #0d1217; --card: #1a1f25; --ink: #f7fbff; --spark: #d27ed0; --text: #f7fbff; --muted: #a4abb3; --line: #2a3139; --tint: #261b26; }
+  /* One colour: the door takes the ink too (the symbols read --spark through <use>). */
+  .mono { --spark: var(--ink); --cut: transparent; }
+  .row { display: flex; align-items: center; gap: 22px; padding: 14px 0; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  .label { width: 132px; font-size: 13px; color: var(--muted); }
+  .sizes { display: flex; align-items: flex-end; gap: 18px; color: var(--ink); }
+  .lockup { display: flex; align-items: center; gap: 10px; color: var(--ink); }
+  .lockup .word-ar { font-weight: 600; font-size: 32px; line-height: 1; }
+  .lockup .word-en { font-family: "IBM Plex Sans", sans-serif; font-weight: 600; font-size: 28px; line-height: 1; }
+  .lockup.en { direction: ltr; }
+  svg { display: block; overflow: visible; }
+  .ctx { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .card .cap { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .site-head { display: flex; align-items: center; justify-content: space-between; color: var(--ink); }
+  .site-head nav { display: flex; gap: 14px; font-size: 13px; color: var(--muted); }
+  .side { display: flex; gap: 10px; }
+  .side .rail { width: 48px; border-inline-end: 1px solid var(--line); display: grid; justify-items: center; gap: 12px; padding-top: 4px; color: var(--ink); }
+  .side .rail i { width: 18px; height: 18px; border-radius: 4px; background: var(--line); display: block; }
+  .side .full { flex: 1; display: grid; gap: 8px; font-size: 13px; }
+  .side .full .item { padding: 6px 10px; border-radius: 6px; }
+  .side .full .item.current { background: var(--tint); box-shadow: inset -3px 0 0 var(--spark); }
+  .tab { display: inline-flex; align-items: center; gap: 8px; background: var(--bg); border: 1px solid var(--line); border-bottom: 0; border-radius: 8px 8px 0 0; padding: 7px 12px; font-size: 12px; color: var(--text); direction: ltr; }
+  .google { direction: ltr; text-align: center; font-family: "IBM Plex Sans", sans-serif; font-size: 13px; color: #1f1f1f; background: #fff; border-radius: 10px; padding: 14px; border: 1px solid #dadce0; display: grid; justify-items: center; gap: 6px; }
+  .phone { display: flex; gap: 14px; align-items: center; }
+  .app-icon { width: 60px; height: 60px; border-radius: 14px; background: #fff; display: grid; place-items: center; box-shadow: 0 1px 3px rgba(0,0,0,.25); }
+  .compare { display: flex; gap: 18px; align-items: center; font-size: 12px; color: var(--muted); }
+  .letter-tile { width: 40px; height: 40px; border-radius: 8px; background: var(--tint); color: var(--text); display: grid; place-items: center; font-weight: 600; font-size: 20px; }
+  .status-pin { width: 26px; height: 34px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>مسودات العلامة — الجولة الثانية (حبر + شرارة)</h1>
+  <p>ثلاث علامات × هويتان (مرجاني، توتي) × فاتح وداكن. «مساحة / Masaha» اسم مؤقت هنا. الغرفة بالحبر والباب بالشرارة؛ صف «لون واحد» للطباعة.</p>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- b1: the door's outline makes the pin's point. -->
+    <symbol id="b1" viewBox="0 0 48 48">
+      <g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path class="room" stroke="currentColor" d="M19 36 H15 A9 9 0 0 1 6 27 V13 A9 9 0 0 1 15 4 H33 A9 9 0 0 1 42 13 V27 A9 9 0 0 1 33 36 H29"/>
+        <path class="door-line" stroke="var(--spark)" d="M19 36 V21 A5 5 0 0 1 29 21 V36 L24 42 Z"/>
+      </g>
+    </symbol>
+    <!-- b2: an outlined room-pin with a solid door standing on its floor. -->
+    <symbol id="b2" viewBox="0 0 48 48">
+      <path class="door" fill="var(--spark)" d="M18 36 V19 A6 6 0 0 1 30 19 V36 Z"/>
+      <path class="room" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M24 43 L18.5 36 H15 A9 9 0 0 1 6 27 V13 A9 9 0 0 1 15 4 H33 A9 9 0 0 1 42 13 V27 A9 9 0 0 1 33 36 H29.5 Z"/>
+    </symbol>
+    <!-- b4: a solid room-pin with the door cut out; in two colours the door is filled with the spark. -->
+    <symbol id="b4" viewBox="0 0 48 48">
+      <path class="room" fill="currentColor" fill-rule="evenodd" d="M24 46 L17 38.5 H15 A11.5 11.5 0 0 1 3.5 27 V13 A11.5 11.5 0 0 1 15 1.5 H33 A11.5 11.5 0 0 1 44.5 13 V27 A11.5 11.5 0 0 1 33 38.5 H31 Z M19 32 V19 A5 5 0 0 0 29 19 V32 Z"/>
+      <path class="door door-fill" fill="var(--cut, var(--spark))" d="M19 32 V19 A5 5 0 0 1 29 19 V32 Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="root"></div>
+
+<script>
+  const marks = [['b1', 'ب١ — الباب يصنع رأس الدبوس'], ['b2', 'ب٢ — باب مصمت'], ['b4', 'ب٤ — باب مقصوص']];
+  const ids = [['coral', 'مرجاني (slate-coral)'], ['berry', 'توتي (slate-berry)']];
+  const use = (id, s, cls = '') => `<svg class="${cls}" width="${s}" height="${s}" viewBox="0 0 48 48"><use href="#${id}"/></svg>`;
+  const pin = '<svg class="status-pin" viewBox="0 0 26 34"><path d="M13 33 C13 33 2 20 2 12 A11 11 0 0 1 24 12 C24 20 13 33 13 33 Z" fill="#137d41"/><circle cx="13" cy="12" r="4" fill="#fff"/></svg>';
+  const root = document.getElementById('root');
+  ids.forEach(([key, name]) => {
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    ['light', 'dark'].forEach((theme) => {
+      const p = document.createElement('section');
+      p.className = `panel ${key} ${theme}`;
+      let html = `<h2>${name} — ${theme === 'light' ? 'فاتح' : 'داكن'}</h2>`;
+      marks.forEach(([m, label]) => {
+        html += `<div class="row"><div class="label">${label}</div>
+          <div class="sizes">${[96, 48, 32, 24, 16].map((s) => use(m, s)).join('')}</div>
+          <div class="lockup">${use(m, 34)}<span class="word-ar">مساحة</span></div>
+          <div class="lockup en">${use(m, 30)}<span class="word-en">Masaha</span></div>
+          <div class="sizes mono" title="لون واحد">${use(m, 32)}${use(m, 16)}</div></div>`;
+      });
+      marks.forEach(([m, label]) => {
+        html += `<div class="row" style="border:0;padding-bottom:0"><div class="label">${label} — في مكانه</div></div>
+        <div class="ctx">
+          <div class="card"><div class="cap">رأس الموقع</div><div class="site-head"><div class="lockup">${use(m, 26)}<span class="word-ar" style="font-size:22px">مساحة</span></div><nav><span>الرئيسية</span><span>المساحات</span><span>عن مساحة</span></nav></div></div>
+          <div class="card"><div class="cap">القائمة الجانبية (مطوية وموسّعة)</div><div class="side"><div class="rail">${use(m, 26)}<i></i><i></i><i></i></div><div class="full"><div class="lockup">${use(m, 22)}<span class="word-ar" style="font-size:18px">مساحة</span></div><div class="item current">مكتب الاستقبال</div><div class="item">الزبائن</div></div></div></div>
+          <div class="card"><div class="cap">تبويب المتصفح (16px)</div><span class="tab">${use(m, 16)} مساحة — مساحات العمل</span></div>
+          <div class="card"><div class="cap">تسجيل الدخول بـ Google، وأيقونة الهاتف</div><div class="phone"><div class="google" style="--ink:#151f2c;--spark:${key === 'coral' ? '#d2573d' : '#b55bb3'};color:var(--ink)">${use(m, 40)}<span>Sign in to continue to <b>Masaha</b></span></div><div class="app-icon light" style="--ink:#151f2c;--spark:${key === 'coral' ? '#d2573d' : '#b55bb3'};color:var(--ink)">${use(m, 40)}</div></div></div>
+          <div class="card" style="grid-column:1/-1"><div class="cap">لا يشبه بلاطة المساحة ولا دبوس الخريطة</div><div class="compare">${use(m, 40)}<span>العلامة</span><div class="letter-tile">ف</div><span>بلاطة مساحة بلا صورة</span>${pin}<span>دبوس «متاح» على الخريطة</span></div></div>
+        </div>`;
+      });
+      p.innerHTML = html;
+      grid.append(p);
+    });
+    root.append(grid);
+  });
+</script>
+</body>
+</html>

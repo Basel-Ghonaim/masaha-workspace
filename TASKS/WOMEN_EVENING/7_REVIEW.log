@@ -1,0 +1,22 @@
+My verdict on PR #145 is mergeable after one round of fixes. I found one blocker, four should-fix items and one nit. CI is green, GitHub shows `CLEAN`, and the head is still `8f511d5a` at the end of the review.
+
+**Findings, most severe first:**
+- **F1 — blocker.** The migration's `IF NOT EXISTS` is there only so its own test can run the file again; its comment says so. It has no effect in production, but your rubric lists "production code only a test uses" as a blocker. The fix is to drop the clause and have the test run only the two data steps (the `UPDATE` and the `INSERT`). This folds into `e1beddc1`.
+- **F2 — should-fix.** The new amenity row uses the `venus` icon, which the code before this PR can't draw. After a Vercel rollback, the admin's lookups page and every «المرافق» Sheet would fail to render. The same can happen in a tab still running the old code, depending on Vercel's skew protection. This breaks setup.md's rule that every migration must work with the code before it. No code change in this PR can protect the old code: it needs a rollback step in the PR description and finding 227.
+- **F3 — should-fix.** Three of the carried R1-F2 tests contain an assertion that cannot fail: `not.toHaveClass('bg-secondary', 'hover:bg-hover')`. Negated, jest-dom's check only fails when both classes are present, and no button variant has both. So the "no ghost hover on the selected entry" half proves nothing. Each test still fails on the old `secondary` through its positive half. Splitting the assertion in two fixes it, folded into `8501d64e`.
+- **F4 — should-fix.** No test proves the favourites' cards carry the women's hall mark, which the PR claims (X12). Removing `womensHallId` from the favourites' query would go unnoticed. One API test fixes it, folded into `07691835`.
+- **F5 — should-fix.** No test proves the evening hint is hidden on a space the viewer can't edit, which the PR claims (X5). One component test fixes it, folded into `2c73d610`.
+- **N1 — nit.** The public page's «دوام مسائي» line is tested in Arabic only, with no accessibility check.
+
+**What checks out:**
+- **The evening backfill** uses exactly the rule it replaces (an open day closing at 20:00 or later), so «مفتوحة مساءً» loses no space on deploy.
+- **The women's hall row** is idempotent and goes last in the order. The `HAVING count(*) > 0` rule and the seed path (X9) are sound, and the schema doesn't drift.
+- **The admin's rule:** retiring the hall is refused on the server with nothing written; renaming, a new icon and reordering stay open.
+- **The approved Arabic texts** match byte for byte in the copy, the tests, `spaces.md`, `lookups.md` and the PR. «مختلطة» appears nowhere.
+- **Authorization** is unchanged.
+- **The carried fixes** didn't break the account navigation, the profile's index, NearMe or `check:classes`.
+
+I judged X1–X16: none is wrong; X5, X9 and X11 are acceptable rather than sound. Everything else is in the report. It was a read-only review: nothing was run, and I saw no screens.
+
+Files are in C:\dev\masaha\workspace\TASKS\WOMEN_EVENING:
+- 7_REVIEW.md

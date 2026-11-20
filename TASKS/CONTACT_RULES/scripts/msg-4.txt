@@ -1,0 +1,11 @@
+test(web): wait out toast timers, warm lazy routes
+
+A dismissed toast is removed after a 200 ms timer its unmount does not
+clear; fired once a test file's jsdom was gone, it failed CI's
+component lane with "window is not defined" (finding 219). The shared
+setup now waits that timer out once, after the last test of a file
+that drew a toast.
+
+Four site test files rendered lazy routes without paying their first
+load in a beforeAll, as testing §3 rule 8 asks (finding 225); each now
+warms the modules its tests open.

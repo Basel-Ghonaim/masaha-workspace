@@ -1,0 +1,22 @@
+I've written the review to `C:\dev\masaha\workspace\TASKS\PROTOTYPE_SPLIT\7_REVIEW.md`. **Verdict: mergeable after one small fix round.**
+
+CI is green on `a6afc3f` (10 checks pass, CodeRabbit skipped), GitHub shows the PR CLEAN, and neither the PR head nor `main` moved during the review. The PR has 3 commits and 583 files.
+
+**What needs fixing:**
+- **F1 (should-fix):** finding 74, line 11, still cites `` `docs/design/CHANGES.md` ``, a folder that no longer exists. The PR's own rule for records turned this kind of backticked path into a link in findings 19, 96 and 215, but the plan never listed this line. This also makes the PR's first acceptance box false. Fix: link it to the copy pinned at `b16cbf8` and reword that acceptance line.
+- **F2 (should-fix):** the documentation map (`docs/README.md:80`) says the repository holds "the clickable prototypes and their page variants", but no variant exists yet (the registry is empty).
+- **F3 (nit):** in `resetEmail.copy.ts:4` the comment line grew to about 156 characters, while the same commit rewrapped the comment in `resetEmail.ts`.
+- **F4 (nit):** the rule "a document never cites a path outside the repository" in documentation §8 now conflicts with ADR 0020's linking by URL. One sentence in §8 that links the ADR would settle it.
+
+All four fixes belong in the second commit, `b2a4aed9`, folded in as fixups.
+
+**What checks out:**
+- **Plan's pointer list (§4.2):** every entry is done. Findings link to the pinned commit and active documents link to `main`, with no case the other way round.
+- **URLs:** all 14 distinct URLs, plus the three files the code comments name, answer 200. The four SCREENS.md anchors match its headings.
+- **Exclusions:** only the archive's entries were removed. Nothing else on `main` excluded `docs/design`.
+- **ADR 0020:** in the house style.
+- **Code comments:** the three edits are comments only.
+- **Commits:** subjects and bodies follow the rules, with no attribution and no `#PRNUM`.
+- **Identity rule:** no word in the files, commit messages or description says for whom, where or as what the project was made.
+
+**Not checked:** I ran no commands that build or test, as the rules require. I didn't repeat the new repository's own checks, which the supervisor already approved. I worked out GitHub's anchors from the heading text rather than from the rendered page.

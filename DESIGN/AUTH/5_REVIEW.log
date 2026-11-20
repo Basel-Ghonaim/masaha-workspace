@@ -1,0 +1,24 @@
+The review is in `C:\dev\masaha\workspace\DESIGN\AUTH\5_REVIEW.md`, with the five-line Arabic summary for the owner at the top. My verdict is **ready after small fixes**. The head hasn't moved past `f9dc0fc` locally; I didn't fetch the remote.
+
+This was a read-only review: I ran no server, browser or scripts. States and English were judged from the code, since only Arabic defaults were captured.
+
+What I found:
+
+- **Blocker: Coast's drawing is broken at desktop widths.** The north border and part of the east border are missing, and both offshore echo lines stop a quarter of the way down. The cause is the drawing's animation setup: Chrome draws its dashes in screen pixels, so the "full" line covers only part of each path. My measurements from the geometry match where the lines stop in the captures to within a few units. Reduced motion doesn't help, because the dash stays when the animation is switched off. Coast is the lead's recommendation, so it should be fixed and recaptured before the owner compares.
+- **Coast's crop drops two of the 13 spaces at 1920:** the two in the south (Al-Salam Hub and Masar Tech) aren't drawn, and the middle of the panel is empty.
+- **Google's button is drawn larger than production can build it.** Production's real button is at most 400 px wide and 40 px tall. Built as drawn, Coast's 440 px form would bring back the critique's "narrower than the fields" defect, and in all three designs the fields would be taller than the button.
+- **The panel logo's focus ring is invisible in light mode** at 1280 px and up: the ring and the panel are the same ink colour.
+- **Coast's phone band runs through the logo's required clear space** and sits under the language button.
+- **Slate shows the berry only in the logo below 1280,** so critique point 10 isn't answered on the phone.
+- **The lab's «قارن التصاميم» view is unreadable at 1440:** four frames are shrunk to about a quarter of their size.
+- **Dots' three password-condition bars read as a strength meter,** and at rest they are almost invisible.
+- **Slate and Dots share one composition from 1280 px.** They differ in texture and proportions, not layout, which §2 asks against.
+- Two standalone links are under the 44 px target, plus a handful of nits.
+
+What holds up:
+
+- The Strip's dots are exactly the 13 snapshot coordinates, and the outline matches the outline file.
+- The kit's words match production's copy catalogue, apart from the digit rule.
+- No originals, shared modules, sample data, `README.md` or `CLAUDE.md` were touched.
+- All six commits follow the format, with bodies and no attribution.
+- Every state from §3 is present and behaves the same in all three designs.

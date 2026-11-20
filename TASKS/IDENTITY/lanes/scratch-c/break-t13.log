@@ -1,0 +1,49 @@
+
+ RUN  v5.0.2 C:/dev/masaha/app-design-lane-c/apps/web
+
+ ❯ |unit| scripts/browserIcons.unit.test.ts (5 tests | 1 failed) 15ms
+   ❯ the browser's icons (5)
+     × index.html links the .ico, then the SVG, and the home-screen icon, each a file of public/ 9ms
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  13:17:58
+   Duration  326ms (transform 49%, import 24%, tests 18%, worker 8%)
+
+
+--- stderr ---
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  |unit| scripts/browserIcons.unit.test.ts > the browser's icons > index.html links the .ico, then the SVG, and the home-screen icon, each a file of public/
+AssertionError: expected [ { rel: 'icon', …(2) }, …(1) ] to deeply equal [ { rel: 'icon', …(2) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -3,14 +3,9 @@
+      "href": "/favicon.ico",
+      "rel": "icon",
+      "sizes": "16x16 32x32 48x48",
+    },
+    {
+-     "href": "/favicon.svg",
+-     "rel": "icon",
+-     "type": "image/svg+xml",
+-   },
+-   {
+      "href": "/apple-touch-icon.png",
+      "rel": "apple-touch-icon",
+    },
+  ]
+
+ ❯ scripts/browserIcons.unit.test.ts:48:19
+     46|     );
+     47|
+     48|     expect(icons).toEqual([
+       |                   ^
+     49|       { rel: 'icon', href: '/favicon.ico', sizes: '16x16 32x32 48x48' …
+     50|       { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
