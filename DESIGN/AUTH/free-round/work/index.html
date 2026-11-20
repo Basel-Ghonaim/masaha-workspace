@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign-in · three directions · Masaha</title>
+<style>
+  :root { --ink: #1A1F25; --ink-2: #5E646A; --ground: #F7FBFF; --line: #DDE5ED; --berry: #934791; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #F7FBFF; --ink-2: #9FA6AD; --ground: #0D1217; --line: #2C3137; --berry: #D27ED0; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 40px 24px 64px; background: var(--ground); color: var(--ink); font: 16px/1.6 'Segoe UI', system-ui, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  p { color: var(--ink-2); margin: 0 0 32px; }
+  section { border-top: 1px solid var(--line); padding: 24px 0; display: grid; grid-template-columns: 200px 1fr; gap: 8px 24px; }
+  h2 { font-size: 20px; margin: 0; }
+  h2 small { display: block; font-size: 14px; font-weight: 400; color: var(--ink-2); }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  a { color: var(--ink); display: inline-flex; min-height: 36px; align-items: center; padding: 0 12px; border: 1px solid var(--line); border-radius: 6px; text-decoration: none; font-size: 14px; }
+  a:hover { border-color: var(--berry); }
+  a:focus-visible { outline: 3px solid var(--berry); outline-offset: 2px; }
+  .label { grid-column: 2; font-size: 13px; color: var(--ink-2); margin-top: 8px; }
+  .states { grid-column: 2; }
+  @media (max-width: 640px) { section { grid-template-columns: 1fr; } .label, .states { grid-column: 1; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Masaha sign-in: three directions</h1>
+  <p>Each page opens by itself. The switches on every page change language and theme; the links below open each state.
+     Read <code>REPORT.md</code> first, then each folder's <code>DESIGN.md</code>.</p>
+  <div id="list"></div>
+</main>
+<script>
+  var dirs = [
+    ['lights', 'Lights', 'أضواء: the Strip at night'],
+    ['berry', 'Berry', 'توت: the colour owns the page'],
+    ['notebook', 'Notebook', 'كرّاسة: written by hand']
+  ];
+  var views = [['ar', 'light'], ['ar', 'dark'], ['en', 'light'], ['en', 'dark']];
+  var states = [['wrong', 'wrong credentials'], ['toomany', 'too many attempts'], ['offline', 'no connection'],
+    ['submitting', 'submitting'], ['google', 'Google failed'], ['session', 'session ended'], ['fields', 'field errors']];
+  var out = '';
+  dirs.forEach(function (d) {
+    out += '<section><h2>' + d[1] + '<small>' + d[2] + '</small></h2><ul>';
+    views.forEach(function (v) { out += '<li><a href="' + d[0] + '/index.html?lang=' + v[0] + '&theme=' + v[1] + '">' + (v[0] === 'ar' ? 'Arabic' : 'English') + ', ' + v[1] + '</a></li>'; });
+    out += '</ul><div class="label">States (Arabic, light)</div><ul class="states">';
+    states.forEach(function (s) { out += '<li><a href="' + d[0] + '/index.html?lang=ar&theme=light&state=' + s[0] + '">' + s[1] + '</a></li>'; });
+    out += '<li><a href="' + d[0] + '/index.html?lang=ar&theme=light&from=elevate">came from a space</a></li>';
+    out += '</ul></section>';
+  });
+  document.getElementById('list').innerHTML = out;
+</script>
+</body>
+</html>

@@ -86,3 +86,16 @@ the original untouched. The critique's confirmed points: `1_CRITIQUE_CHECKED.md`
   (`PROMPT.md`; `materials\`: the berry logo files, the three references, the 13 real spaces with coordinates, the
   Strip's outline, `foundation-reference.md`; the worker's output in `work\`). Not a repository; copy `work\` into
   the workspace once done.
+  **Done 2026-11-20 17:27** (copied to `DESIGN\AUTH\free-round\`, without the capture browser's profile):
+  - **The three directions:**
+    - **Lights «أضواء»:** the real Strip with the 13 spaces as berry lights and a Gaza City inset; the berry means a
+      space; the button and the focus ring are berry; Readex Pro.
+    - **Berry «توت»:** the berry as the whole page, Kufam Black at 148 px, a paper sheet for the form, and a
+      hand-coded frieze of a shared table (tea, a router, a full power strip).
+    - **Notebook «كرّاسة»:** a squared exercise book, a Ruqaa title underlined in berry pen, a red-pen error state,
+      a pen sketch of a desk.
+  - **The worker's recommendation: Lights.**
+  - **Open for the owner:**
+    - Lights keeps the line «13 مساحة عمل في قطاع غزة» (A11 had removed counts);
+    - Berry's text on the berry is 4.58 : 1 (passes AA, no margin) and its drawing needs an illustrator;
+    - the data spells «جاردن سبييس» and «إليفييت هاب», and files Golden Hub under North Gaza.
