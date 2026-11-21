@@ -99,3 +99,35 @@ the original untouched. The critique's confirmed points: `1_CRITIQUE_CHECKED.md`
     - Lights keeps the line «13 مساحة عمل في قطاع غزة» (A11 had removed counts);
     - Berry's text on the berry is 4.58 : 1 (passes AA, no margin) and its drawing needs an illustrator;
     - the data spells «جاردن سبييس» and «إليفييت هاب», and files Golden Hub under North Gaza.
+- **A15 — the owner's look at the free round (2026-11-21):**
+  - **Notebook «كرّاسة» — rejected:** "not professional".
+  - **Lights «أضواء» — the page liked, the map not:** "the map itself is disgusting". It was the fifth drawing of the
+    Strip on this page, after Slate, Slate 2, Atlas and the round-3 drawing; none was kept. Asked: the drawing, or a
+    map at all?
+  - **Berry «توت» — the colour liked, the rest not:** "the colour gradation is very convincing", but the screen's
+    division and its elements, and above all the light theme, are "very bad".
+  - **Under review:** Lights and Berry, discussed together.
+  - **The supervisor's reading:** one design taking Lights' structure and Berry's berry-to-plum scale, the brand
+    panel plum in both themes.
+- **A16 — design 4, the fusion, by Codex (the owner, 2026-11-21):**
+  - **The design:** a fourth design merging Lights' structure and Berry's colour.
+  - **The three existing designs stay** as they are.
+  - **No map at all.**
+  - **The executor: Codex,** a new model "for diversity, to see how other models work".
+  - **The prompt:** `C:\dev\masaha\free-round\PROMPT_4.md`, principles and the owner's words, no prohibitions.
+    It starts the brand panel deep (plum) in both themes, with only the form side following the theme (A9's rule).
+    It runs in two steps with the owner between:
+    1. three options for what the panel holds, at 1440 Arabic dark, with a stop;
+    2. the chosen option in full.
+  - **Quota:** Codex has little quota on the owner's plan, and the two steps keep each run short.
+- **A17 — Codex's fusion not convincing; a model trial (the owner, 2026-11-21):**
+  - **The verdict:** Codex's step 1 (three panel options) "was not convincing", and the fusion stops there. Its files
+    stay in `free-round\work\fusion\`.
+  - **The trial:** Codex, OpenCode and Copilot each run the first round's brief, unchanged in substance, to make
+    three designs of their own.
+  - **The folders:** `C:\dev\masaha\design-trials\{codex,opencode,copilot}\`. Each has its own `PROMPT.md`,
+    `materials\` and an empty `work\`, and none can see Claude's work.
+  - **The brief's changes, facts only:**
+    - the folder's path;
+    - Claude-only skill names replaced by "any design skills your tool offers";
+    - the 390 capture tip corrected (headless Chrome's 500 px floor; use CDP device metrics).
