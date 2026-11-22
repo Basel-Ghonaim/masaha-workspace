@@ -1,0 +1,286 @@
+// TABLE_SCROLL (finding 229): axe-core in a real, headless Chrome on the three kinds of table —
+// the public space page's hours (a guest), the owner's profile «الأسعار المعلنة» (the prices), and
+// a DataTable (the customers) — light and dark, Arabic and English. Records every violation, the
+// sideways scrollers and the tables' containers, and captures a focused container's ring.
+// Modelled on AXE_FIXES/scripts/axe.mjs. Usage: node axe.mjs <label>. Needs the API and the web.
+import { spawn } from 'node:child_process';
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+const LABEL = process.argv[2] ?? 'run';
+const APP = 'C:/dev/masaha/app';
+const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const WEB = 'http://localhost:5320';
+const SPACE = 26;
+const OUT = `C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/out-${LABEL}.json`;
+const SHOTS = `C:/Users/basel/Downloads/table-scroll-shots/${LABEL}`;
+mkdirSync(SHOTS, { recursive: true });
+const AXE = readFileSync(`${APP}/node_modules/axe-core/axe.min.js`, 'utf8');
+// Read here, never printed.
+const PASSWORD = /^SEED_DEMO_PASSWORD=(.*)$/m
+  .exec(readFileSync(`${APP}/apps/api/.env`, 'utf8'))?.[1]
+  ?.trim()
+  .replace(/^["']|["']$/g, '');
+if (!PASSWORD) throw new Error('SEED_DEMO_PASSWORD missing');
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const port = 9300 + Math.floor(Math.random() * 600);
+const profile = mkdtempSync(join(tmpdir(), 'cdp-'));
+const chrome = spawn(CHROME, [
+  '--headless=new',
+  `--remote-debugging-port=${port}`,
+  `--user-data-dir=${profile}`,
+  '--no-first-run',
+  '--no-default-browser-check',
+  'about:blank',
+]);
+console.log('chrome pid', chrome.pid);
+
+let targets = [];
+for (let i = 0; i < 50; i += 1) {
+  try {
+    targets = await (await fetch(`http://127.0.0.1:${port}/json`)).json();
+    if (targets.some((t) => t.type === 'page')) break;
+  } catch {
+    /* not up yet */
+  }
+  await sleep(200);
+}
+const socket = new WebSocket(targets.find((t) => t.type === 'page').webSocketDebuggerUrl);
+await new Promise((resolve) => socket.addEventListener('open', resolve));
+let id = 0;
+const pending = new Map();
+const errors = [];
+socket.addEventListener('message', (event) => {
+  const message = JSON.parse(event.data);
+  if (message.id !== undefined && pending.has(message.id)) {
+    const { resolve, reject } = pending.get(message.id);
+    pending.delete(message.id);
+    if (message.error) reject(new Error(JSON.stringify(message.error)));
+    else resolve(message.result);
+  } else if (message.method === 'Runtime.exceptionThrown') {
+    errors.push(message.params.exceptionDetails.text);
+  }
+});
+const send = (method, params = {}) =>
+  new Promise((resolve, reject) => {
+    id += 1;
+    pending.set(id, { resolve, reject });
+    socket.send(JSON.stringify({ id, method, params }));
+  });
+const evaluate = async (expression) => {
+  const result = await send('Runtime.evaluate', {
+    expression,
+    awaitPromise: true,
+    returnByValue: true,
+  });
+  if (result.exceptionDetails) {
+    throw new Error(result.exceptionDetails.exception?.description ?? result.exceptionDetails.text);
+  }
+  return result.result.value;
+};
+const until = async (expression, what, ms = 30000) => {
+  const end = Date.now() + ms;
+  while (Date.now() < end) {
+    try {
+      if (await evaluate(expression)) return;
+    } catch {
+      /* page changing */
+    }
+    await sleep(150);
+  }
+  throw new Error(`timed out: ${what}`);
+};
+
+await send('Page.enable');
+await send('Runtime.enable');
+
+async function viewport(width) {
+  const phone = width < 768;
+  await send('Emulation.setDeviceMetricsOverride', {
+    width,
+    height: phone ? 844 : 900,
+    deviceScaleFactor: phone ? 2 : 1,
+    mobile: phone,
+  });
+}
+
+async function go(path) {
+  await send('Page.navigate', { url: 'about:blank' });
+  await sleep(150);
+  await send('Page.navigate', { url: `${WEB}${path}` });
+}
+
+async function prefs(lang, theme) {
+  await go('/__nothing');
+  await until('document.readyState === "complete"', 'origin');
+  await evaluate(
+    `localStorage.setItem('masaha.language', ${JSON.stringify(lang)}); localStorage.setItem('masaha.theme', ${JSON.stringify(theme)}); true`,
+  );
+}
+
+async function signIn() {
+  await go('/login');
+  await until('document.readyState === "complete"', 'login page');
+  const status = await evaluate(`fetch('/api/v1/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ email: 'demo-owner@example.com', password: ${JSON.stringify(PASSWORD)} }),
+    }).then((r) => r.status)`);
+  console.log('sign-in status', status);
+  if (status !== 200) throw new Error(`sign-in ${status}`);
+}
+
+/** Every element that scrolls sideways with more than it shows, and its name, role and tab stop. */
+const SCROLLERS = `(() => [...document.querySelectorAll('body *')]
+  .filter((el) => {
+    const s = getComputedStyle(el);
+    return (s.overflowX === 'auto' || s.overflowX === 'scroll') && el.scrollWidth > el.clientWidth
+      && el.getClientRects().length > 0;
+  })
+  .map((el) => ({
+    tag: el.tagName.toLowerCase(),
+    slot: el.dataset.slot ?? null,
+    role: el.getAttribute('role'),
+    label: el.getAttribute('aria-label') ?? (el.getAttribute('aria-labelledby') ? document.getElementById(el.getAttribute('aria-labelledby'))?.textContent : null),
+    tabindex: el.getAttribute('tabindex'),
+    scroll: el.scrollWidth, client: el.clientWidth,
+  })))()`;
+
+/** The fitting regions: the layer's scroll regions that show all they hold. */
+const REGIONS = `[...document.querySelectorAll('[data-slot="table-container"]')].map((el) => ({
+  role: el.getAttribute('role'), label: el.getAttribute('aria-label') ?? document.getElementById(el.getAttribute('aria-labelledby') ?? '')?.textContent ?? null,
+  tableLabel: el.querySelector('table')?.getAttribute('aria-label') ?? null,
+  tabindex: el.getAttribute('tabindex'), scroll: el.scrollWidth, client: el.clientWidth }))`;
+
+async function runAxe() {
+  const has = await evaluate('typeof window.axe !== "undefined"');
+  if (!has) await evaluate(`${AXE}; true`);
+  return evaluate(`axe.run(document, { resultTypes: ['violations'] }).then((r) => r.violations.map((v) => ({
+      id: v.id, impact: v.impact, nodes: v.nodes.length,
+      targets: v.nodes.slice(0, 4).map((n) => n.target.join(' ')) })))`);
+}
+
+async function state() {
+  return evaluate(`({ lang: document.documentElement.lang, dir: document.documentElement.dir,
+    theme: document.documentElement.dataset.theme,
+    pageScroll: document.documentElement.scrollWidth, pageClient: document.documentElement.clientWidth })`);
+}
+
+const press = async (key, code, keyCode, shift = false) => {
+  const modifiers = shift ? 8 : 0;
+  await send('Input.dispatchKeyEvent', { type: 'rawKeyDown', key, code, windowsVirtualKeyCode: keyCode, modifiers });
+  await send('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode: keyCode, modifiers });
+};
+
+/** Tab from the page's start until a sideways strip of the layer has the focus; shoot its ring. */
+async function ringShot(name) {
+  const found = await evaluate(
+    `!!document.querySelector('[data-slot="table-container"][tabindex="0"]')`,
+  );
+  if (!found) return { name, focused: false, why: 'no scroll region with a tab stop' };
+  await evaluate(`document.activeElement?.blur(); window.scrollTo(0, 0); document.body.focus(); true`);
+  for (let i = 0; i < 80; i += 1) {
+    await press('Tab', 'Tab', 9);
+    await sleep(40);
+    const on = await evaluate(
+      `document.activeElement?.matches('[data-slot="table-container"]') ?? false`,
+    );
+    if (on) {
+      await evaluate(`document.activeElement.scrollIntoView({ block: 'center' }); true`);
+      await sleep(400);
+      const box = await evaluate(`(() => { const b = document.activeElement.getBoundingClientRect();
+        const s = getComputedStyle(document.activeElement);
+        return { x: b.x + scrollX, y: b.y + scrollY, w: b.width, h: b.height, outline: s.outlineStyle + ' ' + s.outlineWidth + ' ' + s.outlineColor,
+          offset: s.outlineOffset, focusVisible: document.activeElement.matches(':focus-visible') }; })()`);
+      const m = 16;
+      const { data } = await send('Page.captureScreenshot', {
+        format: 'png',
+        clip: {
+          x: Math.max(0, box.x - m),
+          y: Math.max(0, box.y - m),
+          width: box.w + 2 * m,
+          height: box.h + 2 * m,
+          scale: 1,
+        },
+      });
+      writeFileSync(`${SHOTS}/${name}.png`, Buffer.from(data, 'base64'));
+      return { name, focused: true, tabs: i + 1, ...box };
+    }
+  }
+  return { name, focused: false, why: 'not reached in 80 tabs' };
+}
+
+async function fullShot(name) {
+  const { data } = await send('Page.captureScreenshot', { format: 'png' });
+  writeFileSync(`${SHOTS}/${name}.png`, Buffer.from(data, 'base64'));
+}
+
+const centreOf = (selector) =>
+  evaluate(`(() => { const b = document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();
+    return { x: Math.round(b.x + b.width / 2), y: Math.round(b.y + b.height / 2) }; })()`);
+const mouse = async (type, { x, y }) =>
+  send('Input.dispatchMouseEvent', { type, x, y, button: 'left', clickCount: type === 'mouseMoved' ? 0 : 1 });
+
+
+const results = [];
+const rings = [];
+
+async function screen(kind, width, lang, theme) {
+  const tag = `${kind}-${lang}-${theme}-${width}`;
+  const entry = { screen: kind, width, lang, theme };
+  try {
+    if (kind === 'public') {
+      await go('/spaces/pal-hub');
+      await until(`!!document.querySelector('[data-slot="table"]')`, `${tag} hours`);
+    } else if (kind === 'profile') {
+      await go(`/dashboard/spaces/${SPACE}/profile#prices`);
+      await until(`!!document.querySelector('#prices [data-slot="table"]')`, `${tag} prices`);
+      await evaluate(`document.getElementById('prices').scrollIntoView({ block: 'start' }); true`);
+    } else {
+      await go(`/dashboard/spaces/${SPACE}/customers`);
+      await until(`!!document.querySelector('[data-slot="data-table"]') && !document.querySelector('[aria-busy="true"]')`, `${tag} customers`);
+    }
+    await sleep(900);
+    entry.state = await state();
+    entry.scrollers = await evaluate(SCROLLERS);
+    entry.regions = await evaluate(REGIONS);
+    entry.violations = await runAxe();
+    await fullShot(tag);
+    if (width === 390 || (width === 320 && kind !== 'customers')) rings.push(await ringShot(`ring-${tag}`));
+  } catch (error) {
+    entry.error = String(error.message ?? error);
+  }
+  results.push(entry);
+  const brief = (list) =>
+    Array.isArray(list) ? list.map((v) => `${v.id}(${v.nodes})`).join(' ') || 'none' : String(list);
+  const regions = (entry.regions ?? []).map((r) => `${r.role}:${r.label}:${r.tabindex ?? '-'}:${r.scroll}/${r.client}`).join(' ');
+  console.log(tag, entry.error ?? brief(entry.violations), '|', regions);
+}
+
+const WIDTHS = { public: [320, 390], profile: [320, 390], customers: [390, 768] };
+try {
+  for (const signedIn of [false, true]) {
+    await viewport(1440);
+    if (signedIn) await signIn();
+    for (const lang of ['ar', 'en']) {
+      for (const theme of ['light', 'dark']) {
+        await prefs(lang, theme);
+        for (const kind of signedIn ? ['profile', 'customers'] : ['public']) {
+          for (const width of WIDTHS[kind]) {
+            await viewport(width);
+            await screen(kind, width, lang, theme);
+          }
+        }
+      }
+    }
+  }
+} finally {
+  writeFileSync(OUT, JSON.stringify({ label: LABEL, results, rings, errors }, null, 1));
+  console.log('rings', JSON.stringify(rings.map(({ name, focused, offset, outline, w, h, why }) => ({ name, focused, offset, outline, w, h, why }))));
+  console.log('page errors', errors.length, JSON.stringify(errors.slice(0, 5)));
+  socket.close();
+  chrome.kill();
+}

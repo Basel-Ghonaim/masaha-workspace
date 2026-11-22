@@ -1574,3 +1574,54 @@
 2026-11-19 12:58:12  design  END    slot-1 exit 0 after 40 s, free 5997068 KB  node C:/dev/masaha/workspace/DESIGN/AUTH/tools/shoot.mjs --job C:/Users/basel/AppData/Local/Temp/claude/d81e7fd49ca29a5a/2dffd7af-d959-4511-ae77-6032ba0673f6/scratchpad/job-regress2.json
 2026-11-19 12:58:13  design  GRANT  slot-1 free 5988076 KB (single)  node C:/dev/masaha/workspace/DESIGN/AUTH/tools/shoot.mjs --job C:/Users/basel/AppData/Local/Temp/claude/d81e7fd49ca29a5a/2dffd7af-d959-4511-ae77-6032ba0673f6/scratchpad/job-post.json  (cwd C:\dev\masaha\app)
 2026-11-19 12:59:00  design  END    slot-1 exit 0 after 46 s, free 5960344 KB  node C:/dev/masaha/workspace/DESIGN/AUTH/tools/shoot.mjs --job C:/Users/basel/AppData/Local/Temp/claude/d81e7fd49ca29a5a/2dffd7af-d959-4511-ae77-6032ba0673f6/scratchpad/job-post.json
+2026-11-22 11:45:15  table   GRANT  slot-1 free 4675920 KB (single)  npm run typecheck -w @masaha/web  (cwd C:\dev\masaha\app)
+2026-11-22 11:45:37  table   END    slot-1 exit 0 after 21 s, free 4702768 KB  npm run typecheck -w @masaha/web
+2026-11-22 11:45:38  table   GRANT  slot-1 free 4668856 KB (single)  npm run test:component -w @masaha/web -- src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx src/shared/design-system/components/display/ScrollRegion  (cwd C:\dev\masaha\app)
+2026-11-22 11:45:56  table   END    slot-1 exit 0 after 17 s, free 4806100 KB  npm run test:component -w @masaha/web -- src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx src/shared/design-system/components/display/ScrollRegion
+2026-11-22 11:46:12  table   GRANT  slot-1 free 4750684 KB (single)  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:46:27  table   END    slot-1 exit 1 after 15 s, free 4750052 KB  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx
+2026-11-22 11:46:28  table   GRANT  slot-1 free 4755924 KB (single)  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:46:43  table   END    slot-1 exit 1 after 14 s, free 4975516 KB  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx
+2026-11-22 11:46:44  table   GRANT  slot-1 free 4977776 KB (single)  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:46:59  table   END    slot-1 exit 1 after 15 s, free 4998644 KB  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx
+2026-11-22 11:47:13  table   GRANT  slot-1 free 5045700 KB (single)  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:47:33  table   END    slot-1 exit 1 after 19 s, free 5054600 KB  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx
+2026-11-22 11:47:34  table   GRANT  slot-1 free 5051096 KB (single)  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:47:49  table   END    slot-1 exit 1 after 14 s, free 5065948 KB  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx
+2026-11-22 11:47:50  table   GRANT  slot-1 free 5063792 KB (single)  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:48:10  table   END    slot-1 exit 1 after 19 s, free 5068708 KB  npx vitest run --project component src/shared/design-system/components/data src/features/spaces/components/prices/SpacePricesCard.component.test.tsx src/features/directory/components/page/SpaceDetails.component.test.tsx
+2026-11-22 11:48:11  table   GRANT  slot-1 free 5056544 KB (single)  npx vitest run --project component src/shared/design-system/components/data/Table  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:48:16  table   END    slot-1 exit 1 after 5 s, free 5063816 KB  npx vitest run --project component src/shared/design-system/components/data/Table
+2026-11-22 11:48:17  table   GRANT  slot-1 free 5059780 KB (single)  npx tsc -b  (cwd C:\dev\masaha\app\apps\web)
+2026-11-22 11:48:38  table   END    slot-1 exit 2 after 20 s, free 5040784 KB  npx tsc -b
+2026-11-22 11:52:07  table   WAIT   memory 2080632 KB < 4 GB (try 1)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 11:54:08  table   WAIT   memory 2165220 KB < 4 GB (try 2)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 11:56:10  table   WAIT   memory 2873920 KB < 4 GB (try 3)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 11:58:11  table   WAIT   memory 2869180 KB < 4 GB (try 4)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:00:12  table   WAIT   memory 2854828 KB < 4 GB (try 5)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:02:13  table   WAIT   memory 3527304 KB < 4 GB (try 6)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:04:14  table   WAIT   memory 3548944 KB < 4 GB (try 7)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:06:15  table   WAIT   memory 3556724 KB < 4 GB (try 8)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:08:16  table   WAIT   memory 3575136 KB < 4 GB (try 9)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:10:17  table   WAIT   memory 3744100 KB < 4 GB (try 10)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:12:18  table   WAIT   memory 3637372 KB < 4 GB (try 11)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:14:19  table   WAIT   memory 3680608 KB < 4 GB (try 12)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:16:20  table   WAIT   memory 3708088 KB < 4 GB (try 13)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:18:21  table   WAIT   memory 3694632 KB < 4 GB (try 14)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:20:22  table   WAIT   memory 3680604 KB < 4 GB (try 15)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:22:23  table   WAIT   memory 3604440 KB < 4 GB (try 16)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:24:24  table   WAIT   memory 3636920 KB < 4 GB (try 17)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:26:25  table   WAIT   memory 3745216 KB < 4 GB (try 18)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 12:28:26  table   WAIT   memory 3737384 KB < 4 GB (try 19)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
+2026-11-22 14:20:35  table   GRANT  slot-1 free 4960672 KB (single)  npm run lint  (cwd C:\dev\masaha\app)
+2026-11-22 14:23:01  table   END    slot-1 exit 0 after 145 s, free 6392724 KB  npm run lint
+2026-11-22 14:23:02  table   GRANT  slot-1 free 6346696 KB (single)  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-11-22 14:23:38  table   END    slot-1 exit 0 after 36 s, free 6226888 KB  npm run typecheck
+2026-11-22 14:23:51  table   GRANT  slot-1 free 6181064 KB (single)  npm run test:unit  (cwd C:\dev\masaha\app)
+2026-11-22 14:24:41  table   END    slot-1 exit 0 after 49 s, free 6168600 KB  npm run test:unit
+2026-11-22 14:24:42  table   GRANT  slot-1 free 6153620 KB (single)  npm run test:component  (cwd C:\dev\masaha\app)
+2026-11-22 14:32:48  table   END    slot-1 exit 0 after 484 s, free 5908528 KB  npm run test:component
+2026-11-22 14:32:53  table   GRANT  slot-1 free 5922648 KB (single)  npm run build  (cwd C:\dev\masaha\app)
+2026-11-22 14:33:06  table   END    slot-1 exit 0 after 13 s, free 5877368 KB  npm run build
+2026-11-22 14:33:21  table   GRANT  slot-1 free 5407800 KB (single)  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch  (cwd C:\dev\masaha\app)
+2026-11-22 14:34:53  table   END    slot-1 exit 0 after 91 s, free 5244536 KB  node C:/dev/masaha/workspace/TASKS/TABLE_SCROLL/scripts/axe.mjs branch
