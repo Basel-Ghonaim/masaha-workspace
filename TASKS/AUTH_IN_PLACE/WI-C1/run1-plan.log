@@ -1,0 +1,26 @@
+Warning: this sign-in ends between 2026-11-26 and 2026-11-29 (in 2 days at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.
+I've written the WI-C1 plan and saved it to `C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C1\2_PLAN.md`. Nothing is built and no branch is cut; I'm stopping here for your approval.
+
+**What it proposes**
+- **The component:** `AdaptiveDialog`, in the design system's `overlays` category. From 768 px it's the usual centred dialog, 30 rem wide (the approved picture's width), close button in the corner. Below 768 px it's a full-screen panel: a top bar holding a 44 px close button at the inline start, the body scrolling under it, safe-area insets, and the picture's slide-up (none under reduced motion). The branch becomes `feat/adaptive-dialog`.
+- **Back closes it.** I chose the browser's history API over the router's own navigation. Opening adds one entry at the same address; Back closes it, and closing any other way removes the entry. A link inside replaces the entry, and a reload shows the page closed. Why not the router:
+  - the design system stays free of any router dependency;
+  - opening it isn't a navigation (ADR 0021 says it has no address);
+  - the one thing the router does see, Back, has been checked against everything that listens to the location: focus, the held action, scroll position and the editor's leave guard.
+- **Focus:** on a phone it goes to the title; from 768 px it follows today's dialog behaviour. On every way of closing, Back included, it returns to whatever opened it. Today's sign-in prompt loses focus on close, because the heart isn't a Radix trigger; this fixes that.
+- **`SignInPrompt`** moves onto it with its words unchanged; its two links now replace the history entry. `favorites.md` and `data-reports.md` stay as they are, since what they say is still true.
+- **Docs:** a new row in foundation §3 and §12, and one bullet in architecture §2 as the single home for the history entry.
+- **Delivery:** three commits, 14 tests for the component plus three new ones for `SignInPrompt`, each with the break that should make it fail.
+
+**Decisions for you**
+1. **Width:** I recommend one fixed width (30 rem) with no `size` prop yet. A second size that no caller uses would be code only the tests and showcase exercise, which the testing rules forbid. The alternative is `size: 'md' | 'lg'`, with the sign-in on `lg`.
+2. **History API rather than router navigation:** recommended, for the reasons above.
+3. **Four additions beyond the prompt, each recommended:**
+   - Focus also returns on iOS Safari, where tapping a button doesn't focus it.
+   - Back is blocked while the dialog is busy, like Escape and the close button.
+   - Back doesn't become a dead press after a reload or a Forward.
+   - Opening and closing stay correct under React's StrictMode, which the app runs in development.
+4. **Title size and padding:** the picture's raw sizes (26 px title on a phone, 22 px wide) mapped onto the type scale, which gives 24 px and 22 px. Recommended.
+
+One design note: the light Arabic phone capture shows the close button on the left. The dark Arabic capture and the prototype's code both put it at the inline start (the right, in Arabic), as the prompt says, so I'll build that.
+EXIT 0

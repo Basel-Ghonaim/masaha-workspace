@@ -1,0 +1,13 @@
+docs(adr): sign in where the action is
+
+A guest who presses an action that needs an account (the favourite,
+a report) was sent through the sign-in or register page and back. The
+guests who press these are most often new, and the round trip sent
+exactly them away from the page they chose.
+
+ADR 0021 decides that such an action opens the sign-in over its page,
+that the user stays there and the action completes, that the overlay
+has no address of its own while the pages keep theirs for direct
+visits, and that the reset link stays a page. Nothing is built yet:
+the frontend architecture and the capability documents change with
+the code.

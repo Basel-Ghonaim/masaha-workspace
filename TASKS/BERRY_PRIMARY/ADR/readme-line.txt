@@ -1,0 +1,1 @@
+  - [0022](architecture/decisions/0022-the-berry-on-the-main-action.md) the berry on the main action: the ink keeps links, controls and structure; brand surfaces take the berry-to-plum scale

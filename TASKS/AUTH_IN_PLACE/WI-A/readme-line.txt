@@ -1,0 +1,1 @@
+  - [0021](architecture/decisions/0021-sign-in-where-the-action-is.md) sign in where the action is: over the page for an action that needs an account, the pages for direct visits

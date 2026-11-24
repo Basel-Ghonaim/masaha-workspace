@@ -1,0 +1,26 @@
+Warning: this sign-in ends between 2026-11-26 and 2026-11-29 (in 2 days at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.
+The plan is saved to `C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2\2_PLAN.md`. Phase 1 is done: nothing in the repository is edited, no branch is cut, and C1's folder was only read.
+
+I planned against C1's code on `feat/adaptive-dialog`, which matches its approved plan. After #155 merges I'll check it again and say where it differs.
+
+**How it's built:**
+- **The overlay:** `SignInPrompt` keeps its name and its API. It becomes a light shell that holds the dialog and its title. The forms, all reused from `features/auth`, load in a chunk of their own the first time it opens, and a new `check:build` rule keeps that chunk off every public site page.
+- **After a sign-in in place:** the overlay closes and the focus returns to the heart or the report link. The held action runs through today's mechanism, with no navigation.
+- **A temporary password:** the action now waits for the change by an explicit rule. Today it waits only because of the order React renders in.
+- **The reset page:** when this browser holds a guest's action, it says where it returns. Once the password is set it signs in right there and lands on the action's page.
+
+**What needs your answer before I build:**
+- **D1 — the password's one-line condition:** I recommend changing the shared component everywhere it shows, so one policy has one look.
+- **D2 — the e-mail on the reset page:** the e-mailed link carries no address, and the API masks it everywhere. To fill it in another tab, the e-mail the guest typed in the overlay has to be kept in this browser's storage beside the held action, only while one is held and for its 15 minutes. I recommend that; the alternative is an empty field the browser's autofill can fill.
+- **D6 — tests rewritten by design:** a few existing tests assert the links this item removes (the prompt's links, the space page's `/login` link, the reset page's link after the password is set). "Every existing page test stays unchanged" can't hold for those, so the plan lists each one.
+- **Security hardening:** the held action's saved path is read back with a weaker check than `next`, so a path like `/\host` passes it. Today that ends in a browser exception, not a redirect. I recommend reading it with `returnUrlOf`'s rule.
+- **The other decisions:** renewing the held action at each reset-link request so the "we bring you back" line stays true; the title as the first focus at both widths; no prefetch on hover. Seven design issues, mostly keeping production's error patterns over the pictures', and the new words in both languages are also listed in the plan.
+
+**Two corrections to the prompt, in its "Proposed alternatives" section:**
+- **The reset link carries no `next`:** the API builds the link, and the API is out of scope. The reset page learns where to return from the held action in this browser instead.
+- **The pictures' «العودة إلى تسجيل الدخول» replaces the analysis's «رجوع» in the top bar.** C1's top bar holds only the close button.
+
+The PR will touch about 45–55 files, so the separate review is warranted.
+
+I'm stopping here until the approval comes and #155 has merged.
+EXIT 0

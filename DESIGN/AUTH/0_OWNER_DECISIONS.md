@@ -131,3 +131,27 @@ the original untouched. The critique's confirmed points: `1_CRITIQUE_CHECKED.md`
     - the folder's path;
     - Claude-only skill names replaced by "any design skills your tool offers";
     - the 390 capture tip corrected (headless Chrome's 500 px floor; use CDP device metrics).
+- **A18 — the berry's role (the owner, 2026-11-24, option 2 of three, as the supervisor recommended):**
+  - **The identity, the primary action and a few brand moments** — not the site's main colour, and no longer a mark
+    only.
+  - **Content and work surfaces stay neutral** (cards, tables, the directory, the dashboard): ink on paper; the status
+    colours keep their own roles, since live availability is the product's first information.
+  - **One primary action per screen in the berry** (a darker step than `spark-500`, so white text passes AA — about
+    `spark-600`); secondary actions ink or outline; destructive stays red; links stay ink, underlined.
+  - **The berry-to-plum scale** (liked in Berry, A15) lives only on a few large brand surfaces — the home's hero, the
+    auth pages' brand area, perhaps the footer — never behind data.
+  - **The dashboard is quieter** than the public pages: the selected item and the primary action.
+  - **Rejected:** the berry as the main colour (it drowns the status colours, tires a daily tool, fails AA as a wide
+    text ground); the berry as a mark only (today's ADR 0019 rule — it left the pages grey).
+  - **A change to ADR 0019** ("never on an action"): given to designers as a principle now; the ADR and the code
+    change later, once a picture is approved (the design system follows the picture).
+- **A19 — sign in over the page the user was on (the owner, 2026-11-24):**
+  - **Why:** round 6's two loops (`DESIGN\AUTH\round6\`) showed that a brand panel beside the form has nothing true to
+    say — every filling (the mark and a line, directory cards, what an account gives) read as weak; the live covers
+    are mostly banners and logos (2 of 13 show a room), so real photos are not possible.
+  - **The direction:** a user always signs in for a reason (the heart, a report, «بلاغاتي»); the sign-in opens over
+    the page they were on, its title saying the reason, and after it the user is back where they were and the action
+    is done. A direct visit to the sign-in address (reception, a bookmark) gets a focused page (round 6's direction 2
+    without the panel's filling, or a plain focused column — to settle).
+  - **The owner's condition:** settle it on every axis first (API, design, React routing and the rest) so nothing is
+    regretted later — `TASKS\AUTH_IN_PLACE\1_ANALYSIS.md`. No drawing and no code before that.

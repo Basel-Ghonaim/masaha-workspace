@@ -1,11 +1,11 @@
-# Masaha — the main supervisor's handoff (2026-11-18)
+# Masaha — the main supervisor's handoff (2026-11-24)
 
 You are taking over as the owner's **analyst and control room** for Masaha — the **main supervisor**. This file
-supersedes the 2026-11-15 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-11-15_to_11-17.md`: CONTACT_RULES,
-GOOGLE_VERIFY, the cleanup). **You may not be Claude:** the rules that lived in Claude's private
+supersedes the 2026-11-18 handoff (archived as `_SHARED\HANDOFFS\HANDOFF_2026-11-18_to_11-24.md`: AUTH rounds 4–5,
+the free round, the model trial, Stitch, #152, #153). **You may not be Claude:** the rules that lived in Claude's private
 memory are in §8 — this file, the repository and `BOARD.md` are everything you have.
-**Read this file whole, then `BOARD.md` (its top lines are the newest), then the active folders of §2, each from its
-`0_OWNER_DECISIONS.md`.**
+**Read this file whole, then `BOARD.md` (its top lines are the newest), then `DESIGN\AUTH\0_OWNER_DECISIONS.md`
+(A1–A17).**
 
 ## 0. The supervisors
 
@@ -41,56 +41,83 @@ memory are in §8 — this file, the repository and `BOARD.md` are everything yo
   worker's review, fix what he delegated, merge nothing. A worker that asks a question waits for him — you cannot type
   in its window.
 
-## 2. State (2026-11-19, end of day)
+## 2. State (2026-11-24)
 
-**`main` = `9b4c4fc1`** (live; CI and Vercel green; no open PR). Merged since the last handoff: **#148**
-GOOGLE_VERIFY, **#149** CONTACT_RULES and, on 2026-11-19, **#150 AXE_FIXES** (finding 224: the design system's
-`ScrollRegion`, the photos' phone row and «ساعات الذروة» in it, the map's tooltip hidden from assistive technology;
-a Claude Code worker; the supervisor's own axe pass; `TASKS\AXE_FIXES\`; its small notes C1–C2 are **carried to the
-next PR's first commit**: `TASKS\AXE_FIXES\0_CARRIED_FROM_150.md`; a proposed next task there: the prices table's
-`scrollable-region-focusable` → finding 229). Worktrees: **`app`** and **`app-design`**, both on `main`. Databases:
-`masaha_dev`, `masaha_test`, `masaha_design_test` only.
+**`main` = `17a51adc`** (#153 merged 2026-11-24; main's CI and Vercel **success**, the live home and `/api/v1/spaces` 200). No open PR. Merged since the last handoff:
+- **#152** TABLE_SCROLL (finding 229: every `Table` scrolls in a `ScrollRegion`; #150's C1–C2);
+- **#153** TABLE_NAME (a table that fits says its name once: `ScrollRegion`'s `quietWhileFits`; `TableCaption`
+  removed; #152's notes).
 
-### A. AUTH — the sign-in pages' design (`DESIGN\AUTH\`) — **Sign in FIXED as pictures (A13); the method changed**
-- **The new method (the owner, 2026-11-19, A13): design as pictures first, never in code first.** Every coded
-  round was rejected (the original, Slate, Slate 2, and round 4's Atlas / Threshold / Clearing by a Claude Code
-  designer — "empty designs"). What worked: wireframes → one chosen → colour and identity, iterated by looking, on a
-  private claude.ai Design canvas the supervisor draws himself, in short loops with the owner. **claude.ai is a shared
-  company login: anything there is visible to colleagues — save locally and delete when done.**
-- **Fixed — Sign in, design B:** an ink masthead (the logo, English + theme, «تسجيل الدخول» at 56 px and its line);
-  under it two ways in on one 12-column grid — the form (Google at its real 40 px box, email, password, «نسيت كلمة
-  المرور؟», the ink button) and «جديد على مساحة؟» (register's line, «إنشاء حساب», the owners' note); the phone: the
-  masthead, then the form, then the new-account block. **Plain ink — no texture** (dots, berry dots, a berry rule,
-  a floor plan, tatreez and a watermark mark were all tried and dropped). Files: `DESIGN\AUTH\round5-B\` (four
-  standalone pages 1440 / 390 × light / dark, their PNGs, `canvas-source\`). Decisions: `0_OWNER_DECISIONS.md` A1–A13.
-- **masaha-prototype:** `main` **pushed to `f140f8a`** on the owner's word (2026-11-19; the original pages and shared modules untouched): 5 commits (`b84fc7f` Coast and Dots retired, `96f7bc6`
-  Slate 2, `d65ef9f` / `0b9b43c` / `f140f8a` round 4's three designs — all rejected, kept as variants). Nothing there is the chosen design.
-- **Next (the owner sets it):** the other auth pages (register, forgot, reset, the forced change, the reset e-mail)
-  in B's language, as pictures; then code once — a prototype variant or straight to the production Work Item.
-  The owner also asked why design work with the supervisor has struggled (the answer given 2026-11-19: §9).
+Nothing is carried to the next PR. Worktrees: `app` (on `main`) and `app-design`. Databases: `masaha_dev`,
+`masaha_test`, `masaha_design_test`. Docker and `masaha-postgres-1` may still be running (a worker started them).
 
-### B. GOOGLE_VERIFY — the consent screen's branding (`TASKS\GOOGLE_VERIFY\`) — **paused by the owner**
-- «I have fixed the issues» → Proceed returns "home page … not registered to you" at once (2026-11-19), though Search
-  Console verified the owner on 2026-11-16. Forum threads show the same for `vercel.app` homes, no answer from
-  Google. **Paused (the owner):** Google sign-in already works for everyone; only the name and logo on the consent
-  screen wait. Open for later: whether the Search Console owner is an Owner/Editor in the Cloud project's IAM (not
-  checked); «I believe the issues found are incorrect»; a custom domain (C4).
+**The owner's word for the next session (2026-11-24):** no more small production tasks for now. He will discuss the
+next task with the new supervisor.
+
+### A. The design work — where it stands (`DESIGN\AUTH\0_OWNER_DECISIONS.md` A1–A17)
+
+- **Sign in, design B** (A13: ink masthead, two ways in) is still the fixed picture (`DESIGN\AUTH\round5-B\`).
+- **Why the rounds were weak (the supervisor's finding, 2026-11-20).** The briefs, not the designers, narrowed every
+  round: long ban lists, "choose the safest option", the old design system read before drawing. Round 4's Threshold
+  and round 5's B converged on one composition.
+- **The owner's rule since then (A14):** a design brief gives **principles, never prohibitions**, and a design worker
+  launches from a clean folder (no CLAUDE.md, no memory).
+- **The free round (A14–A15):**
+  - Claude Code built three directions in `C:\dev\masaha\free-round\`, copied to `DESIGN\AUTH\free-round\`.
+  - **Notebook:** rejected ("not professional").
+  - **Lights:** the page liked, the map rejected.
+  - **Berry:** its berry-to-plum colour liked, its layout, elements and light theme rejected.
+- **Design 4, the fusion (A16–A17):** Codex took Lights' structure and Berry's colour, without a map. Its step 1 was
+  not convincing, and the fusion stopped there.
+- **The model trial (A17):** Codex, OpenCode and Copilot each ran the free round's brief in
+  `C:\dev\masaha\design-trials\<tool>\`. Only Copilot finished; OpenCode and Codex were cut by a shutdown. The owner
+  judged the trial a waste of time.
+- **Google Stitch:**
+  - The owner's own web attempt was weak, so he switched to a staged method: the logo and the design system, then
+    the base layout, then the page.
+  - It is reached through the **Stitch MCP**: `@_davideast/stitch-mcp`, key in `.claude.json` under this project
+    (memory `stitch-mcp`).
+  - The owner **never signs his Google account into a browser**, and Claude in Chrome is unavailable (his extension
+    is on a free Claude account).
+  - **Step 1 is done:** project "Masaha sign-in" (`projects/6952382136728417437`), a style sheet of the current
+    system in `design-trials\stitch\step1\`. The colours and type are right. The logo became an empty box (the MCP
+    takes no images), and it invented a seat count.
+- **The owner's next design method (2026-11-22, not started; he paused it for production tasks):**
+  - **The worker:** a new Claude Code worker in a new folder inside `C:\dev\masaha\` (name not set; the supervisor
+    proposed `studio`). It has **read access to `app` and `masaha-prototype`** but is not bound by their rules or
+    documents; writes are blocked by settings, not words. It has its own Stitch MCP, writes Stitch prompts and reads
+    the designs, and edits only when the owner asks.
+  - **The way of working:** it works step by step in conversation with the owner, never one big brief. The first
+    message (written by the supervisor) holds the product's details, a first reading list and the full way of
+    working, with **no trace of the earlier rounds**.
+  - **Still open for the owner:** whether the identity (logo, ink + berry) is fixed for it, whether it sees the
+    earlier designs, and the folder's name.
+  - **The settling order the owner accepted:**
+    1. the folder and access;
+    2. Stitch, tested;
+    3. the product's details;
+    4. the reading list;
+    5. the way of working;
+    6. the first message, reviewed by him;
+    7. the launch.
+
+### B. GOOGLE_VERIFY — paused by the owner (unchanged since 2026-11-19)
+
+The consent screen's name and logo wait. Google sign-in works for everyone.
 
 ### C. The owner's pending items
-1. ~~The empty folder `C:\dev\masaha\app-cr`~~ — **removed** by the supervisor on the owner's word (2026-11-19; the
-   restart had freed it; checked empty first).
-2. ~~WSL / Docker memory~~ — **done**: `%UserProfile%\.wslconfig` `[wsl2]` **`memory=3GB`** (the owner's choice,
-   2026-11-19, over the supervisor's 2 GB); in force after the next `wsl --shutdown` or restart.
-3. Later: close Issue #81; the post-deployment measurements of findings 23, 65, 152; E2E at the end; the full project
-   review on his word.
-4. A custom domain — would cure the reset e-mail landing in spam and any Google doubt about `vercel.app` (to discuss).
-5. **`masaha`'s old history**: left as it is (A) — decided; nothing to do.
 
-### D. History (2026-11-16 → 17), for reference
-CONTACT_RULES (`TASKS\CONTACT_RULES\`, done: Claude planned, Codex executed, a targeted review, an OpenCode fix round, a
-supervisor doc fold, #149), GOOGLE_VERIFY (`TASKS\GOOGLE_VERIFY\`, done: Copilot CLI plan → APPROVED → #148), the
-cleanup (databases `masaha_b_*`, `masaha_review_*`, `masaha_wi142_dev`, `masaha_dr_*`, `masaha_design_dev`,
-`masaha_cr_*` dropped; `app-dr`, `app-cr` removed). Details in the archived handoff and `BOARD.md`.
+1. Later:
+   - close Issue #81;
+   - measure findings 23, 65 and 152 after deployment;
+   - E2E at the end;
+   - the full project review, on his word.
+2. A custom domain (to discuss).
+3. **Issue #151** «Design restructure: the design system and the pages a visitor sees» tracks the design work (five
+   steps, ticked on merge).
+4. **Data notes from the free round** (production's directory data, not code):
+   - «جاردن سبييس» and «إليفييت هاب» spellings;
+   - Golden Hub filed under North Gaza though it sits in Gaza City.
 
 ## 3. The owner's standing rules
 
@@ -138,9 +165,8 @@ cleanup (databases `masaha_b_*`, `masaha_review_*`, `masaha_wi142_dev`, `masaha_
 ## 5. Ledgers
 
 - **Findings:** open 23, 65, 152 (measurements due); 215 (the prototype's Home, paused with AUTH); 221 (the README's
-  Sea shots); 224 resolved by #150; 217, 218, 219, 225, 226, 228 by #149; 220, 222, 223, 227 by #146. The next free
-  number is **229** (check the index) — proposed for the prices table's `scrollable-region-focusable`
-  (`TASKS\AXE_FIXES\0_CARRIED_FROM_150.md`).
+  Sea shots); 229 resolved by #152; 224 by #150; 217, 218, 219, 225, 226, 228 by #149; 220, 222, 223, 227 by #146. The
+  next free number is **230** (check the index). Nothing is carried to the next PR.
 - **The owner's notes for the refactor:** `REFACTOR_NOTES.md`.
 - **Decisions:** each task's `0_OWNER_DECISIONS.md`; `DESIGN\DECISIONS\` (round 2's settled design decisions — round 3
   may overturn them, each said); `_SHARED\OPEN_DECISIONS.md`; `WORKER_B\DEPLOY\0_OWNER_DECISIONS.md`.
@@ -149,12 +175,19 @@ cleanup (databases `masaha_b_*`, `masaha_review_*`, `masaha_wi142_dev`, `masaha_
 
 - `C:\dev\masaha\workspace\`: `TASKS\` (active: `GOOGLE_VERIFY`, the owner's step only), `DESIGN\` (active: `AUTH`), `WORKER_A\`,
   `WORKER_B\`, `_SHARED\`; `BOARD.md` (keep it true); `REFACTOR_NOTES.md`.
+- **Design folders outside the workspace:**
+  - `C:\dev\masaha\free-round\`: the free round's `PROMPT.md`, `PROMPT_4.md` (Codex's fusion), `materials\`, and
+    `work\` (Lights, Berry, Notebook, Codex's `fusion\`, the CDP capture tool `work\tools\capture.mjs`).
+  - `C:\dev\masaha\design-trials\{codex,opencode,copilot,stitch}\`: the model trial and Stitch's step 1.
+  - Neither is a repository. The free round's `work\` is copied into `DESIGN\AUTH\free-round\`.
 - **`C:\dev\masaha\masaha-prototype`** — the design repository (public `Basel-Ghonaim/masaha-prototype`); its server
   on 5410 from `app\.claude\launch.json` › `proto` (the launch file also holds `api-app` / `web-app` on 3320 / 5320,
   `api-before` / `web-before` on 3323 / 5323 from `app-design`; it is git-excluded but Prettier checks it — run
   `npx prettier --write .claude/launch.json` after editing it, or a worker's `format:check` fails). Captures: `D:\MASAHA\DT\AUTH\` (the owner's naming
   `<n>-<page>-<width>-<theme>.png`).
-  Backup: private repo `Basel-Ghonaim/masaha-workspace`, nightly 23:00.
+  Backup: private repo `Basel-Ghonaim/masaha-workspace`, the task `masaha-workspace-snapshot` at **08:00 and 17:30**
+  (catches up at the next boot, runs on battery, retries 3×; a failed push is logged as FAILED). It had silently
+  failed from 2026-11-09 to 11-20 (a 1.5 GB commit of browser profiles); repaired 2026-11-20.
 - **Worktrees now:** `app` (on `main`), `app-design` (detached at `main`; launch folder for headless reviews; its
   `.env` on `masaha_dev` + `masaha_design_test`; Prisma client regenerated 2026-11-16). Removed 2026-11-16/17: `app-dr`,
   `app-cr` (junction-safe; an empty `app-cr` folder may remain, §2 C1). Removed on 2026-11-14: `app-b` (its branch
@@ -213,7 +246,7 @@ cleanup (databases `masaha_b_*`, `masaha_review_*`, `masaha_wi142_dev`, `masaha_
 - **claude.ai Artifacts** (company account): fine while working; a finished deliverable is saved in the workspace.
 - **Workflow-rule gaps** ride on the next worker item as their own commit.
 
-## 9. Learned on 2026-11-14 → 17
+## 9. Learned on 2026-11-14 → 24
 
 - **Executors that worked (2026-11-16/17):** **Copilot CLI** (the owner's Education plan) with a two-phase prompt —
   phase 1 writes `2_PLAN.md` and stops, the owner + supervisor review, `APPROVED` → phase 2 — every text given word
@@ -264,3 +297,20 @@ cleanup (databases `masaha_b_*`, `masaha_review_*`, `masaha_wi142_dev`, `masaha_
   1280+: send the owner links for his own Chrome, full screen.
 - **Design with the owner:** he decides by looking; offer options with a recommendation and a reason, keep each round
   small, and let him check in the browser himself when he says so.
+
+- **Design briefs (2026-11-20, A14):** principles, never prohibitions. Past rejections are not passed on as bans.
+  Launch a design worker from a folder with no CLAUDE.md: the app's and the prototype's load their fixed points and
+  "Never" lists automatically. Never tell a design worker to "choose the safest option".
+- **The supervisor is the most constrained designer:** it carries every past round. A fresh worker runs a free round.
+- **Headless Chrome cannot lay out a page under 500 px.** `--window-size=390,…` renders 500 px and crops it, so RTL
+  pages lose their start. Capture phones over CDP with `Emulation.setDeviceMetricsOverride`
+  (`free-round\work\tools\capture.mjs`).
+- **Capture scripts must keep their browser profiles out of the workspace,** or under a name the `.gitignore` drops
+  (`cdp-profile*`, `chrome-profile*`).
+- **Claude Code's memory guard stops a worker's background servers** when free memory runs low. The worker then
+  stops, by its rule. Archiving idle sessions and closing Chrome tabs freed about 1 GB (2026-11-22). Put a "restart
+  once, else skip the Chrome pass and say so" line in every prompt.
+- **The owner's GitHub activity:** he asked for small real production tasks so the day shows activity (#152, #153).
+  Never make empty commits for it. Private-repo commits count only if his profile shows private contributions.
+- **Stitch:** the MCP takes no images, so a logo has to be placed by hand. Stitch invents data (a seat count): say "no
+  numbers, no fake data" in each prompt.

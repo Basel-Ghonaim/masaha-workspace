@@ -1,0 +1,36 @@
+Warning: this sign-in ends between 2026-11-26 and 2026-11-29 (in 2 days at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.
+The build is waiting for its memory grant; monitors are armed and will report when it starts and ends.
+
+The production build is queued behind the memory grant. Free memory sits around 3.2–4.1 GB against a 4 GB threshold. A background watcher will notify me when the build and `check:build` finish; I'll continue with the Chrome pass, the PR and the report from there.
+
+WI-C1 is ready for review as PR #155 (https://github.com/Basel-Ghonaim/masaha/pull/155), head `f2b8dff6abebb2a7f7bbd24024001e4851d60660`. All CI checks pass on that head, including `test:api`, and GitHub shows `CLEAN`. It is not merged.
+
+**What it adds**
+- **`AdaptiveDialog`** in the design system's overlays:
+  - From 768 px it's the usual centred dialog, 30 rem wide, with the close button in its corner.
+  - Below 768 px it's a full-screen panel with a top bar holding a 44 px close button at the inline start. The body scrolls under the bar and stays clear of the phone's safe areas.
+  - It slides up on the motion tokens and appears at once under reduced motion.
+- **Back closes it.** Opening adds one history entry at the same address:
+  - Back closes the dialog and keeps the page mounted and scrolled.
+  - Closing it any other way removes that entry; a link inside replaces it.
+  - After a reload, the left-over entry is stepped back from, so Back isn't a dead press.
+  - While `busy`, Back is held like Escape and the close button.
+- **Focus** opens on the title on a phone. On every way of closing it returns to whatever opened it, including on Safari, where a tap doesn't focus the button. Today's prompt lost the focus on close; this fixes that.
+- **`SignInPrompt`** now uses it, with its words unchanged and both links using `replace`. The held favourite or report works as before.
+- **Docs:** foundation §3 and §12, and architecture §2 as the one home for the history entry. `favorites.md` and `data-reports.md` were checked and are still true.
+
+**Verification**
+- **Local:** every check and lane passed, plus the production build and `check:build`. `test:api` was left to CI because there's no API change.
+- **Tests:** every new test was seen failing against a deliberate break, then the code was restored.
+- **Chrome:** at 390 and 1440, in Arabic and English, light and dark, everything behaved as required: Back, the close button, Escape, a link then Back, focus back on the heart, axe clean, reduced motion, and a reload while open (a single page load). Scroll was kept across Back on the report link (y = 2498 at 390, 1431 at 1440). Ten curated shots are in `C:\Users\basel\Downloads\c1-shots\`.
+
+**Departures and things you should know**
+- **Supervisor note 3:** rather than adding a check to the app shell, I documented the limit in architecture §2. A page that mounts no `AdaptiveDialog` keeps one marked entry after a reload. The only pages with the prompt always mount it, so they're covered.
+- **Focus from 768 px:** the prompt opens on its close button, not «إنشاء حساب», because Radix's default skips links and the prompt holds only links. That's how it already behaved on the old `Dialog`.
+- **Plan changes:** the pressed-control tracking went into its own small file, `opener.ts`. The busy guard lives in one place, at the root, because a duplicate in the content meant breaking either one alone failed no test. I didn't build a close part that no caller needs.
+- **`busy` has no caller yet:** the prompt required it, and WI-C2's sign-in will be the first.
+- **Docker:** it was down at the start, so I started Docker Desktop and the database container, and left both running. My request to stop Docker during the build was refused, so the build waited about 40 minutes for memory, then passed.
+- **The report** lists what's left for WI-C2, including where the «رجوع» button for the register and forgot-password views should go, since the top bar holds only the close button today.
+
+The full report is in `C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C1\4_REPORT.md`.
+EXIT 0
