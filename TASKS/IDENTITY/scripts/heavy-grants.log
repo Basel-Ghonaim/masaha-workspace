@@ -1849,3 +1849,219 @@
 2026-11-24 15:59:00  c2      GRANT  slot-1 free 5300276 KB (single)  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place -t Google there  (cwd C:\dev\masaha\app-design)
 2026-11-24 15:59:14  c2      END    slot-1 exit 1 after 14 s, free 5308064 KB  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place -t Google there
 2026-11-24 15:59:23  c2      GRANT  slot-1 free 5278076 KB (single)  npm run lint  (cwd C:\dev\masaha\app-design)
+2026-11-25 10:41:03  super   CLEAR  slot-1 stale: c2's lint GRANT of 2026-11-24 15:59 UTC has no END; no process holds it (the machine restarted)
+2026-11-25 11:09:19  c2      WAIT   memory 3136064 KB < 4 GB (try 1)  npm run lint
+2026-11-25 11:11:20  c2      WAIT   memory 2971624 KB < 4 GB (try 2)  npm run lint
+2026-11-25 11:13:21  c2      WAIT   memory 3102752 KB < 4 GB (try 3)  npm run lint
+2026-11-25 11:15:22  c2      WAIT   memory 3198680 KB < 4 GB (try 4)  npm run lint
+2026-11-25 11:17:23  c2      WAIT   memory 3422576 KB < 4 GB (try 5)  npm run lint
+2026-11-25 11:19:24  c2      WAIT   memory 3892332 KB < 4 GB (try 6)  npm run lint
+2026-11-25 11:21:25  c2      WAIT   memory 4003884 KB < 4 GB (try 7)  npm run lint
+2026-11-25 11:23:26  c2      WAIT   memory 4024736 KB < 4 GB (try 8)  npm run lint
+2026-11-25 11:25:27  c2      WAIT   memory 4029564 KB < 4 GB (try 9)  npm run lint
+2026-11-25 11:27:28  c2      WAIT   memory 4053312 KB < 4 GB (try 10)  npm run lint
+2026-11-25 11:29:29  c2      WAIT   memory 4012488 KB < 4 GB (try 11)  npm run lint
+2026-11-25 11:31:30  c2      WAIT   memory 3969928 KB < 4 GB (try 12)  npm run lint
+2026-11-25 11:33:31  c2      WAIT   memory 3957804 KB < 4 GB (try 13)  npm run lint
+2026-11-25 11:35:33  c2      WAIT   memory 2959972 KB < 4 GB (try 14)  npm run lint
+2026-11-25 11:37:34  c2      WAIT   memory 3659056 KB < 4 GB (try 15)  npm run lint
+2026-11-25 11:40:32  c2      WAIT   memory 3573212 KB < 4 GB (try 1)  npm run lint
+2026-11-25 11:42:33  c2      WAIT   memory 3551284 KB < 4 GB (try 2)  npm run lint
+2026-11-25 11:44:34  c2      GRANT  slot-1 free 5179244 KB (single)  npm run lint  (cwd C:\dev\masaha\app-design)
+2026-11-25 11:47:06  c2      END    slot-1 exit 1 after 152 s, free 5876716 KB  npm run lint
+2026-11-25 11:47:55  c2      GRANT  slot-1 free 5383684 KB (single)  npm run lint  (cwd C:\dev\masaha\app-design)
+2026-11-25 11:50:16  c2      END    slot-1 exit 0 after 141 s, free 5588748 KB  npm run lint
+2026-11-25 11:50:18  c2      GRANT  slot-1 free 5581124 KB (single)  npm run typecheck  (cwd C:\dev\masaha\app-design)
+2026-11-25 11:50:54  c2      END    slot-1 exit 0 after 36 s, free 4973100 KB  npm run typecheck
+2026-11-25 11:50:55  c2      GRANT  slot-1 free 5021552 KB (single)  npm run test:unit  (cwd C:\dev\masaha\app-design)
+2026-11-25 11:51:51  c2      END    slot-1 exit 0 after 56 s, free 5039208 KB  npm run test:unit
+2026-11-25 11:51:53  c2      GRANT  slot-1 free 4923900 KB (single)  npm run test:component  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:00:35  c2      END    slot-1 exit 1 after 522 s, free 5624836 KB  npm run test:component
+2026-11-25 12:01:06  c2      GRANT  slot-1 free 5413244 KB (single)  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:01:44  c2      END    slot-1 exit 0 after 37 s, free 5590584 KB  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place
+2026-11-25 12:01:55  c2      GRANT  slot-1 free 5507680 KB (single)  npm run lint  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:04:06  c2      END    slot-1 exit 0 after 131 s, free 5313168 KB  npm run lint
+2026-11-25 12:04:07  c2      GRANT  slot-1 free 5306512 KB (single)  npm run typecheck  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:04:41  c2      END    slot-1 exit 0 after 33 s, free 5499380 KB  npm run typecheck
+2026-11-25 12:04:42  c2      GRANT  slot-1 free 5501600 KB (single)  npm run test:component  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:10:24  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  npm run test:unit -w @masaha/web -- src/shared/design-system/tokens/semantic.unit.test.ts
+2026-11-25 12:12:26  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 2)  npm run test:unit -w @masaha/web -- src/shared/design-system/tokens/semantic.unit.test.ts
+2026-11-25 12:13:15  c2      END    slot-1 exit 0 after 512 s, free 5247224 KB  npm run test:component
+2026-11-25 12:13:16  c2      GRANT  slot-1 free 5235196 KB (single)  npm run build  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:13:31  c2      END    slot-1 exit 0 after 14 s, free 5235884 KB  npm run build
+2026-11-25 12:13:32  c2      GRANT  slot-1 free 5224440 KB (single)  npm run check:build  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:13:35  c2      END    slot-1 exit 0 after 2 s, free 5237032 KB  npm run check:build
+2026-11-25 12:14:00  c2      GRANT  slot-1 free 5207732 KB (single)  npm run build  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:14:13  c2      END    slot-1 exit 0 after 13 s, free 5180280 KB  npm run build
+2026-11-25 12:14:14  c2      GRANT  slot-1 free 5186096 KB (single)  npm run check:build  (cwd C:\dev\masaha\app-design)
+2026-11-25 12:14:17  c2      END    slot-1 exit 1 after 2 s, free 5185756 KB  npm run check:build
+2026-11-25 12:14:27  b       GRANT  slot-1 free 5216680 KB (single)  npm run test:unit -w @masaha/web -- src/shared/design-system/tokens/semantic.unit.test.ts  (cwd C:\dev\masaha\app)
+2026-11-25 12:14:29  b       END    slot-1 exit 1 after 2 s, free 5193068 KB  npm run test:unit -w @masaha/web -- src/shared/design-system/tokens/semantic.unit.test.ts
+2026-11-25 12:14:41  b       GRANT  slot-1 free 5230888 KB (single)  npm run test:unit -w @masaha/web -- src/shared/design-system/tokens/semantic.unit.test.ts  (cwd C:\dev\masaha\app)
+2026-11-25 12:14:43  b       END    slot-1 exit 0 after 2 s, free 5229664 KB  npm run test:unit -w @masaha/web -- src/shared/design-system/tokens/semantic.unit.test.ts
+2026-11-25 12:14:57  b       GRANT  slot-1 free 4651864 KB (single)  bash C:/Users/basel/AppData/Local/Temp/claude/f145cdd22201fd2b/af72c5dd-7934-461e-beaa-85502a66e532/scratchpad/breaks.sh  (cwd C:\dev\masaha\app)
+2026-11-25 12:15:26  b       END    slot-1 exit 0 after 29 s, free 4829484 KB  bash C:/Users/basel/AppData/Local/Temp/claude/f145cdd22201fd2b/af72c5dd-7934-461e-beaa-85502a66e532/scratchpad/breaks.sh
+2026-11-25 12:16:08  c2      GRANT  slot-1 free 4884916 KB (single)  node chrome.mjs matrix  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 12:16:10  c2      END    slot-1 exit 0 after 1 s, free 4846848 KB  node chrome.mjs matrix
+2026-11-25 12:16:11  b       GRANT  slot-1 free 4885548 KB (single)  npm run test:component -w @masaha/web -- src/shared/design-system/components/actions/Button  (cwd C:\dev\masaha\app)
+2026-11-25 12:16:17  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  node chrome.mjs matrix
+2026-11-25 12:16:19  b       END    slot-1 exit 1 after 7 s, free 4843124 KB  npm run test:component -w @masaha/web -- src/shared/design-system/components/actions/Button
+2026-11-25 12:17:10  b       WAIT   memory 4177764 KB < 4 GB (try 1)  bash C:\Users\basel\AppData\Local\Temp/btnbreak.sh
+2026-11-25 12:18:18  c2      GRANT  slot-1 free 4617444 KB (single)  node chrome.mjs matrix  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 12:19:09  c2      END    slot-1 exit 0 after 51 s, free 4390056 KB  node chrome.mjs matrix
+2026-11-25 12:19:11  b       GRANT  slot-1 free 4424304 KB (single)  bash C:\Users\basel\AppData\Local\Temp/btnbreak.sh  (cwd C:\dev\masaha\app)
+2026-11-25 12:19:22  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  node chrome.mjs flows
+2026-11-25 12:19:24  b       END    slot-1 exit 0 after 12 s, free 4517920 KB  bash C:\Users\basel\AppData\Local\Temp/btnbreak.sh
+2026-11-25 12:20:34  b       GRANT  slot-1 free 4573896 KB (single)  npm run test:component -w @masaha/web -- src/features/directory/components/page/ContactBar src/features/desk/components/customer-actions/StateActions src/pages/site/public/about src/pages/site/public/home/HomeParts src/pages/dashboard/space/desk/DeskPage  (cwd C:\dev\masaha\app)
+2026-11-25 12:20:50  b       END    slot-1 exit 1 after 16 s, free 4776368 KB  npm run test:component -w @masaha/web -- src/features/directory/components/page/ContactBar src/features/desk/components/customer-actions/StateActions src/pages/site/public/about src/pages/site/public/home/HomeParts src/pages/dashboard/space/desk/DeskPage
+2026-11-25 12:21:23  c2      GRANT  slot-1 free 4836428 KB (single)  node chrome.mjs flows  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 12:22:15  c2      END    slot-1 exit 0 after 52 s, free 4642276 KB  node chrome.mjs flows
+2026-11-25 12:22:17  b       GRANT  slot-1 free 4702552 KB (single)  npm run test:component -w @masaha/web -- src/features/directory/components/page/SpaceDetails -t leads the contacts  (cwd C:\dev\masaha\app)
+2026-11-25 12:22:26  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  node chrome.mjs google
+2026-11-25 12:22:29  b       END    slot-1 exit 1 after 11 s, free 4704892 KB  npm run test:component -w @masaha/web -- src/features/directory/components/page/SpaceDetails -t leads the contacts
+2026-11-25 12:22:44  b       GRANT  slot-1 free 4726104 KB (single)  npm run test:component -w @masaha/web -- src/features/directory/components/page src/features/desk/components/customer-actions/StateActions src/pages/site/public/about src/pages/site/public/home/HomeParts src/pages/dashboard/space/desk/DeskPage  (cwd C:\dev\masaha\app)
+2026-11-25 12:23:02  b       END    slot-1 exit 0 after 18 s, free 4734264 KB  npm run test:component -w @masaha/web -- src/features/directory/components/page src/features/desk/components/customer-actions/StateActions src/pages/site/public/about src/pages/site/public/home/HomeParts src/pages/dashboard/space/desk/DeskPage
+2026-11-25 12:24:27  c2      GRANT  slot-1 free 4334024 KB (single)  node chrome.mjs google  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 12:24:30  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  npm run lint
+2026-11-25 12:24:51  c2      END    slot-1 exit 0 after 23 s, free 4205784 KB  node chrome.mjs google
+2026-11-25 12:25:11  c2      GRANT  slot-1 free 4402820 KB (single)  node chrome.mjs google  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 12:25:38  c2      END    slot-1 exit 0 after 27 s, free 4320220 KB  node chrome.mjs google
+2026-11-25 12:26:31  b       WAIT   memory 3758300 KB < 4 GB (try 2)  npm run lint
+2026-11-25 12:28:33  b       WAIT   memory 4076620 KB < 4 GB (try 3)  npm run lint
+2026-11-25 12:30:34  b       GRANT  slot-1 free 7280488 KB (single)  npm run lint  (cwd C:\dev\masaha\app)
+2026-11-25 12:32:44  b       END    slot-1 exit 0 after 130 s, free 7630420 KB  npm run lint
+2026-11-25 12:32:46  b       GRANT  slot-1 free 7577828 KB (single)  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-11-25 12:33:18  b       END    slot-1 exit 0 after 32 s, free 7609624 KB  npm run typecheck
+2026-11-25 12:33:23  b       GRANT  slot-1 free 7622788 KB (single)  npm run test:unit  (cwd C:\dev\masaha\app)
+2026-11-25 12:34:10  b       END    slot-1 exit 0 after 46 s, free 7568152 KB  npm run test:unit
+2026-11-25 12:34:13  b       GRANT  slot-1 free 7565860 KB (single)  npm run test:component  (cwd C:\dev\masaha\app)
+2026-11-25 12:41:55  b       END    slot-1 exit 0 after 461 s, free 7099028 KB  npm run test:component
+2026-11-25 12:41:59  b       GRANT  slot-1 free 7097888 KB (single)  npm run build  (cwd C:\dev\masaha\app)
+2026-11-25 12:42:13  b       END    slot-1 exit 0 after 13 s, free 7040572 KB  npm run build
+2026-11-25 12:44:05  b       GRANT  slot-1 free 6160648 KB (single)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs before  (cwd C:\dev\masaha\app)
+2026-11-25 12:47:56  b       END    slot-1 exit 0 after 231 s, free 6088332 KB  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs before
+2026-11-25 12:48:06  b       GRANT  slot-1 free 6089548 KB (single)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs after  (cwd C:\dev\masaha\app)
+2026-11-25 12:52:22  b       END    slot-1 exit 0 after 256 s, free 6371940 KB  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs after
+2026-11-25 12:54:18  b       GRANT  slot-1 free 6342656 KB (single)  bash C:\Users\basel\AppData\Local\Temp/percommit.sh  (cwd C:\dev\masaha\app)
+2026-11-25 13:07:09  b       END    slot-1 exit 0 after 770 s, free 6750688 KB  bash C:\Users\basel\AppData\Local\Temp/percommit.sh
+2026-11-25 13:07:25  b       GRANT  slot-1 free 6798812 KB (single)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs after  (cwd C:\dev\masaha\app)
+2026-11-25 13:11:48  b       END    slot-1 exit 0 after 263 s, free 6765184 KB  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs after
+2026-11-25 13:40:54  c2      WAIT   memory 3372452 KB < 4 GB (try 1)  npm run test:unit -w @masaha/web -- src/shared/routing/guest/heldIntent
+2026-11-25 13:40:55  b       WAIT   memory 3405044 KB < 4 GB (try 1)  npm run test:component -w @masaha/web -- src/features/packages/components/PackagesSection src/features/directory/hooks/page/useSpacePage src/features/directory/components/page/SpaceDetails
+2026-11-25 13:42:56  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 2)  npm run test:component -w @masaha/web -- src/features/packages/components/PackagesSection src/features/directory/hooks/page/useSpacePage src/features/directory/components/page/SpaceDetails
+2026-11-25 13:42:56  c2      WAIT   memory 3892096 KB < 4 GB (try 2)  npm run test:unit -w @masaha/web -- src/shared/routing/guest/heldIntent
+2026-11-25 13:44:56  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 3)  npm run test:unit -w @masaha/web -- src/shared/routing/guest/heldIntent
+2026-11-25 13:44:57  b       GRANT  slot-1 free 4251556 KB (single)  npm run test:component -w @masaha/web -- src/features/packages/components/PackagesSection src/features/directory/hooks/page/useSpacePage src/features/directory/components/page/SpaceDetails  (cwd C:\dev\masaha\app)
+2026-11-25 13:45:11  b       END    slot-1 exit 1 after 13 s, free 4171048 KB  npm run test:component -w @masaha/web -- src/features/packages/components/PackagesSection src/features/directory/hooks/page/useSpacePage src/features/directory/components/page/SpaceDetails
+2026-11-25 13:46:04  b       WAIT   memory 4160228 KB < 4 GB (try 1)  npm run test:component -w @masaha/web -- src/features/packages src/features/directory
+2026-11-25 13:46:57  c2      GRANT  slot-1 free 4281420 KB (single)  npm run test:unit -w @masaha/web -- src/shared/routing/guest/heldIntent  (cwd C:\dev\masaha\app-design)
+2026-11-25 13:47:00  c2      END    slot-1 exit 1 after 3 s, free 4277800 KB  npm run test:unit -w @masaha/web -- src/shared/routing/guest/heldIntent
+2026-11-25 13:47:07  c2      GRANT  slot-1 free 4226408 KB (single)  npm run test:component -w @masaha/web -- src/features/favorites/hooks/resume src/features/data-reports/hooks/report/useReportAction src/pages/site/auth/in-place src/pages/site/auth/resetPasswordPage  (cwd C:\dev\masaha\app-design)
+2026-11-25 13:47:56  c2      END    slot-1 exit 1 after 49 s, free 4311496 KB  npm run test:component -w @masaha/web -- src/features/favorites/hooks/resume src/features/data-reports/hooks/report/useReportAction src/pages/site/auth/in-place src/pages/site/auth/resetPasswordPage
+2026-11-25 13:48:05  b       WAIT   memory 4155320 KB < 4 GB (try 2)  npm run test:component -w @masaha/web -- src/features/packages src/features/directory
+2026-11-25 13:48:10  c2      WAIT   memory 4143972 KB < 4 GB (try 1)  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place -t asks for a reset link
+2026-11-25 13:50:06  b       GRANT  slot-1 free 4654172 KB (single)  npm run test:component -w @masaha/web -- src/features/packages src/features/directory  (cwd C:\dev\masaha\app)
+2026-11-25 13:50:11  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 2)  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place -t asks for a reset link
+2026-11-25 13:50:43  b       END    slot-1 exit 0 after 36 s, free 4662188 KB  npm run test:component -w @masaha/web -- src/features/packages src/features/directory
+2026-11-25 13:52:12  c2      GRANT  slot-1 free 4638948 KB (single)  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place -t asks for a reset link  (cwd C:\dev\masaha\app-design)
+2026-11-25 13:53:34  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  npm run lint
+2026-11-25 13:55:35  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 2)  npm run lint
+2026-11-25 13:57:36  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 3)  npm run lint
+2026-11-25 13:59:14  c2      END    slot-1 exit 1 after 421 s, free 3207148 KB  npm run test:component -w @masaha/web -- src/pages/site/auth/in-place -t asks for a reset link
+2026-11-25 13:59:37  b       WAIT   memory 3320636 KB < 4 GB (try 4)  npm run lint
+2026-11-25 14:00:56  c2      GRANT  slot-1 free 4787736 KB (single)  npm run test:unit -w @masaha/web -- src/shared/routing  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:00:59  c2      END    slot-1 exit 1 after 3 s, free 4883536 KB  npm run test:unit -w @masaha/web -- src/shared/routing
+2026-11-25 14:01:01  c2      GRANT  slot-1 free 4879572 KB (single)  npm run test:component -w @masaha/web -- src/features/favorites src/features/data-reports src/pages/site  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:01:38  b       WAIT   under 8 GB free, one run at a time, slot 1 taken (try 5)  npm run lint
+2026-11-25 14:02:02  c2      END    slot-1 exit 0 after 60 s, free 5000064 KB  npm run test:component -w @masaha/web -- src/features/favorites src/features/data-reports src/pages/site
+2026-11-25 14:02:14  c2      GRANT  slot-1 free 4762060 KB (single)  npm run test:unit -w @masaha/web -- src/shared/routing  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:02:17  c2      END    slot-1 exit 1 after 3 s, free 4750376 KB  npm run test:unit -w @masaha/web -- src/shared/routing
+2026-11-25 14:02:26  c2      GRANT  slot-1 free 4958128 KB (single)  npm run test:unit -w @masaha/web -- src/shared/routing  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:02:29  c2      END    slot-1 exit 0 after 3 s, free 5033824 KB  npm run test:unit -w @masaha/web -- src/shared/routing
+2026-11-25 14:03:39  b       GRANT  slot-1 free 4927716 KB (single)  npm run lint  (cwd C:\dev\masaha\app)
+2026-11-25 14:04:20  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 1)  node chrome2.mjs temporary
+2026-11-25 14:06:11  b       END    slot-1 exit 0 after 151 s, free 5797488 KB  npm run lint
+2026-11-25 14:06:13  b       GRANT  slot-1 free 5803756 KB (single)  npm run typecheck  (cwd C:\dev\masaha\app)
+2026-11-25 14:06:21  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 2)  node chrome2.mjs temporary
+2026-11-25 14:06:53  b       END    slot-1 exit 0 after 40 s, free 5511652 KB  npm run typecheck
+2026-11-25 14:07:05  b       GRANT  slot-1 free 5568404 KB (single)  npm run test:unit  (cwd C:\dev\masaha\app)
+2026-11-25 14:07:54  b       END    slot-1 exit 0 after 49 s, free 5742692 KB  npm run test:unit
+2026-11-25 14:07:56  b       GRANT  slot-1 free 5736500 KB (single)  npm run test:component  (cwd C:\dev\masaha\app)
+2026-11-25 14:08:22  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 3)  node chrome2.mjs temporary
+2026-11-25 14:10:23  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 4)  node chrome2.mjs temporary
+2026-11-25 14:12:24  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 5)  node chrome2.mjs temporary
+2026-11-25 14:14:25  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 6)  node chrome2.mjs temporary
+2026-11-25 14:15:44  b       END    slot-1 exit 0 after 468 s, free 6342564 KB  npm run test:component
+2026-11-25 14:15:50  b       GRANT  slot-1 free 6326912 KB (single)  npm run build  (cwd C:\dev\masaha\app)
+2026-11-25 14:16:03  b       END    slot-1 exit 0 after 12 s, free 6343740 KB  npm run build
+2026-11-25 14:16:12  b       GRANT  slot-1 free 6336020 KB (single)  bash C:\Users\basel\AppData\Local\Temp/c4.sh  (cwd C:\dev\masaha\app)
+2026-11-25 14:16:25  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 7)  node chrome2.mjs temporary
+2026-11-25 14:18:26  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 8)  node chrome2.mjs temporary
+2026-11-25 14:18:49  b       END    slot-1 exit 0 after 157 s, free 6416800 KB  bash C:\Users\basel\AppData\Local\Temp/c4.sh
+2026-11-25 14:19:24  b       GRANT  slot-1 free 5906068 KB (single)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs fix ^(space|packages)-  (cwd C:\dev\masaha\app)
+2026-11-25 14:19:24  b       END    slot-1 exit 255 after 0 s, free 5905612 KB  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/berry.mjs fix ^(space|packages)-
+2026-11-25 14:19:32  b       GRANT  slot-1 free 6047280 KB (single)  bash C:\Users\basel\AppData\Local\Temp/fix.sh  (cwd C:\dev\masaha\app)
+2026-11-25 14:20:27  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 9)  node chrome2.mjs temporary
+2026-11-25 14:21:29  b       END    slot-1 exit 0 after 117 s, free 5978700 KB  bash C:\Users\basel\AppData\Local\Temp/fix.sh
+2026-11-25 14:21:51  b       GRANT  slot-1 free 5994800 KB (single)  bash C:\Users\basel\AppData\Local\Temp/fix.sh  (cwd C:\dev\masaha\app)
+2026-11-25 14:22:27  c2      WAIT   under 8 GB free, one run at a time, slot 1 taken (try 10)  node chrome2.mjs temporary
+2026-11-25 14:24:01  b       END    slot-1 exit 0 after 130 s, free 5877908 KB  bash C:\Users\basel\AppData\Local\Temp/fix.sh
+2026-11-25 14:24:28  c2      GRANT  slot-1 free 5901588 KB (single)  node chrome2.mjs temporary  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:24:54  c2      END    slot-1 exit 0 after 25 s, free 6079136 KB  node chrome2.mjs temporary
+2026-11-25 14:25:41  c2      GRANT  slot-1 free 6154404 KB (single)  node chrome2.mjs temporary  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:25:57  c2      END    slot-1 exit 0 after 15 s, free 6049316 KB  node chrome2.mjs temporary
+2026-11-25 14:26:28  c2      GRANT  slot-1 free 6098908 KB (single)  node chrome2.mjs temporary  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:26:44  c2      END    slot-1 exit 0 after 16 s, free 6122860 KB  node chrome2.mjs temporary
+2026-11-25 14:27:31  c2      GRANT  slot-1 free 6246212 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing/guards/passwordChange  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:27:42  c2      END    slot-1 exit 1 after 11 s, free 6233528 KB  npm run test:component -w @masaha/web -- src/shared/routing/guards/passwordChange
+2026-11-25 14:27:49  c2      GRANT  slot-1 free 6228708 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing/guards src/pages/site/auth  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:28:29  c2      END    slot-1 exit 0 after 39 s, free 6203248 KB  npm run test:component -w @masaha/web -- src/shared/routing/guards src/pages/site/auth
+2026-11-25 14:28:35  c2      GRANT  slot-1 free 6178232 KB (single)  node chrome2.mjs temporary  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:28:52  c2      END    slot-1 exit 0 after 16 s, free 6022088 KB  node chrome2.mjs temporary
+2026-11-25 14:29:15  c2      GRANT  slot-1 free 6084028 KB (single)  node chrome2.mjs temporary  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:29:31  c2      END    slot-1 exit 0 after 15 s, free 6004232 KB  node chrome2.mjs temporary
+2026-11-25 14:30:02  c2      GRANT  slot-1 free 6071348 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing/guards/passwordChange  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:30:13  c2      END    slot-1 exit 1 after 10 s, free 6124348 KB  npm run test:component -w @masaha/web -- src/shared/routing/guards/passwordChange
+2026-11-25 14:30:25  c2      GRANT  slot-1 free 6089164 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing src/pages/site src/app  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:31:13  c2      END    slot-1 exit 1 after 48 s, free 6144708 KB  npm run test:component -w @masaha/web -- src/shared/routing src/pages/site src/app
+2026-11-25 14:31:23  c2      GRANT  slot-1 free 6131036 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing src/pages/site src/app  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:32:13  c2      END    slot-1 exit 1 after 49 s, free 6127736 KB  npm run test:component -w @masaha/web -- src/shared/routing src/pages/site src/app
+2026-11-25 14:32:23  c2      GRANT  slot-1 free 6124000 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing/guards/passwordChange -t overlay  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:32:33  c2      END    slot-1 exit 1 after 10 s, free 6073488 KB  npm run test:component -w @masaha/web -- src/shared/routing/guards/passwordChange -t overlay
+2026-11-25 14:32:59  c2      GRANT  slot-1 free 6060340 KB (single)  npm run test:component -w @masaha/web -- src/shared/routing src/pages src/app  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:34:20  c2      END    slot-1 exit 0 after 81 s, free 5931056 KB  npm run test:component -w @masaha/web -- src/shared/routing src/pages src/app
+2026-11-25 14:34:26  c2      GRANT  slot-1 free 5915760 KB (single)  node chrome2.mjs temporary  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:34:44  c2      END    slot-1 exit 0 after 18 s, free 5804328 KB  node chrome2.mjs temporary
+2026-11-25 14:34:53  c2      GRANT  slot-1 free 5868960 KB (single)  node chrome2.mjs cards  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:35:08  c2      END    slot-1 exit 0 after 15 s, free 5801524 KB  node chrome2.mjs cards
+2026-11-25 14:35:23  c2      GRANT  slot-1 free 5782092 KB (single)  node chrome2.mjs cards  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:36:34  c2      END    slot-1 exit 0 after 70 s, free 5484440 KB  node chrome2.mjs cards
+2026-11-25 14:36:49  c2      GRANT  slot-1 free 5473436 KB (single)  node chrome2.mjs cards  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:37:19  c2      END    slot-1 exit 0 after 30 s, free 5455852 KB  node chrome2.mjs cards
+2026-11-25 14:37:26  c2      GRANT  slot-1 free 5478704 KB (single)  node chrome2.mjs network  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:38:21  c2      END    slot-1 exit 0 after 55 s, free 5440324 KB  node chrome2.mjs network
+2026-11-25 14:38:47  c2      GRANT  slot-1 free 5511056 KB (single)  node chrome2.mjs network  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:39:22  c2      END    slot-1 exit 0 after 34 s, free 5448392 KB  node chrome2.mjs network
+2026-11-25 14:39:30  c2      GRANT  slot-1 free 5321308 KB (single)  node chrome2.mjs network  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:40:25  c2      END    slot-1 exit 0 after 55 s, free 4841904 KB  node chrome2.mjs network
+2026-11-25 14:40:36  c2      GRANT  slot-1 free 4870480 KB (single)  node chrome2.mjs network  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:41:15  c2      END    slot-1 exit 0 after 39 s, free 3302184 KB  node chrome2.mjs network
+2026-11-25 14:41:17  c2      WAIT   memory 3255464 KB < 4 GB (try 1)  node chrome2.mjs network
+2026-11-25 14:43:18  c2      WAIT   memory 3946260 KB < 4 GB (try 2)  node chrome2.mjs network
+2026-11-25 14:45:19  c2      GRANT  slot-1 free 4540444 KB (single)  node chrome2.mjs network  (cwd C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2)
+2026-11-25 14:45:56  c2      END    slot-1 exit 0 after 36 s, free 4495452 KB  node chrome2.mjs network
+2026-11-25 14:47:11  c2      GRANT  slot-1 free 4941436 KB (single)  npm run lint  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:49:29  c2      END    slot-1 exit 1 after 138 s, free 5260336 KB  npm run lint
+2026-11-25 14:50:00  c2      GRANT  slot-1 free 5008576 KB (single)  npm run lint  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:52:24  c2      END    slot-1 exit 0 after 143 s, free 5227084 KB  npm run lint
+2026-11-25 14:52:25  c2      GRANT  slot-1 free 5247716 KB (single)  npm run typecheck  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:53:15  c2      END    slot-1 exit 0 after 49 s, free 5296352 KB  npm run typecheck
+2026-11-25 14:53:16  c2      GRANT  slot-1 free 5288768 KB (single)  npm run test:unit  (cwd C:\dev\masaha\app-design)
+2026-11-25 14:54:04  c2      END    slot-1 exit 0 after 47 s, free 5272628 KB  npm run test:unit
+2026-11-25 14:54:05  c2      GRANT  slot-1 free 5297116 KB (single)  npm run test:component  (cwd C:\dev\masaha\app-design)
+2026-11-25 15:02:11  c2      END    slot-1 exit 0 after 486 s, free 6289460 KB  npm run test:component
+2026-11-25 15:02:13  c2      GRANT  slot-1 free 6298504 KB (single)  npm run build  (cwd C:\dev\masaha\app-design)
+2026-11-25 15:02:26  c2      END    slot-1 exit 0 after 12 s, free 6276732 KB  npm run build
+2026-11-25 15:02:27  c2      GRANT  slot-1 free 6275740 KB (single)  npm run check:build  (cwd C:\dev\masaha\app-design)
+2026-11-25 15:02:29  c2      END    slot-1 exit 0 after 2 s, free 6262528 KB  npm run check:build
+2026-11-25 15:29:52  b2      GRANT  slot-1 free 4676524 KB (single)  npx vitest run --project component src/features/auth src/pages/site/auth  (cwd C:\dev\masaha\app\apps\web)

@@ -49,3 +49,4 @@
   issues 1–7 as recommended; the NEW words as listed. Phase 2 starts once #155 merges (the message in
   `WI-C2\2b_SUPERVISOR_REVIEW.md`).
 - **2026-11-24 — #155 merged** (the owner tested it locally, then «تمام»; pinned to f2b8dff6). WI-C2's phase 2 resumed.
+- **2026-11-25 — #157 merged** (the owner's word after his own look on 5323; pinned to ad0ba75e). `main` = 95c33fe9.

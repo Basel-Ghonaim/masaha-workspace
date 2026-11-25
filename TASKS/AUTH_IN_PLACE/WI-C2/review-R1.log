@@ -1,0 +1,24 @@
+Warning: this sign-in ends between 2026-11-26 and 2026-11-29 (in 1 day at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.
+I've finished the R1 security review of PR #157 and saved it to `C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2\6_REVIEW_R1.md`. Three line numbers in it are wrong, and you declined my edits to fix them (below).
+
+**Verdict: mergeable after a fix round.** Of the nine requirements, R1.1–R1.3 and R1.5–R1.9 pass and R1.4 (when the held action may run) is weak. I read the code, CI and the diff only, and ran nothing.
+
+**Should-fix**
+- **S-1: a held action can run on the next person's account.** A guest presses the heart, then signs in over the page with an account that has a temporary password. They land on the password-change page and sign out from there. If another person signs in on that tab within 15 minutes, the space is saved to their favourites. The report version opens the report dialog for them on its own.
+  - **Cause:** a sign-out clears only the copy in browser storage, not the copy each feature keeps in memory. This already happened before the PR, through the old trip to the sign-in page. But the PR's documents now say a sign-out lets the action go, which isn't true.
+  - **Fix:** one line in `guestLeaving.ts` that clears both features' memory holds when a session ends, plus one test. This also covers the held report the worker flagged in the report's §6.
+- **S-2: a sign-in can run another tab's action.** The "this tab held it" check is a simple per-tab flag. If a second tab of the same browser holds a different space, signing in over the first tab's page navigates to the other space and saves it instead. The first tab's space is lost. This is also pre-existing; fixing it with a per-tab id is small, or it can be recorded as a finding instead.
+
+**Nits**
+- While a password sign-in is pending, Google's button and the view switches stay clickable.
+- The held page's path is checked the same way `next` is, but the raw string is what gets followed. This can't be exploited.
+- No test asserts the e-mail stays out of browser storage after a reset-link request from the overlay.
+- The overlay's temporary-password test still passes without the new rule. Only the two hook tests prove it, which the worker's report already admits.
+
+**One point for R2:** the reset page writes its "we take you back to {space}" line once, when it opens. If the waiting tab's overlay is closed in the meantime, the line still promises the return, but the sign-in lands by role.
+
+**Wrong line references in the review file:**
+- `useContinueWithGoogle.ts:24` should be `:27`
+- `SignInBody.tsx:51-67` should be `:50-68`
+- `PrivacyLine.tsx:105-110` should be `:16-21`
+EXIT 0

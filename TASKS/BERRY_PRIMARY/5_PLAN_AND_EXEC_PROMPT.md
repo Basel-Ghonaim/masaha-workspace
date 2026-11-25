@@ -1,7 +1,7 @@
 # WI-B — the berry on the main action (ADR 0022)
 
 You are a **Claude Code worker** on **Masaha**, a bilingual Arabic RTL / English platform for coworking spaces in Gaza.
-This is a fresh session, **Opus 5.5, effort high**, started in **`C:\dev\masaha\app`** (on `main` = `c3968a74`, clean;
+This is a fresh session, **Opus 5.5, effort high**, started in **`C:\dev\masaha\app`** (on `main` = `c3968a74` or later, clean;
 the API on 3320 against `masaha_dev`, tests on `masaha_test`, the web on 5320). `main` is **live in production**:
 every merge deploys.
 
@@ -36,15 +36,25 @@ in place of their stop-and-wait).
 - the layer's tokens (`tokens/primitives.css`, `semantic.css`, `semantic.unit.test.ts`, `themes.ts`) and `Button`;
 - the approved pictures where the berry action is seen: masaha-prototype (public,
   `https://github.com/Basel-Ghonaim/masaha-prototype`) `prototype/variants/Space details/inplace.css` (`.inplace-primary`:
-  `spark-600` + white in light, `spark-400` + `neutral-950` in dark, hovers `spark-700` / `spark-300`) and the
-  captures in `C:\dev\masaha\workspace\DESIGN\AUTH\inplace-P2\`.
+  `spark-600` + white in light; its dark values are superseded by B1 below) and the captures in
+  `C:\dev\masaha\workspace\DESIGN\AUTH\inplace-P2\`; the real screens before / after in
+  `C:\Users\basel\Downloads\berry-trial-shots\` (an injected stylesheet, not code).
 
 ## The work (the plan settles the details)
 
 1. **A role of its own for the main action**, apart from `primary` (the ink), which keeps links, checked and active
    controls (Checkbox, RadioGroup, Switch, Tabs' active pill), Meter, Heatmap, Toast and the rest it draws today —
-   ADR 0022 point 2. Its foreground, its hover, its focus ring if it differs, in both themes, at the steps the
-   pictures use. Name it in the plan.
+   ADR 0022 point 2. Its foreground, its hover, its focus ring if it differs. Name it in the plan.
+   **The owner's decision B1 (2026-11-25, `0_OWNER_DECISIONS.md`): the berry in the light theme only.**
+   - **Light:** `spark-600` with white text, hover `spark-700`.
+   - **Dark:** the main action keeps **today's** `primary` look — `neutral-50` with `neutral-950` text and today's
+     `primary-hover` — so the dark theme's buttons do not change at all.
+   - The supervisor measured these with the test file's own method before the decision (text 5.91 : 1, shape
+     5.69 : 1; distance from `destructive` 0.163 / protan 0.161 / deutan 0.160, hover 0.174 / 0.131 / 0.172); your
+     tests make them permanent.
+   - **ADR 0022 gains this dated line, word for word, under its status line, as its own commit** (`docs(adr): keep
+     dark main action in the ink`, with a body):
+     `> **Revised:** <the commit's date> — the berry main action is the light theme's; in the dark theme the main action keeps the ink's light step with dark text, as before (the owner, after seeing both on the real screens). The body below is left as first written.`
 2. **`Button`'s main variant takes it.** Decide in the plan, from a full inventory, whether the main variant *is*
    today's default (`primary`) — so every default button becomes berry — or a new variant callers opt into. ADR 0022
    point 1 says **one main action per screen**: list every screen where today's default buttons number more than one,

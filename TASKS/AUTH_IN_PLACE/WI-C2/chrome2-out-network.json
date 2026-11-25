@@ -1,0 +1,31 @@
+{
+  "slow 3G, at once": {
+    "title": "Sign in to save spaces to your favourites",
+    "loading": true,
+    "form": false,
+    "focus": "adaptive-dialog-title"
+  },
+  "slow 3G, the forms after (ms)": 26348,
+  "offline": {
+    "alert": "Couldn’t load the sign-in. Check your connection, then try again.Try again",
+    "retry": true
+  },
+  "requests after the retry": {
+    "count": 64,
+    "first": [
+      "/src/pages/site/auth/in-place/InPlaceSignIn.tsx?t=1795617178639",
+      "/src/features/auth/index.ts?t=1795617178639",
+      "/src/pages/site/auth/OrDivider.tsx",
+      "/src/pages/site/auth/in-place/ChangedNotice.tsx",
+      "/src/pages/site/auth/in-place/ForgotView.tsx?t=1795617178639",
+      "/src/pages/site/auth/in-place/RegisterView.tsx?t=1795617178639"
+    ],
+    "failed": []
+  },
+  "alert after the retry": null,
+  "back online, after the retry": {
+    "form": true,
+    "focus": "adaptive-dialog-title"
+  },
+  "pageErrors": []
+}

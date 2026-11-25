@@ -1,0 +1,34 @@
+Warning: this sign-in ends between 2026-11-26 and 2026-11-29 (in 1 day at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.
+I've written the R2 review to `C:\dev\masaha\workspace\TASKS\AUTH_IN_PLACE\WI-C2\6_REVIEW_R2.md`. **Verdict: mergeable after a fix round.** I found no blocker. CI passes on head `305c5d3f` and GitHub shows the PR as CLEAN; I built and ran nothing myself.
+
+**Should fix:**
+1. **Focus on the link-sent step.** After «أرسل رابط الاستعادة» the pressed button disappears, and focus falls to the dialog's container instead of the new title «تفقّد بريدك الإلكتروني». The plan named exactly this case as one to prevent. The fix is to move focus to the title when the forgotten-password step changes, and to check it in the reset-request test.
+2. **Reset-page test.** The held-favourite test (`resetPasswordPage.component.test.tsx:181-205`) proves the landing on the space, but not that the favourite is then saved, which the plan required. One added expectation fixes it.
+3. **`docs/features/users.md:42`** still says "rules checklist", which the one-line password condition replaced everywhere.
+4. **Three Chrome checks from the plan were neither run nor reported:**
+   - the browser history after signing in with a temporary password (the code suggests the gate's redirect and the overlay closing can race);
+   - the overlay over a card's heart on Directory and Home;
+   - the loading line on slow 3G and the retry when the chunk fails offline. That retry has no test anywhere.
+
+**R2 requirements:**
+
+| Requirement | Result |
+|---|---|
+| R2.1 flows | PASS |
+| R2.2 focus | WEAK (the link-sent step) |
+| R2.3 Back, Escape, close, busy | PASS |
+| R2.4 catalogue and design system | PASS |
+| R2.5 tests | WEAK (the reset-page save assertion) |
+| R2.6 scope and commits | PASS |
+| R2.7 documents | WEAK (`users.md:42`) |
+| R2.8 report's claims | WEAK (the missing Chrome checks) |
+
+For R2.5 I checked five of the worker's named breaks against the code, and each would fail its test.
+
+**Nits (9 in the file):**
+- **Language flip on sign-in.** In the English Chrome run, the save toast and the report dialog came up in Arabic. Signing in already switches the page to the account's language; that's existing behaviour, but over the page the guest stays on it's more visible. Worth recording as a finding or asking the owner.
+- **Unapproved string.** One new line (`loadFailed`) isn't on the approved word list.
+- **Promises read once.** The link-sent note and the reset page read the held action once, when they appear. If it lapses later, they still promise the return to the space while the sign-in lands on `/`.
+
+**Outside R2, for R1:** the reset page now announces, and lands on, whatever guest action this browser holds. On a shared coworking computer, that could run another guest's favourite or report under the account being reset.
+EXIT 0

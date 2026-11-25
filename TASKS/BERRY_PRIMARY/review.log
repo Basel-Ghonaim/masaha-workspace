@@ -1,0 +1,19 @@
+Warning: this sign-in ends between 2026-11-26 and 2026-11-29 (in 1 day at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.
+My verdict on PR #158 is **mergeable after a small fix round**: one button variant to change, and one look from you at how the WhatsApp change (D6) was built. Nothing blocks it. CI is green on `071e9214`, GitHub shows the PR as clean, and a test merge with #157's head has no conflicts.
+
+The full review is in `C:\dev\masaha\workspace\TASKS\BERRY_PRIMARY\9_REVIEW.md`. I edited nothing in the repository and ran no build or tests.
+
+**Requirements:** B1–B4 and B6–B9 pass. B5 (one main action per screen) is weak because of the two items below. Every screen and dialog the plan named has its main action, and none is missing. The desk's «تحصيل» rows stay ink, and a test checks that.
+
+**Should fix:**
+- **S1 — Packages' empty state shows the berry button.** In `PackagesSection.tsx`, the same "add" button is drawn both in the header and inside the empty state, so an empty Packages page shows a berry button there. That breaks the rule this PR writes into the design-system document ("an empty state has none"), and the Staff page handles the same case in ink. The fix is to keep the berry on the header copy only and fold that into commit `b284e80a`.
+- **S2 — D6 was built differently from the plan, and the report doesn't say so.** The plan said to make the first contact channel in the side panel the filled button. Instead, a separate «واتساب» button was added above the contact list, and the list keeps its own WhatsApp row. So WhatsApp shows twice, one under the other (`space-1440-ar-light-2-after.png`). You can:
+  - **(a)** keep it and add one line to the report's departures; or
+  - **(b)** remove the WhatsApp row from the list while the button shows, to match the plan.
+
+**Nits:**
+- The spark rule in the design-system document's colour-roles section (§5) points to "below" rather than linking ADR 0022 directly.
+- No test break was ever run against the hover colour's distance from the red; the plan's suggested break didn't fail. The hover runs through the same test as the button's fill colour, so this is a note, not a gap.
+
+I looked at the four after-shots myself: the desk, the desk dialog, the home page and the space page. Each shows what the report describes.
+EXIT 0
