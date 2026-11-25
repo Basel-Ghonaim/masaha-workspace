@@ -1,5 +1,9 @@
 # BOARD
 
+> **2026-11-24 — WI-B's worker prompt written:** `TASKS\BERRY_PRIMARY\5_PLAN_AND_EXEC_PROMPT.md` (in `app`, plan then stop; a role of its own for the main action, one main action per screen by inventory, the criteria as tests, before/after shots; no-conflict with C2's files; expected #158). Waiting for the owner's word to launch.
+
+> **2026-11-24 — #156 merged (ADR 0022; the owner's word), pinned to b7ade258:** `main` = c3968a74; branch deleted (remote, local); `app` on `main`. Main's CI on c3968a74 **success**, Vercel **success** (checked). Next: WI-B's worker prompt. C2 still running (expects #157).
+
 > **2026-11-24 — #156 ADR 0022 verified by the supervisor:** head `b7ade2587ec8c01b5500673fb7182c2c338b382b`, CLEAN, CI 10 pass; one commit, 3 files; the ADR byte-identical, 0019's Revised line and the README line exactly the approved ones, the message identical, no trailer, the body identical. Merge waits for the owner's word. C2 now expects **#157** (its prompt has it check both lists).
 
 > **2026-11-24 — ADR 0022's text approved by the owner; its PR ready to launch:** `TASKS\BERRY_PRIMARY\3_EXEC_PROMPT_ADR.md` (texts as files in `ADR\`; branch `docs/adr-0022` in `app`; the %B false alarm fixed in the prompt); a free executor (Copilot CLI); merge on the owner's word. C2 still running in `app-design`.
