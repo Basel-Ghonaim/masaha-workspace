@@ -2065,3 +2065,19 @@
 2026-11-25 15:02:27  c2      GRANT  slot-1 free 6275740 KB (single)  npm run check:build  (cwd C:\dev\masaha\app-design)
 2026-11-25 15:02:29  c2      END    slot-1 exit 0 after 2 s, free 6262528 KB  npm run check:build
 2026-11-25 15:29:52  b2      GRANT  slot-1 free 4676524 KB (single)  npx vitest run --project component src/features/auth src/pages/site/auth  (cwd C:\dev\masaha\app\apps\web)
+2026-11-25 15:30:43  b2      END    slot-1 exit 1 after 51 s, free 4651080 KB  npx vitest run --project component src/features/auth src/pages/site/auth
+2026-11-25 15:30:58  b2      GRANT  slot-1 free 4619792 KB (single)  npx vitest run --project component src/features/auth src/pages/site/auth  (cwd C:\dev\masaha\app\apps\web)
+2026-11-25 15:31:53  b2      END    slot-1 exit 0 after 55 s, free 4662636 KB  npx vitest run --project component src/features/auth src/pages/site/auth
+2026-11-25 15:35:38  b2      WAIT   memory 3650664 KB < 4 GB (try 1)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:37:40  b2      WAIT   memory 2662168 KB < 4 GB (try 2)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:39:41  b2      WAIT   memory 3420196 KB < 4 GB (try 3)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:41:42  b2      WAIT   memory 2075552 KB < 4 GB (try 4)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:43:43  b2      GRANT  slot-1 free 4202336 KB (single)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs  (cwd C:\dev\masaha\app)
+2026-11-25 15:49:23  b2      END    slot-1 exit 0 after 339 s, free 2298284 KB  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:50:53  b2      WAIT   memory 2366556 KB < 4 GB (try 1)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:52:54  b2      WAIT   memory 2159224 KB < 4 GB (try 2)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:54:56  b2      WAIT   memory 872796 KB < 4 GB (try 3)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:56:57  b2      WAIT   memory 1406496 KB < 4 GB (try 4)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 15:58:58  b2      WAIT   memory 1735632 KB < 4 GB (try 5)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 16:01:00  b2      WAIT   memory 1647824 KB < 4 GB (try 6)  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs
+2026-11-25 16:03:01  b2      GRANT  slot-1 free 9519048 KB  node C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/audit.mjs  (cwd C:\dev\masaha\app)
