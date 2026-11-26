@@ -10,14 +10,14 @@ import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const ONLY = process.argv[2] ? new RegExp(process.argv[2]) : null;
+const ONLY = (process.env.AUDIT_ONLY ?? process.argv[2]) ? new RegExp(process.env.AUDIT_ONLY ?? process.argv[2]) : null;
 const APP = 'C:/dev/masaha/app';
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const WEB = 'http://localhost:5320';
 const SPACE_ID = 26;
 const SLUG = 'pal-hub';
 const SHOTS = 'C:/Users/basel/Downloads/berry-audit-shots/raw';
-const OUT = 'C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/out-audit.json';
+const OUT = process.env.AUDIT_OUT ?? 'C:/dev/masaha/workspace/TASKS/BERRY_PRIMARY/scripts/out-audit.json';
 mkdirSync(SHOTS, { recursive: true });
 const AXE = readFileSync(`${APP}/node_modules/axe-core/axe.min.js`, 'utf8');
 const ENV = readFileSync(`${APP}/apps/api/.env`, 'utf8');
@@ -164,7 +164,7 @@ const MEASURE = `(() => {
   const overlays = [...document.querySelectorAll('[role="dialog"], [role="alertdialog"]')].filter(shown);
   const where = (el) => overlays.some((o) => o.contains(el)) ? 'overlay' : 'page';
   const name = (el) => (el.getAttribute('aria-label') ?? el.textContent ?? '').replace(/\\s+/g, ' ').trim().slice(0, 40);
-  const buttons = [...document.querySelectorAll('[data-slot="button"]')].filter(shown);
+  const buttons = [...document.querySelectorAll('button, a')].filter(shown);
   const row = (el) => ({ name: name(el), where: where(el), inView: inView(el), bg: getComputedStyle(el).backgroundColor });
   const mains = buttons.filter((el) => el.classList.contains('bg-main-action')).map(row);
   const berry = buttons.filter((el) => { const h = hue(getComputedStyle(el).backgroundColor); return h !== null && h > 270 && h < 345; }).map(row);

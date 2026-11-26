@@ -1,0 +1,359 @@
+{
+ "routes": {
+  "admin-1440-dashboard-admin-owners": {
+   "path": "/dashboard/admin/owners",
+   "h1": "أصحاب المساحات",
+   "overlay": [],
+   "overflow": false,
+   "theme": "light",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "إضافة مالك",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "berry": [
+    {
+     "name": "إضافة مالك",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "ink": []
+  },
+  "admin-390-dashboard-admin-owners": {
+   "path": "/dashboard/admin/owners",
+   "h1": "أصحاب المساحات",
+   "overlay": [],
+   "overflow": false,
+   "theme": "light",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "إضافة مالك",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "berry": [
+    {
+     "name": "إضافة مالك",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "ink": []
+  }
+ },
+ "overlays": {
+  "admin-1440-owners-add": {
+   "path": "/dashboard/admin/owners",
+   "h1": "Space owners",
+   "overlay": [
+    "Add owner"
+   ],
+   "overflow": false,
+   "theme": "light",
+   "lang": "en",
+   "mains": [
+    {
+     "name": "Add owner",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    },
+    {
+     "name": "Create account and link",
+     "where": "overlay",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "berry": [
+    {
+     "name": "Add owner",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    },
+    {
+     "name": "Create account and link",
+     "where": "overlay",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "ink": [],
+   "trigger": "Add owner"
+  },
+  "admin-390-owners-add": {
+   "path": "/dashboard/admin/owners",
+   "h1": "Space owners",
+   "overlay": [
+    "Add owner"
+   ],
+   "overflow": false,
+   "theme": "light",
+   "lang": "en",
+   "mains": [
+    {
+     "name": "Add owner",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    },
+    {
+     "name": "Create account and link",
+     "where": "overlay",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "berry": [
+    {
+     "name": "Add owner",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    },
+    {
+     "name": "Create account and link",
+     "where": "overlay",
+     "inView": true,
+     "bg": "rgb(147, 71, 145)"
+    }
+   ],
+   "ink": [],
+   "trigger": "Add owner"
+  }
+ },
+ "dark": {
+  "dark-guest-1440-home": {
+   "path": "/",
+   "h1": "اعثر على مساحة عمل في قطاع غزة",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "بحث",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-guest-1440-spaces-pal-hub": {
+   "path": "/spaces/pal-hub",
+   "h1": "بال هاب",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "واتساب +970599000010",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-guest-1440-login": {
+   "path": "/login",
+   "h1": "تسجيل الدخول",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "تسجيل الدخول",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-owner-1440-dashboard-spaces-26-desk": {
+   "path": "/dashboard/spaces/26/desk",
+   "h1": "مكتب الاستقبال",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "تسجيل زيارة",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": [
+    {
+     "name": "تحصيل",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    },
+    {
+     "name": "تحصيل",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    },
+    {
+     "name": "تحصيل",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ]
+  },
+  "dark-admin-1440-dashboard-admin-spaces": {
+   "path": "/dashboard/admin/spaces",
+   "h1": "المساحات",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "إضافة مساحة",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-guest-390-home": {
+   "path": "/",
+   "h1": "اعثر على مساحة عمل في قطاع غزة",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "بحث",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-guest-390-spaces-pal-hub": {
+   "path": "/spaces/pal-hub",
+   "h1": "بال هاب",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "واتساب",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-guest-390-login": {
+   "path": "/login",
+   "h1": "تسجيل الدخول",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "تسجيل الدخول",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  },
+  "dark-owner-390-dashboard-spaces-26-desk": {
+   "path": "/dashboard/spaces/26/desk",
+   "h1": "مكتب الاستقبال",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "تسجيل زيارة",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": [
+    {
+     "name": "تحصيل",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    },
+    {
+     "name": "تحصيل",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    },
+    {
+     "name": "تحصيل",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ]
+  },
+  "dark-admin-390-dashboard-admin-spaces": {
+   "path": "/dashboard/admin/spaces",
+   "h1": "المساحات",
+   "overlay": [],
+   "overflow": false,
+   "theme": "dark",
+   "lang": "ar",
+   "mains": [
+    {
+     "name": "إضافة مساحة",
+     "where": "page",
+     "inView": true,
+     "bg": "rgb(247, 251, 255)"
+    }
+   ],
+   "berry": [],
+   "ink": []
+  }
+ },
+ "axe": {},
+ "errors": [],
+ "refreshes": 8
+}

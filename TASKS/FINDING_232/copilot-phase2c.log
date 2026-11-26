@@ -1,0 +1,152 @@
+ $ Shell Create approved work branch from main 4 lines…
+   git status --short --branch; if ($?) { git fetch origin }; if ($?) { git switch -c
+   chore/finding-232 origin/main }; if ($?) { git status --short --branch }
+
+The approved branch is created from the latest `origin/main` and is clean. I’m applying only the six planned repository-file changes, then I’ll prove the replacement assertion catches a missing `bytes` key before restoring the implementation.
+
+ ● Edit  Edit packages/shared/src/users/passwordPolicy.ts (+5 -12)  Edit packages/shared/src/users/…
+
+ ● Edit  Edit packages/shared/src/users/passwordPolicy.ts (-1)
+
+ ✗ Shell Confirm ordered-key test fails when bytes is omitted Failed with exit code 1  > @masaha/sh…
+   npm run test:unit -w @masaha/shared -- src/users/passwordPolicy.unit.test.ts -t "lists the policy
+   conditions"
+   > @masaha/shared@0.0.0 test:unit
+   > vitest run src/users/passwordPolicy.unit.test.ts -t lists the policy conditions
+   
+   
+    RUN  v5.0.2 C:/dev/masaha/app/packages/shared
+   
+    ❯ src/users/passwordPolicy.unit.test.ts (21 tests | 1 failed | 20 skipped) 11ms
+      ❯ passwordRules (16)
+        × lists the policy conditions in order 9ms
+   
+   ⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+   
+    FAIL  src/users/passwordPolicy.unit.test.ts > passwordRules > lists the policy conditions in 
+   order
+   AssertionError: expected [ 'minLength', 'letter', 'digit' ] to deeply equal [ Array(4) ]
+   
+   - Expected
+   + Received
+   
+     [
+       "minLength",
+       "letter",
+       "digit",
+   -   "bytes",
+     ]
+   
+    ❯ src/users/passwordPolicy.unit.test.ts:79:45
+        77|
+        78|   it('lists the policy conditions in order', () => {
+        79|     expect(Object.keys(passwordRules('x'))).toEqual(['minLength', 'let…
+          |                                             ^
+        80|   });
+        81| });
+   
+   ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+   
+   
+    Test Files  1 failed (1)
+         Tests  1 failed | 20 skipped (21)
+      Start at  14:31:13
+      Duration  719ms (import 80%, transform 15%, tests 3%, worker 2%)
+   
+   npm error Lifecycle script `test:unit` failed with error:
+   npm error code 1
+   npm error path C:\dev\masaha\app\packages\shared
+   npm error workspace @masaha/shared@0.0.0
+   npm error location C:\dev\masaha\app\packages\shared
+   npm error command failed
+   npm error command C:\WINDOWS\system32\cmd.exe /d /s /c vitest run 
+   src/users/passwordPolicy.unit.test.ts -t ^^^"lists^^^ the^^^ policy^^^ conditions^^^"
+   Failed with exit code 1
+
+ ● Edit  Edit packages/shared/src/users/passwordPolicy.ts (+1)
+
+The new unit assertion failed as intended when `bytes` was temporarily omitted, and the production implementation is restored. I’m now rebuilding the shared package and running the approved final-state checks.
+
+ $ Shell Build shared package 2 lines…
+   npm run build -w @masaha/shared
+
+ $ Shell Check formatting 5 lines…                                                               27s
+   npm run format:check
+
+ $ Shell Run repository lint 2 lines…                                                         2m 25s
+   npm run lint
+
+ $ Shell Run workspace typecheck 14 lines…                                                       37s
+   npm run typecheck
+
+ $ Shell Check documentation links 8 lines…
+   npm run check:links
+
+ $ Shell Check for conflict markers 8 lines…
+   npm run check:conflicts
+
+ $ Shell Run all unit tests 49 lines…                                                            53s
+   npm run test:unit
+
+ $ Shell Build all workspaces 164 lines…                                                         13s
+   npm run build
+
+ ✗ Shell Check production build boundaries Failed with exit code 1  Output too large to read at onc…
+   npm run check:build
+   Output too large to read at once (77.8 KB). Saved to: C:\Users\basel\AppData\Local\Temp\179569659
+   1465-copilot-tool-output-21316-4586648a-44d1-453f-a405-773a24eacfb2.txt
+   Consider using tools like rg (for searching), head/tail (for viewing start/end), view with 
+   view_range (for specific sections), or jq (for JSON) to examine portions of the output.
+   
+   Preview (first 500 chars):
+   
+   > check:build
+   > npm run check:build -w @masaha/web
+   
+   
+   > @masaha/web@0.0.0 check:build
+   > node scripts/checkBuild.ts
+   
+   dist/assets/dashboard-BoK_qJGk.js  Cards
+   dist/assets/dashboard-shared-C_pE6PYI.js  Cards
+   dist/assets/design-system-BCK1QgMx.js  Logo
+   dist/assets/design-system-BCK1QgMx.js  Heatmap
+   dist/assets/HomePage-D4Qvy0U_.js  Cards
+   dist/assets/index-dXBOLh1U.js  Rejected
+   dist/assets/showcase-D9P6wnSf.js  __showcase
+   dist/assets/showcase-D9P6wnSf.js  Masaha design system showcase
+   dist/assets/sho
+   Failed with exit code 1
+
+ $ Shell Find why build-boundary check failed 54 lines…
+   Select-String -Path 'C:\Users\basel\AppData\Local\Temp\1795696591465-copilot-tool-output-21316-45
+   86648a-44d1-453f-a405-773a24eacfb2.txt' -Pattern
+   'FAIL|fail|Error|rejected|Rejected|check:build|not found|Expected' | Select-Object -Last 80 |
+   ForEach-Object { $_.Line }; Get-Content 'C:\Users\basel\AppData\Local\Temp\1795696591465-copilot-
+   tool-output-21316-4586648a-44d1-453f-a405-773a24eacfb2.txt' -Tail 35
+
+All required checks in the prompt passed, but the approved plan also added `npm run check:build`; it failed because the production bundle contains 1,178 showcase strings. That is outside the six-file scope, so I’m not changing unrelated build/showcase code. I’m verifying the worktree and recording the blocked outcome rather than committing or pushing an unverified PR.
+
+ TS Read apps\web\scripts\checkBuild.ts L1:220 (220 lines read)
+
+ $ Shell Verify scoped worktree and whitespace 20 lines…
+   git status --short --branch; git diff --check; git diff --stat; git diff --name-only
+
+ ● Edit  Create C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md (+30)
+
+ MD Read C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md 30 lines read
+
+ $ Shell Confirm blocked branch state 8 lines…
+   git status --short --branch; git rev-parse HEAD
+
+Phase 2 is **blocked**: `npm run check:build` failed, reporting 1,178 showcase strings in the build. Fixing that would exceed the approved scope, so I stopped without committing, pushing, or opening a PR. The finding still contains `#PRNUM`; no PR number was assigned.
+
+The stop report is at `C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md`. Changes remain uncommitted on `chore/finding-232`; the branch was not switched back to `main.
+
+
+
+Changes    +190 -29
+AI Credits 4.9 (10m 57s)
+Tokens     ↑ 2.3m (2.1m cached, 155.7k written) • ↓ 16.8k (9.9k reasoning)
+Resume     copilot --resume=b31028a7-44ca-4c05-9c87-ad48c7345b01
+EXIT 0

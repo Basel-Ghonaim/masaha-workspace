@@ -1,0 +1,39 @@
+Warning: this sign-in can end at any time from now until 2026-11-29. Renewing it does not move that date. Run claude auth login now, or use claude setup-token for unattended jobs.
+WI-B2 is finished and PR #159 is ready for your review. CI passed on its head `75a1c2c4`, including `test:api`, and GitHub shows it `CLEAN`. I haven't merged it.
+
+**What the PR does (one commit, `feat(auth): draw the forms' main action`):** the auth forms now use the berry main-action button, which completes WI-B's D4:
+- The submit of the sign-in, register, reset-link request and reset forms. That also covers the reset page's sign-in from #157 and the views of the sign-in over a page.
+- Each state's single onward link: «Request a new link» and the signed-in «Sign in» on the reset page, and «Set a new password» once a link is open (on the forgot page and in the overlay). «Enter your email again» next to it stays outline.
+- I added nine assertions across seven test files. All nine failed before the change and pass after it.
+
+**The audit found nothing that breaks the rule, so there are no fix commits:**
+- **Coverage:** light theme, as a guest, the demo owner and the admin, at 1440 and 390. That is 78 page views and 26 overlays opened without writing data.
+- **Screens:** each one the table names draws exactly one main action. The others draw none.
+- **Overlays:** each one opened has its one main action on the confirm button.
+- **Dark:** five screens at both widths show no berry button.
+- **Accessibility:** axe found 0 violations on the four auth pages and the sign-in over a page.
+- **Not opened in Chrome:** 8 overlays, because my script didn't match their buttons' labels. I checked them in the code instead and didn't spend another run on them.
+
+**Needs your decision (I changed nothing):** some screens the table doesn't name have no main action today. These are the owner's overview, payments, finance, reports and audit; the admin's overview, reports, users and audit; and privacy plus the account's favourites and reports. Whether any of them should get one is your call.
+
+**Two choices I made:**
+- «Set a new password» counts as a state's single link, so it gets the berry.
+- The reset page's signed-in «Sign in» is that state's single link, so it gets the berry too.
+
+**Checks:**
+- **All passed locally:** format, links, conflicts, classes, lint, typecheck, unit tests, the production build and `check:build`.
+- **Component tests:** 2273 passed and 1 timed out, an untouched desk test (`CorrectSheet`). It passed when run alone and passed in CI.
+- **Run before the last change:** lint and typecheck ran before I amended the commit with a formatting-only fix. CI ran both on the final head and they passed.
+- **Not run locally:** `test:api`, since no API code changed. CI ran it.
+
+**Problems met:**
+- **Restart:** the previous session ended during the audit. On resume, Docker was down, so I started it and the database and ran the audit once more.
+- **A false zero:** the script first counted no main action on the Owners page, although the button is berry in the screenshot. It was a counting bug in my script, not in the app. After fixing it I re-measured Owners (1 main action) and the dark screens.
+- **Cleanup:** both servers are stopped and ports 3320 and 5320 are free.
+
+No other pull request is open, so there was nothing to check for conflicts. No document needed changing.
+
+Files are in `C:\dev\masaha\workspace\TASKS\BERRY_PRIMARY\`; the report has the full audit table in its §9, and 12 curated shots are in `C:\Users\basel\Downloads\berry-audit-shots\`:
+- 13_REPORT.md
+- 12_PLAN.md
+EXIT 0

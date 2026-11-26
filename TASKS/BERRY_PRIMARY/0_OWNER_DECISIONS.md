@@ -21,3 +21,4 @@
   C2 (no shared file; the supervisor found C2 also edits `SpacePage.component.test.tsx`, so WI-B's WhatsApp assertion
   goes in ContactBar's own test).
 - **2026-11-25 — #158 merged** (the owner's word after looking on 5320; pinned to ba63b833). WI-B2 (the auth forms' main action + an audit of every screen and overlay) prepared: `11_FOLLOWUP_PROMPT.md`, launched after #157 merges (the owner asked that the follow-up check every button is coloured as required).
+- **2026-11-26 — #159 merged** (WI-B2; the owner's word after his look on 5320; pinned to 75a1c2c4). `main` = c38fc47a. The berry main action is complete in the light theme.

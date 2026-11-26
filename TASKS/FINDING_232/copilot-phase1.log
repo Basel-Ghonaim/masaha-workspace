@@ -1,0 +1,78 @@
+ ● skill(start-work-item)
+
+I’ll read the requested prompt and the workflow’s planning guidance, check the required work-item starting state, then save only the plan file and stop.
+
+ MD Read C:\dev\masaha\workspace\TASKS\FINDING_232\1_PROMPT.md 53 lines read
+
+ MD Read docs\development\workflow.md L1:240 (240 lines read)
+
+ $ Shell Fetch main and check worktree state 4 lines…
+   git fetch origin; if ($?) { git status --short --branch; git rev-parse --abbrev-ref HEAD; git
+   rev-parse HEAD; git rev-parse origin/main }
+
+ MD Read CLAUDE.md 90 lines read
+
+ MD Read docs\architecture\findings\232-password-rules-is-read-only-by-its-test-and-two-c 7 lines …
+         omments-still-say-checklist.md
+
+ TS Read packages\shared\src\users\passwordPolicy.ts 53 lines read
+
+ TS Read packages\shared\src\users\passwordPolicy.unit.test.ts 87 lines read
+
+ MD Read docs\README.md 104 lines read
+
+ MD Read docs\architecture\findings\README.md 182 lines read
+
+ / Search "PasswordRule|passwordRules|PASSWORD_RULES" in !**/{dist,node_modules}/** … 70 lines found
+
+The prompt and requested source/test/finding files match the stated change, and the worktree is clean at `origin/main`. I’m checking the remaining password, shared-package, users-capability, and testing guidance before writing the external plan.
+
+ TX Read apps\web\src\features\users\components\forced-change\ForcedPasswordChan  L1:40 (40 lines r…
+         geForm.tsx
+
+ TS Read apps\web\src\features\users\hooks\settings\usePasswordChangeForm.ts L1:34 (34 lines read)
+
+ MD Read docs\architecture\shared-package.md 40 lines read
+
+ MD Read docs\development\engineering-principles.md 63 lines read
+
+ MD Read docs\development\testing.md 61 lines read
+
+ MD Read docs\backend\security.md 151 lines read
+
+ MD Read docs\features\users.md 168 lines read
+
+ ● skill(write-plan)
+
+ MD Read docs\architecture\findings\231-signing-in-over-a-page-switches-the-page-to-the-a 7 lines …
+         ccounts-language.md
+
+ / Search "Status: Resolved|Resolution:" in *.md (docs\architecture\findings) No matches found
+
+ MD Read docs\architecture\findings\1-overlays-the-scrim-has-no-token-and-floating- L1:30 (17 line…
+         content-shares-the-dropdown-layer.md
+
+ {} Read package.json L1:120 (52 lines read)
+
+ {} Read packages\shared\package.json L1:100 (26 lines read)
+
+The code agrees with the finding: `PASSWORD_RULES` is only used in its own test, while the runtime consumers use `passwordRules()` and the four identifiers. I’m saving the requested plan outside the repository; I will not edit or branch the repo in this phase.
+
+ ● Edit  Create C:\dev\masaha\workspace\TASKS\FINDING_232\2_PLAN.md (+143)
+
+ MD Read C:\dev\masaha\workspace\TASKS\FINDING_232\2_PLAN.md L1:260 (143 lines read)
+
+ $ Shell Verify repository remains unchanged 1 line…
+   git status --short --branch
+
+ ● Edit  Edit C:\dev\masaha\workspace\TASKS\FINDING_232\2_PLAN.md (+2 -2)
+
+Saved the phase 1 plan to `C:\dev\masaha\workspace\TASKS\FINDING_232\2_PLAN.md`. The repository remains unchanged; stopping here as requested.
+
+
+
+Changes    +145 -2
+AI Credits 2.26 (2m 40s)
+Tokens     ↑ 815.2k (737.3k cached, 77.9k written) • ↓ 10.9k (6.9k reasoning)
+Resume     copilot --resume=b31028a7-44ca-4c05-9c87-ad48c7345b01
+EXIT 0

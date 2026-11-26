@@ -1,0 +1,269 @@
+ ● skill(open-pr)
+
+I’ll rerun the full build and boundary check with `NODE_ENV=production`, then continue the approved PR flow if both pass. I’ll preserve the existing one-commit/no-force-push constraints and update the report with the false alarm and corrected verification.
+
+ $ Shell Production build and boundary check 131 lines…                                          17s
+   $env:NODE_ENV = 'production'; npm run build; $buildExit = $LASTEXITCODE; $checkExit = 99; if
+   ($buildExit -eq 0) { npm run check:build; $checkExit = $LASTEXITCODE }; Remove-Item Env:NODE_ENV;
+   Write-Output "BUILD_EXIT=$buildExit CHECK_BUILD_EXIT=$checkExit"; if ($buildExit -ne 0) { exit
+   $buildExit }; if ($checkExit -ne 0) { exit $checkExit }
+
+ $ Shell Fetch and review exact changes 137 lines…
+   git fetch origin; if ($?) { git status --short --branch }; if ($?) { git diff --check; git diff
+   --stat; git diff -- docs/architecture/findings/232-password-rules-is-read-only-by-its-test-and-tw
+   o-comments-still-say-checklist.md packages/shared/src/users/passwordPolicy.ts
+   packages/shared/src/users/passwordPolicy.unit.test.ts
+   apps/web/src/features/users/hooks/settings/usePasswordChangeForm.ts
+   apps/web/src/features/users/components/forced-change/ForcedPasswordChangeForm.tsx
+   docs/architecture/findings/README.md }
+
+ $ Shell Find latest issue number 1 line…
+   gh issue list --state all --limit 1
+
+ $ Shell Find latest PR number 1 line…
+   gh pr list --state all --limit 1
+
+The production build succeeds and `check:build` passes; this confirms the earlier development-mode result was a false alarm. The latest PR is #159 and the latest issue is #151, so I’ll use #160 in the finding, then create the single planned commit and PR.
+
+ $ Shell Commit scoped password policy changes 23 lines…
+   git status --short --branch; if ($?) { git add -- packages/shared/src/users/passwordPolicy.ts
+   packages/shared/src/users/passwordPolicy.unit.test.ts
+   apps/web/src/features/users/hooks/settings/usePasswordChangeForm.ts
+   apps/web/src/features/users/components/forced-change/ForcedPasswordChangeForm.tsx docs/architectu
+   re/findings/232-password-rules-is-read-only-by-its-test-and-two-comments-still-say-checklist.md
+   docs/architecture/findings/README.md }; if ($?) { git status --short --branch }; if ($?) { git
+   commit -m "refactor(shared): remove unused password rules" -m "Remove the exported list now that
+   the UI renders one policy line. Keep the condition IDs typed independently and verify the
+   returned record's keys." }; if ($?) { git rev-parse HEAD; git status --short --branch }
+
+ ● Edit  Edit docs/architecture/findings/232-password-rules-is-read-only-by-its-test-and-two-commen…
+
+ $ Shell Replace placeholder and amend single commit 9 lines…
+   git status --short --branch; if ($?) { git add -- docs/architecture/findings/232-password-rules-i
+   s-read-only-by-its-test-and-two-comments-still-say-checklist.md }; if ($?) { git status --short
+   --branch }; if ($?) { git commit --amend --no-edit }; if ($?) { git rev-parse HEAD; git status
+   --short --branch }
+
+ $ Shell Verify amended documentation and formatting 15 lines…                                   30s
+   npm run format:check; $formatExit = $LASTEXITCODE; if ($formatExit -eq 0) { npm run check:links;
+   $linksExit = $LASTEXITCODE } else { $linksExit = 99 }; Write-Output "FORMAT_EXIT=$formatExit
+   LINKS_EXIT=$linksExit"; if ($formatExit -ne 0) { exit $formatExit }; if ($linksExit -ne 0) { exit
+   $linksExit }
+
+ $ Shell Check repository labels 21 lines…
+   gh label list
+
+ $ Shell Push work branch to origin 10 lines…
+   git fetch origin; if ($?) { git status --short --branch }; if ($?) { git push -u origin
+   chore/finding-232 }; if ($?) { git status --short --branch; git rev-parse HEAD }
+
+The single commit is pushed to `chore/finding-232` and the corrected finding now names #160. All local checks pass, including the production-mode boundary check; I’m opening the assigned, labeled PR with the planned scope and verification evidence.
+
+ ✗ Shell Open PR for finding 232 Failed with exit code 1  unknown argument "chore"; please quote al…
+   $body = @'
+   ## Summary
+   - Remove the unused `PASSWORD_RULES` export while retaining the four condition IDs in
+   `PasswordRule`.
+   - Keep `passwordRules()` unchanged and test the returned record's ordered keys.
+   - Update the policy and users-feature comments to describe the single-line password condition.
+   - Resolve finding 232.
+
+   ## Scope / Acceptance criteria / Out of scope
+   - In scope: the shared policy and unit test, the two named users-feature comments, and finding
+   232 plus its index entry.
+   - Acceptance: all four IDs remain typed; the record's key order is tested; the finding is
+   resolved.
+   - Out of scope: runtime behavior changes, unrelated refactors, and other files.
+
+   ## Change type
+   Refactor.
+
+   ## Evidence
+   - `npm run build -w @masaha/shared` — passed.
+   - `npm run format:check` — passed.
+   - `npm run lint` — passed.
+   - `npm run typecheck` — passed.
+   - `npm run check:links` — passed (2,830 links resolved).
+   - `npm run check:conflicts` — passed.
+   - `npm run test:unit` — passed (305 files, 2,784 tests).
+   - `$env:NODE_ENV="production"; npm run build; npm run check:build; Remove-Item Env:NODE_ENV` —
+   passed; no showcase code in 78 build files.
+   - `git diff --check` — passed.
+   - The new unit assertion failed when `bytes` was temporarily omitted, then passed after
+   restoration.
+   - An initial build/boundary check without production `NODE_ENV` triggered the development
+   showcase false alarm; the production build and check passed.
+   - The complete build passed; Vite printed non-failing chunk-size warnings.
+
+   ## Definition of Done checklist
+   - [x] Acceptance criteria met; scope kept.
+   - [x] Build, lint, typecheck, and tests pass.
+   - [x] Finding status and index are updated.
+   - [x] One atomic commit; PR ready for owner review.
+   '@; gh pr create --assignee @me --label chore --label area:web --label area:docs --title
+   "refactor(shared): remove unused password rules" --body $body
+   unknown argument "chore"; please quote all values that have spaces
+   
+   Usage:  gh pr create [flags]
+   
+   Flags:
+     -a, --assignee login       Assign people by their login. Use "@me" to self-assign.
+     -B, --base branch          The branch into which you want your code merged
+     -b, --body string          Body for the pull request
+     -F, --body-file file       Read body text from file (use "-" to read from standard input)
+     -d, --draft                Mark pull request as a draft
+         --dry-run              Print details instead of creating the PR. May still push git 
+   changes.
+     -e, --editor               Skip prompts and open the text editor to write the title and body 
+   in. The first line is the title and the remaining text is the body.
+     -f, --fill                 Use commit info for title and body
+         --fill-first           Use first commit info for title and body
+         --fill-verbose         Use commits msg+body for description
+     -H, --head branch          The branch that contains commits for your pull request (default 
+   [current branch])
+     -l, --label name           Add labels by name
+     -m, --milestone name       Add the pull request to a milestone by name
+         --no-maintainer-edit   Disable maintainer's ability to modify pull request
+     -p, --project title        Add the pull request to projects by title
+         --recover string       Recover input from a failed run of create
+     -r, --reviewer handle      Request reviews from people or teams by their handle
+     -T, --template file        Template file to use as starting body text
+     -t, --title string         Title for the pull request
+     -w, --web                  Open the web browser to create a pull request
+   Failed with exit code 1
+
+ $ Shell Create assigned and labeled PR 42 lines…                                                 7s
+   $body = @'
+   ## Summary
+   - Remove the unused `PASSWORD_RULES` export while retaining the four condition IDs in
+   `PasswordRule`.
+   - Keep `passwordRules()` unchanged and test the returned record's ordered keys.
+   - Update the policy and users-feature comments to describe the single-line password condition.
+   - Resolve finding 232.
+
+   ## Scope / Acceptance criteria / Out of scope
+   - In scope: the shared policy and unit test, the two named users-feature comments, and finding
+   232 plus its index entry.
+   - Acceptance: all four IDs remain typed; the record's key order is tested; the finding is
+   resolved.
+   - Out of scope: runtime behavior changes, unrelated refactors, and other files.
+
+   ## Change type
+   Refactor.
+
+   ## Evidence
+   - `npm run build -w @masaha/shared` — passed.
+   - `npm run format:check` — passed.
+   - `npm run lint` — passed.
+   - `npm run typecheck` — passed.
+   - `npm run check:links` — passed (2,830 links resolved).
+   - `npm run check:conflicts` — passed.
+   - `npm run test:unit` — passed (305 files, 2,784 tests).
+   - `$env:NODE_ENV="production"; npm run build; npm run check:build; Remove-Item Env:NODE_ENV` —
+   passed; no showcase code in 78 build files.
+   - `git diff --check` — passed.
+   - The new unit assertion failed when `bytes` was temporarily omitted, then passed after
+   restoration.
+   - An initial build/boundary check without production `NODE_ENV` triggered the development
+   showcase false alarm; the production build and check passed.
+   - The complete build passed; Vite printed non-failing chunk-size warnings.
+
+   ## Definition of Done checklist
+   - [x] Acceptance criteria met; scope kept.
+   - [x] Build, lint, typecheck, and tests pass.
+   - [x] Finding status and index are updated.
+   - [x] One atomic commit; PR ready for owner review.
+   '@; $bodyPath = Join-Path $env:TEMP 'finding-232-pr-body.md'; Set-Content -LiteralPath $bodyPath
+   -Value $body -Encoding UTF8; gh pr create --assignee='@me' --label='chore' --label='area:web'
+   --label='area:docs' --title='refactor(shared): remove unused password rules'
+   --body-file="$bodyPath"; $prExit = $LASTEXITCODE; Remove-Item -LiteralPath $bodyPath; exit
+   $prExit
+
+PR #160 is open. I’m monitoring its checks at the requested two-minute interval; once every check passes and GitHub reports `CLEAN`, I’ll update the report and switch back to `main` without merging.
+
+ ✗ Shell Read current PR checks Failed with exit code 8  CodeRabbit    skipping    0   https://code…
+   gh pr checks 160
+   CodeRabbit      skipping        0       https://coderabbit.ai?utm_source=cr_app&utm_medium=github
+          
+   build   pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831262       
+   check:classes   pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831287       
+   check:conflicts pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831330       
+   check:links     pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831270       
+   format:check    pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831365       
+   lint    pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831082       
+   test:api        pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915830675       
+   test:component  pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831205       
+   test:unit       pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831102       
+   typecheck       pending 0       
+   https://github.com/Basel-Ghonaim/masaha/actions/runs/45821848160/job/139915831304
+   Failed with exit code 8
+
+ $ Shell Read PR state and head 1 line…
+   gh pr view 160 --json url,headRefOid,mergeStateStatus,state,title
+
+ $ Shell Inspect PR checks CLI options 38 lines…
+   gh pr checks --help
+
+ $ Shell Wait for PR checks and clean merge state 30 lines…                                    8m 9s
+   $finished = $false; for ($i = 1; $i -le 20; $i++) { if ($i -gt 1) { Start-Sleep -Seconds 120 };
+   Write-Output "--- PR checks poll $i/20 ---"; $raw = gh pr checks 160 --json
+   name,bucket,state,workflow 2>&1; $checkExit = $LASTEXITCODE; $text = ($raw | Out-String).Trim();
+   Write-Output $text; try { $checks = ConvertFrom-Json -InputObject $text -ErrorAction Stop } catch
+   { Write-Output "No parseable checks (exit $checkExit); treating as no checks/network issue and
+   continuing."; continue }; if ($null -eq $checks -or @($checks).Count -eq 0) { Write-Output 'No
+   checks reported; continuing.'; continue }; $failed = @($checks | Where-Object { $_.bucket -eq
+   'fail' -or $_.bucket -eq 'cancel' }); if ($failed.Count -gt 0) { Write-Output 'A CI check failed
+   or was cancelled.'; exit 1 }; $pending = @($checks | Where-Object { $_.bucket -eq 'pending' });
+   if ($pending.Count -gt 0) { Write-Output ("Still pending: " + $pending.Count); continue }; $merge
+   = gh pr view 160 --json mergeStateStatus 2>&1; $mergeExit = $LASTEXITCODE; if ($mergeExit -ne 0)
+   { Write-Output 'Could not read merge state; continuing.'; continue }; $mergeText = ($merge |
+   Out-String).Trim(); Write-Output "Merge state: $mergeText"; try { $mergeObj = ConvertFrom-Json
+   -InputObject $mergeText -ErrorAction Stop } catch { continue }; if ($mergeObj.mergeStateStatus
+   -eq 'CLEAN') { Write-Output 'All reported checks are pass or skipped and merge state is CLEAN.';
+   $finished = $true; break }; Write-Output 'Checks complete but merge state is not CLEAN;
+   continuing.' }; if (-not $finished) { Write-Output 'Bounded CI wait ended without green checks
+   and CLEAN.'; exit 2 }
+
+ ● skill(final-report)
+
+CI is green on the pushed head, and GitHub reports `CLEAN`. I’m performing the required early conflict check against other open PR heads, then I’ll finalize the report and return to `main`.
+
+ $ Shell List open PRs for conflict check 1 line…
+   gh pr list --state open --json number,title,headRefName,headRefOid,url
+
+ $ Shell Confirm PR checks and pushed SHA 12 lines…
+   gh pr checks 160; gh pr view 160 --json url,headRefOid,mergeStateStatus,state
+
+ $ Shell Return to main after PR verification 5 lines…
+   git status --short --branch; if ($?) { git switch main }; if ($?) { git status --short --branch;
+   git rev-parse HEAD }
+
+ ● Edit  Delete C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md (-30)
+
+ ● Edit  Create C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md (+53)
+
+ MD Read C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md 53 lines read
+
+ $ Shell Confirm final branch and PR state 2 lines…
+   git status --short --branch; gh pr view 160 --json headRefOid,mergeStateStatus,url,state
+
+Completed phase 2. PR [#160](https://github.com/Basel-Ghonaim/masaha/pull/160) is open; CI passed on head `f548475de76e34376649c9b6a87008b0a73c3`, and GitHub reports `CLEAN`. The development-mode `check:build` false alarm was resolved by running the build with `NODE_ENV=production`.
+
+The report is saved at `C:\dev\masaha\workspace\TASKS\FINDING_232\4_REPORT.md`. The worktree is clean on `main`; no merge was performed.
+
+
+
+Changes    +244 -60
+AI Credits 8.34 (23m 53s)
+Tokens     ↑ 4.2m (4.0m cached, 243.7k written) • ↓ 26.4k (14.9k reasoning)
+Resume     copilot --resume=b31028a7-44ca-4c05-9c87-ad48c7345b01
+EXIT 0
